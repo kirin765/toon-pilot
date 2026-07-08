@@ -283,9 +283,8 @@
         MOUTH_CLASSES.forEach(function (c) {
           root.querySelector("." + c).setAttribute("visibility", c === e.mouth ? "visible" : "hidden");
         });
-        var bl = root.querySelector(".brow-l"), br = root.querySelector(".brow-r");
-        bl.style.transform = "translateY(" + e.browY + "px) rotate(" + e.browRotL + "deg)";
-        br.style.transform = "translateY(" + e.browY + "px) rotate(" + e.browRotR + "deg)";
+        gsap.set(root.querySelector(".brow-l"), { y: e.browY, rotation: e.browRotL, svgOrigin: "82 64" });
+        gsap.set(root.querySelector(".brow-r"), { y: e.browY, rotation: e.browRotR, svgOrigin: "118 64" });
       }
       function setPoseDirect(root, name) {
         var p = POSES[name];
@@ -324,8 +323,8 @@
           if (c === "m-open") return;
           tl.set(sel + " ." + c, { attr: { visibility: c === e.mouth ? "visible" : "hidden" } }, at);
         });
-        tl.to(sel + " .brow-l", { y: e.browY, rotation: e.browRotL, duration: 0.18, ease: "power2.out" }, at);
-        tl.to(sel + " .brow-r", { y: e.browY, rotation: e.browRotR, duration: 0.18, ease: "power2.out" }, at);
+        tl.to(sel + " .brow-l", { y: e.browY, rotation: e.browRotL, svgOrigin: "82 64", duration: 0.18, ease: "power2.out" }, at);
+        tl.to(sel + " .brow-r", { y: e.browY, rotation: e.browRotR, svgOrigin: "118 64", duration: 0.18, ease: "power2.out" }, at);
       }
       function tlPose(sel, name, at) {
         var p = POSES[name];

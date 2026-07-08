@@ -73,6 +73,6 @@ var CAPTION_GROUPS = [
   { text: "맞고 파직됩니다", start: 28.39, end: 30.32, hi: [] },
   { text: "그대로 사라졌죠", start: 30.34, end: 32.29, hi: [] },
   { text: "최고의 과학자는 어디로 갔을까요", start: 32.31, end: 35.36, hi: [] },
-  { text: "삼십 초 역사 다음", start: 35.38, end: 36.97, hi: [] },
-  { text: "편은 구독", start: 36.97, end: 38.32, hi: ["구독"] },
+  { text: "삼십 초 역사", start: 35.38, end: 36.8, hi: [] },
+  { text: "다음 편은 구독!", start: 36.82, end: 38.32, hi: ["구독!"] },
 ];

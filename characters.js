@@ -76,9 +76,9 @@ function makeCharacter(cfg) {
       '<ellipse cx="100" cy="30" rx="9" ry="5" fill="#3a3e45"/>' +
       '<circle cx="100" cy="27" r="3.5" fill="#26221c"/>' +
       "</g>";
-    // 수염: 턱을 감싸는 얇은 밴드형(입 아래). 두꺼운 말굽=검은 덩어리로 보임(참고이미지) → 얇게+밝게.
+    // 수염: 턱을 채우는 풍성한 형(입 아래만, 마우스 플랩 가리지 않게). 너무 얇으면 안 보임(참고이미지).
     beard =
-      '<path d="M 64 116 Q 68 140 88 150 Q 100 155 112 150 Q 132 140 136 116 Q 131 137 117 149 Q 100 159 83 149 Q 69 137 64 116 Z" fill="#4a4034"/>';
+      '<path d="M 60 110 Q 62 146 86 157 Q 100 163 114 157 Q 138 146 140 110 Q 133 129 116 131 Q 100 135 84 131 Q 67 129 60 110 Z" fill="#3a322a"/>';
     // 두정갑: 금징 3단 + 요대 + 갑찰 자락
     var studs = "";
     for (var r = 0; r < 3; r++) {
@@ -199,7 +199,7 @@ function makeCharacter(cfg) {
 var EXPRESSIONS = {
   neutral: { eye: "eye-open", mouth: "m-closed", browY: 0, browRotL: 0, browRotR: 0 },
   happy: { eye: "eye-closed", mouth: "m-smile", browY: -4, browRotL: 0, browRotR: 0 },
-  proud: { eye: "eye-open", mouth: "m-smile", browY: -2, browRotL: -8, browRotR: 8 },
+  proud: { eye: "eye-open", mouth: "m-smile", browY: -4, browRotL: 0, browRotR: 0 },
   shocked: { eye: "eye-wide", mouth: "m-shock", browY: -9, browRotL: 0, browRotR: 0 },
   angry: { eye: "eye-open", mouth: "m-frown", browY: 6, browRotL: 16, browRotR: -16 },
 };
