@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>캐릭터 튜너 — 삼십초 역사</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
+         background:#20242c; color:#e8e6e0; display:flex; min-height:100vh; }
+  #left { width: 420px; padding:20px; background:#181b21; overflow-y:auto; height:100vh; }
+  #right { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:20px; }
+  h1 { font-size:18px; margin:0 0 4px; }
+  .sub { font-size:12px; color:#8b93a0; margin-bottom:16px; line-height:1.5; }
+  .tabs { display:flex; gap:6px; margin-bottom:14px; flex-wrap:wrap; }
+  .tab { padding:8px 14px; border-radius:8px; background:#2a2f38; border:1px solid #333a45; cursor:pointer; font-size:14px; }
+  .tab.active { background:#d94f37; border-color:#d94f37; color:#fff; font-weight:600; }
+  .group { margin-bottom:14px; padding:12px; background:#22262e; border-radius:10px; }
+  .group h3 { margin:0 0 10px; font-size:14px; color:#e8b74a; }
+  .row { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .row label { width:56px; font-size:13px; color:#aab2bf; }
+  .row input[type=range] { flex:1; accent-color:#d94f37; }
+  .row .val { width:52px; text-align:right; font-size:13px; font-variant-numeric:tabular-nums; color:#e8e6e0; }
+  .btns { display:flex; gap:8px; margin-top:6px; flex-wrap:wrap; }
+  button { padding:9px 14px; border-radius:8px; border:1px solid #3a424e; background:#2a2f38; color:#e8e6e0; cursor:pointer; font-size:13px; }
+  button:hover { background:#333a45; }
+  button.primary { background:#2f8f4e; border-color:#2f8f4e; color:#fff; }
+  button.warn { background:#7a2f22; border-color:#7a2f22; }
+  #stage { width:380px; height:456px; border-radius:16px; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+  #char { width:300px; height:360px; }
+  .bgrow { display:flex; gap:8px; }
+  .swatch { width:30px; height:30px; border-radius:6px; cursor:pointer; border:2px solid transparent; }
+  .swatch.active { border-color:#fff; }
+  #out { width:100%; height:150px; margin-top:10px; font-family:ui-monospace,Menlo,monospace; font-size:11px;
+         background:#12151a; color:#9fd0a8; border:1px solid #2a2f38; border-radius:8px; padding:10px; resize:vertical; }
+  .hint { font-size:11px; color:#7a828f; margin-top:6px; line-height:1.5; }
+  .thumbs { display:flex; gap:10px; }
+  .thumb { width:84px; height:100px; background:#f0e6d0; border-radius:10px; cursor:pointer; border:2px solid transparent; }
+  .thumb.active { border-color:#d94f37; }
+</style>
+</head>
+<body>
+  <div id="left">
+    <h1>캐릭터 튜너</h1>
+    <div class="sub">모자·갓·수염을 머리에 맞춰 조정하세요. <b>모양은 그대로, 앉음새(위치·크기·회전)만</b> 바뀝니다.
+      값은 자동 저장되고, 아래 <b>char-tuning.js 다운로드</b>로 저장하면 실제 렌더에 반영됩니다.</div>
+
+    <div class="tabs" id="tabs"></div>
+
+    <div class="group">
+      <h3>모자 / 갓 / 익선관</h3>
+      <div id="hatCtrls"></div>
+    </div>
+    <div class="group">
+      <h3>수염 (admiral 전용 표시)</h3>
+      <div id="beardCtrls"></div>
+    </div>
+
+    <div class="btns">
+      <button class="warn" id="resetOne">이 캐릭터 리셋</button>
+      <button class="warn" id="resetAll">전체 리셋</button>
+    </div>
+
+    <textarea id="out" readonly></textarea>
+    <div class="btns">
+      <button class="primary" id="download">char-tuning.js 다운로드</button>
+      <button id="copy">클립보드 복사</button>
+    </div>
+    <div class="hint">다운로드한 <code>char-tuning.js</code>를 <code>~/projects/misc/toon-pilot/</code>에 덮어쓰면 끝.
+      (또는 위 JSON을 채팅에 붙여넣으면 제가 저장합니다.) 저장 후 에피소드 재렌더하면 반영됩니다.</div>
+  </div>
+
+  <div id="right">
+    <div class="bgrow">
+      <div class="swatch" style="background:#f0e6d0" data-bg="#f0e6d0"></div>
+      <div class="swatch" style="background:#8ec9e8" data-bg="#8ec9e8"></div>
+      <div class="swatch" style="background:#d98f5a" data-bg="#d98f5a"></div>
+      <div class="swatch" style="background:#e8b74a" data-bg="#e8b74a"></div>
+      <div class="swatch" style="background:#202a3c" data-bg="#202a3c"></div>
+    </div>
+    <div id="stage"><div id="char"></div></div>
+    <div class="thumbs" id="thumbs"></div>
+    <div class="hint" style="text-align:center">클릭해서 캐릭터 전환 · 배경색으로 대비 확인</div>
+  </div>
+
+<script src="char-tuning.js"></script>
+<script src="characters.js"></script>
+<script>
+  var STORE = "toon-char-tuning-v1";
+  var VARIANTS = {
+    host:    { variant:"host",    shirt:"#d94f37", pants:"#1f2d45", label:"호스트" },
+    king:    { variant:"king",    shirt:"#c0392b", pants:"#7c1d12", label:"세종(익선관)" },
+    admiral: { variant:"admiral", shirt:"#3a4a6a", pants:"#26314a", label:"대호군(전립·수염)" },
+    militia: { variant:"militia", shirt:"#4a6a8a", pants:"#2f4258", label:"장영실(갓)" },
+  };
+  var PARAMS = { hat:[["x","위치X",-40,40,1],["y","위치Y",-40,40,1],["s","크기",0.5,1.8,0.01],["r","회전",-45,45,1]],
+                 beard:[["x","위치X",-40,40,1],["y","위치Y",-40,40,1],["s","크기",0.5,1.8,0.01],["r","회전",-45,45,1]] };
+  var cur = "king", bg = "#f0e6d0";
+
+  // load saved
+  try { var saved = JSON.parse(localStorage.getItem(STORE)); if (saved) window.CHAR_TUNING = saved; } catch(e){}
+  function T(){ return window.CHAR_TUNING; }
+
+  function renderChar(){
+    document.getElementById("char").innerHTML = makeCharacter(VARIANTS[cur]);
+  }
+  function renderThumbs(){
+    var box = document.getElementById("thumbs"); box.innerHTML="";
+    Object.keys(VARIANTS).forEach(function(k){
+      var d=document.createElement("div"); d.className="thumb"+(k===cur?" active":"");
+      d.innerHTML=makeCharacter(VARIANTS[k]); d.onclick=function(){ cur=k; selectVariant(); };
+      box.appendChild(d);
+    });
+  }
+  function renderTabs(){
+    var box=document.getElementById("tabs"); box.innerHTML="";
+    Object.keys(VARIANTS).forEach(function(k){
+      var b=document.createElement("div"); b.className="tab"+(k===cur?" active":""); b.textContent=VARIANTS[k].label;
+      b.onclick=function(){ cur=k; selectVariant(); }; box.appendChild(b);
+    });
+  }
+  function buildCtrls(part, mount){
+    mount.innerHTML="";
+    PARAMS[part].forEach(function(p){
+      var key=p[0], name=p[1], min=p[2], max=p[3], step=p[4];
+      var row=document.createElement("div"); row.className="row";
+      var lab=document.createElement("label"); lab.textContent=name;
+      var rng=document.createElement("input"); rng.type="range"; rng.min=min; rng.max=max; rng.step=step;
+      rng.value=T()[cur][part][key];
+      var val=document.createElement("span"); val.className="val"; val.textContent=(+rng.value).toFixed(step<1?2:0);
+      rng.oninput=function(){ T()[cur][part][key]=parseFloat(rng.value); val.textContent=(+rng.value).toFixed(step<1?2:0); apply(); };
+      row.appendChild(lab); row.appendChild(rng); row.appendChild(val); mount.appendChild(row);
+    });
+  }
+  function selectVariant(){
+    renderTabs(); buildCtrls("hat",document.getElementById("hatCtrls"));
+    buildCtrls("beard",document.getElementById("beardCtrls")); renderChar(); renderThumbs();
+  }
+  function apply(){
+    renderChar(); renderThumbs();
+    localStorage.setItem(STORE, JSON.stringify(T()));
+    document.getElementById("out").value = fileText();
+  }
+  function fileText(){
+    return "// 캐릭터 얼굴 장식 미세조정값 — studio.html에서 생성.\n"+
+      "var CHAR_TUNING = "+JSON.stringify(T(),null,2)+";\n"+
+      'if (typeof window !== "undefined") window.CHAR_TUNING = CHAR_TUNING;\n';
+  }
+
+  document.getElementById("resetOne").onclick=function(){
+    ["hat","beard"].forEach(function(pt){ T()[cur][pt]={x:0,y:0,s:1,r:0}; }); selectVariant(); apply();
+  };
+  document.getElementById("resetAll").onclick=function(){
+    Object.keys(VARIANTS).forEach(function(k){ T()[k]={hat:{x:0,y:0,s:1,r:0},beard:{x:0,y:0,s:1,r:0}}; }); selectVariant(); apply();
+  };
+  document.getElementById("copy").onclick=function(){
+    navigator.clipboard.writeText(fileText()); this.textContent="복사됨!"; var b=this; setTimeout(function(){b.textContent="클립보드 복사";},1200);
+  };
+  document.getElementById("download").onclick=function(){
+    var blob=new Blob([fileText()],{type:"text/javascript"}); var a=document.createElement("a");
+    a.href=URL.createObjectURL(blob); a.download="char-tuning.js"; a.click();
+  };
+  Array.prototype.forEach.call(document.querySelectorAll(".swatch"),function(s){
+    s.onclick=function(){ bg=s.dataset.bg; document.getElementById("stage").style.background=bg;
+      Array.prototype.forEach.call(document.querySelectorAll(".swatch"),function(x){x.classList.remove("active");}); s.classList.add("active"); };
+  });
+
+  document.getElementById("stage").style.background=bg;
+  document.querySelector('.swatch[data-bg="'+bg+'"]').classList.add("active");
+  selectVariant(); apply();
+</script>
+</body>
+</html>

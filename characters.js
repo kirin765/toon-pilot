@@ -33,6 +33,17 @@ function makeCharacter(cfg) {
   var torsoDetail = "";
   var cuff = shirtSh;
 
+  // studio.html에서 조정한 앉음새 변형 적용(모양 불변, 위치/크기/회전만). 값 없으면 원본.
+  var TU = (typeof CHAR_TUNING !== "undefined" && CHAR_TUNING[cfg.variant]) || null;
+  function wrapTf(inner, t, pivotY) {
+    if (!t) return inner;
+    var dx = t.x || 0, dy = t.y || 0, s = t.s == null ? 1 : t.s, r = t.r || 0;
+    if (dx === 0 && dy === 0 && s === 1 && r === 0) return inner;
+    var tf = "translate(" + dx + " " + dy + ") translate(100 " + pivotY +
+      ") scale(" + s + ") rotate(" + r + ") translate(-100 " + (-pivotY) + ")";
+    return '<g transform="' + tf + '">' + inner + "</g>";
+  }
+
   if (cfg.variant === "king") {
     cuff = "#e8b74a";
     // 익선관: 위로 솟은 소각(뿔)은 둥근 만화 머리에서 무조건 '토끼 귀'로 읽힘(참고이미지 2회 확인)
@@ -149,8 +160,8 @@ function makeCharacter(cfg) {
     '<g class="head" style="transform-origin:100px 120px">' +
     '<circle cx="100" cy="82" r="58" fill="' + skin + '"/>' +
     '<path d="M 56 120 A 58 58 0 0 0 144 120 Q 122 133 100 133 Q 78 133 56 120 Z" fill="' + skinSh + '"/>' +
-    hat +
-    beard +
+    wrapTf(hat, TU && TU.hat, 48) +
+    wrapTf(beard, TU && TU.beard, 130) +
     // eyes
     '<g class="eye-open">' +
     '<ellipse cx="82" cy="84" rx="13" ry="15" fill="#ffffff"/>' +
