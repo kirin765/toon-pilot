@@ -1,0 +1,7 @@
+node_modules/
+.thumbnails/
+.waveform-cache/
+frames/
+renders/draft*.mp4
+*.log
+.DS_Store

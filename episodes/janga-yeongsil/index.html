@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #1f2d45; }
+      @font-face { font-family: "Black Han Sans"; src: url("fonts/BlackHanSans.ttf") format("truetype"); font-weight: 400; }
+      @font-face { font-family: "Jua"; src: url("fonts/Jua.ttf") format("truetype"); font-weight: 400; }
+      @font-face { font-family: "Apple SD Gothic Neo"; src: local("Apple SD Gothic Neo"); }
+      body { font-family: "Jua", "Apple SD Gothic Neo", sans-serif; color: #26221c; }
+
+      .scene { position: absolute; inset: 0; overflow: hidden; }
+      #s1 { z-index: 10; } #s2 { z-index: 20; } #s3 { z-index: 30; }
+      #s4 { z-index: 40; } #s5 { z-index: 50; } #s6 { z-index: 60; } #s7 { z-index: 70; }
+      .stage { position: absolute; inset: 0; }
+      .char { position: absolute; }
+      .char .bob { width: 100%; height: 100%; }
+      .char.flip .bob { transform: scaleX(-1); }
+
+      /* shared props */
+      .ground { position: absolute; bottom: 0; left: 0; right: 0; height: 300px; background: #7db95c; }
+      .hill { position: absolute; border-radius: 50%; background: #7db95c; }
+      .cloud { position: absolute; border-radius: 60px; background: #f6efe3; }
+      .star { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #f6efe3; opacity: 0.75; }
+      .moon { position: absolute; border-radius: 50%; background: #f6efe3; }
+      .label-pill { position: absolute; }
+      .label-pill span { display: inline-block; background: #1f2d45; color: #f6efe3; font-size: 46px; padding: 14px 44px; border-radius: 999px; }
+      .stamp {
+        position: absolute; font-family: "Black Han Sans"; text-align: center;
+        border: 9px solid; border-radius: 20px; padding: 14px 40px; line-height: 1.1;
+        background: rgba(246, 239, 227, 0.94); visibility: hidden;
+      }
+      .stamp small { display: block; font-size: 46px; color: #1f2d45; }
+
+      /* ---------- S1: hook (night) ---------- */
+      #s1 .stage { background: #1f2d45; }
+      .hook-title {
+        position: absolute; top: 300px; left: 0; right: 0; text-align: center;
+        font-family: "Black Han Sans"; font-size: 150px; line-height: 1.08; color: #f6efe3; letter-spacing: -0.02em;
+      }
+      .hook-stamp {
+        top: 720px; left: 0; right: 0; margin: 0 auto; width: 560px;
+        color: #d94f37; border-color: #d94f37; font-size: 132px; transform: rotate(-7deg);
+      }
+
+      /* ---------- S2: 동래현 (day) ---------- */
+      #s2 .stage { background: #8ec9e8; }
+      .s2-label { top: 360px; left: 0; right: 0; text-align: center; }
+
+      /* ---------- S3: palace (warm) ---------- */
+      #s3 .stage { background: #d98f5a; }
+      .s3-label { top: 360px; left: 0; right: 0; text-align: center; }
+
+      /* ---------- S4: 자격루 hero (night interior) ---------- */
+      #s4 .stage { background: #202a3c; }
+      .clepsydra { position: absolute; left: 70px; bottom: 560px; width: 470px; }
+      .drop { position: absolute; width: 14px; height: 20px; border-radius: 0 50% 50% 50%; background: #6fb7d8; transform: rotate(45deg); }
+      .stamp-jagyeok { top: 470px; right: 70px; color: #e8b74a; border-color: #e8b74a; background: rgba(31,45,69,0.9); font-size: 96px; transform: rotate(5deg); }
+
+      /* ---------- S5: peak (gold) ---------- */
+      #s5 .stage { background: #e8b74a; }
+      .ray { position: absolute; top: 0; left: 50%; width: 120px; height: 1100px; background: rgba(255,255,255,0.16); transform-origin: top center; }
+      .stamp-rank { top: 470px; left: 0; right: 0; margin: 0 auto; width: 800px; color: #b0361f; border-color: #b0361f; font-size: 96px; transform: rotate(-3deg); }
+
+      /* ---------- S6: downfall (dusk) ---------- */
+      #s6 .stage { background: #2c3e5f; }
+      .palanquin { position: absolute; right: 40px; bottom: 640px; width: 560px; }
+      .stamp-flog { top: 460px; left: 60px; color: #d94f37; border-color: #d94f37; font-size: 100px; transform: rotate(-8deg); }
+      .qmark { position: absolute; font-family: "Black Han Sans"; color: #f6efe3; opacity: 0; }
+
+      /* ---------- S7: outro (cream) ---------- */
+      #s7 .stage { background: #f6efe3; }
+      .logo-big {
+        position: absolute; top: 300px; left: 0; right: 0; text-align: center;
+        font-family: "Black Han Sans"; font-size: 190px; color: #1f2d45; line-height: 1.02; letter-spacing: -0.03em;
+      }
+      .logo-big em { font-style: normal; color: #d94f37; }
+      .s7-sub { position: absolute; top: 760px; left: 0; right: 0; text-align: center; font-size: 52px; color: #26221c; }
+      .subscribe {
+        position: absolute; top: 900px; left: 0; right: 0; margin: 0 auto; width: max-content;
+        background: #d94f37; color: #f6efe3; font-family: "Black Han Sans"; font-size: 84px;
+        padding: 26px 90px; border-radius: 999px; box-shadow: 10px 10px 0 #1f2d45;
+      }
+      .confetti { position: absolute; top: -40px; width: 30px; height: 44px; }
+
+      /* ---------- overlay: brand + captions ---------- */
+      #overlay { z-index: 100; }
+      .brand-badge {
+        position: absolute; top: 60px; left: 60px;
+        background: #1f2d45; color: #f6efe3; font-family: "Black Han Sans";
+        font-size: 44px; padding: 14px 34px; border-radius: 14px; box-shadow: 6px 6px 0 rgba(38,34,28,0.25);
+      }
+      .brand-badge em { font-style: normal; color: #e8b74a; }
+      .cap-wrap { position: absolute; left: 0; right: 0; bottom: 420px; text-align: center; }
+      .cap-group { position: absolute; left: 0; right: 0; bottom: 0; opacity: 0; visibility: hidden; }
+      .cap-group .pill {
+        display: inline-block; background: rgba(31, 45, 69, 0.9);
+        padding: 22px 52px; border-radius: 26px; font-size: 80px; color: #f6efe3; line-height: 1.22; max-width: 940px;
+      }
+      .cap-group .hi { color: #e8b74a; font-family: "Black Han Sans"; }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="root" id="root" data-composition-id="main" data-start="0" data-duration="38.3" data-width="1080" data-height="1920">
+
+      <!-- Scene 1 · hook -->
+      <div data-hf-id="hf-7ad7" id="s1" class="clip scene" data-start="0" data-duration="5.0" data-track-index="0">
+        <div data-hf-id="hf-tan6" class="stage">
+          <div data-hf-id="hf-lhh5" class="moon" style="top: 120px; right: 130px; width: 150px; height: 150px"></div>
+          <div data-hf-id="hf-h4kn" class="star" style="top: 160px; left: 180px"></div>
+          <div data-hf-id="hf-m3mh" class="star" style="top: 260px; left: 520px; width: 7px; height: 7px"></div>
+          <div data-hf-id="hf-m2p7" class="star" style="top: 200px; left: 820px"></div>
+          <div data-hf-id="hf-fa3v" class="star" style="top: 420px; left: 300px; width: 7px; height: 7px"></div>
+          <div data-hf-id="hf-ptuh" class="hook-title">조선 최고의<br data-hf-id="hf-x5px">과학자</div>
+          <div data-hf-id="hf-f9d1" class="stamp hook-stamp" data-layout-allow-overflow="">노비였다</div>
+        </div>
+      </div>
+
+      <!-- Scene 2 · 동래현 관노 -->
+      <div data-hf-id="hf-jbhw" id="s2" class="clip scene" data-start="4.55" data-duration="6.24" data-track-index="1">
+        <div data-hf-id="hf-xa86" class="stage">
+          <div data-hf-id="hf-xwz4" class="cloud" style="top: 160px; left: 120px; width: 300px; height: 84px"></div>
+          <div data-hf-id="hf-xikn" class="cloud" style="top: 300px; right: 120px; width: 220px; height: 64px; opacity: 0.85"></div>
+          <div data-hf-id="hf-ygft" class="ground"></div>
+          <div data-hf-id="hf-rrgc" class="hill" style="left: -200px; bottom: 180px; width: 760px; height: 420px"></div>
+          <div data-hf-id="hf-v3vc" class="hill" style="right: -240px; bottom: 200px; width: 900px; height: 480px; background: #6aa84f"></div>
+          <svg data-hf-id="hf-pkgp" class="hanok-s2" style="position:absolute; bottom: 300px; left: 120px; width: 420px" viewBox="0 0 420 300">
+            <rect data-hf-id="hf-7uak" x="34" y="238" width="352" height="34" rx="6" fill="#b8b0a0" />
+            <rect data-hf-id="hf-r3z0" x="60" y="150" width="300" height="90" fill="#f6efe3" />
+            <rect data-hf-id="hf-9giy" x="72" y="150" width="20" height="90" fill="#8e2a1d" />
+            <rect data-hf-id="hf-l1ad" x="200" y="150" width="20" height="90" fill="#8e2a1d" />
+            <rect data-hf-id="hf-npru" x="328" y="150" width="20" height="90" fill="#8e2a1d" />
+            <rect data-hf-id="hf-hd1j" x="120" y="168" width="70" height="72" rx="4" fill="#e8b74a" />
+            <rect data-hf-id="hf-snpb" x="230" y="168" width="70" height="72" rx="4" fill="#e8b74a" />
+            <path data-hf-id="hf-v78a" d="M 14 146 Q 210 168 406 146 L 356 104 Q 210 82 64 104 Z" fill="#1f2d45" />
+            <path data-hf-id="hf-aqjj" d="M 90 108 Q 210 92 330 108 L 330 98 Q 210 82 90 98 Z" fill="#16233a" />
+          </svg>
+          <div data-hf-id="hf-78iw" class="label-pill s2-label"><span data-hf-id="hf-629g">동래현 · 관노(官奴)</span></div>
+        </div>
+      </div>
+
+      <!-- Scene 3 · 세종의 발탁 -->
+      <div data-hf-id="hf-gnul" id="s3" class="clip scene" data-start="10.34" data-duration="4.87" data-track-index="0">
+        <div data-hf-id="hf-xoj7" class="stage">
+          <svg data-hf-id="hf-68gt" class="palace-s3" style="position:absolute; bottom: 300px; left: 50%; transform: translateX(-50%); width: 720px" viewBox="0 0 720 340">
+            <rect data-hf-id="hf-w8so" x="40" y="270" width="640" height="40" rx="6" fill="#a89a86" />
+            <rect data-hf-id="hf-jm72" x="80" y="150" width="560" height="120" fill="#f6efe3" />
+            <rect data-hf-id="hf-7s8a" x="96" y="150" width="26" height="120" fill="#8e2a1d" />
+            <rect data-hf-id="hf-pdri" x="256" y="150" width="26" height="120" fill="#8e2a1d" />
+            <rect data-hf-id="hf-b64e" x="436" y="150" width="26" height="120" fill="#8e2a1d" />
+            <rect data-hf-id="hf-hxqz" x="598" y="150" width="26" height="120" fill="#8e2a1d" />
+            <rect data-hf-id="hf-g2wi" x="150" y="172" width="86" height="98" rx="4" fill="#c0392b" />
+            <rect data-hf-id="hf-7bj2" x="316" y="172" width="86" height="98" rx="4" fill="#c0392b" />
+            <rect data-hf-id="hf-l3um" x="482" y="172" width="86" height="98" rx="4" fill="#c0392b" />
+            <path data-hf-id="hf-73tk" d="M 20 146 Q 360 176 700 146 L 636 92 Q 360 60 84 92 Z" fill="#1f2d45" />
+            <path data-hf-id="hf-hbfd" d="M 120 96 Q 360 74 600 96 L 600 84 Q 360 60 120 84 Z" fill="#16233a" />
+          </svg>
+          <div data-hf-id="hf-nugz" class="ground" style="height: 300px; background: #b9762f"></div>
+          <div data-hf-id="hf-apm5" class="label-pill s3-label"><span data-hf-id="hf-5kom">세종, 신분을 지우다</span></div>
+        </div>
+      </div>
+
+      <!-- Scene 4 · 자격루 -->
+      <div data-hf-id="hf-gcmg" id="s4" class="clip scene" data-start="14.76" data-duration="6.57" data-track-index="1">
+        <div data-hf-id="hf-y2u8" class="stage">
+          <div data-hf-id="hf-lc92" class="moon" style="top: 120px; right: 120px; width: 120px; height: 120px"></div>
+          <div data-hf-id="hf-wkw7" class="star" style="top: 200px; left: 240px"></div>
+          <div data-hf-id="hf-f5tb" class="star" style="top: 320px; left: 640px; width: 7px; height: 7px"></div>
+          <div data-hf-id="hf-1xe8" class="star" style="top: 160px; left: 820px"></div>
+          <svg data-hf-id="hf-t2w0" class="clepsydra" viewBox="0 0 470 640">
+            <!-- 자격루: 계단식 나무 받침 + 파수호 3단(대→소) + 물받이 + 종·인형 타격 -->
+            <rect data-hf-id="hf-e138" x="40" y="586" width="390" height="40" rx="8" fill="#5a4632" />
+            <rect data-hf-id="hf-1wmd" x="70" y="540" width="330" height="50" rx="6" fill="#6b5540" />
+            <!-- 파수호 3단 descending 좌 -->
+            <path data-hf-id="hf-j2tu" d="M 74 120 Q 70 96 96 94 L 190 94 Q 216 96 212 120 L 206 190 Q 200 210 176 210 L 110 210 Q 86 210 80 190 Z" fill="#8a6b46" />
+            <ellipse data-hf-id="hf-mjf5" cx="143" cy="98" rx="70" ry="14" fill="#a07f54" />
+            <path data-hf-id="hf-0hkc" d="M 120 226 Q 116 208 138 206 L 214 206 Q 236 208 232 226 L 228 280 Q 224 296 204 296 L 150 296 Q 130 296 126 280 Z" fill="#8a6b46" />
+            <ellipse data-hf-id="hf-4abe" cx="176" cy="210" rx="58" ry="11" fill="#a07f54" />
+            <path data-hf-id="hf-8wmn" d="M 168 312 Q 165 298 184 296 L 246 296 Q 265 298 262 312 L 259 356 Q 256 370 238 370 L 192 370 Q 174 370 171 356 Z" fill="#8a6b46" />
+            <!-- 물 흐름 파이프 -->
+            <rect data-hf-id="hf-l5fu" x="150" y="204" width="10" height="6" fill="#4a5b6b" />
+            <rect data-hf-id="hf-23sr" x="200" y="290" width="10" height="8" fill="#4a5b6b" />
+            <!-- 수수호(물받이 원통) + 부표 잣대 -->
+            <rect data-hf-id="hf-386o" x="196" y="372" width="90" height="180" rx="8" fill="#7c6349" />
+            <rect data-hf-id="hf-pra7" x="236" y="250" width="12" height="300" fill="#d9c3a0" />
+            <rect data-hf-id="hf-9q1y" x="230" y="244" width="24" height="16" rx="3" fill="#e8b74a" />
+            <!-- 종각 + 종 + 인형(자격 인형) -->
+            <rect data-hf-id="hf-kne8" x="320" y="150" width="120" height="30" rx="6" fill="#5a4632" />
+            <rect data-hf-id="hf-7t3p" x="332" y="180" width="16" height="220" fill="#6b5540" />
+            <rect data-hf-id="hf-ikqg" x="412" y="180" width="16" height="220" fill="#6b5540" />
+            <path data-hf-id="hf-caq1" d="M 356 186 Q 380 174 404 186 L 404 176 Q 380 166 356 176 Z" fill="#3e3225" />
+            <path data-hf-id="hf-u1wx" d="M 360 210 Q 360 260 380 276 Q 400 260 400 210 Q 380 220 360 210 Z" fill="#e8b74a" />
+            <rect data-hf-id="hf-4igj" x="376" y="200" width="8" height="12" fill="#c99a2e" />
+            <circle data-hf-id="hf-xt5a" cx="380" cy="292" r="6" fill="#c99a2e" />
+            <!-- 인형 -->
+            <circle data-hf-id="hf-tzag" cx="330" cy="300" r="18" fill="#f2c99b" />
+            <rect data-hf-id="hf-b6kr" x="316" y="316" width="28" height="46" rx="8" fill="#c0392b" />
+            <rect data-hf-id="hf-dah1" x="340" y="288" width="46" height="8" rx="4" fill="#5a4632" transform="rotate(-16 340 292)" />
+          </svg>
+          <div data-hf-id="hf-iifg" class="drop" style="left: 300px; top: 300px"></div>
+          <div data-hf-id="hf-0y44" class="drop" style="left: 350px; top: 390px"></div>
+          <div data-hf-id="hf-kd0m" class="stamp stamp-jagyeok" data-layout-allow-overflow="">1434<small data-hf-id="hf-cnxh">자격루</small></div>
+        </div>
+      </div>
+
+      <!-- Scene 5 · 종3품 대호군 -->
+      <div data-hf-id="hf-qxti" id="s5" class="clip scene" data-start="20.88" data-duration="4.84" data-track-index="0">
+        <div data-hf-id="hf-vap1" class="stage">
+          <div data-hf-id="hf-0syk" class="ray" style="transform: translateX(-50%) rotate(-30deg)"></div>
+          <div data-hf-id="hf-5ol0" class="ray" style="transform: translateX(-50%) rotate(-12deg)"></div>
+          <div data-hf-id="hf-z1ov" class="ray" style="transform: translateX(-50%) rotate(12deg)"></div>
+          <div data-hf-id="hf-qp4j" class="ray" style="transform: translateX(-50%) rotate(30deg)"></div>
+          <div data-hf-id="hf-wxq4" class="ground" style="height: 300px; background: #caa03e"></div>
+          <div data-hf-id="hf-lp7y" class="stamp stamp-rank" data-layout-allow-overflow="">종3품 대호군</div>
+        </div>
+      </div>
+
+      <!-- Scene 6 · 몰락과 소멸 -->
+      <div data-hf-id="hf-7dz6" id="s6" class="clip scene" data-start="25.27" data-duration="7.49" data-track-index="1">
+        <div data-hf-id="hf-vp02" class="stage">
+          <div data-hf-id="hf-ofjj" class="hill" style="left: -260px; bottom: 200px; width: 1000px; height: 460px; background: #1f2d45"></div>
+          <div data-hf-id="hf-ht9w" class="hill" style="right: -300px; bottom: 220px; width: 1100px; height: 520px; background: #24344f"></div>
+          <svg data-hf-id="hf-c2k9" class="palanquin" data-layout-allow-overflow="" viewBox="0 0 560 360">
+            <!-- 안여(왕의 가마): 지붕+몸체+가마채 2, 부서져 기울고 앞채 단절 -->
+            <g data-hf-id="hf-zsbp" transform="rotate(-11 280 200)">
+              <rect data-hf-id="hf-60ho" x="60" y="150" width="440" height="20" rx="6" fill="#3e2f22" />
+              <rect data-hf-id="hf-8ep1" x="150" y="168" width="260" height="150" rx="10" fill="#8a2f22" />
+              <rect data-hf-id="hf-agfy" x="150" y="168" width="260" height="150" rx="10" fill="none" stroke="#e8b74a" stroke-width="6" />
+              <rect data-hf-id="hf-n9i7" x="196" y="196" width="72" height="96" rx="6" fill="#f6efe3" />
+              <rect data-hf-id="hf-lizk" x="292" y="196" width="72" height="96" rx="6" fill="#f6efe3" />
+              <path data-hf-id="hf-81gw" d="M 120 150 Q 280 96 440 150 Z" fill="#5a2018" />
+              <path data-hf-id="hf-ub0e" d="M 150 122 Q 280 84 410 122 L 410 112 Q 280 74 150 112 Z" fill="#e8b74a" />
+              <circle data-hf-id="hf-s1zv" cx="280" cy="86" r="12" fill="#e8b74a" />
+              <!-- 뒤 가마채 (성함) -->
+              <rect data-hf-id="hf-4jn2" x="404" y="300" width="150" height="16" rx="8" fill="#3e2f22" />
+            </g>
+            <!-- 앞 가마채: 부러져 분리·낙하 -->
+            <rect data-hf-id="hf-qqbw" x="10" y="330" width="120" height="16" rx="8" fill="#3e2f22" transform="rotate(14 70 338)" />
+            <path data-hf-id="hf-9wp9" d="M 132 300 L 150 288 L 156 300 L 140 312 Z" fill="#3e2f22" />
+          </svg>
+          <div data-hf-id="hf-qzyz" class="stamp stamp-flog" data-layout-allow-overflow="">곤장 80대</div>
+          <div data-hf-id="hf-4zo6" class="qmark" style="top: 300px; left: 620px; font-size: 160px">?</div>
+          <div data-hf-id="hf-ydn3" class="qmark" style="top: 520px; left: 820px; font-size: 110px">?</div>
+        </div>
+      </div>
+
+      <!-- Scene 7 · outro -->
+      <div data-hf-id="hf-fjf4" id="s7" class="clip scene" data-start="32.31" data-duration="5.99" data-track-index="0">
+        <div data-hf-id="hf-w3b3" class="stage">
+          <div data-hf-id="hf-bppl" class="logo-big">삼십초<br data-hf-id="hf-rsrt"><em data-hf-id="hf-zyva">역사</em></div>
+          <div data-hf-id="hf-zzel" class="s7-sub">역사, 30초면 충분합니다</div>
+          <div data-hf-id="hf-e54t" class="subscribe">구독 ▶</div>
+        </div>
+      </div>
+
+      <!-- overlay -->
+      <div data-hf-id="hf-laiu" id="overlay" class="clip scene" data-start="0" data-duration="38.3" data-track-index="2">
+        <div data-hf-id="hf-k4lm" class="brand-badge">삼십초 <em data-hf-id="hf-g022">역사</em></div>
+        <div data-hf-id="hf-69xp" class="cap-wrap"></div>
+      </div>
+
+      <audio data-hf-id="hf-ot34" id="narr" src="narration.mp3" data-start="0" data-duration="38.3" data-track-index="3" data-volume="1"></audio>
+    </div>
+
+    <script src="characters.js"></script>
+    <script src="scenes.js"></script>
+    <script src="captions-data.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var T = TRANSITION;
+
+      // ---------- mount characters from SCENES ----------
+      function setExprDirect(root, name) {
+        var e = EXPRESSIONS[name];
+        EYE_CLASSES.forEach(function (c) {
+          root.querySelector("." + c).setAttribute("visibility", c === e.eye ? "visible" : "hidden");
+        });
+        MOUTH_CLASSES.forEach(function (c) {
+          root.querySelector("." + c).setAttribute("visibility", c === e.mouth ? "visible" : "hidden");
+        });
+        var bl = root.querySelector(".brow-l"), br = root.querySelector(".brow-r");
+        bl.style.transform = "translateY(" + e.browY + "px) rotate(" + e.browRotL + "deg)";
+        br.style.transform = "translateY(" + e.browY + "px) rotate(" + e.browRotR + "deg)";
+      }
+      function setPoseDirect(root, name) {
+        var p = POSES[name];
+        gsap.set(root.querySelector(".arm-l"), { rotation: p.l, svgOrigin: "60 152" });
+        gsap.set(root.querySelector(".arm-r"), { rotation: p.r, svgOrigin: "140 152" });
+      }
+
+      var charEls = {};
+      SCENES.forEach(function (scene) {
+        var stage = document.querySelector("#" + scene.id + " .stage");
+        scene.chars.forEach(function (c) {
+          var div = document.createElement("div");
+          div.className = "char char-" + c.id + (c.flip ? " flip" : "");
+          div.style.left = "calc(" + c.x + "% - " + c.w / 2 + "px)";
+          div.style.bottom = c.bottom + "px";
+          div.style.width = c.w + "px";
+          div.style.height = c.w * 1.2 + "px";
+          var bob = document.createElement("div");
+          bob.className = "bob";
+          bob.innerHTML = makeCharacter(c);
+          div.appendChild(bob);
+          stage.appendChild(div);
+          setExprDirect(div, c.expr);
+          setPoseDirect(div, c.pose);
+          charEls[c.id] = div;
+        });
+      });
+
+      // ---------- expression / pose changes ----------
+      function tlExpr(sel, name, at) {
+        var e = EXPRESSIONS[name];
+        EYE_CLASSES.forEach(function (c) {
+          tl.set(sel + " ." + c, { attr: { visibility: c === e.eye ? "visible" : "hidden" } }, at);
+        });
+        MOUTH_CLASSES.forEach(function (c) {
+          if (c === "m-open") return;
+          tl.set(sel + " ." + c, { attr: { visibility: c === e.mouth ? "visible" : "hidden" } }, at);
+        });
+        tl.to(sel + " .brow-l", { y: e.browY, rotation: e.browRotL, duration: 0.18, ease: "power2.out" }, at);
+        tl.to(sel + " .brow-r", { y: e.browY, rotation: e.browRotR, duration: 0.18, ease: "power2.out" }, at);
+      }
+      function tlPose(sel, name, at) {
+        var p = POSES[name];
+        tl.to(sel + " .arm-l", { rotation: p.l, svgOrigin: "60 152", duration: 0.3, ease: "back.out(2)" }, at);
+        tl.to(sel + " .arm-r", { rotation: p.r, svgOrigin: "140 152", duration: 0.3, ease: "back.out(2)" }, at);
+      }
+
+      // ---------- lip flaps ----------
+      SCENES.forEach(function (scene) {
+        var talkerCfg = scene.chars.filter(function (c) { return c.id === scene.talker; })[0];
+        if (!talkerCfg) return;
+        var sel = ".char-" + scene.talker;
+        var visFrom = scene.start, visTo = scene.start + scene.dur;
+        var idle = EXPRESSIONS[talkerCfg.expr].mouth;
+        var changePoints = (scene.changes || []).filter(function (ch) { return ch.expr && ch.char === scene.talker; });
+        function idleAt(t) {
+          var m = idle;
+          changePoints.forEach(function (ch) { if (ch.at <= t) m = EXPRESSIONS[ch.expr].mouth; });
+          return m;
+        }
+        WORDS.forEach(function (w) {
+          if (w.start < visFrom || w.start > visTo) return;
+          var open = false;
+          for (var t = w.start; t < Math.min(w.end, visTo) - 0.04; t += 0.1) {
+            open = !open;
+            tl.set(sel + " .m-open", { attr: { visibility: open ? "visible" : "hidden" } }, t);
+            tl.set(sel + " ." + idleAt(t), { attr: { visibility: open ? "hidden" : "visible" } }, t);
+          }
+          var tEnd = Math.min(w.end, visTo);
+          tl.set(sel + " .m-open", { attr: { visibility: "hidden" } }, tEnd);
+          tl.set(sel + " ." + idleAt(tEnd), { attr: { visibility: "visible" } }, tEnd);
+        });
+      });
+
+      // ---------- blinks + idle bob ----------
+      SCENES.forEach(function (scene) {
+        scene.chars.forEach(function (c, ci) {
+          var sel = ".char-" + c.id;
+          if (EXPRESSIONS[c.expr].eye === "eye-open") {
+            var t0 = scene.start + 1.1 + ci * 0.7;
+            for (var t = t0; t < scene.start + scene.dur - 0.4; t += 2.6) {
+              tl.set(sel + " .eye-open", { attr: { visibility: "hidden" } }, t);
+              tl.set(sel + " .eye-closed", { attr: { visibility: "visible" } }, t);
+              tl.set(sel + " .eye-open", { attr: { visibility: "visible" } }, t + 0.13);
+              tl.set(sel + " .eye-closed", { attr: { visibility: "hidden" } }, t + 0.13);
+            }
+          }
+          var bobCycles = Math.ceil(scene.dur / 0.55) - 1;
+          tl.to(sel + " .bob", { y: -5, duration: 0.55, ease: "sine.inOut", repeat: bobCycles, yoyo: true }, scene.start);
+        });
+      });
+
+      // ---------- S1: hook ----------
+      tl.fromTo("#s1 .hook-title", { scale: 2.6, opacity: 0, transformOrigin: "50% 50%" },
+        { scale: 1, opacity: 1, duration: 0.5, ease: "power4.in" }, 0.15);
+      tl.fromTo("#s1 .char-s1-host", { y: 300, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.55, ease: "back.out(1.4)" }, 0.7);
+      tl.fromTo("#s1 .moon", { scale: 0, opacity: 0, transformOrigin: "50% 50%" },
+        { scale: 1, opacity: 1, duration: 0.7, ease: "elastic.out(1,0.6)" }, 0.4);
+      tl.fromTo("#s1 .star", { opacity: 0 }, { opacity: 0.75, duration: 0.5, stagger: 0.1 }, 0.5);
+      tl.set("#s1 .hook-stamp", { visibility: "visible" }, 2.1);
+      tl.fromTo("#s1 .hook-stamp", { scale: 2.8, opacity: 0, rotation: -7 },
+        { scale: 1, opacity: 1, rotation: -7, duration: 0.32, ease: "power4.in" }, 2.1);
+
+      // ---------- S2: push-slide from right ----------
+      tl.fromTo("#s2 .stage", { x: 1080 }, { x: 0, duration: T, ease: "power3.out" }, 4.55);
+      tl.fromTo("#s2 .hanok-s2", { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 5.0);
+      tl.fromTo("#s2 .char-s2-ya", { y: 260, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 5.1);
+      tl.fromTo("#s2 .cloud", { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.9, ease: "sine.out", stagger: 0.15 }, 4.9);
+      tl.fromTo("#s2 .s2-label span", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 5.4);
+
+      // ---------- S3: iris reveal ----------
+      tl.fromTo("#s3 .stage", { clipPath: "circle(0% at 34% 60%)" },
+        { clipPath: "circle(150% at 34% 60%)", duration: T + 0.15, ease: "power2.inOut" }, 10.34);
+      tl.fromTo("#s3 .palace-s3", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 10.7);
+      tl.fromTo("#s3 .char-s3-king", { y: 280, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.3)" }, 10.7);
+      tl.fromTo("#s3 .char-s3-ya", { y: 280, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.3)" }, 10.9);
+      tl.fromTo("#s3 .s3-label span", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 11.3);
+
+      // ---------- S4: push up, 자격루 hero ----------
+      tl.fromTo("#s4 .stage", { y: 1920 }, { y: 0, duration: T, ease: "power3.out" }, 14.76);
+      tl.fromTo("#s4 .clepsydra", { scale: 0.4, opacity: 0, transformOrigin: "50% 100%" },
+        { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.5)" }, 15.15);
+      tl.fromTo("#s4 .char-s4-ya", { y: 280, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.3)" }, 15.4);
+      tl.fromTo("#s4 .moon", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: "sine.out" }, 15.2);
+      tl.fromTo("#s4 .star", { opacity: 0 }, { opacity: 0.75, duration: 0.5, stagger: 0.1 }, 15.5);
+      tl.fromTo("#s4 .drop", { y: -30, opacity: 0 }, { y: 60, opacity: 1, duration: 1.0, ease: "power1.in", stagger: 0.5, repeat: 3 }, 16.2);
+      tl.set("#s4 .stamp-jagyeok", { visibility: "visible" }, 18.83);
+      tl.fromTo("#s4 .stamp-jagyeok", { scale: 0, opacity: 0, rotation: 5, transformOrigin: "50% 50%" },
+        { scale: 1, opacity: 1, rotation: 5, duration: 0.34, ease: "back.out(2.4)" }, 18.83);
+
+      // ---------- S5: iris/scale peak ----------
+      tl.fromTo("#s5 .stage", { clipPath: "circle(0% at 50% 55%)" },
+        { clipPath: "circle(150% at 50% 55%)", duration: T + 0.1, ease: "power2.inOut" }, 20.88);
+      tl.fromTo("#s5 .char-s5-off", { scale: 0.4, opacity: 0, transformOrigin: "50% 100%" },
+        { scale: 1, opacity: 1, duration: 0.55, ease: "back.out(1.5)" }, 21.2);
+      tl.fromTo("#s5 .ray", { opacity: 0, scaleY: 0.5, transformOrigin: "top center" },
+        { opacity: 1, scaleY: 1, duration: 0.7, ease: "sine.out", stagger: 0.08 }, 21.0);
+      tl.to("#s5 .ray", { rotation: "+=6", duration: 3.0, ease: "sine.inOut", repeat: 1, yoyo: true }, 21.6);
+      tl.set("#s5 .stamp-rank", { visibility: "visible" }, 22.7);
+      tl.fromTo("#s5 .stamp-rank", { scale: 2.6, opacity: 0, rotation: -3 },
+        { scale: 1, opacity: 1, rotation: -3, duration: 0.32, ease: "power4.in" }, 22.7);
+
+      // ---------- S6: push down, downfall ----------
+      tl.fromTo("#s6 .stage", { y: -1920 }, { y: 0, duration: T, ease: "power3.out" }, 25.27);
+      tl.fromTo("#s6 .char-s6-off", { y: 280, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 25.7);
+      tl.fromTo("#s6 .palanquin", { y: 160, opacity: 0, rotation: 4 }, { y: 0, opacity: 1, rotation: 0, duration: 0.55, ease: "power2.out" }, 25.8);
+      tl.to("#s6 .palanquin", { y: 14, rotation: -3, duration: 0.14, ease: "power2.in", repeat: 5, yoyo: true }, 26.4);
+      tl.set("#s6 .stamp-flog", { visibility: "visible" }, 27.9);
+      tl.fromTo("#s6 .stamp-flog", { scale: 2.6, opacity: 0, rotation: -8 },
+        { scale: 1, opacity: 1, rotation: -8, duration: 0.3, ease: "power4.in" }, 27.9);
+      // mystery: character fades out, question marks rise (records vanish)
+      tl.to("#s6 .char-s6-off", { opacity: 0, y: 30, duration: 0.8, ease: "power2.in" }, 30.6);
+      tl.to("#s6 .palanquin", { opacity: 0.25, duration: 0.8, ease: "power2.in" }, 30.6);
+      tl.to("#s6 .stamp-flog", { opacity: 0, duration: 0.5 }, 30.4);
+      tl.fromTo("#s6 .qmark", { opacity: 0, y: 40, scale: 0.6 },
+        { opacity: 0.9, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.6)", stagger: 0.25 }, 30.8);
+
+      // ---------- S7: blur crossfade outro ----------
+      tl.fromTo("#s7 .stage", { opacity: 0, filter: "blur(16px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "sine.inOut" }, 32.31);
+      tl.fromTo("#s7 .logo-big", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 32.7);
+      tl.fromTo("#s7 .s7-sub", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 33.1);
+      tl.fromTo("#s7 .char-s7-host", { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.3)" }, 32.7);
+      tl.fromTo("#s7 .subscribe", { scale: 0, transformOrigin: "50% 50%" },
+        { scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 34.6);
+      tl.to("#s7 .subscribe", { scale: 1.08, duration: 0.4, ease: "sine.inOut", repeat: 3, yoyo: true }, 35.2);
+      (function () {
+        function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; var t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+        var rand = mulberry32(42);
+        var colors = ["#d94f37", "#e8b74a", "#7db95c", "#3a7ca5", "#1f2d45"];
+        var stage7 = document.querySelector("#s7 .stage");
+        for (var i = 0; i < 16; i++) {
+          var piece = document.createElement("div");
+          piece.className = "confetti";
+          piece.style.left = Math.round(60 + rand() * 960) + "px";
+          piece.style.background = colors[i % colors.length];
+          stage7.appendChild(piece);
+          tl.fromTo(piece, { y: -60, rotation: rand() * 180 - 90, opacity: 1 },
+            { y: 2000, rotation: rand() * 540 - 270, opacity: 1, duration: 2.6 + rand() * 1.2, ease: "power1.in" }, 32.6 + rand() * 0.9);
+        }
+      })();
+
+      // ---------- mid-scene direction ----------
+      SCENES.forEach(function (scene) {
+        (scene.changes || []).forEach(function (ch) {
+          var sel = ".char-" + ch.char;
+          if (ch.expr) tlExpr(sel, ch.expr, ch.at);
+          if (ch.pose) tlPose(sel, ch.pose, ch.at);
+        });
+      });
+
+      // ---------- captions ----------
+      var capWrap = document.querySelector(".cap-wrap");
+      CAPTION_GROUPS.forEach(function (g, gi) {
+        var el = document.createElement("div");
+        el.className = "cap-group";
+        el.id = "cg-" + gi;
+        var pill = document.createElement("div");
+        pill.className = "pill";
+        g.text.split(" ").forEach(function (word, wi) {
+          var span = document.createElement("span");
+          span.textContent = (wi > 0 ? " " : "") + word;
+          if (g.hi.indexOf(word) !== -1) span.className = "hi";
+          pill.appendChild(span);
+        });
+        el.appendChild(pill);
+        capWrap.appendChild(el);
+        tl.fromTo(el, { opacity: 0, scale: 0.88, visibility: "visible", transformOrigin: "50% 100%" },
+          { opacity: 1, scale: 1, duration: 0.16, ease: "back.out(1.6)" }, g.start);
+        tl.to(el, { opacity: 0, scale: 0.95, duration: 0.1, ease: "power2.in" }, g.end - 0.1);
+        tl.set(el, { opacity: 0, visibility: "hidden" }, g.end);
+      });
+
+      tl.fromTo(".brand-badge", { y: -80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 0.4);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
