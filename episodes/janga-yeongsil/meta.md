@@ -1,5 +1,6 @@
 # 업로드 메타 — 삼십초 역사 EP.1 장영실
 
+- **✅ 업로드됨(2026-07-08)**: https://youtu.be/kBt-9_u59-I — 채널 @history-d9t(흥미로운 역사지식), **unlisted**. → 영상 확인 후 Studio에서 public 전환 권장.
 - **렌더**: `renders/janga-yeongsil.mp4` (1080×1920, 38.3s, ~7.9MB)
 - **플랫폼**: YouTube Shorts (세로)
 
