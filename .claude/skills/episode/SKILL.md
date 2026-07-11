@@ -106,6 +106,7 @@ for t in <훅> <씬2중반> <씬3중반> <씬4중반>; do
 ### S9. 패키징
 - `episodes/<slug>/`에 아카이브: script.txt, facts.md, factcheck.md, scenes.js, captions-data.js, **layout-overrides.js**, index.html 사본, meta.md.
 - `meta.md` = 업로드 메타: 제목(훅형, 시리즈 넘버링 "삼십초 역사 EP.N"), 설명(사실 출처 1줄 포함 — 신뢰 신호), 해시태그 3~5, 다음 편 예고 문장(고정 댓글용).
+- **YouTube 업로드는 반드시 happylife2080100@gmail.com의 "삼십초 역사"(@history30sec) 채널로** — `yt_upload.py --token ~/.config/youtube-upload/token.history-d9t.json` 명시(공용 token.json 사용 금지, CLAUDE.md 고정 규칙).
 - 루트 작업 파일은 다음 에피소드가 덮어쓴다 — 아카이브가 원본.
 
 ## 실패 시 규칙

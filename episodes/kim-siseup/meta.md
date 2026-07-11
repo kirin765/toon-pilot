@@ -2,7 +2,8 @@
 
 - **렌더**: `kim-siseup.mp4` (1080×1920, 41.2s, ~7.9MB)
 - **플랫폼**: YouTube Shorts (세로)
-- **업로드 상태**: ✅ 2026-07-11 업로드 — https://youtu.be/-M-td-XTOg4 (unlisted, 제목 1안, 7/11 재렌더본)
+- **업로드 상태**: ✅ 2026-07-11 업로드 — https://youtu.be/wcU35WLUSb0 (삼십초 역사 @history30sec, unlisted, 제목 1안, 7/11 재렌더본)
+  - ⚠ 오업로드 이력: youtu.be/-M-td-XTOg4 — 공용 token.json이 사장부 계정으로 바뀐 상태에서 업로드돼 사장부 채널로 나감 → private 전환 완료(삭제는 Studio에서 수동). 재발 방지: CLAUDE.md 채널 고정 규칙 + `--token token.history-d9t.json` 필수.
 
 ## 제목 (택1)
 - `세종이 인정한 천재, 왜 평생 벼슬을 버렸을까? | 삼십초 역사 EP.2 김시습`

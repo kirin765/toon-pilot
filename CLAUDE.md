@@ -4,6 +4,10 @@
 
 사우스파크풍 종이 컷아웃 히스토리 채널 "삼십초 역사" 파일럿. **프로젝트 배경·아키텍처(캐릭터 rig / 장면 JSON / 자막 3-레이어)·에피소드 제작 파이프라인·이미 밟은 지뢰들은 `PROJECT-NOTES.md`에 있다 — 작업 전에 반드시 읽을 것.** 특히 SVG 팔 회전은 gsap `svgOrigin` 필수, 한국어 TTS는 edge-tts 사용(내장 Kokoro 한국어 미지원).
 
+## YouTube 업로드 채널 (고정 규칙)
+
+**이 프로젝트에서 생성된 영상은 항상 happylife2080100@gmail.com 계정의 "삼십초 역사" 채널(@history30sec)에 올린다.** `yt_upload.py` 실행 시 반드시 `--token ~/.config/youtube-upload/token.history-d9t.json`을 명시할 것 — 기본 `token.json`은 다른 프로젝트들이 돌려쓰는 공용 토큰이라 계정이 수시로 바뀐다(2026-07-11 EP.2가 사장부 채널로 오업로드된 사고의 원인). 업로드 직전 `channels.list(mine=true)`로 채널명이 "삼십초 역사"인지 확인하면 완벽.
+
 ## Skills — USE THESE FIRST
 
 **Always invoke the relevant skill before writing or modifying compositions.** Skills encode framework-specific patterns (e.g., `window.__timelines` registration, `data-*` attribute semantics, shader-compatible CSS rules) that are NOT in generic web docs. Skipping them produces broken compositions.
