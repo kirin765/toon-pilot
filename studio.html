@@ -48,7 +48,7 @@
     <div class="tabs" id="tabs"></div>
 
     <div class="group">
-      <h3>모자 / 갓 / 익선관</h3>
+      <h3 id="hatTitle">모자 / 갓 / 익선관</h3>
       <div id="hatCtrls"></div>
     </div>
     <div class="group">
@@ -92,6 +92,7 @@
     king:    { variant:"king",    shirt:"#c0392b", pants:"#7c1d12", label:"세종(익선관)" },
     admiral: { variant:"admiral", shirt:"#3a4a6a", pants:"#26314a", label:"대호군(전립·수염)" },
     militia: { variant:"militia", shirt:"#4a6a8a", pants:"#2f4258", label:"장영실(갓)" },
+    monk:    { variant:"militia", noHat:true, shirt:"#8a8f98", pants:"#5a5f68", label:"승려(삭발)" },
   };
   var PARAMS = { hat:[["x","위치X",-40,40,1],["y","위치Y",-40,40,1],["s","크기",0.5,1.8,0.01],["r","회전",-45,45,1]],
                  beard:[["x","위치X",-40,40,1],["y","위치Y",-40,40,1],["s","크기",0.5,1.8,0.01],["r","회전",-45,45,1]] };
@@ -100,6 +101,10 @@
   // load saved
   try { var saved = JSON.parse(localStorage.getItem(STORE)); if (saved) window.CHAR_TUNING = saved; } catch(e){}
   function T(){ return window.CHAR_TUNING; }
+  // 저장본에 없는 변형 키 채우기(구버전 localStorage 호환)
+  Object.keys(VARIANTS).forEach(function(k){
+    if (!T()[k]) T()[k] = { hat:{x:0,y:0,s:1,r:0}, beard:{x:0,y:0,s:1,r:0} };
+  });
 
   function renderChar(){
     document.getElementById("char").innerHTML = makeCharacter(VARIANTS[cur]);
@@ -133,6 +138,8 @@
     });
   }
   function selectVariant(){
+    document.getElementById("hatTitle").textContent =
+      (cur === "monk") ? "삭발 음영 (민머리)" : "모자 / 갓 / 익선관";
     renderTabs(); buildCtrls("hat",document.getElementById("hatCtrls"));
     buildCtrls("beard",document.getElementById("beardCtrls")); renderChar(); renderThumbs();
   }
