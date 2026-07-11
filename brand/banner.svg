@@ -1,0 +1,77 @@
+<svg width="2560" height="1440" viewBox="0 0 2560 1440" xmlns="http://www.w3.org/2000/svg">
+  <!-- sky -->
+  <rect width="2560" height="1440" fill="#8ec9e8"/>
+  <!-- sun (bleed) -->
+  <circle cx="2360" cy="210" r="120" fill="#e8b74a"/>
+  <circle cx="2360" cy="210" r="120" fill="#f0c96a" opacity="0.35"/>
+  <!-- paper clouds (bleed) -->
+  <g fill="#f6efe3">
+    <ellipse cx="360" cy="230" rx="150" ry="60"/>
+    <ellipse cx="470" cy="205" rx="110" ry="55"/>
+    <ellipse cx="250" cy="255" rx="90" ry="45"/>
+    <ellipse cx="2050" cy="330" rx="120" ry="48"/>
+    <ellipse cx="2150" cy="310" rx="90" ry="42"/>
+  </g>
+  <!-- grass -->
+  <rect x="0" y="1120" width="2560" height="320" fill="#7db95c"/>
+  <rect x="0" y="1120" width="2560" height="16" fill="#6aa24d"/>
+
+  <!-- host character (rig viewBox 200x240) -->
+  <g transform="translate(450 518) scale(2.7)">
+    <ellipse cx="100" cy="232" rx="52" ry="7" fill="#1f2d45" opacity="0.12"/>
+    <path d="M 71 188 Q 68 206 70 224 L 94 224 Q 96 206 93 188 Z" fill="#1f2d45"/>
+    <path d="M 85 188 Q 86 206 87 224 L 94 224 Q 96 206 93 188 Z" fill="#172234"/>
+    <path d="M 107 188 Q 104 206 106 224 L 130 224 Q 132 206 129 188 Z" fill="#1f2d45"/>
+    <path d="M 107 188 Q 104 206 106 224 L 113 224 Q 114 206 115 188 Z" fill="#172234"/>
+    <path d="M 64 227 Q 64 233 71 234 L 92 234 Q 98 233 97 226 Q 95 219 87 220 L 73 221 Q 65 221 64 227 Z" fill="#171412"/>
+    <path d="M 136 227 Q 136 233 129 234 L 108 234 Q 102 233 103 226 Q 105 219 113 220 L 127 221 Q 135 221 136 227 Z" fill="#171412"/>
+    <!-- arm-l (down) -->
+    <g class="arm-l">
+      <path d="M 52 149 Q 51 143 60 142 Q 69 143 68 149 L 70 183 Q 70 189 60 190 Q 51 189 51 183 Z" fill="#3a7ca5"/>
+      <path d="M 63 143 Q 68 145 68 150 L 70 183 Q 70 187 66 188 Q 67 165 63 143 Z" fill="#2e6384"/>
+      <path d="M 51 181 L 70 181 L 70 184 Q 70 190 60 190 Q 51 190 51 184 Z" fill="#2e6384"/>
+      <path d="M 49 198 Q 48 207 55 211 Q 62 214 68 209 Q 72 204 70 197 Q 67 189 59 189 Q 51 190 49 198 Z" fill="#f2c99b"/>
+    </g>
+    <!-- arm-r (raised wave) -->
+    <g class="arm-r" transform="rotate(-128 140 152)">
+      <path d="M 148 149 Q 149 143 140 142 Q 131 143 132 149 L 130 183 Q 130 189 140 190 Q 149 189 149 183 Z" fill="#3a7ca5"/>
+      <path d="M 137 143 Q 132 145 132 150 L 130 183 Q 130 187 134 188 Q 133 165 137 143 Z" fill="#2e6384"/>
+      <path d="M 149 181 L 130 181 L 130 184 Q 130 190 140 190 Q 149 190 149 184 Z" fill="#2e6384"/>
+      <path d="M 151 198 Q 152 207 145 211 Q 138 214 132 209 Q 128 204 130 197 Q 133 189 141 189 Q 149 190 151 198 Z" fill="#f2c99b"/>
+    </g>
+    <path d="M 64 143 Q 76 134 100 134 Q 124 134 136 143 Q 144 149 145 163 L 148 194 Q 149 202 140 202 L 60 202 Q 51 202 52 194 L 55 163 Q 56 149 64 143 Z" fill="#3a7ca5"/>
+    <path d="M 128 137 Q 140 146 142 162 L 145 202 L 135 202 Q 138 168 128 137 Z" fill="#2e6384"/>
+    <path d="M 64 140 Q 74 134 84 138 L 74 152 Z" fill="#1f2d45"/>
+    <path d="M 136 140 Q 126 134 116 138 L 126 152 Z" fill="#1f2d45"/>
+    <path d="M 98 136 L 102 136 L 103 196 L 97 196 Z" fill="#20445b"/>
+    <rect x="62" y="178" width="19" height="7" rx="3.5" fill="#20445b"/>
+    <rect x="119" y="178" width="19" height="7" rx="3.5" fill="#20445b"/>
+    <path d="M 52 195 L 148 195 Q 149 202 140 202 L 60 202 Q 51 202 52 195 Z" fill="#2e6384"/>
+    <g class="head">
+      <circle cx="100" cy="82" r="58" fill="#f2c99b"/>
+      <path d="M 56 120 A 58 58 0 0 0 144 120 Q 122 133 100 133 Q 78 133 56 120 Z" fill="#d5b188"/>
+      <g class="hat"><path d="M 42 82 Q 38 36 76 26 Q 100 18 126 27 Q 161 40 158 82 Q 150 64 142 72 Q 138 56 126 66 Q 118 52 106 62 Q 96 50 86 62 Q 76 52 66 68 Q 58 58 52 74 Q 46 66 42 82 Z" fill="#3b2b20"/></g>
+      <g class="eye-open">
+        <ellipse cx="82" cy="84" rx="13" ry="15" fill="#ffffff"/>
+        <ellipse cx="118" cy="84" rx="13" ry="15" fill="#ffffff"/>
+        <circle cx="85" cy="87" r="4" fill="#26221c"/>
+        <circle cx="115" cy="87" r="4" fill="#26221c"/>
+      </g>
+      <g class="brows">
+        <rect x="70" y="60" width="24" height="5" rx="2.5" fill="#26221c"/>
+        <rect x="106" y="60" width="24" height="5" rx="2.5" fill="#26221c"/>
+      </g>
+      <g class="m-smile"><path d="M 84 112 Q 100 126 116 112" stroke="#26221c" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+    </g>
+  </g>
+
+  <!-- title lockup on a paper card -->
+  <g transform="rotate(-1.5 1560 710)">
+    <rect x="1074" y="556" width="972" height="320" rx="26" fill="#1f2d45" opacity="0.12"/>
+    <rect x="1064" y="546" width="972" height="320" rx="26" fill="#f6efe3"/>
+    <text x="1550" y="722" text-anchor="middle" font-family="Black Han Sans" font-size="150" letter-spacing="4">
+      <tspan fill="#d94f37">삼십초</tspan><tspan fill="#1f2d45"> 역사</tspan>
+    </text>
+    <text x="1550" y="818" text-anchor="middle" font-family="Jua" font-size="50" fill="#26221c">교과서가 한 줄로 넘긴 이야기, 30초면 충분합니다</text>
+  </g>
+</svg>
