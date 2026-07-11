@@ -46,6 +46,35 @@ npx hyperframes render --quality standard --output renders/<name>.mp4
 5. **transcript.json 한글이 깨져 보이는 것**은 터미널 출력 인코딩 문제일 수 있음 — 원문은 script.txt 기준으로 captions-data.js에 보정해 둠. whisper가 단어를 합치기도 함(예: "이십 일"→"20일") — 단어 수 대조로 매핑.
 6. **장면 전환은 트랙 교대**: same-track 클립은 겹칠 수 없으므로 씬을 track 0/1 교대 배치 + 0.45s 겹침 + z-index 상승(#s1 10 → #s5 50, overlay 100). 진입 씬의 `.stage`(배경 포함 풀블리드)를 push/iris/blur로 덮어씌움. 퇴장 애니메이션 금지(마지막 씬 제외).
 7. **preview 서버**: 프로젝트 루트가 아닌 세션에서는 `.claude/launch.json`의 `toon-pilot-preview`(port 3013) 사용. preview_eval로 `window.__timelines.main.seek(t)` 후 DOM 검사 가능 (overlay가 최상단이므로 `elementsFromPoint` 복수형).
+8. **지뢰 #2는 EP1 자체 코드에서도 안 지켜진 곳이 있었음**(hook-stamp/stamp-rank/stamp-flog가 `scale:2.6~2.8→1`로 슬램). EP2(김시습)에서 이 패턴을 그대로 복붙했다가 `clipped_text` 에러 재현(2026-07-09) — 큰 텍스트 스탬프는 예외 없이 **scale 0→1**만 쓸 것. 기존 씬 복사 시 이 지뢰가 반복될 수 있으니 스탬프 애니메이션은 매번 확인.
+9. **TTS 특정 단어 발음 실패**: edge-tts `ko-KR-InJoonNeural`이 "금오"(금오산·금오신화·금오공과대학교 등)를 문맥·보이스 무관하게 "금호"/무작위 오발음으로 재현(2026-07-09, SunHi/Hyunsu 보이스로도 재현 — 특정 보이스 문제 아님). 표기 변경(띄어쓰기·구두점)으로도 해결 안 됨 — **동의어로 우회**(예: 금오산→"경주 남산")하거나, 발음이 필수가 아니면 대사에서 빼고 화면 스탬프로만 노출. 새 대본에 흔치 않은 한자어 고유명사가 들어가면 TTS 생성 후 whisper 재전사로 반드시 귀검증(S4).
+10. **자막 숫자 변환은 작은 수도 빠뜨리지 말 것**: S5 "표시형 변환"(십오만→15만)을 큰 수에만 적용하고 나이·기간 같은 작은 수(다섯 살→5살, 사흘→3일)는 임의로 생략했다가 사용자 피드백으로 재작업(2026-07-10). 대사(TTS용)는 한글 표기 유지, 자막(CAPTION_GROUPS)만 숫자로 변환.
+11. **직업/신분 전환은 모자까지 갈아입혀야 함**: 캐릭터가 승려·삭발 등으로 신분이 바뀌는 서사인데 rig의 모자(갓)를 그대로 두면 "아직도 갓 쓰고 있다"는 피드백 발생(2026-07-10). `characters.js`에 `cfg.noHat`(민머리 대체) 옵션으로 대응. **삭발 승려는 `militia`와 같은 variant지만 별도 튜닝 키 `"monk"`로 관리** — `characters.js`가 `variant==="militia" && cfg.noHat`이면 `tuneKey="monk"`로 해석하고, noHat일 때도 (원래는 건너뛰던) `wrapTf`를 삭발 음영에 적용(pivotY=72). 갓 쓴 militia와 앉음새를 독립 조정하기 위함. `studio.html`에 5번째 탭 "승려(삭발)"로 노출(`CHAR_TUNING.monk` 필요 — 구버전 localStorage 대비 로드시 누락 키 자동 채움).
+12. **CHAR_TUNING 값은 씬마다 재검증**: militia 갓의 `y:-20,s:1.3`은 실제로 렌더해보니 크라운이 머리 위로 크게 떠 보임(피벗 계산상 뷰박스 밖으로 나갈 정도). 이전 세션이 정한 튜닝값이라도 새 에피소드 렌더 프레임에서 반드시 육안 재확인할 것 — `y:-4,s:1.05` 정도가 갓이 자연스럽게 앉는 값.
+13. **배경 소품은 자막 안전존과 겹치는지 렌더 프레임으로 확인**: 정적 인스펙터(`npm run check`)는 자막-소품 겹침을 항상 잡아주지 않음(자막은 JS로 동적 삽입되고 위치도 씬마다 다름). 화면 하단 1/3(`bottom` 값이 작은 소품)에 배경 건물/장식을 놓았다면, 자막이 떠 있는 타임스탬프의 실제 렌더 프레임을 잘라 확인 — 한 번은 암자 건물이 자막에 거의 완전히 가려진 채로 통과할 뻔함.
+14. **위치 기반 CSS 선택자(`:last-child`, `:nth-child`) 금지**: 기존 애니메이션이 `.fire-pile path:last-child`처럼 위치로 대상을 잡고 있으면, 나중에 그 컨테이너에 새 SVG 요소를 추가하는 순간 선택자가 의도치 않은 다른 요소를 가리키게 됨. 처음부터 명시적 클래스명을 쓸 것.
+15. **GSAP `repeat:-1`(무한 반복) 금지**: 결정론적 프레임 캡처(`hyperframes inspect`/`render`)와 호환되지 않아 린트 에러(`gsap_infinite_repeat`) 발생. 연기·잉걸불처럼 반복 연출이 필요하면 `Math.floor(씬잔여시간 / 사이클시간) - 1`로 유한 repeat 값을 계산해서 쓸 것.
+
+## 도구: 레이아웃 튜너 (studio-layout.html) — 2026-07-10 추가
+
+`studio.html`(캐릭터 얼굴 파츠 튜너)에 이어 두 번째 자체 GUI. **캐릭터·배경·소품의 위치(x·y)·크기를 드래그/슬라이더로 조정** → 비파괴 오버라이드 파일 `layout-overrides.js` 생성.
+
+**2026-07-11 파이프라인 공식화**: LLM이 찍는 배치가 매번 어긋난다는 사용자 결론에 따라, `/episode` 스킬에 **S6.5 "인간 레이아웃 조정"** 단계로 편입 — 렌더 전에 반드시 사용자가 튜너로 조정하고, 조정값은 Claude in Chrome이 자동 회수한다(아래 "조정값 회수" 참조). 에피소드 시작 시 `layout-overrides.js`는 빈 오버라이드로 리셋, S9에서 아카이브에 포함.
+
+- **아키텍처**: `char-tuning.js`와 동일한 오버라이드 패턴. index.html이 `layout-overrides.js`(전역 `LAYOUT_OVERRIDES`)를 읽어 각 요소에 적용. 비어 있으면 원본 그대로(렌더 무영향).
+- **적용 방식**: 대상 요소를 stage를 꽉 채우는 `.adj-wrap`으로 감싸고 wrapper에 `transform: translate(dx,dy) scale(s)` + `transform-origin: ox oy`(요소 홈 중심) 적용. **GSAP 진입 트윈은 내부 요소(선택자 그대로 매칭)를 애니메이트하므로 wrapper 오버라이드와 충돌하지 않음** — 정적 오버라이드를 요소 자신의 inline transform으로 주면 GSAP가 덮어써서 사라짐(그래서 wrapper 필수).
+- **scale 오버라이드 → 씬 overflow 풀기(2026-07-10)**: `.adj-wrap`이 stage 전체(1080×1920)라 큰 `scale`(예: 1.81)을 주면 wrapper 렌더 박스가 stage 밖으로 커지고, 부모 씬(`.scene`은 `overflow:hidden`)의 `scrollWidth`가 부풀어 **`clipped_text` 오검출**이 난다(실제 텍스트는 안 잘림 — 투명 빈 공간일 뿐). `data-layout-allow-overflow`는 `text_box_overflow`만 억제하고 `clipped_text`엔 안 먹힘(인스펙터 룰이 `clipsOverflow`인 조상만 검사). → `applyAdjust`에서 오버라이드(scale≠1 또는 translate)가 걸린 **해당 씬만 `overflow:visible`**로 풀어줌. 스테이지 밖은 1080×1920 렌더 캔버스에 안 잡히므로 시각 영향 0. (SVG 소품은 `offset*`가 없어 자식 박스 측정 기반 shrink-wrap은 불가 → 이 방식이 최선.)
+- **조정 대상 등록**: 캐릭터는 마운트 시 `data-adj=<char id>` 자동 부여. 배경/소품은 **저작 시점에 `data-adj="<씬id>-<이름>"`을 직접 부여**하는 것이 규칙(2026-07-11부터 — index.html은 에피소드마다 재작성되므로 저작 규칙이 런타임 맵보다 단순). 김시습 편 index.html의 `ADJ_MAP`(선택자→키 런타임 등록)은 구방식 유산으로 그대로 동작하지만 신규 저작에는 쓰지 않는다. 부위 분할 입도: 논리 부위(층·지붕·몸체)뿐 아니라 시각적으로 독립된 세부 조각(몸돌·지붕돌·상륜)까지 `<g data-obj>` 중첩 그룹핑 — 그룹핑 입도 = 조정 입도.
+- **조정값 회수 (2026-07-11 변경)**: 다운로드 버튼 → 수동 복사 대신, 사용자 완료 신호 후 Claude in Chrome `javascript_tool`로 `__layout.get()` + `__layout.getObjects()`를 JSON으로 받아 `layout-overrides.js`를 로컬에서 조립·저장(에디터와 iframe이 같은 3014 origin이라 접근 가능). **주의: `overridesText()` 원문 문자열 반환은 Chrome 확장의 데이터 유출 가드가 차단**(2026-07-11 실측 — JSON 객체 반환은 통과). 탭이 닫혀도 localStorage(`toon-layout-overrides-v2`) 자동저장분이 재오픈 시 복원됨. 다운로드/클립보드 버튼은 수동 폴백으로 유지. 왕복 검증 완료: 파일 저장 → index.html 하드리로드 → `.adj-wrap` transform 반영 확인.
+- **편집기 훅**: index.html이 `window.__layout`(list/get/set/rectOf/measureOrigin/overridesText) 노출. 편집기는 iframe으로 index.html을 로드하고 `window.__timelines.main.pause(t)`로 씬 이동 후 훅으로 요소 박스를 그림.
+- **씬 이동 타임**: 각 씬을 `start + dur - 0.7`로 seek — 진입 트윈이 끝나고 **늦게 등장하는 요소(스탬프·숫자 타이포)도 이미 보이는** 시점. 다음 씬 진입 전이라 겹침도 없음.
+- **실행 전제**: 정적 서버로 열어야 iframe이 index.html + 상대경로 스크립트를 로드함. `.claude/launch.json`의 `toon-pilot-static`(python http.server 3014) → `http://localhost:3014/studio-layout.html`. (hyperframes preview 서버 3013이 아님.)
+- **좌표 변환**: 편집기 iframe은 `transform: scale(0.4)`로 축소 표시 → 드래그 화면delta / 0.4 = 컴포지션 px. 요소 rect은 iframe 내부 문서 기준(1080-base)이라 축소 무관.
+- **소품 내부 부위 조정(2026-07-10 추가)**: 소품(석탑·기와집 등)의 논리적 부위를 `<g data-obj="키">`로 묶고(pagoda-base/tier1/tier2/tier3/finial, palace-roof/body/podium, hall-roof/body, hermitage-roof/body), 편집기에서 요소 선택 시 그 하위 `[data-obj]`를 "부위"로 드릴다운. 부위 오프셋은 **SVG `<g>`의 `transform` 속성**으로 적용(`OBJECT_OVERRIDES`) — 요소 오프셋(CSS wrapper transform)과 별개 레이어. 크기 조정은 `translate(cx cy) scale(s) translate(-cx -cy)`로 부위 bbox 중심 기준(`getBBox()`로 cx/cy 계산·저장). 드래그 화면델타→SVG단위 변환은 `g.parentNode.getScreenCTM().inverse()`로(iframe 축소·부모 스케일 모두 자동 반영). 새 부위를 조정 대상에 넣으려면 해당 요소 안에서 primitive들을 `<g data-obj>`로 감싸면 끝(자동으로 편집기에 노출). GSAP가 개별 애니메이트하는 자식(크라운 g·불꽃 flame-inner)은 부위로 묶지 말 것(정적 transform과 충돌).
+
+## 숫자 타이포그래피 규칙 (2026-07-10 사용자 피드백)
+
+"5살/3일을 숫자로 표시"는 **자막 텍스트를 숫자로 바꾸는 게 아니라**, 자막은 자연 표기("다섯 살"·"사흘")로 두고 **별도의 큰 숫자 타이포("5살"·"3일")를 화면에 팝**시키라는 뜻이었음. `.num-pop`(Black Han Sans, 숫자만 금색 강조) + scale 0→1 팝 애니메이션. 숫자 타이포는 배경 그래픽(크라운 등)과 겹치지 않게 빈 구역에 배치 — s3에서 처음엔 크라운과 겹쳐 재배치(중앙→좌측). **교훈: 자막(내레이션 싱크)과 강조 타이포(시각적 훅)는 별개 레이어다.**
 
 ## 룩 이슈 (2026-07-05 사용자 피드백 → 같은 날 전부 수정, v3 렌더 반영)
 
@@ -72,7 +101,7 @@ npx hyperframes render --quality standard --output renders/<name>.mp4
 
 1. ~~**파츠 일러스트 교체**~~ ✅ 2026-07-05 완료 — rig 계약(클래스·피벗·표정/포즈) 유지한 채 characters.js만 교체: `shade()` 헬퍼(파라미터 색에서 2톤 플랫 셰이딩 파생), 유기 실루엣, 의상 고증(곤룡포 흉배·옥대, 두정갑 징·갑찰·전립 상모, 갓·동정·옷고름, 호스트 재킷). 얼굴 파츠(눈·입·눈썹)는 의도적으로 무수정.
 2. **BGM/SFX** — hyperframes-media / media-use 스킬 (스탬프 슬램 효과음, 잔잔한 국악풍 BGM).
-3. ~~**원커맨드 에피소드 스킬**~~ ✅ 2026-07-08 구현 — `.claude/skills/episode/SKILL.md` (주제 → 사료 리서치 → 팩트체크 게이트 → 대본 → TTS 귀검증 → `bin/sync_timing.py` 타이밍 동기화 → 씬 연출 → 렌더 → 블라인드 readability+고증 이중 검수 → `episodes/<slug>/` 아카이브+업로드 메타). 악플 3종(사실 오류·어눌함·고증)이 각각 게이트로 매핑됨. **✅ EP.1 장영실 완성**: `renders/janga-yeongsil.mp4`(1080×1920, 38.3s), 아카이브 `episodes/janga-yeongsil/`. 실전에서 게이트 작동 실증: ① 팩트체크가 측우기=문종(장영실 아님)을 대본에서 제외 ② 블라인드 검수가 전립 청-오독을 잡아 rig 수정 유발. **세로 재배치 규칙 실검증: 캐릭터 진입은 x슬라이드 금지→y슬라이드**(좁은 캔버스서 좌우 오버플로가 clipped_text 에러 유발). 다음: EP.2 주제 선정(episodes/janga-yeongsil/meta.md 후보 참조).
+3. ~~**원커맨드 에피소드 스킬**~~ ✅ 2026-07-08 구현 — `.claude/skills/episode/SKILL.md` (주제 → 사료 리서치 → 팩트체크 게이트 → 대본 → TTS 귀검증 → `bin/sync_timing.py` 타이밍 동기화 → 씬 연출 → 렌더 → 블라인드 readability+고증 이중 검수 → `episodes/<slug>/` 아카이브+업로드 메타). 악플 3종(사실 오류·어눌함·고증)이 각각 게이트로 매핑됨. **✅ EP.1 장영실 완성**: `renders/janga-yeongsil.mp4`(1080×1920, 38.3s), 아카이브 `episodes/janga-yeongsil/`. 실전에서 게이트 작동 실증: ① 팩트체크가 측우기=문종(장영실 아님)을 대본에서 제외 ② 블라인드 검수가 전립 청-오독을 잡아 rig 수정 유발. **세로 재배치 규칙 실검증: 캐릭터 진입은 x슬라이드 금지→y슬라이드**(좁은 캔버스서 좌우 오버플로가 clipped_text 에러 유발). **✅ EP.2 김시습 완성**(2026-07-09): `renders/kim-siseup.mp4`(1080×1920, 41.2s), 아카이브 `episodes/kim-siseup/`. 캐스팅: 김시습=militia 고정(장영실과 달리 승진 없음, 색상만 베이지→회색 전환), 세종=king 변주. 게이트 실증: ① TTS가 "금오"를 일관 오발음해 대사에서 우회(경주 남산으로 치환, 금오신화는 화면 스탬프로만) ② 고증 검수가 무량사 탑의 빨강+금박 배색을 일본식 오중탑 오독 위험으로 지적해 무채색 화강암톤 재채색. 새 지뢰 2건은 위 "밟은 지뢰" #8·#9 참조. 다음: EP.3 주제 선정(episodes/janga-yeongsil/meta.md 후보 중 정약용·광해군·연산군 잔여).
 4. 유의: 반복 재사용 애니 + AI 내레이션 조합은 YouTube 대량생산 콘텐츠 정책 심사 대상이 될 수 있음 — 대본의 관점/유머가 차별화 포인트.
 
 ## 세션 이력 요약 (2026-07-04)

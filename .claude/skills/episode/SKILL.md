@@ -64,6 +64,10 @@ python3 bin/sync_timing.py --hi <강조어,쉼표구분>
 - **씬 경계 = S5 문장 테이블.** 씬 start = 문장 start − 0.2~0.4s(리드), dur는 다음 씬 start까지 + TRANSITION(0.45).
 - **캐스팅은 기존 variant 4종**(host/king/admiral/militia) 안에서. 새 인물이 필요하면 모자·의상 색으로 변주. **새 variant 파츠 = 이 스킬 범위 밖**(별도 아트 세션 — PROJECT-NOTES 룩 프로세스 필수).
 - 배경: 파일럿 모티프 재사용 우선(한옥 팔레스·한반도 지도·밤바다·황혼 언덕·크림 아웃트로). 새 오브젝트는 **레퍼런스 트레이스**(프리핸드 금지 — PROJECT-NOTES 재발방지 §3), design.md 팔레트·금지사항 준수.
+- **레이아웃 조정 대상 등록 (저작 규칙 — S6.5 튜너의 전제)**:
+  - 모든 소품 요소에 저작 시점에 `data-adj="<씬id>-<이름>"` 직접 부여 (런타임 `ADJ_MAP` 등록 불필요; 캐릭터는 마운트 시 자동 부여).
+  - 소품 내부는 논리 부위(층·지붕·몸체)만이 아니라 **시각적으로 독립된 세부 조각(몸돌·지붕돌·상륜 등)까지 전부 `<g data-obj="키">`로 중첩 그룹핑** — 튜너가 `[data-obj]`를 자동 노출하므로 그룹핑 입도가 곧 조정 입도다. 예: `pagoda-tier1` 안에 `pagoda-tier1-body`/`pagoda-tier1-roof`. 단 GSAP이 개별 애니메이트하는 자식은 그룹 금지(정적 transform과 충돌).
+  - index.html 재작성 시 하단 **레이아웃 오버라이드 적용부(`window.__layout` 훅 블록)는 반드시 보존**하고, `layout-overrides.js`는 빈 오버라이드(`{}`)로 리셋한다.
 - 지뢰 (전부 파일럿에서 실제로 밟음):
   1. 팔 회전은 GSAP `svgOrigin` 필수 — arm-l `"60 152"`, arm-r `"140 152"`. CSS transform-origin 금지.
   2. 스탬프류 슬램: CSS `visibility:hidden` + 타임라인 `tl.set visible` + scale 0→1 back.out. `fromTo` immediateRender pre-state를 inspector가 잡는다.
@@ -71,6 +75,19 @@ python3 bin/sync_timing.py --hi <강조어,쉼표구분>
   4. 씬은 track 0/1 교대 + z-index 상승 + 0.45s 겹침. 퇴장 애니 금지(마지막 씬 제외).
   5. 자막 그룹은 밖에서 fade-out + `visibility:hidden` set (caption self-lint가 index.html에 내장돼 있음).
 - 세로 레이아웃: viewport meta `width=1080, height=1920`, body/root 치수, big-year류 타이포 스케일 조정.
+
+### S6.5. 인간 레이아웃 조정 (배치는 사람이 최종 결정)
+LLM이 찍은 위치·크기는 초안일 뿐이다 — 렌더 전에 사용자가 `studio-layout.html`로 직접 드래그/슬라이더 조정한다. 이 단계를 건너뛰고 렌더하지 않는다.
+1. 정적 서버 기동(background): `.claude/launch.json`의 `toon-pilot-static` — python http.server **3014** (hyperframes preview 3013 아님).
+2. Claude in Chrome으로 `http://localhost:3014/studio-layout.html` 새 탭 오픈.
+3. Telegram 알림(⏸ blocked): "레이아웃 조정 대기" + URL. 사용자 완료 신호까지 대기.
+4. 완료 신호 후 **자동 회수** — `javascript_tool`(studio-layout 탭)로:
+   ```js
+   const L = document.querySelector("iframe").contentWindow.__layout;
+   ({ layout: L.get(), objects: L.getObjects() })
+   ```
+   받은 JSON으로 `layout-overrides.js`를 로컬에서 조립해 저장한다(기존 파일과 동일 형식: 주석 헤더 + `var LAYOUT_OVERRIDES` + `var OBJECT_OVERRIDES` + window 노출 1줄). **`overridesText()` 원문 문자열 반환은 Chrome 확장 가드가 차단하므로 쓰지 말 것**(2026-07-11 실측). 탭이 닫혔으면 재오픈 — localStorage(`toon-layout-overrides-v2`) 자동저장분이 복원된다.
+5. `npm run check` 재통과 확인 후 S7 진행.
 
 ### S7. 검증 → 렌더
 ```bash
@@ -87,7 +104,7 @@ for t in <훅> <씬2중반> <씬3중반> <씬4중반>; do
 2. **고증 체크**: 같은 프레임을 "한국사 배경 숏폼인데 중국식·일본식으로 오독될 복식/건축/기물 요소가 있는가"로 검사. 지적 요소는 수정. (컷아웃 그림체가 고증 기대치를 낮춰주지만, 명백한 타국 문법 — 변발·기모노 깃·중국식 처마 — 은 악플 트리거)
 
 ### S9. 패키징
-- `episodes/<slug>/`에 아카이브: script.txt, facts.md, factcheck.md, scenes.js, captions-data.js, index.html 사본, meta.md.
+- `episodes/<slug>/`에 아카이브: script.txt, facts.md, factcheck.md, scenes.js, captions-data.js, **layout-overrides.js**, index.html 사본, meta.md.
 - `meta.md` = 업로드 메타: 제목(훅형, 시리즈 넘버링 "삼십초 역사 EP.N"), 설명(사실 출처 1줄 포함 — 신뢰 신호), 해시태그 3~5, 다음 편 예고 문장(고정 댓글용).
 - 루트 작업 파일은 다음 에피소드가 덮어쓴다 — 아카이브가 원본.
 

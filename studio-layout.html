@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>레이아웃 튜너 — 삼십초 역사</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
+         background:#20242c; color:#e8e6e0; display:flex; min-height:100vh; }
+  #left { width: 380px; padding:18px; background:#181b21; overflow-y:auto; height:100vh; }
+  #right { flex:1; display:flex; flex-direction:column; align-items:center; gap:14px; padding:20px; }
+  h1 { font-size:17px; margin:0 0 4px; }
+  .sub { font-size:12px; color:#8b93a0; margin-bottom:14px; line-height:1.5; }
+  .scenes { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px; }
+  .sbtn { padding:7px 12px; border-radius:8px; background:#2a2f38; border:1px solid #333a45; cursor:pointer; font-size:13px; }
+  .sbtn.active { background:#d94f37; border-color:#d94f37; color:#fff; font-weight:600; }
+  .group { margin-bottom:12px; padding:12px; background:#22262e; border-radius:10px; }
+  .group h3 { margin:0 0 10px; font-size:13px; color:#e8b74a; }
+  .group h3.obj { color:#5cc8e8; }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { padding:6px 10px; border-radius:7px; background:#2a2f38; border:1px solid #333a45; cursor:pointer; font-size:12px; }
+  .chip.sel { background:#2f6f8f; border-color:#48a; color:#fff; }
+  .chip.has { border-color:#e8b74a; }
+  .chip.obj { }
+  .chip.obj.sel { background:#1f6f8f; border-color:#5cc8e8; }
+  .chip.obj.has { border-color:#5cc8e8; }
+  .row { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .row label { width:44px; font-size:13px; color:#aab2bf; }
+  .row input[type=range] { flex:1; accent-color:#d94f37; }
+  .row input[type=number] { width:70px; background:#12151a; color:#e8e6e0; border:1px solid #333a45; border-radius:6px; padding:4px 6px; font-size:13px; }
+  .btns { display:flex; gap:8px; margin-top:8px; flex-wrap:wrap; }
+  button { padding:9px 13px; border-radius:8px; border:1px solid #3a424e; background:#2a2f38; color:#e8e6e0; cursor:pointer; font-size:13px; }
+  button:hover { background:#333a45; }
+  button.primary { background:#2f8f4e; border-color:#2f8f4e; color:#fff; }
+  button.warn { background:#7a2f22; border-color:#7a2f22; }
+  #out { width:100%; height:120px; margin-top:10px; font-family:ui-monospace,Menlo,monospace; font-size:11px;
+         background:#12151a; color:#9fd0a8; border:1px solid #2a2f38; border-radius:8px; padding:10px; resize:vertical; }
+  .hint { font-size:11px; color:#7a828f; margin-top:8px; line-height:1.5; }
+  #stageWrap { position:relative; background:#111; border-radius:10px; box-shadow:0 8px 40px rgba(0,0,0,.4); }
+  #comp { border:0; display:block; transform-origin: top left; }
+  #overlay { position:absolute; inset:0; pointer-events:none; }
+  .handle { position:absolute; border:2px dashed rgba(232,183,74,.7); border-radius:4px; pointer-events:auto; cursor:move; background:rgba(232,183,74,.05); }
+  .handle .tag { position:absolute; top:-19px; left:0; font-size:11px; background:#e8b74a; color:#20242c; padding:1px 6px; border-radius:4px; white-space:nowrap; }
+  .handle.sel { border-color:#39f; border-style:solid; background:rgba(51,153,255,.1); }
+  .handle.sel .tag { background:#39f; color:#fff; }
+  .handle.obj { border-color:rgba(92,200,232,.75); background:rgba(92,200,232,.05); }
+  .handle.obj .tag { background:#5cc8e8; }
+  .handle.obj.sel { border-color:#5cc8e8; border-style:solid; background:rgba(92,200,232,.14); }
+  .handle.obj.sel .tag { background:#5cc8e8; color:#08222c; }
+  .playbar { display:flex; align-items:center; gap:10px; font-size:12px; color:#8b93a0; }
+</style>
+</head>
+<body>
+  <div id="left">
+    <h1>레이아웃 튜너</h1>
+    <div class="sub">캐릭터·배경·소품의 <b>위치·크기</b>를 조정. 소품은 <b style="color:#5cc8e8">부위</b>(석탑 층·기와집 지붕 등)까지 개별 조정.
+      <b>layout-overrides.js 다운로드</b>로 저장하면 렌더 반영 (원본 안 건드림).</div>
+
+    <div class="scenes" id="scenes"></div>
+
+    <div class="group">
+      <h3>이 씬의 요소</h3>
+      <div class="chips" id="chips"></div>
+    </div>
+
+    <div class="group" id="objGroup" style="display:none">
+      <h3 class="obj" id="objTitle">부위</h3>
+      <div class="chips" id="objChips"></div>
+    </div>
+
+    <div class="group" id="editGroup" style="display:none">
+      <h3 id="selName">선택</h3>
+      <div class="row"><label>X</label><input type="range" id="rx"><input type="number" id="nx" step="1"></div>
+      <div class="row"><label>Y</label><input type="range" id="ry"><input type="number" id="ny" step="1"></div>
+      <div class="row"><label>크기</label><input type="range" id="rs" min="0.3" max="2.5" step="0.01"><input type="number" id="ns" step="0.01"></div>
+      <div class="btns"><button class="warn" id="resetOne">이 항목 리셋</button></div>
+      <div class="hint">박스 드래그로 이동 · 방향키 미세조정(Shift=10).</div>
+    </div>
+
+    <div class="btns"><button class="warn" id="resetAll">전체 리셋</button></div>
+    <textarea id="out" readonly></textarea>
+    <div class="btns">
+      <button class="primary" id="download">layout-overrides.js 다운로드</button>
+      <button id="copy">클립보드 복사</button>
+    </div>
+    <div class="hint">다운로드한 <code>layout-overrides.js</code>를 프로젝트 루트에 덮어쓰면 끝.
+      (또는 위 JSON을 채팅에 붙여넣으면 제가 저장.) 저장 후 재렌더하면 반영됩니다.</div>
+  </div>
+
+  <div id="right">
+    <div class="playbar"><span id="sceneTitle">—</span></div>
+    <div id="stageWrap">
+      <iframe id="comp" src="index.html"></iframe>
+      <div id="overlay"></div>
+    </div>
+    <div class="hint" style="text-align:center">씬 탭 → 요소(금색) 선택 → 소품이면 <b style="color:#5cc8e8">부위(하늘색)</b>까지 클릭해 조정</div>
+  </div>
+
+<script>
+  var SCALE = 0.40, COMPW = 1080, COMPH = 1920;
+  var comp = document.getElementById("comp");
+  var overlay = document.getElementById("overlay");
+  var stageWrap = document.getElementById("stageWrap");
+  var win = null, LAY = null, SCENES = null;
+  var curScene = null, selEl = null, curKind = null, curKey = null;
+  var STORE = "toon-layout-overrides-v2";
+
+  comp.style.width = COMPW + "px"; comp.style.height = COMPH + "px";
+  comp.style.transform = "scale(" + SCALE + ")";
+  stageWrap.style.width = overlay.style.width = (COMPW * SCALE) + "px";
+  stageWrap.style.height = overlay.style.height = (COMPH * SCALE) + "px";
+
+  comp.onload = function () { waitReady(0); };
+  function waitReady(n) {
+    try { win = comp.contentWindow;
+      if (win && win.__layout && win.__timelines && win.__timelines.main && win.SCENES) { onReady(); return; }
+    } catch (e) {}
+    if (n > 100) { document.getElementById("sceneTitle").textContent = "index.html 로드 실패 — 정적 서버로 열어주세요"; return; }
+    setTimeout(function () { waitReady(n + 1); }, 100);
+  }
+  function onReady() {
+    LAY = win.__layout; SCENES = win.SCENES;
+    try {
+      var saved = JSON.parse(localStorage.getItem(STORE));
+      if (saved) {
+        if (saved.layout) Object.keys(saved.layout).forEach(function (k) { LAY.set(k, saved.layout[k]); });
+        if (saved.objects) Object.keys(saved.objects).forEach(function (k) { LAY.setObject(k, saved.objects[k]); });
+      }
+    } catch (e) {}
+    buildScenes(); selectScene(SCENES[0].id); refreshOut();
+  }
+
+  function sceneMid(sc) { return sc.start + sc.dur - 0.7; }
+  function buildScenes() {
+    var box = document.getElementById("scenes"); box.innerHTML = "";
+    SCENES.forEach(function (sc) {
+      var b = document.createElement("div"); b.className = "sbtn"; b.textContent = sc.id.toUpperCase();
+      b.dataset.id = sc.id; b.onclick = function () { selectScene(sc.id); }; box.appendChild(b);
+    });
+  }
+  function selectScene(id) {
+    curScene = id; selEl = null; curKind = null; curKey = null;
+    document.getElementById("editGroup").style.display = "none";
+    document.getElementById("objGroup").style.display = "none";
+    Array.prototype.forEach.call(document.querySelectorAll(".sbtn"), function (b) { b.classList.toggle("active", b.dataset.id === id); });
+    var sc = SCENES.filter(function (s) { return s.id === id; })[0];
+    document.getElementById("sceneTitle").textContent = id.toUpperCase();
+    win.__timelines.main.pause(sceneMid(sc));
+    setTimeout(function () { buildChips(); buildObjChips(); drawHandles(); }, 50);
+  }
+  function keysInScene(id) { return LAY.list().filter(function (it) { return it.scene === id; }).map(function (it) { return it.key; }); }
+
+  function buildChips() {
+    var box = document.getElementById("chips"); box.innerHTML = "";
+    var ov = LAY.get();
+    keysInScene(curScene).forEach(function (key) {
+      var c = document.createElement("div");
+      c.className = "chip" + (ov[key] ? " has" : "") + (curKind === "el" && key === curKey ? " sel" : "");
+      c.textContent = key; c.onclick = function () { selectEl(key); }; box.appendChild(c);
+    });
+  }
+  function buildObjChips() {
+    var g = document.getElementById("objGroup"), box = document.getElementById("objChips");
+    if (!selEl) { g.style.display = "none"; return; }
+    var objs = LAY.objectsOf(selEl);
+    if (!objs.length) { g.style.display = "none"; return; }
+    g.style.display = ""; box.innerHTML = "";
+    document.getElementById("objTitle").textContent = selEl + " 부위";
+    var oo = LAY.getObjects();
+    objs.forEach(function (key) {
+      var c = document.createElement("div");
+      c.className = "chip obj" + (oo[key] ? " has" : "") + (curKind === "obj" && key === curKey ? " sel" : "");
+      c.textContent = key; c.onclick = function () { selectObject(key); }; box.appendChild(c);
+    });
+  }
+
+  function drawHandles() {
+    overlay.innerHTML = "";
+    keysInScene(curScene).forEach(function (key) {
+      var r = LAY.rectOf(key); if (!r || r.w < 1 || r.h < 1) return;
+      addHandle(key, r, false, curKind === "el" && key === curKey, function () { selectEl(key); }, function (e) { startDragEl(e, key); });
+    });
+    if (selEl) LAY.objectsOf(selEl).forEach(function (key) {
+      var r = LAY.objRectOf(key); if (!r || r.w < 1 || r.h < 1) return;
+      addHandle(key, r, true, curKind === "obj" && key === curKey, function () { selectObject(key); }, function (e) { startDragObj(e, key); });
+    });
+  }
+  function addHandle(key, r, isObj, sel, onSelect, onDrag) {
+    var h = document.createElement("div");
+    h.className = "handle" + (isObj ? " obj" : "") + (sel ? " sel" : "");
+    h.style.left = (r.x * SCALE) + "px"; h.style.top = (r.y * SCALE) + "px";
+    h.style.width = (r.w * SCALE) + "px"; h.style.height = (r.h * SCALE) + "px";
+    var tag = document.createElement("div"); tag.className = "tag"; tag.textContent = key; h.appendChild(tag);
+    h.onmousedown = function (e) { e.preventDefault(); onSelect(); onDrag(e); };
+    overlay.appendChild(h);
+  }
+
+  function curOv(key) { var ov = LAY.get(); return ov[key] ? Object.assign({}, ov[key]) : { dx: 0, dy: 0, s: 1 }; }
+  function curObjOv(key) { var oo = LAY.getObjects(); return oo[key] ? Object.assign({}, oo[key]) : { dx: 0, dy: 0, s: 1 }; }
+
+  function selectEl(key) {
+    selEl = key; curKind = "el"; curKey = key;
+    var o = curOv(key);
+    if (o.ox == null) { var m = LAY.measureOrigin(key); if (m) { o.ox = m.ox; o.oy = m.oy; } }
+    LAY.set(key, o); persist();
+    setRanges(-500, 500, 1);
+    document.getElementById("selName").textContent = key + "  (요소 · px)";
+    document.getElementById("editGroup").style.display = "";
+    setInputs(o); buildChips(); buildObjChips(); drawHandles(); refreshOut();
+  }
+  function selectObject(key) {
+    curKind = "obj"; curKey = key;
+    var o = curObjOv(key);
+    if (o.cx == null) { var c = LAY.objCenter(key); if (c) { o.cx = c.cx; o.cy = c.cy; } }
+    LAY.setObject(key, o); persist();
+    setRanges(-200, 200, 1);
+    document.getElementById("selName").textContent = key + "  (부위 · SVG단위)";
+    document.getElementById("editGroup").style.display = "";
+    setInputs(o); buildChips(); buildObjChips(); drawHandles(); refreshOut();
+  }
+
+  function setRanges(min, max, step) {
+    ["rx", "ry"].forEach(function (id) { var e = document.getElementById(id); e.min = min; e.max = max; e.step = step; });
+  }
+  function setInputs(o) {
+    document.getElementById("rx").value = o.dx; document.getElementById("nx").value = Math.round(o.dx * 100) / 100;
+    document.getElementById("ry").value = o.dy; document.getElementById("ny").value = Math.round(o.dy * 100) / 100;
+    document.getElementById("rs").value = o.s; document.getElementById("ns").value = (+o.s).toFixed(2);
+  }
+  function applyCur(o) {
+    if (curKind === "el") LAY.set(curKey, o); else LAY.setObject(curKey, o);
+    persist(); refreshOut();
+  }
+  function editField(field, v) {
+    if (!curKey) return;
+    var o = (curKind === "el") ? curOv(curKey) : curObjOv(curKey);
+    if (curKind === "el" && o.ox == null) { var m = LAY.measureOrigin(curKey); if (m) { o.ox = m.ox; o.oy = m.oy; } }
+    if (curKind === "obj" && o.cx == null) { var c = LAY.objCenter(curKey); if (c) { o.cx = c.cx; o.cy = c.cy; } }
+    o[field] = v; applyCur(o); setInputs(o); drawHandles();
+  }
+  ["rx", "nx"].forEach(function (id) { document.getElementById(id).addEventListener("input", function () { editField("dx", parseFloat(this.value) || 0); }); });
+  ["ry", "ny"].forEach(function (id) { document.getElementById(id).addEventListener("input", function () { editField("dy", parseFloat(this.value) || 0); }); });
+  ["rs", "ns"].forEach(function (id) { document.getElementById(id).addEventListener("input", function () { editField("s", parseFloat(this.value) || 1); }); });
+
+  var drag = null;
+  function startDragEl(e, key) { var o = curOv(key); drag = { kind: "el", key: key, sx: e.clientX, sy: e.clientY, dx0: o.dx || 0, dy0: o.dy || 0 }; }
+  function startDragObj(e, key) { var o = curObjOv(key); drag = { kind: "obj", key: key, sx: e.clientX, sy: e.clientY, dx0: o.dx || 0, dy0: o.dy || 0 }; }
+  window.addEventListener("mousemove", function (e) {
+    if (!drag) return;
+    if (drag.kind === "el") {
+      var o = curOv(drag.key);
+      o.dx = drag.dx0 + (e.clientX - drag.sx) / SCALE; o.dy = drag.dy0 + (e.clientY - drag.sy) / SCALE;
+      if (o.ox == null) { var m = LAY.measureOrigin(drag.key); if (m) { o.ox = m.ox; o.oy = m.oy; } }
+      LAY.set(drag.key, o); setInputs(o);
+    } else {
+      var o2 = curObjOv(drag.key);
+      var d = LAY.objScreenToSvg(drag.key, e.clientX - drag.sx, e.clientY - drag.sy, SCALE);
+      o2.dx = drag.dx0 + d.dx; o2.dy = drag.dy0 + d.dy;
+      if (o2.cx == null) { var c = LAY.objCenter(drag.key); if (c) { o2.cx = c.cx; o2.cy = c.cy; } }
+      LAY.setObject(drag.key, o2); setInputs(o2);
+    }
+    persist(); refreshOut(); drawHandles();
+  });
+  window.addEventListener("mouseup", function () { drag = null; });
+
+  window.addEventListener("keydown", function (e) {
+    if (!curKey) return;
+    var step = e.shiftKey ? 10 : 1, moved = true;
+    var o = (curKind === "el") ? curOv(curKey) : curObjOv(curKey);
+    if (e.key === "ArrowLeft") o.dx = (o.dx || 0) - step;
+    else if (e.key === "ArrowRight") o.dx = (o.dx || 0) + step;
+    else if (e.key === "ArrowUp") o.dy = (o.dy || 0) - step;
+    else if (e.key === "ArrowDown") o.dy = (o.dy || 0) + step;
+    else moved = false;
+    if (!moved) return;
+    e.preventDefault();
+    if (curKind === "el" && o.ox == null) { var m = LAY.measureOrigin(curKey); if (m) { o.ox = m.ox; o.oy = m.oy; } }
+    if (curKind === "obj" && o.cx == null) { var c = LAY.objCenter(curKey); if (c) { o.cx = c.cx; o.cy = c.cy; } }
+    applyCur(o); setInputs(o); drawHandles();
+  });
+
+  document.getElementById("resetOne").onclick = function () {
+    if (!curKey) return;
+    if (curKind === "el") { delete LAY.get()[curKey]; LAY.set(curKey, { dx: 0, dy: 0, s: 1 }); delete LAY.get()[curKey]; }
+    else { delete LAY.getObjects()[curKey]; LAY.setObject(curKey, { dx: 0, dy: 0, s: 1 }); delete LAY.getObjects()[curKey]; }
+    persist(); setInputs({ dx: 0, dy: 0, s: 1 }); buildChips(); buildObjChips(); drawHandles(); refreshOut();
+  };
+  document.getElementById("resetAll").onclick = function () {
+    var L = LAY.get(); Object.keys(L).forEach(function (k) { LAY.set(k, { dx: 0, dy: 0, s: 1 }); delete L[k]; });
+    var O = LAY.getObjects(); Object.keys(O).forEach(function (k) { LAY.setObject(k, { dx: 0, dy: 0, s: 1 }); delete O[k]; });
+    localStorage.removeItem(STORE); refreshOut();
+    document.getElementById("editGroup").style.display = "none";
+    selEl = null; curKind = null; curKey = null; buildChips(); buildObjChips(); drawHandles();
+  };
+
+  function persist() { localStorage.setItem(STORE, JSON.stringify({ layout: LAY.get(), objects: LAY.getObjects() })); }
+  function refreshOut() { document.getElementById("out").value = LAY.overridesText(); }
+  document.getElementById("copy").onclick = function () {
+    navigator.clipboard.writeText(LAY.overridesText());
+    var b = this; b.textContent = "복사됨!"; setTimeout(function () { b.textContent = "클립보드 복사"; }, 1200);
+  };
+  document.getElementById("download").onclick = function () {
+    var blob = new Blob([LAY.overridesText()], { type: "text/javascript" });
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "layout-overrides.js"; a.click();
+  };
+</script>
+</body>
+</html>
