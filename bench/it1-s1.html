@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#33291f}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- 환경 레이어: 초가 헛간 지붕 + 기둥/도리 (배경 실루엣, 상단 1/3) -->
+  <svg class="prop" data-adj="s1-roof" style="top:0px; left:0px; width:1080px; height:480px" viewBox="0 0 1080 480" preserveAspectRatio="none">
+    <g data-obj="roof-beam-left">
+      <rect x="40" y="130" width="34" height="350" fill="#5a3a20"/>
+      <rect x="40" y="130" width="12" height="350" fill="#3e2814"/>
+    </g>
+    <g data-obj="roof-beam-right">
+      <rect x="1006" y="130" width="34" height="350" fill="#5a3a20"/>
+      <rect x="1028" y="130" width="12" height="350" fill="#3e2814"/>
+    </g>
+    <g data-obj="roof-crossbeam">
+      <rect x="40" y="112" width="1000" height="26" fill="#3e2814"/>
+    </g>
+    <g data-obj="roof-thatch">
+      <path d="M 0 150 Q 270 92 540 128 Q 810 164 1080 140 L 1080 0 L 0 0 Z" fill="#c9a15a"/>
+      <path d="M 0 155 Q 270 100 540 134 Q 810 168 1080 146" stroke="#a87f3e" stroke-width="8" fill="none"/>
+      <path d="M 0 130 Q 270 76 540 110 Q 810 144 1080 122" stroke="#a87f3e" stroke-width="6" fill="none" opacity="0.7"/>
+    </g>
+  </svg>
+
+  <!-- 환경 레이어: 흙바닥 + 잔돌/짚 부스러기 (지면 디테일) -->
+  <div class="prop" style="left:0px; bottom:0px; width:1080px; height:640px; background:#4f3d2c"></div>
+  <svg class="prop" data-adj="s1-floor-detail" style="left:0px; bottom:0px; width:1080px; height:640px" viewBox="0 0 1080 420" preserveAspectRatio="none">
+    <g data-obj="floor-shade">
+      <rect x="0" y="0" width="1080" height="60" fill="#3d2f21"/>
+    </g>
+    <g data-obj="floor-pebbles">
+      <ellipse cx="140" cy="150" rx="16" ry="9" fill="#6d6a5c"/>
+      <ellipse cx="230" cy="200" rx="12" ry="7" fill="#8a8378"/>
+      <ellipse cx="760" cy="170" rx="18" ry="10" fill="#6d6a5c"/>
+      <ellipse cx="900" cy="230" rx="13" ry="8" fill="#8a8378"/>
+      <ellipse cx="620" cy="120" rx="10" ry="6" fill="#6d6a5c"/>
+    </g>
+    <g data-obj="floor-straw">
+      <line x1="90" y1="260" x2="140" y2="248" stroke="#c9a15a" stroke-width="4" stroke-linecap="round"/>
+      <line x1="820" y1="280" x2="875" y2="262" stroke="#c9a15a" stroke-width="4" stroke-linecap="round"/>
+      <line x1="960" y1="200" x2="1005" y2="188" stroke="#c9a15a" stroke-width="4" stroke-linecap="round"/>
+      <line x1="300" y1="300" x2="345" y2="286" stroke="#a87f3e" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </svg>
+
+  <!-- 보조 소품: 벽 거치대 (낫 + 칼) -->
+  <svg class="prop" data-adj="s1-rack" style="left:70px; bottom:1160px; width:320px" viewBox="0 0 320 260">
+    <g data-obj="rack-board">
+      <rect x="10" y="20" width="300" height="34" rx="4" fill="#7a5a3a"/>
+      <rect x="10" y="44" width="300" height="10" fill="#5e4429"/>
+    </g>
+    <g data-obj="rack-pegs">
+      <rect x="70" y="54" width="14" height="26" rx="4" fill="#3a2f26"/>
+      <rect x="236" y="54" width="14" height="26" rx="4" fill="#3a2f26"/>
+    </g>
+    <g data-obj="rack-sickle">
+      <path d="M 68 80 L 72 150 Q 74 200 40 220 Q 78 208 84 158 L 86 80 Z" fill="#8a8378"/>
+      <path d="M 68 80 L 72 150 Q 73 175 60 195 Q 74 178 78 150 L 80 80 Z" fill="#5c574c"/>
+      <rect x="62" y="66" width="30" height="18" rx="4" fill="#5a3a20"/>
+    </g>
+    <g data-obj="rack-knife">
+      <polygon points="230,80 258,80 246,190 234,190" fill="#9a948a"/>
+      <polygon points="234,80 246,80 240,190 236,190" fill="#5c574c"/>
+      <rect x="228" y="64" width="34" height="20" rx="4" fill="#3a2f26"/>
+    </g>
+  </svg>
+
+  <!-- 주 소품: 화로(불) + 굴뚝 + 풀무 -->
+  <svg class="prop" data-adj="s1-forge" style="right:40px; bottom:580px; width:420px; height:760px" viewBox="0 0 420 760">
+    <g data-obj="forge-chimney">
+      <rect x="150" y="0" width="90" height="260" fill="#5c5148"/>
+      <rect x="150" y="0" width="26" height="260" fill="#443b34"/>
+      <rect x="140" y="250" width="110" height="26" rx="4" fill="#443b34"/>
+      <path d="M 195 0 Q 178 -42 200 -92 Q 222 -142 205 -192" stroke="#cbc3b8" stroke-width="14" fill="none" opacity="0.55" stroke-linecap="round"/>
+      <path d="M 225 10 Q 246 -30 230 -80" stroke="#cbc3b8" stroke-width="10" fill="none" opacity="0.4" stroke-linecap="round"/>
+    </g>
+    <g data-obj="forge-housing">
+      <path d="M 40 560 L 40 280 Q 40 260 70 260 L 350 260 Q 380 260 380 280 L 380 560 Z" fill="#6d5a48"/>
+      <rect x="330" y="260" width="50" height="300" fill="#544536" opacity="0.9"/>
+      <path d="M 110 560 L 110 380 Q 110 340 160 340 L 260 340 Q 310 340 310 380 L 310 560 Z" fill="#1c1310"/>
+      <rect x="20" y="545" width="380" height="30" rx="6" fill="#443b34"/>
+    </g>
+    <g data-obj="forge-fire">
+      <ellipse cx="190" cy="520" rx="90" ry="50" fill="#f0a55c" opacity="0.35"/>
+      <polygon points="140,555 125,480 150,430 145,480 175,410 165,470 200,435 188,495 220,470 205,545" fill="#e2732f"/>
+      <polygon points="160,555 150,500 170,460 165,500 190,450 200,500 215,545" fill="#d94f37"/>
+      <polygon points="175,555 170,510 185,480 195,510 205,545" fill="#f4c15a"/>
+    </g>
+    <g data-obj="forge-coals">
+      <ellipse cx="155" cy="548" rx="14" ry="8" fill="#d94f37"/>
+      <ellipse cx="185" cy="552" rx="12" ry="7" fill="#f4c15a"/>
+      <ellipse cx="215" cy="548" rx="13" ry="8" fill="#e2732f"/>
+    </g>
+    <g data-obj="forge-bellows">
+      <polygon points="320,460 380,445 380,495 320,505" fill="#8a5a33"/>
+      <polygon points="380,450 400,455 400,495 380,500" fill="#6d4526"/>
+      <rect x="400" y="468" width="20" height="14" rx="4" fill="#3a2f26"/>
+      <rect x="290" y="478" width="40" height="16" fill="#3a2f26"/>
+    </g>
+    <g data-obj="forge-rod">
+      <rect x="55" y="555" width="70" height="14" rx="4" fill="#7a7268"/>
+      <rect x="120" y="555" width="30" height="14" rx="4" fill="#e2732f"/>
+    </g>
+  </svg>
+
+  <!-- 주 소품 보완: 모루 (대장장이 앞) -->
+  <svg class="prop" data-adj="s1-anvil" style="left:400px; bottom:600px; width:300px" viewBox="0 0 335 200">
+    <g data-obj="anvil-stump">
+      <path d="M 30 200 L 30 155 Q 30 140 50 140 L 250 140 Q 270 140 270 155 L 270 200 Z" fill="#5a3820"/>
+      <path d="M 30 155 L 75 155 L 75 200 L 30 200 Z" fill="#4a2f19" opacity="0.6"/>
+      <line x1="75" y1="155" x2="75" y2="195" stroke="#3a2513" stroke-width="5"/>
+      <line x1="220" y1="155" x2="220" y2="195" stroke="#3a2513" stroke-width="5"/>
+    </g>
+    <g data-obj="anvil-body">
+      <path d="M 40 140 L 260 140 L 260 108 Q 260 88 235 88 L 65 88 Q 40 88 40 108 Z" fill="#8a8172"/>
+      <rect x="40" y="108" width="220" height="20" fill="#4a453c"/>
+      <rect x="55" y="90" width="190" height="8" fill="#b3a996" opacity="0.9"/>
+      <rect x="30" y="100" width="34" height="20" rx="3" fill="#4a453c"/>
+    </g>
+    <g data-obj="anvil-horn">
+      <path d="M 258 132 L 330 96 L 330 84 L 258 112 Z" fill="#8a8172"/>
+      <path d="M 258 132 L 330 96 L 330 106 L 258 122 Z" fill="#4a453c" opacity="0.75"/>
+      <ellipse cx="328" cy="90" rx="9" ry="6" fill="#b3a996" opacity="0.9"/>
+    </g>
+  </svg>
+
+  <!-- 캐릭터: 대장장이 (militia, noHat, 회갈색 옷) -->
+  <div class="char" style="left:40px; bottom:580px; width:400px; height:480px;"></div>
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", noHat:true, shirt:"#7c7a6e", pants:"#45423a"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+
+  <!-- 대장장이 손에 쥔 망치 (캐릭터 위에 겹쳐 그려 손에 든 것처럼, 자막존 위 어깨 높이) -->
+  <svg class="prop" data-adj="s1-hammer" style="left:295px; bottom:830px; width:120px; transform:rotate(-15deg); transform-origin:50% 88%;" viewBox="0 0 100 150">
+    <g data-obj="hammer-handle">
+      <rect x="42" y="55" width="16" height="95" rx="6" fill="#8a5a33"/>
+      <rect x="42" y="55" width="6" height="95" fill="#6d4526"/>
+    </g>
+    <g data-obj="hammer-head">
+      <rect x="8" y="6" width="84" height="48" rx="6" fill="#3a3630"/>
+      <rect x="8" y="6" width="84" height="14" fill="#5c574c" opacity="0.8"/>
+    </g>
+  </svg>
+</body></html>

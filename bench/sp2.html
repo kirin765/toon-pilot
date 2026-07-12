@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#1f2d45}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 황혼 하늘 밴드 (2톤) ===== -->
+  <svg class="prop" data-adj="s-horizon" style="left:0; bottom:1180px; width:1080px; height:260px;" viewBox="0 0 1080 260">
+    <g data-obj="horizon-glow">
+      <rect x="0" y="0" width="1080" height="260" fill="#5c3a35"/>
+    </g>
+    <g data-obj="horizon-glow-hi">
+      <rect x="0" y="0" width="1080" height="110" fill="#7a4a42" opacity="0.8"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 지는 해 (성곽 뒤로 반쯤 걸림, 2톤) ===== -->
+  <svg class="prop" data-adj="s-sun" style="left:360px; bottom:1150px; width:260px; height:260px;" viewBox="0 0 260 260">
+    <g data-obj="sun-body">
+      <circle cx="130" cy="130" r="110" fill="#d9784f"/>
+    </g>
+    <g data-obj="sun-hi">
+      <circle cx="104" cy="104" r="90" fill="#e8a45f" opacity="0.4"/>
+    </g>
+  </svg>
+
+  <!-- ===== 배경 실루엣: 형장 마당 담장 (2톤 + 기와 처마선) ===== -->
+  <svg class="prop" data-adj="s-wall" style="left:0; bottom:900px; width:1080px; height:360px;" viewBox="0 0 1080 360">
+    <g data-obj="wall-body">
+      <rect x="0" y="70" width="1080" height="290" fill="#241d16"/>
+    </g>
+    <g data-obj="wall-shade">
+      <rect x="680" y="70" width="400" height="290" fill="#1a140f" opacity="0.85"/>
+    </g>
+    <g data-obj="wall-coping">
+      <rect x="0" y="56" width="1080" height="20" fill="#3a2f22"/>
+    </g>
+    <g data-obj="wall-coping-tiles">
+      <ellipse cx="80" cy="58" rx="20" ry="9" fill="#4a3c2c"/>
+      <ellipse cx="240" cy="58" rx="20" ry="9" fill="#4a3c2c"/>
+      <ellipse cx="400" cy="58" rx="20" ry="9" fill="#4a3c2c"/>
+      <ellipse cx="560" cy="58" rx="20" ry="9" fill="#4a3c2c"/>
+      <ellipse cx="720" cy="58" rx="20" ry="9" fill="#4a3c2c"/>
+      <ellipse cx="880" cy="58" rx="20" ry="9" fill="#4a3c2c"/>
+      <ellipse cx="1020" cy="58" rx="20" ry="9" fill="#4a3c2c"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 마당 바닥 (흙+박석, 2톤 + 지면 디테일) ===== -->
+  <svg class="prop" data-adj="s-ground" style="left:0; bottom:0; width:1080px; height:1000px;" viewBox="0 0 1080 1000">
+    <g data-obj="ground-base">
+      <rect x="0" y="0" width="1080" height="1000" fill="#6d6355"/>
+    </g>
+    <g data-obj="ground-shade">
+      <rect x="0" y="0" width="1080" height="70" fill="#544c40"/>
+    </g>
+    <g data-obj="ground-flagstones">
+      <ellipse cx="110" cy="190" rx="46" ry="20" fill="#7d7566"/>
+      <ellipse cx="230" cy="215" rx="38" ry="17" fill="#635c4e"/>
+      <ellipse cx="480" cy="175" rx="50" ry="21" fill="#7d7566"/>
+      <ellipse cx="660" cy="210" rx="42" ry="18" fill="#635c4e"/>
+      <ellipse cx="860" cy="185" rx="46" ry="20" fill="#7d7566"/>
+      <ellipse cx="960" cy="230" rx="34" ry="15" fill="#635c4e"/>
+      <ellipse cx="330" cy="300" rx="40" ry="17" fill="#635c4e"/>
+      <ellipse cx="900" cy="320" rx="44" ry="19" fill="#7d7566"/>
+    </g>
+    <g data-obj="ground-detail">
+      <ellipse cx="500" cy="420" rx="14" ry="7" fill="#544c40"/>
+      <ellipse cx="900" cy="440" rx="11" ry="6" fill="#544c40"/>
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 관원 (admiral, 어두운 관복) — 뒤쪽에 서서 교지를 펼쳐 든다 ===== -->
+  <div class="char" id="char-gwanwon" data-adj="s-gwanwon" style="left:600px; bottom:890px; width:380px; height:456px;"></div>
+
+  <!-- ===== 캐릭터 손 소품: 교지 (붉은 축 두루마리, 관원 손 사이에 펼쳐짐) ===== -->
+  <svg class="prop" data-adj="s-scroll" style="left:688px; bottom:913px; width:202px; height:102px;" viewBox="0 0 240 120">
+    <g data-obj="scroll-paper">
+      <path d="M 42 20 Q 120 10 198 20 L 198 100 Q 120 110 42 100 Z" fill="#f6efe3" stroke="#c9b98f" stroke-width="3"/>
+      <line x1="60" y1="40" x2="178" y2="37" stroke="#26221c" stroke-width="3"/>
+      <line x1="60" y1="58" x2="178" y2="58" stroke="#26221c" stroke-width="3"/>
+      <line x1="60" y1="76" x2="150" y2="78" stroke="#26221c" stroke-width="3"/>
+    </g>
+    <g data-obj="scroll-seal">
+      <rect x="150" y="82" width="20" height="20" rx="3" fill="#a53d2b"/>
+      <rect x="153" y="85" width="14" height="14" rx="2" fill="#d94f37"/>
+    </g>
+    <g data-obj="scroll-rod-l">
+      <rect x="12" y="8" width="36" height="104" rx="18" fill="#d94f37"/>
+      <rect x="12" y="8" width="12" height="104" rx="6" fill="#e8765f"/>
+      <ellipse cx="30" cy="9" rx="20" ry="9" fill="#a53d2b"/>
+      <circle cx="30" cy="9" r="6" fill="#e8b74a"/>
+      <ellipse cx="30" cy="111" rx="20" ry="9" fill="#a53d2b"/>
+      <circle cx="30" cy="111" r="6" fill="#e8b74a"/>
+    </g>
+    <g data-obj="scroll-rod-r">
+      <rect x="192" y="8" width="36" height="104" rx="18" fill="#d94f37"/>
+      <rect x="192" y="8" width="12" height="104" rx="6" fill="#e8765f"/>
+      <ellipse cx="210" cy="9" rx="20" ry="9" fill="#a53d2b"/>
+      <circle cx="210" cy="9" r="6" fill="#e8b74a"/>
+      <ellipse cx="210" cy="111" rx="20" ry="9" fill="#a53d2b"/>
+      <circle cx="210" cy="111" r="6" fill="#e8b74a"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 오랏줄 (죄인 발치 바닥의 삼끈 타래 — 크게, 몸 가까이) ===== -->
+  <svg class="prop" data-adj="s-rope" style="left:0px; bottom:592px; width:300px; height:204px;" viewBox="0 0 220 150">
+    <g data-obj="rope-coil">
+      <path d="M 60 130 Q 20 120 26 92 Q 32 66 66 62 Q 96 58 108 82 Q 118 102 96 116 Q 74 128 56 112" stroke="#8a7048" stroke-width="15" fill="none" stroke-linecap="round"/>
+      <path d="M 90 118 Q 130 128 150 104 Q 168 82 150 58 Q 134 38 104 42 Q 78 46 70 68" stroke="#8a7048" stroke-width="15" fill="none" stroke-linecap="round"/>
+      <path d="M 74 96 Q 92 78 118 84 Q 140 90 138 112" stroke="#8a7048" stroke-width="15" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="rope-coil-hi">
+      <path d="M 60 130 Q 20 120 26 92 Q 32 66 66 62" stroke="#b89b6c" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 90 118 Q 130 128 150 104 Q 168 82 150 58" stroke="#b89b6c" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="rope-tail">
+      <path d="M 150 58 Q 172 40 194 44" stroke="#8a7048" stroke-width="13" fill="none" stroke-linecap="round"/>
+      <path d="M 190 38 L 202 30" stroke="#6d5738" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 194 44 L 208 40" stroke="#6d5738" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 196 50 L 210 52" stroke="#6d5738" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </svg>
+
+  <!-- ===== 주 소품: 소반(호족반) + 어두운 사발 (다리 3개 낮은 상, 12+ 프리미티브·9 그룹) ===== -->
+  <svg class="prop" data-adj="s-soban" style="left:300px; bottom:605px; width:480px; height:300px;" viewBox="0 0 480 300">
+    <g data-obj="soban-legs">
+      <path d="M 225 130 Q 218 178 222 226 Q 224 236 236 236 Q 246 236 244 226 Q 248 178 255 130 Z" fill="#211711" opacity="0.9"/>
+      <path d="M 155 122 Q 118 176 104 246 Q 101 260 121 263 Q 136 265 134 251 Q 146 186 178 132 Z" fill="#31241a"/>
+      <path d="M 325 122 Q 362 176 376 246 Q 379 260 359 263 Q 344 265 346 251 Q 334 186 302 132 Z" fill="#31241a"/>
+    </g>
+    <g data-obj="soban-stretcher">
+      <ellipse cx="240" cy="238" rx="92" ry="13" fill="none" stroke="#211711" stroke-width="10" opacity="0.85"/>
+    </g>
+    <g data-obj="soban-rim">
+      <ellipse cx="240" cy="100" rx="210" ry="46" fill="#211711"/>
+    </g>
+    <g data-obj="soban-top">
+      <ellipse cx="240" cy="88" rx="208" ry="42" fill="#453325"/>
+    </g>
+    <g data-obj="soban-top-shade">
+      <path d="M 240 46 A 208 42 0 0 1 448 88 A 208 42 0 0 1 240 130 Z" fill="#2b1f16" opacity="0.85"/>
+    </g>
+    <g data-obj="soban-top-grain">
+      <path d="M 90 78 Q 240 96 400 74" stroke="#31241a" stroke-width="3" fill="none" opacity="0.8"/>
+      <path d="M 110 100 Q 240 116 380 96" stroke="#31241a" stroke-width="3" fill="none" opacity="0.7"/>
+    </g>
+    <g data-obj="soban-bowl-body">
+      <path d="M 166 42 Q 152 92 176 116 Q 206 134 240 134 Q 274 134 304 116 Q 328 92 314 42 Q 278 26 240 26 Q 202 26 166 42 Z" fill="#f6efe3"/>
+    </g>
+    <g data-obj="soban-bowl-shade">
+      <path d="M 240 26 Q 278 26 314 42 Q 328 92 304 116 Q 274 134 240 134 Z" fill="#aebfc6" opacity="0.75"/>
+    </g>
+    <g data-obj="soban-bowl-foot">
+      <path d="M 214 132 L 266 132 L 262 142 L 218 142 Z" fill="#c9d2d3"/>
+    </g>
+    <g data-obj="soban-bowl-rim">
+      <ellipse cx="240" cy="38" rx="74" ry="18" fill="#dde4e2"/>
+    </g>
+    <g data-obj="soban-bowl-liquid">
+      <ellipse cx="240" cy="38" rx="62" ry="14" fill="#1a0f0b"/>
+      <ellipse cx="222" cy="34" rx="18" ry="5" fill="#3a2c22" opacity="0.8"/>
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 백의 죄인 (militia noHat, 소복) — 소반 앞, shocked 표정 ===== -->
+  <div class="char" id="char-joein" data-adj="s-joein" style="left:70px; bottom:605px; width:380px; height:456px;"></div>
+
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    function mount(sel, cfg, expr){
+      var el = document.querySelector(sel);
+      el.innerHTML = makeCharacter(cfg);
+      var e = EXPRESSIONS[expr || "neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    }
+    mount("#char-joein", {variant:"militia", noHat:true, shirt:"#f6efe3", pants:"#d9d0be"}, "shocked");
+    mount("#char-gwanwon", {variant:"admiral", shirt:"#2c3548", pants:"#1a2130"}, "neutral");
+  </script>
+</body></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<style>
+  body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#e3d5b0}
+  .char{position:absolute;}
+  .wall{position:absolute; top:0; left:0; width:1080px; height:1150px; background:#e3d5b0;}
+  .floor{position:absolute; top:1150px; left:0; width:1080px; height:770px; background:#c9b98f;}
+  .env{position:absolute; top:0; left:0; width:1080px; height:1920px;}
+  .desk{position:absolute;}
+  .scroll{position:absolute;}
+  .book-open{position:absolute;}
+  .cane{position:absolute; transform-origin: bottom left;}
+</style></head>
+<body>
+  <!-- 환경 레이어: 서당 실내 벽/마루 -->
+  <div class="wall"></div>
+  <div class="floor"></div>
+  <svg class="env" data-adj="s3-env" viewBox="0 0 1080 1920">
+    <!-- 천장 대들보 (실내 프레이밍 실루엣) -->
+    <g data-obj="ceiling-beam">
+      <rect x="0" y="0" width="1080" height="42" fill="#3a2a18"/>
+      <polygon points="180,42 220,42 205,90 195,90" fill="#2c2013"/>
+      <polygon points="860,42 900,42 885,90 875,90" fill="#2c2013"/>
+    </g>
+    <!-- 벽 하단 굽도리(2톤 명암) -->
+    <g data-obj="wall-trim">
+      <rect x="0" y="1110" width="1080" height="70" fill="#b89968"/>
+    </g>
+    <!-- 마루 널판 이음선(지면 디테일) -->
+    <g data-obj="floor-planks">
+      <rect x="0" y="1260" width="1080" height="6" fill="#a89066"/>
+      <rect x="0" y="1370" width="1080" height="6" fill="#a89066"/>
+      <rect x="0" y="1480" width="1080" height="6" fill="#a89066"/>
+      <rect x="0" y="1600" width="1080" height="6" fill="#a89066"/>
+      <rect x="0" y="1730" width="1080" height="6" fill="#a89066"/>
+    </g>
+  </svg>
+
+  <!-- 주 소품: 서안(낮은 책상) + 문방구 (라이브러리 episodes/jeong-yakyong 서안 복사·확장) -->
+  <svg class="desk" data-adj="s3-desk" style="left:330px; bottom:600px; width:420px" viewBox="0 -60 460 310">
+    <g data-obj="desk-shade">
+      <rect x="30" y="158" width="400" height="8" rx="2" fill="#4a2d18"/>
+    </g>
+    <g data-obj="desk-top">
+      <rect x="30" y="130" width="400" height="28" rx="9" fill="#6d4526"/>
+      <rect x="56" y="158" width="24" height="66" rx="5" fill="#5a3a20"/>
+      <rect x="380" y="158" width="24" height="66" rx="5" fill="#5a3a20"/>
+    </g>
+    <g data-obj="desk-paper">
+      <rect x="80" y="92" width="200" height="42" rx="5" fill="#f6efe3" transform="rotate(-3 180 113)"/>
+      <line x1="106" y1="106" x2="216" y2="101" stroke="#26221c" stroke-width="4"/>
+      <line x1="108" y1="121" x2="188" y2="117" stroke="#26221c" stroke-width="4"/>
+    </g>
+    <g data-obj="desk-inkstone">
+      <rect x="42" y="104" width="66" height="20" rx="4" fill="#3a3a3a"/>
+      <ellipse cx="75" cy="106" rx="18" ry="4" fill="#5c5c5c"/>
+      <rect x="60" y="80" width="10" height="24" rx="3" fill="#1f2d45" transform="rotate(8 65 92)"/>
+    </g>
+    <g data-obj="desk-book">
+      <rect x="336" y="100" width="58" height="18" rx="3" fill="#4a6f4a"/>
+      <rect x="336" y="96" width="58" height="6" rx="2" fill="#e8ddc4"/>
+    </g>
+    <g data-obj="desk-brush">
+      <g class="brush-anim">
+        <rect x="308" y="-16" width="22" height="132" rx="9" fill="#8a5a33" transform="rotate(14 319 50)"/>
+        <polygon points="340,106 366,112 350,158" fill="#26221c"/>
+      </g>
+    </g>
+  </svg>
+
+  <!-- 캐릭터: 훈장(militia, 갓) — 서안 뒤에 앉은 구도(하반신은 서안에 가려짐) -->
+  <div class="char" data-adj="s3-teacher" style="left:280px; bottom:780px; width:520px; height:624px;"></div>
+
+  <!-- 보조 소품: 회초리(들고 있음, 캐릭터 오른손 부근) -->
+  <svg class="cane" data-adj="s3-cane" style="left:400px; bottom:800px; width:80px; transform:rotate(18deg);" viewBox="0 0 80 300">
+    <g data-obj="cane-rods">
+      <line x1="40" y1="240" x2="20" y2="10" stroke="#7a5a34" stroke-width="4" stroke-linecap="round"/>
+      <line x1="40" y1="240" x2="40" y2="6" stroke="#8a6a3e" stroke-width="4" stroke-linecap="round"/>
+      <line x1="40" y1="240" x2="60" y2="10" stroke="#7a5a34" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g data-obj="cane-binding">
+      <rect x="28" y="228" width="24" height="14" rx="4" fill="#241c14"/>
+    </g>
+    <g data-obj="cane-grip">
+      <rect x="30" y="240" width="20" height="60" rx="6" fill="#3a2a1a"/>
+    </g>
+  </svg>
+
+  <!-- 보조 소품: 족자(벽에 걸린 두루마리, "면학") -->
+  <svg class="scroll" data-adj="s3-scroll" style="left:640px; top:80px; width:300px" viewBox="0 0 200 460">
+    <g data-obj="scroll-cord">
+      <circle cx="100" cy="4" r="4" fill="#241c14"/>
+      <line x1="100" y1="4" x2="100" y2="18" stroke="#241c14" stroke-width="3"/>
+    </g>
+    <g data-obj="scroll-roller-top">
+      <rect x="30" y="18" width="140" height="16" rx="8" fill="#4a3420"/>
+      <circle cx="30" cy="26" r="10" fill="#4a3420"/>
+      <circle cx="170" cy="26" r="10" fill="#4a3420"/>
+    </g>
+    <g data-obj="scroll-fabric">
+      <rect x="40" y="34" width="120" height="380" fill="#6b2a2a"/>
+    </g>
+    <g data-obj="scroll-paper">
+      <rect x="54" y="48" width="92" height="350" fill="#f6efe3"/>
+    </g>
+    <g data-obj="scroll-text">
+      <text x="100" y="175" text-anchor="middle" font-family="'Nanum Myeongjo','Batang',serif" font-size="72" fill="#26221c">勉</text>
+      <text x="100" y="285" text-anchor="middle" font-family="'Nanum Myeongjo','Batang',serif" font-size="72" fill="#26221c">學</text>
+    </g>
+    <g data-obj="scroll-roller-bottom">
+      <rect x="30" y="398" width="140" height="16" rx="8" fill="#4a3420"/>
+      <circle cx="30" cy="406" r="10" fill="#4a3420"/>
+      <circle cx="170" cy="406" r="10" fill="#4a3420"/>
+      <line x1="100" y1="414" x2="100" y2="440" stroke="#6b2a2a" stroke-width="4"/>
+    </g>
+  </svg>
+
+  <!-- 보조 소품: 바닥에 펼쳐진 책 -->
+  <svg class="book-open" data-adj="s3-book" style="left:760px; bottom:600px; width:240px" viewBox="0 0 300 160">
+    <g data-obj="book-cover-shadow">
+      <rect x="10" y="112" width="280" height="18" rx="6" fill="#4a3420"/>
+    </g>
+    <g data-obj="book-cover-edge">
+      <rect x="40" y="118" width="220" height="14" rx="4" fill="#1f2d45"/>
+    </g>
+    <g data-obj="book-pages">
+      <polygon points="20,100 150,72 150,112 20,132" fill="#f6efe3"/>
+      <polygon points="280,100 150,72 150,112 280,132" fill="#f6efe3"/>
+    </g>
+    <g data-obj="book-fold">
+      <line x1="150" y1="72" x2="150" y2="112" stroke="#c9b8a0" stroke-width="3"/>
+    </g>
+    <g data-obj="book-text">
+      <line x1="40" y1="98" x2="120" y2="90" stroke="#26221c" stroke-width="2.5"/>
+      <line x1="40" y1="110" x2="110" y2="103" stroke="#26221c" stroke-width="2.5"/>
+      <line x1="182" y1="90" x2="258" y2="98" stroke="#26221c" stroke-width="2.5"/>
+    </g>
+  </svg>
+
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", shirt:"#3a4f6e", pants:"#1f2d45"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+</body></html>

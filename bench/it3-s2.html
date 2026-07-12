@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#8ec9e8}
+ .char{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 하늘 (호라이즌 밴드 + 해 + 구름, 2톤) ===== -->
+  <div data-adj="s2-sky-horizon" style="position:absolute; left:0; top:0; width:1080px; height:750px; background:#b7e2ef;"></div>
+
+  <svg data-adj="s2-sun" style="position:absolute; top:110px; left:780px; width:150px; height:150px;" viewBox="0 0 150 150">
+    <g data-obj="sun-body">
+      <circle cx="75" cy="75" r="52" fill="#e8b74a"/>
+      <circle cx="60" cy="60" r="52" fill="#f2c56a" opacity="0.35"/>
+    </g>
+  </svg>
+
+  <svg data-adj="s2-cloud-1" style="position:absolute; top:160px; left:70px; width:190px; height:90px;" viewBox="0 0 190 90">
+    <g data-obj="cloud-body">
+      <path d="M 18 70 Q 0 35 40 28 Q 48 4 82 14 Q 104 -4 130 14 Q 166 8 166 38 Q 188 46 174 66 Q 180 82 156 82 L 34 82 Q 4 82 18 70 Z" fill="#f6efe3"/>
+    </g>
+  </svg>
+
+  <!-- ===== 배경 실루엣: 성 너머 먼 산 능선 (2톤) ===== -->
+  <svg data-adj="s2-far-hill" style="position:absolute; left:0; bottom:960px; width:1080px; height:240px;" viewBox="0 0 1080 240">
+    <g data-obj="far-hill-ridge">
+      <path d="M 0 240 L 0 150 Q 200 90 420 130 Q 640 165 860 110 Q 980 80 1080 105 L 1080 240 Z" fill="#5f8a76"/>
+    </g>
+    <g data-obj="far-hill-shade">
+      <path d="M 0 240 L 0 200 Q 260 215 540 200 Q 820 185 1080 205 L 1080 240 Z" fill="#456354"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 지면 디테일 — 성문 앞 박석(돌바닥) 2톤 + 줄눈 ===== -->
+  <svg data-adj="s2-pavement" style="position:absolute; left:0; bottom:0px; width:1080px; height:620px;" viewBox="0 0 1080 620">
+    <g data-obj="pavement-base">
+      <rect x="0" y="0" width="1080" height="620" fill="#c9b8a0"/>
+    </g>
+    <g data-obj="pavement-shade">
+      <rect x="0" y="0" width="1080" height="60" fill="#b3a082"/>
+    </g>
+    <g data-obj="pavement-joints">
+      <line x1="0" y1="120" x2="1080" y2="120" stroke="#a8926f" stroke-width="4" opacity="0.55"/>
+      <line x1="0" y1="240" x2="1080" y2="240" stroke="#a8926f" stroke-width="4" opacity="0.55"/>
+      <line x1="0" y1="360" x2="1080" y2="360" stroke="#a8926f" stroke-width="4" opacity="0.55"/>
+      <line x1="0" y1="480" x2="1080" y2="480" stroke="#a8926f" stroke-width="4" opacity="0.55"/>
+      <line x1="140" y1="0" x2="180" y2="120" stroke="#a8926f" stroke-width="4" opacity="0.5"/>
+      <line x1="380" y1="0" x2="420" y2="120" stroke="#a8926f" stroke-width="4" opacity="0.5"/>
+      <line x1="620" y1="0" x2="660" y2="120" stroke="#a8926f" stroke-width="4" opacity="0.5"/>
+      <line x1="860" y1="0" x2="900" y2="120" stroke="#a8926f" stroke-width="4" opacity="0.5"/>
+    </g>
+  </svg>
+
+  <!-- ===== 주 소품: 화성 성벽 + 홍예 성문 + 문루 (라이브러리 복사: episodes/jeong-yakyong s2-fortress, 2.0배 확대 — 문루가 캐릭터를 압도하도록). 캔버스보다 큰 장식이라 overflow:hidden 래퍼 필수(지뢰 #3). ===== -->
+  <div data-layout-ignore="" style="position:absolute; inset:0; overflow:hidden;">
+    <svg data-adj="s2-fortress" style="position:absolute; bottom: 560px; left: 50%; width: 1080px; transform: translateX(-50%) scale(2); transform-origin: bottom center;" viewBox="0 0 1080 360">
+      <!-- 성벽 몸체 -->
+      <g data-obj="fort-wall">
+        <rect x="0" y="230" width="1080" height="130" fill="#c3b8a3" />
+        <rect x="0" y="230" width="1080" height="14" fill="#d9d0be" />
+        <line x1="180" y1="244" x2="180" y2="360" stroke="#a89a86" stroke-width="5" />
+        <line x1="360" y1="244" x2="360" y2="360" stroke="#a89a86" stroke-width="5" />
+        <line x1="720" y1="244" x2="720" y2="360" stroke="#a89a86" stroke-width="5" />
+        <line x1="900" y1="244" x2="900" y2="360" stroke="#a89a86" stroke-width="5" />
+      </g>
+      <!-- 여장(성가퀴) -->
+      <g data-obj="fort-crenel">
+        <rect x="20" y="196" width="70" height="34" fill="#b7ac98" />
+        <rect x="130" y="196" width="70" height="34" fill="#b7ac98" />
+        <rect x="240" y="196" width="70" height="34" fill="#b7ac98" />
+        <rect x="350" y="196" width="70" height="34" fill="#b7ac98" />
+        <rect x="660" y="196" width="70" height="34" fill="#b7ac98" />
+        <rect x="770" y="196" width="70" height="34" fill="#b7ac98" />
+        <rect x="880" y="196" width="70" height="34" fill="#b7ac98" />
+        <rect x="990" y="196" width="70" height="34" fill="#b7ac98" />
+      </g>
+      <!-- 성문(석축 홍예) -->
+      <g data-obj="fort-gate">
+        <rect x="430" y="190" width="220" height="170" fill="#a89a86" />
+        <path d="M 490 360 L 490 300 A 50 50 0 0 1 590 300 L 590 360 Z" fill="#463d33" />
+      </g>
+      <!-- 문루 몸체 -->
+      <g data-obj="fort-pavilion-body">
+        <rect x="448" y="140" width="184" height="50" fill="#f6efe3" />
+        <rect x="458" y="140" width="13" height="50" fill="#8e2a1d" />
+        <rect x="533" y="140" width="13" height="50" fill="#8e2a1d" />
+        <rect x="608" y="140" width="13" height="50" fill="#8e2a1d" />
+      </g>
+      <!-- 문루 지붕 (처마 반전) -->
+      <g data-obj="fort-pavilion-roof">
+        <path d="M 424 136 Q 540 154 656 136 L 624 96 Q 540 82 456 96 Z" fill="#1f2d45" />
+        <path d="M 470 98 Q 540 88 610 98 L 610 90 Q 540 80 470 90 Z" fill="#16233a" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- ===== 보조 소품: 성벽 위 깃발 2개 (확대된 문루와 별도로 고정 배치 — 스케일 변환에 밀려나지 않게 독립 SVG) ===== -->
+  <svg data-adj="s2-flag-l" style="position:absolute; left:50px; bottom:870px; width:150px; height:170px;" viewBox="0 0 150 170">
+    <g data-obj="flag-pole-l">
+      <line x1="20" y1="170" x2="20" y2="20" stroke="#6d4526" stroke-width="8" />
+    </g>
+    <g data-obj="flag-banner-l">
+      <polygon points="20,20 140,45 20,70" fill="#c0392b" />
+    </g>
+  </svg>
+  <svg data-adj="s2-flag-r" style="position:absolute; right:50px; bottom:870px; width:150px; height:170px;" viewBox="0 0 150 170">
+    <g data-obj="flag-pole-r">
+      <line x1="130" y1="170" x2="130" y2="20" stroke="#6d4526" stroke-width="8" />
+    </g>
+    <g data-obj="flag-banner-r">
+      <polygon points="130,20 10,45 130,70" fill="#c0392b" />
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 수문장 (admiral, 무관 복식) ===== -->
+  <div class="char" style="left:20px; bottom:600px; width:400px; height:480px;"></div>
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"admiral", shirt:"#4a5568", pants:"#262f3a"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+
+  <!-- ===== 핸드 소품: 긴 창(長槍) — 자루 끝은 오른손 손 원 중심 근처를 관통, 창날은 머리 바깥쪽(오른쪽 위) 하늘로 뺌. 붉은 술(홍전) 시그니처. (6그룹 · 8프리미티브) ===== -->
+  <svg data-adj="s2-spear" style="position:absolute; left:250px; bottom:600px; width:400px; height:1000px; pointer-events:none;" viewBox="0 0 400 1000">
+    <g data-obj="spear-shaft">
+      <line x1="31" y1="995" x2="273" y2="135.5" stroke="#6d4526" stroke-width="14" stroke-linecap="round" />
+    </g>
+    <g data-obj="spear-shaft-shade">
+      <line x1="31" y1="995" x2="273" y2="135.5" stroke="#4a2f19" stroke-width="5" stroke-linecap="round" />
+    </g>
+    <g data-obj="spear-socket">
+      <polygon points="285.5,139 260.5,132 255,151 280,158" fill="#3a3e45" />
+    </g>
+    <g data-obj="spear-blade">
+      <polygon points="288.4,139.9 300,40 257.6,131.2 273,135.5" fill="#8a8378" />
+    </g>
+    <g data-obj="spear-blade-shade">
+      <line x1="257.6" y1="131.2" x2="300" y2="40" stroke="#4a4a48" stroke-width="3" />
+    </g>
+    <g data-obj="spear-tassel">
+      <path d="M 267 155 Q 250 185 244 215" stroke="#d94f37" stroke-width="5" fill="none" stroke-linecap="round" />
+      <path d="M 273 158 Q 266 190 262 222" stroke="#d94f37" stroke-width="5" fill="none" stroke-linecap="round" />
+      <path d="M 280 156 Q 284 188 288 218" stroke="#c0392b" stroke-width="5" fill="none" stroke-linecap="round" />
+    </g>
+  </svg>
+</body></html>

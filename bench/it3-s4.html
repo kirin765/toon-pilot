@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#c9b98f}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 천장 들보 (상단 여백 정리) ===== -->
+  <svg class="prop" data-adj="s4-ceiling" style="top:0; left:0; width:1080px; height:70px;" viewBox="0 0 1080 70">
+    <g data-obj="ceiling-beam">
+      <rect x="0" y="0" width="1080" height="70" fill="#3d2f20"/>
+      <rect x="0" y="58" width="1080" height="12" fill="#5a4632"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 목재 바닥 (2톤 + 마루 이음선) ===== -->
+  <svg class="prop" data-adj="s4-floor" style="left:0; bottom:0; width:1080px; height:600px;" viewBox="0 0 1080 340" preserveAspectRatio="none">
+    <g data-obj="floor-base">
+      <rect x="0" y="0" width="1080" height="340" fill="#4a3826"/>
+    </g>
+    <g data-obj="floor-seams">
+      <rect x="0" y="0" width="1080" height="14" fill="#5a4632"/>
+      <line x1="0" y1="95" x2="1080" y2="93" stroke="#2e2115" stroke-width="5"/>
+      <line x1="0" y1="185" x2="1080" y2="188" stroke="#2e2115" stroke-width="5"/>
+      <line x1="0" y1="275" x2="1080" y2="272" stroke="#2e2115" stroke-width="5"/>
+    </g>
+  </svg>
+
+  <!-- ===== 주 소품: 목제 서가 (칸칸이 책 — 프레임+3단 선반+32권 책등, 6그룹) ===== -->
+  <svg class="prop" data-adj="s4-bookshelf" style="left:70px; bottom:560px; width:820px; height:748px;" viewBox="0 0 900 820">
+    <g data-obj="shelf-frame">
+      <rect x="0" y="0" width="900" height="820" rx="10" fill="#4a3826"/>
+      <rect x="30" y="30" width="840" height="760" fill="#2e2115"/>
+      <rect x="-15" y="-20" width="930" height="40" rx="6" fill="#5a4632"/>
+      <rect x="-15" y="800" width="930" height="40" rx="6" fill="#2e2115"/>
+      <rect x="0" y="0" width="30" height="820" fill="#5a4632"/>
+      <rect x="870" y="0" width="30" height="820" fill="#2e2115"/>
+    </g>
+    <g data-obj="shelf-shelves">
+      <rect x="30" y="212" width="840" height="18" fill="#6d4526"/>
+      <rect x="30" y="230" width="840" height="6" fill="#2e2115"/>
+      <rect x="30" y="406" width="840" height="18" fill="#6d4526"/>
+      <rect x="30" y="424" width="840" height="6" fill="#2e2115"/>
+      <rect x="30" y="600" width="840" height="18" fill="#6d4526"/>
+      <rect x="30" y="618" width="840" height="6" fill="#2e2115"/>
+    </g>
+    <g data-obj="shelf-books-row1">
+      <rect x="30" y="42" width="100" height="170" rx="3" fill="#3a5170"/>
+      <rect x="135" y="62" width="100" height="150" rx="3" fill="#8a5a33"/>
+      <rect x="240" y="34" width="100" height="178" rx="3" fill="#d9c3a0"/>
+      <rect x="345" y="72" width="100" height="140" rx="3" fill="#4a4238"/>
+      <rect x="450" y="47" width="100" height="165" rx="3" fill="#a87f3e"/>
+      <rect x="555" y="57" width="100" height="155" rx="3" fill="#3a5170"/>
+      <rect x="660" y="37" width="100" height="175" rx="3" fill="#8a5a33"/>
+      <rect x="765" y="67" width="100" height="145" rx="3" fill="#d9c3a0"/>
+    </g>
+    <g data-obj="shelf-books-row2">
+      <rect x="30" y="246" width="100" height="160" rx="3" fill="#4a4238"/>
+      <rect x="135" y="261" width="100" height="145" rx="3" fill="#a87f3e"/>
+      <rect x="240" y="238" width="100" height="168" rx="3" fill="#3a5170"/>
+      <rect x="345" y="256" width="100" height="150" rx="3" fill="#8a5a33"/>
+      <rect x="450" y="248" width="100" height="158" rx="3" fill="#d9c3a0"/>
+      <rect x="555" y="266" width="100" height="140" rx="3" fill="#4a4238"/>
+      <rect x="660" y="241" width="100" height="165" rx="3" fill="#a87f3e"/>
+      <rect x="765" y="258" width="100" height="148" rx="3" fill="#3a5170"/>
+    </g>
+    <g data-obj="shelf-books-row3">
+      <rect x="30" y="452" width="100" height="148" rx="3" fill="#8a5a33"/>
+      <rect x="135" y="435" width="100" height="165" rx="3" fill="#d9c3a0"/>
+      <rect x="240" y="460" width="100" height="140" rx="3" fill="#4a4238"/>
+      <rect x="345" y="442" width="100" height="158" rx="3" fill="#a87f3e"/>
+      <rect x="450" y="450" width="100" height="150" rx="3" fill="#3a5170"/>
+      <rect x="555" y="432" width="100" height="168" rx="3" fill="#8a5a33"/>
+      <rect x="660" y="455" width="100" height="145" rx="3" fill="#d9c3a0"/>
+      <rect x="765" y="440" width="100" height="160" rx="3" fill="#4a4238"/>
+    </g>
+    <g data-obj="shelf-books-row4">
+      <rect x="30" y="630" width="100" height="160" rx="3" fill="#a87f3e"/>
+      <rect x="135" y="640" width="100" height="150" rx="3" fill="#3a5170"/>
+      <rect x="240" y="625" width="100" height="165" rx="3" fill="#8a5a33"/>
+      <rect x="345" y="650" width="100" height="140" rx="3" fill="#d9c3a0"/>
+      <rect x="450" y="632" width="100" height="158" rx="3" fill="#4a4238"/>
+      <rect x="555" y="640" width="100" height="150" rx="3" fill="#a87f3e"/>
+      <rect x="660" y="624" width="100" height="166" rx="3" fill="#3a5170"/>
+      <rect x="765" y="645" width="100" height="145" rx="3" fill="#8a5a33"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 바닥 책 무더기 (3탑 — 라이브러리 재사용, jeong-yakyong s6) ===== -->
+  <svg class="prop" data-adj="s4-books-floor" style="left:20px; bottom:560px; width:300px;" viewBox="0 0 760 460">
+    <g data-obj="books-1">
+      <rect x="30" y="430" width="190" height="26" rx="4" fill="#3a5170"/>
+      <rect x="42" y="404" width="170" height="26" rx="4" fill="#8a5a33"/>
+      <rect x="26" y="378" width="186" height="26" rx="4" fill="#d9c3a0"/>
+      <rect x="48" y="352" width="160" height="26" rx="4" fill="#4a4238"/>
+      <rect x="36" y="326" width="176" height="26" rx="4" fill="#3a5170"/>
+      <rect x="52" y="300" width="150" height="26" rx="4" fill="#d9c3a0"/>
+    </g>
+    <g data-obj="books-2">
+      <rect x="280" y="430" width="200" height="26" rx="4" fill="#8a5a33"/>
+      <rect x="292" y="404" width="180" height="26" rx="4" fill="#3a5170"/>
+      <rect x="276" y="378" width="196" height="26" rx="4" fill="#d9c3a0"/>
+      <rect x="298" y="352" width="168" height="26" rx="4" fill="#4a4238"/>
+      <rect x="284" y="326" width="184" height="26" rx="4" fill="#8a5a33"/>
+      <rect x="300" y="300" width="160" height="26" rx="4" fill="#3a5170"/>
+      <rect x="288" y="274" width="176" height="26" rx="4" fill="#d9c3a0"/>
+      <rect x="304" y="248" width="152" height="26" rx="4" fill="#8a5a33"/>
+      <rect x="294" y="222" width="166" height="26" rx="4" fill="#3a5170"/>
+    </g>
+    <g data-obj="books-3">
+      <rect x="540" y="430" width="180" height="26" rx="4" fill="#4a4238"/>
+      <rect x="552" y="404" width="160" height="26" rx="4" fill="#d9c3a0"/>
+      <rect x="536" y="378" width="176" height="26" rx="4" fill="#3a5170"/>
+      <rect x="558" y="352" width="146" height="26" rx="4" fill="#8a5a33"/>
+      <rect x="544" y="326" width="166" height="26" rx="4" fill="#d9c3a0"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 등잔불 (라이브러리 재사용, jeong-yakyong s5) ===== -->
+  <svg class="prop" data-adj="s4-lamp" style="right:20px; bottom:600px; width:150px;" viewBox="0 0 130 190">
+    <g data-obj="lamp-body">
+      <rect x="52" y="120" width="26" height="50" rx="6" fill="#5a4632"/>
+      <rect x="34" y="166" width="62" height="14" rx="6" fill="#3d2f20"/>
+      <ellipse cx="65" cy="116" rx="30" ry="12" fill="#8a5a33"/>
+    </g>
+    <path data-obj="lamp-flame" d="M 65 100 Q 52 78 65 56 Q 78 78 65 100 Z" fill="#e8b74a"/>
+  </svg>
+
+  <!-- ===== 캐릭터: 선비 (militia, 갓) ===== -->
+  <div class="char" data-adj="s4-char" style="left:340px; bottom:580px; width:400px; height:480px;"></div>
+
+  <!-- ===== 캐릭터 손 소품: 펼친 두루마리 (양손 사이 — 목봉 롤 양끝이 손 원 중심에 닿음) ===== -->
+  <svg class="prop" data-adj="s4-scroll" style="left:433px; bottom:604px; width:213px; height:107px;" viewBox="0 0 240 120">
+    <g data-obj="scroll-rod-l">
+      <rect x="18" y="15" width="24" height="90" rx="12" fill="#6d4526"/>
+      <ellipse cx="30" cy="15" rx="14" ry="7" fill="#5a3a20"/>
+      <ellipse cx="30" cy="105" rx="14" ry="7" fill="#5a3a20"/>
+    </g>
+    <g data-obj="scroll-rod-r">
+      <rect x="198" y="15" width="24" height="90" rx="12" fill="#6d4526"/>
+      <ellipse cx="210" cy="15" rx="14" ry="7" fill="#5a3a20"/>
+      <ellipse cx="210" cy="105" rx="14" ry="7" fill="#5a3a20"/>
+    </g>
+    <g data-obj="scroll-paper">
+      <path d="M 42 20 Q 120 10 198 20 L 198 100 Q 120 110 42 100 Z" fill="#f6efe3" stroke="#c9b98f" stroke-width="3"/>
+      <line x1="60" y1="42" x2="178" y2="38" stroke="#26221c" stroke-width="3"/>
+      <line x1="60" y1="60" x2="178" y2="60" stroke="#26221c" stroke-width="3"/>
+      <line x1="60" y1="78" x2="150" y2="80" stroke="#26221c" stroke-width="3"/>
+    </g>
+  </svg>
+
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", shirt:"#3a4f6e", pants:"#1f2d45"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+</body></html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#2e2418}
+ .char{position:absolute;}
+</style></head>
+<body>
+  <!-- 환경 레이어: 마루 바닥(지면 디테일 — 판재 결) -->
+  <svg class="env-floor" data-adj="sp1-floor" style="position:absolute; left:0; bottom:0; width:1080px; height:620px" viewBox="0 0 1080 620" preserveAspectRatio="none">
+    <g data-obj="floor-base"><rect x="0" y="0" width="1080" height="620" fill="#493a28"/></g>
+    <g data-obj="floor-planks">
+      <rect x="0" y="120" width="1080" height="6" fill="#33271a"/>
+      <rect x="0" y="230" width="1080" height="6" fill="#33271a"/>
+      <rect x="0" y="340" width="1080" height="6" fill="#33271a"/>
+      <rect x="0" y="450" width="1080" height="6" fill="#33271a"/>
+      <rect x="0" y="560" width="1080" height="6" fill="#33271a"/>
+    </g>
+    <g data-obj="floor-highlight"><rect x="0" y="0" width="1080" height="10" fill="#5c4a34"/></g>
+  </svg>
+
+  <!-- 보조 소품/배경 실루엣: 좌우 붉은 기둥 (어전 프레이밍) -->
+  <svg class="pillar" data-adj="sp1-pillar-l" style="position:absolute; left:0; bottom:0; width:120px; height:1920px" viewBox="0 0 120 1920" preserveAspectRatio="none">
+    <g data-obj="pillar-base-l"><rect x="10" y="1830" width="90" height="90" fill="#2b1c12"/></g>
+    <g data-obj="pillar-body-l"><rect x="26" y="60" width="58" height="1780" fill="#d94f37"/></g>
+    <g data-obj="pillar-shade-l"><rect x="66" y="60" width="18" height="1780" fill="#8e2a1d"/></g>
+    <g data-obj="pillar-capital-l"><rect x="10" y="30" width="90" height="40" rx="8" fill="#e8b74a"/><rect x="10" y="62" width="90" height="12" fill="#c99b3d"/></g>
+  </svg>
+  <svg class="pillar" data-adj="sp1-pillar-r" style="position:absolute; right:0; bottom:0; width:120px; height:1920px" viewBox="0 0 120 1920" preserveAspectRatio="none">
+    <g data-obj="pillar-base-r"><rect x="20" y="1830" width="90" height="90" fill="#2b1c12"/></g>
+    <g data-obj="pillar-body-r"><rect x="36" y="60" width="58" height="1780" fill="#d94f37"/></g>
+    <g data-obj="pillar-shade-r"><rect x="36" y="60" width="18" height="1780" fill="#8e2a1d"/></g>
+    <g data-obj="pillar-capital-r"><rect x="20" y="30" width="90" height="40" rx="8" fill="#e8b74a"/><rect x="20" y="62" width="90" height="12" fill="#c99b3d"/></g>
+  </svg>
+
+  <!-- 천장 보 (환경 상단 마감) -->
+  <div class="ceiling-beam" data-adj="sp1-beam" style="position:absolute; left:0; top:0; width:1080px; height:36px; background:#1c130c"></div>
+  <div class="ceiling-trim" data-adj="sp1-beam-trim" style="position:absolute; left:0; top:36px; width:1080px; height:6px; background:#e8b74a"></div>
+
+  <!-- 환경 레이어: 단청 띠 (조선 궁궐 실내 시그니처 — 녹색 바탕 + 청·적·금 연화 반원 반복) -->
+  <svg class="dancheong" data-adj="sp1-dancheong" style="position:absolute; left:0; top:42px; width:1080px; height:44px" viewBox="0 0 1080 44" preserveAspectRatio="none">
+    <g data-obj="dancheong-band"><rect x="0" y="0" width="1080" height="44" fill="#4f7a3a"/><rect x="0" y="38" width="1080" height="6" fill="#35592a"/></g>
+    <g data-obj="dancheong-motifs">
+      <path d="M 45 0 A 26 26 0 0 0 97 0 Z" fill="#3f6a30"/><path d="M 58 0 A 13 13 0 0 0 84 0 Z" fill="#c99b3d"/>
+      <path d="M 225 0 A 26 26 0 0 0 277 0 Z" fill="#8e2a1d"/><path d="M 238 0 A 13 13 0 0 0 264 0 Z" fill="#c99b3d"/>
+      <path d="M 405 0 A 26 26 0 0 0 457 0 Z" fill="#3f6a30"/><path d="M 418 0 A 13 13 0 0 0 444 0 Z" fill="#c99b3d"/>
+      <path d="M 585 0 A 26 26 0 0 0 637 0 Z" fill="#8e2a1d"/><path d="M 598 0 A 13 13 0 0 0 624 0 Z" fill="#c99b3d"/>
+      <path d="M 765 0 A 26 26 0 0 0 817 0 Z" fill="#3f6a30"/><path d="M 778 0 A 13 13 0 0 0 804 0 Z" fill="#c99b3d"/>
+      <path d="M 945 0 A 26 26 0 0 0 997 0 Z" fill="#8e2a1d"/><path d="M 958 0 A 13 13 0 0 0 984 0 Z" fill="#c99b3d"/>
+    </g>
+  </svg>
+
+  <!-- 앵커 소품 ①: 일월오봉도 병풍 — 어좌 단(step1) 위에 서서 용상 뒤로 펼쳐짐.
+       레퍼런스 시그니처: 다섯 봉우리 + 빨간 해 + 흰 달 + 폭포 2줄 + 양끝 소나무 + 하단 물결. 접이선으로 병풍임을 명시. -->
+  <svg class="throne-screen" data-adj="sp1-screen" style="position:absolute; left:85px; bottom:910px; width:910px; height:617px" viewBox="0 0 900 610">
+    <g data-obj="screen-frame"><rect x="24" y="0" width="852" height="590" fill="#3d2b1a"/><rect x="24" y="0" width="852" height="6" fill="#c99b3d"/><rect x="24" y="584" width="852" height="6" fill="#c99b3d"/></g>
+    <g data-obj="screen-legs"><rect x="48" y="590" width="22" height="14" fill="#241a10"/><rect x="830" y="590" width="22" height="14" fill="#241a10"/></g>
+    <g data-obj="screen-panel"><rect x="30" y="6" width="840" height="578" fill="#e3d8c0"/></g>
+    <g data-obj="screen-mountains">
+      <path d="M 40 520 L 140 360 Q 170 320 200 360 L 300 520 Z" fill="#3e7466"/>
+      <path d="M 170 330 L 300 520 L 170 520 Z" fill="#2b544a"/>
+      <path d="M 160 520 L 270 290 Q 300 240 330 290 L 440 520 Z" fill="#4c8a76"/>
+      <path d="M 300 262 L 440 520 L 300 520 Z" fill="#37665a"/>
+      <path d="M 300 520 L 415 220 Q 450 150 485 220 L 600 520 Z" fill="#3e7466"/>
+      <path d="M 450 180 L 600 520 L 450 520 Z" fill="#2b544a"/>
+      <path d="M 460 520 L 570 290 Q 600 240 630 290 L 740 520 Z" fill="#4c8a76"/>
+      <path d="M 600 262 L 740 520 L 600 520 Z" fill="#37665a"/>
+      <path d="M 600 520 L 700 360 Q 730 320 760 360 L 860 520 Z" fill="#3e7466"/>
+      <path d="M 730 330 L 860 520 L 730 520 Z" fill="#2b544a"/>
+    </g>
+    <g data-obj="screen-sun"><circle cx="560" cy="205" r="42" fill="#d94f37"/></g>
+    <g data-obj="screen-moon"><circle cx="255" cy="205" r="42" fill="#fdfaf2"/><circle cx="255" cy="205" r="42" fill="none" stroke="#b5ac99" stroke-width="3"/></g>
+    <g data-obj="screen-waterfalls">
+      <path d="M 405 330 Q 395 390 408 440 Q 418 490 402 512" stroke="#7fb4d6" stroke-width="14" fill="none" stroke-linecap="round"/>
+      <path d="M 405 335 Q 398 390 409 440 Q 416 486 405 508" stroke="#fdfaf2" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 495 330 Q 505 390 492 440 Q 482 490 498 512" stroke="#7fb4d6" stroke-width="14" fill="none" stroke-linecap="round"/>
+      <path d="M 495 335 Q 502 390 491 440 Q 484 486 495 508" stroke="#fdfaf2" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="screen-pine-l">
+      <path d="M 66 520 Q 58 470 76 430 Q 90 400 82 370 L 96 366 Q 106 402 90 436 Q 76 472 84 520 Z" fill="#6b4a2e"/>
+      <ellipse cx="88" cy="352" rx="52" ry="26" fill="#4f7a3a"/>
+      <ellipse cx="60" cy="386" rx="38" ry="20" fill="#5e8b45"/>
+      <ellipse cx="122" cy="392" rx="34" ry="18" fill="#5e8b45"/>
+    </g>
+    <g data-obj="screen-pine-r">
+      <path d="M 834 520 Q 842 470 824 430 Q 810 400 818 370 L 804 366 Q 794 402 810 436 Q 824 472 816 520 Z" fill="#6b4a2e"/>
+      <ellipse cx="812" cy="352" rx="52" ry="26" fill="#4f7a3a"/>
+      <ellipse cx="840" cy="386" rx="38" ry="20" fill="#5e8b45"/>
+      <ellipse cx="778" cy="392" rx="34" ry="18" fill="#5e8b45"/>
+    </g>
+    <g data-obj="screen-waves">
+      <path d="M 30 578 L 30 556 A 30 30 0 0 1 90 556 A 30 30 0 0 1 150 556 A 30 30 0 0 1 210 556 A 30 30 0 0 1 270 556 A 30 30 0 0 1 330 556 A 30 30 0 0 1 390 556 A 30 30 0 0 1 450 556 A 30 30 0 0 1 510 556 A 30 30 0 0 1 570 556 A 30 30 0 0 1 630 556 A 30 30 0 0 1 690 556 A 30 30 0 0 1 750 556 A 30 30 0 0 1 810 556 A 30 30 0 0 1 870 556 L 870 578 Z" fill="#3a7ca5"/>
+      <path d="M 30 578 L 30 568 A 22 22 0 0 1 74 568 A 22 22 0 0 1 118 568 A 22 22 0 0 1 162 568 A 22 22 0 0 1 206 568 A 22 22 0 0 1 250 568 A 22 22 0 0 1 294 568 A 22 22 0 0 1 338 568 A 22 22 0 0 1 382 568 A 22 22 0 0 1 426 568 A 22 22 0 0 1 470 568 A 22 22 0 0 1 514 568 A 22 22 0 0 1 558 568 A 22 22 0 0 1 602 568 A 22 22 0 0 1 646 568 A 22 22 0 0 1 690 568 A 22 22 0 0 1 734 568 A 22 22 0 0 1 778 568 A 22 22 0 0 1 822 568 A 22 22 0 0 1 866 568 L 870 568 L 870 578 Z" fill="#7fb4d6"/>
+    </g>
+    <g data-obj="screen-folds">
+      <rect x="170" y="6" width="4" height="578" fill="#cfc4aa"/>
+      <rect x="310" y="6" width="4" height="578" fill="#cfc4aa"/>
+      <rect x="450" y="6" width="4" height="578" fill="#cfc4aa"/>
+      <rect x="590" y="6" width="4" height="578" fill="#cfc4aa"/>
+      <rect x="730" y="6" width="4" height="578" fill="#cfc4aa"/>
+    </g>
+  </svg>
+
+  <!-- 앵커 소품 ②: 붉은 어좌 단(3단) + 용상(금장 옥좌) — 왕은 단 위 용상 왼편이 아닌 오른편에 섬 -->
+  <svg class="throne-dais" data-adj="sp1-dais" style="position:absolute; left:45px; bottom:580px; width:990px; height:616px" viewBox="0 -60 900 560">
+    <g data-obj="throne" transform="translate(340 196) scale(1.22) translate(-340 -196)">
+    <g data-obj="throne-crest">
+      <path d="M 270 8 Q 340 -10 410 8 L 410 22 Q 340 6 270 22 Z" fill="#e8b74a"/>
+      <circle cx="340" cy="-1" r="9" fill="#d94f37"/>
+      <circle cx="288" cy="12" r="6" fill="#c99b3d"/>
+      <circle cx="392" cy="12" r="6" fill="#c99b3d"/>
+    </g>
+    <g data-obj="throne-back-frame"><rect x="286" y="10" width="108" height="152" rx="10" fill="#e8b74a"/></g>
+    <g data-obj="throne-back-panel"><rect x="296" y="20" width="88" height="128" rx="6" fill="#8e2a1d"/></g>
+    <g data-obj="throne-emblem"><circle cx="340" cy="76" r="20" fill="#e8b74a"/><circle cx="340" cy="76" r="14" fill="#c99b3d"/><path d="M 330 78 Q 335 69 340 76 Q 345 83 350 74" stroke="#e8b74a" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
+    <g data-obj="throne-arms">
+      <rect x="228" y="104" width="30" height="78" rx="10" fill="#5a4632"/>
+      <rect x="422" y="104" width="30" height="78" rx="10" fill="#5a4632"/>
+      <circle cx="243" cy="104" r="12" fill="#e8b74a"/>
+      <circle cx="437" cy="104" r="12" fill="#e8b74a"/>
+    </g>
+    <g data-obj="throne-seat"><rect x="240" y="154" width="200" height="28" rx="8" fill="#d94f37"/><rect x="368" y="154" width="72" height="28" rx="8" fill="#8e2a1d"/></g>
+    <g data-obj="throne-legs">
+      <rect x="252" y="182" width="18" height="14" fill="#3d2b1a"/>
+      <rect x="410" y="182" width="18" height="14" fill="#3d2b1a"/>
+    </g>
+    </g>
+
+    <g data-obj="dais-step3">
+      <rect x="180" y="196" width="620" height="6" fill="#e8b74a"/>
+      <rect x="180" y="202" width="620" height="78" fill="#8e2a1d"/>
+      <rect x="180" y="280" width="620" height="20" fill="#5f1c11"/>
+    </g>
+    <g data-obj="dais-step2">
+      <rect x="100" y="306" width="700" height="6" fill="#e8b74a"/>
+      <rect x="100" y="312" width="700" height="78" fill="#8e2a1d"/>
+      <rect x="100" y="390" width="700" height="20" fill="#5f1c11"/>
+    </g>
+    <g data-obj="dais-step1">
+      <rect x="30" y="416" width="840" height="6" fill="#e8b74a"/>
+      <rect x="30" y="422" width="840" height="64" fill="#8e2a1d"/>
+      <rect x="30" y="486" width="840" height="14" fill="#5f1c11"/>
+    </g>
+  </svg>
+
+  <!-- 캐릭터: 왕 — 어좌 단 맨 위 단, 용상 오른쪽 옆에 서 있음 -->
+  <div class="char" id="char-king" style="left:620px; bottom:902px; width:420px; height:504px; z-index:5;"></div>
+  <!-- 캐릭터: 문신 — 단 아래 마루, 고개 숙인 자세(전신 기울임). 자막존(하단 580px) 위에 위치 -->
+  <div class="char" id="char-min" style="left:70px; bottom:578px; width:340px; height:408px; transform:rotate(16deg); transform-origin:50% 100%; z-index:4;"></div>
+
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    function mount(sel, cfg){ var el=document.querySelector(sel); el.innerHTML=makeCharacter(cfg);
+      var e=EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); }); }
+    mount("#char-king", {variant:"king", shirt:"#c0392b", pants:"#7c1d12"});
+    mount("#char-min", {variant:"militia", shirt:"#3a4f6e", pants:"#1f2d45"});
+  </script>
+</body></html>

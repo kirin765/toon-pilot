@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#8ec9e8}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 하늘 구름 2개 ===== -->
+  <svg class="prop" data-adj="s1-cloud-1" style="top:70px; left:70px; width:170px; height:78px;" viewBox="0 0 170 78">
+    <path d="M 15 60 Q 0 30 35 24 Q 42 4 72 12 Q 92 -4 116 12 Q 148 8 148 34 Q 168 40 156 58 Q 162 72 140 72 L 30 72 Q 4 72 15 60 Z" fill="#f6efe3"/>
+  </svg>
+  <svg class="prop" data-adj="s1-cloud-2" style="top:140px; left:830px; width:130px; height:62px;" viewBox="0 0 130 62">
+    <path d="M 10 48 Q 0 22 25 18 Q 32 2 52 8 Q 68 -4 86 8 Q 112 4 112 24 Q 128 30 118 44 Q 122 54 104 54 L 22 54 Q 2 54 10 48 Z" fill="#f6efe3"/>
+  </svg>
+
+  <!-- ===== 배경 실루엣: 맞은편 강둑 언덕 (2톤) ===== -->
+  <svg class="prop" data-adj="s1-hills" style="left:0; bottom:1200px; width:1080px; height:260px;" viewBox="0 0 1080 260">
+    <g data-obj="hill-ridge">
+      <path d="M 0 260 L 0 160 Q 270 100 540 140 Q 810 180 1080 130 L 1080 260 Z" fill="#6f9c46"/>
+    </g>
+    <g data-obj="hill-shade">
+      <path d="M 0 260 L 0 210 Q 270 230 540 214 Q 810 198 1080 218 L 1080 260 Z" fill="#4f6a34"/>
+    </g>
+  </svg>
+
+  <!-- ===== 주 소품: 강물 (수면 620px x 700px, 물결·반짝임·맞은편 갈대 포함) ===== -->
+  <svg class="prop" data-adj="s1-river" style="left:480px; bottom:600px; width:600px; height:700px;" viewBox="0 0 600 700">
+    <g data-obj="water-body">
+      <rect x="0" y="0" width="600" height="700" fill="#3a7ca5"/>
+    </g>
+    <g data-obj="water-shade">
+      <path d="M 350 0 L 600 0 L 600 700 L 470 700 Q 420 350 350 0 Z" fill="#2e6384"/>
+    </g>
+    <g data-obj="water-highlight">
+      <path d="M 20 140 Q 200 120 420 150" stroke="#f6efe3" stroke-width="7" fill="none" opacity="0.32" stroke-linecap="round"/>
+      <path d="M 60 300 Q 260 280 520 310" stroke="#f6efe3" stroke-width="7" fill="none" opacity="0.28" stroke-linecap="round"/>
+      <path d="M 10 460 Q 220 440 460 470" stroke="#f6efe3" stroke-width="6" fill="none" opacity="0.26" stroke-linecap="round"/>
+      <path d="M 80 600 Q 280 585 540 610" stroke="#f6efe3" stroke-width="6" fill="none" opacity="0.24" stroke-linecap="round"/>
+    </g>
+    <g data-obj="water-ripple-ambient">
+      <ellipse cx="180" cy="230" rx="46" ry="12" fill="none" stroke="#f6efe3" stroke-width="3" opacity="0.35"/>
+      <ellipse cx="180" cy="230" rx="78" ry="20" fill="none" stroke="#f6efe3" stroke-width="2" opacity="0.2"/>
+    </g>
+    <g data-obj="far-shore-edge">
+      <path d="M 0 0 L 600 0 L 600 34 Q 300 52 0 30 Z" fill="#6f9c46"/>
+    </g>
+    <g data-obj="far-reeds">
+      <path d="M 60 34 Q 54 -20 46 -46" stroke="#4f6a34" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 90 34 Q 96 -14 106 -40" stroke="#4f6a34" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 470 30 Q 464 -18 456 -44" stroke="#4f6a34" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 500 30 Q 508 -12 520 -38" stroke="#4f6a34" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 530 28 Q 522 -16 512 -42" stroke="#4f6a34" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 강둑(뭍) 바닥 — 2톤 + 물가 진흙띠 + 풀/자갈 디테일 ===== -->
+  <div class="prop" data-adj="s1-ground" style="left:0; bottom:0; width:1080px; height:700px; background:#7db95c;"></div>
+  <div class="prop" data-adj="s1-ground-shade" style="left:0; bottom:640px; width:1080px; height:60px; background:#5f8c3c;"></div>
+  <svg class="prop" data-adj="s1-ground-detail" style="left:0; bottom:0; width:1080px; height:170px;" viewBox="0 0 1080 170">
+    <g data-obj="grass-l">
+      <polygon points="60,170 52,120 68,170" fill="#6f9c46"/>
+      <polygon points="82,170 78,108 94,170" fill="#5f8c3c"/>
+      <polygon points="104,170 100,124 118,170" fill="#6f9c46"/>
+    </g>
+    <g data-obj="grass-r">
+      <polygon points="960,170 954,116 972,170" fill="#6f9c46"/>
+      <polygon points="985,170 980,128 998,170" fill="#5f8c3c"/>
+      <polygon points="1010,170 1006,110 1024,170" fill="#6f9c46"/>
+    </g>
+    <g data-obj="floor-pebbles">
+      <ellipse cx="800" cy="140" rx="15" ry="8" fill="#8a8378"/>
+      <ellipse cx="860" cy="152" rx="11" ry="6" fill="#6d6a5c"/>
+      <ellipse cx="200" cy="145" rx="13" ry="7" fill="#8a8378"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 물고기 통 (나무통, 뭍 위 — 손잡이·테·안 물+물고기 2마리) ===== -->
+  <svg class="prop" data-adj="s1-bucket" style="left:430px; bottom:600px; width:200px; height:220px;" viewBox="0 0 200 220">
+    <g data-obj="bucket-handle">
+      <path d="M 40 50 Q 100 -10 160 50" stroke="#3a2a1c" stroke-width="10" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="bucket-body">
+      <path d="M 30 44 Q 20 130 46 200 L 154 200 Q 180 130 170 44 Z" fill="#8a6238"/>
+    </g>
+    <g data-obj="bucket-shade">
+      <path d="M 100 44 L 170 44 Q 180 130 154 200 L 120 200 Q 110 120 100 44 Z" fill="#6d4526" opacity="0.85"/>
+    </g>
+    <g data-obj="bucket-band">
+      <rect x="28" y="120" width="144" height="14" fill="#4a2f19"/>
+    </g>
+    <g data-obj="bucket-rim">
+      <ellipse cx="100" cy="40" rx="80" ry="18" fill="#3a2a1c"/>
+      <ellipse cx="100" cy="38" rx="64" ry="12" fill="#4a6f7a"/>
+    </g>
+    <g data-obj="fish-1">
+      <ellipse cx="78" cy="20" rx="32" ry="13" fill="#9fb0b8" transform="rotate(-18 78 20)"/>
+      <polygon points="48,20 30,6 32,30" fill="#8298a1" transform="rotate(-18 78 20)"/>
+    </g>
+    <g data-obj="fish-2">
+      <ellipse cx="132" cy="14" rx="28" ry="12" fill="#b0c0c6" transform="rotate(14 132 14)"/>
+      <polygon points="158,14 176,2 174,24" fill="#96a7ad" transform="rotate(14 132 14)"/>
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 낚시꾼 (militia, 갓+도포) — 강둑 위, 발은 뭍(bottom:600)에 고정 ===== -->
+  <div class="char" data-adj="s1-fisher" style="left:60px; bottom:600px; width:400px; height:480px;"></div>
+
+  <!-- ===== 보조 소품: 긴 낚싯대 + 낚싯줄 + 찌 (오른손 위치에서 강 쪽으로, 찌는 수면에 접촉) ===== -->
+  <svg class="prop" data-adj="s1-rod" style="left:290px; bottom:630px; width:500px; height:450px;" viewBox="0 0 500 450">
+    <g data-obj="rod-shaft">
+      <path d="M 50 402 Q 220 260 310 60" stroke="#8a6238" stroke-width="11" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="rod-tip-shade">
+      <path d="M 200 190 Q 268 120 310 60" stroke="#6d4526" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="rod-grip">
+      <ellipse cx="50" cy="402" rx="18" ry="14" fill="#3a2a1c"/>
+    </g>
+    <g data-obj="rod-reel">
+      <circle cx="80" cy="418" r="15" fill="#4a2f19"/>
+      <circle cx="80" cy="418" r="7" fill="#6d4526"/>
+    </g>
+    <g data-obj="rod-guides">
+      <ellipse cx="150" cy="320" rx="7" ry="3" fill="none" stroke="#3a2a1c" stroke-width="2" transform="rotate(-35 150 320)"/>
+      <ellipse cx="235" cy="180" rx="6" ry="3" fill="none" stroke="#3a2a1c" stroke-width="2" transform="rotate(-50 235 180)"/>
+    </g>
+    <g data-obj="fishing-line">
+      <path d="M 310 60 Q 360 210 400 378" stroke="#26221c" stroke-width="2" fill="none"/>
+    </g>
+    <g data-obj="bobber-top">
+      <ellipse cx="400" cy="368" rx="16" ry="13" fill="#d94f37"/>
+    </g>
+    <g data-obj="bobber-bottom">
+      <ellipse cx="400" cy="389" rx="16" ry="13" fill="#f6efe3"/>
+    </g>
+    <g data-obj="bobber-stick">
+      <rect x="397" y="330" width="4" height="42" fill="#3a2a1c"/>
+    </g>
+    <g data-obj="bobber-ripples">
+      <ellipse cx="400" cy="392" rx="42" ry="12" fill="none" stroke="#f6efe3" stroke-width="3" opacity="0.5"/>
+      <ellipse cx="400" cy="392" rx="70" ry="19" fill="none" stroke="#f6efe3" stroke-width="2" opacity="0.3"/>
+    </g>
+  </svg>
+
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", shirt:"#e3d8c0", pants:"#6f5c43"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+</body></html>

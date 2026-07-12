@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#8ec9e8}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- 환경 레이어: 하늘 구름 (2톤 명암) -->
+  <svg class="prop" data-adj="sp4-clouds" style="top:20px; left:0px; width:1080px; height:300px" viewBox="0 0 1080 300">
+    <g data-obj="sun">
+      <circle cx="540" cy="110" r="62" fill="#e8b74a"/>
+      <circle cx="522" cy="94" r="40" fill="#f0cc74" opacity="0.8"/>
+    </g>
+    <g data-obj="cloud-1">
+      <ellipse cx="200" cy="120" rx="110" ry="46" fill="#f6efe3"/>
+      <ellipse cx="290" cy="140" rx="80" ry="36" fill="#f6efe3"/>
+      <ellipse cx="130" cy="145" rx="70" ry="32" fill="#f6efe3"/>
+      <ellipse cx="220" cy="158" rx="140" ry="22" fill="#dcd2bd" opacity="0.7"/>
+    </g>
+    <g data-obj="cloud-2">
+      <ellipse cx="840" cy="80" rx="90" ry="36" fill="#f6efe3"/>
+      <ellipse cx="900" cy="98" rx="60" ry="26" fill="#f6efe3"/>
+      <ellipse cx="860" cy="112" rx="110" ry="16" fill="#dcd2bd" opacity="0.7"/>
+    </g>
+  </svg>
+
+  <!-- 배경: 궁궐 담 (기와 얹은 낮은 담) — 보조 소품/배경 실루엣 -->
+  <svg class="prop" data-adj="sp4-wall" style="bottom:1130px; left:0px; width:1080px; height:480px" viewBox="0 0 1080 480" preserveAspectRatio="none">
+    <g data-obj="wall-roof">
+      <path d="M -20 60 Q 270 10 540 35 Q 810 60 1100 30 L 1100 75 Q 810 100 540 72 Q 270 45 -20 95 Z" fill="#4a4f57"/>
+      <path d="M -20 90 Q 270 42 540 68 Q 810 95 1100 68 L 1100 80 Q 810 105 540 80 Q 270 55 -20 102 Z" fill="#33363c" opacity="0.55"/>
+      <path d="M -20 58 Q 270 8 540 33 Q 810 58 1100 28" stroke="#6a7078" stroke-width="5" fill="none" opacity="0.8"/>
+      <line x1="80" y1="46" x2="82" y2="86" stroke="#33363c" stroke-width="6"/>
+      <line x1="200" y1="34" x2="202" y2="74" stroke="#33363c" stroke-width="6"/>
+      <line x1="320" y1="26" x2="322" y2="66" stroke="#33363c" stroke-width="6"/>
+      <line x1="440" y1="26" x2="442" y2="66" stroke="#33363c" stroke-width="6"/>
+      <line x1="560" y1="32" x2="562" y2="72" stroke="#33363c" stroke-width="6"/>
+      <line x1="680" y1="42" x2="682" y2="82" stroke="#33363c" stroke-width="6"/>
+      <line x1="800" y1="52" x2="802" y2="92" stroke="#33363c" stroke-width="6"/>
+      <line x1="920" y1="52" x2="922" y2="92" stroke="#33363c" stroke-width="6"/>
+      <line x1="1030" y1="42" x2="1032" y2="82" stroke="#33363c" stroke-width="6"/>
+    </g>
+    <g data-obj="wall-coping">
+      <rect x="0" y="92" width="1080" height="18" fill="#bdb193"/>
+    </g>
+    <g data-obj="wall-body">
+      <rect x="0" y="110" width="1080" height="270" fill="#d9c9a3"/>
+      <rect x="0" y="320" width="1080" height="60" fill="#b8a67c"/>
+    </g>
+    <g data-obj="wall-pattern">
+      <path d="M 120 150 L 160 190 L 120 230 L 80 190 Z" fill="none" stroke="#b8a67c" stroke-width="3" opacity="0.6"/>
+      <path d="M 400 150 L 440 190 L 400 230 L 360 190 Z" fill="none" stroke="#b8a67c" stroke-width="3" opacity="0.6"/>
+      <path d="M 660 150 L 700 190 L 660 230 L 620 190 Z" fill="none" stroke="#b8a67c" stroke-width="3" opacity="0.6"/>
+      <path d="M 920 150 L 960 190 L 920 230 L 880 190 Z" fill="none" stroke="#b8a67c" stroke-width="3" opacity="0.6"/>
+    </g>
+    <g data-obj="wall-base">
+      <rect x="0" y="380" width="1080" height="100" fill="#8a8072"/>
+      <rect x="0" y="380" width="1080" height="14" fill="#a39a89"/>
+    </g>
+  </svg>
+
+  <!-- 환경 레이어: 궁궐 마당 박석 바닥 (지면 디테일) -->
+  <div class="prop" style="left:0px; bottom:0px; width:1080px; height:1150px; background:#aab0ad"></div>
+  <svg class="prop" data-adj="sp4-floor" style="left:0px; bottom:0px; width:1080px; height:1150px" viewBox="0 0 1080 1150" preserveAspectRatio="none">
+    <g data-obj="floor-shade">
+      <rect x="0" y="0" width="1080" height="300" fill="#8f958f"/>
+    </g>
+    <g data-obj="floor-pavers">
+      <line x1="0" y1="350" x2="1080" y2="350" stroke="#8f958f" stroke-width="4"/>
+      <line x1="0" y1="500" x2="1080" y2="500" stroke="#8f958f" stroke-width="4"/>
+      <line x1="0" y1="650" x2="1080" y2="650" stroke="#93998f" stroke-width="4"/>
+      <line x1="0" y1="800" x2="1080" y2="800" stroke="#93998f" stroke-width="4"/>
+      <line x1="0" y1="950" x2="1080" y2="950" stroke="#93998f" stroke-width="4"/>
+      <line x1="0" y1="1100" x2="1080" y2="1100" stroke="#93998f" stroke-width="4"/>
+      <line x1="140" y1="350" x2="140" y2="1150" stroke="#93998f" stroke-width="3"/>
+      <line x1="320" y1="350" x2="320" y2="1150" stroke="#93998f" stroke-width="3"/>
+      <line x1="500" y1="350" x2="500" y2="1150" stroke="#93998f" stroke-width="3"/>
+      <line x1="680" y1="350" x2="680" y2="1150" stroke="#93998f" stroke-width="3"/>
+      <line x1="860" y1="350" x2="860" y2="1150" stroke="#93998f" stroke-width="3"/>
+      <line x1="1040" y1="350" x2="1040" y2="1150" stroke="#93998f" stroke-width="3"/>
+    </g>
+  </svg>
+
+  <!-- 주 소품: 측우기 — 넓은 화강암 대석 + 청동 원통(상단 테두리 림 + 몸통 이음 밴드 2개) -->
+  <svg class="prop" data-adj="sp4-cheugu" style="left:20px; bottom:580px; width:300px" viewBox="0 0 320 560">
+    <ellipse cx="160" cy="556" rx="140" ry="14" fill="#1f2d45" opacity="0.15"/>
+    <g data-obj="cheugu-base">
+      <rect x="10" y="460" width="300" height="100" fill="#cfc9bb"/>
+      <rect x="10" y="524" width="300" height="36" fill="#a49e90"/>
+      <path d="M 10 460 L 310 460 L 280 420 L 40 420 Z" fill="#e3ddd0"/>
+      <rect x="10" y="458" width="300" height="10" fill="#b3ad9f"/>
+      <line x1="80" y1="470" x2="80" y2="518" stroke="#b3ad9f" stroke-width="3"/>
+      <line x1="240" y1="470" x2="240" y2="518" stroke="#b3ad9f" stroke-width="3"/>
+    </g>
+    <g data-obj="cheugu-cylinder-body">
+      <rect x="105" y="70" width="110" height="350" rx="6" fill="#8a7a3e"/>
+      <rect x="177" y="70" width="38" height="350" fill="#5f5527"/>
+      <rect x="118" y="70" width="10" height="350" fill="#d4c26a"/>
+      <rect x="136" y="70" width="4" height="350" fill="#c2b164" opacity="0.7"/>
+    </g>
+    <g data-obj="cheugu-verdigris">
+      <path d="M 105 240 Q 118 230 130 242 Q 138 256 126 266 Q 110 272 105 260 Z" fill="#4e8a78"/>
+      <path d="M 194 372 Q 206 364 215 376 L 215 398 Q 202 406 194 394 Z" fill="#4e8a78" opacity="0.85"/>
+    </g>
+    <g data-obj="cheugu-cylinder-bands">
+      <rect x="100" y="330" width="120" height="26" rx="4" fill="#524818"/>
+      <rect x="100" y="330" width="120" height="8" fill="#a89a52"/>
+      <rect x="100" y="180" width="120" height="26" rx="4" fill="#524818"/>
+      <rect x="100" y="180" width="120" height="8" fill="#a89a52"/>
+    </g>
+    <g data-obj="cheugu-cylinder-rim">
+      <ellipse cx="160" cy="66" rx="60" ry="22" fill="#b3a04e"/>
+      <path d="M 100 70 Q 160 96 220 70 Q 160 84 100 70 Z" fill="#5f5527" opacity="0.6"/>
+      <ellipse cx="160" cy="63" rx="40" ry="12" fill="#1c1a0c"/>
+      <path d="M 100 66 A 60 22 0 0 1 220 66" fill="none" stroke="#e8dc8a" stroke-width="3" opacity="0.9"/>
+    </g>
+  </svg>
+
+  <!-- 캐릭터: 관원 (militia, 남색 관복+갓) -->
+  <div class="char" style="left:340px; bottom:580px; width:400px; height:480px;"></div>
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", shirt:"#3a4f6e", pants:"#1f2d45"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+
+  <!-- 주 소품: 앙부일구 — 십자 4다리 받침대 + 가마솥형 오목 반구(눈금선) + 비스듬한 영침 -->
+  <svg class="prop" data-adj="sp4-angbu" style="left:760px; bottom:580px; width:300px" viewBox="0 0 340 620">
+    <ellipse cx="170" cy="612" rx="150" ry="12" fill="#1f2d45" opacity="0.15"/>
+    <g data-obj="angbu-stand">
+      <path d="M 110 432 L 52 596 L 66 600 L 122 440 Z" fill="#3f3a34"/>
+      <path d="M 230 432 L 288 596 L 274 600 L 218 440 Z" fill="#3f3a34"/>
+      <path d="M 152 438 L 144 590 L 156 590 L 162 440 Z" fill="#33302a"/>
+      <path d="M 188 438 L 196 590 L 184 590 L 178 440 Z" fill="#33302a"/>
+      <line x1="76" y1="556" x2="264" y2="556" stroke="#3f3a34" stroke-width="7"/>
+      <ellipse cx="60" cy="598" rx="17" ry="6" fill="#33302a"/>
+      <ellipse cx="280" cy="598" rx="17" ry="6" fill="#33302a"/>
+      <rect x="122" y="392" width="96" height="42" rx="10" fill="#33302a"/>
+    </g>
+    <g data-obj="angbu-bowl-body">
+      <path d="M 30 200 Q 34 320 100 368 Q 140 398 170 398 Q 200 398 240 368 Q 306 320 310 200 Z" fill="#8a7a3e"/>
+      <path d="M 240 368 Q 306 320 310 200 L 262 200 Q 260 310 214 360 Q 200 380 170 392 Q 200 392 240 368 Z" fill="#5f5527" opacity="0.85"/>
+      <path d="M 30 200 Q 33 296 78 350 Q 58 296 56 200 Z" fill="#c2b164" opacity="0.55"/>
+      <path d="M 96 346 Q 110 338 119 350 Q 123 362 111 369 Q 98 372 93 360 Z" fill="#4e8a78" opacity="0.85"/>
+    </g>
+    <g data-obj="angbu-bowl-interior">
+      <ellipse cx="170" cy="200" rx="140" ry="88" fill="#241a0e"/>
+      <ellipse cx="170" cy="192" rx="118" ry="70" fill="#3a2c16"/>
+    </g>
+    <g data-obj="angbu-bowl-scale">
+      <path d="M 66 152 Q 118 270 170 274 Q 222 270 274 152" stroke="#c9a15a" stroke-width="3" fill="none" opacity="0.9"/>
+      <path d="M 96 136 Q 140 268 170 272 Q 200 268 244 136" stroke="#c9a15a" stroke-width="3" fill="none" opacity="0.9"/>
+      <path d="M 138 128 Q 162 262 170 270 Q 178 262 202 128" stroke="#c9a15a" stroke-width="3" fill="none" opacity="0.9"/>
+      <path d="M 62 190 Q 170 244 278 190" stroke="#a8916a" stroke-width="2.5" fill="none" opacity="0.8"/>
+      <path d="M 78 226 Q 170 268 262 226" stroke="#a8916a" stroke-width="2.5" fill="none" opacity="0.8"/>
+    </g>
+    <g data-obj="angbu-rim">
+      <path d="M 30 200 A 140 88 0 0 1 310 200" fill="none" stroke="#c9a15a" stroke-width="10"/>
+      <path d="M 30 200 A 140 88 0 0 0 310 200" fill="none" stroke="#8a7550" stroke-width="6" opacity="0.8"/>
+    </g>
+    <g data-obj="angbu-gnomon">
+      <circle cx="170" cy="262" r="10" fill="#c9a15a"/>
+      <polygon points="164,264 176,260 128,52 118,62" fill="#1c1310"/>
+      <polygon points="164,264 170,262 126,58 122,62" fill="#4d4438"/>
+      <circle cx="124" cy="56" r="6" fill="#e8c77a"/>
+    </g>
+  </svg>
+</body></html>

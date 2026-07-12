@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#8ec9e8}
+ .char{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 하늘 (해 + 구름, 2톤 헤이즈) ===== -->
+  <div data-adj="s2-sky-horizon" style="position:absolute; left:0; bottom:1300px; width:1080px; height:220px; background:#b7e2ef;"></div>
+
+  <svg data-adj="s2-sun" style="position:absolute; top:90px; left:760px; width:150px; height:150px;" viewBox="0 0 150 150">
+    <g data-obj="sun-body">
+      <circle cx="75" cy="75" r="52" fill="#e8b74a"/>
+      <circle cx="60" cy="60" r="52" fill="#f2c56a" opacity="0.35"/>
+    </g>
+  </svg>
+
+  <svg data-adj="s2-cloud-1" style="position:absolute; top:120px; left:60px; width:190px; height:90px;" viewBox="0 0 190 90">
+    <path d="M 18 70 Q 0 35 40 28 Q 48 4 82 14 Q 104 -4 130 14 Q 166 8 166 38 Q 188 46 174 66 Q 180 82 156 82 L 34 82 Q 4 82 18 70 Z" fill="#f6efe3"/>
+  </svg>
+  <svg data-adj="s2-cloud-2" style="position:absolute; top:250px; left:340px; width:120px; height:58px;" viewBox="0 0 120 58">
+    <path d="M 9 44 Q 0 20 23 16 Q 30 2 48 8 Q 63 -4 79 8 Q 103 4 103 22 Q 118 28 109 40 Q 112 50 96 50 L 20 50 Q 2 50 9 44 Z" fill="#f6efe3" opacity="0.9"/>
+  </svg>
+
+  <!-- ===== 배경 실루엣: 먼 산 능선 (원경) ===== -->
+  <svg data-adj="s2-far-hill" style="position:absolute; left:0; bottom:1170px; width:1080px; height:200px;" viewBox="0 0 1080 200">
+    <g data-obj="far-hill-ridge">
+      <path d="M 0 200 L 0 110 Q 200 60 420 96 Q 640 130 860 78 Q 980 52 1080 76 L 1080 200 Z" fill="#7fa998"/>
+    </g>
+    <g data-obj="far-hill-shade">
+      <path d="M 0 200 L 0 160 Q 260 178 540 162 Q 820 146 1080 168 L 1080 200 Z" fill="#5f8a76"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품/배경 실루엣: 과녁 뒤 흙 방호벽(둔덕) ===== -->
+  <svg data-adj="s2-backstop" style="position:absolute; left:520px; bottom:900px; width:520px; height:340px;" viewBox="0 0 520 340">
+    <g data-obj="backstop-mound">
+      <path d="M 0 340 L 0 170 Q 130 90 260 100 Q 390 110 520 60 L 520 340 Z" fill="#6f9c46"/>
+    </g>
+    <g data-obj="backstop-shade">
+      <path d="M 0 340 L 0 260 Q 180 280 360 258 Q 450 246 520 250 L 520 340 Z" fill="#547c33"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 잔디 지면 (2톤 + 사대 발판) ===== -->
+  <div data-adj="s2-grass-far" style="position:absolute; left:0; bottom:520px; width:1080px; height:400px; background:#7db95c;"></div>
+  <div data-adj="s2-grass-shade" style="position:absolute; left:0; bottom:520px; width:1080px; height:50px; background:#5f9741;"></div>
+  <div data-adj="s2-ground-near" style="position:absolute; left:0; bottom:0px; width:1080px; height:520px; background:#6fac4c;"></div>
+
+  <!-- 사대(궁수가 딛는 잔디 발판 — 살짝 솟은 둔덕 + 가장자리 풀) -->
+  <svg data-adj="s2-shooting-mound" style="position:absolute; left:40px; bottom:585px; width:480px; height:120px;" viewBox="0 0 480 120">
+    <g data-obj="mound-body">
+      <path d="M 10 120 Q 0 60 60 40 Q 240 8 420 42 Q 480 55 470 120 Z" fill="#8fc468"/>
+    </g>
+    <g data-obj="mound-edge">
+      <path d="M 10 120 Q 4 90 30 70 Q 220 40 440 74 Q 466 82 470 120 Z" fill="#6fac4c"/>
+    </g>
+    <g data-obj="mound-tufts">
+      <polygon points="70,44 64,14 78,44" fill="#5f9741"/>
+      <polygon points="90,40 86,10 100,40" fill="#7db95c"/>
+      <polygon points="380,48 376,18 390,48" fill="#5f9741"/>
+      <polygon points="400,44 396,16 410,44" fill="#7db95c"/>
+    </g>
+  </svg>
+
+  <svg data-adj="s2-grass-tufts-r" style="position:absolute; left:920px; bottom:585px; width:140px; height:70px;" viewBox="0 0 140 70">
+    <g data-obj="tuft-r1">
+      <polygon points="20,70 14,30 28,70" fill="#5f9741"/>
+      <polygon points="40,70 36,20 50,70" fill="#7db95c"/>
+    </g>
+    <g data-obj="tuft-r2">
+      <polygon points="100,70 94,26 108,70" fill="#5f9741"/>
+      <polygon points="120,70 116,34 130,70" fill="#7db95c"/>
+    </g>
+  </svg>
+
+  <!-- ===== 주 소품: 동심원 과녁(솔포) + A자 나무 거치대 (9그룹 · 15프리미티브) ===== -->
+  <svg data-adj="s2-target" style="position:absolute; left:580px; bottom:610px; width:440px; height:680px;" viewBox="0 0 440 680">
+    <g data-obj="target-shadow">
+      <ellipse cx="220" cy="668" rx="160" ry="16" fill="#1f2d45" opacity="0.18"/>
+    </g>
+    <g data-obj="target-base">
+      <rect x="150" y="644" width="140" height="24" rx="6" fill="#5a3a20"/>
+    </g>
+    <g data-obj="target-brace-l">
+      <polygon points="120,660 152,660 220,420 202,420" fill="#6d4526"/>
+    </g>
+    <g data-obj="target-brace-r">
+      <polygon points="320,660 288,660 220,420 238,420" fill="#8a5a33"/>
+    </g>
+    <g data-obj="target-post">
+      <rect x="209" y="110" width="22" height="530" fill="#6d4526"/>
+      <rect x="220" y="110" width="11" height="530" fill="#4a2f19"/>
+    </g>
+    <g data-obj="target-board">
+      <rect x="58" y="38" width="324" height="324" rx="14" fill="#e3d8c0"/>
+    </g>
+    <g data-obj="target-board-shade">
+      <path d="M 340 38 L 382 38 L 382 362 L 358 362 Q 372 200 340 38 Z" fill="#c2b795"/>
+    </g>
+    <g data-obj="target-rings">
+      <circle cx="220" cy="200" r="150" fill="#1f2d45"/>
+      <circle cx="220" cy="200" r="118" fill="#f6efe3"/>
+      <circle cx="220" cy="200" r="86" fill="#d94f37"/>
+      <circle cx="220" cy="200" r="54" fill="#e8b74a"/>
+    </g>
+    <g data-obj="target-bullseye">
+      <circle cx="220" cy="200" r="24" fill="#d94f37"/>
+      <circle cx="220" cy="200" r="9" fill="#26221c"/>
+    </g>
+  </svg>
+
+  <!-- ===== 화살통(전동) — 궁수 왼쪽 허리, 화살 3대 시그니처(깃털+화살촉) ===== -->
+  <svg data-adj="s2-quiver" style="position:absolute; left:95px; bottom:620px; width:150px; height:300px;" viewBox="0 0 150 300">
+    <g data-obj="quiver-strap">
+      <rect x="18" y="60" width="100" height="16" rx="6" fill="#4a2f19" transform="rotate(-18 68 68)"/>
+    </g>
+    <g data-obj="quiver-body">
+      <path d="M 35 288 Q 28 190 40 118 L 112 118 Q 124 190 117 288 Q 76 300 35 288 Z" fill="#6d4526"/>
+    </g>
+    <g data-obj="quiver-shade">
+      <path d="M 92 118 L 112 118 Q 124 190 117 288 Q 100 294 92 288 Q 104 190 92 118 Z" fill="#4a2f19"/>
+    </g>
+    <g data-obj="quiver-mouth">
+      <ellipse cx="76" cy="118" rx="40" ry="11" fill="#3a2513"/>
+    </g>
+    <g data-obj="quiver-arrow-1">
+      <line x1="52" y1="112" x2="42" y2="20" stroke="#a8794a" stroke-width="5" stroke-linecap="round"/>
+      <polygon points="42,20 26,40 58,40" fill="#f6efe3"/>
+      <polygon points="42,4 33,20 51,20" fill="#8a8378"/>
+    </g>
+    <g data-obj="quiver-arrow-2">
+      <line x1="76" y1="110" x2="76" y2="6" stroke="#8a5a33" stroke-width="5" stroke-linecap="round"/>
+      <polygon points="76,6 58,28 94,28" fill="#d94f37"/>
+      <polygon points="76,-10 67,6 85,6" fill="#8a8378"/>
+    </g>
+    <g data-obj="quiver-arrow-3">
+      <line x1="100" y1="112" x2="112" y2="34" stroke="#a8794a" stroke-width="5" stroke-linecap="round"/>
+      <polygon points="112,34 96,52 128,54" fill="#f6efe3"/>
+      <polygon points="112,18 103,34 121,34" fill="#8a8378"/>
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 활 든 궁수 (admiral, 무관 복식) ===== -->
+  <div class="char" style="left:140px; bottom:600px; width:400px; height:480px;"></div>
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"admiral", shirt:"#4a5568", pants:"#262f3a"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+
+  <!-- ===== 손에 든 활(각궁) — 오른손 파지점 = 손 원 중심(420,678 page-bottom), 촉/시위는 머리 바깥쪽(오른쪽 위)으로 뺌 (7그룹 · 9프리미티브) ===== -->
+  <svg data-adj="s2-bow" style="position:absolute; left:360px; bottom:590px; width:220px; height:480px; pointer-events:none;" viewBox="0 0 220 480">
+    <g data-obj="bow-grip">
+      <rect x="46" y="378" width="30" height="30" rx="7" fill="#3a2513" transform="rotate(14 61 393)"/>
+    </g>
+    <g data-obj="bow-limb-lower">
+      <path d="M 60 392 Q 50 430 45 470" stroke="#6d4526" stroke-width="15" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="bow-limb-lower-shade">
+      <path d="M 60 392 Q 50 430 45 470" stroke="#4a2f19" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="bow-limb-upper">
+      <path d="M 60 392 C 110 320 130 250 140 180 C 148 130 150 70 165 20" stroke="#6d4526" stroke-width="18" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="bow-limb-upper-shade">
+      <path d="M 60 392 C 110 320 130 250 140 180 C 148 130 150 70 165 20" stroke="#4a2f19" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="bow-string">
+      <path d="M 165 20 Q 130 220 45 470" stroke="#26221c" stroke-width="3" fill="none"/>
+    </g>
+    <g data-obj="bow-tip-upper">
+      <ellipse cx="165" cy="18" rx="7" ry="9" fill="#3a2513" transform="rotate(20 165 18)"/>
+    </g>
+  </svg>
+</body></html>

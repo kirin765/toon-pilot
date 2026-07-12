@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#2c3e63}
+ .char{position:absolute;}
+ .moon-body{position:absolute; top:110px; right:120px; width:170px; height:170px; border-radius:50%; background:#f2ecd8;}
+ .moon-shade{position:absolute; top:118px; right:96px; width:150px; height:150px; border-radius:50%; background:#d9cfae; opacity:0.55;}
+ .star{position:absolute; width:8px; height:8px; border-radius:50%; background:#f2ecd8;}
+</style></head>
+<body>
+  <!-- 환경 레이어: 밤하늘 (달+별) -->
+  <div class="moon-body" style="top:100px; right:10px;"></div>
+  <div class="moon-shade" style="top:108px; right:-14px;"></div>
+  <div class="star" style="top:150px; left:170px;"></div>
+  <div class="star" style="top:260px; left:420px; width:6px; height:6px;"></div>
+  <div class="star" style="top:190px; left:620px;"></div>
+  <div class="star" style="top:410px; left:250px; width:6px; height:6px;"></div>
+  <div class="star" style="top:340px; left:60px;"></div>
+
+  <!-- 보조/배경 실루엣: 산 능선 (2단, 원경+근경+소나무 실루엣) -->
+  <svg class="mountain-ridge" style="position:absolute; left:0; bottom:585px; width:1080px; height:380px;" viewBox="0 0 1080 380" xmlns="http://www.w3.org/2000/svg">
+    <g data-obj="ridge-far">
+      <path d="M0,380 L0,240 L130,150 L240,210 L360,110 L480,190 L600,120 L720,200 L840,130 L960,190 L1080,140 L1080,380 Z" fill="#33456b"/>
+      <path d="M0,240 L130,150 L240,210 L360,110 L480,190 L600,120 L720,200 L840,130 L960,190 L1080,140" fill="none" stroke="#55699a" stroke-width="3" opacity="0.5"/>
+    </g>
+    <g data-obj="ridge-near">
+      <path d="M0,380 L0,300 L150,200 L280,270 L420,180 L560,270 L700,190 L840,270 L980,210 L1080,250 L1080,380 Z" fill="#131a2a"/>
+      <g data-obj="ridge-pines">
+        <path d="M150,200 L142,224 L158,224 Z" fill="#0c1220"/>
+        <path d="M420,180 L412,206 L428,206 Z" fill="#0c1220"/>
+        <path d="M700,190 L692,215 L708,215 Z" fill="#0c1220"/>
+        <path d="M980,210 L972,233 L988,233 Z" fill="#0c1220"/>
+      </g>
+    </g>
+  </svg>
+
+  <!-- 환경 레이어: 지면 디테일 (산꼭대기 암석 지대) -->
+  <svg class="ground-rocks" style="position:absolute; left:0; bottom:585px; width:1080px; height:130px;" viewBox="0 0 1080 130" xmlns="http://www.w3.org/2000/svg">
+    <g data-obj="ground-strip">
+      <rect x="0" y="96" width="1080" height="34" fill="#52493c"/>
+      <rect x="0" y="96" width="1080" height="10" fill="#645a4a"/>
+    </g>
+    <g data-obj="ground-rock-l">
+      <path d="M120,110 Q100,60 170,55 Q230,50 245,90 Q250,112 210,116 Q150,120 120,110 Z" fill="#6c6252"/>
+      <path d="M230,60 Q248,74 245,90 Q250,112 210,116 Q225,95 230,60 Z" fill="#4a4235"/>
+    </g>
+    <g data-obj="ground-rock-r">
+      <path d="M780,112 Q765,72 820,66 Q865,62 878,96 Q882,114 850,118 Q800,120 780,112 Z" fill="#6c6252"/>
+      <path d="M840,70 Q855,82 878,96 Q882,114 850,118 Q848,90 840,70 Z" fill="#4a4235"/>
+    </g>
+    <g data-obj="ground-pebbles">
+      <circle cx="340" cy="105" r="7" fill="#7a705d"/>
+      <circle cx="620" cy="100" r="6" fill="#7a705d"/>
+      <circle cx="960" cy="108" r="8" fill="#7a705d"/>
+    </g>
+  </svg>
+
+  <!-- 주 소품: 봉수대 (돌로 쌓은 굴뚝형 석축, 3단 + 기단 + 정상 불씨) -->
+  <svg class="beacon-tower" style="position:absolute; left:600px; bottom:600px; width:380px; height:760px;" viewBox="0 0 380 760" xmlns="http://www.w3.org/2000/svg">
+    <g data-obj="beacon-base">
+      <ellipse cx="190" cy="742" rx="180" ry="20" fill="#b4a794"/>
+      <rect x="20" y="700" width="340" height="60" rx="6" fill="#97897a"/>
+      <rect x="20" y="736" width="340" height="24" fill="#6c5f4e"/>
+    </g>
+    <g data-obj="beacon-tier-low">
+      <g data-obj="beacon-tier-low-body">
+        <path d="M40,700 L340,700 L320,520 L60,520 Z" fill="#97897a"/>
+        <rect x="55" y="654" width="270" height="7" fill="#6c5f4e"/>
+        <rect x="62" y="614" width="255" height="7" fill="#6c5f4e"/>
+        <rect x="70" y="574" width="238" height="7" fill="#6c5f4e"/>
+        <rect x="98" y="678" width="5" height="18" fill="#6c5f4e"/>
+        <rect x="228" y="598" width="5" height="18" fill="#6c5f4e"/>
+      </g>
+      <g data-obj="beacon-tier-low-shade">
+        <path d="M280,520 L320,520 L340,700 L300,700 Z" fill="#6c5f4e"/>
+      </g>
+    </g>
+    <g data-obj="beacon-tier-mid">
+      <g data-obj="beacon-tier-mid-body">
+        <path d="M60,520 L320,520 L290,320 L90,320 Z" fill="#97897a"/>
+        <rect x="72" y="478" width="222" height="7" fill="#6c5f4e"/>
+        <rect x="79" y="438" width="206" height="7" fill="#6c5f4e"/>
+        <rect x="86" y="398" width="190" height="7" fill="#6c5f4e"/>
+        <rect x="148" y="458" width="5" height="16" fill="#6c5f4e"/>
+        <rect x="228" y="408" width="5" height="16" fill="#6c5f4e"/>
+      </g>
+      <g data-obj="beacon-tier-mid-shade">
+        <path d="M260,320 L290,320 L320,520 L290,520 Z" fill="#6c5f4e"/>
+      </g>
+    </g>
+    <g data-obj="beacon-tier-top">
+      <g data-obj="beacon-tier-top-body">
+        <path d="M90,320 L290,320 L265,140 L115,140 Z" fill="#97897a"/>
+        <path d="M240,140 L265,140 L290,320 L265,320 Z" fill="#6c5f4e"/>
+      </g>
+      <g data-obj="beacon-tier-top-rim">
+        <ellipse cx="190" cy="140" rx="75" ry="16" fill="#b4a794"/>
+        <ellipse cx="190" cy="138" rx="58" ry="10" fill="#1c1712"/>
+      </g>
+    </g>
+    <g data-obj="beacon-fire">
+      <ellipse cx="190" cy="110" rx="95" ry="45" fill="#e8b74a" opacity="0.3"/>
+      <path d="M190,60 Q216,90 200,122 Q190,134 180,122 Q164,90 190,60 Z" fill="#d94f37"/>
+      <path d="M190,78 Q203,98 194,118 Q190,124 186,118 Q177,98 190,78 Z" fill="#e8b74a"/>
+      <circle cx="138" cy="102" r="5" fill="#e8b74a" opacity="0.85"/>
+      <circle cx="246" cy="88" r="4" fill="#d94f37" opacity="0.75"/>
+    </g>
+  </svg>
+
+  <!-- 보조 소품: 연기 기둥 (봉수대 정상에서 상승) -->
+  <svg class="beacon-smoke" style="position:absolute; left:670px; bottom:1240px; width:240px; height:640px;" viewBox="0 0 240 640" xmlns="http://www.w3.org/2000/svg">
+    <g data-obj="smoke-column">
+      <path d="M110,640 Q70,560 120,500 Q160,450 110,390 Q70,340 130,280 Q170,230 120,170 Q80,120 140,60 Q165,30 150,0 L100,0 Q120,30 90,70 Q50,120 100,180 Q140,230 90,290 Q50,340 100,400 Q140,450 90,510 Q50,560 90,640 Z" fill="#9aa9bd" opacity="0.75"/>
+      <ellipse cx="140" cy="120" rx="55" ry="40" fill="#b3c0d1" opacity="0.5"/>
+      <ellipse cx="90" cy="260" rx="60" ry="42" fill="#b3c0d1" opacity="0.45"/>
+      <ellipse cx="150" cy="40" rx="50" ry="34" fill="#c7d1de" opacity="0.4"/>
+      <ellipse cx="70" cy="480" rx="50" ry="36" fill="#b3c0d1" opacity="0.4"/>
+    </g>
+  </svg>
+
+  <!-- 캐릭터: 군졸(admiral 복식) -->
+  <div class="char" style="left:90px; bottom:600px; width:420px; height:504px;"></div>
+
+  <!-- 보조 소품: 횃불 (군졸 손에 쥔 상태) -->
+  <svg class="torch" style="position:absolute; left:314px; bottom:595px; width:140px; height:660px;" viewBox="0 0 140 660" xmlns="http://www.w3.org/2000/svg">
+    <g data-obj="torch-handle">
+      <rect x="58" y="172" width="24" height="488" rx="6" fill="#6b4a2f"/>
+      <rect x="58" y="172" width="9" height="488" fill="#4a3220"/>
+    </g>
+    <g data-obj="torch-wrap">
+      <rect x="52" y="150" width="36" height="24" rx="4" fill="#241a12"/>
+      <rect x="52" y="158" width="36" height="4" fill="#3a2a1a"/>
+      <rect x="52" y="166" width="36" height="4" fill="#3a2a1a"/>
+    </g>
+    <g data-obj="torch-flame">
+      <path d="M70,10 Q100,55 82,100 Q70,118 58,100 Q40,55 70,10 Z" fill="#d94f37"/>
+      <path d="M70,38 Q88,66 76,96 Q70,108 64,96 Q52,66 70,38 Z" fill="#e8b74a"/>
+      <path d="M70,58 Q78,74 72,90 Q70,96 68,90 Q62,74 70,58 Z" fill="#f6efe3"/>
+      <circle cx="42" cy="60" r="4" fill="#e8b74a" opacity="0.8"/>
+      <circle cx="96" cy="45" r="3" fill="#d94f37" opacity="0.7"/>
+    </g>
+  </svg>
+
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"admiral", shirt:"#55694f", pants:"#262b21"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+</body></html>

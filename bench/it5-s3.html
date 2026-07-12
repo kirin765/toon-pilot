@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#8ec9e8}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 하늘 구름 2개 ===== -->
+  <svg class="prop" data-adj="s3-cloud-1" style="top:60px; left:70px; width:170px; height:78px;" viewBox="0 0 170 78">
+    <path d="M 15 60 Q 0 30 35 24 Q 42 4 72 12 Q 92 -4 116 12 Q 148 8 148 34 Q 168 40 156 58 Q 162 72 140 72 L 30 72 Q 4 72 15 60 Z" fill="#f6efe3"/>
+  </svg>
+  <svg class="prop" data-adj="s3-cloud-2" style="top:150px; left:830px; width:130px; height:62px;" viewBox="0 0 130 62">
+    <path d="M 10 48 Q 0 22 25 18 Q 32 2 52 8 Q 68 -4 86 8 Q 112 4 112 24 Q 128 30 118 44 Q 122 54 104 54 L 22 54 Q 2 54 10 48 Z" fill="#f6efe3"/>
+  </svg>
+
+  <!-- ===== 배경 실루엣: 먼 산 능선 (2톤: 능선 + 그림자) ===== -->
+  <svg class="prop" data-adj="s3-hill" style="left:0; bottom:1260px; width:1080px; height:200px;" viewBox="0 0 1080 200">
+    <g data-obj="hill-ridge">
+      <path d="M 0 200 L 0 120 Q 270 78 540 108 Q 810 138 1080 96 L 1080 200 Z" fill="#7db95c"/>
+    </g>
+    <g data-obj="hill-shade">
+      <path d="M 0 200 L 0 160 Q 270 178 540 166 Q 810 154 1080 168 L 1080 200 Z" fill="#5f8c3c"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 마당 흙바닥 (2톤 + 자갈/풀 디테일) ===== -->
+  <div class="prop" data-adj="s3-ground" style="left:0; bottom:0; width:1080px; height:640px; background:#b89b6c;"></div>
+  <div class="prop" data-adj="s3-ground-shade" style="left:0; bottom:600px; width:1080px; height:40px; background:#8a7048;"></div>
+  <svg class="prop" data-adj="s3-ground-detail" style="left:0; bottom:0; width:1080px; height:220px;" viewBox="0 0 1080 220">
+    <g data-obj="floor-pebbles">
+      <ellipse cx="130" cy="195" rx="16" ry="9" fill="#8a8378"/>
+      <ellipse cx="210" cy="205" rx="12" ry="7" fill="#6d6a5c"/>
+      <ellipse cx="950" cy="190" rx="15" ry="8" fill="#8a8378"/>
+    </g>
+    <g data-obj="floor-grass">
+      <polygon points="60,220 52,170 68,220" fill="#6f9c46"/>
+      <polygon points="80,220 76,158 90,220" fill="#5f8c3c"/>
+      <polygon points="1010,220 1004,165 1022,220" fill="#6f9c46"/>
+      <polygon points="1035,220 1030,178 1048,220" fill="#5f8c3c"/>
+    </g>
+  </svg>
+
+  <!-- ===== 주 소품: 초가 주막 건물 (벽/문/창/기둥 + 지붕 5부위 + 酒 깃발 + 굴뚝·연기, 15부위·34 프리미티브 — 라이브러리 검증 초가 재사용+확장) ===== -->
+  <svg class="prop" data-adj="s3-tavern" style="left:380px; bottom:580px; width:850px; height:872px;" viewBox="-160 -220 800 820">
+    <!-- 벽체 -->
+    <g data-obj="wall-body">
+      <rect x="40" y="200" width="540" height="380" fill="#b98d54"/>
+    </g>
+    <g data-obj="wall-shade">
+      <path d="M 400 200 L 580 200 L 580 580 L 440 580 Z" fill="#93683a" opacity="0.85"/>
+    </g>
+    <g data-obj="wall-base">
+      <rect x="30" y="550" width="560" height="50" fill="#6d5a45"/>
+    </g>
+    <g data-obj="wall-posts">
+      <rect x="10" y="200" width="30" height="400" fill="#6d4526"/>
+      <rect x="10" y="200" width="10" height="400" fill="#4a2f19"/>
+      <rect x="580" y="200" width="30" height="400" fill="#6d4526"/>
+      <rect x="600" y="200" width="10" height="400" fill="#4a2f19"/>
+    </g>
+    <g data-obj="wall-window">
+      <rect x="110" y="300" width="90" height="90" fill="#241d16"/>
+      <rect x="150" y="300" width="8" height="90" fill="#e3d8c0"/>
+      <rect x="110" y="340" width="90" height="8" fill="#e3d8c0"/>
+    </g>
+    <g data-obj="wall-doorway">
+      <rect x="420" y="330" width="130" height="250" fill="#3a2c1e"/>
+      <rect x="420" y="330" width="130" height="14" fill="#241d16"/>
+    </g>
+
+    <!-- 초가지붕 -->
+    <g data-obj="roof-thatch">
+      <path d="M -20 220 L -20 160 Q 40 70 150 45 L 300 0 L 470 45 Q 580 70 630 160 L 630 220 Z" fill="#cf9f52"/>
+    </g>
+    <g data-obj="roof-shade">
+      <path d="M 300 0 L 470 45 Q 580 70 630 160 L 630 220 L 470 220 L 300 45 Z" fill="#a97c38" opacity="0.85"/>
+    </g>
+    <g data-obj="roof-straw">
+      <path d="M -10 138 Q 300 90 620 138" stroke="#8a642e" stroke-width="9" fill="none" opacity="0.9"/>
+      <path d="M -10 178 Q 300 135 620 178" stroke="#6d4526" stroke-width="9" fill="none" opacity="0.9"/>
+    </g>
+    <g data-obj="roof-ridge">
+      <path d="M 260 0 L 340 0 L 350 22 L 250 22 Z" fill="#6d4526"/>
+      <rect x="255" y="2" width="90" height="6" fill="#8a5a33" opacity="0.7"/>
+    </g>
+    <g data-obj="roof-eave">
+      <path d="M -20 196 L 630 196 L 630 220
+        Q 608 246 586 220 Q 564 246 542 220 Q 520 246 498 220 Q 476 246 454 220
+        Q 432 246 410 220 Q 388 246 366 220 Q 344 246 322 220 Q 300 246 278 220
+        Q 256 246 234 220 Q 212 246 190 220 Q 168 246 146 220 Q 124 246 102 220
+        Q 80 246 58 220 Q 36 246 14 220 Q -8 246 -20 220 Z" fill="#b98a3e"/>
+    </g>
+
+    <!-- 주막 깃발: 酒 (지붕 위, 중앙 우측 — 벽 안쪽으로 당겨 배치해 인물 머리와 겹치지 않게) -->
+    <g data-obj="flag-pole">
+      <circle cx="220" cy="90" r="10" fill="#3a2f21"/>
+      <path d="M 220 90 L 150 -190" stroke="#5c4028" stroke-width="14" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="flag-fabric">
+      <rect x="130" y="-190" width="90" height="170" fill="#d94f37"/>
+      <rect x="130" y="-190" width="20" height="170" fill="#a53d2b"/>
+      <text x="175" y="-120" font-family="'Noto Serif KR', serif" font-size="72" font-weight="700" fill="#f6efe3" text-anchor="middle">酒</text>
+    </g>
+
+    <!-- 굴뚝 + 연기 (지붕 위, 우측 — 폭 ≥굴뚝폭 2배, 뭉게 3덩이) -->
+    <g data-obj="chimney-body">
+      <rect x="420" y="-20" width="34" height="130" fill="#8a7a63"/>
+    </g>
+    <g data-obj="chimney-shade">
+      <rect x="420" y="-20" width="12" height="130" fill="#6a5c48"/>
+    </g>
+    <g data-obj="chimney-cap">
+      <rect x="412" y="-34" width="50" height="16" fill="#5c4d38"/>
+    </g>
+    <g data-obj="smoke-puff-1">
+      <ellipse cx="437" cy="-58" rx="45" ry="30" fill="#e3ddd0" opacity="0.75"/>
+      <ellipse cx="425" cy="-64" rx="20" ry="13" fill="#cfc7b4" opacity="0.55"/>
+    </g>
+    <g data-obj="smoke-puff-2">
+      <ellipse cx="468" cy="-108" rx="58" ry="36" fill="#e3ddd0" opacity="0.68"/>
+      <ellipse cx="454" cy="-116" rx="24" ry="15" fill="#cfc7b4" opacity="0.5"/>
+    </g>
+    <g data-obj="smoke-puff-3">
+      <ellipse cx="508" cy="-162" rx="68" ry="42" fill="#e3ddd0" opacity="0.58"/>
+      <ellipse cx="492" cy="-172" rx="28" ry="17" fill="#cfc7b4" opacity="0.42"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 장독대 (흑갈 유약 옹기 3개, 단 위에 나란히 — 잘록한 목+뚜껑+유광 하이라이트로 목재와 명확히 구분) ===== -->
+  <svg class="prop" data-adj="s3-jangdok" style="left:10px; bottom:600px; width:270px; height:250px;" viewBox="0 0 280 260">
+    <g data-obj="jangdok-platform">
+      <rect x="0" y="220" width="280" height="30" fill="#7a6a4d"/>
+    </g>
+    <g data-obj="jangdok-platform-shade">
+      <rect x="0" y="240" width="280" height="10" fill="#5c4d38"/>
+    </g>
+
+    <!-- 항아리 A (좌, 小) -->
+    <g data-obj="jarA-body">
+      <path d="M 30 220 Q 18 198 20 176 Q 22 156 36 144 Q 41 139 51 139 Q 61 139 66 144 Q 80 156 82 176 Q 84 198 72 220 Q 62 226 51 226 Q 40 226 30 220 Z" fill="#3d2f1f"/>
+    </g>
+    <g data-obj="jarA-shade">
+      <path d="M 51 139 Q 61 139 66 144 Q 80 156 82 176 Q 84 198 72 220 Q 62 226 51 226 Z" fill="#281e13" opacity="0.9"/>
+    </g>
+    <g data-obj="jarA-neck">
+      <path d="M 36 144 L 38 132 L 64 132 L 66 144 Z" fill="#3d2f1f"/>
+    </g>
+    <g data-obj="jarA-rim">
+      <ellipse cx="51" cy="131" rx="11" ry="4" fill="#150f09"/>
+    </g>
+    <g data-obj="jarA-glaze-highlight">
+      <path d="M 35 166 Q 31 190 39 212" stroke="#7a6a4c" stroke-width="5" fill="none" opacity="0.55" stroke-linecap="round"/>
+    </g>
+
+    <!-- 항아리 B (중앙, 大·뚜껑) -->
+    <g data-obj="jarB-body">
+      <path d="M 108 220 Q 90 188 94 152 Q 97 126 116 110 Q 124 102 136 102 Q 148 102 156 110 Q 175 126 178 152 Q 182 188 164 220 Q 151 227 136 227 Q 121 227 108 220 Z" fill="#4a3a26"/>
+    </g>
+    <g data-obj="jarB-shade">
+      <path d="M 136 102 Q 148 102 156 110 Q 175 126 178 152 Q 182 188 164 220 Q 151 227 136 227 Z" fill="#2e2316" opacity="0.9"/>
+    </g>
+    <g data-obj="jarB-neck">
+      <path d="M 116 110 L 119 94 L 153 94 L 156 110 Z" fill="#4a3a26"/>
+    </g>
+    <g data-obj="jarB-rim">
+      <ellipse cx="136" cy="93" rx="15" ry="5.5" fill="#150f09"/>
+    </g>
+    <g data-obj="jarB-lid">
+      <path d="M 118 91 Q 136 70 154 91 Q 145 82 136 81 Q 127 82 118 91 Z" fill="#5c4a32"/>
+      <circle cx="136" cy="73" r="6" fill="#3a2e1e"/>
+    </g>
+    <g data-obj="jarB-glaze-highlight">
+      <path d="M 112 140 Q 106 172 116 205" stroke="#8a7a5a" stroke-width="6" fill="none" opacity="0.55" stroke-linecap="round"/>
+    </g>
+
+    <!-- 항아리 C (우, 中) -->
+    <g data-obj="jarC-body">
+      <path d="M 205 220 Q 191 194 194 166 Q 196 144 212 130 Q 218 124 230 124 Q 242 124 248 130 Q 264 144 266 166 Q 269 194 255 220 Q 244 227 230 227 Q 216 227 205 220 Z" fill="#3d2f1f"/>
+    </g>
+    <g data-obj="jarC-shade">
+      <path d="M 230 124 Q 242 124 248 130 Q 264 144 266 166 Q 269 194 255 220 Q 244 227 230 227 Z" fill="#281e13" opacity="0.9"/>
+    </g>
+    <g data-obj="jarC-neck">
+      <path d="M 212 130 L 214 116 L 246 116 L 248 130 Z" fill="#3d2f1f"/>
+    </g>
+    <g data-obj="jarC-rim">
+      <ellipse cx="230" cy="115" rx="13" ry="4.5" fill="#150f09"/>
+    </g>
+    <g data-obj="jarC-glaze-highlight">
+      <path d="M 210 156 Q 205 186 214 214" stroke="#7a6a4c" stroke-width="5" fill="none" opacity="0.55" stroke-linecap="round"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 평상 (상판/쪽매/장귀틀/다리 4개/보강대) ===== -->
+  <svg class="prop" data-adj="s3-bench" style="left:680px; bottom:590px; width:400px; height:230px;" viewBox="0 0 460 260">
+    <g data-obj="bench-top">
+      <rect x="20" y="40" width="420" height="50" fill="#a9784a"/>
+    </g>
+    <g data-obj="bench-planks">
+      <line x1="140" y1="40" x2="140" y2="90" stroke="#7a5836" stroke-width="3"/>
+      <line x1="260" y1="40" x2="260" y2="90" stroke="#7a5836" stroke-width="3"/>
+      <line x1="340" y1="40" x2="340" y2="90" stroke="#7a5836" stroke-width="3"/>
+    </g>
+    <g data-obj="bench-apron">
+      <rect x="30" y="90" width="400" height="24" fill="#8a6238"/>
+    </g>
+    <g data-obj="bench-legs">
+      <path d="M 55 114 L 75 114 L 60 254 L 35 254 Z" fill="#6d4526"/>
+      <path d="M 385 114 L 405 114 L 425 254 L 400 254 Z" fill="#6d4526"/>
+      <path d="M 130 114 L 150 114 L 140 234 L 118 234 Z" fill="#5c3a22"/>
+      <path d="M 310 114 L 330 114 L 342 234 L 320 234 Z" fill="#5c3a22"/>
+    </g>
+    <g data-obj="bench-stretcher">
+      <rect x="60" y="216" width="340" height="12" fill="#5c3a22" opacity="0.85"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 뚝배기 + 김 (평상 위) ===== -->
+  <svg class="prop" data-adj="s3-stew" style="left:800px; bottom:775px; width:160px; height:280px;" viewBox="0 -90 160 280">
+    <g data-obj="pot-body">
+      <path d="M 20 80 Q 10 150 50 178 Q 80 192 110 178 Q 150 150 140 80 Z" fill="#5c4028"/>
+    </g>
+    <g data-obj="pot-shade">
+      <path d="M 80 82 Q 145 88 140 80 Q 150 150 110 178 Q 130 150 105 100 Z" fill="#3f2c1c" opacity="0.8"/>
+    </g>
+    <g data-obj="pot-rim">
+      <ellipse cx="80" cy="78" rx="62" ry="16" fill="#3a2a1c"/>
+      <ellipse cx="80" cy="75" rx="50" ry="11" fill="#7a5836"/>
+    </g>
+    <g data-obj="pot-steam">
+      <path d="M 55 68 Q 40 30 60 -10 Q 75 -40 55 -70" stroke="#f6efe3" stroke-width="8" fill="none" opacity="0.55" stroke-linecap="round"/>
+      <path d="M 90 68 Q 105 25 85 -15 Q 70 -45 95 -75" stroke="#f6efe3" stroke-width="8" fill="none" opacity="0.5" stroke-linecap="round"/>
+      <path d="M 75 65 Q 65 35 80 5 Q 88 -15 75 -35" stroke="#f6efe3" stroke-width="6" fill="none" opacity="0.4" stroke-linecap="round"/>
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 나그네 (militia, 갓+도포), 평상 왼쪽 옆에 서 있음 ===== -->
+  <div class="char" style="left:270px; bottom:600px; width:400px; height:480px;"></div>
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", shirt:"#e3d8c0", pants:"#6f5c43"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+</body></html>

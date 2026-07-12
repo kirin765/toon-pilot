@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#8ec9e8}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 하늘 구름 2개 ===== -->
+  <svg class="prop" data-adj="s4-cloud-1" style="top:70px; left:90px; width:150px; height:70px;" viewBox="0 0 150 70">
+    <path d="M 13 54 Q 0 27 30 22 Q 37 4 63 10 Q 80 -4 100 10 Q 128 6 128 30 Q 144 36 134 52 Q 138 64 120 64 L 26 64 Q 3 64 13 54 Z" fill="#f6efe3"/>
+  </svg>
+  <svg class="prop" data-adj="s4-cloud-2" style="top:130px; left:770px; width:120px; height:56px;" viewBox="0 0 120 56">
+    <path d="M 10 44 Q 0 20 23 16 Q 30 2 48 8 Q 62 -4 78 8 Q 102 4 102 22 Q 118 28 108 40 Q 112 50 96 50 L 20 50 Q 2 50 10 44 Z" fill="#f6efe3"/>
+  </svg>
+
+  <!-- ===== 환경 레이어: 새 3마리 (하늘 요소 시그니처) ===== -->
+  <svg class="prop" data-adj="s4-bird-1" style="top:110px; left:250px; width:72px; height:30px;" viewBox="0 0 72 30">
+    <g data-obj="bird-1">
+      <path d="M 4 20 Q 16 4 36 18 Q 56 4 68 20" stroke="#1f2d45" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+  </svg>
+  <svg class="prop" data-adj="s4-bird-2" style="top:195px; left:520px; width:56px; height:24px;" viewBox="0 0 56 24">
+    <g data-obj="bird-2">
+      <path d="M 3 16 Q 12 3 28 14 Q 44 3 53 16" stroke="#1f2d45" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>
+  </svg>
+  <svg class="prop" data-adj="s4-bird-3" style="top:150px; left:850px; width:64px; height:27px;" viewBox="0 0 64 27">
+    <g data-obj="bird-3">
+      <path d="M 3 18 Q 13 3 32 16 Q 51 3 61 18" stroke="#1f2d45" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+  </svg>
+
+  <!-- ===== 배경 실루엣: 먼 산 능선 (2톤) ===== -->
+  <svg class="prop" data-adj="s4-hill" style="left:0; bottom:900px; width:1080px; height:260px;" viewBox="0 0 1080 260">
+    <g data-obj="hill-ridge">
+      <path d="M 0 260 L 0 150 Q 260 96 520 128 Q 780 160 1080 108 L 1080 260 Z" fill="#6f8a4a"/>
+    </g>
+    <g data-obj="hill-shade">
+      <path d="M 0 260 L 0 204 Q 260 226 540 206 Q 820 186 1080 208 L 1080 260 Z" fill="#4f6a34"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품/배경 실루엣: 초가집 원경 (짚결 스트로크+스캘럽 처마 시그니처) ===== -->
+  <svg class="prop" data-adj="s4-hut" style="left:780px; bottom:960px; width:200px; height:200px;" viewBox="0 0 260 260">
+    <g data-obj="hut-wall">
+      <rect x="50" y="160" width="160" height="80" fill="#e3d8c0"/>
+    </g>
+    <g data-obj="hut-wall-shade">
+      <path d="M 150 160 L 210 160 L 210 240 L 165 240 Z" fill="#c2b795" opacity="0.85"/>
+    </g>
+    <g data-obj="hut-wall-base">
+      <rect x="45" y="230" width="170" height="16" fill="#8a7048"/>
+    </g>
+    <g data-obj="hut-door">
+      <path d="M 108 240 L 108 195 Q 108 184 122 184 L 138 184 Q 152 184 152 195 L 152 240 Z" fill="#3a2a1c"/>
+      <path d="M 108 240 L 122 240 L 122 195 Q 122 188 130 186 L 130 184 Q 108 188 108 195 Z" fill="#2a1c11" opacity="0.7"/>
+    </g>
+    <g data-obj="hut-window">
+      <rect x="168" y="188" width="26" height="26" fill="#3a2f21"/>
+      <rect x="168" y="188" width="26" height="8" fill="#5a4a38"/>
+    </g>
+    <g data-obj="hut-roof-main">
+      <path d="M -10 170 L 40 82 L 130 52 L 220 82 L 270 170 Z" fill="#cf9f52"/>
+    </g>
+    <g data-obj="hut-roof-shade">
+      <path d="M 130 52 L 220 82 L 270 170 L 190 170 Z" fill="#a97c38" opacity="0.85"/>
+    </g>
+    <g data-obj="hut-roof-straw">
+      <path d="M 0 130 Q 130 100 260 130" stroke="#8a642e" stroke-width="6" fill="none" opacity="0.85"/>
+      <path d="M 15 155 Q 130 128 245 155" stroke="#6d4526" stroke-width="6" fill="none" opacity="0.85"/>
+    </g>
+    <g data-obj="hut-roof-ridge">
+      <path d="M 108 52 L 152 52 L 158 66 L 102 66 Z" fill="#6d4526"/>
+    </g>
+    <g data-obj="hut-roof-eave-scallop">
+      <path d="M -10 166 L 270 166 L 270 176 Q 252 190 234 176 Q 216 190 198 176 Q 180 190 162 176 Q 144 190 126 176 Q 108 190 90 176 Q 72 190 54 176 Q 36 190 18 176 Q 0 190 -10 176 Z" fill="#b98a3e"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어(주 지면): 마른 밭 — 밭고랑 6열 (원근 간격, 2톤 이랑/고랑) ===== -->
+  <svg class="prop" data-adj="s4-field" style="left:0; bottom:0px; width:1080px; height:900px;" viewBox="0 0 1080 900">
+    <g data-obj="field-base">
+      <rect x="0" y="0" width="1080" height="900" fill="#c2a668"/>
+    </g>
+    <g data-obj="field-horizon-shade">
+      <rect x="0" y="0" width="1080" height="46" fill="#a8895a" opacity="0.5"/>
+    </g>
+
+    <g data-obj="furrow-row-1">
+      <path d="M 0 70 Q 60 65 120 70 Q 180 75 240 70 Q 300 65 360 70 Q 420 75 480 70 Q 540 65 600 70 Q 660 75 720 70 Q 780 65 840 70 Q 900 75 960 70 Q 1020 65 1080 70" stroke="#d8b878" stroke-width="8" fill="none" opacity="0.9"/>
+      <path d="M 0 76 Q 60 71 120 76 Q 180 81 240 76 Q 300 71 360 76 Q 420 81 480 76 Q 540 71 600 76 Q 660 81 720 76 Q 780 71 840 76 Q 900 81 960 76 Q 1020 71 1080 76" stroke="#8a6a3e" stroke-width="4" fill="none" opacity="0.7"/>
+    </g>
+    <g data-obj="furrow-row-2">
+      <path d="M 0 190 Q 60 182 120 190 Q 180 198 240 190 Q 300 182 360 190 Q 420 198 480 190 Q 540 182 600 190 Q 660 198 720 190 Q 780 182 840 190 Q 900 198 960 190 Q 1020 182 1080 190" stroke="#d8b878" stroke-width="12" fill="none" opacity="0.9"/>
+      <path d="M 0 199 Q 60 191 120 199 Q 180 207 240 199 Q 300 191 360 199 Q 420 207 480 199 Q 540 191 600 199 Q 660 207 720 199 Q 780 191 840 199 Q 900 207 960 199 Q 1020 191 1080 199" stroke="#8a6a3e" stroke-width="6" fill="none" opacity="0.7"/>
+    </g>
+    <g data-obj="furrow-row-3">
+      <path d="M 0 340 Q 60 328 120 340 Q 180 352 240 340 Q 300 328 360 340 Q 420 352 480 340 Q 540 328 600 340 Q 660 352 720 340 Q 780 328 840 340 Q 900 352 960 340 Q 1020 328 1080 340" stroke="#d8b878" stroke-width="16" fill="none" opacity="0.9"/>
+      <path d="M 0 352 Q 60 340 120 352 Q 180 364 240 352 Q 300 340 360 352 Q 420 364 480 352 Q 540 340 600 352 Q 660 364 720 352 Q 780 340 840 352 Q 900 364 960 352 Q 1020 340 1080 352" stroke="#8a6a3e" stroke-width="8" fill="none" opacity="0.7"/>
+    </g>
+    <g data-obj="furrow-row-4">
+      <path d="M 0 520 Q 60 505 120 520 Q 180 535 240 520 Q 300 505 360 520 Q 420 535 480 520 Q 540 505 600 520 Q 660 535 720 520 Q 780 505 840 520 Q 900 535 960 520 Q 1020 505 1080 520" stroke="#d8b878" stroke-width="22" fill="none" opacity="0.9"/>
+      <path d="M 0 536 Q 60 521 120 536 Q 180 551 240 536 Q 300 521 360 536 Q 420 551 480 536 Q 540 521 600 536 Q 660 551 720 536 Q 780 521 840 536 Q 900 551 960 536 Q 1020 521 1080 536" stroke="#8a6a3e" stroke-width="10" fill="none" opacity="0.7"/>
+    </g>
+    <g data-obj="furrow-row-5">
+      <path d="M 0 720 Q 60 702 120 720 Q 180 738 240 720 Q 300 702 360 720 Q 420 738 480 720 Q 540 702 600 720 Q 660 738 720 720 Q 780 702 840 720 Q 900 738 960 720 Q 1020 702 1080 720" stroke="#d8b878" stroke-width="28" fill="none" opacity="0.9"/>
+      <path d="M 0 739 Q 60 721 120 739 Q 180 757 240 739 Q 300 721 360 739 Q 420 757 480 739 Q 540 721 600 739 Q 660 757 720 739 Q 780 721 840 739 Q 900 757 960 739 Q 1020 721 1080 739" stroke="#8a6a3e" stroke-width="12" fill="none" opacity="0.7"/>
+    </g>
+    <g data-obj="furrow-row-6">
+      <path d="M 0 880 Q 60 859 120 880 Q 180 901 240 880 Q 300 859 360 880 Q 420 901 480 880 Q 540 859 600 880 Q 660 901 720 880 Q 780 859 840 880 Q 900 901 960 880 Q 1020 859 1080 880" stroke="#d8b878" stroke-width="34" fill="none" opacity="0.9"/>
+      <path d="M 0 902 Q 60 880 120 902 Q 180 924 240 902 Q 300 880 360 902 Q 420 924 480 902 Q 540 880 600 902 Q 660 924 720 902 Q 780 880 840 902 Q 900 924 960 902 Q 1020 880 1080 902" stroke="#8a6a3e" stroke-width="14" fill="none" opacity="0.7"/>
+    </g>
+
+    <g data-obj="field-clods">
+      <ellipse cx="150" cy="440" rx="12" ry="7" fill="#8a7048"/>
+      <ellipse cx="880" cy="410" rx="10" ry="6" fill="#a8895a"/>
+      <ellipse cx="960" cy="600" rx="14" ry="8" fill="#8a7048"/>
+      <ellipse cx="80" cy="630" rx="11" ry="6" fill="#a8895a"/>
+    </g>
+  </svg>
+
+  <!-- ===== 주 소품: 허수아비 (밭 가운데 — 十자 나무틀+밀짚모자+점 단추 눈+무표정, X자 눈 금지) ===== -->
+  <svg class="prop" data-adj="s4-scarecrow" style="left:560px; bottom:640px; width:290px; height:520px;" viewBox="0 0 290 520">
+    <g data-obj="scare-shadow">
+      <ellipse cx="145" cy="510" rx="80" ry="13" fill="#1f2d45" opacity="0.15"/>
+    </g>
+    <g data-obj="scare-pole-vertical">
+      <rect x="137" y="30" width="16" height="470" fill="#6d4526"/>
+    </g>
+    <g data-obj="scare-pole-shade">
+      <rect x="145" y="30" width="8" height="470" fill="#4a2f19" opacity="0.6"/>
+    </g>
+    <g data-obj="scare-pole-crossbar">
+      <rect x="20" y="185" width="250" height="16" fill="#6d4526"/>
+    </g>
+    <g data-obj="scare-pole-crossbar-shade">
+      <rect x="20" y="193" width="250" height="8" fill="#4a2f19" opacity="0.6"/>
+    </g>
+    <g data-obj="scare-straw-l">
+      <path d="M 22 191 Q -4 176 -18 160" stroke="#c9a15a" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 22 198 Q -8 194 -22 186" stroke="#e8b74a" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 22 205 Q -6 214 -20 226" stroke="#c9a15a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="scare-straw-r">
+      <path d="M 268 191 Q 294 176 308 160" stroke="#c9a15a" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 268 198 Q 298 194 312 186" stroke="#e8b74a" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 268 205 Q 296 214 310 226" stroke="#c9a15a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="scare-robe">
+      <path d="M 103 152 Q 70 172 63 216 L 52 348 Q 51 366 70 370 L 220 370 Q 239 366 238 348 L 227 216 Q 220 172 187 152 Q 145 138 103 152 Z" fill="#d9c9a3"/>
+    </g>
+    <g data-obj="scare-robe-shade">
+      <path d="M 147 152 Q 191 166 211 208 L 222 348 Q 222 363 207 368 L 170 368 Q 185 268 147 152 Z" fill="#b8a173" opacity="0.85"/>
+    </g>
+    <g data-obj="scare-robe-hem">
+      <path d="M 52 348 L 70 370 L 91 350 L 111 370 L 131 350 L 151 370 L 171 350 L 191 370 L 211 350 L 227 348 L 227 370 L 52 370 Z" fill="#c2b28a"/>
+    </g>
+    <g data-obj="scare-patch">
+      <rect x="108" y="248" width="42" height="36" rx="4" fill="#8a5a33" transform="rotate(-6 129 266)"/>
+      <path d="M 114 254 L 144 280 M 144 254 L 114 280" stroke="#4a2f19" stroke-width="2" transform="rotate(-6 129 266)"/>
+    </g>
+    <g data-obj="scare-head">
+      <circle cx="145" cy="70" r="48" fill="#b8935c"/>
+    </g>
+    <g data-obj="scare-head-shade">
+      <path d="M 102 79 A 48 48 0 0 0 188 79 Q 145 96 102 79 Z" fill="#9c7a48"/>
+    </g>
+    <g data-obj="scare-hat-brim">
+      <ellipse cx="145" cy="42" rx="86" ry="18" fill="#c9a15a"/>
+    </g>
+    <g data-obj="scare-hat-brim-shade">
+      <path d="M 145 42 A 86 18 0 0 0 231 42 Q 190 56 145 42 Z" fill="#a67f3e" opacity="0.8"/>
+    </g>
+    <g data-obj="scare-hat-crown">
+      <path d="M 108 40 Q 145 -6 182 40 Q 182 48 145 46 Q 108 48 108 40 Z" fill="#e8b74a"/>
+    </g>
+    <g data-obj="scare-hat-crown-shade">
+      <path d="M 145 -6 Q 182 40 182 48 Q 162 46 152 20 Z" fill="#c9932e" opacity="0.75"/>
+    </g>
+    <g data-obj="scare-eyes">
+      <circle cx="126" cy="70" r="7" fill="#26221c"/>
+      <circle cx="164" cy="70" r="7" fill="#26221c"/>
+    </g>
+    <g data-obj="scare-mouth">
+      <path d="M 120 96 L 170 96" stroke="#26221c" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 농부 (militia noHat, 삼베색 저고리 + 흙색 바지) ===== -->
+  <div class="char" data-adj="s4-char" style="left:110px; bottom:620px; width:400px; height:480px;"></div>
+
+  <!-- ===== 캐릭터 손 소품: 어깨에 멘 괭이 — 자루 끝이 오른손 원 중심에 닿고 견착 포즈로 머리와 비겹침 ===== -->
+  <svg class="prop" data-adj="s4-hoe" style="left:360px; bottom:670px; width:260px; height:340px;" viewBox="0 0 260 340">
+    <g data-obj="hoe-handle">
+      <line x1="30" y1="320" x2="150" y2="60" stroke="#6d4526" stroke-width="14" stroke-linecap="round"/>
+    </g>
+    <g data-obj="hoe-handle-shade">
+      <line x1="34" y1="316" x2="154" y2="60" stroke="#4a2f19" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+    </g>
+    <g data-obj="hoe-socket">
+      <ellipse cx="150" cy="57" rx="13" ry="10" fill="#3a2f21" transform="rotate(-35 150 57)"/>
+    </g>
+    <g data-obj="hoe-blade">
+      <polygon points="150,65 193,32 207,55 167,86" fill="#7a7a72"/>
+      <polygon points="150,65 179,44 189,57 167,77" fill="#5a5a52"/>
+    </g>
+  </svg>
+
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", noHat:true, shirt:"#d9c9a3", pants:"#5a4632"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+</body></html>
