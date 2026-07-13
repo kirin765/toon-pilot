@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#c9b98f}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 천장 들보 + 벽 그림자 밴드 (it3-s4 실내 문법) ===== -->
+  <svg class="prop" data-adj="sp14-ceiling" style="top:0; left:0; width:1080px; height:100px;" viewBox="0 0 1080 100">
+    <g data-obj="ceiling-beam">
+      <rect x="0" y="0" width="1080" height="70" fill="#3d2f20"/>
+      <rect x="0" y="58" width="1080" height="12" fill="#5a4632"/>
+    </g>
+    <g data-obj="ceiling-shadow">
+      <rect x="0" y="70" width="1080" height="26" fill="#b8a67e" opacity="0.6"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 좌우 나무 기둥 (건조줄 고정점) ===== -->
+  <svg class="prop" data-adj="sp14-post-l" style="top:70px; left:0; width:44px; height:1250px;" viewBox="0 0 44 1250" preserveAspectRatio="none">
+    <g data-obj="post-l-body">
+      <rect x="0" y="0" width="44" height="1250" fill="#6d4526"/>
+      <rect x="32" y="0" width="12" height="1250" fill="#5a3a20"/>
+    </g>
+  </svg>
+  <svg class="prop" data-adj="sp14-post-r" style="top:70px; right:0; width:44px; height:1250px;" viewBox="0 0 44 1250" preserveAspectRatio="none">
+    <g data-obj="post-r-body">
+      <rect x="0" y="0" width="44" height="1250" fill="#6d4526"/>
+      <rect x="0" y="0" width="12" height="1250" fill="#5a3a20"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 목재 바닥 (2톤 + 마루 이음선) ===== -->
+  <svg class="prop" data-adj="sp14-floor" style="left:0; bottom:0; width:1080px; height:600px;" viewBox="0 0 1080 340" preserveAspectRatio="none">
+    <g data-obj="floor-base">
+      <rect x="0" y="0" width="1080" height="340" fill="#4a3826"/>
+    </g>
+    <g data-obj="floor-seams">
+      <rect x="0" y="0" width="1080" height="14" fill="#5a4632"/>
+      <line x1="0" y1="95" x2="1080" y2="93" stroke="#2e2115" stroke-width="5"/>
+      <line x1="0" y1="185" x2="1080" y2="188" stroke="#2e2115" stroke-width="5"/>
+      <line x1="0" y1="275" x2="1080" y2="272" stroke="#2e2115" stroke-width="5"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 인쇄지 건조줄 — 세로쓰기 글줄(짧은 세로 획 반복, 실제 글자 X) 인쇄지 3장 ===== -->
+  <svg class="prop" data-adj="sp14-drying-line" style="top:170px; left:0; width:1080px; height:520px;" viewBox="0 0 1080 520">
+    <g data-obj="line-rope">
+      <rect x="8" y="58" width="30" height="22" rx="4" fill="#5a3a20"/>
+      <rect x="1042" y="58" width="30" height="22" rx="4" fill="#5a3a20"/>
+      <path d="M 24 70 Q 540 128 1056 70" stroke="#6d4526" stroke-width="6" fill="none"/>
+    </g>
+    <g data-obj="line-sheet-1" transform="rotate(2 230 250)">
+      <rect x="140" y="100" width="180" height="300" fill="#f6efe3"/>
+      <rect x="140" y="88" width="180" height="26" fill="#e7dcc4"/>
+      <rect x="140" y="392" width="180" height="8" fill="#d9c3a0"/>
+      <g stroke="#26221c" stroke-width="3.5" stroke-linecap="round">
+        <line x1="172" y1="136" x2="172" y2="172"/><line x1="172" y1="184" x2="172" y2="214"/><line x1="172" y1="226" x2="172" y2="264"/><line x1="172" y1="278" x2="172" y2="306"/>
+        <line x1="212" y1="140" x2="212" y2="168"/><line x1="212" y1="182" x2="212" y2="222"/><line x1="212" y1="236" x2="212" y2="262"/><line x1="212" y1="276" x2="212" y2="316"/>
+        <line x1="252" y1="134" x2="252" y2="176"/><line x1="252" y1="190" x2="252" y2="216"/><line x1="252" y1="230" x2="252" y2="270"/><line x1="252" y1="284" x2="252" y2="308"/>
+        <line x1="292" y1="138" x2="292" y2="166"/><line x1="292" y1="180" x2="292" y2="220"/><line x1="292" y1="234" x2="292" y2="268"/>
+      </g>
+    </g>
+    <g data-obj="line-sheet-2" transform="rotate(-1.5 540 260)">
+      <rect x="450" y="110" width="180" height="300" fill="#f6efe3"/>
+      <rect x="450" y="98" width="180" height="26" fill="#e7dcc4"/>
+      <rect x="450" y="402" width="180" height="8" fill="#d9c3a0"/>
+      <g stroke="#26221c" stroke-width="3.5" stroke-linecap="round">
+        <line x1="482" y1="146" x2="482" y2="184"/><line x1="482" y1="198" x2="482" y2="226"/><line x1="482" y1="240" x2="482" y2="278"/><line x1="482" y1="292" x2="482" y2="318"/>
+        <line x1="522" y1="150" x2="522" y2="178"/><line x1="522" y1="192" x2="522" y2="232"/><line x1="522" y1="246" x2="522" y2="272"/><line x1="522" y1="286" x2="522" y2="326"/>
+        <line x1="562" y1="144" x2="562" y2="186"/><line x1="562" y1="200" x2="562" y2="226"/><line x1="562" y1="240" x2="562" y2="280"/><line x1="562" y1="294" x2="562" y2="318"/>
+        <line x1="602" y1="148" x2="602" y2="176"/><line x1="602" y1="190" x2="602" y2="230"/><line x1="602" y1="244" x2="602" y2="278"/>
+      </g>
+    </g>
+    <g data-obj="line-sheet-3" transform="rotate(1.5 850 250)">
+      <rect x="760" y="100" width="180" height="300" fill="#f6efe3"/>
+      <rect x="760" y="88" width="180" height="26" fill="#e7dcc4"/>
+      <rect x="760" y="392" width="180" height="8" fill="#d9c3a0"/>
+      <g stroke="#26221c" stroke-width="3.5" stroke-linecap="round">
+        <line x1="792" y1="136" x2="792" y2="174"/><line x1="792" y1="188" x2="792" y2="216"/><line x1="792" y1="230" x2="792" y2="268"/><line x1="792" y1="282" x2="792" y2="308"/>
+        <line x1="832" y1="140" x2="832" y2="168"/><line x1="832" y1="182" x2="832" y2="222"/><line x1="832" y1="236" x2="832" y2="262"/><line x1="832" y1="276" x2="832" y2="316"/>
+        <line x1="872" y1="134" x2="872" y2="176"/><line x1="872" y1="190" x2="872" y2="216"/><line x1="872" y1="230" x2="872" y2="270"/><line x1="872" y1="284" x2="872" y2="308"/>
+        <line x1="912" y1="138" x2="912" y2="166"/><line x1="912" y1="180" x2="912" y2="220"/><line x1="912" y1="234" x2="912" y2="268"/>
+      </g>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 활자 보관장 — 얕은 서랍 7단×2열, 1칸 열려 금속 활자 노출 ===== -->
+  <svg class="prop" data-adj="sp14-cabinet" style="left:20px; bottom:575px; width:300px; height:540px;" viewBox="0 0 300 540">
+    <g data-obj="cabinet-frame">
+      <rect x="0" y="0" width="300" height="540" rx="8" fill="#4a3826"/>
+      <rect x="0" y="0" width="12" height="540" fill="#5a4632"/>
+      <rect x="-8" y="-8" width="316" height="22" rx="5" fill="#5a4632"/>
+      <rect x="-8" y="518" width="316" height="22" rx="5" fill="#2e2115"/>
+    </g>
+    <g data-obj="cabinet-drawers-left">
+      <rect x="16" y="30" width="128" height="58" rx="4" fill="#6d4526"/><rect x="16" y="30" width="128" height="9" fill="#8a5a33"/><circle cx="80" cy="61" r="7" fill="#d9c3a0"/>
+      <rect x="16" y="98" width="128" height="58" rx="4" fill="#6d4526"/><rect x="16" y="98" width="128" height="9" fill="#8a5a33"/><circle cx="80" cy="129" r="7" fill="#d9c3a0"/>
+      <rect x="16" y="166" width="128" height="58" rx="4" fill="#6d4526"/><rect x="16" y="166" width="128" height="9" fill="#8a5a33"/><circle cx="80" cy="197" r="7" fill="#d9c3a0"/>
+      <rect x="16" y="234" width="128" height="58" rx="4" fill="#6d4526"/><rect x="16" y="234" width="128" height="9" fill="#8a5a33"/><circle cx="80" cy="265" r="7" fill="#d9c3a0"/>
+      <rect x="16" y="302" width="128" height="58" rx="4" fill="#6d4526"/><rect x="16" y="302" width="128" height="9" fill="#8a5a33"/><circle cx="80" cy="333" r="7" fill="#d9c3a0"/>
+      <rect x="16" y="370" width="128" height="58" rx="4" fill="#6d4526"/><rect x="16" y="370" width="128" height="9" fill="#8a5a33"/><circle cx="80" cy="401" r="7" fill="#d9c3a0"/>
+      <rect x="16" y="438" width="128" height="58" rx="4" fill="#6d4526"/><rect x="16" y="438" width="128" height="9" fill="#8a5a33"/><circle cx="80" cy="469" r="7" fill="#d9c3a0"/>
+    </g>
+    <g data-obj="cabinet-drawers-right">
+      <rect x="156" y="30" width="128" height="58" rx="4" fill="#6d4526"/><rect x="156" y="30" width="128" height="9" fill="#8a5a33"/><circle cx="220" cy="61" r="7" fill="#d9c3a0"/>
+      <rect x="156" y="98" width="128" height="58" rx="4" fill="#6d4526"/><rect x="156" y="98" width="128" height="9" fill="#8a5a33"/><circle cx="220" cy="129" r="7" fill="#d9c3a0"/>
+      <rect x="156" y="234" width="128" height="58" rx="4" fill="#6d4526"/><rect x="156" y="234" width="128" height="9" fill="#8a5a33"/><circle cx="220" cy="265" r="7" fill="#d9c3a0"/>
+      <rect x="156" y="302" width="128" height="58" rx="4" fill="#6d4526"/><rect x="156" y="302" width="128" height="9" fill="#8a5a33"/><circle cx="220" cy="333" r="7" fill="#d9c3a0"/>
+      <rect x="156" y="370" width="128" height="58" rx="4" fill="#6d4526"/><rect x="156" y="370" width="128" height="9" fill="#8a5a33"/><circle cx="220" cy="401" r="7" fill="#d9c3a0"/>
+      <rect x="156" y="438" width="128" height="58" rx="4" fill="#6d4526"/><rect x="156" y="438" width="128" height="9" fill="#8a5a33"/><circle cx="220" cy="469" r="7" fill="#d9c3a0"/>
+    </g>
+    <g data-obj="cabinet-drawer-open">
+      <rect x="150" y="150" width="140" height="34" fill="#2e2115"/>
+      <rect x="160" y="158" width="20" height="16" fill="#7d8794"/>
+      <rect x="186" y="160" width="20" height="16" fill="#6e7683"/>
+      <rect x="212" y="157" width="20" height="16" fill="#8b95a1"/>
+      <rect x="238" y="160" width="20" height="16" fill="#6e7683"/>
+      <rect x="150" y="184" width="140" height="54" rx="4" fill="#8a5a33"/>
+      <rect x="150" y="184" width="140" height="9" fill="#a87947"/>
+      <rect x="150" y="230" width="140" height="8" fill="#4f3018"/>
+      <circle cx="220" cy="211" r="8" fill="#d9c3a0"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 종이 두루마리 (보관장 위, 옆으로 눕힘) ===== -->
+  <svg class="prop" data-adj="sp14-paper-roll" style="left:50px; bottom:1112px; width:250px; height:90px;" viewBox="0 0 250 90">
+    <g data-obj="roll-body">
+      <rect x="18" y="26" width="206" height="52" rx="26" fill="#f6efe3"/>
+      <path d="M 18 52 L 224 52 L 224 60 Q 224 78 200 78 L 44 78 Q 18 78 18 60 Z" fill="#d9c3a0"/>
+    </g>
+    <g data-obj="roll-end">
+      <circle cx="222" cy="52" r="26" fill="#e7dcc4"/>
+      <circle cx="222" cy="52" r="16" fill="#c9b98f"/>
+      <circle cx="222" cy="52" r="6" fill="#a89a78"/>
+    </g>
+    <g data-obj="roll-tie">
+      <rect x="82" y="22" width="14" height="60" rx="4" fill="#8a5a33"/>
+    </g>
+  </svg>
+
+  <!-- ===== 주 소품(앵커): 작업대 + 활자판 — 나무 틀 안 8×6 규칙 격자, 꽉 찬 사각 금속(회청) 활자 블록 ===== -->
+  <svg class="prop" data-adj="sp14-worktable" style="left:300px; bottom:560px; width:560px; height:580px;" viewBox="0 0 560 580">
+    <g data-obj="table-legs">
+      <rect x="58" y="448" width="38" height="122" fill="#5a3a20"/>
+      <rect x="58" y="448" width="12" height="122" fill="#4f3018"/>
+      <rect x="464" y="448" width="38" height="122" fill="#5a3a20"/>
+      <rect x="490" y="448" width="12" height="122" fill="#4f3018"/>
+      <rect x="48" y="560" width="58" height="14" rx="4" fill="#2e2115"/>
+      <rect x="454" y="560" width="58" height="14" rx="4" fill="#2e2115"/>
+    </g>
+    <g data-obj="table-slab">
+      <rect x="20" y="418" width="520" height="34" rx="6" fill="#6d4526"/>
+      <rect x="20" y="418" width="520" height="9" fill="#8a5a33"/>
+      <rect x="20" y="444" width="520" height="8" fill="#4f3018"/>
+    </g>
+    <g data-obj="tray-wedges">
+      <polygon points="30,418 78,418 78,386" fill="#5a3a20"/>
+      <polygon points="530,418 482,418 482,386" fill="#5a3a20"/>
+    </g>
+    <g data-obj="tray-frame">
+      <rect x="16" y="10" width="528" height="408" rx="8" fill="#5a3a20"/>
+      <rect x="16" y="10" width="528" height="12" rx="6" fill="#8a5a33"/>
+      <rect x="16" y="10" width="12" height="408" fill="#6d4526"/>
+      <rect x="40" y="34" width="480" height="360" fill="#3a2c1c"/>
+    </g>
+    <g data-obj="tray-row-1"><rect x="44" y="38" width="52" height="48" fill="#6e7683"/><rect x="44" y="38" width="52" height="4" fill="#98a2ae"/><rect x="44" y="80" width="52" height="6" fill="#3f454e"/><rect x="91" y="38" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="70" y1="49" x2="70" y2="75" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="56" y1="62" x2="84" y2="62" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="104" y="38" width="52" height="48" fill="#7d8794"/><rect x="104" y="38" width="52" height="4" fill="#98a2ae"/><rect x="104" y="80" width="52" height="6" fill="#3f454e"/><rect x="151" y="38" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="118" y1="52" x2="142" y2="52" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="118" y1="63" x2="142" y2="63" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="118" y1="74" x2="142" y2="74" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="130" y1="52" x2="130" y2="74" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="164" y="38" width="52" height="48" fill="#5d6570"/><rect x="164" y="38" width="52" height="4" fill="#98a2ae"/><rect x="164" y="80" width="52" height="6" fill="#3f454e"/><rect x="211" y="38" width="5" height="48" fill="#3f454e" opacity="0.55"/><rect x="179" y="51" width="22" height="22" fill="none" stroke="#cdd6e1" stroke-width="3"/><rect x="224" y="38" width="52" height="48" fill="#2b2016"/><rect x="228" y="42" width="44" height="40" fill="#211913"/><rect x="284" y="38" width="52" height="48" fill="#7d8794"/><rect x="284" y="38" width="52" height="4" fill="#98a2ae"/><rect x="284" y="80" width="52" height="6" fill="#3f454e"/><rect x="331" y="38" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="300" y1="50" x2="299" y2="75" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="310" y1="50" x2="310" y2="76" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="320" y1="50" x2="321" y2="75" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="344" y="38" width="52" height="48" fill="#5d6570"/><rect x="344" y="38" width="52" height="4" fill="#98a2ae"/><rect x="344" y="80" width="52" height="6" fill="#3f454e"/><rect x="391" y="38" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="357" y1="53" x2="383" y2="53" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="357" y1="62" x2="383" y2="62" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="357" y1="71" x2="383" y2="71" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="404" y="38" width="52" height="48" fill="#6e7683"/><rect x="404" y="38" width="52" height="4" fill="#98a2ae"/><rect x="404" y="80" width="52" height="6" fill="#3f454e"/><rect x="451" y="38" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="430" y1="50" x2="418" y2="75" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="430" y1="50" x2="442" y2="75" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="464" y="38" width="52" height="48" fill="#7d8794"/><rect x="464" y="38" width="52" height="4" fill="#98a2ae"/><rect x="464" y="80" width="52" height="6" fill="#3f454e"/><rect x="511" y="38" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="478" y1="51" x2="502" y2="51" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="490" y1="51" x2="490" y2="73" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="478" y1="73" x2="502" y2="73" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/></g>
+    <g data-obj="tray-row-2"><rect x="44" y="98" width="52" height="48" fill="#7d8794"/><rect x="44" y="98" width="52" height="4" fill="#98a2ae"/><rect x="44" y="140" width="52" height="6" fill="#3f454e"/><rect x="91" y="98" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="58" y1="111" x2="82" y2="111" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="70" y1="111" x2="70" y2="133" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="58" y1="133" x2="82" y2="133" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="104" y="98" width="52" height="48" fill="#5d6570"/><rect x="104" y="98" width="52" height="4" fill="#98a2ae"/><rect x="104" y="140" width="52" height="6" fill="#3f454e"/><rect x="151" y="98" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="130" y1="109" x2="130" y2="135" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="116" y1="122" x2="144" y2="122" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="164" y="98" width="52" height="48" fill="#6e7683"/><rect x="164" y="98" width="52" height="4" fill="#98a2ae"/><rect x="164" y="140" width="52" height="6" fill="#3f454e"/><rect x="211" y="98" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="178" y1="112" x2="202" y2="112" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="178" y1="123" x2="202" y2="123" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="178" y1="134" x2="202" y2="134" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="190" y1="112" x2="190" y2="134" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="224" y="98" width="52" height="48" fill="#7d8794"/><rect x="224" y="98" width="52" height="4" fill="#98a2ae"/><rect x="224" y="140" width="52" height="6" fill="#3f454e"/><rect x="271" y="98" width="5" height="48" fill="#3f454e" opacity="0.55"/><rect x="239" y="111" width="22" height="22" fill="none" stroke="#cdd6e1" stroke-width="3"/><rect x="284" y="98" width="52" height="48" fill="#5d6570"/><rect x="284" y="98" width="52" height="4" fill="#98a2ae"/><rect x="284" y="140" width="52" height="6" fill="#3f454e"/><rect x="331" y="98" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="297" y1="117" x2="323" y2="117" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="310" y1="110" x2="310" y2="136" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="310" y1="123" x2="299" y2="136" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="310" y1="123" x2="321" y2="136" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="344" y="98" width="52" height="48" fill="#6e7683"/><rect x="344" y="98" width="52" height="4" fill="#98a2ae"/><rect x="344" y="140" width="52" height="6" fill="#3f454e"/><rect x="391" y="98" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="360" y1="110" x2="359" y2="135" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="370" y1="110" x2="370" y2="136" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="380" y1="110" x2="381" y2="135" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="404" y="98" width="52" height="48" fill="#7d8794"/><rect x="404" y="98" width="52" height="4" fill="#98a2ae"/><rect x="404" y="140" width="52" height="6" fill="#3f454e"/><rect x="451" y="98" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="417" y1="113" x2="443" y2="113" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="417" y1="122" x2="443" y2="122" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="417" y1="131" x2="443" y2="131" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="464" y="98" width="52" height="48" fill="#5d6570"/><rect x="464" y="98" width="52" height="4" fill="#98a2ae"/><rect x="464" y="140" width="52" height="6" fill="#3f454e"/><rect x="511" y="98" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="490" y1="110" x2="478" y2="135" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="490" y1="110" x2="502" y2="135" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/></g>
+    <g data-obj="tray-row-3"><rect x="44" y="158" width="52" height="48" fill="#5d6570"/><rect x="44" y="158" width="52" height="4" fill="#98a2ae"/><rect x="44" y="200" width="52" height="6" fill="#3f454e"/><rect x="91" y="158" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="70" y1="170" x2="58" y2="195" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="70" y1="170" x2="82" y2="195" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="104" y="158" width="52" height="48" fill="#6e7683"/><rect x="104" y="158" width="52" height="4" fill="#98a2ae"/><rect x="104" y="200" width="52" height="6" fill="#3f454e"/><rect x="151" y="158" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="118" y1="171" x2="142" y2="171" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="130" y1="171" x2="130" y2="193" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="118" y1="193" x2="142" y2="193" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="164" y="158" width="52" height="48" fill="#7d8794"/><rect x="164" y="158" width="52" height="4" fill="#98a2ae"/><rect x="164" y="200" width="52" height="6" fill="#3f454e"/><rect x="211" y="158" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="190" y1="169" x2="190" y2="195" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="176" y1="182" x2="204" y2="182" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="224" y="158" width="52" height="48" fill="#5d6570"/><rect x="224" y="158" width="52" height="4" fill="#98a2ae"/><rect x="224" y="200" width="52" height="6" fill="#3f454e"/><rect x="271" y="158" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="238" y1="172" x2="262" y2="172" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="238" y1="183" x2="262" y2="183" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="238" y1="194" x2="262" y2="194" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="250" y1="172" x2="250" y2="194" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="284" y="158" width="52" height="48" fill="#6e7683"/><rect x="284" y="158" width="52" height="4" fill="#98a2ae"/><rect x="284" y="200" width="52" height="6" fill="#3f454e"/><rect x="331" y="158" width="5" height="48" fill="#3f454e" opacity="0.55"/><rect x="299" y="171" width="22" height="22" fill="none" stroke="#cdd6e1" stroke-width="3"/><rect x="344" y="158" width="52" height="48" fill="#7d8794"/><rect x="344" y="158" width="52" height="4" fill="#98a2ae"/><rect x="344" y="200" width="52" height="6" fill="#3f454e"/><rect x="391" y="158" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="357" y1="177" x2="383" y2="177" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="370" y1="170" x2="370" y2="196" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="370" y1="183" x2="359" y2="196" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="370" y1="183" x2="381" y2="196" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="404" y="158" width="52" height="48" fill="#2b2016"/><rect x="408" y="162" width="44" height="40" fill="#211913"/><rect x="464" y="158" width="52" height="48" fill="#6e7683"/><rect x="464" y="158" width="52" height="4" fill="#98a2ae"/><rect x="464" y="200" width="52" height="6" fill="#3f454e"/><rect x="511" y="158" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="477" y1="173" x2="503" y2="173" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="477" y1="182" x2="503" y2="182" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="477" y1="191" x2="503" y2="191" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/></g>
+    <g data-obj="tray-row-4"><rect x="44" y="218" width="52" height="48" fill="#6e7683"/><rect x="44" y="218" width="52" height="4" fill="#98a2ae"/><rect x="44" y="260" width="52" height="6" fill="#3f454e"/><rect x="91" y="218" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="57" y1="233" x2="83" y2="233" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="57" y1="242" x2="83" y2="242" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="57" y1="251" x2="83" y2="251" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="104" y="218" width="52" height="48" fill="#7d8794"/><rect x="104" y="218" width="52" height="4" fill="#98a2ae"/><rect x="104" y="260" width="52" height="6" fill="#3f454e"/><rect x="151" y="218" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="130" y1="230" x2="118" y2="255" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="130" y1="230" x2="142" y2="255" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="164" y="218" width="52" height="48" fill="#5d6570"/><rect x="164" y="218" width="52" height="4" fill="#98a2ae"/><rect x="164" y="260" width="52" height="6" fill="#3f454e"/><rect x="211" y="218" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="178" y1="231" x2="202" y2="231" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="190" y1="231" x2="190" y2="253" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="178" y1="253" x2="202" y2="253" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="224" y="218" width="52" height="48" fill="#6e7683"/><rect x="224" y="218" width="52" height="4" fill="#98a2ae"/><rect x="224" y="260" width="52" height="6" fill="#3f454e"/><rect x="271" y="218" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="250" y1="229" x2="250" y2="255" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="236" y1="242" x2="264" y2="242" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="284" y="218" width="52" height="48" fill="#7d8794"/><rect x="284" y="218" width="52" height="4" fill="#98a2ae"/><rect x="284" y="260" width="52" height="6" fill="#3f454e"/><rect x="331" y="218" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="298" y1="232" x2="322" y2="232" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="298" y1="243" x2="322" y2="243" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="298" y1="254" x2="322" y2="254" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="310" y1="232" x2="310" y2="254" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="344" y="218" width="52" height="48" fill="#5d6570"/><rect x="344" y="218" width="52" height="4" fill="#98a2ae"/><rect x="344" y="260" width="52" height="6" fill="#3f454e"/><rect x="391" y="218" width="5" height="48" fill="#3f454e" opacity="0.55"/><rect x="359" y="231" width="22" height="22" fill="none" stroke="#cdd6e1" stroke-width="3"/><rect x="404" y="218" width="52" height="48" fill="#6e7683"/><rect x="404" y="218" width="52" height="4" fill="#98a2ae"/><rect x="404" y="260" width="52" height="6" fill="#3f454e"/><rect x="451" y="218" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="417" y1="237" x2="443" y2="237" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="430" y1="230" x2="430" y2="256" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="430" y1="243" x2="419" y2="256" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="430" y1="243" x2="441" y2="256" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="464" y="218" width="52" height="48" fill="#7d8794"/><rect x="464" y="218" width="52" height="4" fill="#98a2ae"/><rect x="464" y="260" width="52" height="6" fill="#3f454e"/><rect x="511" y="218" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="480" y1="230" x2="479" y2="255" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="490" y1="230" x2="490" y2="256" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="500" y1="230" x2="501" y2="255" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/></g>
+    <g data-obj="tray-row-5"><rect x="44" y="278" width="52" height="48" fill="#7d8794"/><rect x="44" y="278" width="52" height="4" fill="#98a2ae"/><rect x="44" y="320" width="52" height="6" fill="#3f454e"/><rect x="91" y="278" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="60" y1="290" x2="59" y2="315" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="70" y1="290" x2="70" y2="316" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="80" y1="290" x2="81" y2="315" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="104" y="278" width="52" height="48" fill="#5d6570"/><rect x="104" y="278" width="52" height="4" fill="#98a2ae"/><rect x="104" y="320" width="52" height="6" fill="#3f454e"/><rect x="151" y="278" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="117" y1="293" x2="143" y2="293" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="117" y1="302" x2="143" y2="302" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="117" y1="311" x2="143" y2="311" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="164" y="278" width="52" height="48" fill="#6e7683"/><rect x="164" y="278" width="52" height="4" fill="#98a2ae"/><rect x="164" y="320" width="52" height="6" fill="#3f454e"/><rect x="211" y="278" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="190" y1="290" x2="178" y2="315" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="190" y1="290" x2="202" y2="315" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="224" y="278" width="52" height="48" fill="#7d8794"/><rect x="224" y="278" width="52" height="4" fill="#98a2ae"/><rect x="224" y="320" width="52" height="6" fill="#3f454e"/><rect x="271" y="278" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="238" y1="291" x2="262" y2="291" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="250" y1="291" x2="250" y2="313" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="238" y1="313" x2="262" y2="313" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="284" y="278" width="52" height="48" fill="#5d6570"/><rect x="284" y="278" width="52" height="4" fill="#98a2ae"/><rect x="284" y="320" width="52" height="6" fill="#3f454e"/><rect x="331" y="278" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="310" y1="289" x2="310" y2="315" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="296" y1="302" x2="324" y2="302" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="344" y="278" width="52" height="48" fill="#6e7683"/><rect x="344" y="278" width="52" height="4" fill="#98a2ae"/><rect x="344" y="320" width="52" height="6" fill="#3f454e"/><rect x="391" y="278" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="358" y1="292" x2="382" y2="292" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="358" y1="303" x2="382" y2="303" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="358" y1="314" x2="382" y2="314" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="370" y1="292" x2="370" y2="314" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="404" y="278" width="52" height="48" fill="#7d8794"/><rect x="404" y="278" width="52" height="4" fill="#98a2ae"/><rect x="404" y="320" width="52" height="6" fill="#3f454e"/><rect x="451" y="278" width="5" height="48" fill="#3f454e" opacity="0.55"/><rect x="419" y="291" width="22" height="22" fill="none" stroke="#cdd6e1" stroke-width="3"/><rect x="464" y="278" width="52" height="48" fill="#5d6570"/><rect x="464" y="278" width="52" height="4" fill="#98a2ae"/><rect x="464" y="320" width="52" height="6" fill="#3f454e"/><rect x="511" y="278" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="477" y1="297" x2="503" y2="297" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="490" y1="290" x2="490" y2="316" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="490" y1="303" x2="479" y2="316" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="490" y1="303" x2="501" y2="316" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/></g>
+    <g data-obj="tray-row-6"><rect x="44" y="338" width="52" height="48" fill="#5d6570"/><rect x="44" y="338" width="52" height="4" fill="#98a2ae"/><rect x="44" y="380" width="52" height="6" fill="#3f454e"/><rect x="91" y="338" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="57" y1="357" x2="83" y2="357" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="70" y1="350" x2="70" y2="376" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="70" y1="363" x2="59" y2="376" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="70" y1="363" x2="81" y2="376" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="104" y="338" width="52" height="48" fill="#6e7683"/><rect x="104" y="338" width="52" height="4" fill="#98a2ae"/><rect x="104" y="380" width="52" height="6" fill="#3f454e"/><rect x="151" y="338" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="120" y1="350" x2="119" y2="375" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="130" y1="350" x2="130" y2="376" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="140" y1="350" x2="141" y2="375" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="164" y="338" width="52" height="48" fill="#7d8794"/><rect x="164" y="338" width="52" height="4" fill="#98a2ae"/><rect x="164" y="380" width="52" height="6" fill="#3f454e"/><rect x="211" y="338" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="177" y1="353" x2="203" y2="353" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="177" y1="362" x2="203" y2="362" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="177" y1="371" x2="203" y2="371" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="224" y="338" width="52" height="48" fill="#5d6570"/><rect x="224" y="338" width="52" height="4" fill="#98a2ae"/><rect x="224" y="380" width="52" height="6" fill="#3f454e"/><rect x="271" y="338" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="250" y1="350" x2="238" y2="375" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="250" y1="350" x2="262" y2="375" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="284" y="338" width="52" height="48" fill="#6e7683"/><rect x="284" y="338" width="52" height="4" fill="#98a2ae"/><rect x="284" y="380" width="52" height="6" fill="#3f454e"/><rect x="331" y="338" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="298" y1="351" x2="322" y2="351" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="310" y1="351" x2="310" y2="373" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="298" y1="373" x2="322" y2="373" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="344" y="338" width="52" height="48" fill="#7d8794"/><rect x="344" y="338" width="52" height="4" fill="#98a2ae"/><rect x="344" y="380" width="52" height="6" fill="#3f454e"/><rect x="391" y="338" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="370" y1="349" x2="370" y2="375" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="356" y1="362" x2="384" y2="362" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="404" y="338" width="52" height="48" fill="#5d6570"/><rect x="404" y="338" width="52" height="4" fill="#98a2ae"/><rect x="404" y="380" width="52" height="6" fill="#3f454e"/><rect x="451" y="338" width="5" height="48" fill="#3f454e" opacity="0.55"/><line x1="418" y1="352" x2="442" y2="352" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="418" y1="363" x2="442" y2="363" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="418" y1="374" x2="442" y2="374" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><line x1="430" y1="352" x2="430" y2="374" stroke="#cdd6e1" stroke-width="3.4" stroke-linecap="round"/><rect x="464" y="338" width="52" height="48" fill="#6e7683"/><rect x="464" y="338" width="52" height="4" fill="#98a2ae"/><rect x="464" y="380" width="52" height="6" fill="#3f454e"/><rect x="511" y="338" width="5" height="48" fill="#3f454e" opacity="0.55"/><rect x="479" y="351" width="22" height="22" fill="none" stroke="#cdd6e1" stroke-width="3"/></g>
+  </svg>
+
+  <!-- ===== 보조 소품: 먹그릇 + 먹솔 (작업대 앞 바닥) ===== -->
+  <svg class="prop" data-adj="sp14-inkset" style="left:340px; bottom:462px; width:170px; height:130px;" viewBox="0 0 170 130">
+    <g data-obj="ink-bowl">
+      <path d="M 16 62 Q 20 106 62 110 Q 104 106 108 62 Z" fill="#3a3631"/>
+      <ellipse cx="62" cy="62" rx="46" ry="15" fill="#26221c"/>
+      <ellipse cx="62" cy="62" rx="34" ry="9" fill="#111009"/>
+      <path d="M 34 58 Q 48 52 62 54" stroke="#4a5058" stroke-width="3" fill="none" opacity="0.8"/>
+    </g>
+    <g data-obj="ink-brush" transform="rotate(28 130 90)">
+      <rect x="122" y="4" width="16" height="76" rx="7" fill="#8a5a33"/>
+      <rect x="122" y="4" width="6" height="76" fill="#6d4526"/>
+      <polygon points="112,78 148,78 152,116 108,116" fill="#26221c"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 인쇄지 더미 + 문진 (바닥 전경 우측) ===== -->
+  <svg class="prop" data-adj="sp14-paper-stack" style="left:860px; bottom:410px; width:210px; height:160px;" viewBox="0 0 210 160">
+    <g data-obj="stack-sheets">
+      <rect x="8" y="128" width="192" height="22" rx="3" fill="#e7dcc4"/>
+      <rect x="14" y="108" width="182" height="22" rx="3" fill="#f6efe3"/>
+      <rect x="10" y="88" width="188" height="22" rx="3" fill="#e7dcc4"/>
+      <rect x="16" y="68" width="180" height="24" rx="3" fill="#f6efe3" transform="rotate(-2 106 80)"/>
+      <line x1="52" y1="74" x2="52" y2="86" stroke="#26221c" stroke-width="3"/>
+      <line x1="92" y1="72" x2="92" y2="86" stroke="#26221c" stroke-width="3"/>
+      <line x1="132" y1="74" x2="132" y2="86" stroke="#26221c" stroke-width="3"/>
+    </g>
+    <g data-obj="stack-weight">
+      <ellipse cx="104" cy="62" rx="30" ry="14" fill="#8a8378"/>
+      <path d="M 74 62 A 30 14 0 0 0 134 62 Q 104 74 74 62 Z" fill="#6d6a5c"/>
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 활자 장인 (militia noHat) — 작업대 우측에서 집게로 활자 집는 중 ===== -->
+  <div class="char" style="left:700px; bottom:570px; width:380px; height:456px;"></div>
+
+  <!-- ===== 캐릭터 손 소품: 핀셋형 집게 + 금속 활자 1개 — 집게 밑동이 왼손 원 중심(≈x813, bottom 646), 활자 블록은 얼굴 좌측 바깥·활자판 위 공간 ===== -->
+  <svg class="prop" data-adj="sp14-tweezers" style="left:690px; bottom:615px; width:150px; height:210px;" viewBox="0 0 150 210">
+    <g data-obj="tweezer-arms">
+      <polygon points="119,182 126,178 52,52 45,57" fill="#9aa2ad"/>
+      <polygon points="126,184 133,181 68,44 60,47" fill="#6e7683"/>
+      <circle cx="127" cy="185" r="8" fill="#5d6570"/>
+    </g>
+    <g data-obj="tweezer-type" transform="rotate(-14 52 42)">
+      <rect x="36" y="26" width="32" height="32" fill="#4a5058"/>
+      <rect x="44" y="34" width="15" height="15" fill="#aeb6c2"/>
+    </g>
+    <g data-obj="tweezer-grip-hand">
+      <circle cx="123" cy="179" r="15" fill="#f2c99b"/>
+      <path d="M 109 183 A 15 15 0 0 0 136 183 Q 123 189 109 183 Z" fill="#d8b085"/>
+    </g>
+  </svg>
+
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", noHat:true, shirt:"#7c7a6e", pants:"#45423a"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+</body></html>

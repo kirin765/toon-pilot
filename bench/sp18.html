@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#93a5b4}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 겨울 구름 2개 (회백 톤) ===== -->
+  <svg class="prop" data-adj="sp18-cloud-1" style="top:100px; left:100px; width:190px; height:90px;" viewBox="0 0 190 90">
+    <path d="M 17 68 Q 0 34 39 27 Q 46 5 80 14 Q 102 -4 128 14 Q 164 9 164 38 Q 188 44 174 66 Q 182 80 156 80 L 34 80 Q 4 80 17 68 Z" fill="#ccd5dd"/>
+  </svg>
+  <svg class="prop" data-adj="sp18-cloud-2" style="top:230px; right:130px; width:150px; height:72px;" viewBox="0 0 150 72">
+    <path d="M 12 55 Q 0 26 29 21 Q 36 2 60 10 Q 79 -4 99 10 Q 129 4 129 28 Q 148 34 137 51 Q 142 62 120 62 L 26 62 Q 2 62 12 55 Z" fill="#ccd5dd"/>
+  </svg>
+
+  <!-- ===== 배경 실루엣: 눈 덮인 산 능선 2단 (2톤 + 소나무 실루엣) ===== -->
+  <svg class="prop" data-adj="sp18-ridge" style="left:0; bottom:660px; width:1080px; height:240px;" viewBox="0 0 1080 240">
+    <g data-obj="ridge-far">
+      <path d="M 0 240 L 0 128 L 180 62 L 360 132 L 550 48 L 740 122 L 910 66 L 1080 112 L 1080 240 Z" fill="#c3d2df"/>
+    </g>
+    <g data-obj="ridge-near">
+      <path d="M 0 240 L 0 172 Q 250 108 520 156 Q 790 200 1080 136 L 1080 240 Z" fill="#e2eaf1"/>
+      <path d="M 0 240 L 0 206 Q 300 176 620 198 Q 860 212 1080 190 L 1080 240 Z" fill="#cbd8e3"/>
+      <g data-obj="ridge-pines">
+        <polygon points="150,182 138,150 162,150" fill="#3e4f42" transform="rotate(180 150 166)"/>
+        <path d="M 150 138 L 136 176 L 164 176 Z" fill="#3e4f42"/>
+        <path d="M 192 148 L 181 180 L 203 180 Z" fill="#3e4f42"/>
+        <path d="M 930 158 L 917 194 L 943 194 Z" fill="#3e4f42"/>
+      </g>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 눈밭 지면 (흰 지면 + 파르스름 그림자 2톤) ===== -->
+  <div class="prop" data-adj="sp18-ground" style="left:0; bottom:0; width:1080px; height:660px; background:#eef2f5;"></div>
+  <div class="prop" data-adj="sp18-ground-shade" style="left:0; bottom:620px; width:1080px; height:40px; background:#c6d4e2;"></div>
+
+  <!-- ===== 주 소품(앵커): 눈 덮인 초가 (it4-s3 hut1 복사 + 지붕 눈 층 + 굴뚝/연기, 처마는 불규칙 지그재그 짚 프린지로 교정) ===== -->
+  <svg class="prop" data-adj="sp18-hut" style="left:-140px; bottom:560px; width:960px; height:912px;" viewBox="-160 -160 800 760">
+    <g data-obj="hut-wall-body"><rect x="40" y="200" width="540" height="380" fill="#9c8a6a"/></g>
+    <g data-obj="hut-wall-shade"><path d="M 400 200 L 580 200 L 580 580 L 440 580 Z" fill="#7a6a4d" opacity="0.85"/></g>
+    <g data-obj="hut-wall-base"><rect x="30" y="550" width="560" height="50" fill="#5c4d38"/></g>
+    <g data-obj="hut-wall-posts">
+      <rect x="10" y="200" width="30" height="400" fill="#4a3c2a"/>
+      <rect x="580" y="200" width="30" height="400" fill="#4a3c2a"/>
+    </g>
+    <g data-obj="hut-window"><rect x="95" y="300" width="90" height="90" fill="#1c1710"/><rect x="135" y="300" width="8" height="90" fill="#c2b795"/><rect x="95" y="340" width="90" height="8" fill="#c2b795"/></g>
+    <g data-obj="hut-door">
+      <path d="M 195 580 L 195 275 Q 195 252 225 252 L 285 252 Q 315 252 315 275 L 315 580 Z" fill="#2c2016"/>
+      <rect x="203" y="262" width="10" height="310" fill="#4a3826"/>
+      <rect x="297" y="262" width="10" height="310" fill="#4a3826"/>
+      <rect x="213" y="404" width="84" height="9" fill="#4a3826"/>
+      <rect x="190" y="574" width="130" height="10" fill="#6d5b40"/>
+    </g>
+    <g data-obj="hut-roof-thatch"><path d="M -20 220 L -20 160 Q 40 70 150 45 L 300 0 L 470 45 Q 580 70 630 160 L 630 220 Z" fill="#a9793e"/></g>
+    <g data-obj="hut-roof-shade"><path d="M 300 0 L 470 45 Q 580 70 630 160 L 630 220 L 470 220 L 300 45 Z" fill="#845f2e" opacity="0.85"/></g>
+    <g data-obj="hut-roof-straw">
+      <path d="M -10 142 Q 300 96 620 142" stroke="#7a5628" stroke-width="9" fill="none" opacity="0.9"/>
+      <path d="M -10 180 Q 300 138 620 180" stroke="#5c4020" stroke-width="9" fill="none" opacity="0.9"/>
+    </g>
+    <g data-obj="hut-roof-eave-fringe">
+      <path d="M -20 196 L 630 196 L 630 216
+        L 612 242 L 596 220 L 574 236 L 556 218 L 536 248 L 518 222 L 498 238 L 482 219
+        L 460 246 L 442 221 L 420 234 L 404 218 L 382 244 L 362 220 L 344 250 L 326 222
+        L 306 236 L 290 218 L 268 246 L 250 221 L 228 238 L 212 219 L 190 248 L 172 222
+        L 152 234 L 136 218 L 114 244 L 96 220 L 76 250 L 58 222 L 38 236 L 22 218
+        L 2 246 L -12 221 L -20 232 Z" fill="#96702f"/>
+    </g>
+    <g data-obj="hut-roof-snow">
+      <path d="M -20 160 Q 40 70 150 45 L 300 0 L 470 45 Q 580 70 630 160 L 630 170
+        Q 596 150 560 150 Q 545 130 515 130 Q 480 132 455 118 Q 420 104 385 106
+        Q 350 92 315 98 Q 280 92 245 104 Q 215 100 185 114 Q 150 112 120 126
+        Q 90 124 60 140 Q 30 140 -20 172 Z" fill="#eef2f5"/>
+      <path d="M 300 0 L 470 45 Q 580 70 630 160 L 630 170
+        Q 596 150 560 150 Q 545 130 515 130 Q 480 132 455 118 Q 420 104 385 106
+        Q 350 92 315 98 Z" fill="#d6e0ea"/>
+    </g>
+    <g data-obj="hut-chimney">
+      <rect x="486" y="4" width="34" height="72" fill="#8a7a63"/>
+      <rect x="486" y="4" width="12" height="72" fill="#6a5c48"/>
+      <rect x="480" y="-6" width="46" height="12" fill="#5c4d38"/>
+      <rect x="478" y="-15" width="50" height="11" rx="5" fill="#eef2f5"/>
+    </g>
+    <g data-obj="hut-smoke">
+      <circle cx="505" cy="-36" r="15" fill="#e4e9ee" opacity="0.9"/>
+      <circle cx="490" cy="-64" r="20" fill="#e4e9ee" opacity="0.85"/>
+      <circle cx="518" cy="-98" r="26" fill="#e4e9ee" opacity="0.8"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 나목 (잎 없는 겨울 나무 — 검갈 줄기 + 갈라지는 가지 + 가지 위 눈 라인) ===== -->
+  <svg class="prop" data-adj="sp18-tree" style="left:850px; bottom:570px; width:230px; height:820px;" viewBox="0 0 230 820">
+    <g data-obj="tree-trunk">
+      <path d="M 82 820 Q 94 810 99 796 Q 112 690 118 600 Q 122 548 115 505 L 152 505 Q 149 560 153 622 Q 159 712 169 798 Q 174 812 186 820 Z" fill="#3d2b1a"/>
+      <path d="M 120 790 Q 128 690 130 600 Q 131 550 133 512 L 144 510 Q 142 560 145 630 Q 149 716 156 792 Z" fill="#5a4028" opacity="0.8"/>
+    </g>
+    <g data-obj="tree-limbs">
+      <path d="M 116 512 Q 92 428 74 358 Q 62 316 44 286 L 64 272 Q 84 314 96 356 Q 112 420 150 505 Z" fill="#3d2b1a"/>
+      <path d="M 150 510 Q 170 418 188 350 Q 200 308 220 278 L 200 264 Q 182 300 168 344 Q 150 408 118 508 Z" fill="#3d2b1a"/>
+      <path d="M 84 390 Q 60 340 30 306 L 42 294 Q 74 330 96 378 Z" fill="#3d2b1a"/>
+      <path d="M 176 386 Q 196 344 226 316 L 214 302 Q 186 332 166 376 Z" fill="#3d2b1a"/>
+    </g>
+    <g data-obj="tree-twigs">
+      <path d="M 54 288 Q 44 240 50 196" stroke="#3d2b1a" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <path d="M 56 274 Q 30 244 22 210" stroke="#3d2b1a" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M 210 280 Q 218 232 210 190" stroke="#3d2b1a" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <path d="M 208 296 Q 228 260 230 224" stroke="#3d2b1a" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M 38 300 Q 18 280 10 254" stroke="#3d2b1a" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M 50 200 Q 42 172 48 148" stroke="#3d2b1a" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 212 196 Q 216 168 208 144" stroke="#3d2b1a" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 132 512 Q 130 470 138 436" stroke="#3d2b1a" stroke-width="8" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="tree-snow">
+      <path d="M 46 282 Q 66 268 88 278" stroke="#f4f8fb" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <path d="M 168 274 Q 190 262 214 272" stroke="#f4f8fb" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <path d="M 34 300 Q 52 336 70 366" stroke="#f4f8fb" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.95"/>
+      <path d="M 196 342 Q 210 322 224 310" stroke="#f4f8fb" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.95"/>
+      <path d="M 116 500 Q 133 490 150 500" stroke="#f4f8fb" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <path d="M 46 194 Q 52 178 50 160" stroke="#f4f8fb" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 212 190 Q 214 172 210 156" stroke="#f4f8fb" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <g data-obj="tree-base-snow">
+      <path d="M 60 820 Q 78 794 110 798 Q 134 782 160 798 Q 192 794 206 820 Z" fill="#f7fafc"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 디테일: 눈 드리프트 그림자 + 눈더미 + 발자국 점선 ===== -->
+  <svg class="prop" data-adj="sp18-ground-detail" style="left:0; bottom:0; width:1080px; height:660px;" viewBox="0 0 1080 660">
+    <g data-obj="snow-drift-shadows">
+      <ellipse cx="150" cy="230" rx="150" ry="26" fill="#c9d6e2" opacity="0.8"/>
+      <ellipse cx="820" cy="310" rx="170" ry="30" fill="#c9d6e2" opacity="0.8"/>
+      <ellipse cx="430" cy="480" rx="200" ry="34" fill="#c9d6e2" opacity="0.8"/>
+      <ellipse cx="1000" cy="170" rx="90" ry="20" fill="#c9d6e2" opacity="0.75"/>
+      <ellipse cx="600" cy="600" rx="180" ry="30" fill="#c9d6e2" opacity="0.8"/>
+    </g>
+    <g data-obj="snow-mound-hut">
+      <path d="M 40 116 Q 90 84 160 100 Q 230 78 310 98 Q 380 84 430 112 L 430 140 L 40 140 Z" fill="#f7fafc"/>
+      <path d="M 60 128 Q 240 112 420 128 L 420 140 L 60 140 Z" fill="#d9e3ec"/>
+    </g>
+    <g data-obj="snow-mound-tree">
+      <path d="M 870 128 Q 920 100 970 116 Q 1020 102 1060 126 L 1060 152 L 870 152 Z" fill="#f7fafc"/>
+      <path d="M 890 140 Q 970 128 1050 142 L 1050 152 L 890 152 Z" fill="#d9e3ec"/>
+    </g>
+    <g data-obj="footprints">
+      <ellipse cx="315" cy="96" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="338" cy="106" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="372" cy="112" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="396" cy="122" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="430" cy="126" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="454" cy="136" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="488" cy="138" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="512" cy="146" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="546" cy="142" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="570" cy="132" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="598" cy="116" rx="11" ry="6" fill="#b3c5d4"/>
+      <ellipse cx="618" cy="100" rx="11" ry="6" fill="#b3c5d4"/>
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 백의 유배객 (militia 갓, 베이지 톤으로 눈밭과 실루엣 분리) ===== -->
+  <div class="char" data-adj="sp18-exile" style="left:450px; bottom:580px; width:400px; height:480px;"></div>
+
+  <!-- ===== 환경 레이어: 내리는 눈 (흰 원 점 34개, 크기 변주 — 캐릭터 머리 회피) ===== -->
+  <svg class="prop" data-adj="sp18-snowfall" style="left:0; top:0; width:1080px; height:1920px;" viewBox="0 0 1080 1920">
+    <g data-obj="snow-dots" fill="#ffffff" opacity="0.95">
+      <circle cx="60" cy="120" r="7"/><circle cx="180" cy="260" r="5"/><circle cx="300" cy="90" r="9"/>
+      <circle cx="420" cy="200" r="6"/><circle cx="540" cy="60" r="8"/><circle cx="660" cy="150" r="5"/>
+      <circle cx="780" cy="90" r="7"/><circle cx="900" cy="220" r="9"/><circle cx="1020" cy="130" r="6"/>
+      <circle cx="120" cy="420" r="8"/><circle cx="260" cy="520" r="6"/><circle cx="390" cy="380" r="5"/>
+      <circle cx="560" cy="300" r="7"/><circle cx="700" cy="420" r="9"/><circle cx="850" cy="520" r="5"/>
+      <circle cx="980" cy="400" r="7"/><circle cx="80" cy="640" r="6"/><circle cx="230" cy="720" r="9"/>
+      <circle cx="400" cy="600" r="7"/><circle cx="600" cy="680" r="5"/><circle cx="760" cy="640" r="8"/>
+      <circle cx="920" cy="760" r="6"/><circle cx="1040" cy="660" r="9"/><circle cx="160" cy="900" r="5"/>
+      <circle cx="320" cy="1000" r="7"/><circle cx="60" cy="1120" r="8"/><circle cx="880" cy="940" r="6"/>
+      <circle cx="1010" cy="1060" r="8"/><circle cx="210" cy="1240" r="6"/><circle cx="420" cy="1300" r="5"/>
+      <circle cx="860" cy="1250" r="7"/><circle cx="990" cy="1420" r="5"/><circle cx="120" cy="1460" r="6"/>
+      <circle cx="340" cy="820" r="6"/>
+    </g>
+  </svg>
+
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", shirt:"#e3d8c0", pants:"#b7a984"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+</body></html>

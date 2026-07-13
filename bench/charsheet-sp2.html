@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1600, height=2400">
+<style>
+  body{margin:0;width:1600px;height:2400px;overflow:hidden;position:relative;background:#8ec9e8}
+  .cell{position:absolute;width:800px;height:600px;display:flex;align-items:center;justify-content:center}
+  .char{width:420px;height:504px}
+  .num{position:absolute;top:8px;left:14px;font:700 34px/1 system-ui;color:#1f2d45;opacity:.5}
+</style></head>
+<body>
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    var CONFIGS = [
+      { variant: "lady", shirt: "#f6efe3", skirt: "#3a4f6e" },                    // 1 아낙
+      { variant: "lady", royal: true, shirt: "#3f7a4f", skirt: "#a53d2b" },       // 2 왕비
+      { variant: "lady", shirt: "#d98a9a", skirt: "#3a7ca5" },                    // 3 기녀(화사한 색)
+      { variant: "kid", shirt: "#f6efe3", pants: "#6f5c43" },                     // 4 아이(댕기+색동)
+      { variant: "militia", hat: "samo", shirt: "#3a4f6e", pants: "#26303f" },    // 5 사모+단령 문신
+      { variant: "militia", hat: "paeraengi", shirt: "#e3d8c0", pants: "#6f5c43" },// 6 패랭이 보부상
+      { variant: "militia", hat: "gulgeon", shirt: "#d9c9a8", pants: "#c9b998" }, // 7 굴건 상주
+      { variant: "king", hat: "myeonryu", shirt: "#a53d2b", pants: "#6b2a20" },   // 8 면류관 왕
+    ];
+    CONFIGS.forEach(function (cfg, i) {
+      var col = i % 2, row = Math.floor(i / 2);
+      var cell = document.createElement("div");
+      cell.className = "cell";
+      cell.style.left = (col * 800) + "px";
+      cell.style.top = (row * 600) + "px";
+      cell.innerHTML = '<div class="num">' + (i + 1) + '</div><div class="char"></div>';
+      document.body.appendChild(cell);
+      var el = cell.querySelector(".char");
+      el.innerHTML = makeCharacter(cfg);
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function (c) { el.querySelector("." + c).setAttribute("visibility", c === e.eye ? "visible" : "hidden"); });
+      MOUTH_CLASSES.forEach(function (c) { el.querySelector("." + c).setAttribute("visibility", c === e.mouth ? "visible" : "hidden"); });
+    });
+  </script>
+</body></html>

@@ -1169,6 +1169,21 @@
 
       // ---------- layout overrides (studio-layout.html이 layout-overrides.js 생성) ----------
       var LAYOUT = (typeof window !== "undefined" && window.LAYOUT_OVERRIDES) || {};
+
+      // ---------- 추가 소품 — studio-layout 라이브러리에서 human이 삽입한 오브젝트 ----------
+      var ADDED = (typeof window !== "undefined" && window.ADDED_PROPS) || {};
+      function injectAdded(key, rec) {
+        if (document.querySelector('[data-adj="' + key + '"]')) return;
+        var scene = document.getElementById(rec.scene); if (!scene) return;
+        var stage = scene.querySelector(".stage") || scene;
+        var box = document.createElement("div");
+        box.className = "added-prop";
+        box.setAttribute("data-adj", key);
+        box.style.cssText = "position:absolute; left:" + rec.x + "px; top:" + rec.y + "px; width:" + rec.w + "px; height:" + rec.h + "px;";
+        box.innerHTML = rec.html;
+        stage.appendChild(box);
+      }
+      Object.keys(ADDED).forEach(function (k) { injectAdded(k, ADDED[k]); });
       function adjEl(key) {
         if (charEls[key]) return charEls[key];
         return document.querySelector('[data-adj="' + key + '"]');
@@ -1259,11 +1274,25 @@
           var inv = m.inverse(), ix = dxs / outerScale, iy = dys / outerScale;
           return { dx: inv.a * ix + inv.c * iy, dy: inv.b * ix + inv.d * iy };
         },
+        getAdded: function () { return ADDED; },
+        addProp: function (sceneId, key, rec) {
+          rec.scene = sceneId; ADDED[key] = rec; injectAdded(key, rec);
+        },
+        removeAdded: function (key) {
+          if (!ADDED[key]) return;
+          delete ADDED[key]; delete LAYOUT[key];
+          var el = document.querySelector('[data-adj="' + key + '"]');
+          if (el) {
+            var w = el.parentElement;
+            (w && w.classList.contains("adj-wrap") ? w : el).remove();
+          }
+        },
         overridesText: function () {
           return "// 레이아웃 오프셋(위치/크기) — studio-layout.html에서 생성. 비면 원본 그대로.\n" +
             "var LAYOUT_OVERRIDES = " + JSON.stringify(LAYOUT, null, 2) + ";\n" +
             "var OBJECT_OVERRIDES = " + JSON.stringify(OBJ, null, 2) + ";\n" +
-            'if (typeof window !== "undefined") { window.LAYOUT_OVERRIDES = LAYOUT_OVERRIDES; window.OBJECT_OVERRIDES = OBJECT_OVERRIDES; }\n';
+            "var ADDED_PROPS = " + JSON.stringify(ADDED, null, 2) + ";\n" +
+            'if (typeof window !== "undefined") { window.LAYOUT_OVERRIDES = LAYOUT_OVERRIDES; window.OBJECT_OVERRIDES = OBJECT_OVERRIDES; window.ADDED_PROPS = ADDED_PROPS; }\n';
         }
       };
     </script>

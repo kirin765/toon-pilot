@@ -49,6 +49,14 @@
   .handle.obj.sel { border-color:#5cc8e8; border-style:solid; background:rgba(92,200,232,.14); }
   .handle.obj.sel .tag { background:#5cc8e8; color:#08222c; }
   .playbar { display:flex; align-items:center; gap:10px; font-size:12px; color:#8b93a0; }
+  .seg { display:flex; border:1px solid #333a45; border-radius:8px; overflow:hidden; }
+  .seg div { padding:5px 10px; font-size:12px; cursor:pointer; background:#2a2f38; }
+  .seg div.on { background:#d94f37; color:#fff; font-weight:600; }
+  #libSearch { width:100%; background:#12151a; color:#e8e6e0; border:1px solid #333a45; border-radius:6px; padding:6px 8px; font-size:12px; margin-bottom:8px; }
+  #libList { max-height:230px; overflow-y:auto; display:flex; flex-direction:column; gap:4px; }
+  .libitem { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:5px 8px; border-radius:6px; background:#2a2f38; border:1px solid #333a45; cursor:pointer; font-size:12px; }
+  .libitem:hover { background:#333a45; }
+  .libitem .src { font-size:10px; color:#7a828f; white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -69,13 +77,22 @@
       <div class="chips" id="objChips"></div>
     </div>
 
+    <div class="group">
+      <h3 style="color:#9fd0a8">＋ 오브젝트 추가</h3>
+      <input id="libSearch" placeholder="검색 — 예: 초가, 말, 성곽, horse…">
+      <div id="libList"><div class="hint">라이브러리 로딩 중…</div></div>
+      <div class="hint">검증 자산(bench/·episodes/·현재 index.html)을 현재 씬에 삽입.
+        삽입 후 금색 박스로 위치·크기 조정, 삭제는 선택 후 <b>삽입 소품 삭제</b>.</div>
+    </div>
+
     <div class="group" id="editGroup" style="display:none">
       <h3 id="selName">선택</h3>
       <div class="row"><label>X</label><input type="range" id="rx"><input type="number" id="nx" step="1"></div>
       <div class="row"><label>Y</label><input type="range" id="ry"><input type="number" id="ny" step="1"></div>
       <div class="row"><label>크기</label><input type="range" id="rs" min="0.3" max="2.5" step="0.01"><input type="number" id="ns" step="0.01"></div>
-      <div class="btns"><button class="warn" id="resetOne">이 항목 리셋</button></div>
-      <div class="hint">박스 드래그로 이동 · 방향키 미세조정(Shift=10).</div>
+      <div class="btns"><button class="warn" id="resetOne">이 항목 리셋</button>
+        <button class="warn" id="delAdded" style="display:none">삽입 소품 삭제</button></div>
+      <div class="hint">박스 드래그로 이동 · 방향키 미세조정(Shift=10) · <b>H</b>=아웃라인 토글.</div>
     </div>
 
     <div class="btns"><button class="warn" id="resetAll">전체 리셋</button></div>
@@ -89,7 +106,14 @@
   </div>
 
   <div id="right">
-    <div class="playbar"><span id="sceneTitle">—</span></div>
+    <div class="playbar"><span id="sceneTitle">—</span>
+      <span style="margin-left:14px">아웃라인</span>
+      <div class="seg" id="outlineSeg">
+        <div data-mode="all" class="on">전체</div>
+        <div data-mode="sel">선택만</div>
+        <div data-mode="off">숨김</div>
+      </div>
+    </div>
     <div id="stageWrap">
       <iframe id="comp" src="index.html"></iframe>
       <div id="overlay"></div>
@@ -105,6 +129,8 @@
   var win = null, LAY = null, SCENES = null;
   var curScene = null, selEl = null, curKind = null, curKey = null;
   var STORE = "toon-layout-overrides-v2";
+  var outlineMode = localStorage.getItem("toon-layout-outline") || "all";
+  var LIB = [];
 
   comp.style.width = COMPW + "px"; comp.style.height = COMPH + "px";
   comp.style.transform = "scale(" + SCALE + ")";
@@ -124,12 +150,119 @@
     try {
       var saved = JSON.parse(localStorage.getItem(STORE));
       if (saved) {
+        if (saved.added && LAY.addProp) Object.keys(saved.added).forEach(function (k) { var r = saved.added[k]; LAY.addProp(r.scene, k, r); });
         if (saved.layout) Object.keys(saved.layout).forEach(function (k) { LAY.set(k, saved.layout[k]); });
         if (saved.objects) Object.keys(saved.objects).forEach(function (k) { LAY.setObject(k, saved.objects[k]); });
       }
     } catch (e) {}
     buildScenes(); selectScene(SCENES[0].id); refreshOut();
+    setOutlineMode(outlineMode); loadLibrary();
   }
+
+  // ===== 아웃라인 토글 (전체/선택만/숨김) =====
+  function setOutlineMode(m) {
+    outlineMode = m; localStorage.setItem("toon-layout-outline", m);
+    Array.prototype.forEach.call(document.querySelectorAll("#outlineSeg div"), function (b) {
+      b.classList.toggle("on", b.dataset.mode === m);
+    });
+    drawHandles();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("#outlineSeg div"), function (b) {
+    b.onclick = function () { setOutlineMode(b.dataset.mode); };
+  });
+
+  // ===== 오브젝트 라이브러리 (bench/·episodes/·index.html에서 검증 자산 수집) =====
+  function extractProps(html, src) {
+    var doc = new DOMParser().parseFromString(html, "text/html");
+    var out = [];
+    doc.querySelectorAll("[data-adj]").forEach(function (el) {
+      var key = el.getAttribute("data-adj");
+      if (/title|stamp|label|caption|badge|num-pop/.test(key)) return;
+      var cl = el.classList;
+      if (cl.contains("adj-wrap") || cl.contains("added-prop") || cl.contains("char") || el.querySelector(".head")) return;
+      var st = el.style, w = parseFloat(st.width) || 0, h = parseFloat(st.height) || 0;
+      var isSvg = el.tagName.toLowerCase() === "svg";
+      if (isSvg) {
+        var vb = (el.getAttribute("viewBox") || "").trim().split(/[\s,]+/).map(Number);
+        if (vb.length === 4 && vb[2] > 0 && vb[3] > 0) {
+          if (w && !h) h = w * vb[3] / vb[2];
+          if (!w && h) w = h * vb[2] / vb[3];
+          if (!w && !h) { w = Math.min(vb[2], 800); h = w * vb[3] / vb[2]; }
+        }
+      } else {
+        // div 소품은 인라인 배경색이 있는 단순 밴드만 (클래스 CSS는 삽입처에 없음)
+        if (!st.background && !st.backgroundColor) return;
+        if (el.children.length > 0) return;
+      }
+      if (w < 24 || h < 24) return;
+      var clone = el.cloneNode(true);
+      clone.removeAttribute("data-adj");
+      var tf = st.transform || "";
+      clone.setAttribute("style", "position:absolute;left:0;top:0;width:100%;height:100%" +
+        (!isSvg ? ";background:" + (st.background || st.backgroundColor) : "") +
+        (tf ? ";transform:" + tf + ";transform-origin:center" : ""));
+      out.push({ key: key, src: src, w: Math.round(w), h: Math.round(h), html: clone.outerHTML });
+    });
+    return out;
+  }
+  async function fetchText(url) { var r = await fetch(url); if (!r.ok) throw new Error(url); return r.text(); }
+  async function loadLibrary() {
+    var files = ["index.html"];
+    try {
+      var t = await fetchText("bench/");
+      var m = t.match(/href="[^"]+\.html"/g) || [];
+      m.forEach(function (a) { var f = a.slice(6, -1); if (!/_smoke/.test(f)) files.push("bench/" + f.replace(/^.*\//, "")); });
+    } catch (e) {}
+    try {
+      var t2 = await fetchText("episodes/");
+      var dirs = (t2.match(/href="[^"]+\/"/g) || []).map(function (a) { return a.slice(6, -2).replace(/^.*\//, ""); });
+      dirs.forEach(function (d) { files.push("episodes/" + d + "/index.html"); });
+    } catch (e) {}
+    var seen = {};
+    for (var i = 0; i < files.length; i++) {
+      try {
+        var html = await fetchText(files[i]);
+        extractProps(html, files[i]).forEach(function (it) {
+          var sig = it.key + "|" + it.html.length;
+          if (seen[sig]) return; seen[sig] = 1; LIB.push(it);
+        });
+      } catch (e) {}
+    }
+    LIB.sort(function (a, b) { return a.key < b.key ? -1 : 1; });
+    renderLib();
+  }
+  function renderLib() {
+    var q = (document.getElementById("libSearch").value || "").toLowerCase();
+    var box = document.getElementById("libList"); box.innerHTML = "";
+    var shown = 0;
+    LIB.forEach(function (it) {
+      if (q && (it.key + " " + it.src).toLowerCase().indexOf(q) === -1) return;
+      if (shown++ > 120) return;
+      var d = document.createElement("div"); d.className = "libitem";
+      d.innerHTML = "<span>" + it.key + " <span style='color:#7a828f'>" + it.w + "×" + it.h + "</span></span><span class='src'>" + it.src.replace("episodes/", "ep:").replace("/index.html", "").replace("bench/", "b:").replace(".html", "") + "</span>";
+      d.onclick = function () { insertProp(it); };
+      box.appendChild(d);
+    });
+    if (!shown) box.innerHTML = "<div class='hint'>" + (LIB.length ? "검색 결과 없음" : "라이브러리 비어있음 — 정적 서버(3014)로 열었는지 확인") + "</div>";
+  }
+  document.getElementById("libSearch").addEventListener("input", renderLib);
+  function insertProp(item) {
+    if (!curScene || !LAY.addProp) return;
+    var base = "add-" + curScene + "-" + item.key, key = base, n = 2;
+    var taken = {}; LAY.list().forEach(function (it) { taken[it.key] = 1; });
+    while (taken[key]) key = base + "-" + (n++);
+    var w = Math.min(item.w, 920), h = Math.round(item.h * (w / item.w));
+    var rec = { html: item.html, w: Math.round(w), h: h, x: Math.round((COMPW - w) / 2), y: Math.round((COMPH - h) / 2) };
+    LAY.addProp(curScene, key, rec);
+    persist(); buildChips(); selectEl(key);
+  }
+  document.getElementById("delAdded").onclick = function () {
+    if (!curKey || curKind !== "el" || !LAY.getAdded || !LAY.getAdded()[curKey]) return;
+    LAY.removeAdded(curKey);
+    selEl = null; curKind = null; curKey = null;
+    document.getElementById("editGroup").style.display = "none";
+    persist(); buildChips(); buildObjChips(); drawHandles(); refreshOut();
+  };
 
   function sceneMid(sc) { return sc.start + sc.dur - 0.7; }
   function buildScenes() {
@@ -177,11 +310,14 @@
 
   function drawHandles() {
     overlay.innerHTML = "";
+    if (outlineMode === "off") return;
     keysInScene(curScene).forEach(function (key) {
+      if (outlineMode === "sel" && !(curKind === "el" && key === curKey)) return;
       var r = LAY.rectOf(key); if (!r || r.w < 1 || r.h < 1) return;
       addHandle(key, r, false, curKind === "el" && key === curKey, function () { selectEl(key); }, function (e) { startDragEl(e, key); });
     });
     if (selEl) LAY.objectsOf(selEl).forEach(function (key) {
+      if (outlineMode === "sel" && !(curKind === "obj" && key === curKey)) return;
       var r = LAY.objRectOf(key); if (!r || r.w < 1 || r.h < 1) return;
       addHandle(key, r, true, curKind === "obj" && key === curKey, function () { selectObject(key); }, function (e) { startDragObj(e, key); });
     });
@@ -207,6 +343,7 @@
     setRanges(-500, 500, 1);
     document.getElementById("selName").textContent = key + "  (요소 · px)";
     document.getElementById("editGroup").style.display = "";
+    document.getElementById("delAdded").style.display = (LAY.getAdded && LAY.getAdded()[key]) ? "" : "none";
     setInputs(o); buildChips(); buildObjChips(); drawHandles(); refreshOut();
   }
   function selectObject(key) {
@@ -217,6 +354,7 @@
     setRanges(-200, 200, 1);
     document.getElementById("selName").textContent = key + "  (부위 · SVG단위)";
     document.getElementById("editGroup").style.display = "";
+    document.getElementById("delAdded").style.display = "none";
     setInputs(o); buildChips(); buildObjChips(); drawHandles(); refreshOut();
   }
 
@@ -265,6 +403,11 @@
   window.addEventListener("mouseup", function () { drag = null; });
 
   window.addEventListener("keydown", function (e) {
+    if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if (e.key === "h" || e.key === "H") {
+      setOutlineMode(outlineMode === "all" ? "sel" : outlineMode === "sel" ? "off" : "all");
+      return;
+    }
     if (!curKey) return;
     var step = e.shiftKey ? 10 : 1, moved = true;
     var o = (curKind === "el") ? curOv(curKey) : curObjOv(curKey);
@@ -289,12 +432,13 @@
   document.getElementById("resetAll").onclick = function () {
     var L = LAY.get(); Object.keys(L).forEach(function (k) { LAY.set(k, { dx: 0, dy: 0, s: 1 }); delete L[k]; });
     var O = LAY.getObjects(); Object.keys(O).forEach(function (k) { LAY.setObject(k, { dx: 0, dy: 0, s: 1 }); delete O[k]; });
+    if (LAY.getAdded) Object.keys(LAY.getAdded()).forEach(function (k) { LAY.removeAdded(k); });
     localStorage.removeItem(STORE); refreshOut();
     document.getElementById("editGroup").style.display = "none";
     selEl = null; curKind = null; curKey = null; buildChips(); buildObjChips(); drawHandles();
   };
 
-  function persist() { localStorage.setItem(STORE, JSON.stringify({ layout: LAY.get(), objects: LAY.getObjects() })); }
+  function persist() { localStorage.setItem(STORE, JSON.stringify({ layout: LAY.get(), objects: LAY.getObjects(), added: LAY.getAdded ? LAY.getAdded() : {} })); }
   function refreshOut() { document.getElementById("out").value = LAY.overridesText(); }
   document.getElementById("copy").onclick = function () {
     navigator.clipboard.writeText(LAY.overridesText());

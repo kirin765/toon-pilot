@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#1f2d45}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 보름달 (상단 좌측 — 캐릭터 머리와 격리) ===== -->
+  <svg class="prop" data-adj="sp20-moon" style="top:110px; left:110px; width:180px; height:180px;" viewBox="0 0 180 180">
+    <g data-obj="moon-disc">
+      <circle cx="90" cy="90" r="84" fill="#f2ecd8"/>
+      <path d="M 128 15 A 84 84 0 0 1 128 165 A 106 106 0 0 0 128 15 Z" fill="#ddd2ae" opacity="0.7"/>
+    </g>
+    <g data-obj="moon-craters">
+      <ellipse cx="62" cy="70" rx="14" ry="11" fill="#ded3b2"/>
+      <ellipse cx="96" cy="118" rx="10" ry="8" fill="#ded3b2"/>
+      <ellipse cx="118" cy="62" rx="7" ry="6" fill="#ded3b2"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 별 (점 + 다이아 반짝이) ===== -->
+  <svg class="prop" data-adj="sp20-stars" style="top:0; left:0; width:1080px; height:640px;" viewBox="0 0 1080 640">
+    <g data-obj="stars-dots">
+      <circle cx="420" cy="150" r="5" fill="#f2ecd8"/>
+      <circle cx="640" cy="90" r="4" fill="#f2ecd8"/>
+      <circle cx="780" cy="230" r="5" fill="#f2ecd8"/>
+      <circle cx="960" cy="330" r="4" fill="#f2ecd8"/>
+      <circle cx="530" cy="310" r="4" fill="#f2ecd8"/>
+      <circle cx="250" cy="430" r="4" fill="#f2ecd8"/>
+      <circle cx="70" cy="520" r="5" fill="#f2ecd8"/>
+      <circle cx="850" cy="480" r="4" fill="#f2ecd8"/>
+      <circle cx="360" cy="560" r="3" fill="#f2ecd8"/>
+    </g>
+    <g data-obj="stars-sparkles">
+      <polygon points="900,120 908,140 928,148 908,156 900,176 892,156 872,148 892,140" fill="#f2ecd8"/>
+      <polygon points="180,340 186,355 201,361 186,367 180,382 174,367 159,361 174,355" fill="#e6dfc6"/>
+      <polygon points="600,430 605,442 617,447 605,452 600,464 595,452 583,447 595,442" fill="#e6dfc6"/>
+    </g>
+  </svg>
+
+  <!-- ===== 배경 실루엣: 원경 산 능선 (남산 실루엣) ===== -->
+  <svg class="prop" data-adj="sp20-ridge" style="left:0; bottom:660px; width:1080px; height:500px;" viewBox="0 0 1080 500">
+    <g data-obj="ridge-far">
+      <path d="M 0 500 L 0 150 Q 160 70 330 130 Q 480 180 620 110 Q 780 40 920 120 Q 1010 165 1080 140 L 1080 500 Z" fill="#17233a"/>
+      <path d="M 0 500 L 0 300 Q 300 240 640 290 Q 880 320 1080 280 L 1080 500 Z" fill="#131d31"/>
+    </g>
+  </svg>
+
+  <!-- ===== 환경 레이어: 밤 풀밭 지면 (2톤 + 지평선 셰이드) ===== -->
+  <div class="prop" data-adj="sp20-ground" style="left:0; bottom:0; width:1080px; height:660px; background:#33482d;"></div>
+  <div class="prop" data-adj="sp20-ground-shade" style="left:0; bottom:620px; width:1080px; height:40px; background:#28391f;"></div>
+  <svg class="prop" data-adj="sp20-ground-detail" style="left:0; bottom:70px; width:1080px; height:420px;" viewBox="0 0 1080 420">
+    <g data-obj="ground-grass-tufts">
+      <polygon points="120,300 112,252 132,300" fill="#4a6a3c"/>
+      <polygon points="146,300 142,266 160,300" fill="#41603a"/>
+      <polygon points="560,370 552,320 574,370" fill="#4a6a3c"/>
+      <polygon points="880,250 872,206 894,250" fill="#41603a"/>
+      <polygon points="908,250 904,220 922,250" fill="#4a6a3c"/>
+      <polygon points="330,180 324,140 344,180" fill="#41603a"/>
+    </g>
+    <g data-obj="ground-stones">
+      <ellipse cx="240" cy="386" rx="18" ry="9" fill="#5a5648"/>
+      <ellipse cx="700" cy="330" rx="14" ry="7" fill="#4a463a"/>
+      <ellipse cx="1000" cy="396" rx="16" ry="8" fill="#5a5648"/>
+    </g>
+    <g data-obj="ground-moonlight-band">
+      <path d="M 0 120 Q 300 90 620 110 Q 880 126 1080 104 L 1080 150 Q 800 172 520 156 Q 240 142 0 166 Z" fill="#3d5735" opacity="0.9"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 왕릉 고분 2기 (넓고 매끈한 잔디 반구, 크기 차등 + 달빛 하이라이트) ===== -->
+  <svg class="prop" data-adj="sp20-tumuli" style="left:-60px; bottom:628px; width:860px; height:520px;" viewBox="0 0 860 520">
+    <g data-obj="mound-big">
+      <path d="M 8 520 Q 8 40 250 40 Q 492 40 492 520 Z" fill="#55754a"/>
+      <path d="M 250 40 Q 492 40 492 520 L 360 520 Q 384 130 250 40 Z" fill="#40593a"/>
+      <path d="M 60 470 Q 78 150 232 66 Q 108 150 96 472 Z" fill="#6f9455" opacity="0.9"/>
+    </g>
+    <g data-obj="mound-small">
+      <path d="M 540 520 Q 540 250 690 250 Q 840 250 840 520 Z" fill="#4c6b43"/>
+      <path d="M 690 250 Q 840 250 840 520 L 760 520 Q 774 310 690 250 Z" fill="#3a5134"/>
+      <path d="M 578 490 Q 590 330 664 274 Q 604 330 598 490 Z" fill="#66884f" opacity="0.85"/>
+    </g>
+  </svg>
+
+  <!-- ===== 주 소품(앵커): 첨성대 — 병 곡선 몸통 + 상단 井자 프레임 + 창 + 돌 켜 9줄, 화강암 회백 톤 ===== -->
+  <svg class="prop" data-adj="sp20-cheomseongdae" style="left:560px; bottom:600px; width:480px; height:923px;" viewBox="0 0 520 1000">
+    <!-- 기단: 2단 판석 -->
+    <g data-obj="cheom-base">
+      <rect x="45" y="916" width="430" height="38" fill="#b1a99b"/>
+      <rect x="330" y="916" width="145" height="38" fill="#948c7e"/>
+      <rect x="20" y="952" width="480" height="48" fill="#a39b8d"/>
+      <rect x="340" y="952" width="160" height="48" fill="#847c6f"/>
+    </g>
+    <!-- 몸통: 아래 넓고 중간 잘록, 상단 살짝 벌어지는 병 곡선 -->
+    <g data-obj="cheom-body">
+      <path d="M 156 170 Q 170 250 168 320 Q 164 430 150 500 Q 136 610 118 700 Q 96 820 55 916 L 465 916 Q 424 820 402 700 Q 384 610 370 500 Q 366 430 352 320 Q 350 250 364 170 Z" fill="#cdc7ba"/>
+      <path d="M 322 172 Q 314 300 324 420 Q 338 600 366 780 Q 380 860 396 916 L 465 916 Q 424 820 402 700 Q 384 610 370 500 Q 366 430 352 320 Q 350 250 364 170 Z" fill="#9c948a"/>
+    </g>
+    <!-- 가로 돌 켜 9줄 + 단마다 어긋난 세로 줄눈(석축 벽돌 문법 — 등대 줄무늬 오독 방지) -->
+    <g data-obj="cheom-courses">
+      <path d="M 162 250 Q 260 258 358 250" stroke="#a59d8f" stroke-width="4" fill="none" opacity="0.85"/>
+      <path d="M 167 330 Q 260 338 353 330" stroke="#a59d8f" stroke-width="4" fill="none" opacity="0.85"/>
+      <path d="M 158 410 Q 260 418 362 410" stroke="#a59d8f" stroke-width="4" fill="none" opacity="0.85"/>
+      <path d="M 151 490 Q 260 498 369 490" stroke="#a59d8f" stroke-width="4" fill="none" opacity="0.85"/>
+      <path d="M 139 570 Q 260 578 381 570" stroke="#a59d8f" stroke-width="4" fill="none" opacity="0.85"/>
+      <path d="M 126 650 Q 260 658 394 650" stroke="#a59d8f" stroke-width="4" fill="none" opacity="0.85"/>
+      <path d="M 109 730 Q 260 738 411 730" stroke="#a59d8f" stroke-width="4" fill="none" opacity="0.85"/>
+      <path d="M 86 810 Q 260 818 434 810" stroke="#a59d8f" stroke-width="4" fill="none" opacity="0.85"/>
+      <path d="M 65 880 Q 260 888 455 880" stroke="#a59d8f" stroke-width="4" fill="none" opacity="0.85"/>
+      <g stroke="#a59d8f" stroke-width="3" opacity="0.7">
+        <!-- 250~330단: 세로 줄눈 -->
+        <path d="M 210 252 L 208 328"/><path d="M 260 254 L 260 330"/><path d="M 310 252 L 312 328"/>
+        <!-- 330~410단: 반칸 오프셋 -->
+        <path d="M 185 332 L 183 408"/><path d="M 235 334 L 234 410"/><path d="M 285 334 L 286 410"/><path d="M 335 332 L 337 408"/>
+        <!-- 410~490 -->
+        <path d="M 205 412 L 203 488"/><path d="M 260 414 L 260 490"/><path d="M 315 412 L 317 488"/>
+        <!-- 490~570 -->
+        <path d="M 178 492 L 175 568"/><path d="M 232 494 L 231 570"/><path d="M 288 494 L 289 570"/><path d="M 342 492 L 345 568"/>
+        <!-- 570~650 -->
+        <path d="M 200 572 L 197 648"/><path d="M 260 574 L 260 650"/><path d="M 320 572 L 323 648"/>
+        <!-- 650~730 -->
+        <path d="M 170 652 L 166 728"/><path d="M 228 654 L 227 730"/><path d="M 292 654 L 293 730"/><path d="M 352 652 L 356 728"/>
+        <!-- 730~810 -->
+        <path d="M 195 732 L 190 808"/><path d="M 260 734 L 260 810"/><path d="M 325 732 L 330 808"/>
+        <!-- 810~880 -->
+        <path d="M 160 812 L 155 878"/><path d="M 225 814 L 223 880"/><path d="M 295 814 L 297 880"/><path d="M 365 812 L 370 878"/>
+      </g>
+    </g>
+    <!-- 몸통 중간 남측 창 1개 -->
+    <g data-obj="cheom-window">
+      <rect x="216" y="422" width="88" height="92" fill="#ded8ca"/>
+      <rect x="226" y="432" width="68" height="72" fill="#2e3542"/>
+      <rect x="216" y="506" width="88" height="8" fill="#b1a99b"/>
+    </g>
+    <!-- 상단 우물 정(井)자 돌 프레임: 4개 장대석이 교차하며 몸통 밖으로 돌출(井/# 실루엣) — 첨성대의 결정적 식별자, 등대엔 없다 -->
+    <g data-obj="cheom-top">
+      <!-- 하단 가로 장대석 2개(앞·뒤단), 몸통(x156~364)보다 좌우로 크게 돌출 -->
+      <rect x="92" y="150" width="336" height="30" fill="#c2bbad"/>
+      <rect x="300" y="150" width="128" height="30" fill="#9c948a"/>
+      <!-- 상단 가로 장대석(교차 상단단) -->
+      <rect x="104" y="102" width="312" height="30" fill="#d6d0c2"/>
+      <rect x="300" y="102" width="116" height="30" fill="#a89f90"/>
+      <!-- 세로 장대석 2개(좌우 기둥이 위·아래로 돌출해 井 교차 완성) -->
+      <rect x="150" y="88" width="40" height="104" fill="#cbc4b6"/>
+      <rect x="150" y="88" width="40" height="104" fill="none"/>
+      <rect x="176" y="88" width="14" height="104" fill="#9c948a"/>
+      <rect x="330" y="88" width="40" height="104" fill="#cbc4b6"/>
+      <rect x="356" y="88" width="14" height="104" fill="#8a8275"/>
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 밤하늘 관측하는 인물 (militia, 갓) ===== -->
+  <div class="char" style="left:340px; bottom:200px; width:340px; height:408px;"></div>
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", shirt:"#6f5c43", pants:"#3d4a63"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+</body></html>

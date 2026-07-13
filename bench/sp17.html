@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<style>
+ body{margin:0;width:1080px;height:1920px;overflow:hidden;position:relative;background:#8ec9e8}
+ .char{position:absolute;}
+ .prop{position:absolute;}
+</style></head>
+<body>
+  <!-- ===== 환경 레이어: 해 + 구름 2개 (연기 반대편 좌측 상단, 캐릭터 머리와 비겹침) ===== -->
+  <svg class="prop" data-adj="sp17-sun" style="top:100px; left:90px; width:140px; height:140px;" viewBox="0 0 140 140">
+    <circle cx="70" cy="70" r="64" fill="#e8b74a"/>
+    <path d="M 99 16 A 64 64 0 0 1 99 124 A 83 83 0 0 0 99 16 Z" fill="#d9a63c"/>
+  </svg>
+  <svg class="prop" data-adj="sp17-cloud-1" style="top:180px; left:330px; width:190px; height:88px;" viewBox="0 0 190 88">
+    <path d="M 17 66 Q 0 33 39 26 Q 47 4 80 13 Q 103 -4 130 13 Q 165 9 165 37 Q 188 44 174 64 Q 181 79 156 79 L 33 79 Q 4 79 17 66 Z" fill="#f6efe3"/>
+  </svg>
+  <svg class="prop" data-adj="sp17-cloud-2" style="top:440px; left:80px; width:150px; height:70px;" viewBox="0 0 150 70">
+    <path d="M 11 54 Q 0 25 28 20 Q 36 2 59 9 Q 77 -4 98 9 Q 128 4 128 27 Q 146 34 134 50 Q 139 61 118 61 L 25 61 Q 2 61 11 54 Z" fill="#f6efe3"/>
+  </svg>
+
+  <!-- ===== 배경 실루엣: 좌측 원경 산 능선 2톤 ===== -->
+  <svg class="prop" data-adj="sp17-ridge" style="left:0; bottom:650px; width:430px; height:190px;" viewBox="0 0 430 190">
+    <g data-obj="ridge-far">
+      <path d="M 0 190 L 0 108 L 105 52 L 215 118 L 320 60 L 430 108 L 430 190 Z" fill="#9bbf7d"/>
+    </g>
+    <g data-obj="ridge-near">
+      <path d="M 0 190 L 0 150 Q 140 122 280 144 Q 360 156 430 146 L 430 190 Z" fill="#7db95c"/>
+      <path d="M 120 128 L 108 158 L 132 158 Z" fill="#4a7030"/>
+      <path d="M 158 136 L 148 160 L 168 160 Z" fill="#4a7030"/>
+    </g>
+  </svg>
+
+  <!-- ===== 배경: 우측 언덕 경사면 (등요가 올라앉는 비탈, 2톤 + 풀) ===== -->
+  <svg class="prop" data-adj="sp17-hill" style="left:170px; bottom:610px; width:910px; height:780px;" viewBox="0 0 910 780">
+    <g data-obj="hill-body">
+      <path d="M 0 780 L 0 760 Q 220 700 440 545 Q 680 375 910 275 L 910 780 Z" fill="#7db95c"/>
+      <path d="M 0 760 Q 220 700 440 545 Q 680 375 910 275 L 910 320 Q 690 415 460 580 Q 240 735 0 780 Z" fill="#6f9c46"/>
+    </g>
+    <g data-obj="hill-tufts">
+      <path d="M 190 700 L 178 732 L 202 732 Z" fill="#4a7030"/>
+      <path d="M 330 610 L 320 638 L 340 638 Z" fill="#4a7030"/>
+      <path d="M 760 372 L 750 400 L 770 400 Z" fill="#4a7030"/>
+      <ellipse cx="560" cy="520" rx="16" ry="9" fill="#5f8c3c"/>
+      <ellipse cx="840" cy="340" rx="14" ry="8" fill="#5f8c3c"/>
+    </g>
+  </svg>
+
+  <!-- ===== 지면: 흙마당 2톤 ===== -->
+  <div class="prop" data-adj="sp17-ground" style="left:0; bottom:0; width:1080px; height:660px; background:#b89b6c;"></div>
+  <div class="prop" data-adj="sp17-ground-shade" style="left:0; bottom:620px; width:1080px; height:40px; background:#8a7048;"></div>
+  <svg class="prop" data-adj="sp17-ground-detail" style="left:0; bottom:0; width:1080px; height:560px;" viewBox="0 0 1080 560">
+    <g data-obj="ground-pebbles">
+      <ellipse cx="130" cy="430" rx="16" ry="9" fill="#8a8378"/>
+      <ellipse cx="215" cy="480" rx="11" ry="7" fill="#6d6a5c"/>
+      <ellipse cx="610" cy="450" rx="15" ry="8" fill="#8a8378"/>
+      <ellipse cx="880" cy="500" rx="12" ry="7" fill="#6d6a5c"/>
+      <ellipse cx="1010" cy="420" rx="13" ry="8" fill="#8a8378"/>
+      <ellipse cx="430" cy="520" rx="10" ry="6" fill="#6d6a5c"/>
+    </g>
+    <g data-obj="ground-straw">
+      <line x1="80" y1="330" x2="132" y2="316" stroke="#c9a15a" stroke-width="4" stroke-linecap="round"/>
+      <line x1="700" y1="360" x2="752" y2="344" stroke="#c9a15a" stroke-width="4" stroke-linecap="round"/>
+      <line x1="940" y1="300" x2="988" y2="288" stroke="#a87f3e" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g data-obj="ground-grass">
+      <polygon points="40,120 32,74 52,120" fill="#6f9c46"/>
+      <polygon points="62,120 58,88 76,120" fill="#5f8c3c"/>
+      <polygon points="1020,140 1014,92 1036,140" fill="#6f9c46"/>
+      <polygon points="1044,140 1040,104 1058,140" fill="#5f8c3c"/>
+    </g>
+  </svg>
+
+  <!-- ===== 주 소품(앵커): 오름가마(등요) — 언덕 경사를 따라 계단식으로 이어진 반원 칸 3개
+       + 맨 아래 아궁이(벌건 개구부, 벽난로 아치·맨틀 문법 없음) + 맨 위 연기 구멍 ===== -->
+  <svg class="prop" data-adj="sp17-kiln" style="left:430px; bottom:620px; width:650px; height:880px;" viewBox="0 0 650 880">
+    <g data-obj="kiln-ramp">
+      <path d="M 20 830 L 650 390 L 650 505 L 120 872 L 20 872 Z" fill="#9c7a54"/>
+      <path d="M 650 458 L 650 505 L 120 872 L 20 872 L 20 858 L 90 850 Z" fill="#7a5c3a"/>
+    </g>
+    <g data-obj="kiln-chamber4">
+      <path d="M 430 479 A 112 230 0 0 1 654 479 Z" fill="#b08b5c"/>
+      <path d="M 542 249 A 112 230 0 0 1 654 479 L 610 479 A 78 212 0 0 0 542 249 Z" fill="#8a6a42"/>
+      <path d="M 524 454 A 18 22 0 0 1 560 454 L 560 479 L 524 479 Z" fill="#4a3524"/>
+    </g>
+    <g data-obj="kiln-chamber3">
+      <path d="M 285 582 A 115 230 0 0 1 515 582 Z" fill="#b08b5c"/>
+      <path d="M 400 352 A 115 230 0 0 1 515 582 L 470 582 A 80 212 0 0 0 400 352 Z" fill="#8a6a42"/>
+      <path d="M 382 557 A 18 22 0 0 1 418 557 L 418 582 L 382 582 Z" fill="#4a3524"/>
+    </g>
+    <g data-obj="kiln-chamber2">
+      <path d="M 140 685 A 115 230 0 0 1 370 685 Z" fill="#b08b5c"/>
+      <path d="M 255 455 A 115 230 0 0 1 370 685 L 325 685 A 80 212 0 0 0 255 455 Z" fill="#8a6a42"/>
+      <path d="M 237 660 A 18 22 0 0 1 273 660 L 273 685 L 237 685 Z" fill="#4a3524"/>
+    </g>
+    <g data-obj="kiln-chamber1">
+      <path d="M -5 788 A 115 230 0 0 1 225 788 Z" fill="#b08b5c"/>
+      <path d="M 110 558 A 115 230 0 0 1 225 788 L 180 788 A 80 212 0 0 0 110 558 Z" fill="#8a6a42"/>
+    </g>
+    <g data-obj="kiln-firebox">
+      <ellipse cx="85" cy="870" rx="98" ry="12" fill="#e2732f" opacity="0.3"/>
+      <path d="M 18 872 A 64 58 0 0 1 146 872 Z" fill="#2a1a10"/>
+      <path d="M 42 872 A 40 40 0 0 1 122 872 Z" fill="#d94f37"/>
+      <path d="M 58 872 A 24 24 0 0 1 106 872 Z" fill="#f4c15a"/>
+    </g>
+    <g data-obj="kiln-fire">
+      <polygon points="40,845 52,780 66,815 80,750 94,802 108,766 120,818 132,798 138,845" fill="#e2732f"/>
+      <polygon points="66,845 76,800 88,772 100,806 112,845" fill="#f4c15a"/>
+    </g>
+    <g data-obj="kiln-vent">
+      <rect x="520" y="195" width="45" height="65" fill="#8a6a42"/>
+      <rect x="520" y="195" width="13" height="65" fill="#6f5334"/>
+      <ellipse cx="542" cy="195" rx="22" ry="8" fill="#2a1a10"/>
+    </g>
+  </svg>
+
+  <!-- ===== 가마 연기: 연기 구멍(폭 46) 위로 뭉게 6덩이, 연기 폭 ≥ 구멍 폭 2배 ===== -->
+  <svg class="prop" data-adj="sp17-smoke" style="left:800px; bottom:1300px; width:280px; height:480px;" viewBox="0 0 280 480">
+    <g data-obj="smoke-puffs">
+      <circle cx="182" cy="452" r="30" fill="#e9e4d8"/>
+      <circle cx="152" cy="398" r="44" fill="#e9e4d8"/>
+      <circle cx="196" cy="352" r="34" fill="#e9e4d8"/>
+      <circle cx="122" cy="316" r="56" fill="#e9e4d8"/>
+      <circle cx="176" cy="248" r="44" fill="#e9e4d8"/>
+      <circle cx="98" cy="196" r="60" fill="#e9e4d8"/>
+      <circle cx="152" cy="126" r="50" fill="#e9e4d8"/>
+      <circle cx="76" cy="76" r="54" fill="#e9e4d8"/>
+    </g>
+    <g data-obj="smoke-shade">
+      <circle cx="198" cy="404" r="26" fill="#cbc4b4" opacity="0.55"/>
+      <circle cx="162" cy="322" r="30" fill="#cbc4b4" opacity="0.5"/>
+      <circle cx="140" cy="206" r="30" fill="#cbc4b4" opacity="0.5"/>
+      <circle cx="116" cy="96" r="28" fill="#cbc4b4" opacity="0.5"/>
+    </g>
+  </svg>
+
+  <!-- ===== 보조 소품: 완성 백자 항아리 3개 — 흰색+연청 셰이드, 나무 단 위 나란히 (옹기 흑갈색과 구분) ===== -->
+  <svg class="prop" data-adj="sp17-jars" style="left:640px; bottom:556px; width:350px; height:290px;" viewBox="0 0 350 290">
+    <g data-obj="jars-stand">
+      <rect x="8" y="234" width="334" height="24" fill="#7a5a3a"/>
+      <rect x="8" y="234" width="334" height="8" fill="#9a7a50"/>
+      <rect x="28" y="258" width="26" height="30" fill="#5e4429"/>
+      <rect x="296" y="258" width="26" height="30" fill="#5e4429"/>
+    </g>
+    <g data-obj="jarA">
+      <path d="M 30 236 Q 14 202 18 160 Q 22 120 48 102 Q 56 94 70 94 Q 84 94 92 102 Q 118 120 122 160 Q 126 202 110 236 Q 92 244 70 244 Q 48 244 30 236 Z" fill="#f2efe4"/>
+      <path d="M 70 94 Q 84 94 92 102 Q 118 120 122 160 Q 126 202 110 236 Q 92 244 70 244 Z" fill="#c6d6e0"/>
+      <path d="M 48 102 L 51 84 L 89 84 L 92 102 Z" fill="#f2efe4"/>
+      <ellipse cx="70" cy="83" rx="20" ry="6" fill="#90a8ba"/>
+      <ellipse cx="70" cy="83" rx="13" ry="4" fill="#4e6172"/>
+      <path d="M 34 150 Q 30 190 40 222" stroke="#ffffff" stroke-width="5" fill="none" opacity="0.6" stroke-linecap="round"/>
+    </g>
+    <g data-obj="jarB">
+      <path d="M 128 236 Q 106 192 112 140 Q 117 96 146 72 Q 158 60 178 60 Q 198 60 210 72 Q 239 96 244 140 Q 250 192 228 236 Q 206 246 178 246 Q 150 246 128 236 Z" fill="#f2efe4"/>
+      <path d="M 178 60 Q 198 60 210 72 Q 239 96 244 140 Q 250 192 228 236 Q 206 246 178 246 Z" fill="#c6d6e0"/>
+      <path d="M 146 72 L 150 48 L 206 48 L 210 72 Z" fill="#f2efe4"/>
+      <ellipse cx="178" cy="47" rx="30" ry="8" fill="#90a8ba"/>
+      <ellipse cx="178" cy="47" rx="20" ry="5" fill="#4e6172"/>
+      <path d="M 122 138 Q 117 186 130 224" stroke="#ffffff" stroke-width="6" fill="none" opacity="0.6" stroke-linecap="round"/>
+    </g>
+    <g data-obj="jarC">
+      <path d="M 252 236 Q 238 204 242 166 Q 245 132 268 116 Q 276 108 292 108 Q 308 108 316 116 Q 339 132 342 166 Q 346 204 332 236 Q 314 244 292 244 Q 270 244 252 236 Z" fill="#f2efe4"/>
+      <path d="M 292 108 Q 308 108 316 116 Q 339 132 342 166 Q 346 204 332 236 Q 314 244 292 244 Z" fill="#c6d6e0"/>
+      <path d="M 268 116 L 271 100 L 313 100 L 316 116 Z" fill="#f2efe4"/>
+      <ellipse cx="292" cy="99" rx="22" ry="6" fill="#90a8ba"/>
+      <ellipse cx="292" cy="99" rx="14" ry="4" fill="#4e6172"/>
+      <path d="M 256 158 Q 252 194 262 224" stroke="#ffffff" stroke-width="5" fill="none" opacity="0.6" stroke-linecap="round"/>
+    </g>
+  </svg>
+
+  <!-- ===== 물레: 받침(발판+기둥) + 회전 원판 + 빚는 중인 반제품 그릇 (도공 오른손이 그릇 왼쪽에 닿음) ===== -->
+  <svg class="prop" data-adj="sp17-wheel" style="left:250px; bottom:555px; width:300px; height:260px;" viewBox="0 0 300 260">
+    <g data-obj="wheel-base">
+      <rect x="70" y="238" width="165" height="18" fill="#5a3a20"/>
+      <rect x="70" y="238" width="165" height="6" fill="#7a5236"/>
+      <path d="M 116 240 L 126 172 L 174 172 L 184 240 Z" fill="#6d4526"/>
+      <path d="M 158 172 L 174 172 L 184 240 L 168 240 Z" fill="#4f3018"/>
+    </g>
+    <g data-obj="wheel-disc">
+      <ellipse cx="140" cy="170" rx="128" ry="26" fill="#6d4526"/>
+      <ellipse cx="140" cy="164" rx="120" ry="20" fill="#b98d54"/>
+      <path d="M 44 162 Q 140 150 236 162" stroke="#8a5a33" stroke-width="4" fill="none"/>
+      <path d="M 62 172 Q 140 182 218 172" stroke="#8a5a33" stroke-width="4" fill="none"/>
+    </g>
+    <g data-obj="wheel-pot">
+      <path d="M 106 168 Q 96 146 100 122 Q 103 102 118 92 L 118 84 L 162 84 L 162 92 Q 177 102 180 122 Q 184 146 174 168 Q 158 174 140 174 Q 122 174 106 168 Z" fill="#c9926a"/>
+      <path d="M 140 84 L 162 84 L 162 92 Q 177 102 180 122 Q 184 146 174 168 Q 158 174 140 174 Z" fill="#a8724c"/>
+      <ellipse cx="140" cy="84" rx="24" ry="7" fill="#8a5f3e"/>
+      <ellipse cx="140" cy="84" rx="16" ry="4.5" fill="#4f3018"/>
+      <path d="M 102 138 Q 140 148 178 138" stroke="#a8724c" stroke-width="3.5" fill="none"/>
+      <path d="M 106 116 Q 140 124 174 116" stroke="#a8724c" stroke-width="3.5" fill="none"/>
+    </g>
+  </svg>
+
+  <!-- ===== 캐릭터: 도공 (militia noHat) — 오른팔을 물레 그릇 쪽으로 뻗음 ===== -->
+  <div class="char" style="left:10px; bottom:580px; width:380px; height:456px;"></div>
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    document.querySelectorAll(".char").forEach(function(el){
+      el.innerHTML = makeCharacter({variant:"militia", noHat:true, shirt:"#c8b89a", pants:"#6f5c43"});
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+      el.querySelector(".arm-r").setAttribute("transform", "rotate(-60 140 152)");
+    });
+  </script>
+</body></html>
