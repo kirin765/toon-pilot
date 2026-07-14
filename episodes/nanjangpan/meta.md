@@ -1,7 +1,8 @@
 # EP.6 난장판 — 업로드 메타
 
 - 렌더: `renders/nanjangpan.mp4` (1080×1920, 48.0s, 10.5MB)
-- **업로드 완료: https://youtu.be/x_Bus8TjxFI (unlisted, 2026-07-15)** — 삼십초 역사(@history30sec) 채널 검증 후 업로드
+- **업로드(최종): https://youtu.be/nykB6llh30c (unlisted, 2026-07-15)** — 실물 「공원춘효도」 인서트 포함본
+- ~~구버전: https://youtu.be/x_Bus8TjxFI~~ — 인서트 이전. **채널에 남아 있으니 수동 삭제 필요**
 - 업로드 채널: **삼십초 역사(@history30sec)** — happylife2080100@gmail.com
   `yt_upload.py --token ~/.config/youtube-upload/token.history-d9t.json` (공용 token.json 금지)
 - 공개범위: unlisted
