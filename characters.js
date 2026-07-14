@@ -203,10 +203,8 @@ function makeCharacter(cfg) {
       '<path d="M 100 25 L 100 50" stroke="' + hairLine + '" stroke-width="3"/>' +
       '<path d="M 42 88 Q 42 104 50 112 L 57 107 Q 50 98 49 84 Z" fill="' + hairC + '"/>' +
       '<path d="M 158 88 Q 158 104 150 112 L 143 107 Q 150 98 151 84 Z" fill="' + hairC + '"/>' +
-      // 쪽+비녀는 머리 실루엣 바깥 낮은 위치에서 짧게 — 얼굴을 가로지르면 담뱃대로 오독(시트 검수 1차)
+      // 쪽(낮은 옆머리)만 — 비녀 돌출부는 flip 시 턱선에서 담뱃대로 오독돼 제거(EP.5 S8 검수). 쪽+한복으로 여성 판독 충분.
       '<ellipse cx="152" cy="116" rx="13" ry="10" fill="' + hairC + '"/>' +
-      '<path d="M 152 112 L 178 104" stroke="#b98d54" stroke-width="5" stroke-linecap="round"/>' +
-      '<circle cx="180" cy="103" r="5" fill="#8a5a33"/>' +
       (cfg.royal
         ? '<path d="M 84 30 Q 100 20 116 30 L 112 44 Q 100 38 88 44 Z" fill="#171412"/>' +
           '<circle cx="100" cy="31" r="5" fill="#d94f37"/>' +
