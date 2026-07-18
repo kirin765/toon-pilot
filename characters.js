@@ -176,10 +176,12 @@ function makeCharacter(cfg) {
     }
     if (cfg.hat === "samo") {
       // 단령 관복: 가슴 흉배(학 곡선 암시) + 각대. 도포 고름 문법과 구분.
+      // ⚠ 문관 흉배 제도는 단종 2년(1454) 도입 — 그 이전 시대 인물은 cfg.noBadge로 흉배 제외(EP.10 최만리 1444).
       torsoDetail =
-        '<rect x="84" y="148" width="32" height="26" rx="3" fill="' + shade(shirt, 0.35) + '"/>' +
-        '<rect x="87" y="151" width="26" height="20" rx="2" fill="' + shade(shirt, 0.5) + '"/>' +
-        '<path d="M 90 166 Q 95 156 100 162 Q 105 167 110 158" stroke="#e8b74a" stroke-width="2.5" fill="none" stroke-linecap="round"/>' +
+        (cfg.noBadge ? "" :
+          '<rect x="84" y="148" width="32" height="26" rx="3" fill="' + shade(shirt, 0.35) + '"/>' +
+          '<rect x="87" y="151" width="26" height="20" rx="2" fill="' + shade(shirt, 0.5) + '"/>' +
+          '<path d="M 90 166 Q 95 156 100 162 Q 105 167 110 158" stroke="#e8b74a" stroke-width="2.5" fill="none" stroke-linecap="round"/>') +
         '<path d="M 53 182 L 147 182 L 148 190 L 52 190 Z" fill="#26221c"/>' +
         '<rect x="93" y="181" width="14" height="10" rx="3" fill="#e8b74a"/>';
     } else {
