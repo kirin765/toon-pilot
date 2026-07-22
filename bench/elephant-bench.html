@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elephant Cutout Bench</title>
+<style>
+  body { display: flex; flex-direction: column; align-items: center; background: #f0f0f0; gap: 20px; padding: 20px; font-family: sans-serif; }
+  .row { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+  .card { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+  svg { width: 400px; height: 300px; border: 1px dashed #ccc; background: white; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <h1>Elephant Cutout SVG Versions</h1>
+  <div class="row">
+    <div class="card">
+      <h2>V1. 기본</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+        <g id="elephant">
+          <!-- 먼 쪽 뒷다리 (어두운 회색) -->
+          <rect x="290" y="160" width="30" height="110" rx="10" fill="#6C6C6C" />
+          <!-- 먼 쪽 앞다리 (어두운 회색) -->
+          <rect x="160" y="170" width="30" height="100" rx="10" fill="#6C6C6C" />
+          <!-- 뒷 귀 (어두운 회색) -->
+          <path d="M 140 85 C 160 55, 200 65, 200 110 C 200 140, 180 150, 160 150 Z" fill="#6C6C6C" />
+          <!-- 꼬리 (어두운 회색) -->
+          <path d="M 330 140 Q 360 170 350 240 Q 345 250 340 240 Q 345 180 320 150 Z" fill="#6C6C6C" />
+          
+          <!-- 몸통 (기본 회색) -->
+          <path d="M 110 90 C 150 70, 250 70, 310 90 C 350 110, 360 160, 340 200 C 310 240, 180 240, 120 200 C 90 180, 100 110, 110 90 Z" fill="#8C8C8C" />
+          <!-- 목 연결 보강 (기본 회색) -->
+          <circle cx="120" cy="120" r="35" fill="#8C8C8C" />
+          <!-- 머리와 코 (기본 회색, 코 아래로 향함) -->
+          <path d="M 130 110 C 130 70, 100 60, 80 80 C 70 90, 60 130, 55 180 C 50 230, 60 270, 65 275 C 75 280, 80 270, 70 250 C 65 230, 75 180, 85 150 C 95 120, 120 120, 130 110 Z" fill="#8C8C8C" />
+          
+          <!-- 가까운 쪽 뒷다리 (기본 회색) -->
+          <rect x="250" y="170" width="35" height="110" rx="12" fill="#8C8C8C" />
+          <!-- 가까운 쪽 앞다리 (기본 회색) -->
+          <rect x="120" y="180" width="35" height="105" rx="12" fill="#8C8C8C" />
+          
+          <!-- 앞 귀 그림자 (컷아웃 단차 효과용 어두운 면) -->
+          <path d="M 143 93 C 193 83, 213 163, 173 213 C 143 243, 113 193, 133 133 Z" fill="#6C6C6C" />
+          <!-- 앞 귀 (기본 회색, 크고 둥글게) -->
+          <path d="M 140 90 C 190 80, 210 160, 170 210 C 140 240, 110 190, 130 130 Z" fill="#8C8C8C" />
+          
+          <!-- 상아 (태종 헌상 코끼리 기록을 살려 작게 표현) -->
+          <path d="M 85 155 Q 65 165 70 175 Q 80 170 85 160 Z" fill="#F4F4F4" />
+          <!-- 눈 -->
+          <circle cx="100" cy="100" r="4.5" fill="#1A1A1A" />
+        </g>
+      </svg>
+    </div>
+    <div class="card">
+      <h2>V2. 코 든 포즈</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+        <g id="elephant">
+          <!-- 먼 쪽 뒷다리 (어두운 회색) -->
+          <rect x="290" y="160" width="30" height="110" rx="10" fill="#6C6C6C" />
+          <!-- 먼 쪽 앞다리 (어두운 회색) -->
+          <rect x="160" y="170" width="30" height="100" rx="10" fill="#6C6C6C" />
+          <!-- 뒷 귀 (어두운 회색) -->
+          <path d="M 140 85 C 160 55, 200 65, 200 110 C 200 140, 180 150, 160 150 Z" fill="#6C6C6C" />
+          <!-- 꼬리 (어두운 회색) -->
+          <path d="M 330 140 Q 360 170 350 240 Q 345 250 340 240 Q 345 180 320 150 Z" fill="#6C6C6C" />
+          
+          <!-- 몸통 (기본 회색) -->
+          <path d="M 110 90 C 150 70, 250 70, 310 90 C 350 110, 360 160, 340 200 C 310 240, 180 240, 120 200 C 90 180, 100 110, 110 90 Z" fill="#8C8C8C" />
+          <!-- 목 연결 보강 (기본 회색) -->
+          <circle cx="120" cy="120" r="35" fill="#8C8C8C" />
+          <!-- 머리와 코 (기본 회색, 위로 들어올린 S자 포즈) -->
+          <path d="M 130 110 C 130 70, 100 60, 80 80 C 55 105, 30 100, 20 70 C 10 30, 40 10, 65 20 C 75 25, 80 35, 65 45 C 40 45, 30 60, 40 85 C 50 110, 70 135, 80 150 C 85 170, 105 165, 110 145 C 115 130, 120 120, 130 110 Z" fill="#8C8C8C" />
+          
+          <!-- 가까운 쪽 뒷다리 (기본 회색) -->
+          <rect x="250" y="170" width="35" height="110" rx="12" fill="#8C8C8C" />
+          <!-- 가까운 쪽 앞다리 (기본 회색) -->
+          <rect x="120" y="180" width="35" height="105" rx="12" fill="#8C8C8C" />
+          
+          <!-- 앞 귀 그림자 (컷아웃 단차 효과용 어두운 면) -->
+          <path d="M 143 93 C 193 83, 213 163, 173 213 C 143 243, 113 193, 133 133 Z" fill="#6C6C6C" />
+          <!-- 앞 귀 (기본 회색, 크고 둥글게) -->
+          <path d="M 140 90 C 190 80, 210 160, 170 210 C 140 240, 110 190, 130 130 Z" fill="#8C8C8C" />
+          
+          <!-- 상아 (작은 크기) -->
+          <path d="M 85 155 Q 65 165 70 175 Q 80 170 85 160 Z" fill="#F4F4F4" />
+          <!-- 눈 -->
+          <circle cx="100" cy="100" r="4.5" fill="#1A1A1A" />
+        </g>
+      </svg>
+    </div>
+    <div class="card">
+      <h2>V3. 원거리용 (도형 9개)</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+        <g id="elephant">
+          <!-- 먼 쪽 뒷다리 (어두운 회색) -->
+          <rect x="290" y="160" width="30" height="100" rx="10" fill="#6C6C6C" />
+          <!-- 먼 쪽 앞다리 (어두운 회색) -->
+          <rect x="160" y="170" width="30" height="90" rx="10" fill="#6C6C6C" />
+          <!-- 꼬리 (어두운 회색) -->
+          <path d="M 330 140 Q 360 170 340 230 Q 330 200 320 150 Z" fill="#6C6C6C" />
+          
+          <!-- 몸통+머리+코 통합 실루엣 (기본 회색, 단일 path로 극도로 단순화된 외곽선) -->
+          <path d="M 120 70 C 180 60, 270 70, 320 100 C 360 130, 340 220, 310 230 C 250 240, 180 230, 120 200 C 90 190, 70 240, 75 270 C 80 285, 45 285, 55 260 C 50 200, 45 130, 70 90 C 85 65, 100 70, 120 70 Z" fill="#8C8C8C" />
+          
+          <!-- 가까운 쪽 뒷다리 (기본 회색) -->
+          <rect x="250" y="170" width="35" height="100" rx="12" fill="#8C8C8C" />
+          <!-- 가까운 쪽 앞다리 (기본 회색) -->
+          <rect x="120" y="170" width="35" height="95" rx="12" fill="#8C8C8C" />
+          
+          <!-- 앞 귀 (어두운 회색을 써서 그림자 없이 도형 수를 절약하고 컷아웃 느낌 강조) -->
+          <path d="M 140 85 C 190 80, 200 150, 160 190 C 130 210, 100 170, 120 120 Z" fill="#6C6C6C" />
+          
+          <!-- 상아 -->
+          <path d="M 90 170 Q 60 180 65 190 Q 80 185 90 175 Z" fill="#F4F4F4" />
+          <!-- 눈 -->
+          <circle cx="95" cy="95" r="5" fill="#1A1A1A" />
+        </g>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
