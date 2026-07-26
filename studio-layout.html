@@ -90,6 +90,7 @@
       <div class="row"><label>X</label><input type="range" id="rx"><input type="number" id="nx" step="1"></div>
       <div class="row"><label>Y</label><input type="range" id="ry"><input type="number" id="ny" step="1"></div>
       <div class="row"><label>크기</label><input type="range" id="rs" min="0.3" max="2.5" step="0.01"><input type="number" id="ns" step="0.01"></div>
+      <div class="row"><label>회전</label><input type="range" id="rr" min="-180" max="180" step="1"><input type="number" id="nr" step="1"></div>
       <div class="btns"><button class="warn" id="resetOne">이 항목 리셋</button>
         <button class="warn" id="delAdded" style="display:none">삽입 소품 삭제</button></div>
       <div class="hint">박스 드래그로 이동 · 방향키 미세조정(Shift=10) · <b>H</b>=아웃라인 토글.</div>
@@ -365,6 +366,7 @@
     document.getElementById("rx").value = o.dx; document.getElementById("nx").value = Math.round(o.dx * 100) / 100;
     document.getElementById("ry").value = o.dy; document.getElementById("ny").value = Math.round(o.dy * 100) / 100;
     document.getElementById("rs").value = o.s; document.getElementById("ns").value = (+o.s).toFixed(2);
+    document.getElementById("rr").value = o.r || 0; document.getElementById("nr").value = Math.round(o.r || 0);
   }
   function applyCur(o) {
     if (curKind === "el") LAY.set(curKey, o); else LAY.setObject(curKey, o);
@@ -380,6 +382,7 @@
   ["rx", "nx"].forEach(function (id) { document.getElementById(id).addEventListener("input", function () { editField("dx", parseFloat(this.value) || 0); }); });
   ["ry", "ny"].forEach(function (id) { document.getElementById(id).addEventListener("input", function () { editField("dy", parseFloat(this.value) || 0); }); });
   ["rs", "ns"].forEach(function (id) { document.getElementById(id).addEventListener("input", function () { editField("s", parseFloat(this.value) || 1); }); });
+  ["rr", "nr"].forEach(function (id) { document.getElementById(id).addEventListener("input", function () { editField("r", parseFloat(this.value) || 0); }); });
 
   var drag = null;
   function startDragEl(e, key) { var o = curOv(key); drag = { kind: "el", key: key, sx: e.clientX, sy: e.clientY, dx0: o.dx || 0, dy0: o.dy || 0 }; }

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="juwha_rocket">
+    <!-- 비행운 / 불꽃 궤적 (주화가 날아가는 궤도) -->
+    <path d="M50 250 Q150 150 250 80" fill="none" stroke="#e67e22" stroke-width="8" stroke-linecap="round" opacity="0.4" stroke-dasharray="15 10"/>
+    <path d="M40 260 Q140 160 240 90" fill="none" stroke="#d35400" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+    
+    <!-- 주화 (고려의 로켓 화살) 본체 - 대각선 우상단 방향으로 비행 중 -->
+    <g transform="translate(230, 80) rotate(40)">
+      <!-- 화살대 (대나무) -->
+      <line x1="-120" y1="0" x2="30" y2="0" stroke="#d4ac0d" stroke-width="6" stroke-linecap="round"/>
+      <!-- 대나무 마디 -->
+      <line x1="-90" y1="-4" x2="-90" y2="4" stroke="#9c640c" stroke-width="2"/>
+      <line x1="-50" y1="-4" x2="-50" y2="4" stroke="#9c640c" stroke-width="2"/>
+      <line x1="-10" y1="-4" x2="-10" y2="4" stroke="#9c640c" stroke-width="2"/>
+      
+      <!-- 화살 깃 (안정판) -->
+      <path d="M-120 0 L-100 -15 L-90 0 Z" fill="#c0392b"/>
+      <path d="M-120 0 L-100 15 L-90 0 Z" fill="#922b21"/>
+      
+      <!-- 화약통 (종이와 끈으로 묶은 원통) - 무게중심 쪽에 위치 -->
+      <rect x="-30" y="-12" width="50" height="24" rx="4" fill="#d7dbdd" stroke="#7f8c8d" stroke-width="2"/>
+      <!-- 화약통을 묶은 밧줄 -->
+      <line x1="-20" y1="-12" x2="-20" y2="12" stroke="#8b4513" stroke-width="3"/>
+      <line x1="-5" y1="-12" x2="-5" y2="12" stroke="#8b4513" stroke-width="3"/>
+      <line x1="10" y1="-12" x2="10" y2="12" stroke="#8b4513" stroke-width="3"/>
+      
+      <!-- 철제 촉 (화살촉) -->
+      <polygon points="30,-5 50,0 30,5" fill="#7f8c8d"/>
+      <polygon points="30,0 50,0 30,5" fill="#bdc3c7"/>
+      
+      <!-- 화약통 뒤에서 뿜어져 나오는 강렬한 화염 (추진력) -->
+      <path d="M-30 0 Q-60 -20 -80 0 Q-60 20 -30 0 Z" fill="#f39c12"/>
+      <path d="M-30 0 Q-50 -10 -60 0 Q-50 10 -30 0 Z" fill="#f1c40f"/>
+      <path d="M-30 0 Q-40 -5 -45 0 Q-40 5 -30 0 Z" fill="#fff"/>
+      
+      <!-- 주변으로 튀는 불똥 -->
+      <circle cx="-50" cy="-15" r="3" fill="#e74c3c"/>
+      <circle cx="-65" cy="10" r="2.5" fill="#f1c40f"/>
+      <circle cx="-40" cy="15" r="2" fill="#d35400"/>
+    </g>
+    
+    <!-- 배경의 연기 구름 (발사된 곳의 자욱한 연기) -->
+    <path d="M20 280 Q50 220 80 250 T130 270" fill="none" stroke="#bdc3c7" stroke-width="20" stroke-linecap="round" opacity="0.3"/>
+    <path d="M30 290 Q60 260 90 280" fill="none" stroke="#95a5a6" stroke-width="15" stroke-linecap="round" opacity="0.4"/>
+  </g>
+</svg>

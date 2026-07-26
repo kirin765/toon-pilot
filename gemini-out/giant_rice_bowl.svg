@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="giant_rice_bowl">
+    <!-- 조선의 대식가: 산처럼 높게 쌓아 올린 고봉밥과 거대한 유기(놋그릇) 주발 -->
+    
+    <!-- 따뜻한 온기가 도는 조선 양반의 소반(밥상) 배경 -->
+    <rect width="400" height="300" fill="#a0522d"/>
+    <!-- 옻칠된 소반의 나뭇결 무늬 -->
+    <path d="M0 100 Q200 80 400 120 M0 150 Q200 130 400 170 M0 200 Q200 180 400 220 M0 250 Q200 230 400 270" fill="none" stroke="#8b4513" stroke-width="4" opacity="0.6"/>
+    
+    <!-- 따뜻한 밥에서 김이 모락모락 피어오르는 효과 -->
+    <path d="M150 70 Q130 30 160 0 M200 60 Q220 20 190 -10 M250 80 Q270 40 240 10" fill="none" stroke="#ecf0f1" stroke-width="6" stroke-linecap="round" opacity="0.4">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- 거대한 유기 주발 (황동/놋그릇 바디) -->
+    <g transform="translate(200, 200)">
+      <!-- 주발의 굽 (그릇 밑받침) -->
+      <ellipse cx="0" cy="50" rx="40" ry="10" fill="#b9770e"/>
+      <path d="M-40 40 L-40 50 A40 10 0 0 0 40 50 L40 40 Z" fill="#b9770e"/>
+      
+      <!-- 주발의 본체 (아래가 둥글고 위가 넓음, 현대 밥그릇의 3~5배 크기) -->
+      <path d="M-40 40 C-100 20 -110 -60 -100 -70 L100 -70 C110 -60 100 20 40 40 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="3"/>
+      
+      <!-- 그릇 표면의 은은한 놋쇠 광택 효과 -->
+      <path d="M-80 -40 C-90 -10 -50 20 0 35" fill="none" stroke="#fcf3cf" stroke-width="8" opacity="0.4" stroke-linecap="round"/>
+      <path d="M70 -50 C80 -20 50 10 20 25" fill="none" stroke="#b9770e" stroke-width="6" opacity="0.4" stroke-linecap="round"/>
+      
+      <!-- 주발의 둥근 테두리 (입구) -->
+      <ellipse cx="0" cy="-70" rx="100" ry="25" fill="#f4d03f" stroke="#d4ac0d" stroke-width="3"/>
+      <!-- 테두리 안쪽 그림자 -->
+      <ellipse cx="0" cy="-70" rx="95" ry="22" fill="#d4ac0d" opacity="0.5"/>
+    </g>
+    
+    <!-- 위태로울 정도로 산처럼 쌓아 올린 어마어마한 양의 고봉밥(흰쌀밥) -->
+    <g transform="translate(200, 130)">
+      <!-- 밥의 기본 형태 (거대한 돔 모양) -->
+      <path d="M-95 0 C-120 -80 -60 -150 0 -160 C60 -150 120 -80 95 0 Z" fill="#fdfefe" stroke="#ecf0f1" stroke-width="2"/>
+      <!-- 밥알의 입체감을 살리는 그림자 덩어리들 -->
+      <path d="M-90 -20 C-60 -50 0 -60 60 -40 C70 -10 90 0 95 0 C50 20 -50 20 -95 0 Z" fill="#f4f6f7"/>
+      <path d="M-70 -70 C-40 -110 20 -120 50 -80 C30 -90 -20 -90 -70 -70 Z" fill="#eaeded"/>
+      
+      <!-- 개별 밥알들의 질감 묘사 (흰색과 회색 곡선들) -->
+      <g stroke="#d5dbdb" stroke-width="2" fill="none" stroke-linecap="round">
+        <path d="M-30 -140 Q-20 -145 -10 -135 M0 -150 Q10 -145 5 -135 M20 -140 Q30 -130 20 -120"/>
+        <path d="M-60 -100 Q-50 -110 -40 -100 M-20 -110 Q-10 -120 10 -110 M40 -100 Q50 -110 60 -100"/>
+        <path d="M-80 -50 Q-70 -60 -50 -50 M-40 -60 Q-20 -70 0 -50 M30 -60 Q50 -70 70 -50 M-60 -20 Q-40 -30 -20 -20"/>
+      </g>
+    </g>
+    
+    <!-- 밥그릇 옆에 무심하게 꽂혀 있거나 놓인 커다란 놋숟가락 -->
+    <g transform="translate(300, 240) rotate(-30)">
+      <!-- 숟가락 자루 -->
+      <rect x="-100" y="-5" width="120" height="10" rx="3" fill="#f1c40f" stroke="#d4ac0d" stroke-width="2"/>
+      <!-- 숟가락 머리 (동그랗고 큼) -->
+      <ellipse cx="-120" cy="0" rx="25" ry="20" fill="#f1c40f" stroke="#d4ac0d" stroke-width="2"/>
+      <ellipse cx="-125" cy="0" rx="15" ry="12" fill="#fcf3cf" opacity="0.6"/> <!-- 광택 -->
+    </g>
+    
+  </g>
+</svg>

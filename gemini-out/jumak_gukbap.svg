@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="jumak_gukbap">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="240" rx="90" ry="20" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 투박한 뚝배기 (어두운 검갈색) -->
+    <path d="M110 140 C110 230 290 230 290 140 Z" fill="#3e2723"/>
+    <path d="M120 140 C120 220 280 220 280 140 Z" fill="#4e342e"/>
+    
+    <!-- 뚝배기 굽 -->
+    <path d="M160 215 L240 215 L230 230 L170 230 Z" fill="#271c19"/>
+    
+    <!-- 뚝배기 입구 (전) -->
+    <ellipse cx="200" cy="140" rx="90" ry="25" fill="#3e2723"/>
+    <ellipse cx="200" cy="140" rx="83" ry="20" fill="#4e342e"/>
+    
+    <!-- 찰랑이는 국물 (어두운 갈색/붉은빛) -->
+    <ellipse cx="200" cy="143" rx="75" ry="16" fill="#8e2800"/>
+    <ellipse cx="195" cy="145" rx="70" ry="14" fill="#a03000"/>
+    
+    <!-- 국밥 건더기 묘사 (우거지, 고기, 밥알) -->
+    <!-- 밥알 무더기 -->
+    <circle cx="180" cy="145" r="18" fill="#e8dcb8" opacity="0.8"/>
+    <circle cx="190" cy="138" r="15" fill="#e8dcb8" opacity="0.9"/>
+    <circle cx="170" cy="150" r="12" fill="#e8dcb8" opacity="0.7"/>
+    
+    <!-- 고기 덩어리 -->
+    <path d="M210 145 Q220 135 230 145 Q225 155 215 152 Z" fill="#5c2e0b"/>
+    <path d="M230 135 Q245 130 250 140 Q235 150 230 145 Z" fill="#4a2311"/>
+    
+    <!-- 우거지 / 파 (녹색 계열) -->
+    <path d="M150 140 Q160 130 170 145" fill="none" stroke="#4a5320" stroke-width="6" stroke-linecap="round"/>
+    <path d="M240 150 Q220 155 210 160" fill="none" stroke="#4a5320" stroke-width="5" stroke-linecap="round"/>
+    <!-- 송송 썬 대파 -->
+    <circle cx="195" cy="155" r="4" fill="#7cb342"/>
+    <circle cx="205" cy="153" r="3" fill="#7cb342"/>
+    <circle cx="215" cy="135" r="3.5" fill="#7cb342"/>
+    
+    <!-- 모락모락 피어나는 뜨거운 김 (수증기) -->
+    <path d="M180 130 Q170 90 190 50 Q210 20 180 -10" fill="none" stroke="#ecf0f1" stroke-width="6" stroke-linecap="round" opacity="0.4"/>
+    <path d="M220 120 Q240 80 210 40" fill="none" stroke="#ecf0f1" stroke-width="5" stroke-linecap="round" opacity="0.3"/>
+    
+    <!-- 투박한 나무 숟가락 -->
+    <path d="M110 90 L145 135" stroke="#a0522d" stroke-width="12" stroke-linecap="round"/>
+    <path d="M140 130 Q170 130 160 155 Q135 150 140 130 Z" fill="#8b4513"/>
+  </g>
+</svg>

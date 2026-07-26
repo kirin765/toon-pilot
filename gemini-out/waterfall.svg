@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <g id="waterfall-bg">
+    <!-- 하늘 배경 -->
+    <rect width="800" height="450" fill="#a4c2f4" />
+    
+    <!-- 뒤쪽 바위 산 -->
+    <path d="M 0 350 L 150 150 L 300 200 L 450 100 L 600 220 L 800 120 L 800 450 L 0 450 Z" fill="#6d7a8c" stroke="#333" stroke-width="4" />
+    
+    <!-- 앞쪽 절벽 1 (좌측) -->
+    <path d="M 0 450 L 0 220 L 180 220 L 220 280 L 220 380 L 260 450 Z" fill="#4d5966" stroke="#333" stroke-width="4" />
+    
+    <!-- 앞쪽 절벽 2 (우측) -->
+    <path d="M 800 450 L 800 180 L 520 180 L 460 260 L 480 340 L 400 450 Z" fill="#4d5966" stroke="#333" stroke-width="4" />
+
+    <!-- 3단 폭포 -->
+    <!-- 1단 (상단) -->
+    <path d="M 330 150 L 390 150 L 380 240 L 340 240 Z" fill="#ffffff" stroke="#333" stroke-width="3" />
+    <path d="M 345 150 v 80 M 360 150 v 80 M 375 150 v 80" stroke="#b3e5fc" stroke-width="2" />
+    <!-- 1단 웅덩이/포말 -->
+    <ellipse cx="360" cy="240" rx="35" ry="10" fill="#e0f7fa" stroke="#333" stroke-width="3" />
+
+    <!-- 2단 (중단) -->
+    <path d="M 320 240 L 410 240 L 400 360 L 310 360 Z" fill="#ffffff" stroke="#333" stroke-width="3" />
+    <path d="M 335 240 v 110 M 355 240 v 110 M 375 240 v 110 M 395 240 v 110" stroke="#b3e5fc" stroke-width="2" />
+    <!-- 2단 웅덩이/포말 -->
+    <ellipse cx="355" cy="360" rx="60" ry="15" fill="#e0f7fa" stroke="#333" stroke-width="3" />
+
+    <!-- 3단 (하단) -->
+    <path d="M 280 360 L 440 360 L 420 450 L 260 450 Z" fill="#ffffff" stroke="#333" stroke-width="3" />
+    <path d="M 300 360 L 285 450 M 330 360 L 315 450 M 360 360 L 345 450 M 390 360 L 375 450 M 420 360 L 405 450" stroke="#b3e5fc" stroke-width="2" />
+
+    <!-- 좌측 소나무 -->
+    <g transform="translate(100, 220)">
+      <!-- 나무 기둥 -->
+      <path d="M -10 0 c 5 -40 20 -60 40 -80 c -10 -5 -15 -10 -20 20 c -20 30 -30 40 -35 60" fill="#5c4033" stroke="#333" stroke-width="3" />
+      <!-- 솔잎 뭉치 -->
+      <circle cx="30" cy="-80" r="25" fill="#2d5a27" stroke="#333" stroke-width="3" />
+      <circle cx="5" cy="-60" r="20" fill="#2d5a27" stroke="#333" stroke-width="3" />
+      <circle cx="50" cy="-65" r="18" fill="#2d5a27" stroke="#333" stroke-width="3" />
+    </g>
+
+    <!-- 우측 소나무 -->
+    <g transform="translate(620, 180)">
+      <!-- 나무 기둥 -->
+      <path d="M 10 0 c -5 -40 -20 -60 -40 -80 c 10 -5 15 -10 20 20 c 20 30 30 40 35 60" fill="#5c4033" stroke="#333" stroke-width="3" />
+      <!-- 솔잎 뭉치 -->
+      <circle cx="-30" cy="-80" r="25" fill="#2d5a27" stroke="#333" stroke-width="3" />
+      <circle cx="-5" cy="-60" r="20" fill="#2d5a27" stroke="#333" stroke-width="3" />
+      <circle cx="-50" cy="-65" r="18" fill="#2d5a27" stroke="#333" stroke-width="3" />
+    </g>
+  </g>
+</svg>

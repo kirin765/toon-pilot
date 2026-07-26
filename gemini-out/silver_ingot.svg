@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="silver_ingot">
+    <!-- 조선과 청나라, 일본 사이의 무역에서 핵심 화폐로 쓰였던 은괴(마제은/말굽은) -->
+    
+    <!-- 나무 탁자(상단) 배경 -->
+    <rect width="400" height="300" fill="#a67c52"/>
+    <path d="M0 100 L400 100 M0 200 L400 200" stroke="#8b5a2b" stroke-width="3" opacity="0.4"/>
+    
+    <!-- 뒤쪽에 쌓여있는 은괴 1 (흐릿함) -->
+    <g transform="translate(130, 120) scale(0.8) rotate(-20)">
+      <ellipse cx="0" cy="30" rx="60" ry="25" fill="#5c3a21" opacity="0.5"/>
+      <path d="M-50 -10 C-70 20 -30 30 0 30 C30 30 70 20 50 -10 C30 10 -30 10 -50 -10 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      <path d="M-50 -10 C-30 -30 30 -30 50 -10 C30 10 -30 10 -50 -10 Z" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2"/>
+    </g>
+    
+    <!-- 뒤쪽에 쌓여있는 은괴 2 -->
+    <g transform="translate(280, 140) scale(0.85) rotate(15)">
+      <ellipse cx="0" cy="30" rx="60" ry="25" fill="#5c3a21" opacity="0.5"/>
+      <path d="M-50 -10 C-70 20 -30 30 0 30 C30 30 70 20 50 -10 C30 10 -30 10 -50 -10 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      <path d="M-50 -10 C-30 -30 30 -30 50 -10 C30 10 -30 10 -50 -10 Z" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2"/>
+    </g>
+    
+    <!-- 메인 은괴 (말굽 모양의 마제은) -->
+    <g transform="translate(200, 200)">
+      
+      <!-- 은괴 그림자 -->
+      <ellipse cx="0" cy="35" rx="80" ry="25" fill="#5c3a21" opacity="0.7"/>
+      
+      <!-- 말굽 모양의 두툼한 측면과 하단 -->
+      <path d="M-70 -20 C-90 30 -40 40 0 40 C40 40 90 30 70 -20 C40 20 -40 20 -70 -20 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="3"/>
+      
+      <!-- 은괴 윗면 (움푹 파여 있는 형태) -->
+      <path d="M-70 -20 C-40 -50 40 -50 70 -20 C40 20 -40 20 -70 -20 Z" fill="#ecf0f1" stroke="#95a5a6" stroke-width="3"/>
+      
+      <!-- 움푹 들어간 안쪽 표면의 질감과 주름 (주조할 때 생긴 물결 무늬) -->
+      <path d="M-50 -15 C-20 -35 20 -35 50 -15" fill="none" stroke="#bdc3c7" stroke-width="2"/>
+      <path d="M-30 -5 C0 -20 30 -5" fill="none" stroke="#bdc3c7" stroke-width="1.5"/>
+      
+      <!-- 측면의 금속 광택과 하이라이트 -->
+      <path d="M-60 0 C-40 25 0 35 30 30" fill="none" stroke="#fdfefe" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M40 25 C55 15 65 0 65 -10" fill="none" stroke="#fdfefe" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+      
+      <!-- 윗면 가장자리의 반짝임 -->
+      <path d="M-65 -20 C-40 10 40 10 65 -20" fill="none" stroke="#fdfefe" stroke-width="3" opacity="0.7"/>
+      <circle cx="-65" cy="-20" r="3" fill="#fdfefe"/>
+      
+      <!-- 관허(정부 공인)를 나타내는 주조소의 펀칭 마크(도장) -->
+      <!-- 한자 '官'(관) 또는 '寶'(보) 모양의 압인 -->
+      <g transform="translate(0, -15)">
+        <rect x="-10" y="-10" width="20" height="20" fill="#d5dbdb" stroke="#95a5a6" stroke-width="1.5" rx="2"/>
+        <path d="M-5 -5 L5 -5 M0 -8 L0 -2 M-7 2 L7 2 M-5 5 L5 5 M-2 2 L-2 7 M2 2 L2 7" stroke="#7f8c8d" stroke-width="1.5"/>
+      </g>
+      
+    </g>
+    
+    <!-- 흩어진 조선 통보(동전) 2개 - 보조 화폐 -->
+    <g transform="translate(100, 240) rotate(15)">
+      <ellipse cx="2" cy="4" rx="20" ry="8" fill="#5c3a21" opacity="0.6"/>
+      <ellipse cx="0" cy="0" rx="20" ry="8" fill="#f39c12" stroke="#b9770e" stroke-width="2"/>
+      <!-- 네모난 구멍 -->
+      <polygon points="-4,-2 4,-2 6,2 -2,2" fill="#a67c52"/>
+    </g>
+    
+    <g transform="translate(320, 220) rotate(-30)">
+      <ellipse cx="2" cy="4" rx="20" ry="8" fill="#5c3a21" opacity="0.6"/>
+      <ellipse cx="0" cy="0" rx="20" ry="8" fill="#f39c12" stroke="#b9770e" stroke-width="2"/>
+      <polygon points="-4,-2 4,-2 6,2 -2,2" fill="#a67c52"/>
+    </g>
+    
+  </g>
+</svg>

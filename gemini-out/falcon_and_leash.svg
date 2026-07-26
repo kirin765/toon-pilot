@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="falcon_and_leash">
+    <!-- 양녕대군의 비행 청소년 시절: 매사냥과 사냥개 집착 -->
+    
+    <!-- 어두운 궁궐 담벼락 배경 -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    
+    <!-- 벽에 걸려있는 화려한 사냥 매의 안대(모자)와 장식 -->
+    <g transform="translate(150, 100)">
+      <!-- 매 머리에 씌우는 가죽 모자(눈가리개) -->
+      <path d="M-20 -20 Q0 -40 20 -20 L30 10 Q0 30 -30 10 Z" fill="#a04000" stroke="#7e2811" stroke-width="2"/>
+      <circle cx="0" cy="-25" r="5" fill="#f1c40f"/> <!-- 꼭대기 장식 -->
+      <!-- 화려한 금실 자수 -->
+      <path d="M-10 -10 L10 -10 M-15 0 L15 0 M-10 10 L10 10" stroke="#f1c40f" stroke-width="2"/>
+      <!-- 매의 부리가 나오는 구멍 -->
+      <path d="M-5 15 L5 15 L0 25 Z" fill="#111"/>
+    </g>
+    
+    <!-- 매의 발목에 채우는 시치미 (주인 표시 장식) -->
+    <g transform="translate(180, 160)">
+      <path d="M-10 -10 L0 -30 L10 -10 Z" fill="#ecf0f1"/> <!-- 하얀 뿔 장식 -->
+      <rect x="-5" y="-10" width="10" height="15" fill="#e74c3c"/> <!-- 붉은 천 -->
+      <!-- 끈 -->
+      <path d="M0 5 Q10 20 5 40" fill="none" stroke="#f1c40f" stroke-width="2"/>
+    </g>
+    
+    <!-- 궁궐 몰래 들여온 사나운 맹견의 두꺼운 가죽 목줄과 쇠사슬 -->
+    <g transform="translate(250, 200) rotate(15)">
+      <!-- 징이 박힌 두꺼운 검은 가죽 목줄 -->
+      <path d="M-60 0 Q0 -20 60 0 Q70 10 60 30 Q0 10 -60 30 Q-70 10 -60 0 Z" fill="#17202a" stroke="#111" stroke-width="2"/>
+      <!-- 금속 징 장식 -->
+      <circle cx="-40" cy="15" r="4" fill="#bdc3c7"/>
+      <circle cx="-15" cy="10" r="4" fill="#bdc3c7"/>
+      <circle cx="15" cy="10" r="4" fill="#bdc3c7"/>
+      <circle cx="40" cy="15" r="4" fill="#bdc3c7"/>
+      
+      <!-- 끊어질 듯 팽팽한 쇠사슬 (통제 불능의 양녕대군 상징) -->
+      <path d="M0 10 L0 80" fill="none" stroke="#7f8c8d" stroke-width="6" stroke-dasharray="8 4"/>
+      <circle cx="0" cy="90" r="8" fill="none" stroke="#95a5a6" stroke-width="4"/>
+      <path d="M-5 100 L-20 150 M5 100 L20 150" stroke="#7f8c8d" stroke-width="6" stroke-dasharray="8 4"/>
+    </g>
+    
+    <!-- 밤에 몰래 담을 넘다 떨어뜨린 양녕대군의 부채 (신분을 암시) -->
+    <g transform="translate(100, 240) rotate(-30)">
+      <!-- 접힌 부채 -->
+      <polygon points="0,0 20,80 -20,80" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="2"/>
+      <path d="M0 0 L15 80 M0 0 L10 80 M0 0 L0 80 M0 0 L-10 80 M0 0 L-15 80" stroke="#bdc3c7" stroke-width="1"/>
+      <circle cx="0" cy="0" r="3" fill="#e74c3c"/>
+    </g>
+    
+  </g>
+</svg>

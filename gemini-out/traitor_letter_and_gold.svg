@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="traitor_letter_and_gold">
+    <!-- 이중스파이 정명수: 청나라 문자가 적힌 밀서와 청나라 은정/뇌물 -->
+    
+    <!-- 화려하고 탐욕스러운 붉은 비단 탁자 배경 -->
+    <rect width="400" height="300" fill="#7b241c"/>
+    <path d="M0 50 Q100 80 200 40 T400 60" fill="none" stroke="#922b21" stroke-width="20" opacity="0.5"/>
+    <path d="M0 150 Q100 180 200 140 T400 160" fill="none" stroke="#922b21" stroke-width="20" opacity="0.5"/>
+    <path d="M0 250 Q100 280 200 240 T400 260" fill="none" stroke="#922b21" stroke-width="20" opacity="0.5"/>
+    
+    <!-- 청나라(만주어) 문자가 세로로 길게 적힌 밀서 -->
+    <g transform="translate(180, 150) rotate(15)">
+      <rect x="-60" y="-100" width="120" height="200" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="3"/>
+      <!-- 만주어 특유의 세로로 이어지는 꼬불꼬불한 문자 형태 흉내 -->
+      <path d="M-30 -80 Q-20 -70 -30 -60 Q-40 -50 -30 -40 Q-20 -30 -30 -20 L-30 80" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="-25" cy="-65" r="2" fill="#111"/>
+      <circle cx="-35" cy="-45" r="2" fill="#111"/>
+      
+      <path d="M0 -80 Q10 -70 0 -60 Q-10 -50 0 -40 Q10 -30 0 -20 L0 50" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="5" cy="-55" r="2" fill="#111"/>
+      
+      <path d="M30 -80 Q40 -70 30 -60 Q20 -50 30 -40 Q40 -30 30 -20 L30 60" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+      
+      <!-- 밀서를 봉인했던 붉은 밀랍(실링 왁스)이 깨진 모습 -->
+      <circle cx="-60" cy="0" r="15" fill="#c0392b"/>
+      <path d="M-75 0 L-45 0" stroke="#7b241c" stroke-width="2"/>
+    </g>
+    
+    <!-- 조선을 팔아넘기고 받은 막대한 청나라 은정(마제은 - 말굽 모양 은괴) 무더기 -->
+    <g transform="translate(280, 220)">
+      <path d="M0 0 C-40 -20 -30 -50 0 -40 C30 -50 40 -20 0 0 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      <path d="M-10 -15 C-20 -25 -15 -40 0 -35 C15 -40 20 -25 10 -15 Z" fill="#ecf0f1"/> <!-- 반사광 -->
+      
+      <g transform="translate(-40, 20) rotate(-20)">
+        <path d="M0 0 C-40 -20 -30 -50 0 -40 C30 -50 40 -20 0 0 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      </g>
+      
+      <g transform="translate(30, 25) rotate(30)">
+        <path d="M0 0 C-40 -20 -30 -50 0 -40 C30 -50 40 -20 0 0 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="2"/> <!-- 금정도 하나 섞임 -->
+      </g>
+    </g>
+    
+    <!-- 뇌물로 받은 화려한 청나라식 옥가락지 (탐욕의 상징) -->
+    <ellipse cx="100" cy="240" rx="30" ry="20" fill="none" stroke="#2ecc71" stroke-width="8" transform="rotate(-15 100 240)"/>
+    <ellipse cx="100" cy="240" rx="30" ry="20" fill="none" stroke="#27ae60" stroke-width="2" transform="rotate(-15 100 240)"/>
+    
+  </g>
+</svg>

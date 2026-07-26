@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="jagyeongru_doll">
+    <!-- 장영실의 자격루에서 시간을 자동으로 알려주는 기계 장치 속 나무 인형(목인) -->
+    
+    <!-- 자격루 내부의 기계실(어두운 목조 상자 안) 배경 -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    <rect x="50" y="20" width="300" height="260" fill="#1c2833"/>
+    
+    <!-- 기계 장치를 지탱하는 목재 프레임 -->
+    <rect x="70" y="220" width="260" height="20" fill="#5c3a21"/>
+    
+    <!-- 톱니바퀴 장치 (기계적인 느낌 강조) -->
+    <g transform="translate(120, 240)">
+      <circle cx="0" cy="0" r="30" fill="#7f8c8d" stroke="#566573" stroke-width="3"/>
+      <circle cx="0" cy="0" r="10" fill="#34495e"/>
+      <path d="M-30 0 L30 0 M0 -30 L0 30 M-21 -21 L21 21 M-21 21 L21 -21" stroke="#566573" stroke-width="3"/>
+      <!-- 톱니 -->
+      <path d="M-35 -5 L-35 5 L-30 5 L-30 -5 Z" fill="#95a5a6" transform="rotate(0)"/>
+      <path d="M-35 -5 L-35 5 L-30 5 L-30 -5 Z" fill="#95a5a6" transform="rotate(30)"/>
+      <path d="M-35 -5 L-35 5 L-30 5 L-30 -5 Z" fill="#95a5a6" transform="rotate(60)"/>
+      <path d="M-35 -5 L-35 5 L-30 5 L-30 -5 Z" fill="#95a5a6" transform="rotate(90)"/>
+      <path d="M-35 -5 L-35 5 L-30 5 L-30 -5 Z" fill="#95a5a6" transform="rotate(120)"/>
+      <path d="M-35 -5 L-35 5 L-30 5 L-30 -5 Z" fill="#95a5a6" transform="rotate(150)"/>
+    </g>
+    
+    <g transform="translate(180, 240) scale(0.6)">
+      <circle cx="0" cy="0" r="30" fill="#7f8c8d" stroke="#566573" stroke-width="3"/>
+      <circle cx="0" cy="0" r="10" fill="#34495e"/>
+      <path d="M-30 0 L30 0 M0 -30 L0 30 M-21 -21 L21 21 M-21 21 L21 -21" stroke="#566573" stroke-width="3"/>
+    </g>
+    
+    <!-- 떨어지는 구슬 (동력원) -->
+    <path d="M300 50 Q280 150 220 230" fill="none" stroke="#d5dbdb" stroke-width="8" stroke-dasharray="15,20" opacity="0.3"/>
+    <circle cx="240" cy="180" r="12" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/> <!-- 떨어지는 쇠구슬 -->
+    
+    <!-- 시간을 알리는 나무 인형 (종을 치는 인형) -->
+    <g transform="translate(200, 150)">
+      
+      <!-- 인형의 기둥(몸통 지지대) -->
+      <rect x="-10" y="20" width="20" height="50" fill="#8b5a2b" stroke="#5c3a21" stroke-width="2"/>
+      
+      <!-- 목각 인형 몸통 (관복을 입은 형상) -->
+      <path d="M-30 30 L30 30 L40 80 L-40 80 Z" fill="#c0392b" stroke="#922b21" stroke-width="2"/>
+      <path d="M0 30 L0 80" stroke="#922b21" stroke-width="2"/> <!-- 옷 주름 -->
+      <path d="M-20 30 L-30 80 M20 30 L30 80" stroke="#922b21" stroke-width="2"/>
+      
+      <!-- 허리띠 (각대) -->
+      <rect x="-35" y="60" width="70" height="10" fill="#f1c40f" stroke="#b9770e" stroke-width="1.5"/>
+      
+      <!-- 얼굴 (단순한 나무 조각 형태) -->
+      <rect x="-15" y="-10" width="30" height="40" fill="#f8c471" stroke="#d68910" stroke-width="2" rx="10"/>
+      <!-- 단순화된 눈코입 -->
+      <line x1="-8" y1="5" x2="-2" y2="5" stroke="#5c3a21" stroke-width="2"/>
+      <line x1="2" y1="5" x2="8" y2="5" stroke="#5c3a21" stroke-width="2"/>
+      <line x1="-5" y1="15" x2="5" y2="15" stroke="#5c3a21" stroke-width="1.5"/>
+      
+      <!-- 머리에 쓴 사모 (관모) -->
+      <path d="M-20 -10 L20 -10 C20 -30 -20 -30 -20 -10 Z" fill="#17202a" stroke="#2c3e50" stroke-width="2"/>
+      <!-- 사모의 양쪽 뿔 -->
+      <rect x="-35" y="-15" width="20" height="8" fill="#17202a" rx="2"/>
+      <rect x="15" y="-15" width="20" height="8" fill="#17202a" rx="2"/>
+      
+      <!-- 종을 칠 준비를 하는 기계 팔 -->
+      <!-- 왼쪽 팔 (몸에 붙어 있음) -->
+      <path d="M-30 35 L-40 50 L-30 70" fill="none" stroke="#a93226" stroke-width="10" stroke-linejoin="round"/>
+      
+      <!-- 오른쪽 팔 (위로 치켜든 상태 - 회전 관절 구조) -->
+      <!-- 구슬이 떨어져 지렛대를 건드리면 팔이 움직이는 메커니즘 묘사 -->
+      <g transform="translate(30, 35) rotate(-30)"> <!-- 작동하는 순간 -->
+        <!-- 어깨 관절 (구리 못) -->
+        <circle cx="0" cy="0" r="5" fill="#f39c12"/>
+        <!-- 팔뚝 -->
+        <path d="M0 0 L40 -20 L60 -10" fill="none" stroke="#a93226" stroke-width="10" stroke-linejoin="round"/>
+        <!-- 손에 쥔 망치 (종을 치는 도구) -->
+        <rect x="55" y="-30" width="6" height="40" fill="#a67c52" transform="rotate(20 55 -10)"/>
+        <rect x="65" y="-20" width="15" height="25" fill="#7f8c8d" rx="3" transform="rotate(20 65 -20)"/>
+      </g>
+    </g>
+    
+    <!-- 매달려 있는 청동 종 (인형이 치는 대상) -->
+    <g transform="translate(310, 80)">
+      <rect x="-3" y="-30" width="6" height="30" fill="#873600"/> <!-- 끈 -->
+      <path d="M-20 0 C-40 40 -30 60 -40 70 L40 70 C30 60 40 40 20 0 Z" fill="#d35400" stroke="#873600" stroke-width="3"/>
+      <!-- 종의 무늬 -->
+      <path d="M-25 30 L25 30 M-30 50 L30 50" stroke="#a04000" stroke-width="2"/>
+      <circle cx="0" cy="50" r="5" fill="#f39c12"/>
+      <!-- 소리가 퍼지는 효과선 -->
+      <path d="M-50 70 Q-70 70 -60 40" fill="none" stroke="#f1c40f" stroke-width="3" opacity="0.6"/>
+      <path d="M50 70 Q70 70 60 40" fill="none" stroke="#f1c40f" stroke-width="3" opacity="0.6"/>
+    </g>
+    
+  </g>
+</svg>

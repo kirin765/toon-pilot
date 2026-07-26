@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="golden_cat_on_cushion">
+    <!-- 숙종의 반려묘 금손이: 왕의 화려한 방석 위에 앉아있는 금빛 고양이 -->
+    
+    <!-- 궁궐 바닥과 화려한 비단 방석 배경 -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    
+    <!-- 왕이 앉는 붉은색 용문양 비단 방석 (고양이가 차지함) -->
+    <g transform="translate(200, 220)">
+      <!-- 방석 본체 -->
+      <ellipse cx="0" cy="0" rx="140" ry="40" fill="#c0392b" stroke="#922b21" stroke-width="4"/>
+      <!-- 방석 두께 -->
+      <path d="M-140 0 L-140 15 C-140 35 140 35 140 15 L140 0 Z" fill="#922b21"/>
+      
+      <!-- 방석 테두리의 금실 장식과 수술 -->
+      <ellipse cx="0" cy="0" rx="130" ry="32" fill="none" stroke="#f1c40f" stroke-width="2" stroke-dasharray="5 5"/>
+      <!-- 모서리 털 장식 (수술) -->
+      <path d="M-135 10 L-150 40 M-145 15 L-160 35 M-130 15 L-140 45" stroke="#f1c40f" stroke-width="2"/>
+      <path d="M135 10 L150 40 M145 15 L160 35 M130 15 L140 45" stroke="#f1c40f" stroke-width="2"/>
+    </g>
+    
+    <!-- 금손이 (금빛 털을 가진 궁궐 고양이) -->
+    <g transform="translate(200, 160)">
+      <!-- 꼬리 (우아하게 감고 있음) -->
+      <path d="M40 30 C80 20 100 -20 70 -50 C50 -70 20 -40 40 -10" fill="none" stroke="#f39c12" stroke-width="15" stroke-linecap="round"/>
+      
+      <!-- 고양이 몸통 (웅크리고 앉은 자세) -->
+      <ellipse cx="0" cy="15" rx="55" ry="40" fill="#f1c40f"/>
+      <path d="M-55 15 C-55 40 -30 60 0 60 C30 60 55 40 55 15 Z" fill="#f39c12"/> <!-- 몸통 명암 -->
+      
+      <!-- 고양이 머리 -->
+      <circle cx="-20" cy="-30" r="35" fill="#f1c40f"/>
+      <circle cx="-20" cy="-30" r="30" fill="#f5b041"/> <!-- 얼굴 명암 -->
+      
+      <!-- 뾰족한 귀 -->
+      <path d="M-45 -55 L-40 -85 L-20 -60 Z" fill="#f1c40f" stroke="#e67e22" stroke-width="2"/>
+      <path d="M-5 -60 L15 -85 L10 -50 Z" fill="#f1c40f" stroke="#e67e22" stroke-width="2"/>
+      <path d="M-40 -55 L-37 -75 L-25 -58 Z" fill="#fad7a1"/> <!-- 귀 안쪽 -->
+      <path d="M0 -58 L10 -75 L5 -53 Z" fill="#fad7a1"/>
+      
+      <!-- 도도하게 감은 눈 (왕의 사랑을 받는 여유) -->
+      <path d="M-40 -35 Q-30 -40 -25 -30" fill="none" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-15 -30 Q-10 -40 0 -35" fill="none" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- 코와 입 -->
+      <path d="M-22 -20 L-18 -20 L-20 -15 Z" fill="#e74c3c"/>
+      <path d="M-20 -15 Q-25 -10 -30 -15 M-20 -15 Q-15 -10 -10 -15" fill="none" stroke="#2c3e50" stroke-width="2"/>
+      
+      <!-- 수염 -->
+      <path d="M-30 -20 L-50 -25 M-30 -15 L-55 -15 M-30 -10 L-45 -5" stroke="#fff" stroke-width="1.5"/>
+      <path d="M-10 -20 L10 -25 M-10 -15 L15 -15 M-10 -10 L5 -5" stroke="#fff" stroke-width="1.5"/>
+      
+      <!-- 목에 두른 붉은 비단 목도리 (왕이 내린 하사품) -->
+      <path d="M-50 -10 Q-20 10 10 -10" fill="none" stroke="#c0392b" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="-20" cy="0" r="6" fill="#f1c40f"/> <!-- 금방울 장식 -->
+    </g>
+    
+    <!-- 밥상 위에 놓인 은수저와 찢어진 고기 조각 (숙종이 직접 먹임) -->
+    <g transform="translate(110, 230)">
+      <path d="M-30 20 L20 -10 M20 -10 C30 -15 40 -5 30 5 L-20 30 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      <!-- 고기 조각 -->
+      <path d="M25 -2 C30 5 20 8 15 2 Z" fill="#a93226"/>
+    </g>
+    
+  </g>
+</svg>

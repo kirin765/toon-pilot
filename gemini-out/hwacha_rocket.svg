@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="hwacha_rocket">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="270" rx="120" ry="20" fill="#2c3e50" opacity="0.4"/>
+    
+    <!-- 수레 바퀴 (우측면 위주로 보이게 배치) -->
+    <g transform="translate(140, 220)">
+      <circle cx="0" cy="0" r="50" fill="none" stroke="#5c2e0b" stroke-width="12"/>
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#8b4513" stroke-width="10"/>
+      <circle cx="0" cy="0" r="10" fill="#3e2723"/>
+      <!-- 바퀴살 -->
+      <line x1="0" y1="-50" x2="0" y2="50" stroke="#5c2e0b" stroke-width="6"/>
+      <line x1="-50" y1="0" x2="50" y2="0" stroke="#5c2e0b" stroke-width="6"/>
+      <line x1="-35" y1="-35" x2="35" y2="35" stroke="#5c2e0b" stroke-width="6"/>
+      <line x1="-35" y1="35" x2="35" y2="-35" stroke="#5c2e0b" stroke-width="6"/>
+    </g>
+    
+    <g transform="translate(260, 200) scale(0.8)">
+      <circle cx="0" cy="0" r="50" fill="none" stroke="#5c2e0b" stroke-width="12"/>
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#8b4513" stroke-width="10"/>
+      <circle cx="0" cy="0" r="10" fill="#3e2723"/>
+      <line x1="0" y1="-50" x2="0" y2="50" stroke="#5c2e0b" stroke-width="6"/>
+      <line x1="-50" y1="0" x2="50" y2="0" stroke="#5c2e0b" stroke-width="6"/>
+      <line x1="-35" y1="-35" x2="35" y2="35" stroke="#5c2e0b" stroke-width="6"/>
+      <line x1="-35" y1="35" x2="35" y2="-35" stroke="#5c2e0b" stroke-width="6"/>
+    </g>
+    
+    <!-- 수레 몸통 / 발사대 지지대 -->
+    <path d="M100 180 L280 150 L300 180 L120 210 Z" fill="#8b4513"/>
+    
+    <!-- 신기전 발사 틀 (벌집 모양의 나무 상자) -->
+    <g transform="translate(180, 100) rotate(20)">
+      <path d="M-60 -60 L60 -60 L60 60 L-60 60 Z" fill="#5c2e0b"/>
+      <path d="M-60 -60 L60 -60 L60 60 L-60 60 Z" fill="none" stroke="#3e2723" stroke-width="4"/>
+      
+      <!-- 구멍 격자선 (총통기) -->
+      <path d="M-30 -60 L-30 60 M0 -60 L0 60 M30 -60 L30 60" stroke="#3e2723" stroke-width="2"/>
+      <path d="M-60 -30 L60 -30 M-60 0 L60 0 M-60 30 L60 30" stroke="#3e2723" stroke-width="2"/>
+      
+      <!-- 구멍과 튀어나온 화살(신기전) 묘사 -->
+      <circle cx="-45" cy="-45" r="8" fill="#1a252f"/>
+      <circle cx="-15" cy="-45" r="8" fill="#1a252f"/>
+      <circle cx="15" cy="-45" r="8" fill="#1a252f"/>
+      <circle cx="45" cy="-45" r="8" fill="#1a252f"/>
+      
+      <!-- 가운데 몇 개는 로켓이 발사되거나 장전된 상태 묘사 -->
+      <!-- 화약통 및 화살 -->
+      <circle cx="-15" cy="-15" r="10" fill="#2c3e50"/>
+      <path d="M-15 -15 L-60 -100" stroke="#d4ac0d" stroke-width="4" stroke-linecap="round"/>
+      <polygon points="-65,-100 -55,-100 -60,-115" fill="#7f8c8d"/> <!-- 화살촉 -->
+      
+      <circle cx="15" cy="-15" r="10" fill="#2c3e50"/>
+      <path d="M15 -15 L-30 -100" stroke="#d4ac0d" stroke-width="4" stroke-linecap="round"/>
+      <polygon points="-35,-100 -25,-100 -30,-115" fill="#7f8c8d"/>
+      
+      <circle cx="-45" cy="15" r="8" fill="#1a252f"/>
+      <circle cx="45" cy="15" r="8" fill="#1a252f"/>
+      <circle cx="-15" cy="45" r="8" fill="#1a252f"/>
+      <circle cx="15" cy="45" r="8" fill="#1a252f"/>
+    </g>
+    
+    <!-- 도화선 불꽃 묘사 -->
+    <path d="M130 180 Q100 160 110 130" fill="none" stroke="#f5b041" stroke-width="3"/>
+    <circle cx="110" cy="130" r="5" fill="#e74c3c"/>
+    <circle cx="110" cy="130" r="3" fill="#f1c40f"/>
+    
+    <!-- 발사되는 로켓의 궤적(연기) -->
+    <path d="M80 50 Q40 0 -20 20" fill="none" stroke="#ecf0f1" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+    <!-- 날아가는 신기전 1발 -->
+    <path d="M20 20 L-40 -40" stroke="#d4ac0d" stroke-width="4" stroke-linecap="round"/>
+    <polygon points="-45,-35 -35,-45 -50,-50" fill="#7f8c8d"/>
+    <circle cx="10" cy="10" r="8" fill="#2c3e50"/>
+    <!-- 화약 분출 불꽃 -->
+    <polygon points="10,10 30,30 20,40" fill="#e67e22"/>
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="feces_water_bowl">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="240" rx="90" ry="20" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 투박한 뚝배기나 막사발 (어두운 황토색) -->
+    <!-- 사발 몸통 -->
+    <path d="M120 150 C120 230 280 230 280 150 Z" fill="#8b4513"/>
+    <!-- 사발 거친 질감 (투박한 느낌) -->
+    <path d="M140 180 Q170 200 200 190 Q230 180 260 200" fill="none" stroke="#5c2e0b" stroke-width="3" opacity="0.5"/>
+    <path d="M130 160 Q160 170 190 155 Q220 140 270 170" fill="none" stroke="#5c2e0b" stroke-width="2" opacity="0.4"/>
+    
+    <!-- 굽 -->
+    <path d="M170 215 L230 215 L220 225 L180 225 Z" fill="#5c2e0b"/>
+    
+    <!-- 사발 입구 (전) -->
+    <ellipse cx="200" cy="150" rx="80" ry="20" fill="#8b4513"/>
+    <ellipse cx="200" cy="150" rx="72" ry="16" fill="#5c2e0b"/>
+    
+    <!-- 담겨있는 오물/탁한 물 (어두운 녹갈색) -->
+    <ellipse cx="200" cy="153" rx="65" ry="12" fill="#4a5320"/>
+    
+    <!-- 떠 있는 이물질 / 건더기 묘사 -->
+    <circle cx="170" cy="150" r="4" fill="#3e2723"/>
+    <circle cx="180" cy="155" r="3" fill="#2e1a10"/>
+    <circle cx="220" cy="148" r="5" fill="#5d4037"/>
+    <circle cx="230" cy="156" r="3" fill="#3e2723"/>
+    <ellipse cx="195" cy="149" rx="6" ry="3" fill="#4e342e"/>
+    
+    <!-- 탁한 거품이나 진흙 느낌 -->
+    <circle cx="160" cy="157" r="2" fill="#827717" opacity="0.6"/>
+    <circle cx="210" cy="160" r="3" fill="#827717" opacity="0.6"/>
+    <circle cx="240" cy="153" r="2" fill="#827717" opacity="0.6"/>
+    
+    <!-- 사발 밖으로 흘러내린 오물 자국 -->
+    <path d="M160 165 Q160 185 155 195" fill="none" stroke="#4a5320" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="154" cy="200" r="2" fill="#4a5320"/>
+    
+    <!-- 악취를 상징하는 꼬불꼬불한 선 -->
+    <path d="M180 130 Q170 100 190 70 Q210 40 180 10" fill="none" stroke="#7cb342" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <path d="M220 130 Q240 90 210 50" fill="none" stroke="#7cb342" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+  </g>
+</svg>

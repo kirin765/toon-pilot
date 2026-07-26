@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="sayak_bowl">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="250" rx="90" ry="20" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 어둡고 묵직한 질감의 사발 (검은빛 흑요석 혹은 거친 옹기 느낌) -->
+    <!-- 사발 하단 -->
+    <path d="M110 160 C110 240 290 240 290 160 Z" fill="#2c3e50"/>
+    <path d="M120 160 C120 230 280 230 280 160 Z" fill="#34495e"/>
+    
+    <!-- 사발 굽 -->
+    <path d="M160 235 L240 235 L230 250 L170 250 Z" fill="#1a252f"/>
+    
+    <!-- 으스스한 장식 무늬 (왕이 내리는 죽음의 상징성) -->
+    <path d="M140 200 Q200 220 260 200" fill="none" stroke="#7f8c8d" stroke-width="2"/>
+    <circle cx="200" cy="210" r="4" fill="#c0392b" opacity="0.8"/> <!-- 작은 핏빛 포인트 -->
+    
+    <!-- 사발 입구 (전) -->
+    <ellipse cx="200" cy="160" rx="90" ry="20" fill="#1a252f"/>
+    <ellipse cx="200" cy="160" rx="83" ry="16" fill="#2c3e50"/>
+    
+    <!-- 검붉고 탁한 사약 (탕약) -->
+    <ellipse cx="200" cy="162" rx="78" ry="14" fill="#4a2311"/> <!-- 짙은 고동색/검붉은색 -->
+    <ellipse cx="200" cy="163" rx="70" ry="12" fill="#2a0a00"/> <!-- 깊이감을 위한 어두운 중심 -->
+    
+    <!-- 독약의 기운을 나타내는 탁한 거품과 소용돌이 -->
+    <path d="M160 160 Q180 150 210 165 T250 160" fill="none" stroke="#7e5109" stroke-width="2"/>
+    <circle cx="180" cy="158" r="3" fill="#8e44ad" opacity="0.5"/> <!-- 독을 암시하는 보랏빛 거품 -->
+    <circle cx="220" cy="165" r="4" fill="#8e44ad" opacity="0.4"/>
+    <circle cx="230" cy="155" r="2.5" fill="#c0392b" opacity="0.6"/>
+    
+    <!-- 불길하고 탁한 연기/기운 (뜨겁게 달여낸 독약) -->
+    <path d="M170 150 Q150 100 180 50" fill="none" stroke="#7f8c8d" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+    <path d="M210 150 Q240 90 200 40" fill="none" stroke="#9b59b6" stroke-width="5" stroke-linecap="round" opacity="0.3"/> <!-- 보랏빛 섞인 독기 -->
+    
+    <!-- 왕의 어명을 뜻하는 봉서(명령서)가 놓인 모습 (사약 옆에 떨어진) -->
+    <g transform="translate(60, 190) rotate(-20)">
+      <rect x="0" y="0" width="100" height="40" fill="#f5eec8" stroke="#d4c68d" stroke-width="2"/>
+      <path d="M10 10 L90 10 M10 20 L70 20 M10 30 L80 30" stroke="#17202a" stroke-width="3" stroke-linecap="round"/>
+      <!-- 어보(옥새) 붉은 도장 자국 -->
+      <rect x="70" y="15" width="20" height="20" fill="#e74c3c" opacity="0.8"/>
+    </g>
+  </g>
+</svg>

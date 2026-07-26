@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="spy_dagger_and_footprints">
+    <!-- 체탐인: 만주 벌판의 눈밭, 첩보원의 족적과 흑색 단검 -->
+    
+    <!-- 눈 내리는 차갑고 척박한 북방의 밤 (만주 벌판) -->
+    <rect width="400" height="300" fill="#1a252f"/>
+    <!-- 쌓인 눈 둔덕 -->
+    <path d="M0 250 Q100 220 200 260 T400 230 L400 300 L0 300 Z" fill="#ecf0f1"/>
+    <path d="M0 200 Q150 180 250 220 T400 190 L400 300 L0 300 Z" fill="#bdc3c7" opacity="0.5"/>
+    
+    <!-- 흩날리는 눈보라 -->
+    <circle cx="50" cy="50" r="3" fill="#fff" opacity="0.8"/>
+    <circle cx="150" cy="80" r="2" fill="#fff" opacity="0.6"/>
+    <circle cx="250" cy="40" r="4" fill="#fff" opacity="0.9"/>
+    <circle cx="350" cy="100" r="2" fill="#fff" opacity="0.7"/>
+    <circle cx="100" cy="150" r="3" fill="#fff" opacity="0.5"/>
+    <circle cx="300" cy="180" r="4" fill="#fff" opacity="0.8"/>
+    
+    <!-- 눈밭에 남겨진 은밀한 발자국 (체탐인이 적진에 잠입하며 남긴 흔적) -->
+    <!-- 발자국 1 (먼 곳) -->
+    <g transform="translate(150, 180) rotate(15) scale(0.6)">
+      <ellipse cx="0" cy="-10" rx="15" ry="25" fill="#7f8c8d"/>
+      <ellipse cx="0" cy="25" rx="12" ry="15" fill="#7f8c8d"/>
+    </g>
+    <!-- 발자국 2 -->
+    <g transform="translate(220, 220) rotate(5) scale(0.8)">
+      <ellipse cx="0" cy="-10" rx="15" ry="25" fill="#7f8c8d"/>
+      <ellipse cx="0" cy="25" rx="12" ry="15" fill="#7f8c8d"/>
+    </g>
+    <!-- 발자국 3 (가까운 곳) -->
+    <g transform="translate(130, 270) rotate(-10)">
+      <ellipse cx="0" cy="-10" rx="15" ry="25" fill="#95a5a6"/>
+      <ellipse cx="0" cy="25" rx="12" ry="15" fill="#95a5a6"/>
+    </g>
+    
+    <!-- 눈밭에 반쯤 파묻힌 체탐인의 무기 (빛이 반사되지 않게 검게 칠한 흑색 단검) -->
+    <g transform="translate(280, 250) rotate(-60)">
+      <!-- 눈에 꽂힌 칼날 -->
+      <polygon points="-40,-5 10,-8 30,0 10,8 -40,5" fill="#2c3e50" stroke="#111" stroke-width="2"/>
+      <path d="M-40 0 L30 0" stroke="#111" stroke-width="2"/> <!-- 중앙 혈조 -->
+      <!-- 거친 가죽으로 감은 손잡이 -->
+      <rect x="-80" y="-8" width="40" height="16" rx="2" fill="#873600"/>
+      <path d="M-80 -8 L-70 8 M-70 -8 L-60 8 M-60 -8 L-50 8 M-50 -8 L-40 8" stroke="#333" stroke-width="2"/> <!-- 가죽 끈 묶은 패턴 -->
+      <!-- 코등이 무광 처리 -->
+      <rect x="-44" y="-15" width="6" height="30" rx="2" fill="#111"/>
+    </g>
+    
+    <!-- 바람에 날려 온 적(여진족)의 붉은 깃발 찢어진 조각 -->
+    <path d="M220 280 Q250 260 270 290" fill="none" stroke="#c0392b" stroke-width="10" stroke-linecap="round"/>
+    
+  </g>
+</svg>

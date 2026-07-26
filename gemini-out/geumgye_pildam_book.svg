@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="geumgye_pildam_book">
+    <!-- 조선판 로미오와 줄리엣의 헛된 전설을 담은 야담집 '금계필담'과 슬픈 동굴의 상징 -->
+    
+    <!-- 어둡고 차가운 동굴 바닥 배경 -->
+    <rect width="400" height="300" fill="#17202a"/>
+    <ellipse cx="200" cy="220" rx="140" ry="40" fill="#212f3d"/>
+    
+    <!-- 벽면에 비친 두 연인의 슬픈 실루엣 (야사의 낭만적 상상력) -->
+    <path d="M 120 180 C 120 100 180 50 160 180 Z" fill="#2c3e50" opacity="0.6"/> <!-- 남자 실루엣 -->
+    <path d="M 280 180 C 280 120 230 70 240 180 Z" fill="#2c3e50" opacity="0.6"/> <!-- 여자 실루엣 -->
+    <!-- 맞잡은 두 손의 그림자 -->
+    <circle cx="200" cy="140" r="15" fill="#2c3e50" opacity="0.6"/>
+    
+    <!-- 바닥에 버려진 호화로운 공주의 머리장식 (신분을 버린 사랑 암시) -->
+    <g transform="translate(100, 240) rotate(-20)">
+      <circle cx="0" cy="0" r="12" fill="#c0392b"/> <!-- 붉은 보석 -->
+      <path d="M -15 0 L 15 0 M 0 -15 L 0 15 M -10 -10 L 10 10 M -10 10 L 10 -10" stroke="#f1c40f" stroke-width="4"/> <!-- 금장식 -->
+      <!-- 끊어진 진주 목걸이 알맹이들 -->
+      <circle cx="25" cy="15" r="4" fill="#fff"/>
+      <circle cx="35" cy="5" r="4" fill="#fff"/>
+      <circle cx="40" cy="20" r="4" fill="#fff"/>
+    </g>
+    
+    <!-- 가짜 로맨스 전설이 적힌 야담집 '금계필담' 책 -->
+    <g transform="translate(200, 230) rotate(10)">
+      <polygon points="-80,0 60,-20 80,10 -60,30" fill="#111" opacity="0.5"/> <!-- 그림자 -->
+      
+      <!-- 책 뒷표지 -->
+      <polygon points="-75,-5 65,-25 75,5 -65,25" fill="#fdf2e9" stroke="#d5cba8" stroke-width="2"/>
+      <!-- 겹겹이 쌓인 한지 책장 -->
+      <polygon points="-70,-10 70,-30 75,5 -65,25" fill="#fae5d3" stroke="#e59866" stroke-width="1"/>
+      <polygon points="-65,-15 75,-35 75,5 -65,25" fill="#f5cba7" stroke="#dc7633" stroke-width="1"/>
+      
+      <!-- 낡은 푸른색 표지 (조선 시대 고서적) -->
+      <polygon points="-60,-20 80,-40 75,5 -65,25" fill="#2874a6" stroke="#1b4f72" stroke-width="2"/>
+      
+      <!-- 책을 묶은 붉은 실 (오침안정법) -->
+      <line x1="72" y1="-30" x2="68" y2="-5" stroke="#e74c3c" stroke-width="3"/>
+      <line x1="42" y1="-25" x2="38" y2="0" stroke="#e74c3c" stroke-width="3"/>
+      <line x1="12" y1="-20" x2="8" y2="5" stroke="#e74c3c" stroke-width="3"/>
+      <line x1="-18" y1="-15" x2="-22" y2="10" stroke="#e74c3c" stroke-width="3"/>
+      <line x1="-48" y1="-10" x2="-52" y2="15" stroke="#e74c3c" stroke-width="3"/>
+      
+      <!-- 책 제목표 (금계필담) -->
+      <polygon points="-40,-15 -20,-18 -25,12 -45,15" fill="#fcf3cf" stroke="#111" stroke-width="1"/>
+      <!-- 제목 글씨 흉내 (세로쓰기) -->
+      <path d="M-35,-10 L-25,-12 M-36,-2 L-26,-4 M-37,6 L-27,4" stroke="#17202a" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    
+  </g>
+</svg>

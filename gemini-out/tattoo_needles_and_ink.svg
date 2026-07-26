@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="tattoo_needles_and_ink">
+    <!-- 자자형(문신 형벌): 죄수의 얼굴에 글씨를 새기는 끔찍한 바늘 뭉치와 시커먼 먹물 그릇 -->
+    
+    <!-- 어둡고 거친 관아의 형틀 바닥 배경 -->
+    <rect width="400" height="300" fill="#3e2723"/>
+    <!-- 피가 튄 핏자국 배경 -->
+    <circle cx="250" cy="220" r="40" fill="#c0392b" opacity="0.3" filter="blur(5px)"/>
+    
+    <!-- 바닥에 놓인 시커먼 먹물 그릇 (도자기 사발) -->
+    <g transform="translate(140, 200)">
+      <!-- 사발 외부 -->
+      <path d="M-50 0 C-60 40 60 40 50 0 Z" fill="#795548" stroke="#4e342e" stroke-width="3"/>
+      <!-- 사발 내부 (어두움) -->
+      <ellipse cx="0" cy="0" rx="50" ry="15" fill="#1c2833" stroke="#4e342e" stroke-width="2"/>
+      
+      <!-- 그릇 안에 찰랑거리는 짙은 먹물 (그리고 약간의 피 섞임) -->
+      <ellipse cx="0" cy="5" rx="42" ry="10" fill="#111" opacity="0.9"/>
+      <ellipse cx="10" cy="7" rx="15" ry="4" fill="#c0392b" opacity="0.4"/> <!-- 피가 살짝 섞인 느낌 -->
+      <!-- 먹물이 밖으로 흘러넘친 자국 -->
+      <path d="M20 12 L30 35 L45 40" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="50" cy="45" r="4" fill="#111"/>
+    </g>
+    
+    <!-- 살갗을 찌르는 무시무시한 형구 (여러 개의 바늘이 묶인 붓/바늘 뭉치) -->
+    <g transform="translate(240, 130) rotate(-35)">
+      <!-- 손잡이 막대 (나무) -->
+      <rect x="-10" y="-80" width="20" height="120" rx="4" fill="#8d6e63" stroke="#4e342e" stroke-width="3"/>
+      
+      <!-- 손잡이를 단단하게 묶은 삼베끈 칭칭 감은 묘사 -->
+      <path d="M-10 10 L10 15 M-10 20 L10 25 M-10 30 L10 35" stroke="#d4ac0d" stroke-width="3"/>
+      
+      <!-- 막대 끝에 촘촘하게 박힌 날카로운 쇠바늘 뭉치 -->
+      <path d="M-15 40 L15 40 L10 70 L-10 70 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      <!-- 개별 바늘들의 날카로운 끝부분 묘사 -->
+      <path d="M-8 70 L-8 95 M-3 70 L-3 100 M2 70 L2 98 M7 70 L7 92" stroke="#ecf0f1" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-8 70 L-8 95 M-3 70 L-3 100 M2 70 L2 98 M7 70 L7 92" stroke="#7f8c8d" stroke-width="1" stroke-linecap="round"/>
+      
+      <!-- 바늘 끝에 묻어 있는 먹물과 붉은 피 -->
+      <circle cx="-3" cy="100" r="3" fill="#111"/>
+      <circle cx="2" cy="98" r="2" fill="#c0392b"/>
+      <circle cx="2" cy="85" r="2" fill="#c0392b" opacity="0.8"/>
+      
+      <!-- 허공에서 바닥으로 떨어지는 먹물/핏방울 -->
+      <path d="M-3 110 L-3 130" stroke="#111" stroke-width="2" stroke-dasharray="5 5" opacity="0.7"/>
+      <circle cx="-3" cy="140" r="3" fill="#111" opacity="0.8"/>
+    </g>
+    
+    <!-- 찢어진 죄수복(흰옷 조각)이 피와 먹물에 오염되어 바닥에 뒹구는 모습 -->
+    <path d="M30 220 Q50 180 90 200 Q120 230 70 260 Z" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" opacity="0.6"/>
+    <!-- 옷 조각 위의 '도(盜)' 글씨 흔적 (자자형의 죄명) -->
+    <path d="M50 210 L60 210 M55 205 L55 215 M50 220 L65 220 M52 230 Q58 225 65 235" stroke="#111" stroke-width="3" fill="none" opacity="0.8"/>
+    <circle cx="55" cy="225" r="6" fill="#c0392b" opacity="0.5"/> <!-- 글씨 위에 번진 피 -->
+    
+  </g>
+</svg>

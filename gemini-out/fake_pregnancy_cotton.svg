@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="fake_pregnancy_cotton">
+    <!-- 명종 시절 이열의 대담한 가짜 임신 사기극: 들통난 솜뭉치 -->
+    
+    <!-- 화려하지만 차가운 궁궐 안방 바닥 -->
+    <rect width="400" height="300" fill="#7b241c"/>
+    <polygon points="0,150 400,100 400,300 0,300" fill="#641e16"/>
+    
+    <!-- 사기극에 쓰였던 화려한 비단 이불 (진실이 밝혀지며 젖혀짐) -->
+    <path d="M20 280 C50 150 200 120 300 180 C350 210 380 280 400 300 L20 300 Z" fill="#148f77" stroke="#0e6251" stroke-width="3"/>
+    <path d="M50 250 C100 180 150 170 250 220" fill="none" stroke="#f1c40f" stroke-width="2" stroke-dasharray="10 5"/> <!-- 화려한 금박 자수 흔적 -->
+    
+    <!-- 임신한 배를 위장하기 위해 배에 품고 있었던 더러운 솜뭉치들 (사기의 증거) -->
+    <g transform="translate(200, 200)">
+      <!-- 피 묻고 때 탄 누런 솜뭉치 1 -->
+      <path d="M-40 0 C-60 -20 -30 -50 0 -40 C30 -30 20 10 0 10 C-20 10 -30 20 -40 0 Z" fill="#fcf3cf" stroke="#d4ac0d" stroke-width="1"/>
+      <!-- 때 탄 얼룩 -->
+      <circle cx="-15" cy="-15" r="8" fill="#d4ac0d" opacity="0.4"/>
+      
+      <!-- 솜뭉치 2 (크게 찢어짐) -->
+      <path d="M10 -20 C30 -40 70 -30 50 0 C30 30 0 20 10 -20 Z" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="1"/>
+      <circle cx="35" cy="-5" r="10" fill="#a6acaf" opacity="0.3"/>
+      
+      <!-- 솜뭉치 3 -->
+      <path d="M-10 20 C-30 40 -10 60 20 40 C50 20 20 0 -10 20 Z" fill="#fae5d3" stroke="#e59866" stroke-width="1"/>
+      
+      <!-- 사기극이 들통나며 솜을 동여맸던 거친 삼베 끈이 끊어짐 -->
+      <path d="M-80 -30 Q-40 -10 -20 -30 Q20 -60 60 -10" fill="none" stroke="#a04000" stroke-width="4" stroke-dasharray="8 4"/>
+      <path d="M-30 30 Q10 50 40 20" fill="none" stroke="#a04000" stroke-width="4"/>
+    </g>
+    
+    <!-- 거짓 임신으로 뜯어낸 화려한 궁중 약사발 (나뒹구는 모습) -->
+    <g transform="translate(100, 150) rotate(-45)">
+      <!-- 엎어진 백자 은장식 사발 -->
+      <path d="M-30 0 C-30 -20 30 -20 30 0 C20 30 -20 30 -30 0 Z" fill="#f8f9f9" stroke="#bdc3c7" stroke-width="2"/>
+      <path d="M-30 0 C-30 10 30 10 30 0" fill="none" stroke="#bdc3c7" stroke-width="2"/>
+      <!-- 바닥에 흘러내린 값비싼 보약 (헛된 낭비) -->
+      <path d="M0 10 Q20 50 60 40 Q80 30 40 10 Z" fill="#5c3a21" opacity="0.8"/>
+    </g>
+    
+  </g>
+</svg>

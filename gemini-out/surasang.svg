@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="surasang">
+    <!-- 원반 (상) -->
+    <ellipse cx="200" cy="180" rx="160" ry="70" fill="#a02c2c" stroke="#333" stroke-width="4" />
+    <path d="M 40 180 v 20 c 0 38.6 71.6 70 160 70 s 160 -31.4 160 -70 v -20" fill="#7a1f1f" stroke="#333" stroke-width="4" />
+    
+    <!-- 다리 -->
+    <path d="M 80 250 L 70 280 L 100 280 L 110 265" fill="#5c1616" stroke="#333" stroke-width="4" />
+    <path d="M 320 250 L 330 280 L 300 280 L 290 265" fill="#5c1616" stroke="#333" stroke-width="4" />
+
+    <!-- 놋그릇 (뒤쪽) -->
+    <g transform="translate(100, 140)">
+      <ellipse cx="0" cy="0" rx="20" ry="10" fill="#d4af37" stroke="#333" stroke-width="3" />
+      <path d="M -20 0 c 0 -15 10 -25 20 -25 s 20 10 20 25" fill="#e6c865" stroke="#333" stroke-width="3" />
+      <circle cx="0" cy="-25" r="4" fill="#d4af37" stroke="#333" stroke-width="3" />
+    </g>
+    <g transform="translate(150, 130)">
+      <ellipse cx="0" cy="0" rx="20" ry="10" fill="#d4af37" stroke="#333" stroke-width="3" />
+      <path d="M -20 0 c 0 -15 10 -25 20 -25 s 20 10 20 25" fill="#e6c865" stroke="#333" stroke-width="3" />
+      <circle cx="0" cy="-25" r="4" fill="#d4af37" stroke="#333" stroke-width="3" />
+    </g>
+    <g transform="translate(200, 125)">
+      <ellipse cx="0" cy="0" rx="20" ry="10" fill="#d4af37" stroke="#333" stroke-width="3" />
+      <path d="M -20 0 c 0 -15 10 -25 20 -25 s 20 10 20 25" fill="#e6c865" stroke="#333" stroke-width="3" />
+      <circle cx="0" cy="-25" r="4" fill="#d4af37" stroke="#333" stroke-width="3" />
+    </g>
+    <g transform="translate(250, 130)">
+      <ellipse cx="0" cy="0" rx="20" ry="10" fill="#d4af37" stroke="#333" stroke-width="3" />
+      <path d="M -20 0 c 0 -15 10 -25 20 -25 s 20 10 20 25" fill="#e6c865" stroke="#333" stroke-width="3" />
+      <circle cx="0" cy="-25" r="4" fill="#d4af37" stroke="#333" stroke-width="3" />
+    </g>
+    <g transform="translate(300, 140)">
+      <ellipse cx="0" cy="0" rx="20" ry="10" fill="#d4af37" stroke="#333" stroke-width="3" />
+      <path d="M -20 0 c 0 -15 10 -25 20 -25 s 20 10 20 25" fill="#e6c865" stroke="#333" stroke-width="3" />
+      <circle cx="0" cy="-25" r="4" fill="#d4af37" stroke="#333" stroke-width="3" />
+    </g>
+
+    <!-- 백자 그릇 (중간줄) -->
+    <g transform="translate(130, 165)">
+      <ellipse cx="0" cy="0" rx="22" ry="11" fill="#f0f0f0" stroke="#333" stroke-width="3" />
+      <path d="M -22 0 c 0 -16 11 -27 22 -27 s 22 11 22 27" fill="#ffffff" stroke="#333" stroke-width="3" />
+      <circle cx="0" cy="-27" r="4" fill="#e0e0e0" stroke="#333" stroke-width="3" />
+    </g>
+    <g transform="translate(200, 160)">
+      <ellipse cx="0" cy="0" rx="25" ry="12" fill="#f0f0f0" stroke="#333" stroke-width="3" />
+      <path d="M -25 0 c 0 -18 12 -30 25 -30 s 25 12 25 30" fill="#ffffff" stroke="#333" stroke-width="3" />
+      <circle cx="0" cy="-30" r="4" fill="#e0e0e0" stroke="#333" stroke-width="3" />
+    </g>
+    <g transform="translate(270, 165)">
+      <ellipse cx="0" cy="0" rx="22" ry="11" fill="#f0f0f0" stroke="#333" stroke-width="3" />
+      <path d="M -22 0 c 0 -16 11 -27 22 -27 s 22 11 22 27" fill="#ffffff" stroke="#333" stroke-width="3" />
+      <circle cx="0" cy="-27" r="4" fill="#e0e0e0" stroke="#333" stroke-width="3" />
+    </g>
+
+    <!-- 놋그릇 큰거 (앞줄) -->
+    <g transform="translate(160, 200)">
+      <ellipse cx="0" cy="0" rx="30" ry="15" fill="#d4af37" stroke="#333" stroke-width="3" />
+      <path d="M -30 0 c 0 -22 15 -35 30 -35 s 30 13 30 35" fill="#e6c865" stroke="#333" stroke-width="3" />
+      <circle cx="0" cy="-35" r="5" fill="#d4af37" stroke="#333" stroke-width="3" />
+    </g>
+    <g transform="translate(240, 200)">
+      <ellipse cx="0" cy="0" rx="30" ry="15" fill="#f0f0f0" stroke="#333" stroke-width="3" />
+      <path d="M -30 0 c 0 -22 15 -35 30 -35 s 30 13 30 35" fill="#ffffff" stroke="#333" stroke-width="3" />
+      <circle cx="0" cy="-35" r="5" fill="#e0e0e0" stroke="#333" stroke-width="3" />
+    </g>
+  </g>
+</svg>

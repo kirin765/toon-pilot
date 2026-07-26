@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="jokja_scroll">
+    <!-- 조선 시대 벽에 걸어두던 그림 족자 (Hanging Scroll) -->
+    
+    <!-- 따뜻한 실내 벽면 배경 -->
+    <rect width="400" height="300" fill="#fad7a1"/>
+    
+    <!-- 족자 전체 그룹 -->
+    <g transform="translate(200, 150)">
+      
+      <!-- 족자 뒤쪽 벽면 그림자 -->
+      <rect x="-70" y="-120" width="145" height="245" fill="#d35400" opacity="0.3"/>
+      
+      <!-- 족자 상단 반달 모양 나무 막대 (상축) -->
+      <rect x="-65" y="-130" width="130" height="10" rx="3" fill="#8b5a2b" stroke="#5c3a21" stroke-width="2"/>
+      
+      <!-- 벽에 거는 줄과 못 -->
+      <circle cx="0" cy="-145" r="4" fill="#5c3a21"/> <!-- 못 -->
+      <path d="M-40 -130 L0 -145 L40 -130" fill="none" stroke="#2c3e50" stroke-width="2"/> <!-- 끈 -->
+      
+      <!-- 족자 본체 (실크 비단으로 표구된 바탕) -->
+      <!-- 바깥쪽 표구 (어두운 녹색 비단) -->
+      <rect x="-75" y="-120" width="150" height="240" fill="#1e8449" stroke="#145a32" stroke-width="2"/>
+      <!-- 안쪽 표구 (밝은 베이지색 비단 테두리) -->
+      <rect x="-60" y="-100" width="120" height="200" fill="#f5cba7" stroke="#dc7633" stroke-width="2"/>
+      
+      <!-- 중앙의 화선지 (그림이 그려지는 흰 종이) -->
+      <rect x="-50" y="-80" width="100" height="160" fill="#fdfefe" stroke="#bdc3c7" stroke-width="1"/>
+      
+      <!-- 화선지 위의 그림 (산수화 묘사) -->
+      <g stroke="#2c3e50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- 원경의 높은 산봉우리들 -->
+        <path d="M-40 -50 L-20 -70 L0 -40 L20 -60 L40 -40" fill="none" opacity="0.6"/>
+        <path d="M-10 -70 L10 -50" fill="none" opacity="0.4"/>
+        
+        <!-- 중경의 폭포와 바위 -->
+        <path d="M-30 0 C-20 -20 10 -20 20 0" fill="none"/>
+        <path d="M20 0 C30 10 30 30 20 40" fill="none"/>
+        <path d="M-20 -20 L-20 20 M-15 -18 L-15 22 M-10 -15 L-10 25" stroke="#3498db" stroke-width="1.5" opacity="0.7"/> <!-- 폭포 -->
+        
+        <!-- 근경의 소나무 한 그루 -->
+        <path d="M30 70 C10 60 10 30 25 10" fill="none" stroke-width="3"/> <!-- 나무 기둥 -->
+        <!-- 소나무 가지와 잎 -->
+        <path d="M25 10 L10 5 M20 20 L5 25 M20 40 L5 45" fill="none"/>
+        <circle cx="10" cy="5" r="4" fill="#1e8449" opacity="0.8" stroke="none"/>
+        <circle cx="5" cy="25" r="4" fill="#1e8449" opacity="0.8" stroke="none"/>
+        <circle cx="5" cy="45" r="5" fill="#1e8449" opacity="0.8" stroke="none"/>
+        <circle cx="25" cy="0" r="5" fill="#1e8449" opacity="0.8" stroke="none"/>
+      </g>
+      
+      <!-- 화가의 붉은 낙관 (도장) -->
+      <rect x="-40" y="60" width="8" height="8" fill="#e74c3c"/>
+      <rect x="-40" y="50" width="8" height="8" fill="#e74c3c" opacity="0.8"/>
+      
+      <!-- 족자 하단의 둥글고 두꺼운 나무 롤러 (하축) -->
+      <!-- 양쪽 끝에 옥 장식 (축두) 튀어나옴 -->
+      <rect x="-85" y="115" width="10" height="15" rx="3" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/> <!-- 왼쪽 축두 -->
+      <rect x="75" y="115" width="10" height="15" rx="3" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/> <!-- 오른쪽 축두 -->
+      <rect x="-75" y="110" width="150" height="20" rx="5" fill="#8b5a2b" stroke="#5c3a21" stroke-width="2"/>
+      
+      <!-- 하단 롤러의 입체감을 위한 그림자 라인 -->
+      <line x1="-70" y1="125" x2="70" y2="125" stroke="#5c3a21" stroke-width="2" opacity="0.5"/>
+      
+    </g>
+  </g>
+</svg>

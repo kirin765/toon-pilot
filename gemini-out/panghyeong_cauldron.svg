@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="panghyeong_cauldron">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="270" rx="130" ry="20" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 차가운/불기 없는 화덕 (아궁이) -->
+    <path d="M80 200 L320 200 L340 270 L60 270 Z" fill="#7f8c8d"/>
+    <path d="M100 200 L300 200 L310 270 L90 270 Z" fill="#95a5a6"/>
+    <!-- 아궁이 입구 (불이 꺼져있어 차갑고 어두움) -->
+    <path d="M150 270 Q200 220 250 270 Z" fill="#2c3e50"/>
+    <!-- 불이 안 땐 흔적 (장작 몇 개만 덩그러니 놓임) -->
+    <path d="M170 265 L220 255" stroke="#5c2e0b" stroke-width="8" stroke-linecap="round"/>
+    <path d="M180 250 L230 265" stroke="#3e2723" stroke-width="6" stroke-linecap="round"/>
+    
+    <!-- 거대한 무쇠 가마솥 (불기가 없어 차가운 철의 질감) -->
+    <path d="M50 140 C50 220 350 220 350 140 Z" fill="#2c3e50"/>
+    <path d="M70 140 C70 210 330 210 330 140 Z" fill="#34495e"/>
+    
+    <!-- 솥 입구 전 (테두리) -->
+    <ellipse cx="200" cy="140" rx="150" ry="25" fill="#1a252f"/>
+    <ellipse cx="200" cy="140" rx="140" ry="20" fill="#2c3e50"/>
+    
+    <!-- 솥 내부 (물이 비어있거나 미지근한 물 약간) -->
+    <ellipse cx="200" cy="143" rx="130" ry="16" fill="#17202a"/> <!-- 깊고 어두운 빈 공간 -->
+    
+    <!-- 명예형(사회적 사형)을 상징하는 죄인의 명패/호패가 솥 안에 버려진 모습 -->
+    <g transform="translate(180, 130) rotate(15)">
+      <!-- 나무 호패 -->
+      <rect x="0" y="0" width="30" height="70" rx="3" fill="#d35400" stroke="#873600" stroke-width="2"/>
+      <circle cx="15" cy="10" r="3" fill="#2c3e50"/> <!-- 줄 매는 구멍 -->
+      <line x1="15" y1="20" x2="15" y2="60" stroke="#17202a" stroke-width="3"/> <!-- 붉은 선이 그어진 이름(사회적 죽음) -->
+      <line x1="5" y1="25" x2="25" y2="55" stroke="#c0392b" stroke-width="4"/> <!-- 엑스표 (죽음을 상징) -->
+      <line x1="25" y1="25" x2="5" y2="55" stroke="#c0392b" stroke-width="4"/>
+    </g>
+    
+    <!-- 솥뚜껑이 비스듬히 열려있는 모습 (명예형 퍼포먼스 후 닫히기 직전) -->
+    <g transform="translate(130, 40) rotate(-10)">
+      <path d="M0 80 Q100 0 200 80" fill="#34495e" stroke="#1a252f" stroke-width="5"/>
+      <path d="M10 78 Q100 10 190 78" fill="#7f8c8d"/> <!-- 뚜껑 윗면 반사광 -->
+      <!-- 뚜껑 손잡이 -->
+      <rect x="85" y="10" width="30" height="20" fill="#2c3e50"/>
+      <circle cx="100" cy="10" r="15" fill="#1a252f"/>
+    </g>
+  </g>
+</svg>

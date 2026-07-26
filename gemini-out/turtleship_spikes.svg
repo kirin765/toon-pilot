@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="turtleship_spikes">
+    <!-- 바닥 그림자 (배의 지붕 위라고 가정) -->
+    <ellipse cx="200" cy="270" rx="140" ry="25" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 두꺼운 나무 송판 (개판, 목재 지붕) -->
+    <path d="M40 230 Q200 210 360 230 L380 270 Q200 290 20 270 Z" fill="#8b4513"/>
+    <path d="M40 230 Q200 210 360 230 L380 270 Q200 290 20 270 Z" fill="none" stroke="#5c2e0b" stroke-width="4"/>
+    
+    <!-- 나무 결 무늬 -->
+    <path d="M50 240 Q200 220 350 240" fill="none" stroke="#5c2e0b" stroke-width="2" opacity="0.6"/>
+    <path d="M30 250 Q200 230 370 250" fill="none" stroke="#5c2e0b" stroke-width="3" opacity="0.5"/>
+    <path d="M25 260 Q200 250 375 260" fill="none" stroke="#5c2e0b" stroke-width="2" opacity="0.6"/>
+    
+    <!-- 쇠못/쇠송곳 (왜군이 올라타지 못하게 촘촘히 꽂은 방어 무기) -->
+    <!-- 하나의 못 그룹을 정의하고 배치 -->
+    <g id="spike" transform="translate(200, 240)">
+      <!-- 못이 박힌 밑동 (나무에 박힌 금속 테두리) -->
+      <ellipse cx="0" cy="0" rx="12" ry="4" fill="#34495e"/>
+      <ellipse cx="0" cy="0" rx="8" ry="3" fill="#1a252f"/>
+      <!-- 뾰족한 칼날 / 송곳 -->
+      <path d="M-5 0 L0 -80 L5 0 Z" fill="#7f8c8d"/>
+      <path d="M0 0 L0 -80 L5 0 Z" fill="#bdc3c7"/> <!-- 하이라이트 -->
+      <!-- 핏자국 (전투의 흔적) -->
+      <path d="M0 -70 L2 -60 L0 -50 Z" fill="#c0392b" opacity="0.8"/>
+    </g>
+    
+    <!-- 중앙 열 송곳 -->
+    <use href="#spike" x="-80" y="-10"/>
+    <use href="#spike" x="0" y="-15"/>
+    <use href="#spike" x="80" y="-10"/>
+    
+    <!-- 앞 열 송곳 (약간 크고 낮게) -->
+    <g transform="scale(1.2) translate(-33, 33)">
+      <use href="#spike" x="-60" y="5"/>
+      <use href="#spike" x="20" y="5"/>
+      <use href="#spike" x="100" y="5"/>
+    </g>
+    
+    <!-- 뒤 열 송곳 (작고 높게) -->
+    <g transform="scale(0.8) translate(50, -40)">
+      <use href="#spike" x="-120" y="-20"/>
+      <use href="#spike" x="-40" y="-25"/>
+      <use href="#spike" x="40" y="-25"/>
+      <use href="#spike" x="120" y="-20"/>
+    </g>
+    
+    <!-- 주변에 꽂힌 화살이나 부러진 창날 (전투의 치열함 묘사) -->
+    <path d="M250 100 L280 230" stroke="#a0522d" stroke-width="4" stroke-linecap="round"/>
+    <path d="M250 100 L240 90 M250 100 L260 90" stroke="#f1c40f" stroke-width="3"/> <!-- 화살깃 -->
+    
+    <path d="M90 120 L130 240" stroke="#a0522d" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 5"/>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="deungrong_lantern">
+    <!-- 조선의 어두운 밤을 밝히는 청사초롱 (Traditional Korean Lantern) -->
+    
+    <!-- 어두운 밤하늘 배경 -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    <circle cx="300" cy="50" r="2" fill="#fdfefe" opacity="0.8"/>
+    <circle cx="350" cy="80" r="1.5" fill="#fdfefe" opacity="0.6"/>
+    <circle cx="280" cy="120" r="2.5" fill="#fdfefe" opacity="0.9"/>
+    
+    <!-- 초롱에서 뿜어져 나오는 따뜻한 빛 번짐 효과 -->
+    <circle cx="200" cy="150" r="100" fill="#f1c40f" opacity="0.3" filter="blur(15px)"/>
+    <circle cx="200" cy="150" r="150" fill="#f39c12" opacity="0.1" filter="blur(20px)"/>
+    
+    <!-- 누군가 들고 있는 긴 나무 손잡이 (초롱대) -->
+    <path d="M120 280 L180 80" stroke="#8b5a2b" stroke-width="6" stroke-linecap="round"/>
+    <path d="M120 280 L180 80" stroke="#5c3a21" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    
+    <!-- 손잡이 끝에서 초롱을 매달고 있는 장식 고리와 줄 -->
+    <path d="M180 80 Q190 70 200 80" fill="none" stroke="#f1c40f" stroke-width="4" stroke-linecap="round"/>
+    <line x1="200" y1="80" x2="200" y2="100" stroke="#f39c12" stroke-width="3"/>
+    
+    <!-- 청사초롱 본체 (Red and Blue Silk Lantern) -->
+    <g transform="translate(200, 150)">
+      
+      <!-- 위쪽 붉은색 비단 (홍사) -->
+      <path d="M-40 -50 L40 -50 L50 0 L-50 0 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+      
+      <!-- 아래쪽 푸른색 비단 (청사) -->
+      <path d="M-50 0 L50 0 L40 50 L-40 50 Z" fill="#2980b9" stroke="#1f618d" stroke-width="2"/>
+      
+      <!-- 비단 주름 묘사 (수직선) -->
+      <!-- 빨간 부분 주름 -->
+      <line x1="-20" y1="-50" x2="-25" y2="0" stroke="#c0392b" stroke-width="2" opacity="0.5"/>
+      <line x1="0" y1="-50" x2="0" y2="0" stroke="#c0392b" stroke-width="2" opacity="0.5"/>
+      <line x1="20" y1="-50" x2="25" y2="0" stroke="#c0392b" stroke-width="2" opacity="0.5"/>
+      <!-- 파란 부분 주름 -->
+      <line x1="-25" y1="0" x2="-20" y2="50" stroke="#1f618d" stroke-width="2" opacity="0.5"/>
+      <line x1="0" y1="0" x2="0" y2="50" stroke="#1f618d" stroke-width="2" opacity="0.5"/>
+      <line x1="25" y1="0" x2="20" y2="50" stroke="#1f618d" stroke-width="2" opacity="0.5"/>
+      
+      <!-- 초롱의 뼈대를 이루는 나무/대나무 테두리 -->
+      <!-- 상단 테두리 -->
+      <ellipse cx="0" cy="-50" rx="40" ry="10" fill="#f39c12" stroke="#b9770e" stroke-width="3"/>
+      <!-- 중앙 이음새 (빨강과 파랑의 경계) -->
+      <ellipse cx="0" cy="0" rx="50" ry="12" fill="none" stroke="#f1c40f" stroke-width="4"/>
+      <!-- 하단 테두리 -->
+      <ellipse cx="0" cy="50" rx="40" ry="10" fill="#f39c12" stroke="#b9770e" stroke-width="3"/>
+      
+      <!-- 상단 환기구 겸 고리 연결부 (금속 캡) -->
+      <path d="M-15 -55 C-15 -70 15 -70 15 -55 Z" fill="#d4ac0d" stroke="#b9770e" stroke-width="2"/>
+      
+      <!-- 내부에서 타오르는 촛불 (비단을 투과하여 비치는 빛) -->
+      <!-- 비단 위에 덧그려 은은하게 빛나는 효과를 줌 -->
+      <ellipse cx="0" cy="10" rx="15" ry="30" fill="#fdfefe" opacity="0.6" filter="blur(4px)"/>
+      <ellipse cx="0" cy="5" rx="8" ry="15" fill="#f1c40f" opacity="0.9" filter="blur(2px)"/>
+      
+    </g>
+    
+    <!-- 하단에 매달린 바람에 흩날리는 붉은 술 장식 -->
+    <g transform="translate(200, 200)">
+      <!-- 술을 묶은 금색 장식 -->
+      <circle cx="0" cy="5" r="4" fill="#f1c40f"/>
+      <!-- 붉은 실 가닥들 -->
+      <path d="M-3 8 C-10 20 -15 40 -5 50 M0 8 C-2 20 2 40 0 50 M3 8 C10 20 15 40 5 50" fill="none" stroke="#e74c3c" stroke-width="2"/>
+    </g>
+    
+  </g>
+</svg>

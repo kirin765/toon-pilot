@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="hwaro_brazier">
+    <!-- 겨울철 방 안의 따뜻한 온기: 조선 시대 화로 (Brazier) -->
+    
+    <!-- 방 안의 은은한 한지 바닥 배경 -->
+    <rect width="400" height="300" fill="#f9e79f"/>
+    <!-- 병풍 배경 실루엣 -->
+    <path d="M0 100 L400 100" stroke="#d4ac0d" stroke-width="2" opacity="0.5"/>
+    <path d="M100 0 L100 300 M300 0 L300 300" stroke="#d4ac0d" stroke-width="2" opacity="0.3"/>
+    
+    <!-- 화로 바닥 그림자 -->
+    <ellipse cx="200" cy="240" rx="80" ry="20" fill="#d4ac0d" opacity="0.7"/>
+    
+    <!-- 놋쇠(또는 무쇠)로 만든 둥근 화로 본체 -->
+    <g transform="translate(200, 180)">
+      <!-- 화로의 둥글고 넓은 배 -->
+      <path d="M-90 -10 C-110 50 -70 60 -50 60 L50 60 C70 60 110 50 90 -10 Z" fill="#b9770e" stroke="#7e5109" stroke-width="4"/>
+      <!-- 황동 특유의 은은한 금속 광택 -->
+      <path d="M-80 0 C-90 30 -50 40 -30 40" fill="none" stroke="#f1c40f" stroke-width="8" opacity="0.4" stroke-linecap="round"/>
+      <path d="M80 0 C90 30 50 40 30 40" fill="none" stroke="#f1c40f" stroke-width="5" opacity="0.2" stroke-linecap="round"/>
+      
+      <!-- 화로 다리 (짐승의 발 모양 장식, 세 개의 다리 중 앞의 두 개) -->
+      <!-- 왼쪽 다리 -->
+      <path d="M-50 50 C-60 70 -50 80 -60 80 C-40 80 -40 70 -30 60 Z" fill="#9c640c" stroke="#7e5109" stroke-width="2"/>
+      <!-- 오른쪽 다리 -->
+      <path d="M50 50 C60 70 50 80 60 80 C40 80 40 70 30 60 Z" fill="#9c640c" stroke="#7e5109" stroke-width="2"/>
+      
+      <!-- 화로 양옆의 둥근 고리 손잡이 -->
+      <ellipse cx="-90" cy="20" rx="8" ry="15" fill="none" stroke="#9c640c" stroke-width="4"/>
+      <circle cx="-90" cy="5" r="5" fill="#7e5109"/> <!-- 고리 연결부 -->
+      <ellipse cx="90" cy="20" rx="8" ry="15" fill="none" stroke="#9c640c" stroke-width="4"/>
+      <circle cx="90" cy="5" r="5" fill="#7e5109"/>
+      
+      <!-- 화로 윗면 전 (테두리 챙) -->
+      <ellipse cx="0" cy="-10" rx="100" ry="25" fill="#d4ac0d" stroke="#7e5109" stroke-width="4"/>
+      <!-- 화로 안쪽 (재가 담긴 부분) -->
+      <ellipse cx="0" cy="-10" rx="80" ry="18" fill="#7f8c8d"/>
+      <!-- 부드러운 하얀 재 -->
+      <ellipse cx="0" cy="-10" rx="75" ry="15" fill="#d0d3d4" opacity="0.8"/>
+      
+      <!-- 재 속에 묻혀 붉게 타오르는 참숯 -->
+      <g transform="translate(0, -12)">
+        <path d="M-20 -5 C-10 -15 10 -15 20 -5 C30 10 -30 10 -20 -5 Z" fill="#111"/> <!-- 숯 덩어리 -->
+        <circle cx="-10" cy="2" r="6" fill="#e74c3c" filter="blur(2px)"/>
+        <circle cx="5" cy="-2" r="8" fill="#e74c3c" filter="blur(2px)"/>
+        <circle cx="15" cy="5" r="5" fill="#f39c12" filter="blur(1px)"/>
+        <!-- 타오르는 숯의 붉은 균열무늬 -->
+        <path d="M-15 0 L-5 -5 M5 -2 L15 2" stroke="#f1c40f" stroke-width="2"/>
+      </g>
+      
+      <!-- 구워 먹기 위해 재 위에 올려둔 밤 군밤 -->
+      <path d="M-40 0 C-45 -10 -30 -15 -25 -5 C-20 5 -35 10 -40 0 Z" fill="#5c3a21" stroke="#3e2723" stroke-width="2"/>
+      <path d="M-30 -10 L-35 -12" stroke="#f1c40f" stroke-width="2"/> <!-- 군밤 터진 틈 -->
+      
+      <path d="M30 -5 C25 -15 40 -20 45 -10 C50 0 35 5 30 -5 Z" fill="#5c3a21" stroke="#3e2723" stroke-width="2"/>
+      
+      <!-- 부지깽이 (재를 뒤적이는 철제 막대) - 화로에 비스듬히 걸쳐진 모습 -->
+      <path d="M50 10 L80 -60" stroke="#34495e" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="80" cy="-60" r="4" fill="#111"/> <!-- 손잡이 끝 -->
+    </g>
+    
+    <!-- 따뜻한 아지랑이/온기 효과 (물결 모양 선) -->
+    <path d="M180 140 Q170 110 180 80 M220 140 Q230 110 220 80 M195 130 Q205 100 195 70" fill="none" stroke="#e74c3c" stroke-width="4" opacity="0.3" stroke-linecap="round">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+  </g>
+</svg>

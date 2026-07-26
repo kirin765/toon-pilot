@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="broken_brush_and_book">
+    <!-- 정조의 문체반정과 이옥: 부러진 붓과 금지된 소설책(패관소품) -->
+    
+    <!-- 어둡고 차가운 바닥 (유배/군역의 분위기) -->
+    <rect width="400" height="300" fill="#212f3c"/>
+    <ellipse cx="200" cy="200" rx="150" ry="60" fill="#17202a" opacity="0.6"/>
+    
+    <!-- 정조가 금지한 명청 시대의 유행 소설책 뭉치 (패관잡기) -->
+    <g transform="translate(140, 180) rotate(-15)">
+      <!-- 맨 아래 책 -->
+      <polygon points="-60,-30 40,-40 50,20 -50,30" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      <polygon points="-60,-25 40,-35 48,22 -52,32" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1"/>
+      
+      <!-- 맨 위 펼쳐진 책 (이옥이 쓴 파격적인 문체의 글) -->
+      <polygon points="-50,-50 30,-40 40,10 -40,0" fill="#fdf2e9" stroke="#d5c8a0" stroke-width="2"/>
+      <!-- 소설체 문장 묘사 (가볍고 리듬감 있는 흘림체 형태) -->
+      <path d="M-30 -35 L10 -30 M-25 -25 L0 -20 M-20 -15 L20 -10 M-15 -5 L5 0" stroke="#34495e" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- 책에 묻은 먹물 얼룩 (탄압의 흔적) -->
+      <circle cx="-10" cy="-10" r="15" fill="#111" opacity="0.8" filter="blur(2px)"/>
+      <circle cx="-5" cy="5" r="5" fill="#111" opacity="0.7"/>
+    </g>
+    
+    <!-- 권력(정조)에 의해 강제로 부러진 천재 문장가의 붓 -->
+    <g transform="translate(240, 200)">
+      <!-- 붓대 앞부분 (붓모 포함) -->
+      <g transform="translate(-40, 20) rotate(-45)">
+        <rect x="-30" y="-4" width="30" height="8" fill="#d35400" stroke="#a04000" stroke-width="1"/>
+        <!-- 거칠게 뭉개진 붓모 -->
+        <path d="M-30 -4 Q-50 -10 -55 0 Q-50 10 -30 4 Z" fill="#111"/>
+        <path d="M0 -4 L0 4" stroke="#a04000" stroke-width="2"/>
+      </g>
+      
+      <!-- 부러져 나뒹구는 붓대 뒷부분 -->
+      <g transform="translate(30, -30) rotate(20)">
+        <rect x="0" y="-4" width="60" height="8" fill="#d35400" stroke="#a04000" stroke-width="1"/>
+        <!-- 부러진 단면 묘사 -->
+        <path d="M0 -4 L-5 -2 L2 0 L-4 2 L0 4" fill="none" stroke="#f39c12" stroke-width="1.5"/>
+      </g>
+      
+      <!-- 튀어 나간 대나무 파편들 -->
+      <path d="M10 -10 L20 -15 M-10 10 L-20 20" stroke="#f39c12" stroke-width="2"/>
+    </g>
+    
+    <!-- 바닥에 어지럽게 튄 먹물 방울들 (억압된 창작욕) -->
+    <circle cx="280" cy="240" r="4" fill="#111"/>
+    <circle cx="300" cy="220" r="2" fill="#111"/>
+    <circle cx="220" cy="260" r="6" fill="#111"/>
+    <circle cx="240" cy="270" r="3" fill="#111"/>
+    
+  </g>
+</svg>

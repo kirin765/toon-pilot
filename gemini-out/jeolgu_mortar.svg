@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="jeolgu_mortar">
+    <!-- 한국 전통 절구와 절구공이 (곡식을 찧는 도구) -->
+    
+    <!-- 따뜻한 햇살이 비치는 시골집 마당 배경 -->
+    <rect width="400" height="300" fill="#f5b041"/>
+    <!-- 뒷배경 담장 실루엣 -->
+    <path d="M0 150 L400 150 M0 160 L400 160" stroke="#d4ac0d" stroke-width="4"/>
+    
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="260" rx="90" ry="25" fill="#d35400" opacity="0.6"/>
+    
+    <!-- 절구통 (통나무를 파서 만든 커다란 절구) -->
+    <g transform="translate(200, 200)">
+      <!-- 절구 외곽선 (위가 넓고 아래가 약간 좁은 원통형 나무통) -->
+      <path d="M-60 60 C-60 75 60 75 60 60 L80 -60 C80 -40 -80 -40 -80 -60 Z" fill="#8b5a2b" stroke="#5c3a21" stroke-width="4"/>
+      
+      <!-- 절구통의 깊게 파인 나무결 (세월의 흔적) -->
+      <path d="M-40 -50 Q-30 0 -30 50 M-10 -55 Q-5 10 -10 55 M20 -55 Q10 0 20 50 M40 -50 Q30 0 40 45" fill="none" stroke="#5c3a21" stroke-width="2" opacity="0.5"/>
+      <path d="M-50 -20 Q-60 0 -50 20 M50 -20 Q60 0 50 20" fill="none" stroke="#5c3a21" stroke-width="2" opacity="0.3"/>
+      
+      <!-- 절구를 단단하게 묶은 테두리 끈 (새끼줄 또는 쇠 테) -->
+      <path d="M-75 -30 C-20 -15 20 -15 75 -30" fill="none" stroke="#34495e" stroke-width="6"/>
+      <path d="M-65 30 C-20 40 20 40 65 30" fill="none" stroke="#34495e" stroke-width="6"/>
+      
+      <!-- 윗면 절구 구멍 (곡식을 넣는 움푹 파인 안쪽) -->
+      <ellipse cx="0" cy="-60" rx="80" ry="25" fill="#a0522d" stroke="#5c3a21" stroke-width="4"/>
+      <ellipse cx="0" cy="-60" rx="65" ry="15" fill="#5c3a21"/> <!-- 파인 내부 그림자 -->
+      
+      <!-- 절구 안에 담긴 찧어지는 하얀 쌀알(곡식) 가루들 -->
+      <ellipse cx="0" cy="-60" rx="55" ry="10" fill="#fdfefe" opacity="0.9"/>
+      <circle cx="-20" cy="-63" r="4" fill="#fdfefe"/>
+      <circle cx="10" cy="-55" r="5" fill="#fdfefe"/>
+      <circle cx="30" cy="-60" r="3" fill="#fdfefe"/>
+    </g>
+    
+    <!-- 절구공이 (절구질을 하는 무거운 막대) -->
+    <!-- 누군가 절구에 꽂아둔 채로 세워진 모습 -->
+    <g transform="translate(230, 80) rotate(15)">
+      <!-- 길고 묵직한 나무 공이 자루 -->
+      <!-- 가운데가 약간 잘록하여 손으로 잡기 편함 -->
+      <path d="M-15 -60 Q-10 -20 -10 20 Q-5 60 -15 100 L15 100 Q5 60 10 20 Q10 -20 15 -60 Z" fill="#d35400" stroke="#8b5a2b" stroke-width="4"/>
+      
+      <!-- 나무결 무늬 -->
+      <path d="M-5 -50 Q0 20 -5 90 M5 -40 Q0 30 5 80" fill="none" stroke="#8b5a2b" stroke-width="2" opacity="0.6"/>
+      
+      <!-- 위쪽 둥근 머리 부분 -->
+      <ellipse cx="0" cy="-60" rx="15" ry="5" fill="#e67e22" stroke="#8b5a2b" stroke-width="2"/>
+      <!-- 아랫부분 (곡식을 찧는 단단하고 둥근 밑동) -->
+      <ellipse cx="0" cy="100" rx="15" ry="8" fill="#a04000" stroke="#8b5a2b" stroke-width="2"/>
+    </g>
+    
+    <!-- 흩날리는 하얀 쌀가루 이펙트 (역동성) -->
+    <circle cx="150" cy="120" r="2" fill="#fdfefe" opacity="0.8"/>
+    <circle cx="130" cy="140" r="3" fill="#fdfefe" opacity="0.6"/>
+    <circle cx="180" cy="110" r="1.5" fill="#fdfefe" opacity="0.7"/>
+    <circle cx="280" cy="130" r="2" fill="#fdfefe" opacity="0.9"/>
+    
+  </g>
+</svg>

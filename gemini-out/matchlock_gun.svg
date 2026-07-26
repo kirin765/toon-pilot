@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="matchlock_gun">
+    <!-- 임진왜란 때 사야가(김충선)가 조선에 전수해 준 '조총(화승총)' -->
+    
+    <!-- 배경 은은한 연기 (화약 연기) -->
+    <path d="M50 200 Q150 100 350 150" fill="none" stroke="#bdc3c7" stroke-width="40" stroke-linecap="round" opacity="0.2"/>
+    <path d="M100 250 Q250 150 300 200" fill="none" stroke="#95a5a6" stroke-width="30" stroke-linecap="round" opacity="0.2"/>
+    
+    <!-- 비스듬히 놓인 조총 본체 -->
+    <g transform="translate(200, 150) rotate(-15)">
+      <!-- 나무 개머리판 및 몸통 (곡선형의 일본/조선식 조총 형태) -->
+      <path d="M-160 -10 C-180 -10 -190 10 -190 30 C-190 40 -160 40 -150 30 L-10 10 L80 10 L80 -10 Z" fill="#8b4513" stroke="#5c2e0b" stroke-width="2"/>
+      <!-- 나무 결 무늬 -->
+      <path d="M-180 20 Q-150 20 -100 0 L0 0" fill="none" stroke="#5c2e0b" stroke-width="2"/>
+      
+      <!-- 철제 총신 (길고 둥근 쇠파이프 부분) -->
+      <rect x="-10" y="-12" width="180" height="8" rx="2" fill="#7f8c8d" stroke="#34495e" stroke-width="2"/>
+      <!-- 총구 끝부분 (약간 굵어짐) -->
+      <rect x="160" y="-14" width="15" height="12" rx="2" fill="#95a5a6" stroke="#34495e" stroke-width="2"/>
+      
+      <!-- 총신을 나무 몸통에 고정하는 쇠 테두리들 -->
+      <rect x="20" y="-12" width="6" height="24" fill="#f1c40f" stroke="#b9770e" stroke-width="1"/>
+      <rect x="80" y="-12" width="6" height="24" fill="#f1c40f" stroke="#b9770e" stroke-width="1"/>
+      <rect x="140" y="-12" width="6" height="22" fill="#f1c40f" stroke="#b9770e" stroke-width="1"/>
+      
+      <!-- 화승(심지)을 물어 화약통에 점화하는 '용두' (방아쇠 기관) -->
+      <!-- 화약 접시와 커버 -->
+      <path d="M-30 -12 L-10 -12 L-10 -16 L-25 -16 Z" fill="#bdc3c7" stroke="#34495e" stroke-width="1.5"/>
+      <!-- 용두 (S자 모양 쇠장식, 심지를 물고 있음) -->
+      <path d="M-40 -12 C-50 -30 -30 -40 -20 -30 C-15 -25 -20 -20 -25 -20" fill="none" stroke="#7f8c8d" stroke-width="4" stroke-linecap="round"/>
+      
+      <!-- 불이 붙어 있는 화승(심지) -->
+      <path d="M-20 -30 Q0 -40 20 -30 Q40 -20 60 -40" fill="none" stroke="#e67e22" stroke-width="2" stroke-dasharray="4 2"/>
+      <!-- 심지 끝의 불꽃 -->
+      <circle cx="-25" cy="-20" r="4" fill="#f1c40f"/>
+      <path d="M-25 -20 Q-30 -25 -25 -30 Q-20 -25 -25 -20 Z" fill="#e74c3c"/>
+      
+      <!-- 방아쇠 (아래로 튀어나온 쇠붙이) -->
+      <path d="M-40 10 L-40 25 L-35 25 L-30 10 Z" fill="#7f8c8d" stroke="#34495e" stroke-width="1.5"/>
+      <!-- 방아쇠 울 (보호대) -->
+      <path d="M-50 10 C-50 35 -20 35 -20 10" fill="none" stroke="#7f8c8d" stroke-width="3"/>
+    </g>
+    
+    <!-- 귀화한 장수 사야가를 상징하는 소품들 -->
+    <!-- 조총 옆에 놓인 조선식 화살 2발 (두 나라의 무기가 합쳐져 조선을 지켰음을 의미) -->
+    <g transform="translate(180, 220) rotate(25)">
+      <!-- 화살대 -->
+      <line x1="-80" y1="0" x2="60" y2="0" stroke="#d4ac0d" stroke-width="4" stroke-linecap="round"/>
+      <line x1="-80" y1="15" x2="60" y2="15" stroke="#d4ac0d" stroke-width="4" stroke-linecap="round"/>
+      <!-- 화살 깃 (조선 특유의 꿩 깃털 무늬) -->
+      <polygon points="-80,0 -60,-10 -50,0" fill="#2c3e50"/>
+      <polygon points="-80,0 -60,10 -50,0" fill="#34495e"/>
+      <polygon points="-80,15 -60,5 -50,15" fill="#2c3e50"/>
+      <polygon points="-80,15 -60,25 -50,15" fill="#34495e"/>
+      <!-- 촉 -->
+      <polygon points="60,-4 75,0 60,4" fill="#7f8c8d"/>
+      <polygon points="60,11 75,15 60,19" fill="#7f8c8d"/>
+    </g>
+    
+    <!-- 총구 끝에서 피어오르는 작고 매운 화약 연기 -->
+    <circle cx="340" cy="115" r="10" fill="#ecf0f1" opacity="0.6"/>
+    <circle cx="355" cy="105" r="15" fill="#bdc3c7" opacity="0.4"/>
+    <circle cx="370" cy="90" r="20" fill="#95a5a6" opacity="0.2"/>
+  </g>
+</svg>

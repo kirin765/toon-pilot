@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="deer_antler_tiger">
+    <!-- 연산군의 기괴한 사파리: 창덕궁 후원의 사슴뿔과 호랑이 발자국 -->
+    
+    <!-- 궁궐 바닥이 흙과 풀밭으로 변해버린 모습 -->
+    <rect width="400" height="300" fill="#2e4053"/>
+    <ellipse cx="200" cy="150" rx="180" ry="80" fill="#212f3d"/>
+    
+    <!-- 무참히 잘려나간 사슴의 거대한 뿔 (무분별한 사냥의 희생) -->
+    <g transform="translate(200, 150) rotate(-15)">
+      <!-- 사슴뿔 메인 줄기 -->
+      <path d="M0 60 Q-20 0 20 -80" fill="none" stroke="#d5cba8" stroke-width="15" stroke-linecap="round"/>
+      <path d="M0 60 Q-20 0 20 -80" fill="none" stroke="#aab7b8" stroke-width="3" stroke-dasharray="10 5"/>
+      <!-- 가지 1 -->
+      <path d="M-10 20 Q-40 0 -60 10" fill="none" stroke="#d5cba8" stroke-width="10" stroke-linecap="round"/>
+      <!-- 가지 2 -->
+      <path d="M0 -30 Q-50 -40 -30 -90" fill="none" stroke="#d5cba8" stroke-width="8" stroke-linecap="round"/>
+      <!-- 가지 3 -->
+      <path d="M10 -50 Q40 -60 50 -100" fill="none" stroke="#d5cba8" stroke-width="6" stroke-linecap="round"/>
+      
+      <!-- 뿔 밑동의 선혈 (잔혹한 살육) -->
+      <path d="M-10 60 L10 60 Q0 80 -10 60 Z" fill="#c0392b"/>
+      <circle cx="-5" cy="70" r="3" fill="#c0392b"/>
+      <circle cx="5" cy="75" r="2" fill="#c0392b"/>
+    </g>
+    
+    <!-- 뿔 주변 바닥에 찍힌 거대한 호랑이 발자국 (궁궐 내의 비정상적 공포) -->
+    <!-- 호랑이 발자국 1 -->
+    <g transform="translate(100, 220) rotate(30)" fill="#17202a" opacity="0.8">
+      <ellipse cx="0" cy="0" rx="15" ry="12"/> <!-- 발바닥 중앙 -->
+      <circle cx="-20" cy="-15" r="6"/> <!-- 발가락 1 -->
+      <circle cx="-8" cy="-25" r="7"/> <!-- 발가락 2 -->
+      <circle cx="8" cy="-25" r="7"/> <!-- 발가락 3 -->
+      <circle cx="20" cy="-15" r="6"/> <!-- 발가락 4 -->
+    </g>
+    <!-- 호랑이 발자국 2 -->
+    <g transform="translate(280, 240) rotate(15)" fill="#17202a" opacity="0.8">
+      <ellipse cx="0" cy="0" rx="15" ry="12"/>
+      <circle cx="-20" cy="-15" r="6"/>
+      <circle cx="-8" cy="-25" r="7"/>
+      <circle cx="8" cy="-25" r="7"/>
+      <circle cx="20" cy="-15" r="6"/>
+    </g>
+    
+    <!-- 찢겨진 화려한 붉은 비단 조각 (궁궐의 상징이 야생성에 유린됨) -->
+    <path d="M120 120 Q150 140 180 110 L160 90 Z" fill="#e74c3c" opacity="0.7"/>
+    <path d="M140 120 Q160 100 170 120" fill="none" stroke="#f1c40f" stroke-width="2"/> <!-- 비단 금박 흔적 -->
+    
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="mangnani_sword">
+    <!-- 망나니 칼 (참수용 대검) -->
+    
+    <!-- 칼날 (크고 무겁고 투박한 철검) -->
+    <!-- 칼등 -->
+    <path d="M150 100 L350 50 L360 80 L140 130 Z" fill="#bdc3c7"/>
+    <!-- 칼날 (서슬 퍼런 부분) -->
+    <path d="M140 130 L360 80 L320 140 L130 150 Z" fill="#7f8c8d"/>
+    <!-- 날 끝의 예리함 -->
+    <path d="M130 150 L320 140 L300 145 L135 155 Z" fill="#ecf0f1"/>
+    
+    <!-- 칼날에 묻은 피 (섬뜩한 표현) -->
+    <path d="M280 110 L300 142 L320 105 Z" fill="#c0392b" opacity="0.8"/>
+    <path d="M220 120 L240 145 L250 115 Z" fill="#c0392b" opacity="0.8"/>
+    <circle cx="340" cy="90" r="4" fill="#c0392b"/>
+    <circle cx="200" cy="135" r="3" fill="#c0392b"/>
+    <circle cx="180" cy="145" r="5" fill="#c0392b"/>
+    <!-- 뚝뚝 떨어지는 핏방울 -->
+    <path d="M300 142 Q300 160 305 180" fill="none" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="305" cy="190" r="4" fill="#c0392b"/>
+    <path d="M240 145 Q240 155 235 165" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- 칼 코등이 (손보호대) -->
+    <rect x="120" y="90" width="30" height="70" fill="#34495e" transform="rotate(15 135 125)"/>
+    <rect x="125" y="95" width="20" height="60" fill="#2c3e50" transform="rotate(15 135 125)"/>
+    
+    <!-- 칼자루 (나무 손잡이) -->
+    <path d="M125 125 L40 150 L35 135 L120 110 Z" fill="#8b4513"/>
+    <!-- 자루를 감은 끈 (그립감) -->
+    <line x1="110" y1="112" x2="105" y2="132" stroke="#d2b48c" stroke-width="4"/>
+    <line x1="90" y1="118" x2="85" y2="138" stroke="#d2b48c" stroke-width="4"/>
+    <line x1="70" y1="124" x2="65" y2="144" stroke="#d2b48c" stroke-width="4"/>
+    <line x1="50" y1="130" x2="45" y2="150" stroke="#d2b48c" stroke-width="4"/>
+    
+    <!-- 칼자루 끝 장식 (폼멜) -->
+    <circle cx="35" cy="142" r="12" fill="#2c3e50"/>
+    
+    <!-- 막걸리를 뿜는 묘사 (망나니의 칼춤) -->
+    <path d="M100 200 Q150 150 200 180 Q250 210 300 150" fill="none" stroke="#fdf5e6" stroke-width="8" stroke-dasharray="10, 15" stroke-linecap="round" opacity="0.7"/>
+    <circle cx="160" cy="170" r="5" fill="#fdf5e6" opacity="0.8"/>
+    <circle cx="230" cy="160" r="6" fill="#fdf5e6" opacity="0.8"/>
+    <circle cx="270" cy="180" r="4" fill="#fdf5e6" opacity="0.8"/>
+  </g>
+</svg>

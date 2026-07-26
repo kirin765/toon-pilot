@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="exam_paper_and_money">
+    <!-- 과거 대리 시험: 거벽과 사수가 조작한 답안지(시관)와 매수용 돈 뭉치 (엽전 꾸러미) -->
+    
+    <!-- 화려하고 어두운 양반집 밀실 테이블 배경 -->
+    <rect width="400" height="300" fill="#5d4037"/>
+    <!-- 촛불 빛이 비추는 효과 -->
+    <ellipse cx="200" cy="150" rx="200" ry="120" fill="#8d6e63" opacity="0.6"/>
+    
+    <!-- 사수(명필)가 화려하게 대필한 과거 시험 답안지 (시권 試券) -->
+    <g transform="translate(180, 150) rotate(-5)">
+      <!-- 큼직하고 질 좋은 한지 -->
+      <rect x="-100" y="-120" width="200" height="240" fill="#fdf2e9" stroke="#d5c8a0" stroke-width="3"/>
+      <!-- 답안지를 접었던 세로 주름선 -->
+      <line x1="-50" y1="-120" x2="-50" y2="120" stroke="#d5c8a0" stroke-width="2"/>
+      <line x1="0" y1="-120" x2="0" y2="120" stroke="#d5c8a0" stroke-width="2"/>
+      <line x1="50" y1="-120" x2="50" y2="120" stroke="#d5c8a0" stroke-width="2"/>
+      
+      <!-- 오른쪽 상단: 가짜 수험생(권력자 자제)의 이름을 적은 부분 (붉은 선으로 가림) -->
+      <rect x="60" y="-100" width="30" height="40" fill="none" stroke="#e74c3c" stroke-width="2"/>
+      <line x1="60" y1="-80" x2="90" y2="-80" stroke="#e74c3c" stroke-width="1"/>
+      
+      <!-- 거벽(브레인)이 짓고 사수(명필)가 대필한 화려한 붓글씨 텍스트 (세로쓰기) -->
+      <g stroke="#1a252f" stroke-width="4" stroke-linecap="round">
+        <!-- 첫 번째 줄 -->
+        <path d="M30 -90 L30 -60 M20 -80 L40 -80 M25 -60 L35 -60 L30 -50"/>
+        <path d="M30 -20 Q40 0 20 20 M25 -10 L40 0"/>
+        <path d="M30 40 L30 80 M20 60 L40 50"/>
+        
+        <!-- 두 번째 줄 -->
+        <path d="M-20 -100 L-20 -80 M-30 -90 L-10 -90"/>
+        <path d="M-20 -50 Q-10 -30 -30 -10 M-25 -40 L-10 -50"/>
+        <path d="M-20 20 L-20 50 M-30 40 L-10 40 M-30 30 L-10 30"/>
+        <path d="M-20 80 L-20 100 M-25 80 Q-15 90 -25 100"/>
+        
+        <!-- 세 번째 줄 -->
+        <path d="M-70 -70 L-70 -40 M-80 -50 L-60 -50"/>
+        <path d="M-70 0 Q-60 20 -80 40 M-75 10 L-60 0"/>
+        <circle cx="-70" cy="70" r="10" fill="#e74c3c" stroke="none"/> <!-- 채점관이 뇌물을 받고 찍어준 장원급제 붉은 동그라미(비점) -->
+        <circle cx="-70" cy="70" r="15" fill="none" stroke="#e74c3c" stroke-width="2"/>
+      </g>
+    </g>
+    
+    <!-- 답안지와 교환된 거액의 돈 뭉치 (엽전 꾸러미 더미) -->
+    <g transform="translate(280, 220) rotate(10)">
+      <!-- 엽전 더미 배경 그림자 -->
+      <ellipse cx="0" cy="10" rx="60" ry="20" fill="#2c1e16" opacity="0.8"/>
+      
+      <!-- 두툼하게 엮인 엽전 꾸러미 1 -->
+      <rect x="-40" y="-30" width="80" height="20" rx="10" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+      <line x1="-30" y1="-30" x2="-30" y2="-10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="-20" y1="-30" x2="-20" y2="-10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="-10" y1="-30" x2="-10" y2="-10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="0" y1="-30" x2="0" y2="-10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="10" y1="-30" x2="10" y2="-10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="20" y1="-30" x2="20" y2="-10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="30" y1="-30" x2="30" y2="-10" stroke="#b9770e" stroke-width="2"/>
+      <path d="M-50 -20 L50 -20" stroke="#795548" stroke-width="4"/> <!-- 묶은 끈 -->
+      
+      <!-- 두툼하게 엮인 엽전 꾸러미 2 (아래쪽) -->
+      <rect x="-35" y="-10" width="80" height="20" rx="10" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+      <line x1="-25" y1="-10" x2="-25" y2="10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="-15" y1="-10" x2="-15" y2="10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="-5" y1="-10" x2="-5" y2="10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="5" y1="-10" x2="5" y2="10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="15" y1="-10" x2="15" y2="10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="25" y1="-10" x2="25" y2="10" stroke="#b9770e" stroke-width="2"/>
+      <line x1="35" y1="-10" x2="35" y2="10" stroke="#b9770e" stroke-width="2"/>
+      <path d="M-45 0 L45 0" stroke="#795548" stroke-width="4"/>
+      
+      <!-- 흩어진 금덩이(은병/마제은 흉내) 1~2개 -->
+      <path d="M30 20 Q40 10 50 20 Q60 30 50 40 Q30 40 30 20 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      <circle cx="45" cy="25" r="3" fill="#95a5a6"/>
+    </g>
+    
+  </g>
+</svg>

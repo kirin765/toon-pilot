@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="sotdae_pole">
+    <!-- 하늘과 땅을 연결하는 메신저: 나무로 깎아 만든 새가 앉아 있는 솟대 (Sotdae) -->
+    
+    <!-- 맑고 푸른 가을 하늘 배경 -->
+    <rect width="400" height="300" fill="#3498db"/>
+    <circle cx="80" cy="60" r="30" fill="#fdfefe" opacity="0.9"/> <!-- 태양 -->
+    
+    <!-- 구름 -->
+    <path d="M150 80 Q180 60 210 80 Q250 70 280 90 Q300 110 250 110 L150 110 Z" fill="#fdfefe" opacity="0.8"/>
+    <path d="M50 180 Q70 160 100 180 Q130 170 150 190 Q170 210 130 210 L50 210 Z" fill="#fdfefe" opacity="0.5"/>
+    
+    <!-- 하단 마을 어귀의 땅 -->
+    <path d="M0 260 Q200 240 400 270 L400 300 L0 300 Z" fill="#27ae60"/>
+    
+    <!-- 솟대 1 (가운데 가장 높은 솟대) -->
+    <g transform="translate(200, 270)">
+      <!-- 길게 뻗은 소나무 기둥 -->
+      <path d="M-5 0 L-2 -180 L2 -180 L5 0 Z" fill="#8b5a2b" stroke="#5c3a21" stroke-width="1"/>
+      
+      <!-- 꼭대기에 묶인 나무 새 (오리나 기러기 모양) -->
+      <g transform="translate(0, -180)">
+        <!-- 가로 나뭇가지 -->
+        <rect x="-15" y="0" width="30" height="4" fill="#a0522d"/>
+        
+        <!-- 나무로 깎은 새 조각 -->
+        <!-- 새의 둥근 몸통 -->
+        <ellipse cx="0" cy="-15" rx="20" ry="10" fill="#f5cba7" stroke="#b9770e" stroke-width="2"/>
+        <!-- 새의 꼬리 (위로 솟구침) -->
+        <path d="M-15 -15 L-35 -35 L-25 -10 Z" fill="#f5cba7" stroke="#b9770e" stroke-width="2"/>
+        <!-- 긴 목과 둥근 머리 (하늘을 향함) -->
+        <path d="M15 -15 L25 -40 L35 -40 L25 -10 Z" fill="#f5cba7" stroke="#b9770e" stroke-width="2"/>
+        <circle cx="30" cy="-40" r="6" fill="#f5cba7" stroke="#b9770e" stroke-width="2"/>
+        <!-- 부리 -->
+        <path d="M35 -40 L45 -45 L35 -35 Z" fill="#e67e22"/>
+        
+        <!-- 새를 나뭇가지에 묶은 끈 -->
+        <line x1="-5" y1="-5" x2="-5" y2="4" stroke="#111" stroke-width="2"/>
+        <line x1="5" y1="-5" x2="5" y2="4" stroke="#111" stroke-width="2"/>
+      </g>
+    </g>
+    
+    <!-- 솟대 2 (왼쪽 약간 낮은 솟대) -->
+    <g transform="translate(130, 265)">
+      <!-- 기둥 -->
+      <path d="M-4 0 L-2 -130 L2 -130 L4 0 Z" fill="#a0522d" stroke="#5c3a21" stroke-width="1"/>
+      
+      <!-- 꼭대기 새 (반대 방향을 바라봄) -->
+      <g transform="translate(0, -130) scale(-0.8, 0.8)">
+        <rect x="-12" y="0" width="24" height="4" fill="#a0522d"/>
+        <ellipse cx="0" cy="-12" rx="16" ry="8" fill="#e59866" stroke="#ba4a00" stroke-width="2"/>
+        <path d="M-12 -12 L-28 -28 L-20 -8 Z" fill="#e59866" stroke="#ba4a00" stroke-width="2"/>
+        <path d="M12 -12 L20 -32 L28 -32 L20 -8 Z" fill="#e59866" stroke="#ba4a00" stroke-width="2"/>
+        <circle cx="24" cy="-32" r="5" fill="#e59866" stroke="#ba4a00" stroke-width="2"/>
+        <path d="M28 -32 L36 -36 L28 -28 Z" fill="#d35400"/>
+        <line x1="0" y1="-4" x2="0" y2="4" stroke="#111" stroke-width="2"/>
+      </g>
+    </g>
+    
+    <!-- 솟대 3 (오른쪽 가장 낮고 얇은 솟대) -->
+    <g transform="translate(280, 275)">
+      <path d="M-3 0 L-1 -100 L1 -100 L3 0 Z" fill="#5c3a21"/>
+      <g transform="translate(0, -100) scale(0.7)">
+        <rect x="-12" y="0" width="24" height="4" fill="#a0522d"/>
+        <ellipse cx="0" cy="-12" rx="16" ry="8" fill="#fad7a1" stroke="#d4ac0d" stroke-width="2"/>
+        <path d="M-12 -12 L-28 -28 L-20 -8 Z" fill="#fad7a1" stroke="#d4ac0d" stroke-width="2"/>
+        <path d="M12 -12 L20 -32 L28 -32 L20 -8 Z" fill="#fad7a1" stroke="#d4ac0d" stroke-width="2"/>
+        <circle cx="24" cy="-32" r="5" fill="#fad7a1" stroke="#d4ac0d" stroke-width="2"/>
+        <path d="M28 -32 L36 -36 L28 -28 Z" fill="#e67e22"/>
+        <line x1="0" y1="-4" x2="0" y2="4" stroke="#111" stroke-width="2"/>
+      </g>
+    </g>
+    
+    <!-- 바람에 날리는 붉은 리본 (솟대 기둥에 매달림 - 풍년 기원) -->
+    <path d="M200 150 C230 140 210 120 250 110" fill="none" stroke="#c0392b" stroke-width="4"/>
+    <path d="M200 150 C180 170 230 180 200 200" fill="none" stroke="#c0392b" stroke-width="4"/>
+    
+  </g>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="joseon_hat_and_beard">
+    <!-- 박연(벨테브레)을 상징: 조선의 흑립(갓) 아래로 보이는 서양인의 푸른 눈과 금발 수염 -->
+    
+    <!-- 은은한 뒷배경 (조선의 푸른 밤하늘 또는 기와 그림자 느낌) -->
+    <circle cx="200" cy="150" r="110" fill="#2c3e50" opacity="0.2"/>
+    
+    <!-- 갓 (흑립) -->
+    <g transform="translate(200, 100)">
+      <!-- 갓 끈 (호박이나 옥장식 끈) -->
+      <path d="M-60 80 Q0 150 60 80" fill="none" stroke="#1abc9c" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="-30" cy="115" r="4" fill="#f1c40f"/>
+      <circle cx="30" cy="115" r="4" fill="#f1c40f"/>
+      
+      <!-- 갓의 양태 (둥글고 넓은 챙) - 대나무와 말총 재질 느낌의 검은색 반투명 -->
+      <ellipse cx="0" cy="0" rx="130" ry="25" fill="#17202a" opacity="0.9"/>
+      <!-- 양태의 질감 (얇은 가로선들) -->
+      <ellipse cx="0" cy="0" rx="120" ry="20" fill="none" stroke="#2c3e50" stroke-width="1"/>
+      <ellipse cx="0" cy="0" rx="100" ry="15" fill="none" stroke="#2c3e50" stroke-width="1"/>
+      
+      <!-- 갓의 대우 (위로 솟은 원통 부분) -->
+      <path d="M-40 -80 L40 -80 L50 0 L-50 0 Z" fill="#17202a" opacity="0.95"/>
+      <!-- 대우 윗부분 막음 -->
+      <ellipse cx="0" cy="-80" rx="40" ry="8" fill="#17202a"/>
+      
+      <!-- 말총 텍스처 (세로선) -->
+      <line x1="-30" y1="-80" x2="-35" y2="0" stroke="#2c3e50" stroke-width="1"/>
+      <line x1="-15" y1="-80" x2="-20" y2="0" stroke="#2c3e50" stroke-width="1"/>
+      <line x1="0" y1="-80" x2="0" y2="0" stroke="#2c3e50" stroke-width="1"/>
+      <line x1="15" y1="-80" x2="20" y2="0" stroke="#2c3e50" stroke-width="1"/>
+      <line x1="30" y1="-80" x2="35" y2="0" stroke="#2c3e50" stroke-width="1"/>
+      
+      <!-- 정자관/갓 아래 쓴 탕건 묘사 (이마 부분에 살짝 보이는 검은 그물망) -->
+      <path d="M-45 10 Q0 30 45 10" fill="none" stroke="#17202a" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    
+    <!-- 갓 아래로 드리워진 서양인의 얼굴 특징 (얼굴 윤곽은 생략하고 상징적인 눈과 수염만 묘사) -->
+    <g transform="translate(200, 150)">
+      <!-- 파란 눈동자 (서양인) -->
+      <!-- 왼쪽 눈 -->
+      <g transform="translate(-30, 0)">
+        <path d="M-15 0 Q0 -10 15 0 Q0 5 -15 0 Z" fill="#fdf2e9"/> <!-- 흰자 -->
+        <circle cx="0" cy="-2" r="5" fill="#3498db"/> <!-- 파란 홍채 -->
+        <circle cx="0" cy="-2" r="2" fill="#17202a"/> <!-- 동공 -->
+        <path d="M-15 -10 Q0 -15 15 -10" fill="none" stroke="#d35400" stroke-width="3"/> <!-- 금발 눈썹 -->
+      </g>
+      <!-- 오른쪽 눈 -->
+      <g transform="translate(30, 0)">
+        <path d="M-15 0 Q0 -10 15 0 Q0 5 -15 0 Z" fill="#fdf2e9"/>
+        <circle cx="0" cy="-2" r="5" fill="#3498db"/>
+        <circle cx="0" cy="-2" r="2" fill="#17202a"/>
+        <path d="M-15 -10 Q0 -15 15 -10" fill="none" stroke="#d35400" stroke-width="3"/>
+      </g>
+      
+      <!-- 콧수염과 턱수염 (조선 선비처럼 길렀으나 색깔이 노랗고 붉은 금발/오렌지색) -->
+      <!-- 풍성한 콧수염 -->
+      <path d="M-30 30 Q0 15 30 30 Q15 40 -30 30 Z" fill="#e67e22"/>
+      <path d="M-25 32 Q0 20 25 32" fill="none" stroke="#d35400" stroke-width="2"/>
+      
+      <!-- 가슴까지 길게 기른 턱수염 (네덜란드인 벨테브레의 상징) -->
+      <path d="M-40 40 Q-50 90 0 130 Q50 90 40 40 Q0 60 -40 40 Z" fill="#f39c12"/>
+      <!-- 수염 결 묘사 -->
+      <path d="M-20 45 Q-30 80 0 110" fill="none" stroke="#e67e22" stroke-width="2"/>
+      <path d="M0 50 Q0 90 10 120" fill="none" stroke="#e67e22" stroke-width="2"/>
+      <path d="M20 45 Q30 80 0 110" fill="none" stroke="#e67e22" stroke-width="2"/>
+      <path d="M-30 55 Q-20 70 -10 90" fill="none" stroke="#d35400" stroke-width="1.5"/>
+      <path d="M30 55 Q20 70 10 90" fill="none" stroke="#d35400" stroke-width="1.5"/>
+    </g>
+    
+  </g>
+</svg>

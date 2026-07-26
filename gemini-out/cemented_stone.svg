@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="cemented_stone">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="260" rx="130" ry="25" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 신라의 아름다운 석굴암 화강암 조각 (원래의 모습이 일부 드러남) -->
+    <!-- 뒤쪽 베이스 돌 -->
+    <path d="M60 230 C40 150 80 50 180 40 C280 30 350 120 330 220 C310 260 90 270 60 230 Z" fill="#bdc3c7"/>
+    <path d="M70 220 C55 155 90 65 180 55 C265 45 325 125 310 215 C295 245 100 255 70 220 Z" fill="#d5dbdb"/>
+    
+    <!-- 화강암 표면의 섬세한 정 조각 자국 (신라 장인의 솜씨) -->
+    <path d="M100 100 Q120 90 140 110 M150 80 Q170 70 190 90 M200 70 Q220 60 240 80" fill="none" stroke="#aeb6bf" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- 왼쪽 아래: 연꽃무늬나 옷주름 같은 섬세한 부조 흔적 -->
+    <path d="M90 180 Q110 160 130 190 Q150 170 170 200" fill="none" stroke="#95a5a6" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- 우측과 상단을 무식하게 덮어버린 일제의 회색 시멘트 떡칠 -->
+    <path d="M160 40 C280 20 370 100 340 220 C330 250 280 260 250 250 C230 220 270 150 220 120 C180 90 130 130 160 40 Z" fill="#7f8c8d"/>
+    <!-- 시멘트가 흘러내린 자국 (엉성한 땜질) -->
+    <path d="M220 120 Q200 150 210 180 T190 220" fill="none" stroke="#7f8c8d" stroke-width="20" stroke-linecap="round"/>
+    <path d="M260 150 Q240 180 250 230" fill="none" stroke="#7f8c8d" stroke-width="15" stroke-linecap="round"/>
+    
+    <!-- 시멘트 질감 (거칠고 탁한 점들) -->
+    <circle cx="280" cy="100" r="3" fill="#34495e"/>
+    <circle cx="310" cy="150" r="4" fill="#34495e"/>
+    <circle cx="250" cy="120" r="2" fill="#34495e"/>
+    <circle cx="290" cy="200" r="3.5" fill="#34495e"/>
+    
+    <!-- 결로 현상: 시멘트 틈새와 돌 표면에 맺히고 흐르는 물방울 (병든 석굴암) -->
+    <path d="M130 140 Q130 170 125 190" fill="none" stroke="#3498db" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+    <circle cx="125" cy="195" r="4" fill="#3498db" opacity="0.8"/>
+    
+    <path d="M180 160 Q185 190 180 220" fill="none" stroke="#3498db" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    <circle cx="180" cy="225" r="3" fill="#3498db" opacity="0.8"/>
+    
+    <!-- 썩어가는 이끼 (초록/갈색 곰팡이 반점들) -->
+    <path d="M140 220 C150 210 170 230 160 240 C145 245 130 230 140 220 Z" fill="#229954" opacity="0.6"/>
+    <path d="M90 200 C100 190 120 210 110 220 C95 225 80 210 90 200 Z" fill="#7d6608" opacity="0.5"/>
+    <circle cx="210" cy="240" r="8" fill="#1e8449" opacity="0.7"/>
+  </g>
+</svg>

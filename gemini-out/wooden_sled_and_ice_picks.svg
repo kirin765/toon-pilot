@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="wooden_sled_and_ice_picks">
+    <!-- 조선의 스피드 스케이팅 설마(썰매): 나무판자에 철사를 댄 썰매와 뾰족한 쇠꼬챙이 스틱 -->
+    
+    <!-- 꽁꽁 얼어붙은 푸른 한강(빙호) 배경 -->
+    <rect width="400" height="300" fill="#aed6f1"/>
+    <!-- 얼음판의 갈라진 금과 스케이트가 지나간 하얀 빙판 자국 -->
+    <path d="M0 100 L150 50 M150 50 L200 150 M200 150 L350 120 M350 120 L400 200" fill="none" stroke="#85c1e9" stroke-width="3" opacity="0.6"/>
+    <path d="M-20 200 Q200 150 420 280 M-20 220 Q200 170 420 300" fill="none" stroke="#fff" stroke-width="6" opacity="0.5"/> <!-- 스케이트 날 자국 -->
+    <path d="M50 250 Q150 220 250 260" fill="none" stroke="#fff" stroke-width="2" opacity="0.8"/>
+    
+    <!-- 얼음 위에 놓인 전통 썰매(설마) 1개 -->
+    <g transform="translate(180, 200) rotate(-15)">
+      <!-- 썰매 본체 (두꺼운 직사각형 나무판자) -->
+      <path d="M-60 -20 L60 -30 L70 10 L-50 20 Z" fill="#d35400" stroke="#a04000" stroke-width="3"/>
+      <!-- 나무판자의 윗면 덧댄 판자 디테일 -->
+      <path d="M-40 -15 L40 -25 M-30 0 L50 -10 M-20 15 L60 5" stroke="#a04000" stroke-width="2"/>
+      
+      <!-- 썰매 바닥(얼음에 닿는 부분)에 덧댄 철사/쇠날 (스케이트 날 역할) -->
+      <!-- 앞쪽 날 -->
+      <path d="M-50 20 L-60 30 L60 20 L70 10" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      <line x1="-55" y1="25" x2="65" y2="15" stroke="#fff" stroke-width="1"/> <!-- 날의 빛 반사 -->
+      
+      <!-- 썰매에 앉을 때 방석 역할을 하는 볏짚 무더기 -->
+      <ellipse cx="10" cy="-10" rx="30" ry="15" fill="#f4d03f" stroke="#d4ac0d" stroke-width="2" transform="rotate(10 10 -10)"/>
+      <path d="M-10 -15 Q10 -25 30 -10" fill="none" stroke="#d4ac0d" stroke-width="2"/>
+      <path d="M-5 -5 Q10 -15 25 0" fill="none" stroke="#d4ac0d" stroke-width="2"/>
+    </g>
+    
+    <!-- 양손에 쥐고 얼음을 지치는 뾰족한 쇠꼬챙이 (스틱) 2개 -->
+    <!-- 첫 번째 꼬챙이 (썰매 옆에 떨어짐) -->
+    <g transform="translate(280, 240) rotate(60)">
+      <!-- 나무 손잡이 -->
+      <rect x="-10" y="-40" width="20" height="40" rx="5" fill="#8d6e63" stroke="#5d4037" stroke-width="2"/>
+      <!-- 뾰족한 쇠창 부분 -->
+      <path d="M-4 -40 L0 -80 L4 -40 Z" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2"/>
+      <!-- 쇠꼬챙이가 얼음을 찍은 파편 자국 -->
+      <circle cx="0" cy="-85" r="4" fill="#fff" opacity="0.8"/>
+      <path d="M-10 -90 L10 -80" stroke="#fff" stroke-width="2"/>
+    </g>
+    
+    <!-- 두 번째 꼬챙이 (썰매 반대편 얼음에 박혀 있음) -->
+    <g transform="translate(80, 160) rotate(-40)">
+      <!-- 나무 손잡이 -->
+      <rect x="-10" y="-40" width="20" height="40" rx="5" fill="#8d6e63" stroke="#5d4037" stroke-width="2"/>
+      <!-- 뾰족한 쇠창 부분 (얼음에 반쯤 박혀서 안 보임) -->
+      <path d="M-4 -40 L0 -60 L4 -40 Z" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2"/>
+      
+      <!-- 얼음에 강하게 박혀서 깨진 얼음 파편들 -->
+      <path d="M-15 -60 Q0 -50 15 -60 Q5 -70 -15 -60 Z" fill="#ecf0f1" opacity="0.9"/>
+      <path d="M-20 -55 L-10 -65 M10 -65 L20 -55" stroke="#ecf0f1" stroke-width="3"/>
+    </g>
+    
+    <!-- 차가운 겨울바람 효과 -->
+    <path d="M50 80 Q100 60 150 80 Q200 100 250 70" fill="none" stroke="#fff" stroke-width="3" opacity="0.3"/>
+    
+  </g>
+</svg>

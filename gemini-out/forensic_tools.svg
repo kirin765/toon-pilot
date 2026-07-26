@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="forensic_tools">
+    <!-- 신주무원록(조선 과학수사) 검안 도구: 은비녀, 파뿌리, 식초병 -->
+    
+    <!-- 차가운 돗자리 또는 관청 바닥 배경 -->
+    <rect width="400" height="300" fill="#d5dbdb"/>
+    <g stroke="#b2babb" stroke-width="2" opacity="0.5">
+      <line x1="0" y1="50" x2="400" y2="50"/>
+      <line x1="0" y1="100" x2="400" y2="100"/>
+      <line x1="0" y1="150" x2="400" y2="150"/>
+      <line x1="0" y1="200" x2="400" y2="200"/>
+      <line x1="0" y1="250" x2="400" y2="250"/>
+      <line x1="50" y1="0" x2="50" y2="300"/>
+      <line x1="100" y1="0" x2="100" y2="300"/>
+      <line x1="150" y1="0" x2="150" y2="300"/>
+      <line x1="200" y1="0" x2="200" y2="300"/>
+      <line x1="250" y1="0" x2="250" y2="300"/>
+      <line x1="300" y1="0" x2="300" y2="300"/>
+      <line x1="350" y1="0" x2="350" y2="300"/>
+    </g>
+    
+    <!-- 식초를 담은 사기 병 (멍 자국을 드러내는 탁창법 용도) -->
+    <g transform="translate(100, 140)">
+      <ellipse cx="10" cy="50" rx="35" ry="15" fill="#95a5a6" opacity="0.6"/> <!-- 그림자 -->
+      
+      <!-- 백자 병 본체 -->
+      <path d="M-30 40 C-40 0 -20 -40 -10 -60 L10 -60 C20 -40 40 0 30 40 Z" fill="#fdfefe" stroke="#bdc3c7" stroke-width="3"/>
+      <!-- 병 주둥이 -->
+      <rect x="-15" y="-70" width="30" height="15" fill="#fdfefe" stroke="#bdc3c7" stroke-width="3" rx="2"/>
+      <ellipse cx="0" cy="-70" rx="15" ry="5" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+      <!-- 코르크/나무 마개 -->
+      <path d="M-10 -72 L10 -72 L5 -85 L-5 -85 Z" fill="#a67c52" stroke="#8b5a2b" stroke-width="2"/>
+      
+      <!-- 병 표면의 '초(醋)' 한자 (식초) -->
+      <rect x="-10" y="-10" width="20" height="25" fill="#c0392b" rx="2"/>
+      <path d="M-5 -2 L5 -2 M-5 2 L5 2 M-5 8 L5 8 M0 -5 L0 12" stroke="#fdfefe" stroke-width="1.5"/> <!-- 간략화된 글씨 -->
+    </g>
+    
+    <!-- 으깬 파뿌리와 파 줄기 (상처 부위에 덮는 용도) -->
+    <g transform="translate(230, 180) rotate(-20)">
+      <ellipse cx="0" cy="15" rx="50" ry="25" fill="#95a5a6" opacity="0.6"/> <!-- 그림자 -->
+      
+      <!-- 흰 대(파뿌리 쪽) -->
+      <path d="M-40 0 C-20 -15 20 -15 40 0 C20 15 -20 15 -40 0 Z" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+      
+      <!-- 녹색 파 잎 -->
+      <path d="M40 0 Q60 -20 90 -10 Q70 10 40 0" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+      <path d="M35 5 Q60 5 80 20 Q50 25 30 0" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+      <path d="M30 -5 Q50 -30 70 -30 Q60 -10 40 -5" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+      
+      <!-- 잔뿌리들 -->
+      <g stroke="#f5cba7" stroke-width="2" stroke-linecap="round">
+        <path d="M-40 0 Q-50 -10 -60 -5"/>
+        <path d="M-40 2 Q-55 0 -65 10"/>
+        <path d="M-38 -2 Q-45 -15 -50 -10"/>
+        <path d="M-38 4 Q-45 15 -55 20"/>
+        <path d="M-40 0 L-65 0"/>
+      </g>
+      
+      <!-- 으깨진 흔적 (상처에 바르기 위해) -->
+      <path d="M-20 -5 L-10 10 M0 -10 L10 5 M-10 -5 L0 10" stroke="#7f8c8d" stroke-width="1.5" opacity="0.5"/>
+    </g>
+    
+    <!-- 독살 확인용 은결(은비녀) - 끝부분이 독에 닿아 검게 변한 상태 -->
+    <g transform="translate(260, 100) rotate(40)">
+      <!-- 비녀 그림자 -->
+      <path d="M-80 15 L60 15 L60 25 L-80 25 Z" fill="#95a5a6" opacity="0.7"/>
+      
+      <!-- 긴 은비녀 막대 -->
+      <rect x="-80" y="-3" width="130" height="6" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5" rx="3"/>
+      <!-- 빛 반사 -->
+      <rect x="-75" y="-1" width="120" height="2" fill="#fdfefe"/>
+      
+      <!-- 비녀 머리 (용이나 장식 모양) -->
+      <circle cx="55" cy="0" r="10" fill="#bdc3c7" stroke="#95a5a6" stroke-width="2"/>
+      <path d="M50 -15 Q55 -25 65 -20 Q75 -15 65 0" fill="none" stroke="#bdc3c7" stroke-width="3" stroke-linecap="round"/>
+      <path d="M50 15 Q55 25 65 20 Q75 15 65 0" fill="none" stroke="#bdc3c7" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="55" cy="0" r="4" fill="#3498db"/> <!-- 푸른 보석 장식 -->
+      
+      <!-- 시신의 목구멍에 들어갔던 끝부분 (독 반응으로 검게 변한 은결) -->
+      <!-- 비소 등의 독과 반응해 까맣게 산화된 은 -->
+      <rect x="-80" y="-3" width="25" height="6" fill="#2c3e50" rx="3"/>
+      <!-- 그라데이션 대신 겹침 묘사 -->
+      <rect x="-55" y="-3" width="10" height="6" fill="#566573"/>
+      <rect x="-45" y="-3" width="10" height="6" fill="#7f8c8d"/>
+    </g>
+    
+    <!-- 바닥에 떨어진 붉은 핏자국 (살인 사건 현장의 분위기) -->
+    <circle cx="320" cy="240" r="8" fill="#922b21" opacity="0.8"/>
+    <circle cx="340" cy="250" r="4" fill="#922b21" opacity="0.8"/>
+    <circle cx="300" cy="260" r="3" fill="#922b21" opacity="0.8"/>
+    
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="acupuncture_needle">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="230" rx="90" ry="25" fill="#2c3e50" opacity="0.4"/>
+    
+    <!-- 침통 (원통형 대나무/나무 통) -->
+    <!-- 통 내부 (열려있음) -->
+    <ellipse cx="140" cy="180" rx="20" ry="10" fill="#17202a"/>
+    <!-- 통 몸체 -->
+    <path d="M120 180 L120 250 A 20 10 0 0 0 160 250 L160 180 Z" fill="#d2b48c"/>
+    <path d="M120 180 L120 250 A 20 10 0 0 0 140 260 L140 190 Z" fill="#c19a6b"/>
+    <!-- 대나무 마디 / 금속 장식 -->
+    <ellipse cx="140" cy="180" rx="20" ry="10" fill="none" stroke="#8b4513" stroke-width="4"/>
+    <ellipse cx="140" cy="215" rx="20" ry="10" fill="none" stroke="#8b4513" stroke-width="2"/>
+    <ellipse cx="140" cy="250" rx="20" ry="10" fill="none" stroke="#8b4513" stroke-width="4"/>
+    
+    <!-- 침통 뚜껑 (옆에 열려 있음) -->
+    <path d="M240 230 L240 200 A 22 11 0 0 0 284 200 L284 230 Z" fill="#d2b48c"/>
+    <ellipse cx="262" cy="200" rx="22" ry="11" fill="#c19a6b"/>
+    <ellipse cx="262" cy="230" rx="22" ry="11" fill="none" stroke="#8b4513" stroke-width="4"/>
+    
+    <!-- 침 (통에 꽂혀있거나 바닥에 놓인 침들) -->
+    <!-- 바닥에 놓인 긴 대침 -->
+    <line x1="160" y1="230" x2="280" y2="230" stroke="#bdc3c7" stroke-width="2"/>
+    <rect x="250" y="228" width="30" height="4" fill="#f1c40f"/> <!-- 침 손잡이 (구리/금관) -->
+    
+    <line x1="170" y1="240" x2="290" y2="240" stroke="#bdc3c7" stroke-width="2"/>
+    <rect x="260" y="238" width="30" height="4" fill="#f1c40f"/>
+    
+    <!-- 통에 비스듬히 꽂힌 침들 -->
+    <line x1="130" y1="185" x2="90" y2="100" stroke="#bdc3c7" stroke-width="2"/>
+    <rect x="85" y="100" width="4" height="20" fill="#f1c40f" transform="rotate(-65 87 110)"/>
+    
+    <line x1="140" y1="182" x2="150" y2="80" stroke="#bdc3c7" stroke-width="2"/>
+    <rect x="148" y="80" width="4" height="20" fill="#f1c40f" transform="rotate(5 150 90)"/>
+    
+    <line x1="150" y1="185" x2="210" y2="110" stroke="#bdc3c7" stroke-width="2"/>
+    <rect x="208" y="110" width="4" height="20" fill="#f1c40f" transform="rotate(50 210 120)"/>
+  </g>
+</svg>

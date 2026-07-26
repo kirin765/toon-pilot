@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="modern_scalpel">
+    <!-- 바닥 그림자 (수술실의 차가운 바닥 느낌) -->
+    <ellipse cx="200" cy="230" rx="150" ry="15" fill="#bdc3c7" opacity="0.4"/>
+    
+    <!-- 백정 출신의 과거를 암시하는 거칠고 오래된 정육점용 칼 (뒤쪽에 흐릿하게 배치) -->
+    <g transform="translate(200, 200) rotate(15)" opacity="0.3">
+      <!-- 낡은 나무 손잡이 -->
+      <rect x="-120" y="-15" width="80" height="30" rx="5" fill="#5c2e0b"/>
+      <circle cx="-100" cy="0" r="4" fill="#2c3e50"/>
+      <circle cx="-60" cy="0" r="4" fill="#2c3e50"/>
+      <!-- 크고 무식한 칼날 (식칼/백정칼) -->
+      <path d="M-40 -20 L80 -20 Q100 -20 100 10 Q100 20 50 20 L-40 20 Z" fill="#7f8c8d"/>
+      <path d="M40 20 L100 10" stroke="#95a5a6" stroke-width="2"/> <!-- 날카로운 부분 -->
+    </g>
+    
+    <!-- 새로운 신분과 기술을 상징하는 근대 서양식 은빛 메스 (앞쪽에 선명하게 배치) -->
+    <g transform="translate(200, 160) rotate(-10)">
+      <!-- 차갑고 날렵한 은빛 금속 손잡이 -->
+      <rect x="-100" y="-8" width="120" height="16" rx="4" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2"/>
+      <rect x="-100" y="0" width="120" height="8" rx="2" fill="#bdc3c7"/> <!-- 손잡이 그림자/입체감 -->
+      
+      <!-- 손잡이 미끄럼 방지 홈 (빗살무늬) -->
+      <line x1="-80" y1="-8" x2="-80" y2="8" stroke="#7f8c8d" stroke-width="2"/>
+      <line x1="-70" y1="-8" x2="-70" y2="8" stroke="#7f8c8d" stroke-width="2"/>
+      <line x1="-60" y1="-8" x2="-60" y2="8" stroke="#7f8c8d" stroke-width="2"/>
+      <line x1="-50" y1="-8" x2="-50" y2="8" stroke="#7f8c8d" stroke-width="2"/>
+      <line x1="-40" y1="-8" x2="-40" y2="8" stroke="#7f8c8d" stroke-width="2"/>
+      <line x1="-30" y1="-8" x2="-30" y2="8" stroke="#7f8c8d" stroke-width="2"/>
+      <line x1="-20" y1="-8" x2="-20" y2="8" stroke="#7f8c8d" stroke-width="2"/>
+      
+      <!-- 메스 칼날 조인트 부분 -->
+      <rect x="20" y="-6" width="15" height="12" fill="#95a5a6"/>
+      <circle cx="27" cy="0" r="3" fill="#34495e"/>
+      
+      <!-- 정교하고 예리한 수술용 메스 칼날 -->
+      <path d="M35 -6 L85 -6 Q100 -6 95 10 C80 15 50 15 35 6 Z" fill="#fff" stroke="#7f8c8d" stroke-width="1.5"/>
+      <!-- 칼날 하이라이트 (빛반사) -->
+      <path d="M40 -3 L80 -3" stroke="#bdc3c7" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- 메스 끝에 맺힌 작은 핏방울 (수술 중 생명을 살리는 피) -->
+      <circle cx="97" cy="15" r="3" fill="#e74c3c" opacity="0.8"/>
+      <path d="M97 10 Q97 15 95 18" stroke="#e74c3c" stroke-width="2"/>
+    </g>
+    
+    <!-- 반짝이는 빛 효과 (의학의 발달과 숭고한 희생 강조) -->
+    <path d="M280 130 L285 145 L300 150 L285 155 L280 170 L275 155 L260 150 L275 145 Z" fill="#fff" opacity="0.8"/>
+  </g>
+</svg>

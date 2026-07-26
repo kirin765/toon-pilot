@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="bronze_dragon">
+    <!-- 연못 바닥 느낌의 배경 그림자 -->
+    <ellipse cx="200" cy="220" rx="140" ry="40" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 똬리를 튼 청동 용의 몸통 -->
+    <path d="M140 200 Q200 150 260 200 Q280 220 230 240 Q150 270 100 230 Q70 200 130 170" fill="none" stroke="#2c3e50" stroke-width="35" stroke-linecap="round"/>
+    <path d="M140 200 Q200 150 260 200 Q280 220 230 240 Q150 270 100 230 Q70 200 130 170" fill="none" stroke="#5d6d7e" stroke-width="25" stroke-linecap="round"/>
+    
+    <!-- 용비늘 디테일 (반복되는 패턴 묘사) -->
+    <path d="M160 180 Q180 175 200 185 M155 190 Q175 185 195 195 M150 200 Q170 195 190 205" fill="none" stroke="#2c3e50" stroke-width="3"/>
+    <path d="M240 200 Q230 215 210 210 M250 210 Q240 225 220 220" fill="none" stroke="#2c3e50" stroke-width="3"/>
+    <path d="M120 230 Q140 245 160 235 M110 220 Q130 235 150 225 M100 210 Q120 225 140 215" fill="none" stroke="#2c3e50" stroke-width="3"/>
+    
+    <!-- 용의 머리 -->
+    <path d="M130 170 L110 110 L160 100 L180 140 Z" fill="#5d6d7e"/>
+    <!-- 입 / 주둥이 -->
+    <path d="M110 110 Q90 110 100 130 L130 130 Z" fill="#34495e"/>
+    <path d="M95 135 Q100 150 125 140 Z" fill="#34495e"/>
+    
+    <!-- 용의 눈과 뿔 -->
+    <circle cx="140" cy="115" r="4" fill="#f1c40f"/>
+    <!-- 뿔 -->
+    <path d="M150 105 Q170 80 180 60 Q170 90 160 100" fill="#2c3e50"/>
+    <path d="M160 100 Q180 80 195 70 Q180 95 165 105" fill="#2c3e50"/>
+    
+    <!-- 용의 수염 -->
+    <path d="M90 120 Q60 140 70 170" fill="none" stroke="#2c3e50" stroke-width="4"/>
+    <path d="M125 145 Q130 180 150 175" fill="none" stroke="#2c3e50" stroke-width="3"/>
+    
+    <!-- 발톱이 있는 발 -->
+    <path d="M190 210 L180 250 L160 245" fill="none" stroke="#5d6d7e" stroke-width="12" stroke-linejoin="round"/>
+    <!-- 발톱 -->
+    <path d="M160 245 L145 235 M160 245 L140 250 M160 245 L150 260" stroke="#2c3e50" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- 청동 녹 (세월의 흔적, 푸른 녹) -->
+    <circle cx="210" cy="180" r="10" fill="#1abc9c" opacity="0.4"/>
+    <circle cx="250" cy="210" r="15" fill="#1abc9c" opacity="0.4"/>
+    <circle cx="120" cy="230" r="12" fill="#1abc9c" opacity="0.4"/>
+    <circle cx="150" cy="130" r="8" fill="#1abc9c" opacity="0.5"/>
+  </g>
+</svg>

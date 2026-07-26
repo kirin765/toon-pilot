@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="gunpowder_bowl_and_brush">
+    <!-- 여성 의병장 윤희순: 화약을 비비던 사발과 안사람 의병가를 쓴 붓 -->
+    
+    <!-- 결연한 의지를 담은 치열한 전장(또는 숨겨진 기지)의 어두운 배경 -->
+    <rect width="400" height="300" fill="#2e4053"/>
+    
+    <!-- 가사를 짓고 무기를 만들던 거친 나무 탁자 -->
+    <path d="M-50 200 L450 150 L450 300 L-50 300 Z" fill="#5d4037" stroke="#3e2723" stroke-width="3"/>
+    
+    <!-- 화약을 제조하던 투박한 사기그릇 (사발) -->
+    <g transform="translate(160, 200)">
+      <!-- 사발 외부 -->
+      <path d="M-60 -20 C-80 30 -40 60 0 60 C40 60 80 30 60 -20 Z" fill="#d5dbdb" stroke="#7f8c8d" stroke-width="4"/>
+      <!-- 사발 내부 -->
+      <ellipse cx="0" cy="-20" rx="60" ry="15" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      
+      <!-- 숯과 유황, 염초를 섞은 화약 가루 (검은 쇳가루 느낌) -->
+      <ellipse cx="0" cy="-15" rx="50" ry="10" fill="#17202a"/>
+      <path d="M-30 -20 C-10 -30 20 -25 35 -15" fill="#2c3e50"/> <!-- 산처럼 쌓인 화약 -->
+      
+      <!-- 화약 가루를 비비던 나무 공이 (빻는 도구) -->
+      <rect x="20" y="-80" width="12" height="70" rx="4" fill="#a04000" stroke="#6e2c00" stroke-width="2" transform="rotate(30 20 -10)"/>
+      
+      <!-- 탁자 위로 흩어진 검은 화약 가루들 -->
+      <circle cx="-70" cy="40" r="3" fill="#17202a"/>
+      <circle cx="-50" cy="60" r="2" fill="#17202a"/>
+      <circle cx="80" cy="30" r="4" fill="#17202a"/>
+      <circle cx="90" cy="50" r="2" fill="#17202a"/>
+    </g>
+    
+    <!-- '안사람 의병가'를 써 내려간 결연한 붓과 먹 -->
+    <g transform="translate(280, 230) rotate(-45)">
+      <!-- 붓대 (대나무) -->
+      <rect x="-5" y="-60" width="10" height="80" fill="#f3c623" stroke="#b9770e" stroke-width="2"/>
+      <!-- 붓털 (먹물을 잔뜩 머금음) -->
+      <path d="M-5 20 C-10 40 0 50 0 50 C0 50 10 40 5 20 Z" fill="#111"/>
+      
+      <!-- 탁자에 묻은 진한 먹물 자국 -->
+      <ellipse cx="0" cy="60" rx="15" ry="8" fill="#111" transform="rotate(45 0 60)"/>
+      <circle cx="-15" cy="70" r="3" fill="#111"/>
+    </g>
+    
+    <!-- 백성(안사람)들의 참여를 독려한 한글 가사지 (안사람 의병가 일부 묘사) -->
+    <g transform="translate(250, 150) rotate(15)">
+      <polygon points="-40,-50 40,-40 30,50 -50,40" fill="#fdf2e9" stroke="#d5c8a0" stroke-width="2"/>
+      <!-- 한글 가사 세로쓰기 흔적 (흐릿한 붓글씨 선) -->
+      <line x1="20" y1="-30" x2="15" y2="30" stroke="#111" stroke-width="2" opacity="0.7"/>
+      <line x1="5" y1="-30" x2="0" y2="35" stroke="#111" stroke-width="2" opacity="0.6"/>
+      <line x1="-10" y1="-25" x2="-15" y2="25" stroke="#111" stroke-width="2" opacity="0.8"/>
+      <!-- 화약 그을음 자국 -->
+      <circle cx="-20" cy="20" r="10" fill="#2c3e50" opacity="0.3" filter="blur(2px)"/>
+    </g>
+    
+  </g>
+</svg>

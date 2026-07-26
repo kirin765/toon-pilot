@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #2c3548; }
+      @font-face { font-family: "Black Han Sans"; src: url("fonts/BlackHanSans.ttf") format("truetype"); font-weight: 400; }
+      @font-face { font-family: "Jua"; src: url("fonts/Jua.ttf") format("truetype"); font-weight: 400; }
+      @font-face { font-family: "Apple SD Gothic Neo"; src: local("Apple SD Gothic Neo"); }
+      body { font-family: "Jua", "Apple SD Gothic Neo", sans-serif; color: #26221c; }
+
+      .scene { position: absolute; inset: 0; overflow: hidden; }
+      #s1 { z-index: 10; } #s2 { z-index: 20; } #s3 { z-index: 30; } #s4 { z-index: 40; }
+      #s5 { z-index: 50; } #s6 { z-index: 60; } #s7 { z-index: 70; } #s8 { z-index: 80; }
+      .stage { position: absolute; inset: 0; }
+      .char { position: absolute; }
+      .char .bob { width: 100%; height: 100%; }
+      .char.flip .bob { transform: scaleX(-1); }
+      .prop { position: absolute; }
+
+      .stamp {
+        position: absolute; font-family: "Black Han Sans"; text-align: center;
+        border: 9px solid; border-radius: 20px; padding: 14px 40px; line-height: 1.1;
+        background: rgba(246, 239, 227, 0.94); visibility: hidden;
+      }
+      .stamp small { display: block; font-size: 30px; color: #1f2d45; font-family: "Jua", sans-serif; white-space: normal; max-width: 760px; }
+
+      .num-pop {
+        position: absolute; font-family: "Black Han Sans"; color: #f6efe3; text-align: center;
+        line-height: 0.9; visibility: hidden; text-shadow: 0 8px 0 rgba(15, 20, 30, 0.28);
+      }
+      .num-pop em { font-style: normal; color: #e8b74a; }
+      .num-pop small { display: block; font-size: 34px; font-family: "Jua", sans-serif; color: #f6efe3; line-height: 1.5; }
+
+      /* 라벨 칩 — s2 초검/복검 */
+      .chip {
+        position: absolute; font-family: "Black Han Sans"; font-size: 46px; color: #f6efe3;
+        background: #1f2d45; padding: 10px 30px; border-radius: 999px; visibility: hidden;
+        box-shadow: 6px 6px 0 rgba(38, 34, 28, 0.25); white-space: nowrap;
+      }
+      .chip em { font-style: normal; color: #e8b74a; }
+
+      /* 절차 체인 — s4 (EP.15 .step 문법) */
+      .step-wrap { position: absolute; left: 0; right: 0; text-align: center; visibility: hidden; }
+      .step {
+        display: inline-block; font-family: "Black Han Sans"; font-size: 42px; color: #1f2d45;
+        background: #f6efe3; border: 6px solid #1f2d45; border-radius: 16px; padding: 8px 24px; vertical-align: middle;
+      }
+      .step.on { background: #d94f37; color: #f6efe3; border-color: #8f2c1c; }
+      .step-arrow { display: inline-block; font-family: "Black Han Sans"; font-size: 40px; color: #f6efe3; padding: 0 12px; vertical-align: middle; }
+
+      /* scene backdrops */
+      #s1 .stage { background: #c3a97e; }   /* 고을 관아 마당 — 아침 훅 */
+      #s2 .stage { background: #b0a184; }   /* 두 고을 고갯길 */
+      #s3 .stage { background: #2b3348; }   /* 밤 담장 — 밀담과 장형 */
+      #s4 .stage { background: #cdb78e; }   /* 관청 내부 — 두 기록 대조 */
+      #s5 .stage { background: #d8c69e; }   /* 마루 — 법물과 절차 */
+      #s6 .stage { background: #8b7a84; }   /* 저녁 — 닿지 않는 문 */
+      #s7 .stage { background: #e9dcbe; }   /* 새벽 서재 — 무원록 */
+      #s8 .stage { background: #f6efe3; }   /* 아웃트로 */
+
+      /* s1 */
+      .s1-stamp  { top: 180px; left: 55px; color: #1f2d45; border-color: #b5322a; font-size: 42px; transform: rotate(-3deg); }
+      .s1-numpop { top: 372px; right: 70px; font-size: 130px; color: #3a2f22; text-shadow: 0 7px 0 rgba(246,239,227,0.8); }
+      .s1-numpop em { color: #b5322a; }
+      .s1-numpop small { color: #4a4034; }
+      /* s2 */
+      .s2-stamp  { top: 176px; left: 55px; width: 970px; color: #1f2d45; border-color: #3a7ca5; font-size: 38px; transform: rotate(-2deg); }
+      .s2-chip-a { top: 404px; left: 60px; }
+      .s2-chip-b { top: 404px; right: 60px; }
+      /* s3 */
+      .s3-stamp  { top: 176px; left: 55px; width: 970px; color: #1f2d45; border-color: #d94f37; font-size: 38px; transform: rotate(-2deg); }
+      .s3-numpop { top: 402px; right: 74px; font-size: 140px; }
+      /* s4 */
+      .s4-steps  { top: 214px; }
+      .s4-stamp  { top: 322px; left: 55px; width: 970px; color: #1f2d45; border-color: #1f2d45; font-size: 38px; transform: rotate(-1deg); }
+      /* s5 */
+      .s5-stamp  { top: 200px; left: 55px; width: 970px; color: #1f2d45; border-color: #6b7658; font-size: 38px; transform: rotate(-2deg); }
+      .s5-numpop { top: 726px; left: 62px; font-size: 104px; color: #3a2f22; text-shadow: 0 6px 0 rgba(246,239,227,0.75); }
+      .s5-numpop em { color: #b5322a; }
+      .s5-numpop small { color: #4a4034; }
+      /* s6 */
+      .s6-stamp  { top: 186px; left: 55px; width: 970px; color: #1f2d45; border-color: #8a5a33; font-size: 38px; transform: rotate(-1deg); }
+      /* s7 */
+      .s7-title {
+        position: absolute; top: 196px; left: 0; right: 0; text-align: center;
+        font-family: "Black Han Sans"; font-size: 176px; color: #1f2d45; line-height: 1.0; visibility: hidden;
+      }
+      .s7-title em { font-style: normal; color: #b5322a; }
+      .s7-sub {
+        position: absolute; top: 404px; left: 0; right: 0; text-align: center;
+        font-family: "Black Han Sans"; font-size: 66px; color: #8a5a33; visibility: hidden;
+      }
+
+      /* outro */
+      .logo-big {
+        position: absolute; top: 300px; left: 0; right: 0; text-align: center;
+        font-family: "Black Han Sans"; font-size: 190px; color: #1f2d45; line-height: 1.02; letter-spacing: -0.03em;
+      }
+      .logo-big em { font-style: normal; color: #d94f37; }
+      .s8-sub { position: absolute; top: 760px; left: 0; right: 0; text-align: center; font-size: 52px; color: #26221c; }
+      .subscribe {
+        position: absolute; top: 900px; right: 80px; width: max-content;
+        background: #d94f37; color: #f6efe3; font-family: "Black Han Sans"; font-size: 84px;
+        padding: 26px 90px; border-radius: 999px; box-shadow: 10px 10px 0 #1f2d45;
+      }
+
+      /* overlay */
+      #overlay { z-index: 100; }
+      .brand-badge {
+        position: absolute; top: 60px; left: 60px;
+        background: #1f2d45; color: #f6efe3; font-family: "Black Han Sans";
+        font-size: 44px; padding: 14px 34px; border-radius: 14px; box-shadow: 6px 6px 0 rgba(38,34,28,0.25);
+      }
+      .brand-badge em { font-style: normal; color: #e8b74a; }
+      .cap-wrap { position: absolute; left: 0; right: 0; bottom: 380px; text-align: center; }
+      .cap-group { position: absolute; left: 0; right: 0; bottom: 0; opacity: 0; visibility: hidden; }
+      .cap-group .pill {
+        display: inline-block; background: rgba(31, 45, 69, 0.9);
+        padding: 22px 52px; border-radius: 26px; font-size: 74px; color: #f6efe3; line-height: 1.22; max-width: 900px;
+        word-break: keep-all;
+      }
+      .cap-group .hi { color: #e8b74a; font-family: "Black Han Sans"; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="47.6" data-width="1080" data-height="1920">
+
+      <!-- ============ Scene 1 · 훅 — 고을 관아 마당, 검시 현장 ============ -->
+      <div id="s1" class="clip scene" data-start="0" data-duration="5.75" data-track-index="0">
+        <div class="stage">
+          <div class="prop" data-adj="s1-sky" style="left:0; top:0; width:1080px; height:1360px; background:#c3a97e;"></div>
+          <!-- 환경 ①: 아침 빛 띠(가로 타원 — 원형 글로우=달 오독 회피, 지뢰 #47) + 구름 -->
+          <svg class="prop" data-adj="s1-glow" style="left:100px; top:110px; width:880px; height:340px;" viewBox="0 0 880 340">
+            <g data-obj="s1-glow-body"><ellipse cx="440" cy="170" rx="420" ry="112" fill="#f2dca8" opacity="0.5"/><ellipse cx="440" cy="170" rx="250" ry="72" fill="#f9eecb" opacity="0.55"/></g>
+          </svg>
+          <svg class="prop" data-adj="s1-clouds" style="left:0; top:470px; width:1080px; height:250px;" viewBox="0 0 1080 250">
+            <g data-obj="s1-cloud-a" fill="#e6dabd" opacity="0.85"><ellipse cx="200" cy="112" rx="150" ry="38"/><ellipse cx="302" cy="92" rx="86" ry="32"/></g>
+            <g data-obj="s1-cloud-b" fill="#dfd2b2" opacity="0.8"><ellipse cx="890" cy="66" rx="136" ry="34"/><ellipse cx="794" cy="52" rx="78" ry="26"/></g>
+          </svg>
+          <!-- 환경 ①: 원경 산 능선 2톤 (지평선 위에 얹음 — 상단 공백 대역을 채운다) -->
+          <svg class="prop" data-adj="s1-ridge" style="left:0; bottom:700px; width:1080px; height:420px;" viewBox="0 0 1080 420">
+            <g data-obj="s1-ridge-far"><path d="M 0 420 L 120 214 L 246 320 L 392 168 L 540 326 L 690 202 L 838 312 L 960 190 L 1080 360 L 1080 420 Z" fill="#b09a72"/></g>
+            <g data-obj="s1-ridge-near"><path d="M 0 420 L 150 268 L 290 356 L 430 244 L 580 366 L 736 262 L 880 350 L 1010 258 L 1080 380 L 1080 420 Z" fill="#9c855f"/></g>
+          </svg>
+          <!-- 지면: 관아 마당 박석 -->
+          <div class="prop" data-adj="s1-ground" style="left:0; bottom:0; width:1080px; height:600px; background:#a98d61;"></div>
+          <div class="prop" data-adj="s1-ground-hi" style="left:0; bottom:576px; width:1080px; height:26px; background:#bb9d6d;"></div>
+          <svg class="prop" data-adj="s1-paving" style="left:0; bottom:0; width:1080px; height:560px;" viewBox="0 0 1080 560" preserveAspectRatio="none">
+            <g data-obj="s1-paving-lines" stroke="#8a6f47" stroke-width="4">
+              <line x1="0" y1="130" x2="1080" y2="130"/><line x1="0" y1="310" x2="1080" y2="310"/>
+              <line x1="350" y1="130" x2="316" y2="310"/><line x1="720" y1="130" x2="762" y2="310"/>
+            </g>
+          </svg>
+          <!-- 주 소품(앵커) ②: 고을 관아 동헌 — 팔작지붕 2톤 + 마루 + 현판 + 나무기둥 + 세살창 + 기단 -->
+          <svg class="prop" data-adj="s1-hall" style="left:180px; bottom:568px; width:900px; height:960px;" viewBox="0 0 600 640">
+            <g data-obj="s1-hall-base"><rect x="40" y="560" width="540" height="60" fill="#8f8571"/><rect x="40" y="560" width="540" height="14" fill="#a49a84"/><rect x="40" y="606" width="540" height="14" fill="#726a58"/></g>
+            <g data-obj="s1-hall-body">
+              <rect x="70" y="300" width="480" height="264" fill="#c7b48c"/>
+              <rect x="70" y="300" width="480" height="18" fill="#d8c69e"/>
+              <rect x="70" y="520" width="480" height="44" fill="#8a7350"/>
+              <line x1="70" y1="536" x2="550" y2="536" stroke="#6f5c3e" stroke-width="4"/>
+            </g>
+            <!-- 관청이므로 단청 기둥 허용(지뢰 #28) — 사가가 아니다 -->
+                        <g data-obj="s1-hall-stones"><rect x="70" y="540" width="42" height="26" rx="4" fill="#9b917c"/><rect x="292" y="540" width="42" height="26" rx="4" fill="#9b917c"/><rect x="508" y="540" width="42" height="26" rx="4" fill="#9b917c"/>
+              <rect x="70" y="540" width="42" height="8" rx="3" fill="#aca391"/><rect x="292" y="540" width="42" height="8" rx="3" fill="#aca391"/><rect x="508" y="540" width="42" height="8" rx="3" fill="#aca391"/></g>
+            <g data-obj="s1-hall-cols" fill="#9c4030">
+              <rect x="78" y="300" width="26" height="264"/><rect x="300" y="300" width="26" height="264"/><rect x="516" y="300" width="26" height="264"/>
+              <rect x="78" y="300" width="8" height="264" fill="#b45340"/><rect x="300" y="300" width="8" height="264" fill="#b45340"/><rect x="516" y="300" width="8" height="264" fill="#b45340"/>
+            </g>
+            <!-- 세살 창호: 밝은 창호지 면 + 어두운 세로살 + 가로 3연 밴드 + 궁판 (지뢰 #45) -->
+            <g data-obj="s1-hall-win">
+              <rect x="130" y="336" width="150" height="150" fill="#e2d8ba"/>
+              <g stroke="#5a4a30" stroke-width="5"><line x1="150" y1="336" x2="150" y2="486"/><line x1="176" y1="336" x2="176" y2="486"/><line x1="202" y1="336" x2="202" y2="486"/><line x1="228" y1="336" x2="228" y2="486"/><line x1="254" y1="336" x2="254" y2="486"/><line x1="130" y1="374" x2="280" y2="374"/><line x1="130" y1="386" x2="280" y2="386"/><line x1="130" y1="398" x2="280" y2="398"/></g>
+              <rect x="130" y="486" width="150" height="30" fill="#8a7350"/>
+              <rect x="130" y="336" width="150" height="180" fill="none" stroke="#4a3a24" stroke-width="6"/>
+            </g>
+            <g data-obj="s1-hall-sign"><rect x="356" y="356" width="150" height="64" rx="6" fill="#2f2519"/><rect x="356" y="356" width="150" height="64" rx="6" fill="none" stroke="#c99b3d" stroke-width="5"/>
+              <text x="431" y="404" font-family="Apple SD Gothic Neo, AppleGothic, Nanum Myeongjo, serif" font-size="48" fill="#e3c877" text-anchor="middle">東軒</text></g>
+            <g data-obj="s1-hall-roof">
+              <path d="M 20 300 L 300 150 L 580 300 Z" fill="#5c6675"/>
+              <path d="M 20 300 L 300 150 L 580 300 L 540 300 L 300 176 L 60 300 Z" fill="#454e5c"/>
+              
+              <path d="M 300 150 L 316 150 L 320 178 L 296 178 Z" fill="#3a4250"/>
+              <!-- 기왓골은 경사면 따라 세로(지뢰 #28) -->
+              <g stroke="#39414d" stroke-width="3"><line x1="120" y1="264" x2="62" y2="300"/><line x1="164" y1="240" x2="118" y2="300"/><line x1="206" y1="218" x2="174" y2="300"/><line x1="252" y1="194" x2="232" y2="300"/><line x1="348" y1="194" x2="368" y2="300"/><line x1="394" y1="218" x2="426" y2="300"/><line x1="436" y1="240" x2="482" y2="300"/><line x1="480" y1="264" x2="538" y2="300"/></g>
+              <!-- 처마 끝 반전(추녀 들림) — 한국 기와지붕 제1 식별자 -->
+              <path d="M 20 300 Q 4 296 0 282 Q 14 288 34 292 Z" fill="#454e5c"/>
+              <path d="M 580 300 Q 596 296 600 282 Q 586 288 566 292 Z" fill="#454e5c"/>
+              <!-- 처마 밑 서까래 -->
+              <g fill="#39414d"><rect x="60" y="300" width="10" height="16"/><rect x="130" y="300" width="10" height="16"/><rect x="200" y="300" width="10" height="16"/><rect x="270" y="300" width="10" height="16"/><rect x="340" y="300" width="10" height="16"/><rect x="410" y="300" width="10" height="16"/><rect x="480" y="300" width="10" height="16"/></g>
+            </g>
+          </svg>
+          <!-- 보조 ③: 막돌담(불규칙 자연석 — 균일 running-bond=근대 조적 오독, 지뢰 #42 계열) -->
+          <svg class="prop" data-adj="s1-fence" style="left:0; bottom:556px; width:340px; height:180px;" viewBox="0 0 340 180">
+            <g data-obj="s1-fence-body"><rect x="0" y="60" width="340" height="120" fill="#9b917c"/><rect x="0" y="60" width="340" height="12" fill="#b0a68e"/></g>
+            <g data-obj="s1-fence-stones" fill="none" stroke="#7d7462" stroke-width="4">
+              <path d="M 0 104 q 26 -10 52 0 q 30 12 60 -2 q 34 -14 66 2 q 30 14 62 -2 q 34 -16 60 2"/>
+              <path d="M 0 146 q 34 12 68 -2 q 30 -12 58 4 q 32 16 66 0 q 30 -14 60 2 q 30 14 68 -4"/>
+              <path d="M 40 60 v 44"/><path d="M 132 104 v 42"/><path d="M 226 62 v 42"/><path d="M 292 106 v 40"/>
+            </g>
+          </svg>
+          <!-- 보조 ③: 검시 현장 — 멍석(납작 평행사변형 + 씨줄/날줄, 지뢰 #22) 위에 덮은 흰 천.
+               ⚠ 신체 형태·혈흔 일절 없음. 낮고 단순한 매스 + 접힌 단만. -->
+          <svg class="prop" data-adj="s1-scene" style="left:470px; bottom:540px; width:590px; height:300px;" viewBox="0 0 590 300">
+            <g data-obj="s1-mat">
+              <path d="M 18 244 L 128 168 L 572 168 L 480 278 Z" fill="#b9a271"/>
+              <path d="M 18 244 L 128 168 L 572 168 L 480 278 Z" fill="none" stroke="#8d7748" stroke-width="6"/>
+              <g stroke="#9c8757" stroke-width="3">
+                <path d="M 52 236 L 168 182"/><path d="M 112 254 L 232 182"/><path d="M 176 268 L 300 182"/><path d="M 244 276 L 372 182"/><path d="M 320 278 L 444 182"/><path d="M 396 278 L 512 182"/>
+                <path d="M 66 216 L 540 190"/><path d="M 40 240 L 512 220"/><path d="M 26 262 L 484 250"/>
+              </g>
+            </g>
+            <!-- 흰 천으로 덮은 검시 대상 — 길고 낮은 매스 + 접힌 단(신체 형태·혈흔 없음) -->
+            <g data-obj="s1-cloth">
+              <!-- 머리 쪽(좌) 완만한 융기 · 발끝 2개(우) — 덮인 사람으로 읽히게 하는 최소 단서.
+                   신체 윤곽·혈흔·표정 일절 없음(톤 안전선). -->
+              <!-- 짚신 2짝을 천 밖으로 — 고증·블라인드 검수자가 독립적으로 낸 같은 처방.
+                   머리 돔(좌) → 목 잘록 → 몸통 → 무릎 봉우리 → 천 끝, 그 밖으로 발. 혈흔·윤곽 없음. -->
+              <g data-obj="s1-feet">
+                <path d="M 468 168 q 22 -6 30 8 q 6 14 -8 20 q -18 6 -26 -6 Z" fill="#a98a5c"/>
+                <path d="M 466 186 q 24 -6 32 8 q 6 14 -8 20 q -20 6 -28 -6 Z" fill="#96794f"/>
+                <g stroke="#7d6440" stroke-width="3" fill="none"><path d="M 474 172 l 20 8"/><path d="M 472 190 l 22 8"/></g>
+              </g>
+              <path d="M 92 176 Q 88 132 122 118 Q 156 106 184 122 Q 198 132 204 146 L 268 138 Q 306 130 336 142 Q 366 154 400 150 Q 418 140 430 152 Q 440 164 450 152 Q 462 142 470 158 Q 478 172 468 182 L 114 194 Q 84 190 92 176 Z" fill="#efe9db" stroke="#8f8874" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M 92 176 Q 88 132 122 118 Q 156 106 184 122 Q 198 132 204 146 L 258 139 Q 176 148 146 190 L 114 194 Q 84 190 92 176 Z" fill="#dbd3c1"/>
+              <path d="M 204 146 Q 236 158 268 152" stroke="#cbc2ad" stroke-width="6" fill="none"/>
+              <path d="M 108 186 L 462 172 L 466 190 L 112 204 Z" fill="#e2dac8" stroke="#8f8874" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M 108 186 L 462 172 L 464 180 L 110 194 Z" fill="#f4efe3"/>
+              <g stroke="#d9d1bd" stroke-width="4" fill="none">
+                <path d="M 222 144 Q 230 168 222 186"/><path d="M 258 140 Q 266 166 258 186"/><path d="M 300 144 Q 308 168 300 186"/>
+                <path d="M 342 148 Q 352 170 344 188"/><path d="M 384 152 Q 394 172 388 188"/><path d="M 424 158 Q 434 174 430 188"/></g>
+              <path d="M 196 140 Q 232 152 274 146" stroke="#cbc2ad" stroke-width="5" fill="none"/>
+              <path d="M 352 152 Q 392 164 432 158" stroke="#cbc2ad" stroke-width="5" fill="none"/>
+              <ellipse cx="146" cy="140" rx="30" ry="16" fill="#f6f2e8" opacity="0.65"/>
+            </g>
+          </svg>
+        </div>
+        <div class="stamp s1-stamp">檢屍者 人之死生係焉<small>“시체를 검안하는 것은 사람의 죽고 사는 일이 달렸다” — 세종 14년(1432) 전지</small></div>
+        <div class="num-pop s1-numpop"><em>2번</em><small>초검 그리고 복검</small></div>
+      </div>
+
+      <!-- ============ Scene 2 · 두 고을 — 초검과 복검 ============ -->
+      <div id="s2" class="clip scene" data-start="5.3" data-duration="5.27" data-track-index="1">
+        <div class="stage">
+          <div class="prop" data-adj="s2-sky" style="left:0; top:0; width:1080px; height:1360px; background:#b0a184;"></div>
+          <svg class="prop" data-adj="s2-clouds" style="left:0; top:430px; width:1080px; height:230px;" viewBox="0 0 1080 230">
+            <g data-obj="s2-cloud-a" fill="#d3c6a8" opacity="0.75"><ellipse cx="270" cy="96" rx="152" ry="36"/><ellipse cx="368" cy="76" rx="82" ry="28"/></g>
+            <g data-obj="s2-cloud-b" fill="#cabd9d" opacity="0.7"><ellipse cx="828" cy="70" rx="128" ry="30"/></g>
+          </svg>
+          <!-- 환경 ①: 원경 산 능선 2톤 (지평선 위에 얹음 — 부양 금지) -->
+          <svg class="prop" data-adj="s2-ridge" style="left:0; bottom:690px; width:1080px; height:540px;" viewBox="0 0 1080 540">
+            <g data-obj="s2-ridge-far"><path d="M 0 540 L 130 176 L 250 372 L 388 120 L 520 388 L 660 188 L 800 358 L 930 158 L 1080 470 L 1080 540 Z" fill="#8d8873"/></g>
+            <g data-obj="s2-ridge-near"><path d="M 0 540 L 140 288 L 288 436 L 430 250 L 580 452 L 740 296 L 884 428 L 1010 300 L 1080 500 L 1080 540 Z" fill="#7c785f"/></g>
+            <g data-obj="s2-ridge-trees" fill="#6a684f"><path d="M 176 462 l 22 -54 l 22 54 z"/><path d="M 214 470 l 18 -44 l 18 44 z"/><path d="M 852 452 l 22 -54 l 22 54 z"/><path d="M 892 462 l 18 -44 l 18 44 z"/></g>
+          </svg>
+          <div class="prop" data-adj="s2-ground" style="left:0; bottom:0; width:1080px; height:600px; background:#9a8b64;"></div>
+          <div class="prop" data-adj="s2-ground-hi" style="left:0; bottom:576px; width:1080px; height:24px; background:#aa9a70;"></div>
+          <!-- 고갯길 + 풀포기 -->
+          <svg class="prop" data-adj="s2-road" style="left:0; bottom:0; width:1080px; height:570px;" viewBox="0 0 1080 570" preserveAspectRatio="none">
+            <g data-obj="s2-road-body"><path d="M 396 570 L 500 30 L 580 30 L 684 570 Z" fill="#b6a67c"/><path d="M 470 300 L 520 300 L 528 570 L 452 570 Z" fill="#c3b489"/></g>
+            <g data-obj="s2-road-grass" stroke="#6e7042" stroke-width="5" fill="none">
+              <path d="M 356 560 q -6 -34 -14 -50"/><path d="M 372 560 q 4 -36 14 -52"/>
+              <path d="M 712 560 q -6 -34 -14 -50"/><path d="M 730 560 q 4 -36 14 -52"/>
+            </g>
+          </svg>
+          <!-- 주 소품 ②-a: 초검 고을 관아 -->
+          <svg class="prop" data-adj="s2-hall-a" style="left:-40px; bottom:592px; width:600px; height:640px;" viewBox="0 0 600 640">
+            <g data-obj="s2a-base"><rect x="40" y="560" width="540" height="60" fill="#8f8571"/><rect x="40" y="560" width="540" height="14" fill="#a49a84"/></g>
+            <g data-obj="s2a-body"><rect x="70" y="320" width="480" height="244" fill="#c9b68e"/><rect x="70" y="320" width="480" height="18" fill="#dac89f"/><rect x="70" y="522" width="480" height="42" fill="#8a7350"/></g>
+            <g data-obj="s2a-cols" fill="#9c4030"><rect x="82" y="320" width="26" height="244"/><rect x="292" y="320" width="26" height="244"/><rect x="510" y="320" width="26" height="244"/><rect x="82" y="320" width="8" height="244" fill="#b45340"/><rect x="292" y="320" width="8" height="244" fill="#b45340"/><rect x="510" y="320" width="8" height="244" fill="#b45340"/></g>
+            <g data-obj="s2a-win"><rect x="150" y="356" width="130" height="132" fill="#e2d8ba"/>
+              <g stroke="#5a4a30" stroke-width="5"><line x1="170" y1="356" x2="170" y2="488"/><line x1="194" y1="356" x2="194" y2="488"/><line x1="218" y1="356" x2="218" y2="488"/><line x1="242" y1="356" x2="242" y2="488"/><line x1="150" y1="392" x2="280" y2="392"/><line x1="150" y1="404" x2="280" y2="404"/><line x1="150" y1="416" x2="280" y2="416"/></g>
+              <rect x="150" y="488" width="130" height="26" fill="#8a7350"/><rect x="150" y="356" width="130" height="158" fill="none" stroke="#4a3a24" stroke-width="6"/></g>
+            <g data-obj="s2a-roof"><path d="M 20 320 L 300 178 L 580 320 Z" fill="#5c6675"/><path d="M 20 320 L 300 178 L 580 320 L 542 320 L 300 202 L 58 320 Z" fill="#454e5c"/>
+              <g stroke="#39414d" stroke-width="3"><line x1="126" y1="286" x2="76" y2="320"/><line x1="204" y1="246" x2="176" y2="320"/><line x1="396" y1="246" x2="424" y2="320"/><line x1="474" y1="286" x2="524" y2="320"/></g></g>
+          </svg>
+          <!-- 주 소품 ②-b: 복검 고을 관아 (색변주) -->
+          <svg class="prop" data-adj="s2-hall-b" style="left:520px; bottom:592px; width:600px; height:640px;" viewBox="0 0 600 640">
+            <g data-obj="s2b-base"><rect x="40" y="560" width="540" height="60" fill="#877e6b"/><rect x="40" y="560" width="540" height="14" fill="#9c937e"/></g>
+            <g data-obj="s2b-body"><rect x="70" y="320" width="480" height="244" fill="#bfae88"/><rect x="70" y="320" width="480" height="18" fill="#d0bf97"/><rect x="70" y="522" width="480" height="42" fill="#7f6a4a"/></g>
+            <g data-obj="s2b-cols" fill="#7c5c34"><rect x="82" y="320" width="26" height="244"/><rect x="292" y="320" width="26" height="244"/><rect x="510" y="320" width="26" height="244"/><rect x="82" y="320" width="8" height="244" fill="#94714a"/><rect x="292" y="320" width="8" height="244" fill="#94714a"/><rect x="510" y="320" width="8" height="244" fill="#94714a"/></g>
+            <g data-obj="s2b-win"><rect x="320" y="356" width="130" height="132" fill="#e2d8ba"/>
+              <g stroke="#5a4a30" stroke-width="5"><line x1="340" y1="356" x2="340" y2="488"/><line x1="364" y1="356" x2="364" y2="488"/><line x1="388" y1="356" x2="388" y2="488"/><line x1="412" y1="356" x2="412" y2="488"/><line x1="320" y1="392" x2="450" y2="392"/><line x1="320" y1="404" x2="450" y2="404"/><line x1="320" y1="416" x2="450" y2="416"/></g>
+              <rect x="320" y="488" width="130" height="26" fill="#7f6a4a"/><rect x="320" y="356" width="130" height="158" fill="none" stroke="#4a3a24" stroke-width="6"/></g>
+            <g data-obj="s2b-roof"><path d="M 20 320 L 300 178 L 580 320 Z" fill="#6a6c60"/><path d="M 20 320 L 300 178 L 580 320 L 542 320 L 300 202 L 58 320 Z" fill="#52544a"/>
+              <g stroke="#454740" stroke-width="3"><line x1="126" y1="286" x2="76" y2="320"/><line x1="204" y1="246" x2="176" y2="320"/><line x1="396" y1="246" x2="424" y2="320"/><line x1="474" y1="286" x2="524" y2="320"/></g></g>
+          </svg>
+          <!-- 보조 ③: 고을 경계 표석 (짧고 굵게 + 받침돌 — 세로 긴 단독 기물 오독 회피) -->
+          <svg class="prop" data-adj="s2-marker" style="left:478px; bottom:552px; width:150px; height:250px;" viewBox="0 0 140 230">
+            <g data-obj="s2-marker-base"><path d="M 8 230 L 20 194 L 120 194 L 132 230 Z" fill="#7f7767"/><rect x="20" y="194" width="100" height="10" fill="#98907e"/></g>
+            <!-- 개석(모자돌) 제거 — 비석 형태는 검시 주제 영상에서 묘비로 오독된다(S8 고증) -->
+            <g data-obj="s2-marker-body"><rect x="30" y="56" width="80" height="140" rx="4" fill="#b3aa96"/><rect x="30" y="56" width="18" height="140" fill="#c3bba7"/><rect x="30" y="56" width="80" height="10" fill="#9f9682"/></g>
+            <g data-obj="s2-marker-glyph"><text x="70" y="140" font-family="Apple SD Gothic Neo, AppleGothic, Nanum Myeongjo, serif" font-size="52" fill="#5f5849" text-anchor="middle">界</text></g>
+          </svg>
+        </div>
+        <div class="chip s2-chip-a"><em>1차</em> 초검</div>
+        <div class="chip s2-chip-b"><em>2차</em> 복검</div>
+        <div class="stamp s2-stamp">初檢官 在外所在官守令 · 復檢官 在外隣近守令<small>초검관은 시신이 있는 고을 수령이, 복검관은 이웃 고을 수령이 — 세종 24년(1442) 형조 계</small></div>
+      </div>
+
+      <!-- ============ Scene 3 · 밤 담장 — 입을 맞추면 볼기 예순 대 ============ -->
+      <div id="s3" class="clip scene" data-start="10.12" data-duration="5.79" data-track-index="0">
+        <div class="stage">
+          <div class="prop" data-adj="s3-night" style="left:0; top:0; width:1080px; height:1400px; background:#2b3348;"></div>
+          <!-- 환경 ①: 달 + 별 (캐릭터 머리 뒤 금지 — 상단 좌측 빈 구역) -->
+          <svg class="prop" data-adj="s3-moon" style="left:50px; top:300px; width:320px; height:250px;" viewBox="0 0 300 230">
+            <g data-obj="s3-moon-body"><circle cx="112" cy="104" r="66" fill="#e6dcb8"/><circle cx="132" cy="94" r="54" fill="#2b3348"/></g>
+            <g data-obj="s3-stars" fill="#e6dcb8"><circle cx="238" cy="52" r="6"/><circle cx="268" cy="126" r="5"/><circle cx="212" cy="166" r="4"/><circle cx="40" cy="188" r="5"/></g>
+          </svg>
+          <!-- 주 소품 ②: 막돌담 (밝은 회백 — 밤 남색 배경과 명도 대비 확보) -->
+          <svg class="prop" data-adj="s3-wall" style="left:0; bottom:556px; width:1080px; height:660px;" viewBox="0 0 1080 660">
+            <!-- 기와 얹은 한식 담장 — 지붕이 담의 시그니처(민무늬 슬랩 회피) -->
+            <g data-obj="s3-wall-roof">
+              <path d="M 0 96 L 1080 96 L 1080 62 L 0 62 Z" fill="#9aa2b6"/>
+              <path d="M 0 62 L 1080 62 L 1080 40 L 0 40 Z" fill="#aeb5c7"/>
+              <!-- 수막새(반원 기와 끝) — 균일 사각 블록 열은 필름 퍼포레이션으로 오독(S8 블라인드) -->
+              <g fill="#828aa0"><circle cx="30" cy="96" r="17"/><circle cx="94" cy="96" r="17"/><circle cx="158" cy="96" r="17"/><circle cx="222" cy="96" r="17"/><circle cx="286" cy="96" r="17"/><circle cx="350" cy="96" r="17"/><circle cx="414" cy="96" r="17"/><circle cx="478" cy="96" r="17"/><circle cx="542" cy="96" r="17"/><circle cx="606" cy="96" r="17"/><circle cx="670" cy="96" r="17"/><circle cx="734" cy="96" r="17"/><circle cx="798" cy="96" r="17"/><circle cx="862" cy="96" r="17"/><circle cx="926" cy="96" r="17"/><circle cx="990" cy="96" r="17"/><circle cx="1054" cy="96" r="17"/></g>
+              <g fill="#6f7789"><circle cx="30" cy="96" r="7"/><circle cx="94" cy="96" r="7"/><circle cx="158" cy="96" r="7"/><circle cx="222" cy="96" r="7"/><circle cx="286" cy="96" r="7"/><circle cx="350" cy="96" r="7"/><circle cx="414" cy="96" r="7"/><circle cx="478" cy="96" r="7"/><circle cx="542" cy="96" r="7"/><circle cx="606" cy="96" r="7"/><circle cx="670" cy="96" r="7"/><circle cx="734" cy="96" r="7"/><circle cx="798" cy="96" r="7"/><circle cx="862" cy="96" r="7"/><circle cx="926" cy="96" r="7"/><circle cx="990" cy="96" r="7"/><circle cx="1054" cy="96" r="7"/></g>
+            </g>
+            <g data-obj="s3-wall-body"><rect x="0" y="96" width="1080" height="564" fill="#8d93a4"/><rect x="0" y="96" width="1080" height="18" fill="#9fa5b5"/><rect x="0" y="612" width="1080" height="48" fill="#6d7385"/></g>
+            <g data-obj="s3-wall-stones" fill="none" stroke="#767d90" stroke-width="5">
+              <path d="M 0 186 q 40 -16 80 0 q 46 18 92 -4 q 52 -22 100 4 q 46 22 96 -4 q 52 -24 100 4 q 46 22 96 -4 q 52 -24 100 4 q 46 22 96 -4 q 52 -24 100 4 q 44 20 80 -2"/>
+              <path d="M 0 292 q 50 20 100 -4 q 46 -22 92 2 q 50 24 100 0 q 48 -22 94 2 q 50 24 100 0 q 48 -22 94 2 q 50 24 100 0 q 48 -22 94 2 q 48 22 90 -2 q 40 -18 76 2"/>
+              <path d="M 0 398 q 46 -18 90 2 q 48 20 96 -2 q 50 -22 98 2 q 48 22 96 -2 q 50 -22 98 2 q 48 22 96 -2 q 50 -22 98 2 q 48 22 96 -2 q 46 -20 90 2 q 40 18 82 -2"/>
+              <path d="M 0 504 q 44 -18 88 2 q 48 20 96 -2 q 50 -22 98 2 q 48 22 96 -2 q 50 -22 98 2 q 48 22 96 -2 q 50 -22 98 2 q 48 22 96 -2 q 46 -20 90 2 q 40 18 84 -2"/>
+              <path d="M 96 114 v 72"/><path d="M 268 186 v 106"/><path d="M 452 114 v 72"/><path d="M 626 186 v 106"/><path d="M 812 114 v 72"/><path d="M 962 292 v 106"/>
+              <path d="M 170 292 v 106"/><path d="M 372 398 v 106"/><path d="M 548 292 v 106"/><path d="M 720 398 v 106"/><path d="M 892 398 v 106"/>
+            </g>
+          </svg>
+          <div class="prop" data-adj="s3-ground" style="left:0; bottom:0; width:1080px; height:590px; background:#232a3c;"></div>
+          <div class="prop" data-adj="s3-ground-hi" style="left:0; bottom:566px; width:1080px; height:24px; background:#333c53;"></div>
+          <!-- ⚠ 보조 소품 없음(의도적). 이 자리에 형틀+장(杖) → 소나무를 시도했으나
+               블라인드가 각각 "뱃일 도구 보관대" / "막대에 잎 3장"으로 오독. 3회 실패 후 제거했다.
+               고증(가는 장)과 가독성(넓적해야 읽힘)이 충돌하는 자리라, 오독될 소품을 두느니 비운다.
+               화면은 풀블리드 담장(주) + 달·별(환경) + 붉은 X + num-pop 「60대」로 채운다(EP.6 붓 제거 계보). -->
+          <!-- 금지 표시: 두 인물 사이 위쪽 (머리 위 여백) -->
+          <svg class="prop" data-adj="s3-ban" style="left:390px; top:430px; width:260px; height:240px;" viewBox="0 0 250 230">
+            <g data-obj="s3-ban-mark" stroke="#d94f37" stroke-width="26" stroke-linecap="round"><line x1="52" y1="46" x2="198" y2="184"/><line x1="198" y1="46" x2="52" y2="184"/></g>
+            <g data-obj="s3-ban-glow"><ellipse cx="125" cy="115" rx="118" ry="70" fill="#d94f37" opacity="0.14"/></g>
+          </svg>
+        </div>
+        <div class="stamp s3-stamp">初覆檢官吏相見 符同屍狀 … 正官杖六十<small>초검·복검 관리가 서로 만나 검안을 맞추면 담당관은 장(杖) 60대 — 『대명률』 제436조. 넓적한 곤장은 임진왜란 이후 형구다</small></div>
+        <div class="num-pop s3-numpop"><em>60대</em><small>볼기를 치는 장형(杖刑)</small></div>
+      </div>
+
+      <!-- ============ Scene 4 · 관청 내부 — 두 기록을 따로 올려 대조 ============ -->
+      <div id="s4" class="clip scene" data-start="15.46" data-duration="6.95" data-track-index="1">
+        <div class="stage">
+          <!-- 풀블리드 벽 밴드는 stage 최선두(지뢰 #49) -->
+          <div class="prop" data-adj="s4-wall" style="left:0; top:0; width:1080px; height:1400px; background:#cdb78e;"></div>
+          <div class="prop" data-adj="s4-wall-hi" style="left:0; top:1360px; width:1080px; height:40px; background:#b9a276;"></div>
+          <!-- 환경 ①: 대들보 + 서까래 (상단 공백 대역을 채우는 실내 천장 구조) -->
+          <svg class="prop" data-adj="s4-beams" style="left:0; top:380px; width:1080px; height:250px;" viewBox="0 0 1080 250">
+            <g data-obj="s4-beam-main"><rect x="0" y="150" width="1080" height="62" fill="#8a6a42"/><rect x="0" y="150" width="1080" height="16" fill="#a2814f"/><rect x="0" y="202" width="1080" height="12" fill="#6d5334"/></g>
+            <g data-obj="s4-rafters" fill="#8a6a42"><rect x="52" y="46" width="34" height="106" rx="6"/><rect x="200" y="46" width="34" height="106" rx="6"/><rect x="348" y="46" width="34" height="106" rx="6"/><rect x="496" y="46" width="34" height="106" rx="6"/><rect x="644" y="46" width="34" height="106" rx="6"/><rect x="792" y="46" width="34" height="106" rx="6"/><rect x="940" y="46" width="34" height="106" rx="6"/></g>
+            <g data-obj="s4-rafter-hi" fill="#a2814f"><rect x="52" y="46" width="12" height="106" rx="5"/><rect x="200" y="46" width="12" height="106" rx="5"/><rect x="348" y="46" width="12" height="106" rx="5"/><rect x="496" y="46" width="12" height="106" rx="5"/><rect x="644" y="46" width="12" height="106" rx="5"/><rect x="792" y="46" width="12" height="106" rx="5"/><rect x="940" y="46" width="12" height="106" rx="5"/></g>
+            <g data-obj="s4-ceiling"><rect x="0" y="0" width="1080" height="48" fill="#6d5334"/></g>
+          </svg>
+          <!-- 환경 ①: 세살 창호 (밝은 창호지 면 + 어두운 살 + 궁판, 창 안에 달 금지 — 지뢰 #45) -->
+          <svg class="prop" data-adj="s4-window" style="left:630px; top:560px; width:420px; height:520px;" viewBox="0 0 390 470">
+            <g data-obj="s4-win-frame"><rect x="0" y="0" width="390" height="470" rx="8" fill="#6b5334"/></g>
+            <g data-obj="s4-win-paper"><rect x="24" y="24" width="342" height="330" fill="#eee5ca"/><rect x="24" y="24" width="342" height="14" fill="#f6efe0"/></g>
+            <g data-obj="s4-win-lattice" stroke="#5a4529" stroke-width="7">
+              <line x1="66" y1="24" x2="66" y2="354"/><line x1="108" y1="24" x2="108" y2="354"/><line x1="150" y1="24" x2="150" y2="354"/><line x1="192" y1="24" x2="192" y2="354"/><line x1="234" y1="24" x2="234" y2="354"/><line x1="276" y1="24" x2="276" y2="354"/><line x1="318" y1="24" x2="318" y2="354"/>
+              <line x1="24" y1="120" x2="366" y2="120"/><line x1="24" y1="138" x2="366" y2="138"/><line x1="24" y1="156" x2="366" y2="156"/>
+            </g>
+            <g data-obj="s4-win-apron"><rect x="24" y="354" width="342" height="92" fill="#8a6d45"/><rect x="24" y="354" width="342" height="12" fill="#9d7e52"/></g>
+          </svg>
+          <div class="prop" data-adj="s4-floor" style="left:0; bottom:0; width:1080px; height:560px; background:#a98d5f;"></div>
+          <div class="prop" data-adj="s4-floor-hi" style="left:0; bottom:536px; width:1080px; height:26px; background:#bb9d6c;"></div>
+          <svg class="prop" data-adj="s4-planks" style="left:0; bottom:0; width:1080px; height:540px;" viewBox="0 0 1080 540" preserveAspectRatio="none">
+            <g data-obj="s4-plank-lines" stroke="#8d7247" stroke-width="4"><line x1="0" y1="140" x2="1080" y2="140"/><line x1="0" y1="300" x2="1080" y2="300"/><line x1="0" y1="450" x2="1080" y2="450"/></g>
+          </svg>
+          <!-- 주 소품 ②: 낮은 좌식 서안 + 나란히 놓인 두 장의 시장(屍帳)
+               ⚠ 세로쓰기 글줄은 짧은 글자 획을 끊어 쌓기(지뢰 #46) — 긴 통막대+가로눈금 금지 -->
+          <svg class="prop" data-adj="s4-desk" style="left:20px; bottom:552px; width:860px; height:520px;" viewBox="0 0 700 420">
+            <g data-obj="s4-desk-legs" fill="#6d5334"><path d="M 62 318 L 92 318 L 100 408 L 54 408 Z"/><path d="M 608 318 L 638 318 L 646 408 L 600 408 Z"/><path d="M 100 330 Q 350 300 600 330 L 600 348 Q 350 320 100 348 Z" fill="#5b4429"/></g>
+            <g data-obj="s4-desk-top"><rect x="18" y="286" width="664" height="40" rx="10" fill="#8a6a42"/><rect x="18" y="286" width="664" height="14" rx="8" fill="#9d7b4e"/><path d="M 18 326 L 682 326 L 660 344 L 40 344 Z" fill="#6d5334"/></g>
+            <g data-obj="s4-doc-l">
+              <rect x="66" y="120" width="238" height="176" rx="5" fill="#f2ead6"/>
+              <rect x="66" y="120" width="238" height="176" rx="5" fill="none" stroke="#c9b98f" stroke-width="5"/>
+              <rect x="66" y="120" width="238" height="20" fill="#e3d8ba"/>
+              <g stroke="#4a4034" stroke-width="5" stroke-linecap="round">
+                <path d="M 100 158 v 18"/><path d="M 100 184 v 14"/><path d="M 100 206 v 22"/><path d="M 100 236 v 16"/><path d="M 100 260 v 20"/>
+                <path d="M 138 156 v 22"/><path d="M 138 186 v 16"/><path d="M 138 210 v 14"/><path d="M 138 232 v 24"/><path d="M 138 264 v 16"/>
+                <path d="M 176 160 v 16"/><path d="M 176 184 v 22"/><path d="M 176 214 v 14"/><path d="M 176 236 v 18"/><path d="M 176 262 v 20"/>
+                <path d="M 214 156 v 20"/><path d="M 214 184 v 16"/><path d="M 214 208 v 20"/><path d="M 214 236 v 14"/><path d="M 214 258 v 22"/>
+                <path d="M 252 158 v 22"/><path d="M 252 188 v 14"/><path d="M 252 210 v 18"/><path d="M 252 236 v 20"/>
+              </g>
+              <rect x="84" y="252" width="30" height="30" rx="4" fill="#b5322a" opacity="0.85"/>
+            </g>
+            <g data-obj="s4-doc-r">
+              <rect x="392" y="120" width="238" height="176" rx="5" fill="#f2ead6"/>
+              <rect x="392" y="120" width="238" height="176" rx="5" fill="none" stroke="#c9b98f" stroke-width="5"/>
+              <rect x="392" y="120" width="238" height="20" fill="#e3d8ba"/>
+              <g stroke="#4a4034" stroke-width="5" stroke-linecap="round">
+                <path d="M 426 158 v 20"/><path d="M 426 186 v 16"/><path d="M 426 210 v 20"/><path d="M 426 238 v 14"/><path d="M 426 260 v 20"/>
+                <path d="M 464 156 v 16"/><path d="M 464 180 v 24"/><path d="M 464 212 v 14"/><path d="M 464 234 v 20"/><path d="M 464 262 v 18"/>
+                <path d="M 502 160 v 22"/><path d="M 502 190 v 14"/><path d="M 502 212 v 18"/><path d="M 502 238 v 22"/>
+                <path d="M 540 156 v 18"/><path d="M 540 182 v 22"/><path d="M 540 212 v 16"/><path d="M 540 236 v 20"/><path d="M 540 264 v 16"/>
+                <path d="M 578 158 v 24"/><path d="M 578 190 v 16"/><path d="M 578 214 v 18"/><path d="M 578 240 v 22"/>
+              </g>
+              <rect x="410" y="252" width="30" height="30" rx="4" fill="#b5322a" opacity="0.85"/>
+            </g>
+          </svg>
+          <!-- 대조 표시 — 두 기록 사이. 늦게 등장 -->
+          <svg class="prop" data-adj="s4-diff" style="left:390px; bottom:900px; width:200px; height:170px;" viewBox="0 0 180 150">
+            <g data-obj="s4-diff-arrows" stroke="#b5322a" stroke-width="12" stroke-linecap="round" fill="none">
+              <path d="M 34 96 h 112"/><path d="M 52 76 L 30 96 L 52 116"/><path d="M 128 76 L 150 96 L 128 116"/>
+            </g>
+            <g data-obj="s4-diff-mark" fill="#b5322a"><path d="M 74 16 q 0 -14 16 -14 q 18 0 18 16 q 0 12 -14 18 q -8 4 -8 12 h -12 q 0 -14 10 -20 q 10 -6 10 -12 q 0 -6 -6 -6 q -6 0 -6 6 z"/><circle cx="90" cy="62" r="7"/></g>
+          </svg>
+          <!-- 보조 ③: 등잔 -->
+          <svg class="prop" data-adj="s4-lamp" style="left:6px; bottom:552px; width:150px; height:290px;" viewBox="0 0 140 270">
+            <g data-obj="s4-lamp-base"><path d="M 18 258 L 122 258 L 104 232 L 36 232 Z" fill="#8a6a3a"/><rect x="60" y="120" width="20" height="114" fill="#9c7c46"/></g>
+            <g data-obj="s4-lamp-dish"><path d="M 24 116 L 116 116 L 100 142 L 40 142 Z" fill="#b08d3f"/><rect x="24" y="110" width="92" height="10" rx="4" fill="#c6a355"/></g>
+            <g data-obj="s4-lamp-flame"><path d="M 70 56 q 22 26 22 42 q 0 20 -22 20 q -22 0 -22 -20 q 0 -16 22 -42 z" fill="#e8b74a"/><path d="M 70 78 q 10 16 10 24 q 0 10 -10 10 q -10 0 -10 -10 q 0 -8 10 -24 z" fill="#f6efe3"/></g>
+          </svg>
+        </div>
+        <div class="step-wrap s4-steps">
+          <span class="step">초검</span><span class="step-arrow">▶</span><span class="step">복검</span><span class="step-arrow">▶</span><span class="step on">삼검</span><span class="step-arrow">▶</span><span class="step on">사검</span>
+        </div>
+        <div class="stamp s4-stamp">詳覆司專掌初復檢狀內同異 相考施行<small>초검장·복검장의 같고 다른 곳을 전담해 맞대어 본다 — 세종 28년(1446) 의정부 계 / 「若有疑端 則三·四檢」 『대전통편』 刑典 檢驗</small></div>
+      </div>
+
+      <!-- ============ Scene 5 · 마루 — 소박한 법물, 겹겹의 절차 ============ -->
+      <div id="s5" class="clip scene" data-start="21.96" data-duration="8.07" data-track-index="0">
+        <div class="stage">
+          <div class="prop" data-adj="s5-wall" style="left:0; top:0; width:1080px; height:1370px; background:#d8c69e;"></div>
+          <svg class="prop" data-adj="s5-glow" style="left:120px; top:150px; width:840px; height:320px;" viewBox="0 0 840 320">
+            <g data-obj="s5-glow-body"><ellipse cx="420" cy="160" rx="400" ry="106" fill="#efdcae" opacity="0.55"/><ellipse cx="420" cy="160" rx="230" ry="66" fill="#f7ecca" opacity="0.5"/></g>
+          </svg>
+          <!-- 환경 ①: 대들보 + 서까래 (상단 공백 대역을 채우는 실내 천장 구조) -->
+          <svg class="prop" data-adj="s5-beams" style="left:0; top:430px; width:1080px; height:250px;" viewBox="0 0 1080 250">
+            <g data-obj="s5-beam-main"><rect x="0" y="150" width="1080" height="62" fill="#8a6a42"/><rect x="0" y="150" width="1080" height="16" fill="#a2814f"/><rect x="0" y="202" width="1080" height="12" fill="#6d5334"/></g>
+            <g data-obj="s5-rafters" fill="#8a6a42"><rect x="52" y="46" width="34" height="106" rx="6"/><rect x="200" y="46" width="34" height="106" rx="6"/><rect x="348" y="46" width="34" height="106" rx="6"/><rect x="496" y="46" width="34" height="106" rx="6"/><rect x="644" y="46" width="34" height="106" rx="6"/><rect x="792" y="46" width="34" height="106" rx="6"/><rect x="940" y="46" width="34" height="106" rx="6"/></g>
+            <g data-obj="s5-rafter-hi" fill="#a2814f"><rect x="52" y="46" width="12" height="106" rx="5"/><rect x="200" y="46" width="12" height="106" rx="5"/><rect x="348" y="46" width="12" height="106" rx="5"/><rect x="496" y="46" width="12" height="106" rx="5"/><rect x="644" y="46" width="12" height="106" rx="5"/><rect x="792" y="46" width="12" height="106" rx="5"/><rect x="940" y="46" width="12" height="106" rx="5"/></g>
+            <g data-obj="s5-ceiling"><rect x="0" y="0" width="1080" height="48" fill="#6d5334"/></g>
+          </svg>
+          <!-- 환경 ①: 뒷벽 널 + 마루 -->
+          <svg class="prop" data-adj="s5-boards" style="left:0; top:900px; width:1080px; height:470px;" viewBox="0 0 1080 470" preserveAspectRatio="none">
+            <g data-obj="s5-board-lines" stroke="#cdbc94" stroke-width="3" opacity="0.7"><line x1="120" y1="0" x2="120" y2="470"/><line x1="270" y1="0" x2="270" y2="470"/><line x1="420" y1="0" x2="420" y2="470"/><line x1="570" y1="0" x2="570" y2="470"/><line x1="720" y1="0" x2="720" y2="470"/><line x1="870" y1="0" x2="870" y2="470"/><line x1="1020" y1="0" x2="1020" y2="470"/></g>
+          </svg>
+          <div class="prop" data-adj="s5-floor" style="left:0; bottom:0; width:1080px; height:560px; background:#a4874f;"></div>
+          <div class="prop" data-adj="s5-floor-hi" style="left:0; bottom:536px; width:1080px; height:26px; background:#b69a60;"></div>
+          <!-- 주 소품 ②: 소반 위 법물 — 눕힌 은비녀 + 흰 종이 + 백자 사발 + 흰 매실 접시 -->
+          <svg class="prop" data-adj="s5-tray" style="left:300px; bottom:548px; width:560px; height:377px;" viewBox="0 0 490 330">
+            <!-- 소반은 다리 4개(호족반) + 상판 전(변죽) — 판각 다리 2개 + 긴 가로대는 서양 벤치 문법(S8 고증) -->
+            <g data-obj="s5-tray-legs" fill="#6f5334">
+              <path d="M 62 250 L 88 250 L 76 316 L 44 316 Z"/><path d="M 150 250 L 174 250 L 172 312 L 144 312 Z"/>
+              <path d="M 318 250 L 342 250 L 348 312 L 320 312 Z"/><path d="M 402 250 L 428 250 L 446 316 L 414 316 Z"/>
+              <path d="M 70 282 Q 246 268 424 282 L 424 294 Q 246 280 70 294 Z" fill="#5b4429"/>
+            </g>
+            <g data-obj="s5-tray-top"><path d="M 22 216 L 468 216 L 442 254 L 48 254 Z" fill="#7d5f3b"/><path d="M 22 216 L 468 216 L 462 228 L 28 228 Z" fill="#916f45"/><path d="M 34 196 L 456 196 L 468 216 L 22 216 Z" fill="#9d7a4c"/>
+              <path d="M 34 196 L 456 196 L 458 204 L 32 204 Z" fill="#b08a58"/></g>
+            <!-- 은비녀: 소반 위에 눕힘(세로 단독 배치 금지 — 시그니처 표). 끝만 검게 = 독 반응 -->
+            <!-- 은비녀: 소반 위에 눕힘(세로 단독 배치 금지). 끝만 검게 = 독 반응 -->
+            <g data-obj="s5-paper"><rect x="24" y="132" width="176" height="72" rx="3" fill="#f4eeda"/><rect x="24" y="132" width="176" height="14" fill="#e5dcc0"/><g stroke="#d3c8a8" stroke-width="4"><line x1="38" y1="160" x2="186" y2="158"/><line x1="38" y1="194" x2="186" y2="192"/></g></g>
+            <g data-obj="s5-binyeo">
+              <!-- 굵기 일정한 가는 은막대 + 뭉툭한 끝. 뾰족한 검은 촉은 화살촉/펜촉으로 오독(S8) →
+                   끝 1/3을 같은 굵기로 검게(독 반응)하고 끝을 둥글게 마감. -->
+              <!-- ⚠ 길고 사발 옆에 두면 "국자"로 읽혀 씬 전체가 조리 프레임으로 오염된다(S8 2차).
+                   길이를 소반 폭의 1/3로 줄이고 사발에서 떨어뜨려 종이 위에 얹는다. -->
+              <path d="M 52 176 L 168 172 Q 176 175 168 179 L 52 183 Q 44 179 52 176 Z" fill="#d9dde2"/>
+              <path d="M 52 176 L 168 172 Q 172 173 172 174 L 53 179 Q 46 178 52 176 Z" fill="#f0f3f6"/>
+              <path d="M 130 173 L 168 172 Q 176 175 168 179 L 130 181 Z" fill="#2f3440"/>
+              <circle cx="48" cy="180" r="8" fill="#c6cbd2"/><circle cx="46" cy="178" r="4" fill="#eef1f4"/>
+            </g>
+            <g data-obj="s5-bowl"><path d="M 232 130 L 360 130 Q 352 190 296 190 Q 240 190 232 130 Z" fill="#eef0ea"/><path d="M 232 130 L 360 130 Q 356 148 296 148 Q 236 148 232 130 Z" fill="#d8dcd2"/><rect x="270" y="190" width="52" height="16" rx="4" fill="#c8ccc2"/><rect x="276" y="204" width="40" height="8" rx="3" fill="#b7bbb1"/></g>
+          </svg>
+          <!-- 보조 ③: 옹기 2개 (흑갈 유약 + 잘록한 목 + 뚜껑, 단 위 나란히 — 시그니처 표) -->
+          <svg class="prop" data-adj="s5-jars" style="left:34px; bottom:548px; width:290px; height:330px;" viewBox="0 0 290 330">
+            <!-- ⚠ 쟁반 제거 — 옹기는 마루·장독대 바닥에 그냥 놓는다(S8 고증).
+                 조선 옹기는 어깨(위 1/3)가 최대 폭이고 아래로 좁아지며, 중앙 테(hoop)가 없다.
+                 중앙 최대폭 + 테 = 서양 오크통/일본 다루 문법. -->
+            <g data-obj="s5-jar-a">
+              <path d="M 46 296 Q 20 268 18 226 Q 16 182 56 168 L 104 168 Q 142 182 140 226 Q 138 268 112 296 Z" fill="#5b3b26"/>
+              <path d="M 46 296 Q 20 268 18 226 Q 16 182 56 168 L 76 168 Q 44 190 46 228 Q 48 268 66 296 Z" fill="#6f4a2f"/>
+              <path d="M 52 172 Q 80 160 108 172 Q 80 182 52 172 Z" fill="#3d281a"/>
+              <rect x="44" y="160" width="72" height="12" rx="5" fill="#4a3020"/>
+              <path d="M 40 200 Q 62 190 84 192" stroke="#8a6242" stroke-width="6" fill="none" opacity="0.6"/>
+            </g>
+            <g data-obj="s5-jar-b">
+              <path d="M 178 296 Q 158 272 156 238 Q 154 202 186 190 L 226 190 Q 258 202 256 238 Q 254 272 234 296 Z" fill="#674327"/>
+              <path d="M 178 296 Q 158 272 156 238 Q 154 202 186 190 L 202 190 Q 176 208 178 240 Q 180 272 194 296 Z" fill="#7d5433"/>
+              <path d="M 184 194 Q 206 184 228 194 Q 206 202 184 194 Z" fill="#432a1a"/>
+              <rect x="178" y="182" width="58" height="11" rx="5" fill="#523421"/>
+              <path d="M 174 218 Q 192 210 210 212" stroke="#96704c" stroke-width="5" fill="none" opacity="0.6"/>
+            </g>
+          </svg>
+          <!-- 절차 — 겹쳐 쌓이는 검안 기록 (후반 등장) -->
+          <svg class="prop" data-adj="s5-stack" style="left:640px; bottom:698px; width:210px; height:225px;" viewBox="0 0 280 300">
+            <g data-obj="s5-stack-c"><rect x="22" y="204" width="228" height="52" rx="5" fill="#e6dcc0"/><rect x="22" y="204" width="228" height="12" fill="#f2ead6"/><rect x="22" y="204" width="228" height="52" rx="5" fill="none" stroke="#c3b48c" stroke-width="4"/></g>
+            <g data-obj="s5-stack-b"><rect x="34" y="150" width="216" height="52" rx="5" fill="#eee4c9"/><rect x="34" y="150" width="216" height="12" fill="#f6efe0"/><rect x="34" y="150" width="216" height="52" rx="5" fill="none" stroke="#c3b48c" stroke-width="4"/></g>
+            <g data-obj="s5-stack-a">
+              <rect x="46" y="94" width="204" height="56" rx="5" fill="#f4eeda"/><rect x="46" y="94" width="204" height="12" fill="#faf5e6"/>
+              <rect x="46" y="94" width="204" height="56" rx="5" fill="none" stroke="#c3b48c" stroke-width="4"/>
+              <g stroke="#4a4034" stroke-width="4" stroke-linecap="round"><path d="M 68 110 v 12"/><path d="M 68 128 v 10"/><path d="M 68 144 v 6"/><path d="M 90 108 v 14"/><path d="M 90 128 v 8"/><path d="M 90 142 v 8"/><path d="M 112 112 v 10"/><path d="M 112 128 v 12"/><path d="M 112 146 v 6"/><path d="M 134 108 v 12"/><path d="M 134 126 v 12"/><path d="M 134 144 v 8"/><path d="M 156 110 v 14"/><path d="M 156 130 v 8"/><path d="M 156 144 v 8"/><path d="M 178 112 v 10"/><path d="M 178 128 v 14"/><path d="M 200 110 v 12"/><path d="M 200 128 v 10"/></g>
+              <rect x="216" y="120" width="22" height="22" rx="3" fill="#9c4030" opacity="0.55"/>
+            </g>
+          </svg>
+        </div>
+        <div class="stamp s5-stamp">檢屍 法物 — 銀釵 糟 醋 蔥 椒 鹽 白梅<small>검시에 쓰던 도구 일곱 가지: 은비녀·지게미·식초·파·천초·소금·흰매실</small></div>
+        <div class="num-pop s5-numpop"><em>절차</em><small>도구가 아니라</small></div>
+      </div>
+
+      <!-- ============ Scene 6 · 저녁 — 검시가 닿지 않는 문 ============ -->
+      <div id="s6" class="clip scene" data-start="29.58" data-duration="6.33" data-track-index="1">
+        <div class="stage">
+          <div class="prop" data-adj="s6-sky" style="left:0; top:0; width:1080px; height:1380px; background:#8b7a84;"></div>
+          <svg class="prop" data-adj="s6-glow" style="left:80px; top:180px; width:920px; height:330px;" viewBox="0 0 920 330">
+            <g data-obj="s6-glow-body"><ellipse cx="460" cy="165" rx="440" ry="110" fill="#c99a7c" opacity="0.45"/><ellipse cx="460" cy="165" rx="250" ry="70" fill="#e0b58f" opacity="0.4"/></g>
+          </svg>
+          <svg class="prop" data-adj="s6-clouds" style="left:0; top:390px; width:1080px; height:230px;" viewBox="0 0 1080 230">
+            <g data-obj="s6-cloud-a" fill="#9b8a92" opacity="0.85"><ellipse cx="250" cy="96" rx="160" ry="34"/><ellipse cx="356" cy="76" rx="86" ry="26"/></g>
+            <g data-obj="s6-cloud-b" fill="#8f7f88" opacity="0.8"><ellipse cx="850" cy="70" rx="140" ry="30"/></g>
+          </svg>
+          <div class="prop" data-adj="s6-ground" style="left:0; bottom:0; width:1080px; height:600px; background:#6d5f62;"></div>
+          <div class="prop" data-adj="s6-ground-hi" style="left:0; bottom:576px; width:1080px; height:24px; background:#7d6e70;"></div>
+          <!-- 환경 ①: 원경 언덕 + 나무 (상단 공백 대역) -->
+          <svg class="prop" data-adj="s6-hills" style="left:0; bottom:840px; width:1080px; height:460px;" viewBox="0 0 1080 420">
+            <g data-obj="s6-hill-far"><path d="M 0 420 L 150 250 L 300 350 L 460 208 L 640 366 L 800 236 L 950 340 L 1080 244 L 1080 420 Z" fill="#7d6d76"/></g>
+            <g data-obj="s6-hill-near"><path d="M 0 420 L 170 322 L 330 396 L 500 300 L 680 404 L 850 316 L 1010 392 L 1080 330 L 1080 420 Z" fill="#6e6068"/></g>
+            <g data-obj="s6-hill-trees" fill="#5c5058"><path d="M 96 396 l 26 -62 l 26 62 z"/><path d="M 140 404 l 20 -48 l 20 48 z"/><path d="M 916 392 l 26 -62 l 26 62 z"/><path d="M 958 402 l 20 -48 l 20 48 z"/></g>
+          </svg>
+          <!-- 주 소품 ②: 양반가 기와집(사가 — 단청 금지·나무 기둥·세살창·세로 기왓골, 지뢰 #28) -->
+          <svg class="prop" data-adj="s6-house" style="left:280px; bottom:592px; width:800px; height:790px;" viewBox="0 0 600 580">
+            <g data-obj="s6-house-base"><rect x="52" y="500" width="516" height="56" fill="#7d7462"/><rect x="52" y="500" width="516" height="14" fill="#918872"/></g>
+            <g data-obj="s6-house-body"><rect x="80" y="268" width="460" height="236" fill="#c0ad86"/><rect x="80" y="268" width="460" height="18" fill="#d1be95"/><rect x="80" y="462" width="460" height="42" fill="#856f4c"/></g>
+            <g data-obj="s6-house-stones"><rect x="82" y="482" width="42" height="24" rx="4" fill="#95917c"/><rect x="288" y="482" width="42" height="24" rx="4" fill="#95917c"/><rect x="496" y="482" width="42" height="24" rx="4" fill="#95917c"/>
+              <rect x="82" y="482" width="42" height="8" rx="3" fill="#a7a38d"/><rect x="288" y="482" width="42" height="8" rx="3" fill="#a7a38d"/><rect x="496" y="482" width="42" height="8" rx="3" fill="#a7a38d"/></g>
+            <g data-obj="s6-house-cols" fill="#6e5636"><rect x="90" y="268" width="26" height="236"/><rect x="296" y="268" width="26" height="236"/><rect x="504" y="268" width="26" height="236"/><rect x="90" y="268" width="8" height="236" fill="#83694a"/><rect x="296" y="268" width="8" height="236" fill="#83694a"/><rect x="504" y="268" width="8" height="236" fill="#83694a"/></g>
+            <g data-obj="s6-house-win"><rect x="150" y="304" width="132" height="132" fill="#e2d8ba"/>
+              <g stroke="#5a4a30" stroke-width="4"><line x1="163" y1="304" x2="163" y2="436"/><line x1="176" y1="304" x2="176" y2="436"/><line x1="189" y1="304" x2="189" y2="436"/><line x1="202" y1="304" x2="202" y2="436"/><line x1="215" y1="304" x2="215" y2="436"/><line x1="228" y1="304" x2="228" y2="436"/><line x1="241" y1="304" x2="241" y2="436"/><line x1="254" y1="304" x2="254" y2="436"/><line x1="267" y1="304" x2="267" y2="436"/><line x1="150" y1="340" x2="282" y2="340"/><line x1="150" y1="352" x2="282" y2="352"/><line x1="150" y1="364" x2="282" y2="364"/></g>
+              <rect x="150" y="436" width="132" height="26" fill="#856f4c"/><rect x="150" y="304" width="132" height="158" fill="none" stroke="#4a3a24" stroke-width="6"/></g>
+            <g data-obj="s6-house-win2"><rect x="352" y="304" width="132" height="132" fill="#e2d8ba"/>
+              <g stroke="#5a4a30" stroke-width="4"><line x1="365" y1="304" x2="365" y2="436"/><line x1="378" y1="304" x2="378" y2="436"/><line x1="391" y1="304" x2="391" y2="436"/><line x1="404" y1="304" x2="404" y2="436"/><line x1="417" y1="304" x2="417" y2="436"/><line x1="430" y1="304" x2="430" y2="436"/><line x1="443" y1="304" x2="443" y2="436"/><line x1="456" y1="304" x2="456" y2="436"/><line x1="469" y1="304" x2="469" y2="436"/><line x1="352" y1="340" x2="484" y2="340"/><line x1="352" y1="352" x2="484" y2="352"/><line x1="352" y1="364" x2="484" y2="364"/></g>
+              <rect x="352" y="436" width="132" height="26" fill="#856f4c"/><rect x="352" y="304" width="132" height="158" fill="none" stroke="#4a3a24" stroke-width="6"/></g>
+            <g data-obj="s6-house-roof"><path d="M 24 268 L 300 122 L 576 268 Z" fill="#5f6874"/><path d="M 24 268 L 300 122 L 576 268 L 538 268 L 300 146 L 62 268 Z" fill="#48505c"/>
+              <g stroke="#3c4350" stroke-width="3"><line x1="120" y1="232" x2="64" y2="268"/><line x1="162" y1="210" x2="118" y2="268"/><line x1="200" y1="190" x2="170" y2="268"/><line x1="250" y1="164" x2="232" y2="268"/><line x1="350" y1="164" x2="368" y2="268"/><line x1="400" y1="190" x2="430" y2="268"/><line x1="438" y1="210" x2="482" y2="268"/><line x1="480" y1="232" x2="536" y2="268"/></g>
+              <path d="M 24 268 Q 8 264 4 250 Q 18 256 38 260 Z" fill="#48505c"/>
+              <path d="M 576 268 Q 592 264 596 250 Q 582 256 562 260 Z" fill="#48505c"/>
+              <g fill="#3c4350"><rect x="66" y="268" width="10" height="16"/><rect x="140" y="268" width="10" height="16"/><rect x="214" y="268" width="10" height="16"/><rect x="288" y="268" width="10" height="16"/><rect x="362" y="268" width="10" height="16"/><rect x="436" y="268" width="10" height="16"/><rect x="510" y="268" width="10" height="16"/></g></g>
+          </svg>
+          <!-- 보조 ③: 돌담 + 닫힌 대문 (지붕 얹은 솟을대문 — 문짝 단독 배치 오독 회피) -->
+          <svg class="prop" data-adj="s6-gate" style="left:260px; bottom:556px; width:800px; height:400px;" viewBox="0 0 800 400">
+            <g data-obj="s6-gate-wall"><rect x="0" y="150" width="800" height="250" fill="#8e8071"/><rect x="0" y="150" width="800" height="16" fill="#a09183"/><rect x="0" y="366" width="800" height="34" fill="#77695c"/>
+              <g stroke="#7d7062" stroke-width="4" fill="none">
+                <path d="M 0 208 q 38 -14 78 2 q 42 16 84 -2 q 40 -14 72 2"/><path d="M 528 208 q 40 -14 80 2 q 44 16 90 -2 q 40 -14 82 2"/>
+                <path d="M 0 262 q 44 16 88 -2 q 40 -16 76 2 q 40 16 78 -2"/><path d="M 540 262 q 44 16 88 -2 q 40 -16 76 2 q 40 16 96 -2"/>
+                <path d="M 0 316 q 40 -14 80 2 q 42 16 84 -2"/><path d="M 552 316 q 40 -14 80 2 q 42 16 84 -2 q 38 -12 84 2"/>
+                <path d="M 62 166 v 42"/><path d="M 180 208 v 54"/><path d="M 118 262 v 54"/><path d="M 660 166 v 42"/><path d="M 748 208 v 54"/><path d="M 700 262 v 54"/><path d="M 620 316 v 50"/><path d="M 40 316 v 50"/></g>
+              <g fill="#a09183"><circle cx="30" cy="158" r="13"/><circle cx="86" cy="158" r="13"/><circle cx="142" cy="158" r="13"/><circle cx="198" cy="158" r="13"/><circle cx="254" cy="158" r="13"/><circle cx="590" cy="158" r="13"/><circle cx="646" cy="158" r="13"/><circle cx="702" cy="158" r="13"/><circle cx="758" cy="158" r="13"/></g></g>
+            <g data-obj="s6-gate-doors">
+              <rect x="272" y="166" width="256" height="234" fill="#6b4c30"/>
+              <rect x="272" y="166" width="126" height="234" fill="#7b5836"/>
+              <!-- 조선 대문 = 세로 널판 + 가로 띠장(횡목). 패널 액자 구조는 서양/중국 판문 문법(S8 고증) -->
+              <g stroke="#54391f" stroke-width="4"><line x1="302" y1="166" x2="302" y2="400"/><line x1="332" y1="166" x2="332" y2="400"/><line x1="362" y1="166" x2="362" y2="400"/><line x1="428" y1="166" x2="428" y2="400"/><line x1="458" y1="166" x2="458" y2="400"/><line x1="488" y1="166" x2="488" y2="400"/></g>
+              <rect x="394" y="166" width="12" height="234" fill="#513824"/>
+              <g fill="#3f2c1c"><rect x="272" y="198" width="256" height="14"/><rect x="272" y="330" width="256" height="14"/></g>
+              <g fill="#2c1e13"><circle cx="288" cy="205" r="4"/><circle cx="350" cy="205" r="4"/><circle cx="450" cy="205" r="4"/><circle cx="512" cy="205" r="4"/><circle cx="288" cy="337" r="4"/><circle cx="350" cy="337" r="4"/><circle cx="450" cy="337" r="4"/><circle cx="512" cy="337" r="4"/></g>
+              <g fill="#c2a24d"><circle cx="366" cy="268" r="16"/><circle cx="436" cy="268" r="16"/><circle cx="366" cy="268" r="7" fill="#8d7431"/><circle cx="436" cy="268" r="7" fill="#8d7431"/></g>
+            </g>
+            <g data-obj="s6-gate-roof"><path d="M 214 166 L 400 92 L 586 166 Z" fill="#5f6874"/><path d="M 214 166 L 400 92 L 586 166 L 552 166 L 400 110 L 248 166 Z" fill="#48505c"/><rect x="316" y="136" width="168" height="16" rx="6" fill="#3c4350"/></g>
+          </svg>
+        </div>
+        <div class="stamp s6-stamp">士族婦女犯殺人 雖正法 勿爲檢驗<small>사족 부녀는 살인으로 처형되더라도 검험하지 말라 — 『대전통편』(1785) 刑典 檢驗. 정배된 종친·훈신·문·음·무 하대부 이상도 같다</small></div>
+      </div>
+
+      <!-- ============ Scene 7 · 펀치 — 무원, 억울함을 없게 하라 ============ -->
+      <div id="s7" class="clip scene" data-start="35.46" data-duration="6.85" data-track-index="0">
+        <div class="stage">
+          <div class="prop" data-adj="s7-wall" style="left:0; top:0; width:1080px; height:1380px; background:#e9dcbe;"></div>
+          <svg class="prop" data-adj="s7-glow" style="left:90px; top:560px; width:900px; height:300px;" viewBox="0 0 900 300">
+            <g data-obj="s7-glow-body"><ellipse cx="450" cy="150" rx="430" ry="100" fill="#f0d79c" opacity="0.5"/><ellipse cx="450" cy="150" rx="240" ry="62" fill="#f8ecc6" opacity="0.45"/></g>
+          </svg>
+          <!-- 환경 ①: 대들보 + 서까래 (상단 공백 대역을 채우는 실내 천장 구조) -->
+          <svg class="prop" data-adj="s7-beams" style="left:0; top:470px; width:1080px; height:250px;" viewBox="0 0 1080 250">
+            <g data-obj="s7-beam-main"><rect x="0" y="150" width="1080" height="62" fill="#8a6a42"/><rect x="0" y="150" width="1080" height="16" fill="#a2814f"/><rect x="0" y="202" width="1080" height="12" fill="#6d5334"/></g>
+            <g data-obj="s7-rafters" fill="#8a6a42"><rect x="52" y="46" width="34" height="106" rx="6"/><rect x="200" y="46" width="34" height="106" rx="6"/><rect x="348" y="46" width="34" height="106" rx="6"/><rect x="496" y="46" width="34" height="106" rx="6"/><rect x="644" y="46" width="34" height="106" rx="6"/><rect x="792" y="46" width="34" height="106" rx="6"/><rect x="940" y="46" width="34" height="106" rx="6"/></g>
+            <g data-obj="s7-rafter-hi" fill="#a2814f"><rect x="52" y="46" width="12" height="106" rx="5"/><rect x="200" y="46" width="12" height="106" rx="5"/><rect x="348" y="46" width="12" height="106" rx="5"/><rect x="496" y="46" width="12" height="106" rx="5"/><rect x="644" y="46" width="12" height="106" rx="5"/><rect x="792" y="46" width="12" height="106" rx="5"/><rect x="940" y="46" width="12" height="106" rx="5"/></g>
+            <g data-obj="s7-ceiling"><rect x="0" y="0" width="1080" height="48" fill="#6d5334"/></g>
+          </svg>
+          <!-- 환경 ①: 세살 창호 (새벽빛 드는 밝은 창호지 면) -->
+          <svg class="prop" data-adj="s7-window" style="left:700px; top:700px; width:340px; height:420px;" viewBox="0 0 340 420">
+            <g data-obj="s7-win-frame"><rect x="0" y="0" width="340" height="420" rx="8" fill="#6b5334"/></g>
+            <g data-obj="s7-win-paper"><rect x="22" y="22" width="296" height="296" fill="#f6efdc"/><rect x="22" y="22" width="296" height="14" fill="#fdf7e9"/></g>
+            <g data-obj="s7-win-lattice" stroke="#5a4529" stroke-width="7">
+              <line x1="60" y1="22" x2="60" y2="318"/><line x1="98" y1="22" x2="98" y2="318"/><line x1="136" y1="22" x2="136" y2="318"/><line x1="174" y1="22" x2="174" y2="318"/><line x1="212" y1="22" x2="212" y2="318"/><line x1="250" y1="22" x2="250" y2="318"/><line x1="288" y1="22" x2="288" y2="318"/>
+              <line x1="22" y1="108" x2="318" y2="108"/><line x1="22" y1="126" x2="318" y2="126"/><line x1="22" y1="144" x2="318" y2="144"/>
+            </g>
+            <g data-obj="s7-win-apron"><rect x="22" y="318" width="296" height="80" fill="#8a6d45"/><rect x="22" y="318" width="296" height="12" fill="#9d7e52"/></g>
+          </svg>
+          <div class="prop" data-adj="s7-floor" style="left:0; bottom:0; width:1080px; height:560px; background:#b39561;"></div>
+          <div class="prop" data-adj="s7-floor-hi" style="left:0; bottom:536px; width:1080px; height:26px; background:#c4a76f;"></div>
+          <!-- 주 소품 ②: 낮은 좌식 서안 -->
+          <svg class="prop" data-adj="s7-desk" style="left:130px; bottom:552px; width:860px; height:346px;" viewBox="0 0 820 330">
+            <g data-obj="s7-desk-legs" fill="#6d5334"><path d="M 82 214 L 116 214 L 128 318 L 68 318 Z"/><path d="M 704 214 L 738 214 L 752 318 L 692 318 Z"/><path d="M 124 232 Q 420 202 696 232 L 696 250 Q 420 222 124 250 Z" fill="#5b4429"/></g>
+            <g data-obj="s7-desk-top"><rect x="22" y="176" width="776" height="44" rx="10" fill="#8a6a42"/><rect x="22" y="176" width="776" height="14" rx="8" fill="#9d7b4e"/><path d="M 22 220 L 798 220 L 770 240 L 50 240 Z" fill="#6d5334"/></g>
+          </svg>
+          <!-- 주 소품 ②: 펼친 선장본 『무원록』 — 제첨 + 세로쓰기 글줄(짧은 획 쌓기) + 오침 제본 -->
+          <svg class="prop" data-adj="s7-book" style="left:190px; bottom:648px; width:740px; height:440px;" viewBox="0 0 680 400">
+            <g data-obj="s7-book-shadow"><path d="M 34 330 L 646 330 L 616 366 L 64 366 Z" fill="#8a7247" opacity="0.5"/></g>
+            <g data-obj="s7-book-pages">
+              <path d="M 30 96 Q 170 62 336 86 L 336 336 Q 170 312 30 344 Z" fill="#f4eeda"/>
+              <path d="M 650 96 Q 510 62 344 86 L 344 336 Q 510 312 650 344 Z" fill="#f4eeda"/>
+              <path d="M 30 96 Q 170 62 336 86 L 336 104 Q 170 80 30 114 Z" fill="#e6dcc0"/>
+              <path d="M 650 96 Q 510 62 344 86 L 344 104 Q 510 80 650 114 Z" fill="#e6dcc0"/>
+              <path d="M 336 86 L 344 86 L 344 336 L 336 336 Z" fill="#c9b98f"/>
+            </g>
+            <g data-obj="s7-book-text" stroke="#4a4034" stroke-width="5" stroke-linecap="round">
+              <path d="M 76 140 v 20"/><path d="M 76 168 v 14"/><path d="M 76 190 v 22"/><path d="M 76 220 v 16"/><path d="M 76 244 v 20"/><path d="M 76 272 v 14"/>
+              <path d="M 118 134 v 16"/><path d="M 118 158 v 22"/><path d="M 118 188 v 14"/><path d="M 118 210 v 20"/><path d="M 118 238 v 16"/><path d="M 118 262 v 22"/>
+              <path d="M 160 130 v 22"/><path d="M 160 160 v 14"/><path d="M 160 182 v 20"/><path d="M 160 210 v 16"/><path d="M 160 234 v 22"/><path d="M 160 264 v 14"/>
+              <path d="M 202 128 v 16"/><path d="M 202 152 v 20"/><path d="M 202 180 v 14"/><path d="M 202 202 v 22"/><path d="M 202 232 v 16"/><path d="M 202 256 v 20"/>
+              <path d="M 244 126 v 20"/><path d="M 244 154 v 16"/><path d="M 244 178 v 22"/><path d="M 244 208 v 14"/><path d="M 244 230 v 20"/><path d="M 244 258 v 16"/>
+              <path d="M 402 128 v 18"/><path d="M 402 154 v 20"/><path d="M 402 182 v 14"/><path d="M 402 204 v 22"/><path d="M 402 234 v 16"/><path d="M 402 258 v 20"/>
+              <path d="M 444 126 v 22"/><path d="M 444 156 v 14"/><path d="M 444 178 v 20"/><path d="M 444 206 v 16"/><path d="M 444 230 v 22"/><path d="M 444 260 v 14"/>
+              <path d="M 486 130 v 16"/><path d="M 486 154 v 22"/><path d="M 486 184 v 14"/><path d="M 486 206 v 20"/><path d="M 486 234 v 16"/><path d="M 486 258 v 22"/>
+              <path d="M 528 134 v 20"/><path d="M 528 162 v 16"/><path d="M 528 186 v 22"/><path d="M 528 216 v 14"/><path d="M 528 238 v 20"/><path d="M 528 266 v 16"/>
+              <path d="M 570 140 v 16"/><path d="M 570 164 v 20"/><path d="M 570 192 v 14"/><path d="M 570 214 v 22"/><path d="M 570 244 v 16"/><path d="M 570 268 v 18"/>
+            </g>
+            <!-- 제첨 -->
+            <g data-obj="s7-book-label">
+              <rect x="556" y="112" width="66" height="150" rx="4" fill="#efe6cd"/>
+              <rect x="556" y="112" width="66" height="150" rx="4" fill="none" stroke="#8a5a33" stroke-width="5"/>
+              <text x="589" y="156" font-family="Apple SD Gothic Neo, AppleGothic, Nanum Myeongjo, serif" font-size="40" fill="#3a2f22" text-anchor="middle">無</text>
+              <text x="589" y="202" font-family="Apple SD Gothic Neo, AppleGothic, Nanum Myeongjo, serif" font-size="40" fill="#3a2f22" text-anchor="middle">寃</text>
+              <text x="589" y="248" font-family="Apple SD Gothic Neo, AppleGothic, Nanum Myeongjo, serif" font-size="40" fill="#3a2f22" text-anchor="middle">錄</text>
+            </g>
+            <!-- 오침 제본 (좌측 등) -->
+            <!-- 선장본은 우철(右綴) — 오침 구멍·제첨은 오른쪽. 좌철은 서양/현대 제본 문법(S8 고증) -->
+            <g data-obj="s7-book-stitch" fill="#5b4a30"><circle cx="638" cy="152" r="6"/><circle cx="640" cy="196" r="6"/><circle cx="642" cy="240" r="6"/><circle cx="642" cy="284" r="6"/><circle cx="640" cy="320" r="6"/></g>
+          </svg>
+          <!-- 보조 ③: 붓 — 반드시 종이(책)와 붙여 눕힌다(지뢰 #20) -->
+          <svg class="prop" data-adj="s7-brush" style="left:440px; bottom:648px; width:320px; height:130px;" viewBox="0 0 300 120">
+            <g data-obj="s7-brush-shaft"><path d="M 96 62 L 282 44 Q 292 44 292 52 Q 292 60 282 60 L 96 78 Q 88 70 96 62 Z" fill="#8a6a42"/><path d="M 96 62 L 282 44 Q 288 44 290 48 L 98 68 Q 92 65 96 62 Z" fill="#a2814f"/></g>
+            <g data-obj="s7-brush-ferrule"><path d="M 86 60 L 108 58 L 110 80 L 88 82 Z" fill="#6d5334"/></g>
+            <g data-obj="s7-brush-tip"><path d="M 88 62 Q 52 60 22 70 Q 50 82 88 80 Q 96 71 88 62 Z" fill="#2f2a24"/><path d="M 88 62 Q 62 60 38 66 Q 62 70 88 70 Z" fill="#454038"/></g>
+          </svg>
+          <!-- 보조 ③: 벼루 + 먹 (문방사우 — 붓만 있고 벼루가 없으면 글을 못 쓴다, S8 고증) -->
+          <svg class="prop" data-adj="s7-inkstone" style="left:196px; bottom:636px; width:220px; height:130px;" viewBox="0 0 220 130">
+            <g data-obj="s7-inkstone-body"><ellipse cx="108" cy="86" rx="98" ry="34" fill="#3b3a38"/><ellipse cx="108" cy="78" rx="98" ry="34" fill="#4d4b48"/><ellipse cx="128" cy="76" rx="60" ry="20" fill="#2b2a28"/><ellipse cx="60" cy="78" rx="26" ry="12" fill="#26251f"/></g>
+            <g data-obj="s7-ink"><rect x="130" y="42" width="58" height="22" rx="4" fill="#1f1e1c"/><rect x="130" y="42" width="58" height="8" rx="3" fill="#34322e"/><rect x="140" y="47" width="22" height="6" rx="2" fill="#8a6a3a" opacity="0.75"/></g>
+          </svg>
+          <!-- 보조 ③: 등잔 -->
+          <svg class="prop" data-adj="s7-lamp" style="left:14px; bottom:552px; width:140px; height:280px;" viewBox="0 0 130 260">
+            <g data-obj="s7-lamp-base"><path d="M 14 248 L 116 248 L 98 224 L 32 224 Z" fill="#8a6a3a"/><rect x="55" y="114" width="20" height="110" fill="#9c7c46"/></g>
+            <g data-obj="s7-lamp-dish"><path d="M 20 110 L 110 110 L 94 136 L 36 136 Z" fill="#b08d3f"/><rect x="20" y="104" width="90" height="10" rx="4" fill="#c6a355"/></g>
+            <g data-obj="s7-lamp-flame"><path d="M 65 52 q 22 26 22 42 q 0 20 -22 20 q -22 0 -22 -20 q 0 -16 22 -42 z" fill="#e8b74a"/><path d="M 65 74 q 10 16 10 24 q 0 10 -10 10 q -10 0 -10 -10 q 0 -8 10 -24 z" fill="#f6efe3"/></g>
+          </svg>
+        </div>
+        <div class="s7-title"><em>無寃</em></div>
+        <div class="s7-sub">억울함을, 없게 하라</div>
+      </div>
+
+      <!-- ============ Scene 8 · 아웃트로 ============ -->
+      <div id="s8" class="clip scene" data-start="41.86" data-duration="5.74" data-track-index="1">
+        <div class="stage">
+          <div class="logo-big">삼십초<br><em>역사</em></div>
+          <div class="s8-sub">팩트체크된 한국사, 매주 한 편</div>
+          <div class="subscribe">구독</div>
+        </div>
+      </div>
+
+      <!-- ============ Overlay ============ -->
+      <div id="overlay" class="clip scene" data-start="0" data-duration="47.6" data-track-index="2">
+        <div class="brand-badge">삼십초 <em>역사</em></div>
+        <div class="cap-wrap"></div>
+      </div>
+    </div>
+
+    <audio id="narration" data-start="0" data-duration="46.2" src="narration.mp3"></audio>
+
+    <script src="char-tuning.js"></script>
+    <script src="characters.js"></script>
+    <script src="scenes.js"></script>
+    <script src="captions-data.js"></script>
+    <script src="layout-overrides.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      var T = 0.28;   // 씬 진입 슬라이드 — inspect 샘플이 전환창에 걸리지 않게 짧게(지뢰 #44)
+
+      // ---------- mount characters ----------
+      function setExprDirect(root, name) {
+        var e = EXPRESSIONS[name];
+        EYE_CLASSES.forEach(function (c) { root.querySelector("." + c).setAttribute("visibility", c === e.eye ? "visible" : "hidden"); });
+        MOUTH_CLASSES.forEach(function (c) { root.querySelector("." + c).setAttribute("visibility", c === e.mouth ? "visible" : "hidden"); });
+        gsap.set(root.querySelector(".brow-l"), { y: e.browY, rotation: e.browRotL, svgOrigin: "82 64" });
+        gsap.set(root.querySelector(".brow-r"), { y: e.browY, rotation: e.browRotR, svgOrigin: "118 64" });
+      }
+      function setPoseDirect(root, name) {
+        var p = POSES[name];
+        gsap.set(root.querySelector(".arm-l"), { rotation: p.l, svgOrigin: "60 152" });
+        gsap.set(root.querySelector(".arm-r"), { rotation: p.r, svgOrigin: "140 152" });
+      }
+
+      var charEls = {};
+      SCENES.forEach(function (scene) {
+        var sceneEl = document.getElementById(scene.id);
+        if (!sceneEl) return;
+        var stage = sceneEl.querySelector(".stage");
+        scene.chars.forEach(function (c) {
+          var div = document.createElement("div");
+          div.className = "char char-" + c.id + (c.flip ? " flip" : "");
+          div.setAttribute("data-adj", c.id);
+          div.style.left = "calc(" + c.x + "% - " + c.w / 2 + "px)";
+          div.style.bottom = c.bottom + "px";
+          div.style.width = c.w + "px";
+          div.style.height = c.w * 1.2 + "px";
+          var bob = document.createElement("div");
+          bob.className = "bob";
+          bob.innerHTML = makeCharacter(c);
+          div.appendChild(bob);
+          stage.appendChild(div);
+          setExprDirect(div, c.expr);
+          setPoseDirect(div, c.pose);
+          charEls[c.id] = div;
+        });
+      });
+
+      // ---------- expression / pose changes ----------
+      function tlExpr(sel, name, at) {
+        var e = EXPRESSIONS[name];
+        EYE_CLASSES.forEach(function (c) { tl.set(sel + " ." + c, { attr: { visibility: c === e.eye ? "visible" : "hidden" } }, at); });
+        MOUTH_CLASSES.forEach(function (c) { if (c === "m-open") return; tl.set(sel + " ." + c, { attr: { visibility: c === e.mouth ? "visible" : "hidden" } }, at); });
+        tl.to(sel + " .brow-l", { y: e.browY, rotation: e.browRotL, svgOrigin: "82 64", duration: 0.18, ease: "power2.out" }, at);
+        tl.to(sel + " .brow-r", { y: e.browY, rotation: e.browRotR, svgOrigin: "118 64", duration: 0.18, ease: "power2.out" }, at);
+      }
+      function tlPose(sel, name, at) {
+        var p = POSES[name];
+        tl.to(sel + " .arm-l", { rotation: p.l, svgOrigin: "60 152", duration: 0.3, ease: "back.out(2)" }, at);
+        tl.to(sel + " .arm-r", { rotation: p.r, svgOrigin: "140 152", duration: 0.3, ease: "back.out(2)" }, at);
+      }
+      SCENES.forEach(function (scene) {
+        (scene.changes || []).forEach(function (ch) {
+          var sel = ".char-" + ch.char;
+          if (ch.expr) tlExpr(sel, ch.expr, ch.at);
+          if (ch.pose) tlPose(sel, ch.pose, ch.at);
+        });
+      });
+
+      // ---------- lip flaps ----------
+      SCENES.forEach(function (scene) {
+        if (!scene.talker) return;
+        var talkerCfg = scene.chars.filter(function (c) { return c.id === scene.talker; })[0];
+        if (!talkerCfg) return;
+        var sel = ".char-" + scene.talker;
+        var visFrom = scene.start, visTo = scene.start + scene.dur;
+        var idle = EXPRESSIONS[talkerCfg.expr].mouth;
+        var changePoints = (scene.changes || []).filter(function (ch) { return ch.expr && ch.char === scene.talker; });
+        function idleAt(t) { var m = idle; changePoints.forEach(function (ch) { if (ch.at <= t) m = EXPRESSIONS[ch.expr].mouth; }); return m; }
+        WORDS.forEach(function (w) {
+          if (w.start < visFrom || w.start > visTo) return;
+          var open = false;
+          for (var t = w.start; t < Math.min(w.end, visTo) - 0.04; t += 0.1) {
+            open = !open;
+            tl.set(sel + " .m-open", { attr: { visibility: open ? "visible" : "hidden" } }, t);
+            tl.set(sel + " ." + idleAt(t), { attr: { visibility: open ? "hidden" : "visible" } }, t);
+          }
+          var tEnd = Math.min(w.end, visTo);
+          tl.set(sel + " .m-open", { attr: { visibility: "hidden" } }, tEnd);
+          tl.set(sel + " ." + idleAt(tEnd), { attr: { visibility: "visible" } }, tEnd);
+        });
+      });
+
+      // ---------- blinks + idle bob ----------
+      SCENES.forEach(function (scene) {
+        scene.chars.forEach(function (c, ci) {
+          var sel = ".char-" + c.id;
+          if (EXPRESSIONS[c.expr].eye === "eye-open") {
+            var t0 = scene.start + 1.1 + ci * 0.7;
+            for (var t = t0; t < scene.start + scene.dur - 0.4; t += 2.6) {
+              tl.set(sel + " .eye-open", { attr: { visibility: "hidden" } }, t);
+              tl.set(sel + " .eye-closed", { attr: { visibility: "visible" } }, t);
+              tl.set(sel + " .eye-open", { attr: { visibility: "visible" } }, t + 0.13);
+              tl.set(sel + " .eye-closed", { attr: { visibility: "hidden" } }, t + 0.13);
+            }
+          }
+          var bobCycles = Math.ceil(scene.dur / 0.55) - 1;
+          tl.to(sel + " .bob", { y: -5, duration: 0.55, ease: "sine.inOut", repeat: bobCycles, yoyo: true }, scene.start);
+        });
+      });
+
+      // 스탬프 슬램 헬퍼 — scale 0→1 back.out만(지뢰 #2)
+      function slam(sel, at, rot, ease) {
+        tl.set(sel, { visibility: "visible" }, at);
+        tl.fromTo(sel, { scale: 0, opacity: 0, rotation: rot, transformOrigin: "50% 50%" },
+          { scale: 1, opacity: 1, rotation: rot, duration: 0.38, ease: ease || "back.out(2.2)" }, at);
+      }
+
+      // ---------- S1: 관아 마당 훅 ----------
+      tl.fromTo("#s1 .prop[data-adj='s1-glow'], #s1 .prop[data-adj='s1-clouds'], #s1 .prop[data-adj='s1-ridge'], #s1 .prop[data-adj='s1-paving']", { opacity: 0 }, { opacity: 1, duration: 0.5, stagger: 0.08 }, 0.15);
+      tl.fromTo("#s1 .prop[data-adj='s1-hall']", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 0.30);
+      tl.fromTo("#s1 .prop[data-adj='s1-fence']", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.46);
+      tl.fromTo("#s1 .prop[data-adj='s1-scene']", { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "back.out(1.2)" }, 0.60);
+      slam("#s1 .s1-stamp", 1.10, -3, "back.out(2.4)");
+      tl.set("#s1 .s1-numpop", { visibility: "visible" }, 2.70);
+      tl.fromTo("#s1 .s1-numpop", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(2.4)" }, 2.70);
+
+      // ---------- S2: 두 고을 ----------
+      tl.fromTo("#s2 .stage", { x: 1080 }, { x: 0, duration: T, ease: "power3.out" }, 5.60);
+      tl.fromTo("#s2 .prop[data-adj='s2-clouds'], #s2 .prop[data-adj='s2-ridge'], #s2 .prop[data-adj='s2-road']", { opacity: 0 }, { opacity: 1, duration: 0.45, stagger: 0.07 }, 5.80);
+      tl.fromTo("#s2 .prop[data-adj='s2-hall-a']", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" }, 5.86);
+      tl.fromTo("#s2 .prop[data-adj='s2-hall-b']", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" }, 6.10);
+      tl.fromTo("#s2 .prop[data-adj='s2-marker']", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.2)" }, 6.30);
+      slam("#s2 .s2-chip-a", 6.40, -3, "back.out(2.4)");
+      slam("#s2 .s2-chip-b", 7.90, 3, "back.out(2.4)");
+      slam("#s2 .s2-stamp", 8.70, -2, "back.out(2.0)");
+
+      // ---------- S3: 밤 밀담 + 장형 ----------
+      tl.fromTo("#s3 .stage", { x: -1080 }, { x: 0, duration: T, ease: "power3.out" }, 10.42);
+      tl.fromTo("#s3 .prop[data-adj='s3-moon'], #s3 .prop[data-adj='s3-ground-hi']", { opacity: 0 }, { opacity: 1, duration: 0.45, stagger: 0.07 }, 10.62);
+      tl.fromTo("#s3 .prop[data-adj='s3-wall']", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" }, 10.64);
+      tl.set("#s3 .prop[data-adj='s3-ban']", { opacity: 0 }, 10.42);
+      tl.fromTo("#s3 .prop[data-adj='s3-ban']", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.34, ease: "back.out(2.4)" }, 11.82);
+      tl.set("#s3 .s3-numpop", { visibility: "visible" }, 12.92);
+      tl.fromTo("#s3 .s3-numpop", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(2.4)" }, 12.92);
+      slam("#s3 .s3-stamp", 13.62, -2, "back.out(2.0)");
+
+      // ---------- S4: 두 기록 대조 ----------
+      // 진입 x슬라이드/y푸시 금지 — inspect 기본 샘플이 이 구간에 떨어진다(지뢰 #44). 변위 없는 페이드만.
+      tl.fromTo("#s4 .stage", { opacity: 0 }, { opacity: 1, duration: T, ease: "power2.out" }, 15.58);
+      tl.fromTo("#s4 .prop[data-adj='s4-beams'], #s4 .prop[data-adj='s4-window'], #s4 .prop[data-adj='s4-planks'], #s4 .prop[data-adj='s4-lamp']", { opacity: 0 }, { opacity: 1, duration: 0.45, stagger: 0.07 }, 15.78);
+      tl.fromTo("#s4 .prop[data-adj='s4-desk']", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.58, ease: "power2.out" }, 15.86);
+      tl.set("#s4 .prop[data-adj='s4-diff']", { opacity: 0 }, 15.58);
+      tl.fromTo("#s4 .prop[data-adj='s4-diff']", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.34, ease: "back.out(2.2)" }, 17.56);
+      slam("#s4 .s4-steps", 18.86, 0, "back.out(2.0)");
+      slam("#s4 .s4-stamp", 19.86, -1, "back.out(2.0)");
+
+      // ---------- S5: 법물과 절차 ----------
+      tl.fromTo("#s5 .stage", { x: -1080 }, { x: 0, duration: T, ease: "power3.out" }, 22.06);
+      tl.fromTo("#s5 .prop[data-adj='s5-glow'], #s5 .prop[data-adj='s5-beams'], #s5 .prop[data-adj='s5-boards'], #s5 .prop[data-adj='s5-floor-hi']", { opacity: 0 }, { opacity: 1, duration: 0.45, stagger: 0.07 }, 22.26);
+      tl.fromTo("#s5 .prop[data-adj='s5-tray']", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.58, ease: "power2.out" }, 22.32);
+      tl.fromTo("#s5 .prop[data-adj='s5-jars']", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.2)" }, 22.56);
+      slam("#s5 .s5-stamp", 23.74, -2, "back.out(2.0)");
+      tl.set("#s5 .prop[data-adj='s5-stack']", { opacity: 0 }, 22.06);
+      tl.fromTo("#s5 .prop[data-adj='s5-stack']", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "back.out(1.3)" }, 26.24);
+      tl.set("#s5 .s5-numpop", { visibility: "visible" }, 27.54);
+      tl.fromTo("#s5 .s5-numpop", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(2.4)" }, 27.54);
+
+      // ---------- S6: 닿지 않는 문 ----------
+      tl.fromTo("#s6 .stage", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: T, ease: "power3.out" }, 29.68);
+      tl.fromTo("#s6 .prop[data-adj='s6-glow'], #s6 .prop[data-adj='s6-clouds'], #s6 .prop[data-adj='s6-hills'], #s6 .prop[data-adj='s6-ground-hi']", { opacity: 0 }, { opacity: 1, duration: 0.45, stagger: 0.07 }, 29.88);
+      tl.fromTo("#s6 .prop[data-adj='s6-house']", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.58, ease: "power2.out" }, 29.92);
+      tl.fromTo("#s6 .prop[data-adj='s6-gate']", { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" }, 30.16);
+      slam("#s6 .s6-stamp", 31.96, -1, "back.out(2.0)");
+
+      // ---------- S7: 펀치 — 무원 ----------
+      // 변위 없는 opacity 페이드(지뢰 #44)
+      tl.fromTo("#s7 .stage", { opacity: 0 }, { opacity: 1, duration: T, ease: "power2.out" }, 35.58);
+      tl.fromTo("#s7 .prop[data-adj='s7-glow'], #s7 .prop[data-adj='s7-beams'], #s7 .prop[data-adj='s7-window'], #s7 .prop[data-adj='s7-lamp']", { opacity: 0 }, { opacity: 1, duration: 0.45, stagger: 0.07 }, 35.78);
+      tl.fromTo("#s7 .prop[data-adj='s7-desk']", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.58, ease: "power2.out" }, 35.82);
+      tl.fromTo("#s7 .prop[data-adj='s7-book']", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "back.out(1.2)" }, 36.08);
+      tl.fromTo("#s7 .prop[data-adj='s7-brush']", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 36.52);
+      tl.fromTo("#s7 .prop[data-adj='s7-inkstone']", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 36.52);
+      tl.set("#s7 .s7-title", { visibility: "visible" }, 38.02);
+      tl.fromTo("#s7 .s7-title", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.44, ease: "back.out(2.2)" }, 38.02);
+      tl.set("#s7 .s7-sub", { visibility: "visible" }, 38.92);
+      tl.fromTo("#s7 .s7-sub", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.42, ease: "back.out(2.2)" }, 38.92);
+
+      // ---------- S8: outro ----------
+      tl.fromTo("#s8 .stage", { x: -1080 }, { x: 0, duration: T, ease: "power3.out" }, 42.16);
+      tl.fromTo("#s8 .logo-big", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.5, ease: "back.out(2)" }, 42.55);
+      tl.fromTo("#s8 .s8-sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, 43.15);
+      tl.fromTo("#s8 .char-s8-host", { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 42.8);
+      tl.fromTo("#s8 .subscribe", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 44.35);
+      tl.to("#s8 .subscribe", { scale: 1.08, duration: 0.4, ease: "sine.inOut", repeat: 3, yoyo: true }, 44.95);
+
+      // ---------- 스탬프 숨김 — 씬 전환 완료 후 ----------
+      [["#s1 .s1-stamp, #s1 .s1-numpop", 5.75],
+       ["#s2 .s2-stamp, #s2 .s2-chip-a, #s2 .s2-chip-b", 10.57],
+       ["#s3 .s3-stamp, #s3 .s3-numpop", 15.91],
+       ["#s4 .s4-steps, #s4 .s4-stamp", 22.41],
+       ["#s5 .s5-stamp, #s5 .s5-numpop", 30.03],
+       ["#s6 .s6-stamp", 35.91],
+       ["#s7 .s7-title, #s7 .s7-sub", 42.31]].forEach(function (pair) {
+        tl.set(pair[0], { visibility: "hidden" }, pair[1]);
+      });
+
+      // ---------- captions ----------
+      var capWrap = document.querySelector(".cap-wrap");
+      CAPTION_GROUPS.forEach(function (g, gi) {
+        var el = document.createElement("div");
+        el.className = "cap-group";
+        el.id = "cg-" + gi;
+        var pill = document.createElement("div");
+        pill.className = "pill";
+        g.text.split(" ").forEach(function (word, wi) {
+          var span = document.createElement("span");
+          span.textContent = (wi > 0 ? " " : "") + word;
+          if (g.hi.indexOf(word) !== -1) span.className = "hi";
+          pill.appendChild(span);
+        });
+        el.appendChild(pill);
+        capWrap.appendChild(el);
+        tl.fromTo(el, { opacity: 0, scale: 0.88, visibility: "visible", transformOrigin: "50% 100%" },
+          { opacity: 1, scale: 1, duration: 0.16, ease: "back.out(1.6)" }, g.start);
+        tl.to(el, { opacity: 0, scale: 0.95, duration: 0.1, ease: "power2.in" }, g.end - 0.1);
+        tl.set(el, { opacity: 0, visibility: "hidden" }, g.end);
+      });
+
+      tl.fromTo(".brand-badge", { y: -80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 0.4);
+
+      window.__timelines["main"] = tl;
+
+      // ---------- layout overrides ----------
+      var LAYOUT = (typeof window !== "undefined" && window.LAYOUT_OVERRIDES) || {};
+      var ADDED = (typeof window !== "undefined" && window.ADDED_PROPS) || {};
+      function injectAdded(key, rec) {
+        if (document.querySelector('[data-adj="' + key + '"]')) return;
+        var scene = document.getElementById(rec.scene); if (!scene) return;
+        var stage = scene.querySelector(".stage") || scene;
+        var box = document.createElement("div");
+        box.className = "added-prop";
+        box.setAttribute("data-adj", key);
+        box.style.cssText = "position:absolute; left:" + rec.x + "px; top:" + rec.y + "px; width:" + rec.w + "px; height:" + rec.h + "px;";
+        box.innerHTML = rec.html;
+        stage.appendChild(box);
+      }
+      Object.keys(ADDED).forEach(function (k) { injectAdded(k, ADDED[k]); });
+      function adjEl(key) { if (charEls[key]) return charEls[key]; return document.querySelector('[data-adj="' + key + '"]'); }
+      function ensureAdjWrap(key) {
+        var el = adjEl(key); if (!el) return null;
+        var p = el.parentElement;
+        if (p && p.classList.contains("adj-wrap")) return p;
+        var wrap = document.createElement("div");
+        wrap.className = "adj-wrap"; wrap.style.cssText = "position:absolute; inset:0;";
+        p.insertBefore(wrap, el); wrap.appendChild(el); return wrap;
+      }
+      function applyAdjust(key, o) {
+        var el = adjEl(key); if (!el) return;
+        var wrap = ensureAdjWrap(key);
+        var dx = o.dx || 0, dy = o.dy || 0, s = (o.s == null ? 1 : o.s);
+        if (o.ox != null && o.oy != null) wrap.style.transformOrigin = o.ox + "px " + o.oy + "px";
+        wrap.style.transform = "translate(" + dx + "px," + dy + "px) rotate(" + (o.r || 0) + "deg) scale(" + s + ")";
+        var sc = el.closest(".scene");
+        if (sc && (s !== 1 || dx || dy)) sc.style.overflow = "visible";
+      }
+      Object.keys(LAYOUT).forEach(function (k) { applyAdjust(k, LAYOUT[k]); });
+
+      var OBJ = (typeof window !== "undefined" && window.OBJECT_OVERRIDES) || {};
+      function objEl(key) { return document.querySelector('[data-obj="' + key + '"]'); }
+      function objCenter(key) {
+        var g = objEl(key); if (!g) return null;
+        try { var b = g.getBBox(); return { cx: b.x + b.width / 2, cy: b.y + b.height / 2 }; } catch (e) { return null; }
+      }
+      function applyObject(key, o) {
+        var g = objEl(key); if (!g) return;
+        var dx = o.dx || 0, dy = o.dy || 0, s = (o.s == null ? 1 : o.s), r = o.r || 0;
+        var c = (o.cx != null) ? { cx: o.cx, cy: o.cy } : objCenter(key);
+        var t = "translate(" + dx + " " + dy + ")";
+        if (r) t += c ? (" rotate(" + r + " " + c.cx + " " + c.cy + ")") : (" rotate(" + r + ")");
+        if (s !== 1) {
+          if (c) t += " translate(" + c.cx + " " + c.cy + ") scale(" + s + ") translate(" + (-c.cx) + " " + (-c.cy) + ")";
+          else t += " scale(" + s + ")";
+        }
+        g.setAttribute("transform", t);
+      }
+      Object.keys(OBJ).forEach(function (k) { applyObject(k, OBJ[k]); });
+
+      window.__layout = {
+        list: function () {
+          var out = [];
+          document.querySelectorAll("[data-adj]").forEach(function (el) {
+            if (el.classList.contains("adj-wrap")) return;
+            var scene = el.closest(".scene");
+            out.push({ key: el.getAttribute("data-adj"), scene: scene ? scene.id : "" });
+          });
+          return out;
+        },
+        get: function () { return LAYOUT; },
+        set: function (key, o) { LAYOUT[key] = o; applyAdjust(key, o); },
+        rectOf: function (key) {
+          var el = adjEl(key); if (!el) return null;
+          var stage = el.closest(".stage"); if (!stage) return null;
+          var er = el.getBoundingClientRect(), sr = stage.getBoundingClientRect();
+          return { x: er.left - sr.left, y: er.top - sr.top, w: er.width, h: er.height };
+        },
+        measureOrigin: function (key) { var r = this.rectOf(key); if (!r) return null; return { ox: r.x + r.w / 2, oy: r.y + r.h / 2 }; },
+        objectsOf: function (elKey) {
+          var el = adjEl(elKey); if (!el) return [];
+          return Array.prototype.map.call(el.querySelectorAll("[data-obj]"), function (g) { return g.getAttribute("data-obj"); });
+        },
+        getObjects: function () { return OBJ; },
+        setObject: function (key, o) { OBJ[key] = o; applyObject(key, o); },
+        objRectOf: function (key) {
+          var g = objEl(key); if (!g) return null;
+          var stage = g.closest(".stage"); if (!stage) return null;
+          var er = g.getBoundingClientRect(), sr = stage.getBoundingClientRect();
+          return { x: er.left - sr.left, y: er.top - sr.top, w: er.width, h: er.height };
+        },
+        objCenter: objCenter,
+        objScreenToSvg: function (key, dxs, dys, outerScale) {
+          var g = objEl(key); if (!g || !g.parentNode.getScreenCTM) return { dx: dxs, dy: dys };
+          var m = g.parentNode.getScreenCTM(); if (!m) return { dx: dxs, dy: dys };
+          var inv = m.inverse(), ix = dxs / outerScale, iy = dys / outerScale;
+          return { dx: inv.a * ix + inv.c * iy, dy: inv.b * ix + inv.d * iy };
+        },
+        getAdded: function () { return ADDED; },
+        addProp: function (sceneId, key, rec) { rec.scene = sceneId; ADDED[key] = rec; injectAdded(key, rec); },
+        removeAdded: function (key) {
+          if (!ADDED[key]) return;
+          delete ADDED[key]; delete LAYOUT[key];
+          var el = document.querySelector('[data-adj="' + key + '"]');
+          if (el) { var w = el.parentElement; (w && w.classList.contains("adj-wrap") ? w : el).remove(); }
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="giant_hail">
+    <!-- 조선 시대 한여름에 떨어져 사람과 소를 죽게 한 주먹 크기의 거대한 우박 -->
+    
+    <!-- 비 내리는 한여름 땅바닥 배경 -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    <ellipse cx="200" cy="220" rx="150" ry="60" fill="#1a252f"/> <!-- 젖은 웅덩이 질감 -->
+    
+    <!-- 비와 번개 효과 -->
+    <path d="M50 0 L30 100 M150 0 L130 150 M350 0 L330 120" stroke="#7fb3d5" stroke-width="2" opacity="0.3"/>
+    <path d="M280 20 L270 50 L290 60 L260 120" fill="none" stroke="#f1c40f" stroke-width="3" opacity="0.6"/>
+    
+    <!-- 우박들이 땅에 박힌 모습 -->
+    <!-- 우박 1 (가장 큰 메인 우박, 주먹만 한 크기) -->
+    <g transform="translate(180, 200)">
+      <ellipse cx="0" cy="15" rx="55" ry="15" fill="#111" opacity="0.6"/> <!-- 그림자 -->
+      
+      <!-- 거친 얼음 덩어리 형태의 우박 -->
+      <path d="M0 -50 C30 -50 50 -20 50 10 C50 30 20 40 0 40 C-30 40 -50 20 -40 -10 C-30 -40 -20 -50 0 -50 Z" fill="#d6eaf8" stroke="#85c1e9" stroke-width="2"/>
+      
+      <!-- 얼음의 결정과 층을 나타내는 내부 선과 색상 -->
+      <path d="M-20 -30 Q0 -10 30 -20" fill="none" stroke="#aed6f1" stroke-width="3"/>
+      <path d="M-30 10 Q-10 20 20 10" fill="none" stroke="#85c1e9" stroke-width="3"/>
+      
+      <polygon points="-10,-10 10,-25 25,-5 -5,15" fill="#aed6f1" opacity="0.5"/>
+      <polygon points="-30,0 -10,-10 0,20 -20,30" fill="#85c1e9" opacity="0.6"/>
+      
+      <!-- 얼음 표면의 강한 하이라이트 (빛 반사) -->
+      <path d="M-15 -35 A30 30 0 0 1 10 -45" fill="none" stroke="#fdfefe" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="-25" cy="-5" r="4" fill="#fdfefe"/>
+      <circle cx="20" cy="-25" r="3" fill="#fdfefe"/>
+    </g>
+    
+    <!-- 우박 2 (오른쪽 중간 크기) -->
+    <g transform="translate(280, 180)">
+      <ellipse cx="0" cy="10" rx="35" ry="10" fill="#111" opacity="0.6"/>
+      <path d="M0 -35 C20 -35 35 -15 30 5 C25 25 10 30 -10 25 C-30 20 -35 0 -20 -20 C-10 -30 -10 -35 0 -35 Z" fill="#d6eaf8" stroke="#85c1e9" stroke-width="2"/>
+      <path d="M-10 -20 Q5 -5 20 -15" fill="none" stroke="#85c1e9" stroke-width="2"/>
+      <polygon points="-15,0 0,-15 15,-5 0,15" fill="#aed6f1" opacity="0.6"/>
+      <path d="M-10 -25 A20 20 0 0 1 5 -30" fill="none" stroke="#fdfefe" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    
+    <!-- 우박 3 (왼쪽 작은 크기) -->
+    <g transform="translate(100, 230)">
+      <ellipse cx="0" cy="8" rx="25" ry="8" fill="#111" opacity="0.6"/>
+      <path d="M0 -25 C15 -25 25 -10 20 5 C15 15 0 20 -15 15 C-25 10 -25 -5 -15 -15 C-10 -20 -5 -25 0 -25 Z" fill="#d6eaf8" stroke="#85c1e9" stroke-width="2"/>
+      <path d="M-5 -15 Q5 0 15 -5" fill="none" stroke="#85c1e9" stroke-width="2"/>
+      <path d="M-8 -18 A15 15 0 0 1 5 -20" fill="none" stroke="#fdfefe" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+    <!-- 부서진 우박 파편들 -->
+    <g fill="#aed6f1" stroke="#fdfefe" stroke-width="1">
+      <polygon points="140,200 150,195 145,210"/>
+      <polygon points="230,240 240,235 245,245 235,250"/>
+      <polygon points="320,210 330,205 325,220"/>
+    </g>
+    
+    <!-- 웅덩이에 튀는 물방울 (수면 묘사) -->
+    <g fill="none" stroke="#7fb3d5" stroke-width="2">
+      <ellipse cx="180" cy="205" rx="60" ry="10" opacity="0.5"/>
+      <ellipse cx="280" cy="185" rx="40" ry="8" opacity="0.4"/>
+      <ellipse cx="100" cy="235" rx="30" ry="6" opacity="0.4"/>
+    </g>
+    
+  </g>
+</svg>

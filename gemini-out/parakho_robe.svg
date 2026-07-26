@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="parakho_robe">
+    <!-- 흥선대원군의 이중생활: 상갓집 개(파락호)의 찢어진 도포와 그 안의 용포 무늬 -->
+    
+    <!-- 어두운 뒷골목 배경 -->
+    <rect width="400" height="300" fill="#1c2833"/>
+    
+    <!-- 벽에 걸린 찢어지고 더러운 도포 (파락호 위장) -->
+    <g transform="translate(200, 150)">
+      <!-- 옷걸이 대나무 -->
+      <line x1="-120" y1="-80" x2="120" y2="-100" stroke="#8d6e63" stroke-width="6" stroke-linecap="round"/>
+      
+      <!-- 찢어진 겉옷 (흙먼지가 묻은 누더기 도포) -->
+      <path d="M-80 -75 C-100 0 -120 100 -100 130 L-50 120 L-30 60 L0 100 L40 70 L80 130 L100 100 C120 50 100 0 80 -90 Z" fill="#95a5a6" opacity="0.8"/>
+      <!-- 도포 가장자리 선 -->
+      <path d="M-80 -75 C-100 0 -120 100 -100 130 M80 -90 C100 0 120 50 100 100" fill="none" stroke="#7f8c8d" stroke-width="3"/>
+      
+      <!-- 옷에 묻은 오물과 흙자국 (상갓집 개 연출) -->
+      <circle cx="-60" cy="0" r="15" fill="#5c3a21" opacity="0.6"/>
+      <circle cx="50" cy="50" r="20" fill="#5c3a21" opacity="0.5"/>
+      <path d="M-80 50 Q-60 70 -40 50" fill="none" stroke="#3e2723" stroke-width="4"/>
+      
+      <!-- 가슴팍이 크게 찢어진 부분 (진짜 정체가 드러남) -->
+      <path d="M-30 -20 Q0 -50 30 -10 Q50 20 20 50 Q-10 60 -40 30 Q-60 0 -30 -20 Z" fill="#1c2833"/>
+      
+      <!-- 찢어진 틈 사이로 은밀하게 빛나는 왕족의 상징 (붉은 조복/용포의 금박 무늬) -->
+      <!-- 붉은 비단 안감 -->
+      <path d="M-20 -10 Q10 -30 20 0 Q30 30 10 40 Q-10 40 -20 20 Z" fill="#c0392b"/>
+      <!-- 왕족을 상징하는 황금 흉배 무늬 (구름과 학/용) -->
+      <circle cx="0" cy="10" r="12" fill="#c0392b" stroke="#f1c40f" stroke-width="2"/>
+      <path d="M-5 10 Q0 0 5 10 Q15 15 5 20 Q0 30 -5 20 Q-15 15 -5 10 Z" fill="#f1c40f"/> <!-- 금학/금룡 형상 -->
+      <!-- 주변 금박 구름 무늬 -->
+      <path d="M-15 0 Q-10 -5 -5 0" fill="none" stroke="#f1c40f" stroke-width="1.5"/>
+      <path d="M10 5 Q15 0 20 5" fill="none" stroke="#f1c40f" stroke-width="1.5"/>
+      
+      <!-- 찢겨진 천 쪼가리들이 바람에 날림 -->
+      <path d="M30 -10 L45 -5" stroke="#7f8c8d" stroke-width="2"/>
+      <path d="M20 50 L30 65" stroke="#7f8c8d" stroke-width="2"/>
+      <path d="M-40 30 L-55 25" stroke="#7f8c8d" stroke-width="2"/>
+    </g>
+    
+  </g>
+</svg>

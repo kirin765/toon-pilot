@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="cat_talisman">
+    <!-- 19세기 콜레라(호열자, 쥐통)를 막기 위해 백성들이 사용했던 고양이 부적 -->
+    
+    <!-- 한옥 대문(나무문) 배경 -->
+    <rect width="400" height="300" fill="#5c3a21"/>
+    <!-- 대문의 나무 질감과 틈새 -->
+    <line x1="80" y1="0" x2="80" y2="300" stroke="#3e2723" stroke-width="4"/>
+    <line x1="160" y1="0" x2="160" y2="300" stroke="#3e2723" stroke-width="4"/>
+    <line x1="240" y1="0" x2="240" y2="300" stroke="#3e2723" stroke-width="4"/>
+    <line x1="320" y1="0" x2="320" y2="300" stroke="#3e2723" stroke-width="4"/>
+    <path d="M100 50 Q120 150 110 250 M190 30 Q170 180 200 280 M280 10 Q290 150 270 290" stroke="#3e2723" stroke-width="2" opacity="0.5"/>
+    
+    <!-- 대문에 붙인 누런 한지(괴황지) 부적 -->
+    <g transform="translate(200, 150) rotate(-5)">
+      
+      <!-- 부적 그림자 -->
+      <rect x="-70" y="-105" width="140" height="210" fill="#2c1a10" opacity="0.7"/>
+      
+      <!-- 한지 바탕 (구겨지고 낡은 질감) -->
+      <rect x="-70" y="-110" width="140" height="210" fill="#fcf3cf" stroke="#d4ac0d" stroke-width="2"/>
+      <path d="M-70 -80 L70 -85 M-70 20 L70 15" stroke="#f9e79f" stroke-width="1" opacity="0.5"/>
+      <path d="M-50 -110 L-45 100 M40 -110 L45 100" stroke="#f9e79f" stroke-width="1" opacity="0.5"/>
+      <!-- 테두리 장식 선 -->
+      <rect x="-60" y="-100" width="120" height="190" fill="none" stroke="#e74c3c" stroke-width="4"/>
+      
+      <!-- 부적 윗부분: 주술적인 붉은 부적 글씨 (경면주사) -->
+      <!-- '쥐 귀신을 물리치다'는 의미를 담은 기괴한 형상의 한자 변형 -->
+      <g stroke="#c0392b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <!-- 상단 부호 -->
+        <path d="M-30 -80 L30 -80 M0 -90 L0 -70 M-10 -70 Q0 -60 10 -70"/>
+        <!-- 꼬불꼬불한 번개/뱀 모양의 기운 -->
+        <path d="M-40 -50 Q-20 -70 0 -50 T40 -50"/>
+        <path d="M-20 -40 L-20 0 M20 -40 L20 0 M-30 -20 L30 -20"/>
+        <path d="M0 -40 Q10 -20 0 0 Q-10 20 0 40"/>
+      </g>
+      
+      <!-- 부적 하단: 쥐(콜레라)를 잡아먹으라고 그려 넣은 고양이 민화 -->
+      <g transform="translate(0, 50)">
+        <!-- 고양이 몸통 (거칠고 투박한 붓질 느낌) -->
+        <path d="M-20 -20 C-40 0 -40 30 -20 40 C0 50 20 50 30 30 C40 10 30 -10 10 -20 Z" fill="#17202a" stroke="#c0392b" stroke-width="2"/>
+        <!-- 꼬리 -->
+        <path d="M30 10 C50 10 50 -20 30 -30" fill="none" stroke="#17202a" stroke-width="8" stroke-linecap="round"/>
+        <!-- 머리 -->
+        <circle cx="-15" cy="-25" r="15" fill="#17202a" stroke="#c0392b" stroke-width="2"/>
+        <!-- 귀 (뾰족하게) -->
+        <path d="M-25 -35 L-30 -50 L-15 -40" fill="#17202a" stroke="#c0392b" stroke-width="2"/>
+        <path d="M-5 -35 L10 -45 L-5 -25" fill="#17202a" stroke="#c0392b" stroke-width="2"/>
+        <!-- 매서운 노란 눈 (쥐를 노려보는 눈) -->
+        <ellipse cx="-20" cy="-25" rx="4" ry="2" fill="#f1c40f"/>
+        <ellipse cx="-5" cy="-25" rx="4" ry="2" fill="#f1c40f"/>
+        <circle cx="-20" cy="-25" r="1" fill="#c0392b"/>
+        <circle cx="-5" cy="-25" r="1" fill="#c0392b"/>
+        <!-- 날카로운 수염 -->
+        <path d="M-30 -20 L-40 -15 M-30 -15 L-40 -5 M0 -20 L10 -15 M0 -15 L10 -5" stroke="#17202a" stroke-width="1.5"/>
+        <!-- 붉은 부적 물감(경면주사)으로 찍은 점 (주술적 의미) -->
+        <circle cx="10" cy="10" r="4" fill="#c0392b"/>
+        <circle cx="-5" cy="20" r="4" fill="#c0392b"/>
+      </g>
+      
+      <!-- 부적을 문에 붙인 밥풀 자국 (네 모서리) -->
+      <circle cx="-60" cy="-100" r="5" fill="#fdfefe" opacity="0.8"/>
+      <circle cx="60" cy="-100" r="4" fill="#fdfefe" opacity="0.8"/>
+      <circle cx="-60" cy="90" r="6" fill="#fdfefe" opacity="0.8"/>
+      <circle cx="60" cy="90" r="5" fill="#fdfefe" opacity="0.8"/>
+      
+    </g>
+  </g>
+</svg>

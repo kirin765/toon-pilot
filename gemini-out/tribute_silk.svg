@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="tribute_silk">
+    <!-- 조공(朝貢) 무역 시 명·청 황제에게 바치거나 하사받은(회사) 최고급 비단 꾸러미 -->
+    
+    <!-- 궁궐 또는 창고의 대리석 바닥 배경 -->
+    <rect width="400" height="300" fill="#e5e8e8"/>
+    <path d="M0 250 L400 250 M100 250 L50 300 M300 250 L350 300" stroke="#ccd1d1" stroke-width="4"/>
+    
+    <!-- 비단 꾸러미 그림자 -->
+    <ellipse cx="200" cy="240" rx="130" ry="40" fill="#b2babb" opacity="0.7"/>
+    
+    <!-- 아래에 놓인 파란색 비단 두루마리 (조선에서 바친 청색 명주) -->
+    <g transform="translate(200, 210)">
+      <!-- 측면 롤 단면 -->
+      <ellipse cx="-100" cy="0" rx="20" ry="30" fill="#2980b9" stroke="#1f618d" stroke-width="2"/>
+      <ellipse cx="-100" cy="0" rx="15" ry="25" fill="none" stroke="#21618c" stroke-width="1.5"/>
+      <ellipse cx="-100" cy="0" rx="10" ry="15" fill="none" stroke="#21618c" stroke-width="1.5"/>
+      <!-- 두루마리 원통 몸통 -->
+      <path d="M-100 -30 L100 -30 A20 30 0 0 1 100 30 L-100 30 A20 30 0 0 0 -100 -30 Z" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+      <!-- 명암과 광택 -->
+      <path d="M-100 -20 L100 -20" stroke="#fdfefe" stroke-width="4" opacity="0.4"/>
+      <path d="M-100 20 L100 20" stroke="#1f618d" stroke-width="6" opacity="0.3"/>
+      <!-- 비단을 묶은 붉은 끈 -->
+      <rect x="-60" y="-30" width="10" height="60" fill="#c0392b"/>
+      <rect x="50" y="-30" width="10" height="60" fill="#c0392b"/>
+    </g>
+    
+    <!-- 중간에 놓인 붉은색 비단 두루마리 (황제가 하사한 화려한 붉은 비단) -->
+    <g transform="translate(180, 160)">
+      <ellipse cx="-100" cy="0" rx="20" ry="30" fill="#c0392b" stroke="#922b21" stroke-width="2"/>
+      <ellipse cx="-100" cy="0" rx="15" ry="25" fill="none" stroke="#922b21" stroke-width="1.5"/>
+      <ellipse cx="-100" cy="0" rx="10" ry="15" fill="none" stroke="#922b21" stroke-width="1.5"/>
+      
+      <path d="M-100 -30 L100 -30 A20 30 0 0 1 100 30 L-100 30 A20 30 0 0 0 -100 -30 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+      
+      <!-- 붉은 비단 표면의 금박 무늬 (황실 상징 용이나 구름 무늬 패턴) -->
+      <g stroke="#f1c40f" stroke-width="2" fill="none" opacity="0.8">
+        <!-- 전통 구름 무늬 (운문) -->
+        <path d="M-50 -10 C-40 -20 -30 0 -20 -10 C-10 -20 0 0 10 -10"/>
+        <path d="M-30 10 C-20 0 -10 20 0 10 C10 0 20 20 30 10"/>
+        <path d="M20 -10 C30 -20 40 0 50 -10 C60 -20 70 0 80 -10"/>
+        <path d="M40 10 C50 0 60 20 70 10 C80 0 90 20 100 10"/>
+      </g>
+      
+      <path d="M-100 -20 L100 -20" stroke="#fdfefe" stroke-width="4" opacity="0.4"/>
+      <path d="M-100 20 L100 20" stroke="#922b21" stroke-width="6" opacity="0.3"/>
+      
+      <rect x="-70" y="-30" width="10" height="60" fill="#f1c40f"/>
+      <rect x="60" y="-30" width="10" height="60" fill="#f1c40f"/>
+    </g>
+    
+    <!-- 맨 위에 놓인 황금색 비단 두루마리 (가장 비싼 최고급 비단) -->
+    <!-- 약간 엇갈리게 놓여 있음 -->
+    <g transform="translate(220, 110) rotate(5)">
+      <ellipse cx="-90" cy="0" rx="15" ry="25" fill="#d4ac0d" stroke="#b9770e" stroke-width="2"/>
+      <ellipse cx="-90" cy="0" rx="10" ry="18" fill="none" stroke="#b9770e" stroke-width="1.5"/>
+      <ellipse cx="-90" cy="0" rx="5" ry="10" fill="none" stroke="#b9770e" stroke-width="1.5"/>
+      
+      <path d="M-90 -25 L90 -25 A15 25 0 0 1 90 25 L-90 25 A15 25 0 0 0 -90 -25 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="2"/>
+      
+      <path d="M-90 -15 L90 -15" stroke="#fdfefe" stroke-width="4" opacity="0.6"/>
+      <path d="M-90 15 L90 15" stroke="#b9770e" stroke-width="6" opacity="0.3"/>
+      
+      <rect x="-40" y="-25" width="8" height="50" fill="#3498db"/>
+      <rect x="40" y="-25" width="8" height="50" fill="#3498db"/>
+    </g>
+    
+    <!-- 비단 위에 놓인 통행/외교 문서 (표문 묶음) -->
+    <g transform="translate(200, 70)">
+      <rect x="-30" y="-10" width="60" height="20" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2" rx="2" transform="rotate(-15)"/>
+      <rect x="-25" y="-12" width="60" height="20" fill="#fcf3cf" stroke="#d4ac0d" stroke-width="2" rx="2" transform="rotate(-5)"/>
+      <line x1="-15" y1="-12" x2="-15" y2="8" stroke="#c0392b" stroke-width="3" transform="rotate(-5)"/>
+    </g>
+    
+  </g>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="silla_gold_crown">
+    <!-- 전시된 듯한 배경의 부드러운 후광 (빛나는 황금의 나라 강조) -->
+    <circle cx="200" cy="150" r="100" fill="#f9e79f" opacity="0.2"/>
+    <circle cx="200" cy="150" r="70" fill="#f4d03f" opacity="0.3"/>
+    
+    <!-- 신라 금관 (나뭇가지 모양 '출(出)'자 장식과 사슴뿔 장식) -->
+    <g transform="translate(200, 220)">
+      
+      <!-- 둥근 관테 (머리에 쓰는 부분) -->
+      <path d="M-70 0 Q0 20 70 0 L70 -20 Q0 0 -70 -20 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="2"/>
+      <!-- 관테의 둥근 점열 무늬 (타출 기법) -->
+      <path d="M-60 -10 Q0 10 60 -10" fill="none" stroke="#d4ac0d" stroke-width="2" stroke-dasharray="2 4"/>
+      
+      <!-- 측면 장식 2개 (사슴뿔 모양) -->
+      <!-- 왼쪽 사슴뿔 -->
+      <path d="M-50 -15 L-65 -80 L-80 -100 L-65 -110 L-60 -80 L-50 -90 L-40 -110 L-45 -80 L-35 -15 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="1.5"/>
+      <!-- 오른쪽 사슴뿔 -->
+      <path d="M50 -15 L65 -80 L80 -100 L65 -110 L60 -80 L50 -90 L40 -110 L45 -80 L35 -15 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="1.5"/>
+      
+      <!-- 정면 및 좌우 3개의 나뭇가지 (出자형) 장식 -->
+      <!-- 왼쪽 出 장식 -->
+      <g transform="translate(-25, -15) scale(0.8)">
+        <path d="M-5 0 L-5 -40 L-20 -40 L-20 -50 L-5 -50 L-5 -80 L-20 -80 L-20 -90 L-5 -90 L-5 -130 L5 -130 L5 -90 L20 -90 L20 -80 L5 -80 L5 -50 L20 -50 L20 -40 L5 -40 L5 0 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="1.5"/>
+      </g>
+      <!-- 오른쪽 出 장식 -->
+      <g transform="translate(25, -15) scale(0.8)">
+        <path d="M-5 0 L-5 -40 L-20 -40 L-20 -50 L-5 -50 L-5 -80 L-20 -80 L-20 -90 L-5 -90 L-5 -130 L5 -130 L5 -90 L20 -90 L20 -80 L5 -80 L5 -50 L20 -50 L20 -40 L5 -40 L5 0 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="1.5"/>
+      </g>
+      <!-- 중앙 메인 出 장식 (가장 큼) -->
+      <g transform="translate(0, -15)">
+        <path d="M-7 0 L-7 -50 L-25 -50 L-25 -65 L-7 -65 L-7 -100 L-25 -100 L-25 -115 L-7 -115 L-7 -160 L7 -160 L7 -115 L25 -115 L25 -100 L7 -100 L7 -65 L25 -65 L25 -50 L7 -50 L7 0 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="2"/>
+        
+        <!-- 금관에 달린 곡옥(비취색)과 영락(금동그라미) 장식들 (가운데 장식에 대표로 그림) -->
+        <circle cx="0" cy="-140" r="4" fill="#f39c12"/>
+        <circle cx="-15" cy="-105" r="4" fill="#f39c12"/>
+        <circle cx="15" cy="-105" r="4" fill="#f39c12"/>
+        
+        <!-- 비취색 곡옥 (태아 모양의 굽은 옥) -->
+        <!-- 좌측 곡옥 -->
+        <path d="M-15 -70 Q-25 -70 -25 -60 Q-25 -50 -15 -60 Q-10 -65 -15 -70 Z" fill="#1abc9c" stroke="#16a085" stroke-width="1"/>
+        <!-- 우측 곡옥 -->
+        <path d="M15 -70 Q25 -70 25 -60 Q25 -50 15 -60 Q10 -65 15 -70 Z" fill="#1abc9c" stroke="#16a085" stroke-width="1"/>
+        <!-- 중앙 하단 곡옥 -->
+        <path d="M0 -30 Q-10 -30 -10 -20 Q-10 -10 0 -20 Q5 -25 0 -30 Z" fill="#1abc9c" stroke="#16a085" stroke-width="1"/>
+      </g>
+      
+      <!-- 관테 아래로 길게 늘어뜨린 금사 슬식(수식/드리개) -->
+      <path d="M-60 0 Q-70 40 -60 80" fill="none" stroke="#f1c40f" stroke-width="2"/>
+      <circle cx="-60" cy="20" r="3" fill="#f39c12"/>
+      <circle cx="-65" cy="40" r="3" fill="#f39c12"/>
+      <path d="M-60 80 Q-70 80 -70 90 Q-70 100 -60 90 Q-55 85 -60 80 Z" fill="#1abc9c"/> <!-- 끝에 달린 곡옥 -->
+      
+      <path d="M60 0 Q70 40 60 80" fill="none" stroke="#f1c40f" stroke-width="2"/>
+      <circle cx="60" cy="20" r="3" fill="#f39c12"/>
+      <circle cx="65" cy="40" r="3" fill="#f39c12"/>
+      <path d="M60 80 Q70 80 70 90 Q70 100 60 90 Q55 85 60 80 Z" fill="#1abc9c"/>
+    </g>
+    
+    <!-- 금관이 반짝이는 효과 -->
+    <path d="M220 50 L225 65 L240 70 L225 75 L220 90 L215 75 L200 70 L215 65 Z" fill="#fff" opacity="0.8"/>
+    <path d="M150 100 L153 110 L163 113 L153 116 L150 126 L147 116 L137 113 L147 110 Z" fill="#fff" opacity="0.6"/>
+  </g>
+</svg>

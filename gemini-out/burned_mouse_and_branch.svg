@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="burned_mouse_and_branch">
+    <!-- 중종 작서의 변: 불에 탄 쥐 시체와 동궁전 은행나무 가지 -->
+    
+    <!-- 어두운 밤 궁궐 나무의 푸른/검은 그림자 톤 -->
+    <rect width="400" height="300" fill="#141e30"/>
+    <circle cx="300" cy="50" r="40" fill="#f1c40f" opacity="0.8"/> <!-- 으스스한 둥근 보름달 -->
+    
+    <!-- 앙상하고 기괴한 형태의 동궁전 바깥 은행나무 가지 -->
+    <g transform="translate(350, 0)">
+      <path d="M0 0 C-50 50 -100 80 -250 100" fill="none" stroke="#17202a" stroke-width="15" stroke-linecap="round"/>
+      <path d="M-80 55 C-100 100 -120 120 -150 150" fill="none" stroke="#17202a" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-180 85 C-200 120 -230 140 -260 160" fill="none" stroke="#17202a" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    
+    <!-- 나뭇가지에 실로 아슬아슬하게 매달린 끔찍한 쥐의 형상 (검게 탄 실루엣) -->
+    <g transform="translate(150, 160)">
+      <!-- 나뭇가지에 묶인 거친 삼베 실 -->
+      <path d="M0 -60 Q10 -20 5 10" fill="none" stroke="#bdc3c7" stroke-width="2" stroke-dasharray="3 3"/>
+      
+      <!-- 쥐의 몸통 (사지와 꼬리가 잘리고 흉측하게 타버린 상태의 실루엣) -->
+      <!-- 쥐 형태의 덩어리 -->
+      <ellipse cx="0" cy="40" rx="35" ry="50" fill="#111" stroke="#2c3e50" stroke-width="2"/>
+      <ellipse cx="0" cy="40" rx="35" ry="50" fill="none" stroke="#c0392b" stroke-width="1" opacity="0.5"/> <!-- 불에 그을린 붉은 자국 -->
+      
+      <!-- 잘린 사지 부위에서 떨어지는 검붉은 피 -->
+      <path d="M-25 70 L-25 100 M25 70 L25 90 M0 90 L0 120" stroke="#7b241c" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="-25" cy="105" r="3" fill="#7b241c"/>
+      <circle cx="0" cy="125" r="3" fill="#7b241c"/>
+      
+      <!-- 불로 지진 입과 눈 부위 (잔혹한 주술의 흔적) -->
+      <g transform="translate(0, 10)">
+        <!-- 입 부분 꿰맨/지진 자국 -->
+        <path d="M-15 0 L15 0 M-10 -5 L-10 5 M0 -5 L0 5 M10 -5 L10 5" stroke="#a93226" stroke-width="3"/>
+        <!-- 타버린 눈 구멍 -->
+        <circle cx="-15" cy="-20" r="5" fill="#7b241c"/>
+        <circle cx="15" cy="-20" r="5" fill="#7b241c"/>
+      </g>
+    </g>
+    
+    <!-- 쥐의 몸통에 꽂혀 있거나 부착된 붉은 저주문 종이 -->
+    <g transform="translate(150, 220) rotate(-15)">
+      <rect x="-15" y="0" width="30" height="50" fill="#eaddbd" stroke="#a0855b" stroke-width="1"/>
+      <path d="M-5 10 L-5 40 M5 10 L5 35" stroke="#c0392b" stroke-width="3"/> <!-- "세자의 몸을 찢겠다"는 저주의 글씨 -->
+      <!-- 쥐 몸통에 종이를 고정한 대나무 핀 -->
+      <path d="M-20 20 L20 20" stroke="#d4ac0d" stroke-width="2"/>
+    </g>
+    
+  </g>
+</svg>

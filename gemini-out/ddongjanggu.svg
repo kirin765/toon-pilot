@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="ddongjanggu">
+    <!-- 바닥 그림자와 오물 튄 흔적 -->
+    <ellipse cx="200" cy="270" rx="100" ry="20" fill="#2c3e50" opacity="0.3"/>
+    <circle cx="280" cy="265" r="5" fill="#5c2e0b" opacity="0.6"/>
+    <circle cx="120" cy="275" r="4" fill="#5c2e0b" opacity="0.5"/>
+    <path d="M150 280 Q160 270 180 275" fill="none" stroke="#5c2e0b" stroke-width="3" opacity="0.4"/>
+    
+    <!-- 지게 프레임 (나무 막대기들) -->
+    <path d="M110 50 L80 280 M290 50 L320 280" stroke="#8b4513" stroke-width="12" stroke-linecap="round"/>
+    <path d="M100 120 L300 120 M90 190 L310 190 M85 240 L315 240" stroke="#5c2e0b" stroke-width="10" stroke-linecap="round"/>
+    
+    <!-- 똥장구 (거대한 나무 물통/똥통) 몸체 -->
+    <!-- 지게 위에 얹혀진 원통형 나무통 (가로로 눕혀진 형태나 세워진 형태, 여기선 위가 좁은 세워진 통) -->
+    <path d="M130 90 C130 250 270 250 270 90 Z" fill="#5c2e0b"/>
+    <path d="M140 90 C140 240 260 240 260 90 Z" fill="#6e2c00"/>
+    
+    <!-- 나무 판자 이음새 (세로선) -->
+    <path d="M160 100 Q160 170 170 235" fill="none" stroke="#3e2723" stroke-width="3"/>
+    <path d="M180 100 L180 240" fill="none" stroke="#3e2723" stroke-width="3"/>
+    <path d="M200 100 L200 245" fill="none" stroke="#3e2723" stroke-width="3"/>
+    <path d="M220 100 L220 240" fill="none" stroke="#3e2723" stroke-width="3"/>
+    <path d="M240 100 Q240 170 230 235" fill="none" stroke="#3e2723" stroke-width="3"/>
+    
+    <!-- 통을 조이는 대나무/쇠 테두리 -->
+    <ellipse cx="200" cy="130" rx="65" ry="10" fill="none" stroke="#212f3c" stroke-width="6"/>
+    <ellipse cx="200" cy="180" rx="72" ry="12" fill="none" stroke="#212f3c" stroke-width="6"/>
+    <ellipse cx="200" cy="230" rx="65" ry="10" fill="none" stroke="#212f3c" stroke-width="6"/>
+    
+    <!-- 똥통 입구 -->
+    <ellipse cx="200" cy="90" rx="70" ry="15" fill="#3e2723"/>
+    <ellipse cx="200" cy="90" rx="60" ry="12" fill="#17202a"/> <!-- 어두운 내부 -->
+    
+    <!-- 똥통 손잡이 (새끼줄) -->
+    <path d="M130 90 Q200 40 270 90" fill="none" stroke="#b9770e" stroke-width="6" stroke-dasharray="8 2"/>
+    
+    <!-- 넘쳐흐르는 오물 묘사 (더러움 강조) -->
+    <path d="M180 95 Q190 120 170 140" fill="none" stroke="#7e5109" stroke-width="8" stroke-linecap="round"/>
+    <path d="M230 95 Q240 110 220 130" fill="none" stroke="#5c2e0b" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="175" cy="145" r="4" fill="#7e5109"/>
+    
+    <!-- 악취를 나타내는 꼬불꼬불한 선과 파리 -->
+    <path d="M180 70 Q160 40 190 20 T180 -10" fill="none" stroke="#7f8c8d" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    <path d="M230 75 Q250 50 220 30 T240 0" fill="none" stroke="#7f8c8d" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    
+    <!-- 똥파리 (검은 점과 날개) -->
+    <g transform="translate(140, 50)">
+      <circle cx="0" cy="0" r="3" fill="#17202a"/>
+      <ellipse cx="-4" cy="-3" rx="4" ry="2" fill="#bdc3c7" transform="rotate(-30)"/>
+      <ellipse cx="4" cy="-3" rx="4" ry="2" fill="#bdc3c7" transform="rotate(30)"/>
+    </g>
+    <g transform="translate(250, 40) scale(0.8)">
+      <circle cx="0" cy="0" r="3" fill="#17202a"/>
+      <ellipse cx="-4" cy="-3" rx="4" ry="2" fill="#bdc3c7" transform="rotate(-30)"/>
+      <ellipse cx="4" cy="-3" rx="4" ry="2" fill="#bdc3c7" transform="rotate(30)"/>
+    </g>
+  </g>
+</svg>

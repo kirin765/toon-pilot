@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="korean_ginseng">
+    <!-- 조선 시대 대일, 대청 무역의 핵심 상품이자 최고급 사치품이었던 조선 인삼(홍삼) -->
+    
+    <!-- 인삼을 얹어둔 붉은 비단 상자(보자기) 배경 -->
+    <rect width="400" height="300" fill="#c0392b"/>
+    <!-- 비단의 구김살과 광택 묘사 -->
+    <path d="M0 0 Q100 150 0 300 M400 0 Q300 150 400 300" stroke="#a93226" stroke-width="20" fill="none" opacity="0.3"/>
+    <path d="M100 0 Q150 150 50 300 M300 0 Q250 150 350 300" stroke="#e74c3c" stroke-width="30" fill="none" opacity="0.2"/>
+    
+    <!-- 인삼 그림자 -->
+    <ellipse cx="210" cy="170" rx="90" ry="110" fill="#7b241c" opacity="0.6" transform="rotate(-15 210 170)"/>
+    
+    <!-- 잘 말린 붉은빛이 감도는 최상급 조선 홍삼 -->
+    <g transform="translate(200, 150) rotate(-15)">
+      
+      <!-- 인삼의 뇌두 (머리 부분) -->
+      <path d="M0 -110 C-15 -110 -20 -90 -5 -80 L5 -80 C20 -90 15 -110 0 -110 Z" fill="#dc7633" stroke="#a04000" stroke-width="2"/>
+      <path d="M-10 -105 L5 -95 M-15 -95 L10 -90 M-5 -85 L15 -85" stroke="#a04000" stroke-width="1.5"/> <!-- 주름 -->
+      
+      <!-- 인삼의 몸통 (사람 형태를 닮은 뿌리) -->
+      <path d="M-5 -80 C-40 -40 -30 20 -10 50 L10 50 C30 20 40 -40 5 -80 Z" fill="#e59866" stroke="#ba4a00" stroke-width="3"/>
+      
+      <!-- 몸통의 가로 주름과 잔뿌리가 난 자국 (인삼 특유의 질감) -->
+      <g stroke="#a04000" stroke-width="2" opacity="0.7">
+        <path d="M-20 -60 Q0 -55 20 -65"/>
+        <path d="M-25 -40 Q0 -35 25 -45"/>
+        <path d="M-28 -20 Q0 -15 27 -25"/>
+        <path d="M-25 0 Q0 5 25 -5"/>
+        <path d="M-20 20 Q0 25 20 15"/>
+        <path d="M-15 40 Q0 45 15 35"/>
+      </g>
+      
+      <!-- 왼쪽 다리 (잔뿌리) -->
+      <path d="M-10 50 C-30 80 -40 120 -60 140 C-30 120 -20 80 0 50 Z" fill="#e59866" stroke="#ba4a00" stroke-width="2"/>
+      <path d="M-50 110 Q-60 120 -70 115" fill="none" stroke="#ba4a00" stroke-width="2"/>
+      
+      <!-- 오른쪽 다리 (잔뿌리) -->
+      <path d="M10 50 C30 90 60 110 80 130 C50 110 20 90 0 50 Z" fill="#e59866" stroke="#ba4a00" stroke-width="2"/>
+      <path d="M55 105 Q70 110 85 95" fill="none" stroke="#ba4a00" stroke-width="2"/>
+      
+      <!-- 양옆으로 뻗은 팔 (미삼) -->
+      <!-- 왼쪽 팔 -->
+      <path d="M-25 -30 C-50 -10 -80 0 -90 -10 C-60 -20 -40 -40 -20 -40 Z" fill="#e59866" stroke="#ba4a00" stroke-width="2"/>
+      <!-- 오른쪽 팔 -->
+      <path d="M25 -40 C50 -50 70 -40 90 -20 C60 -10 40 0 20 -20 Z" fill="#e59866" stroke="#ba4a00" stroke-width="2"/>
+      
+      <!-- 가늘게 뻗은 미세한 잔뿌리들 -->
+      <g fill="none" stroke="#ba4a00" stroke-width="1.5">
+        <path d="M-75 -5 Q-85 -5 -90 5"/>
+        <path d="M-40 100 Q-50 110 -45 130"/>
+        <path d="M40 90 Q50 110 60 140"/>
+        <path d="M60 -30 Q70 -40 80 -50"/>
+      </g>
+      
+      <!-- 홍삼 특유의 투명하고 붉은빛이 도는 입체적인 광택 -->
+      <path d="M0 -75 C-15 -40 -15 20 -5 50" fill="none" stroke="#fdfefe" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+      <path d="M-5 50 C-15 70 -20 90 -30 110" fill="none" stroke="#fdfefe" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+      
+    </g>
+    
+    <!-- 인삼의 등급을 나타내는 금박 띠 (상품 가치를 높임) -->
+    <g transform="translate(200, 150) rotate(-15)">
+      <path d="M-30 0 L30 -10 L30 10 L-30 20 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="1.5"/>
+      <!-- 금박 띠 위의 한자 ('上' 상) -->
+      <path d="M-5 -2 L5 -4 M0 -3 L-2 8 M-10 10 L10 6" stroke="#b9770e" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+  </g>
+</svg>

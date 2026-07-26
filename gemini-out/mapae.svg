@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="mapae">
+    <!-- 마패 줄 (매듭) -->
+    <path d="M200 20 L200 60" stroke="#c0392b" stroke-width="6"/>
+    <circle cx="200" cy="65" r="10" fill="#e74c3c"/> <!-- 매듭 머리 -->
+    
+    <!-- 마패 놋쇠 몸통 (구리/황동 재질) -->
+    <circle cx="200" cy="160" r="90" fill="#d35400"/>
+    <circle cx="200" cy="160" r="85" fill="#e67e22"/>
+    <circle cx="200" cy="160" r="80" fill="#d35400"/>
+    
+    <!-- 안쪽 밝은 면 -->
+    <circle cx="200" cy="160" r="70" fill="#f39c12"/>
+    
+    <!-- 말(馬) 양각 그림 (암행어사의 상징, 3마패 기준) -->
+    <g fill="#a04000" transform="translate(160, 110)">
+      <!-- 말 1 (왼쪽 아래) -->
+      <path d="M10 50 Q20 40 30 50 L35 70 L25 70 L20 60 L15 70 L5 70 Z"/>
+      <!-- 말 2 (가운데 위) -->
+      <path d="M35 20 Q45 10 55 20 L60 40 L50 40 L45 30 L40 40 L30 40 Z"/>
+      <!-- 말 3 (오른쪽 아래) -->
+      <path d="M60 50 Q70 40 80 50 L85 70 L75 70 L70 60 L65 70 L55 70 Z"/>
+    </g>
+    
+    <!-- 상단 고리 부분 -->
+    <path d="M185 70 Q200 50 215 70" stroke="#d35400" stroke-width="12" fill="none"/>
+    <path d="M185 70 Q200 55 215 70" stroke="#f39c12" stroke-width="6" fill="none"/>
+    
+    <!-- 마모된 질감 표현 (스크래치) -->
+    <path d="M140 180 L160 190 M240 120 L260 130" stroke="#a04000" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="hwacha_rocket_and_wheel">
+    <!-- 조선 다연장 로켓 신기전과 화차: 발사 장치와 불화살 -->
+    
+    <!-- 조선군 진영의 모래 흙바닥 배경 -->
+    <rect width="400" height="300" fill="#cda776"/>
+    
+    <!-- 거대한 화차의 나무 수레바퀴 (우측 하단 배치) -->
+    <g transform="translate(100, 220) scale(1.2)">
+      <!-- 바퀴 외곽 테두리 -->
+      <circle cx="0" cy="0" r="60" fill="none" stroke="#5d4037" stroke-width="12"/>
+      <circle cx="0" cy="0" r="54" fill="none" stroke="#8d6e63" stroke-width="2"/>
+      <!-- 바퀴살 (목재) -->
+      <line x1="-54" y1="0" x2="54" y2="0" stroke="#795548" stroke-width="8"/>
+      <line x1="0" y1="-54" x2="0" y2="54" stroke="#795548" stroke-width="8"/>
+      <line x1="-38" y1="-38" x2="38" y2="38" stroke="#795548" stroke-width="8"/>
+      <line x1="-38" y1="38" x2="38" y2="-38" stroke="#795548" stroke-width="8"/>
+      <!-- 바퀴 중심축 -->
+      <circle cx="0" cy="0" r="15" fill="#5d4037"/>
+      <circle cx="0" cy="0" r="8" fill="#3e2723"/>
+    </g>
+    
+    <!-- 화차 상단의 신기전기 (발사관 박스) 측면부 -->
+    <rect x="30" y="40" width="180" height="100" rx="5" fill="#a1887f" stroke="#4e342e" stroke-width="4" transform="rotate(-15 120 90)"/>
+    <!-- 구멍이 뚫린 전면 판 (측면 원근감) -->
+    <path d="M210 20 L240 50 L200 130 L170 100 Z" fill="#8d6e63" stroke="#4e342e" stroke-width="4"/>
+    
+    <!-- 발사 대기 중인 신기전 (로켓 화살) 다발 -->
+    <g transform="translate(200, 80) rotate(-15)">
+      <!-- 화살통(발사관) 구멍들 -->
+      <circle cx="20" cy="-20" r="4" fill="#111"/>
+      <circle cx="15" cy="-5" r="4" fill="#111"/>
+      <circle cx="10" cy="10" r="4" fill="#111"/>
+      
+      <!-- 발사되어 날아오르는 화살 1 -->
+      <g transform="translate(120, -50) rotate(10)">
+        <line x1="-150" y1="0" x2="0" y2="0" stroke="#e6b0aa" stroke-width="2"/> <!-- 긴 꼬리(안정 막대) -->
+        <!-- 약통 (종이로 만 화약통) -->
+        <rect x="-40" y="-4" width="30" height="8" rx="2" fill="#fdf2e9" stroke="#935116" stroke-width="1.5"/>
+        <line x1="-25" y1="-4" x2="-25" y2="4" stroke="#935116" stroke-width="1"/>
+        <!-- 화살촉 -->
+        <polygon points="0,-3 10,0 0,3" fill="#34495e"/>
+        <!-- 꼬리 깃털 -->
+        <polygon points="-150,0 -140,-5 -145,0 -140,5" fill="#fff" stroke="#935116" stroke-width="0.5"/>
+        <!-- 뿜어져 나오는 로켓 화염 -->
+        <path d="M-40 0 L-80 -10 L-60 0 L-80 10 Z" fill="#e67e22"/>
+        <path d="M-40 0 L-60 -5 L-50 0 L-60 5 Z" fill="#f1c40f"/>
+        <!-- 추진 연기 궤적 -->
+        <path d="M-80 0 Q-150 -10 -200 20" fill="none" stroke="#ecf0f1" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+      </g>
+      
+      <!-- 발사되어 날아오르는 화살 2 -->
+      <g transform="translate(100, -10) rotate(15)">
+        <line x1="-150" y1="0" x2="0" y2="0" stroke="#e6b0aa" stroke-width="2"/>
+        <rect x="-40" y="-4" width="30" height="8" rx="2" fill="#fdf2e9" stroke="#935116" stroke-width="1.5"/>
+        <polygon points="0,-3 10,0 0,3" fill="#34495e"/>
+        <path d="M-40 0 L-70 -8 L-55 0 L-70 8 Z" fill="#e67e22"/>
+        <path d="M-70 0 Q-130 -5 -180 10" fill="none" stroke="#ecf0f1" stroke-width="3" opacity="0.5"/>
+      </g>
+      
+      <!-- 발사되어 날아오르는 화살 3 -->
+      <g transform="translate(130, -90) rotate(5)">
+        <line x1="-150" y1="0" x2="0" y2="0" stroke="#e6b0aa" stroke-width="2"/>
+        <rect x="-40" y="-4" width="30" height="8" rx="2" fill="#fdf2e9" stroke="#935116" stroke-width="1.5"/>
+        <polygon points="0,-3 10,0 0,3" fill="#34495e"/>
+        <path d="M-40 0 L-80 -10 L-60 0 L-80 10 Z" fill="#e67e22"/>
+      </g>
+    </g>
+  </g>
+</svg>

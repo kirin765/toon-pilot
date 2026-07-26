@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="jipsin_straw_shoes">
+    <!-- 조선 시대 평민들의 신발이자 가장 흔한 노동화인 볏짚으로 엮은 짚신 -->
+    
+    <!-- 흙길(마당) 배경 -->
+    <rect width="400" height="300" fill="#d7bde2"/>
+    <ellipse cx="200" cy="180" rx="150" ry="60" fill="#c39bd3" opacity="0.3"/> <!-- 바닥 그림자 영역 -->
+    
+    <!-- 왼쪽 짚신 (살짝 비스듬히 놓임) -->
+    <g transform="translate(140, 180) rotate(-15)">
+      
+      <!-- 짚신 바닥 그림자 -->
+      <ellipse cx="0" cy="10" rx="45" ry="85" fill="#a569bd" opacity="0.5"/>
+      
+      <!-- 짚신 본체 (바닥창과 테두리) -->
+      <!-- 거칠고 굵은 볏짚 질감 (황토색, 옅은 노란색) -->
+      <ellipse cx="0" cy="0" rx="40" ry="80" fill="#f5cba7" stroke="#dc7633" stroke-width="3"/>
+      
+      <!-- 신발 바닥을 엮은 세로 줄 (총줄) -->
+      <line x1="-20" y1="-70" x2="-20" y2="70" stroke="#e59866" stroke-width="2"/>
+      <line x1="0" y1="-80" x2="0" y2="80" stroke="#e59866" stroke-width="2"/>
+      <line x1="20" y1="-70" x2="20" y2="70" stroke="#e59866" stroke-width="2"/>
+      
+      <!-- 신발 바닥을 엮은 가로 줄무늬 (짚을 촘촘히 꼬아 만든 질감) -->
+      <g stroke="#d35400" stroke-width="1.5" opacity="0.6">
+        <path d="M-30 -60 L30 -60 M-35 -40 L35 -40 M-38 -20 L38 -20 M-40 0 L40 0 M-38 20 L38 20 M-35 40 L35 40 M-30 60 L30 60"/>
+      </g>
+      
+      <!-- 짚신 테두리 (신날) - 발을 감싸는 옆면 -->
+      <!-- 굵게 꼰 새끼줄이 둥글게 테두리를 형성함 -->
+      <path d="M-40 0 C-40 -60 0 -80 0 -80 C0 -80 40 -60 40 0 C40 60 0 80 0 80 C0 80 -40 60 -40 0 Z" fill="none" stroke="#d35400" stroke-width="6"/>
+      <!-- 테두리의 새끼줄 꼬인 질감 묘사 -->
+      <g stroke="#ba4a00" stroke-width="2">
+        <path d="M-38 -30 L-42 -25 M-39 -10 L-43 -5 M-40 10 L-44 15 M-38 30 L-42 35 M38 -30 L42 -25 M39 -10 L43 -5 M40 10 L44 15 M38 30 L42 35"/>
+      </g>
+      
+      <!-- 발가락을 덮는 앞부분 짚 엮음 (총) -->
+      <path d="M-30 -50 C0 -40 30 -50 0 -80 Z" fill="#edbb99" stroke="#d35400" stroke-width="2"/>
+      <path d="M-20 -50 L0 -80 M0 -45 L0 -80 M20 -50 L0 -80" stroke="#d35400" stroke-width="2"/>
+      
+      <!-- 뒤꿈치 부분 (뒤축) -->
+      <path d="M-25 65 C0 55 25 65 0 80 Z" fill="#edbb99" stroke="#d35400" stroke-width="2"/>
+      
+      <!-- 발을 고정하는 짚끈 (당기) -->
+      <path d="M-30 -20 Q0 20 30 -20" fill="none" stroke="#ba4a00" stroke-width="4"/>
+      <path d="M-35 20 Q0 60 35 20" fill="none" stroke="#ba4a00" stroke-width="4"/>
+      
+      <!-- 바닥창 안쪽의 깊이감을 위한 음영 -->
+      <path d="M-30 -20 Q0 30 30 -20 L25 40 Q0 60 -25 40 Z" fill="#e59866" opacity="0.4"/>
+      
+    </g>
+    
+    <!-- 오른쪽 짚신 (정면을 향해 반듯하게 놓임) -->
+    <g transform="translate(250, 160) rotate(10)">
+      
+      <!-- 짚신 바닥 그림자 -->
+      <ellipse cx="0" cy="10" rx="45" ry="85" fill="#a569bd" opacity="0.5"/>
+      
+      <!-- 짚신 본체 -->
+      <ellipse cx="0" cy="0" rx="40" ry="80" fill="#f5cba7" stroke="#dc7633" stroke-width="3"/>
+      
+      <!-- 총줄 (세로) -->
+      <line x1="-20" y1="-70" x2="-20" y2="70" stroke="#e59866" stroke-width="2"/>
+      <line x1="0" y1="-80" x2="0" y2="80" stroke="#e59866" stroke-width="2"/>
+      <line x1="20" y1="-70" x2="20" y2="70" stroke="#e59866" stroke-width="2"/>
+      
+      <!-- 엮음줄 (가로) -->
+      <g stroke="#d35400" stroke-width="1.5" opacity="0.6">
+        <path d="M-30 -60 L30 -60 M-35 -40 L35 -40 M-38 -20 L38 -20 M-40 0 L40 0 M-38 20 L38 20 M-35 40 L35 40 M-30 60 L30 60"/>
+      </g>
+      
+      <!-- 테두리 (신날) -->
+      <path d="M-40 0 C-40 -60 0 -80 0 -80 C0 -80 40 -60 40 0 C40 60 0 80 0 80 C0 80 -40 60 -40 0 Z" fill="none" stroke="#d35400" stroke-width="6"/>
+      <g stroke="#ba4a00" stroke-width="2">
+        <path d="M-38 -30 L-42 -25 M-39 -10 L-43 -5 M-40 10 L-44 15 M-38 30 L-42 35 M38 -30 L42 -25 M39 -10 L43 -5 M40 10 L44 15 M38 30 L42 35"/>
+      </g>
+      
+      <!-- 앞부분 (총) -->
+      <path d="M-30 -50 C0 -40 30 -50 0 -80 Z" fill="#edbb99" stroke="#d35400" stroke-width="2"/>
+      <path d="M-20 -50 L0 -80 M0 -45 L0 -80 M20 -50 L0 -80" stroke="#d35400" stroke-width="2"/>
+      
+      <!-- 뒤축 -->
+      <path d="M-25 65 C0 55 25 65 0 80 Z" fill="#edbb99" stroke="#d35400" stroke-width="2"/>
+      
+      <!-- 짚끈 -->
+      <path d="M-30 -20 Q0 20 30 -20" fill="none" stroke="#ba4a00" stroke-width="4"/>
+      <path d="M-35 20 Q0 60 35 20" fill="none" stroke="#ba4a00" stroke-width="4"/>
+      
+      <!-- 안쪽 음영 -->
+      <path d="M-30 -20 Q0 30 30 -20 L25 40 Q0 60 -25 40 Z" fill="#e59866" opacity="0.4"/>
+      
+      <!-- 짚신의 거친 느낌을 더해주는 튀어나온 짚풀 묘사 -->
+      <line x1="38" y1="-10" x2="45" y2="-5" stroke="#d35400" stroke-width="1.5"/>
+      <line x1="-39" y1="20" x2="-45" y2="25" stroke="#d35400" stroke-width="1.5"/>
+      <line x1="-25" y1="-75" x2="-35" y2="-70" stroke="#d35400" stroke-width="1.5"/>
+      
+    </g>
+    
+  </g>
+</svg>

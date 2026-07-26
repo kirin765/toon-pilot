@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="blurry_hangeul_and_water">
+    <!-- 세종의 안질: 시력이 흐려지는 와중에 만든 훈민정음과 초정약수 -->
+    
+    <!-- 어둡고 흐릿한 배경 (세종의 시각 장애 상태 묘사) -->
+    <rect width="400" height="300" fill="#1b2631"/>
+    
+    <!-- 초정약수를 긷던 나무 바가지 -->
+    <g transform="translate(120, 200) rotate(-15)">
+      <path d="M-60 -20 Q0 60 60 -20 Z" fill="#d35400" stroke="#a04000" stroke-width="4"/>
+      <ellipse cx="0" cy="-20" rx="60" ry="15" fill="#e67e22" stroke="#a04000" stroke-width="2"/>
+      <path d="M60 -20 Q80 -40 120 -10 T150 10" fill="none" stroke="#d35400" stroke-width="15" stroke-linecap="round"/>
+      <path d="M60 -20 Q80 -40 120 -10 T150 10" fill="none" stroke="#a04000" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 5"/>
+      
+      <!-- 바가지 안의 찰랑이는 약수 (눈을 씻던 물) -->
+      <ellipse cx="0" cy="-15" rx="50" ry="10" fill="#5dade2" opacity="0.8"/>
+      <path d="M-30 -15 Q0 -25 30 -15" fill="none" stroke="#ebf5fb" stroke-width="2"/>
+      <!-- 흘러넘치는 물방울 -->
+      <circle cx="-50" cy="10" r="5" fill="#5dade2"/>
+      <circle cx="-60" cy="30" r="3" fill="#5dade2"/>
+    </g>
+    
+    <!-- 흐려져 가는 시야 속 허공에 떠오른 훈민정음 글자들 (시각적 왜곡 효과) -->
+    <!-- 글자 1: 훈(訓) -->
+    <g transform="translate(250, 100) scale(1.5)">
+      <circle cx="0" cy="0" r="25" fill="#f1c40f" opacity="0.1" filter="blur(5px)"/>
+      <path d="M-10 -15 L10 -15 M0 -15 L0 -5 M-10 0 L10 0 M-5 0 L-5 15 M-10 15 L10 15" stroke="#f1c40f" stroke-width="3" stroke-linecap="round" opacity="0.4" filter="blur(2px)"/>
+      <path d="M-10 -15 L10 -15 M0 -15 L0 -5 M-10 0 L10 0 M-5 0 L-5 15 M-10 15 L10 15" stroke="#fdf2e9" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+    </g>
+    
+    <!-- 글자 2: 민(民) -->
+    <g transform="translate(180, 80) scale(1.2)">
+      <path d="M-15 -10 L15 -10 M-15 -10 L-15 10 M-15 10 L15 10 M15 -10 L15 10 M-15 0 L15 0" stroke="#f1c40f" stroke-width="4" stroke-linecap="round" opacity="0.3" filter="blur(4px)"/>
+      <path d="M-15 -10 L15 -10 M-15 -10 L-15 10 M-15 10 L15 10 M15 -10 L15 10 M-15 0 L15 0" stroke="#fdf2e9" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    </g>
+    
+    <!-- 글자 3: 정(正) - 가장 흐릿하게 -->
+    <g transform="translate(320, 180) scale(1.8) rotate(10)">
+      <path d="M-15 -15 L15 -15 M0 -15 L0 5 M-10 5 L10 5 M-20 15 L20 15" stroke="#f1c40f" stroke-width="5" stroke-linecap="round" opacity="0.2" filter="blur(6px)"/>
+      <path d="M-15 -15 L15 -15 M0 -15 L0 5 M-10 5 L10 5 M-20 15 L20 15" stroke="#fdf2e9" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+    </g>
+    
+    <!-- 안질을 묘사하는 시야 주변부의 번짐 효과 -->
+    <path d="M0 0 L100 0 L0 100 Z" fill="#111" opacity="0.8" filter="blur(10px)"/>
+    <path d="M400 0 L300 0 L400 100 Z" fill="#111" opacity="0.8" filter="blur(10px)"/>
+    <path d="M0 300 L100 300 L0 200 Z" fill="#111" opacity="0.8" filter="blur(10px)"/>
+    <path d="M400 300 L300 300 L400 200 Z" fill="#111" opacity="0.8" filter="blur(10px)"/>
+    
+  </g>
+</svg>

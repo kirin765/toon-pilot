@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="bigeokjincheonroe">
+    <!-- 조선의 첨단 시한폭탄, 비격진천뢰(飛擊震天雷) -->
+    
+    <!-- 전장의 흙바닥 배경 (불발탄인 줄 알고 구경하는 왜군들의 시점) -->
+    <rect width="400" height="300" fill="#a04000"/>
+    <!-- 전장의 흩어진 연기와 모래바람 -->
+    <path d="M0 200 Q100 150 200 250 T400 200 L400 300 L0 300 Z" fill="#873600" opacity="0.4"/>
+    <ellipse cx="200" cy="220" rx="150" ry="40" fill="#17202a" opacity="0.5"/>
+    
+    <!-- 비격진천뢰 본체 (육중한 무쇠 공) -->
+    <g transform="translate(200, 180)">
+      
+      <!-- 폭탄의 철제 외피 (무쇠의 질감) -->
+      <!-- 둥근 구형태의 육중한 느낌 -->
+      <circle cx="0" cy="0" r="80" fill="#2c3e50" stroke="#1a252f" stroke-width="4"/>
+      
+      <!-- 철제 표면의 녹과 거친 주물 자국 (거칠고 투박함) -->
+      <circle cx="-20" cy="-30" r="6" fill="#34495e"/>
+      <circle cx="30" cy="-40" r="8" fill="#34495e"/>
+      <circle cx="-40" cy="20" r="5" fill="#34495e"/>
+      <circle cx="40" cy="30" r="10" fill="#34495e"/>
+      <circle cx="10" cy="50" r="7" fill="#34495e"/>
+      
+      <!-- 입체감을 위한 구면 하이라이트와 섀도우 -->
+      <path d="M-60 -20 C-40 -60 20 -70 50 -40" fill="none" stroke="#7f8c8d" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+      <path d="M-60 40 C-20 70 40 60 70 20" fill="none" stroke="#17202a" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+      
+      <!-- 폭탄 상단의 화약 주입구 및 신관 결합부 -->
+      <!-- 튀어나온 원통형 주둥이 -->
+      <path d="M-25 -75 L25 -75 L20 -90 L-20 -90 Z" fill="#1c2833" stroke="#1a252f" stroke-width="3"/>
+      
+      <!-- 핵심 부품: 폭발 시간을 조절하는 '목곡' (나선형 홈이 파인 나무 심) -->
+      <!-- 단면이 아니라 외부에 튀어나온 도화선 통로 뚜껑 형태 묘사 -->
+      <rect x="-15" y="-110" width="30" height="20" fill="#8b5a2b" stroke="#5c3a21" stroke-width="2" rx="2"/>
+      <!-- 목곡에 파인 나선형 홈 디테일 -->
+      <path d="M-15 -105 L15 -100 M-15 -98 L15 -93" stroke="#5c3a21" stroke-width="2"/>
+      
+      <!-- 타들어 가고 있는 도화선 (심지) -->
+      <path d="M0 -110 Q-20 -130 10 -150 T-5 -180" fill="none" stroke="#d35400" stroke-width="4"/>
+      <!-- 타들어 가는 불꽃과 연기 -->
+      <circle cx="-5" cy="-180" r="8" fill="#f1c40f"/>
+      <path d="M-5 -180 L-10 -195 M-5 -180 L0 -198 M-5 -180 L5 -190" stroke="#e74c3c" stroke-width="3"/>
+      
+      <!-- 쉭쉭거리는 연기 -->
+      <path d="M-10 -180 Q-40 -200 -30 -220" fill="none" stroke="#bdc3c7" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+      <path d="M0 -180 Q20 -200 40 -210" fill="none" stroke="#bdc3c7" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+      
+    </g>
+    
+    <!-- 긴장감을 고조시키는 붉은색 파동 (곧 폭발할 것 같은 묘사) -->
+    <g transform="translate(200, 180)">
+      <!-- 폭발 직전의 진동 효과선 -->
+      <path d="M-100 -20 Q-120 -40 -110 -60" fill="none" stroke="#e74c3c" stroke-width="3" opacity="0.7"/>
+      <path d="M100 20 Q120 40 110 60" fill="none" stroke="#e74c3c" stroke-width="3" opacity="0.7"/>
+      <path d="M-80 60 Q-100 80 -80 100" fill="none" stroke="#e74c3c" stroke-width="3" opacity="0.7"/>
+      <path d="M80 -60 Q100 -80 80 -100" fill="none" stroke="#e74c3c" stroke-width="3" opacity="0.7"/>
+    </g>
+    
+  </g>
+</svg>

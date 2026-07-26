@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="brush_inkstone">
+    <!-- 벼루 (석재 느낌의 타원형) -->
+    <ellipse cx="220" cy="230" rx="90" ry="40" fill="#2c3e50"/>
+    <ellipse cx="220" cy="225" rx="80" ry="35" fill="#34495e"/>
+    
+    <!-- 벼루 안쪽 파인 부분 (먹물 고이는 곳) -->
+    <path d="M160 225 Q160 250 200 250 L260 250 Q280 250 280 225 Z" fill="#17202a"/>
+    <!-- 먹물 반사광 -->
+    <ellipse cx="220" cy="240" rx="30" ry="5" fill="#ffffff" opacity="0.2"/>
+    
+    <!-- 먹 (검은 막대) -->
+    <g transform="translate(140, 200) rotate(15)">
+      <rect x="0" y="0" width="30" height="70" fill="#17202a"/>
+      <rect x="0" y="0" width="30" height="70" fill="#2c3e50" opacity="0.5"/>
+      <!-- 먹에 새겨진 황금색 문양/글씨 -->
+      <line x1="15" y1="10" x2="15" y2="50" stroke="#f1c40f" stroke-width="2"/>
+    </g>
+    
+    <!-- 붓 (서예 붓) -->
+    <!-- 붓대 (대나무) -->
+    <path d="M280 50 L210 200" stroke="#d4ac0d" stroke-width="12" stroke-linecap="round"/>
+    <path d="M282 48 L212 198" stroke="#f1c40f" stroke-width="4" stroke-linecap="round"/> <!-- 하이라이트 -->
+    
+    <!-- 붓 털 (동물 털) -->
+    <path d="M210 200 Q190 230 195 245 Q210 235 215 205" fill="#7f8c8d"/>
+    <path d="M210 200 Q200 230 195 245" stroke="#17202a" stroke-width="2" fill="none"/> <!-- 먹물 묻은 끝 -->
+    <path d="M195 245 L190 255" stroke="#17202a" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

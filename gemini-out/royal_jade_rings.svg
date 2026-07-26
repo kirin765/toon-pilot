@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="royal_jade_rings">
+    <!-- 궁궐의 스캔들: 두 궁녀(혹은 세자빈과 궁녀)가 은밀히 나누어 가진 옥가락지 두 짝 -->
+    
+    <!-- 달빛이 비치는 은밀한 궁궐 처소의 바닥 (어두운 나무 질감) -->
+    <rect width="400" height="300" fill="#1c2833"/>
+    <path d="M0 50 L400 50 M0 150 L400 150 M0 250 L400 250" stroke="#17202a" stroke-width="3"/>
+    <!-- 창문을 통과한 차가운 달빛 그림자 -->
+    <path d="M50 0 L150 300 M150 0 L250 300" fill="none" stroke="#fff" stroke-width="60" opacity="0.05"/>
+    
+    <!-- 바닥에 떨어진 붉은 비단 치맛자락 (스캔들의 흔적) -->
+    <path d="M250 150 C300 120 400 180 350 250 C300 300 200 280 250 150 Z" fill="#78281f" opacity="0.8"/>
+    <path d="M270 170 Q320 200 300 230" fill="none" stroke="#641e16" stroke-width="3"/>
+    
+    <!-- 나란히 놓인 두 개의 옥가락지 (영원한 약속과 금지된 사랑의 상징) -->
+    <!-- 첫 번째 가락지 (크고 진한 옥색 - 세자빈 봉씨의 것) -->
+    <g transform="translate(170, 180) rotate(-20)">
+      <!-- 옥가락지 바깥쪽 테두리 -->
+      <ellipse cx="0" cy="0" rx="35" ry="15" fill="#148f77" stroke="#0e6251" stroke-width="2"/>
+      <!-- 두께감 (안쪽) -->
+      <ellipse cx="0" cy="-4" rx="28" ry="10" fill="#1c2833"/>
+      <!-- 옥의 반투명한 광택 (달빛 반사) -->
+      <path d="M-25 2 C-15 10 15 10 25 2" fill="none" stroke="#a2d9ce" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+      <path d="M-15 -10 Q0 -15 15 -10" fill="none" stroke="#76d7c4" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    </g>
+    
+    <!-- 두 번째 가락지 (작고 연한 옥색 - 궁녀 소쌍의 것, 첫 번째 반지와 교차됨) -->
+    <g transform="translate(210, 175) rotate(30)">
+      <!-- 옥가락지 바깥쪽 테두리 -->
+      <ellipse cx="0" cy="0" rx="30" ry="12" fill="#48c9b0" stroke="#117a65" stroke-width="2"/>
+      <!-- 두께감 (안쪽) -->
+      <ellipse cx="0" cy="-3" rx="24" ry="8" fill="#1c2833"/>
+      <!-- 옥의 반투명한 광택 (달빛 반사) -->
+      <path d="M-20 2 C-10 8 10 8 20 2" fill="none" stroke="#d1f2eb" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+    </g>
+    
+    <!-- 두 사람의 끊어진 인연을 상징하는 끊어진 노리개 매듭 끈 -->
+    <path d="M120 220 Q160 250 180 200" fill="none" stroke="#f1c40f" stroke-width="3"/>
+    <path d="M180 200 Q190 180 220 230" fill="none" stroke="#f1c40f" stroke-width="3"/>
+    <circle cx="180" cy="200" r="5" fill="#e67e22"/> <!-- 떨어진 구슬 -->
+    <circle cx="190" cy="210" r="3" fill="#e67e22" opacity="0.7"/>
+    
+  </g>
+</svg>

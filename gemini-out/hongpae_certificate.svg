@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="hongpae_certificate">
+    <!-- 그림자 -->
+    <polygon points="110,60 320,80 300,270 90,250" fill="#2c3e50" opacity="0.2"/>
+    
+    <!-- 붉은 종이 (홍패) 배경 -->
+    <!-- 구겨진 느낌을 위해 약간 비뚤어지게 배치 -->
+    <polygon points="100,50 310,70 290,260 80,240" fill="#c0392b"/>
+    <polygon points="100,50 310,70 290,260 80,240" fill="none" stroke="#922b21" stroke-width="4"/>
+    
+    <!-- 종이 질감 / 접힌 자국 -->
+    <line x1="160" y1="55" x2="140" y2="245" stroke="#a93226" stroke-width="2" opacity="0.6"/>
+    <line x1="230" y1="63" x2="210" y2="253" stroke="#a93226" stroke-width="2" opacity="0.6"/>
+    
+    <!-- 붓글씨 (문과 급제 내용) -->
+    <g transform="rotate(5, 200, 150)">
+      <!-- 어보(임금의 도장) - 크고 붉은 사각형 도장 자국 -->
+      <rect x="160" y="100" width="50" height="50" fill="#e74c3c" opacity="0.7" transform="rotate(-5, 185, 125)"/>
+      <line x1="170" y1="110" x2="200" y2="140" stroke="#c0392b" stroke-width="2" opacity="0.8"/>
+      <line x1="200" y1="110" x2="170" y2="140" stroke="#c0392b" stroke-width="2" opacity="0.8"/>
+      
+      <!-- 글씨를 추상적인 세로선 뭉치로 묘사 -->
+      <!-- 우측 라인 -->
+      <path d="M260 80 Q255 100 258 130 Q253 150 250 180" fill="none" stroke="#17202a" stroke-width="8" stroke-linecap="round"/>
+      <path d="M255 190 Q250 210 248 230" fill="none" stroke="#17202a" stroke-width="7" stroke-linecap="round"/>
+      
+      <!-- 중앙 라인 -->
+      <path d="M210 75 Q212 90 208 105" fill="none" stroke="#17202a" stroke-width="6" stroke-linecap="round"/>
+      <path d="M205 165 Q200 180 203 210" fill="none" stroke="#17202a" stroke-width="9" stroke-linecap="round"/>
+      
+      <!-- 좌측 라인 (합격자 이름 등) -->
+      <path d="M150 70 Q145 90 148 110" fill="none" stroke="#17202a" stroke-width="10" stroke-linecap="round"/>
+      <path d="M140 150 Q138 170 142 200 Q135 220 135 240" fill="none" stroke="#17202a" stroke-width="7" stroke-linecap="round"/>
+      
+      <!-- 급제 연도/날짜 (작은 글씨) -->
+      <path d="M110 180 Q105 200 108 220" fill="none" stroke="#17202a" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    
+    <!-- 문서 상단의 장식 끈 (종이를 둘둘 말 때 쓰는 끈) -->
+    <path d="M100 50 Q130 20 160 40 Q180 20 190 55" fill="none" stroke="#f1c40f" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

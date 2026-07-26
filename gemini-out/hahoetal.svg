@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="hahoetal">
+    <!-- 탈 기본 얼굴 (나무색) -->
+    <ellipse cx="200" cy="150" rx="100" ry="120" fill="#d3a77d"/>
+    <!-- 볼 광대뼈 강조 -->
+    <ellipse cx="140" cy="130" rx="25" ry="20" fill="#c49363"/>
+    <ellipse cx="260" cy="130" rx="25" ry="20" fill="#c49363"/>
+    <!-- 반달 눈 (하회탈 특유의 처진 눈) -->
+    <path d="M110 110 Q140 120 170 110" stroke="#3e2723" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <path d="M230 110 Q260 120 290 110" stroke="#3e2723" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- 코 -->
+    <path d="M200 110 L220 160 L180 160 Z" fill="#bca080"/>
+    <path d="M190 160 Q200 175 210 160 Z" fill="#8c6a49"/>
+    <!-- 분리된 하관 (턱) -->
+    <path d="M130 200 Q200 270 270 200 Q200 250 130 200 Z" fill="#3e2723"/> <!-- 입(어두운 안쪽) -->
+    <path d="M120 220 Q200 300 280 220" stroke="#d3a77d" stroke-width="30" stroke-linecap="round" fill="none"/> <!-- 턱(분리된 나무) -->
+    <!-- 주름 -->
+    <path d="M110 130 Q120 150 130 180" stroke="#bca080" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M290 130 Q280 150 270 180" stroke="#bca080" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

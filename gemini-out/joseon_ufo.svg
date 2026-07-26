@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="joseon_ufo">
+    <!-- 조선의 맑은 가을 하늘 배경 -->
+    <rect width="400" height="300" fill="#3498db"/>
+    <path d="M0 0 L400 0 L400 300 L0 300 Z" fill="url(#sky_gradient)" opacity="0.4"/>
+    <defs>
+      <linearGradient id="sky_gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#2980b9"/>
+        <stop offset="100%" stop-color="#85c1e9"/>
+      </linearGradient>
+    </defs>
+    
+    <!-- 멀리 보이는 강원도의 산세 -->
+    <path d="M-50 300 L50 180 L150 250 L250 150 L350 220 L450 180 L450 300 Z" fill="#21618c" opacity="0.8"/>
+    <path d="M0 300 L100 200 L200 280 L300 170 L400 260 L450 300 Z" fill="#1b4f72"/>
+    
+    <!-- 조선 하늘에 나타난 세숫대야 모양의 UFO (비행 물체) -->
+    <!-- 물체의 궤적 (햇무리처럼 붉고 강렬한 빛) -->
+    <path d="M-50 -50 L200 150 L220 160" fill="none" stroke="#f1c40f" stroke-width="40" stroke-linecap="round" opacity="0.2"/>
+    <path d="M0 0 L180 140" fill="none" stroke="#e67e22" stroke-width="15" stroke-linecap="round" opacity="0.5"/>
+    <path d="M50 50 L190 145" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+    
+    <!-- UFO 본체 (실록에 묘사된 세숫대야/동이 모양의 기하학적 형태) -->
+    <g transform="translate(220, 160) rotate(15)">
+      <!-- 번쩍이는 후광 (Halo) -->
+      <circle cx="0" cy="0" r="45" fill="#f4d03f" opacity="0.4" filter="blur(5px)"/>
+      <circle cx="0" cy="0" r="35" fill="#f39c12" opacity="0.6"/>
+      
+      <!-- 세숫대야 모양의 동체 -->
+      <!-- 윗부분 -->
+      <ellipse cx="0" cy="-10" rx="25" ry="8" fill="#bdc3c7"/>
+      <!-- 아래 몸통 -->
+      <path d="M-25 -10 L25 -10 L15 15 L-15 15 Z" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2"/>
+      <!-- 바닥면 -->
+      <ellipse cx="0" cy="15" rx="15" ry="5" fill="#7f8c8d"/>
+      
+      <!-- 정체불명의 에너지가 뿜어져 나오는 하단 빛 -->
+      <path d="M-10 17 L10 17 L25 40 L-25 40 Z" fill="#e74c3c" opacity="0.7"/>
+      <path d="M-5 17 L5 17 L12 35 L-12 35 Z" fill="#f1c40f" opacity="0.9"/>
+      
+      <!-- 동체 표면의 기이한 무늬 (조선 시대 사람들이 묘사하기 힘들었던 기계 장치) -->
+      <circle cx="-10" cy="0" r="2" fill="#c0392b"/>
+      <circle cx="0" cy="0" r="2" fill="#c0392b"/>
+      <circle cx="10" cy="0" r="2" fill="#c0392b"/>
+      <line x1="-15" y1="5" x2="15" y2="5" stroke="#34495e" stroke-width="1.5"/>
+    </g>
+    
+    <!-- 놀라서 떨어뜨린 양반의 갓 (지상에서 하늘을 목격한 백성 암시) -->
+    <g transform="translate(320, 260) rotate(-30)">
+      <ellipse cx="0" cy="0" rx="30" ry="10" fill="#17202a"/> <!-- 갓양태 -->
+      <path d="M-15 0 C-15 -30 15 -30 15 0 Z" fill="#17202a" stroke="#34495e" stroke-width="1"/> <!-- 모자(대우) -->
+      <!-- 구슬 갓끈 (끊어져 흩어짐) -->
+      <path d="M-20 5 L-40 25 M-30 35 L-45 45" stroke="#f1c40f" stroke-width="1.5"/>
+      <circle cx="-35" cy="20" r="3" fill="#e74c3c"/>
+      <circle cx="-25" cy="30" r="3" fill="#f1c40f"/>
+    </g>
+    
+  </g>
+</svg>

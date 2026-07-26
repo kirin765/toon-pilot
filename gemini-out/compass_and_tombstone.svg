@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="compass_and_tombstone">
+    <!-- 풍수지리와 산송: 명당을 찾는 나침반(윤도)과 묘지의 상석 -->
+    
+    <!-- 푸르고 기운찬 명당의 산세 배경 -->
+    <rect width="400" height="300" fill="#d5f5e3"/>
+    <!-- 좌청룡 우백호를 상징하는 부드러운 산 능선 -->
+    <path d="M0 200 Q100 150 200 220 T400 180 L400 300 L0 300 Z" fill="#7dcea0"/>
+    <path d="M0 250 Q150 200 300 280 T400 250 L400 300 L0 300 Z" fill="#27ae60"/>
+    
+    <!-- 명당 혈자리에 놓인 무덤 앞의 제단 (상석) -->
+    <g transform="translate(100, 240)">
+      <rect x="-80" y="0" width="160" height="30" rx="3" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="4"/>
+      <!-- 상석을 받치는 둥근 고석(북 모양 돌) 2개 -->
+      <rect x="-60" y="30" width="30" height="40" rx="5" fill="#bdc3c7" stroke="#95a5a6" stroke-width="3"/>
+      <rect x="30" y="30" width="30" height="40" rx="5" fill="#bdc3c7" stroke="#95a5a6" stroke-width="3"/>
+    </g>
+    
+    <!-- 묘지를 노리는 핏빛 다툼(산송)을 상징하는 거대한 윤도(나침반) - 공중에 떠 있는 구도 -->
+    <g transform="translate(260, 130) scale(1.3) rotate(-15)">
+      <!-- 윤도 본체 (둥근 나무판) -->
+      <circle cx="0" cy="0" r="60" fill="#fdf2e9" stroke="#b9770e" stroke-width="4"/>
+      <!-- 24방위를 나타내는 원형 눈금선들 (여러 겹의 층) -->
+      <circle cx="0" cy="0" r="50" fill="none" stroke="#d5c8a0" stroke-width="1"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#d5c8a0" stroke-width="1"/>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="#d5c8a0" stroke-width="1"/>
+      
+      <!-- 방위와 방위를 가르는 격자 선들 -->
+      <!-- 8방위 십자선 -->
+      <line x1="-50" y1="0" x2="50" y2="0" stroke="#d4ac0d" stroke-width="2"/>
+      <line x1="0" y1="-50" x2="0" y2="50" stroke="#d4ac0d" stroke-width="2"/>
+      <line x1="-35" y1="-35" x2="35" y2="35" stroke="#d4ac0d" stroke-width="1"/>
+      <line x1="-35" y1="35" x2="35" y2="-35" stroke="#d4ac0d" stroke-width="1"/>
+      
+      <!-- 중심의 나침반 자침 (남북을 가리키는 자석 바늘) -->
+      <circle cx="0" cy="0" r="15" fill="#fff" stroke="#7f8c8d" stroke-width="2"/>
+      <!-- 북쪽을 가리키는 붉은 바늘 -->
+      <polygon points="-3,-5 3,-5 0,-25" fill="#e74c3c"/>
+      <!-- 남쪽 바늘 -->
+      <polygon points="-3,5 3,5 0,25" fill="#34495e"/>
+      <circle cx="0" cy="0" r="4" fill="#b9770e"/>
+      
+      <!-- 태극 문양 장식 -->
+      <!-- 생략하거나 미세하게 표현 -->
+    </g>
+    
+    <!-- 풍수지리와 산송의 음산함을 상징하는 붉은 먹물 흩뿌림 효과 (피와 분쟁 암시) -->
+    <circle cx="200" cy="180" r="4" fill="#c0392b" opacity="0.8"/>
+    <circle cx="180" cy="200" r="2" fill="#c0392b" opacity="0.8"/>
+    <circle cx="210" cy="220" r="3" fill="#c0392b" opacity="0.7"/>
+    <path d="M190 190 Q200 230 170 250" fill="none" stroke="#c0392b" stroke-width="2" opacity="0.6"/>
+    
+  </g>
+</svg>

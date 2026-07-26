@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="mulgoe_footprint">
+    <!-- 중종 시대 경복궁에 출몰한 미지의 짐승 '물괴'의 흔적 -->
+    
+    <!-- 어두운 밤 궁궐 담장 (바탕) -->
+    <rect width="400" height="300" fill="#212f3d"/>
+    
+    <!-- 궁궐 붉은 벽돌 담장 (전각의 일부) -->
+    <rect x="0" y="100" width="400" height="200" fill="#641e16"/>
+    <!-- 벽돌 무늬 -->
+    <line x1="0" y1="140" x2="400" y2="140" stroke="#17202a" stroke-width="2"/>
+    <line x1="0" y1="180" x2="400" y2="180" stroke="#17202a" stroke-width="2"/>
+    <line x1="0" y1="220" x2="400" y2="220" stroke="#17202a" stroke-width="2"/>
+    <line x1="0" y1="260" x2="400" y2="260" stroke="#17202a" stroke-width="2"/>
+    <!-- 세로 줄 -->
+    <line x1="100" y1="100" x2="100" y2="140" stroke="#17202a" stroke-width="2"/>
+    <line x1="300" y1="100" x2="300" y2="140" stroke="#17202a" stroke-width="2"/>
+    <line x1="50" y1="140" x2="50" y2="180" stroke="#17202a" stroke-width="2"/>
+    <line x1="250" y1="140" x2="250" y2="180" stroke="#17202a" stroke-width="2"/>
+    <line x1="150" y1="180" x2="150" y2="220" stroke="#17202a" stroke-width="2"/>
+    <line x1="350" y1="180" x2="350" y2="220" stroke="#17202a" stroke-width="2"/>
+    <line x1="100" y1="220" x2="100" y2="260" stroke="#17202a" stroke-width="2"/>
+    <line x1="300" y1="220" x2="300" y2="260" stroke="#17202a" stroke-width="2"/>
+    
+    <!-- 담장 윗부분 (기와지붕 단면) -->
+    <path d="M0 100 L400 100 L400 70 L0 70 Z" fill="#2c3e50"/>
+    <path d="M0 100 Q20 120 40 100 Q60 120 80 100 Q100 120 120 100 Q140 120 160 100 Q180 120 200 100 Q220 120 240 100 Q260 120 280 100 Q300 120 320 100 Q340 120 360 100 Q380 120 400 100" fill="none" stroke="#17202a" stroke-width="5"/>
+    <line x1="0" y1="70" x2="400" y2="70" stroke="#17202a" stroke-width="3"/>
+    
+    <!-- 기괴한 짐승(물괴)이 지나간 흔적: 거대한 세 발가락 발자국 -->
+    <!-- 담장 위를 밟고 지나간 발자국 (진흙과 핏자국이 섞인 듯한 붉은 흑색) -->
+    <g transform="translate(150, 150) rotate(-15)">
+      <!-- 발바닥 중앙 -->
+      <ellipse cx="0" cy="0" rx="20" ry="15" fill="#17202a"/>
+      <!-- 발가락 1 (왼쪽) -->
+      <ellipse cx="-25" cy="-20" rx="10" ry="18" fill="#17202a" transform="rotate(-30 -25 -20)"/>
+      <path d="M-30 -35 L-40 -45 L-20 -40 Z" fill="#e74c3c"/> <!-- 날카로운 발톱과 핏자국 -->
+      <!-- 발가락 2 (가운데) -->
+      <ellipse cx="0" cy="-30" rx="12" ry="20" fill="#17202a"/>
+      <path d="M-5 -50 L0 -65 L5 -50 Z" fill="#e74c3c"/> <!-- 발톱 -->
+      <!-- 발가락 3 (오른쪽) -->
+      <ellipse cx="25" cy="-20" rx="10" ry="18" fill="#17202a" transform="rotate(30 25 -20)"/>
+      <path d="M30 -35 L40 -45 L20 -40 Z" fill="#e74c3c"/> <!-- 발톱 -->
+      <!-- 흐르는 더러운 액체 (물괴의 비린내 묘사) -->
+      <path d="M0 10 Q5 30 -5 50 Q-15 70 -5 90" fill="none" stroke="#17202a" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="-5" cy="100" r="3" fill="#17202a"/>
+    </g>
+    
+    <g transform="translate(280, 80) rotate(10)">
+      <!-- 두 번째 발자국 (기와를 밟은 흔적) -->
+      <ellipse cx="0" cy="0" rx="15" ry="10" fill="#17202a"/>
+      <ellipse cx="-18" cy="-15" rx="7" ry="12" fill="#17202a" transform="rotate(-30 -18 -15)"/>
+      <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#17202a"/>
+      <ellipse cx="18" cy="-15" rx="7" ry="12" fill="#17202a" transform="rotate(30 18 -15)"/>
+      <path d="M-5 -35 L0 -45 L5 -35 Z" fill="#111"/> 
+    </g>
+    
+    <!-- 짐승이 담장을 넘다 걸려 찢어진 거칠고 뻣뻣한 털 (삽살개 같다는 묘사) -->
+    <path d="M110 90 Q120 70 130 95 Q140 65 150 90 Q160 80 170 100" fill="none" stroke="#7f8c8d" stroke-width="3" stroke-linecap="round"/>
+    <path d="M125 95 Q135 80 145 100" fill="none" stroke="#566573" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- 떨어진 부적 (경비병들이 붙여놓은 것이 찢겨나감) -->
+    <g transform="translate(80, 200) rotate(45)">
+      <rect x="-15" y="-30" width="30" height="60" fill="#f4d03f" stroke="#d4ac0d" stroke-width="1"/>
+      <path d="M-5 -20 L5 -20 M0 -25 L0 -10 M-10 0 Q0 10 10 0" stroke="#c0392b" stroke-width="2"/>
+      <path d="M-20 -10 L15 -35" stroke="#641e16" stroke-width="3"/> <!-- 짐승의 발톱에 찢긴 자국 -->
+    </g>
+    
+  </g>
+</svg>

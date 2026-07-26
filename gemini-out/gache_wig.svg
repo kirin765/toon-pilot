@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="gache_wig">
+    <!-- 조선 시대 부녀자들의 사치품이자 비극을 부른 무거운 가짜 머리, 가체(髢) -->
+    
+    <!-- 따뜻한 규방 배경 -->
+    <rect width="400" height="300" fill="#fadbd8"/>
+    <circle cx="200" cy="150" r="100" fill="#f5b7b1" opacity="0.5"/>
+    
+    <!-- 화장대(경대) 위를 상징하는 붉은 천(비단) 바닥 -->
+    <ellipse cx="200" cy="240" rx="120" ry="30" fill="#e74c3c"/>
+    <path d="M80 240 Q200 260 320 240 L300 280 L100 280 Z" fill="#c0392b"/>
+    
+    <!-- 가체 그림자 -->
+    <ellipse cx="200" cy="235" rx="80" ry="15" fill="#922b21" opacity="0.6"/>
+    
+    <!-- 거대하고 무거운 가체 (틀 위에 얹혀 있는 상태) -->
+    <g transform="translate(200, 150)">
+      
+      <!-- 가체를 받쳐두는 나무 받침대 (가발 거치대) -->
+      <path d="M-10 85 L10 85 L20 120 L-20 120 Z" fill="#8b5a2b" stroke="#5c3a21" stroke-width="2"/>
+      <ellipse cx="0" cy="120" rx="30" ry="8" fill="#a04000" stroke="#5c3a21" stroke-width="2"/>
+      <circle cx="0" cy="50" r="35" fill="#8b5a2b" stroke="#5c3a21" stroke-width="2"/> <!-- 두상 모형 -->
+      
+      <!-- 땋아 올린 풍성하고 묵직한 검은 머리카락 (가체 덩어리) -->
+      <!-- 크고 무거운 무게감을 주기 위해 넓고 높게 묘사 -->
+      
+      <!-- 뒤쪽 머리 덩어리 -->
+      <ellipse cx="0" cy="30" rx="70" ry="40" fill="#111" stroke="#222" stroke-width="2"/>
+      
+      <!-- 땋은 머리가 겹겹이 쌓인 타래 -->
+      <!-- 타래 1 (맨 밑) -->
+      <path d="M-80 40 C-90 -10 -40 -30 0 -20 C40 -30 90 -10 80 40 Z" fill="#1a1a1a" stroke="#000" stroke-width="3"/>
+      
+      <!-- 타래 2 (중간) -->
+      <path d="M-60 10 C-70 -30 -30 -60 0 -50 C30 -60 70 -30 60 10 Z" fill="#111" stroke="#000" stroke-width="3"/>
+      
+      <!-- 타래 3 (맨 위 똬리) -->
+      <path d="M-40 -10 C-50 -50 0 -80 40 -10 Z" fill="#1a1a1a" stroke="#000" stroke-width="3"/>
+      
+      <!-- 윤기가 흐르는 머릿결 묘사 (흰색과 회색 하이라이트 곡선) -->
+      <g fill="none" stroke="#4d4d4d" stroke-width="2" opacity="0.7">
+        <path d="M-70 20 Q-40 0 0 10 Q40 0 70 20"/>
+        <path d="M-50 -10 Q-20 -30 0 -20 Q20 -30 50 -10"/>
+        <path d="M-30 -30 Q0 -60 30 -30"/>
+        <path d="M-15 -50 Q0 -70 15 -50"/>
+      </g>
+      <g fill="none" stroke="#fdfefe" stroke-width="1.5" opacity="0.4">
+        <path d="M-60 15 Q-40 5 -20 15"/>
+        <path d="M40 -5 Q20 -15 0 -5"/>
+        <path d="M-20 -35 Q0 -50 10 -35"/>
+      </g>
+      
+      <!-- 가체에 꽂힌 화려한 떨잠과 비녀 (부의 상징) -->
+      
+      <!-- 화려한 금은세공 떨잠 (나비와 옥 장식) - 정중앙 -->
+      <g transform="translate(0, -10)">
+        <circle cx="0" cy="0" r="12" fill="#d4ac0d" stroke="#b9770e" stroke-width="2"/> <!-- 중앙 금판 -->
+        <circle cx="0" cy="0" r="5" fill="#e74c3c"/> <!-- 산호 -->
+        <!-- 용수철에 달린 떨 무늬 (나비) -->
+        <path d="M0 0 L-15 -15 M0 0 L15 -15" stroke="#95a5a6" stroke-width="1"/>
+        <circle cx="-15" cy="-15" r="3" fill="#2ecc71"/>
+        <circle cx="15" cy="-15" r="3" fill="#3498db"/>
+        <path d="M-20 -10 L-10 -15 L-15 -20 Z" fill="#f1c40f"/> <!-- 나비 날개 -->
+        <path d="M20 -10 L10 -15 L15 -20 Z" fill="#f1c40f"/>
+      </g>
+      
+      <!-- 측면 떨잠 -->
+      <g transform="translate(-40, 10) rotate(-30)">
+        <circle cx="0" cy="0" r="8" fill="#d4ac0d" stroke="#b9770e" stroke-width="1"/>
+        <circle cx="0" cy="0" r="3" fill="#3498db"/>
+      </g>
+      <g transform="translate(40, 10) rotate(30)">
+        <circle cx="0" cy="0" r="8" fill="#d4ac0d" stroke="#b9770e" stroke-width="1"/>
+        <circle cx="0" cy="0" r="3" fill="#2ecc71"/>
+      </g>
+      
+      <!-- 붉은색 댕기 (머리끝을 묶는 비단 천) 가 가체 아래로 길게 늘어짐 -->
+      <!-- 거치대 뒤쪽으로 떨어지는 댕기 자락 -->
+      <path d="M0 40 L-20 90 L-10 130 L10 130 L20 90 Z" fill="#c0392b" stroke="#922b21" stroke-width="2"/>
+      <!-- 댕기 끝의 금박 무늬 (국화 무늬) -->
+      <circle cx="-5" cy="115" r="4" fill="#f1c40f"/>
+      <circle cx="5" cy="115" r="4" fill="#f1c40f"/>
+      <circle cx="0" cy="122" r="4" fill="#f1c40f"/>
+      
+      <!-- 커다란 비취(옥) 비녀 (측면에서 가로질러 꽂힘) -->
+      <g transform="translate(30, 30) rotate(-10)">
+        <rect x="-80" y="-3" width="100" height="6" fill="#2ecc71" stroke="#27ae60" stroke-width="1" rx="3"/>
+        <circle cx="20" cy="0" r="8" fill="#1abc9c" stroke="#16a085" stroke-width="2"/> <!-- 비녀 머리 (용의 입 부분) -->
+      </g>
+      
+    </g>
+  </g>
+</svg>

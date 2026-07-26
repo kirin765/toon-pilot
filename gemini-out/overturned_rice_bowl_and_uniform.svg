@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="overturned_rice_bowl_and_uniform">
+    <!-- 성균관 유생의 권당(동맹휴학): 단식을 선언하며 엎어버린 밥그릇과 벗어놓은 유생복(청금복) -->
+    
+    <!-- 성균관 진사식당 바닥 배경 (마루) -->
+    <rect width="400" height="300" fill="#d39e6a"/>
+    <path d="M0 100 L400 100 M0 200 L400 200" stroke="#8b5a2b" stroke-width="3" opacity="0.6"/>
+    
+    <!-- 벗어 던진 성균관 유생복 (청금복 - 푸른 깃의 유복) -->
+    <g transform="translate(250, 160)">
+      <!-- 펄럭이며 바닥에 떨어진 옷자락 -->
+      <path d="M-80 -40 Q-40 -80 0 -50 Q50 -90 90 -30 Q120 40 80 80 Q0 120 -60 70 Z" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="4"/>
+      <!-- 옷의 주름 -->
+      <path d="M-40 -20 Q0 20 -20 60" fill="none" stroke="#bdc3c7" stroke-width="2"/>
+      <path d="M40 -10 Q20 40 50 60" fill="none" stroke="#bdc3c7" stroke-width="2"/>
+      
+      <!-- 성균관 유생을 상징하는 검은색 테두리 깃(반령)과 푸른색 선 장식 -->
+      <path d="M-30 -50 L0 -20 L30 -60" fill="none" stroke="#2c3e50" stroke-width="12" stroke-linecap="round"/>
+      <path d="M-30 -50 L0 -20 L30 -60" fill="none" stroke="#3498db" stroke-width="4" stroke-linecap="round"/> <!-- 청금(푸른 깃) -->
+      
+      <!-- 허리띠 (세조대) -->
+      <path d="M-60 40 Q0 60 80 20" fill="none" stroke="#2c3e50" stroke-width="6"/>
+      <!-- 매듭 -->
+      <circle cx="10" cy="45" r="8" fill="#2c3e50"/>
+      <path d="M5 45 L-15 90 M15 45 L30 85" stroke="#2c3e50" stroke-width="4"/>
+    </g>
+    
+    <!-- 단식(권당)을 선언하며 밥상에서 엎어버린 놋그릇(밥그릇)과 쏟아진 쌀밥 -->
+    <g transform="translate(130, 200) rotate(-15)">
+      <!-- 바닥에 나뒹구는 밥그릇 (놋그릇 뚜껑) -->
+      <ellipse cx="-40" cy="10" rx="25" ry="10" fill="#d4ac0d" stroke="#b9770e" stroke-width="3" transform="rotate(30 -40 10)"/>
+      <path d="M-50 0 C-40 -20 -10 -10 -20 15 Z" fill="#f1c40f" stroke="#b9770e" stroke-width="3" transform="rotate(30 -40 10)"/>
+      
+      <!-- 엎어진 밥그릇 본체 -->
+      <ellipse cx="0" cy="0" rx="30" ry="12" fill="#9a7d0a" stroke="#7d6608" stroke-width="2"/> <!-- 그릇 내부 (어두움) -->
+      <path d="M-30 0 C-40 40 40 40 30 0 Z" fill="#f1c40f" stroke="#b9770e" stroke-width="3"/>
+      
+      <!-- 바닥에 처참하게 쏟아진 하얀 쌀밥 덩어리들 -->
+      <path d="M-10 0 Q-30 -30 10 -40 Q40 -20 20 10 Z" fill="#fff" stroke="#ecf0f1" stroke-width="2"/>
+      <path d="M20 -30 Q40 -50 50 -20 Q40 0 25 -10 Z" fill="#fff" stroke="#ecf0f1" stroke-width="2"/>
+      
+      <!-- 흩어진 쌀알 디테일 -->
+      <ellipse cx="-20" cy="-35" rx="3" ry="1.5" fill="#fff" transform="rotate(45 -20 -35)"/>
+      <ellipse cx="40" cy="-45" rx="3" ry="1.5" fill="#fff" transform="rotate(-30 40 -45)"/>
+      <ellipse cx="55" cy="-5" rx="3" ry="1.5" fill="#fff" transform="rotate(10 55 -5)"/>
+      <ellipse cx="-5" cy="-55" rx="3" ry="1.5" fill="#fff" transform="rotate(80 -5 -55)"/>
+    </g>
+    
+  </g>
+</svg>

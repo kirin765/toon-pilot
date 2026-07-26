@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="tujeonpae">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="260" rx="140" ry="25" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 어지럽게 흩어진 투전패(조선시대 도박 카드)들 -->
+    <!-- 패 1 (바닥에 눕혀진 패) -->
+    <g transform="translate(140, 240) rotate(-20)">
+      <rect x="-15" y="-60" width="30" height="120" rx="2" fill="#d7ccc8" stroke="#5d4037" stroke-width="2"/>
+      <path d="M-5 -40 L5 -40 M-5 40 L5 40" stroke="#3e2723" stroke-width="3"/>
+      <!-- 투전패 안의 문자/그림 (추상화) -->
+      <line x1="0" y1="-20" x2="0" y2="20" stroke="#c0392b" stroke-width="4"/>
+      <circle cx="0" cy="0" r="4" fill="#3e2723"/>
+    </g>
+    
+    <!-- 패 2 (겹쳐진 패) -->
+    <g transform="translate(250, 230) rotate(35)">
+      <rect x="-15" y="-60" width="30" height="120" rx="2" fill="#d7ccc8" stroke="#5d4037" stroke-width="2"/>
+      <!-- 문양 -->
+      <circle cx="0" cy="-20" r="5" fill="#17202a"/>
+      <circle cx="0" cy="0" r="5" fill="#17202a"/>
+      <circle cx="0" cy="20" r="5" fill="#17202a"/>
+    </g>
+    
+    <!-- 패 3 (세워져서 비스듬히 눕혀진 메인 패) -->
+    <g transform="translate(190, 180) rotate(10)">
+      <rect x="-20" y="-80" width="40" height="160" rx="3" fill="#f5eec8" stroke="#5d4037" stroke-width="3"/>
+      <!-- 옛날 종이 질감 -->
+      <path d="M-15 -70 Q0 -60 15 -75" fill="none" stroke="#d7ccc8" stroke-width="2"/>
+      
+      <!-- 투전패 문양 (가장 높은 패인 듯한 화려한 무늬) -->
+      <rect x="-10" y="-50" width="20" height="100" fill="none" stroke="#3e2723" stroke-width="2"/>
+      <!-- 숫자나 사람, 짐승을 뜻하는 붉은 도장 자국 -->
+      <circle cx="0" cy="-30" r="8" fill="#c0392b" opacity="0.8"/>
+      <!-- 길쭉한 검은 선 무늬 -->
+      <line x1="0" y1="-10" x2="0" y2="30" stroke="#17202a" stroke-width="5" stroke-linecap="round"/>
+      <path d="M-5 10 L5 20 M-5 20 L5 10" stroke="#17202a" stroke-width="3"/>
+    </g>
+    
+    <!-- 파락호의 상징, 바닥에 뒹구는 빈 엽전 꾸러미 (재산을 다 날림을 의미) -->
+    <g transform="translate(80, 210) rotate(-30)">
+      <ellipse cx="0" cy="0" rx="25" ry="10" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+      <rect x="-5" y="-3" width="10" height="6" fill="#2c3e50"/> <!-- 엽전 구멍 -->
+    </g>
+    <g transform="translate(100, 220) rotate(15)">
+      <ellipse cx="0" cy="0" rx="25" ry="10" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+      <rect x="-5" y="-3" width="10" height="6" fill="#2c3e50"/>
+    </g>
+    <!-- 풀어진 볏짚 끈 (독립 자금으로 몰래 빠져나간 돈을 암시) -->
+    <path d="M100 220 Q150 180 200 250 T280 200" fill="none" stroke="#8b4513" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 4"/>
+  </g>
+</svg>

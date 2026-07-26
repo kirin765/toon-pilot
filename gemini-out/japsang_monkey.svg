@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="japsang_monkey">
+    <!-- 추녀마루 기와 (배경) -->
+    <path d="M50 250 L350 200 L350 240 L50 290 Z" fill="#34495e"/>
+    <path d="M50 250 Q100 240 150 230" fill="none" stroke="#2c3e50" stroke-width="4"/>
+    <path d="M150 230 Q200 220 250 215" fill="none" stroke="#2c3e50" stroke-width="4"/>
+    <path d="M250 215 Q300 210 350 200" fill="none" stroke="#2c3e50" stroke-width="4"/>
+    
+    <!-- 잡상 1: 대당사부 (뒤에 작게) -->
+    <path d="M250 215 L260 170 L280 170 L290 210 Z" fill="#7f8c8d"/>
+    <circle cx="270" cy="160" r="10" fill="#7f8c8d"/>
+    <path d="M260 150 L280 150 L270 140 Z" fill="#7f8c8d"/> <!-- 삿갓 -->
+    
+    <!-- 잡상 2: 손행자 (손오공) 메인 포커스 -->
+    <g transform="translate(150, 230)">
+      <!-- 하반신 (가부좌 또는 웅크린 자세) -->
+      <path d="M-20 0 C-30 -20 -10 -40 0 -40 C10 -40 30 -20 20 0 Z" fill="#95a5a6"/>
+      <!-- 몸통 / 갑옷 느낌 -->
+      <path d="M-15 -35 L15 -35 L10 -70 L-10 -70 Z" fill="#bdc3c7"/>
+      <!-- 팔과 손 (원숭이 특유의 굽은 팔) -->
+      <path d="M-10 -65 Q-30 -50 -15 -30" fill="none" stroke="#95a5a6" stroke-width="6" stroke-linecap="round"/>
+      <path d="M10 -65 Q30 -50 15 -30" fill="none" stroke="#95a5a6" stroke-width="6" stroke-linecap="round"/>
+      
+      <!-- 머리 -->
+      <circle cx="0" cy="-80" r="15" fill="#95a5a6"/>
+      <!-- 원숭이 귀 -->
+      <circle cx="-15" cy="-85" r="5" fill="#95a5a6"/>
+      <circle cx="15" cy="-85" r="5" fill="#95a5a6"/>
+      <!-- 손오공 얼굴 특징 (눈 주위가 돌출) -->
+      <path d="M-10 -85 Q0 -80 10 -85" fill="none" stroke="#7f8c8d" stroke-width="2"/>
+      <circle cx="-6" cy="-82" r="2" fill="#2c3e50"/>
+      <circle cx="6" cy="-82" r="2" fill="#2c3e50"/>
+      <!-- 주둥이 -->
+      <ellipse cx="0" cy="-73" rx="8" ry="4" fill="#bdc3c7"/>
+      <line x1="-3" y1="-73" x2="3" y2="-73" stroke="#2c3e50" stroke-width="1"/>
+      
+      <!-- 머리 위 투구 또는 모자 -->
+      <path d="M-15 -90 L15 -90 L0 -105 Z" fill="#7f8c8d"/>
+      
+      <!-- 잡상 흙의 거친 질감 표현 (점들) -->
+      <circle cx="0" cy="-50" r="1.5" fill="#7f8c8d"/>
+      <circle cx="-5" cy="-30" r="1.5" fill="#7f8c8d"/>
+      <circle cx="10" cy="-20" r="1.5" fill="#7f8c8d"/>
+      <circle cx="0" cy="-95" r="1.5" fill="#bdc3c7"/>
+    </g>
+    
+  </g>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="hyojonggaeng_pot">
+    <!-- 조선의 새벽 배송 해장국, '효종갱'이 담긴 보온 항아리 -->
+    
+    <!-- 대문 앞 툇마루 배경 (새벽 어스름) -->
+    <rect width="400" height="300" fill="#2c3e50"/> <!-- 새벽 하늘색 -->
+    <rect x="0" y="200" width="400" height="100" fill="#a67c52"/> <!-- 나무 마루 -->
+    <!-- 마루 널빤지 선 -->
+    <line x1="0" y1="230" x2="400" y2="230" stroke="#8b5a2b" stroke-width="3"/>
+    <line x1="0" y1="260" x2="400" y2="260" stroke="#8b5a2b" stroke-width="3"/>
+    <line x1="0" y1="290" x2="400" y2="290" stroke="#8b5a2b" stroke-width="3"/>
+    
+    <!-- 항아리 배달을 위한 보온 바구니(또는 짚/솜 꾸러미) -->
+    <g transform="translate(200, 180)">
+      <ellipse cx="0" cy="50" rx="70" ry="20" fill="#17202a" opacity="0.6"/> <!-- 그림자 -->
+      
+      <!-- 보온용 짚과 무명천 꾸러미 -->
+      <path d="M-70 30 C-90 -10 -50 -40 -30 -50 C0 -60 50 -40 70 -10 C90 20 70 40 0 50 C-40 50 -60 40 -70 30 Z" fill="#f5b041" stroke="#d4ac0d" stroke-width="3"/>
+      <!-- 짚의 거친 질감 (볏짚) -->
+      <path d="M-60 10 L-50 20 M-40 -20 L-30 0 M20 -40 L30 -20 M50 0 L60 20 M-10 30 L0 45" stroke="#d68910" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- 무명천 (보자기) -->
+      <path d="M-50 -20 Q0 -60 50 -20 L40 40 Q0 60 -40 40 Z" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+      <path d="M-40 -20 Q0 20 40 -20 M-20 40 Q0 0 20 40" fill="none" stroke="#bdc3c7" stroke-width="2" opacity="0.6"/> <!-- 천 주름 -->
+      <!-- 묶은 매듭 -->
+      <path d="M-10 -30 C-30 -50 -20 -60 0 -40 C20 -60 30 -50 10 -30 Z" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+    </g>
+    
+    <!-- 천이 약간 열려 국그릇(항아리)이 살짝 보이는 묘사 -->
+    <g transform="translate(200, 140)">
+      <!-- 국을 담은 검은 뚝배기(항아리) 입구 -->
+      <ellipse cx="0" cy="0" rx="35" ry="10" fill="#1c2833" stroke="#566573" stroke-width="2"/>
+      
+      <!-- 뜨끈한 효종갱 국물 (소갈비, 해삼, 전복이 들어간 호화로운 국) -->
+      <ellipse cx="0" cy="2" rx="30" ry="7" fill="#d35400"/> <!-- 진한 고깃국물 -->
+      
+      <!-- 큼직한 소갈비 뼈다귀 -->
+      <path d="M-10 -5 L-25 -20 L-20 -25 L-5 -10" fill="#fcf3cf" stroke="#d4ac0d" stroke-width="1.5"/>
+      <path d="M-10 -5 C-15 0 -5 5 0 0 Z" fill="#873600"/> <!-- 고기 -->
+      
+      <!-- 전복 껍데기 살짝 보임 -->
+      <ellipse cx="15" cy="-2" rx="12" ry="5" fill="#7f8c8d" stroke="#566573" stroke-width="1.5" transform="rotate(-20 15 -2)"/>
+      
+      <!-- 송송 썬 파 -->
+      <circle cx="5" cy="5" r="2" fill="#27ae60"/>
+      <circle cx="-10" cy="6" r="1.5" fill="#27ae60"/>
+      <circle cx="0" cy="-2" r="2" fill="#27ae60"/>
+      <circle cx="20" cy="4" r="1.5" fill="#27ae60"/>
+      
+      <!-- 모락모락 피어오르는 뜨거운 김 (새벽 추위 대비) -->
+      <path d="M-20 -10 Q-30 -30 -10 -50" fill="none" stroke="#fdfefe" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+      <path d="M0 -5 Q10 -40 -5 -70" fill="none" stroke="#fdfefe" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M20 -10 Q30 -20 15 -40" fill="none" stroke="#fdfefe" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+    </g>
+    
+    <!-- 새벽을 알리는 달과 구름 -->
+    <circle cx="330" cy="60" r="25" fill="#f4d03f"/>
+    <path d="M280 80 Q330 60 380 80 Q350 90 280 80 Z" fill="#5dade2" opacity="0.4"/>
+    
+    <!-- 댓돌과 고무신 (양반집 묘사) -->
+    <rect x="50" y="270" width="80" height="20" fill="#bdc3c7" rx="2"/>
+    <path d="M60 260 C70 260 80 270 80 270 L60 270 Z" fill="#fdfefe" stroke="#17202a" stroke-width="1"/> <!-- 짚신 또는 갖신 -->
+    
+  </g>
+</svg>

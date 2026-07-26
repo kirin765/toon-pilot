@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="sangbok-man">
+    <!-- 등/다리 배경 -->
+    <!-- 다리 (흰 바지) -->
+    <rect x="180" y="240" width="15" height="50" fill="#f0f0f0" stroke="#333" stroke-width="4" />
+    <rect x="205" y="240" width="15" height="50" fill="#f0f0f0" stroke="#333" stroke-width="4" />
+    
+    <!-- 신발 (짚신 느낌) -->
+    <ellipse cx="187.5" cy="290" rx="12" ry="6" fill="#d2b48c" stroke="#333" stroke-width="4" />
+    <ellipse cx="212.5" cy="290" rx="12" ry="6" fill="#d2b48c" stroke="#333" stroke-width="4" />
+
+    <!-- 나무 지팡이 (뒤쪽에 위치) -->
+    <path d="M 250 180 L 250 290" fill="none" stroke="#8b5a2b" stroke-width="8" stroke-linecap="round" />
+    <path d="M 250 180 L 250 290" fill="none" stroke="#333" stroke-width="12" stroke-linecap="round" />
+    <path d="M 250 180 L 250 290" fill="none" stroke="#8b5a2b" stroke-width="6" stroke-linecap="round" />
+
+    <!-- 몸통 (거친 삼베 도포) -->
+    <path d="M 160 120 L 240 120 L 260 250 L 140 250 Z" fill="#e3d5c8" stroke="#333" stroke-width="4" />
+    
+    <!-- 허리 새끼줄 띠 -->
+    <path d="M 152 180 Q 200 190 248 180" fill="none" stroke="#d2b48c" stroke-width="8" />
+    <path d="M 152 180 Q 200 190 248 180" fill="none" stroke="#333" stroke-width="10" stroke-dasharray="2, 2" />
+
+    <!-- 왼팔 -->
+    <path d="M 160 120 L 130 180 L 145 190 L 170 140 Z" fill="#e3d5c8" stroke="#333" stroke-width="4" />
+    
+    <!-- 오른팔 (지팡이 잡은 손) -->
+    <path d="M 240 120 L 260 170 L 245 180 L 230 140 Z" fill="#e3d5c8" stroke="#333" stroke-width="4" />
+    
+    <!-- 손 -->
+    <circle cx="140" cy="185" r="8" fill="#ffcdb2" stroke="#333" stroke-width="3" />
+    <circle cx="250" cy="175" r="8" fill="#ffcdb2" stroke="#333" stroke-width="3" />
+
+    <!-- 얼굴 -->
+    <ellipse cx="200" cy="80" rx="25" ry="30" fill="#ffcdb2" stroke="#333" stroke-width="4" />
+    <!-- 눈/코/입 (침울한 표정) -->
+    <path d="M 190 75 Q 195 70 200 75" fill="none" stroke="#333" stroke-width="2" />
+    <path d="M 210 75 Q 205 70 200 75" fill="none" stroke="#333" stroke-width="2" />
+    <path d="M 195 90 Q 200 95 205 90" fill="none" stroke="#333" stroke-width="2" />
+
+    <!-- 머리 삼베 굴건 (시그니처) -->
+    <path d="M 170 60 Q 200 30 230 60 L 240 80 Q 200 50 160 80 Z" fill="#e3d5c8" stroke="#333" stroke-width="4" />
+    <!-- 굴건의 주름/새끼줄 장식 -->
+    <path d="M 165 70 Q 200 45 235 70" fill="none" stroke="#333" stroke-width="3" stroke-dasharray="4, 4" />
+    <path d="M 175 50 Q 200 35 225 50" fill="none" stroke="#333" stroke-width="2" />
+    <!-- 뒤로 늘어지는 굴건 자락 -->
+    <path d="M 160 80 L 140 120 L 155 125 L 170 90 Z" fill="#e3d5c8" stroke="#333" stroke-width="4" />
+    <path d="M 240 80 L 260 120 L 245 125 L 230 90 Z" fill="#e3d5c8" stroke="#333" stroke-width="4" />
+
+  </g>
+</svg>

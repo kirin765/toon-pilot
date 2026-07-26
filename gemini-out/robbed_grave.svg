@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="robbed_grave">
+    <!-- 대기근 시대 식인(토귀) 사건의 끔찍함을 상징하는 파헤쳐진 무덤 -->
+    
+    <!-- 메마르고 황량한 밤바닥 -->
+    <rect width="400" height="300" fill="#1c2833"/>
+    <ellipse cx="200" cy="240" rx="160" ry="40" fill="#17202a"/> <!-- 무덤 주변 어두운 흙 -->
+    
+    <!-- 부서진 무덤 (봉분) -->
+    <!-- 원래 무덤 형태 (점선) -->
+    <path d="M80 240 C80 150 320 150 320 240" fill="none" stroke="#34495e" stroke-width="2" stroke-dasharray="5 5" opacity="0.5"/>
+    
+    <!-- 무참히 파헤쳐진 흙더미 -->
+    <path d="M60 250 Q100 200 130 240 Q150 180 180 230 Q210 210 240 250 Q280 220 340 260 L60 260 Z" fill="#2c3e50"/>
+    <path d="M120 240 L150 200 L180 230 L220 210 L260 240 L280 220" fill="none" stroke="#212f3d" stroke-width="4"/>
+    
+    <!-- 파헤쳐진 구덩이 (시신을 꺼낸 흔적) -->
+    <path d="M140 250 C140 220 240 220 240 250 C240 270 140 270 140 250 Z" fill="#111820"/>
+    
+    <!-- 끔찍한 진실을 보여주는 소품들 (굶주린 자들의 흔적) -->
+    
+    <!-- 부서진 비석 -->
+    <g transform="translate(100, 180) rotate(-20)">
+      <rect x="-20" y="-50" width="40" height="90" fill="#7f8c8d" stroke="#566573" stroke-width="3"/>
+      <!-- 비석이 깨진 단면 -->
+      <path d="M-20 -20 L-10 -30 L5 -15 L20 -25 L20 -50 L-20 -50 Z" fill="#95a5a6"/>
+      <path d="M-20 -20 L-10 -30 L5 -15 L20 -25" fill="none" stroke="#17202a" stroke-width="2"/>
+      <!-- 비석 글씨 (망자의 이름이 지워짐) -->
+      <path d="M0 -5 L0 25 M-10 10 L10 10" stroke="#34495e" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    
+    <!-- 흙구덩이 밖으로 삐져나온 망자의 낡은 수의(옷깃)와 나무 관조각 -->
+    <!-- 썩은 관 나무 판자 -->
+    <path d="M220 230 L280 210 L285 215 L225 235 Z" fill="#5c3a21" stroke="#3e2723" stroke-width="2"/>
+    <path d="M200 245 L260 265 L255 270 L195 250 Z" fill="#5c3a21" stroke="#3e2723" stroke-width="2"/>
+    <!-- 찢겨진 붉은 수의 천 조각 (섬뜩함 강조) -->
+    <path d="M180 240 Q170 250 160 260 Q190 270 210 250 Z" fill="#7b241c" opacity="0.8"/>
+    <path d="M195 245 L205 255" stroke="#922b21" stroke-width="2"/>
+    
+    <!-- 무덤을 파는 데 사용한 낡은 삽 (범행 도구) -->
+    <g transform="translate(280, 240) rotate(60)">
+      <line x1="0" y1="-50" x2="0" y2="10" stroke="#8d6e63" stroke-width="6"/> <!-- 나무 자루 -->
+      <path d="M-12 10 L12 10 L8 40 L-8 40 Z" fill="#7f8c8d" stroke="#34495e" stroke-width="2"/> <!-- 쇠 삽날 -->
+      <path d="M-12 10 L12 10 L8 40 L-8 40 Z" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="2 4" opacity="0.6"/> <!-- 희미한 핏자국 -->
+    </g>
+    
+    <!-- 기근의 절망을 암시하는 핏빛 까마귀 깃털 하나 -->
+    <path d="M120 265 Q110 275 90 270 Q110 260 120 265 Z" fill="#17202a"/>
+    <line x1="120" y1="265" x2="90" y2="270" stroke="#000" stroke-width="1"/>
+  </g>
+</svg>

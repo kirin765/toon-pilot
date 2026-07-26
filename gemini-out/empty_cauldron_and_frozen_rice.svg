@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="empty_cauldron_and_frozen_rice">
+    <!-- 경신대기근 (소빙하기): 텅 빈 가마솥과 얼어붙은 벼 이삭 -->
+    
+    <!-- 냉해와 기근을 상징하는 차갑고 메마른 겨울 땅 배경 -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    <!-- 차가운 서리와 눈이 내린 바닥 -->
+    <path d="M0 250 Q100 230 200 270 T400 240 L400 300 L0 300 Z" fill="#ecf0f1" opacity="0.6"/>
+    <path d="M0 200 Q150 180 250 220 T400 200 L400 300 L0 300 Z" fill="#bdc3c7" opacity="0.3"/>
+    
+    <!-- 텅 빈 거대한 무쇠 가마솥 (굶주림 상징) -->
+    <g transform="translate(200, 220)">
+      <!-- 가마솥 다리와 화덕 -->
+      <path d="M-60 40 L-70 70 L-50 70 Z" fill="#111"/>
+      <path d="M60 40 L70 70 L50 70 Z" fill="#111"/>
+      <rect x="-80" y="60" width="160" height="20" fill="#34495e" stroke="#2c3e50" stroke-width="2"/>
+      
+      <!-- 불 꺼진 화덕 안의 차가운 재 -->
+      <path d="M-30 60 Q0 30 30 60" fill="#7f8c8d"/>
+      
+      <!-- 가마솥 본체 -->
+      <path d="M-90 -20 C-110 30 -60 60 0 60 C60 60 110 30 90 -20 Z" fill="#17202a"/>
+      <path d="M-90 -20 C-110 30 -60 60 0 60 C60 60 110 30 90 -20 Z" fill="none" stroke="#34495e" stroke-width="4"/>
+      <!-- 가마솥 테두리 (전) -->
+      <ellipse cx="0" cy="-20" rx="95" ry="15" fill="none" stroke="#34495e" stroke-width="6"/>
+      <ellipse cx="0" cy="-20" rx="90" ry="12" fill="#111"/> <!-- 솥 안쪽: 텅 비어있는 칠흑 같은 어둠 -->
+      
+      <!-- 거미줄 (오랫동안 밥을 짓지 못함) -->
+      <path d="M-70 -25 Q-40 0 -10 -15" fill="none" stroke="#ecf0f1" stroke-width="1" opacity="0.5"/>
+      <path d="M-50 -25 L-40 -10" fill="none" stroke="#ecf0f1" stroke-width="1" opacity="0.5"/>
+    </g>
+    
+    <!-- 여름에 내린 우박과 냉해로 얼어 죽은 벼 이삭 -->
+    <g transform="translate(100, 180) rotate(-30)">
+      <!-- 말라붙은 줄기 -->
+      <path d="M0 0 Q10 40 -10 100" fill="none" stroke="#7e5109" stroke-width="4"/>
+      <!-- 썩어버린 벼 낟알들 -->
+      <ellipse cx="0" cy="-10" rx="4" ry="10" fill="#9c640c" transform="rotate(20 0 -10)"/>
+      <ellipse cx="-8" cy="-2" rx="4" ry="10" fill="#7e5109" transform="rotate(40 -8 -2)"/>
+      <ellipse cx="8" cy="-5" rx="4" ry="10" fill="#6e2c00" transform="rotate(-30 8 -5)"/>
+      <ellipse cx="-12" cy="10" rx="4" ry="10" fill="#9c640c" transform="rotate(60 -12 10)"/>
+      <ellipse cx="10" cy="12" rx="4" ry="10" fill="#7e5109" transform="rotate(-50 10 12)"/>
+      
+      <!-- 벼 이삭에 맺힌 차가운 고드름과 얼음 결정 -->
+      <path d="M-5 -15 L-2 -5 L0 -15 Z" fill="#a9cce3" opacity="0.8"/>
+      <path d="M12 -8 L10 2 L15 -8 Z" fill="#a9cce3" opacity="0.8"/>
+      <circle cx="-15" cy="5" r="2" fill="#fff" opacity="0.9"/>
+    </g>
+    
+    <!-- 소빙하기를 나타내는 거친 눈보라 효과 -->
+    <path d="M-50 50 L150 100" stroke="#ecf0f1" stroke-width="2" opacity="0.4" stroke-dasharray="10 20"/>
+    <path d="M200 -20 L400 30" stroke="#ecf0f1" stroke-width="1.5" opacity="0.5" stroke-dasharray="5 15"/>
+    <path d="M100 150 L350 200" stroke="#ecf0f1" stroke-width="3" opacity="0.3" stroke-dasharray="20 30"/>
+    
+  </g>
+</svg>

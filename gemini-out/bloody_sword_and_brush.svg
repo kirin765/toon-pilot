@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="bloody_sword_and_brush">
+    <!-- 정철의 소름 끼치는 이중성: 낭만적인 붓과 동인을 학살한 피 묻은 칼 -->
+    
+    <rect width="400" height="300" fill="#17202a"/>
+    <ellipse cx="200" cy="220" rx="140" ry="40" fill="#2c3e50"/> <!-- 나무 탁자 -->
+    
+    <!-- 바탕에 깔린 우아한 관동별곡 악보/종이 (문학적 천재성) -->
+    <g transform="translate(160, 200) rotate(-15)">
+      <rect x="-60" y="-40" width="120" height="80" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="2"/>
+      <!-- 세로쓰기 시구 (관동별곡 강호에 병이 깊어...) -->
+      <path d="M40 -20 L40 20 M20 -30 L20 30 M0 -25 L0 25 M-20 -15 L-20 15" stroke="#34495e" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 4"/>
+    </g>
+    
+    <!-- 아름다운 종이를 대각선으로 가로지르는 무자비한 피 묻은 장검 (기축옥사의 살육) -->
+    <g transform="translate(200, 210) rotate(35)">
+      <!-- 검 그림자 -->
+      <rect x="-120" y="5" width="200" height="10" fill="#111" opacity="0.6"/>
+      <!-- 검의 칼날 (은빛과 핏빛) -->
+      <polygon points="-120,0 70,-5 80,0 70,5" fill="#bdc3c7"/>
+      <polygon points="-120,0 70,-5 80,0" fill="#ecf0f1"/> <!-- 칼등 하이라이트 -->
+      <!-- 칼에 흥건히 묻은 피 (동인 1천 명의 피) -->
+      <path d="M -100 0 Q -80 5 -60 0 Q -40 -5 -20 0 Q 0 5 20 0 L 80 0 L 70 5 L -120 5 Z" fill="#c0392b" opacity="0.9"/>
+      
+      <!-- 피가 종이로 뚝뚝 떨어짐 -->
+      <circle cx="-50" cy="15" r="3" fill="#c0392b"/>
+      <circle cx="10" cy="20" r="4" fill="#c0392b"/>
+      
+      <!-- 검의 손잡이와 코등이 -->
+      <rect x="75" y="-8" width="10" height="16" fill="#f1c40f"/> <!-- 코등이(금장식) -->
+      <rect x="85" y="-5" width="40" height="10" fill="#34495e"/> <!-- 손잡이 몸통 -->
+      <!-- 손잡이 끈 무늬 -->
+      <path d="M85 -5 L95 5 M95 -5 L105 5 M105 -5 L115 5" stroke="#f1c40f" stroke-width="1.5"/>
+      <rect x="125" y="-6" width="8" height="12" fill="#f1c40f"/> <!-- 폼멜 -->
+    </g>
+    
+    <!-- 칼 위에 놓인 우아하고 부드러운 붓 (시인의 가식적인 도구) -->
+    <g transform="translate(180, 180) rotate(-45)">
+      <!-- 붓 그림자 -->
+      <path d="M-50 5 L30 5 L40 10 L-40 15 Z" fill="#111" opacity="0.5"/>
+      <!-- 붓자루 (검은 대나무) -->
+      <rect x="-40" y="-3" width="70" height="6" fill="#212f3d"/>
+      <path d="M-40 -3 L30 -3 L30 -1 L-40 -1 Z" fill="#566573"/>
+      <!-- 붓촉 덮개(금속) -->
+      <rect x="30" y="-4" width="10" height="8" fill="#d4ac0d"/>
+      <!-- 붓털 (먹물을 머금은 부드러운 털) -->
+      <path d="M40 -4 Q50 -5 60 0 Q50 5 40 4 Z" fill="#17202a"/>
+    </g>
+    
+    <!-- 붓끝에서 떨어지는 검은 먹물이 바닥의 붉은 피와 섞이는 연출 -->
+    <path d="M120 230 Q130 240 140 235" fill="none" stroke="#17202a" stroke-width="3"/>
+    <circle cx="140" cy="235" r="4" fill="#17202a"/>
+    <!-- 먹과 피가 섞인 웅덩이 -->
+    <ellipse cx="145" cy="245" rx="15" ry="5" fill="#641e16"/>
+    
+  </g>
+</svg>

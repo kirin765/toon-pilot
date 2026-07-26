@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="brush_and_inkstone">
+    <!-- 조선 선비의 문방사우 중 붓과 벼루, 먹 -->
+    
+    <!-- 서안(작은 책상)의 나무 바닥 배경 -->
+    <rect width="400" height="300" fill="#e59866"/>
+    <!-- 나뭇결 -->
+    <path d="M0 50 Q200 100 400 50 M0 150 Q200 200 400 150 M0 250 Q200 300 400 250" fill="none" stroke="#d35400" stroke-width="2" opacity="0.3"/>
+    
+    <!-- 벼루 바닥 그림자 -->
+    <ellipse cx="250" cy="180" rx="90" ry="60" fill="#ba4a00" opacity="0.6"/>
+    
+    <!-- 벼루 (검고 단단한 벼루돌) -->
+    <!-- 직사각형이되 모서리가 부드럽게 둥근 형태 -->
+    <g transform="translate(250, 160)">
+      <!-- 벼루 측면 (두께) -->
+      <rect x="-70" y="-40" width="140" height="90" rx="15" fill="#17202a" stroke="#2c3e50" stroke-width="2"/>
+      <!-- 벼루 윗면 -->
+      <rect x="-70" y="-50" width="140" height="90" rx="15" fill="#2c3e50" stroke="#17202a" stroke-width="2"/>
+      
+      <!-- 먹을 가는 벼루 바닥 (연당) -->
+      <ellipse cx="0" cy="0" rx="45" ry="25" fill="#1b2631"/>
+      
+      <!-- 먹물이 고이는 벼루 연지 (위쪽 움푹 파인 곳) -->
+      <path d="M-30 -25 C-30 -40 30 -40 30 -25 C30 -10 -30 -10 -30 -25 Z" fill="#111"/>
+      
+      <!-- 벼루 안에 고인 새까만 먹물과 윤기 (빛 반사) -->
+      <ellipse cx="-15" cy="-25" rx="5" ry="2" fill="#566573" opacity="0.8"/>
+      <!-- 연당에 갈려 있는 먹물 흔적 -->
+      <ellipse cx="10" cy="0" rx="15" ry="8" fill="#17202a"/>
+      <path d="M-20 5 Q0 15 20 0" stroke="#566573" stroke-width="1.5" fill="none" opacity="0.5"/>
+    </g>
+    
+    <!-- 먹 (墨, 벼루 위에 비스듬히 놓인 검은 사각형 막대) -->
+    <g transform="translate(290, 120) rotate(15)">
+      <!-- 측면 -->
+      <rect x="-10" y="-40" width="20" height="70" fill="#17202a" stroke="#34495e" stroke-width="1"/>
+      <!-- 윗면 -->
+      <rect x="-15" y="-42" width="20" height="70" fill="#2c3e50"/>
+      <!-- 먹 표면의 금박 글씨 무늬 (용이나 한자 장식) -->
+      <path d="M-10 -30 L-5 -25 L-10 -20 M-10 -10 L-5 -5 L-10 0" stroke="#d4ac0d" stroke-width="1.5" fill="none"/>
+      <!-- 먹 끝부분 (벼루에 갈려서 둥글게 마모된 부분) -->
+      <path d="M-15 28 C-15 35 5 35 5 28 Z" fill="#111"/>
+    </g>
+    
+    <!-- 붓 2자루 (붓걸이 대신 벼루 옆에 놓인 형태) -->
+    <!-- 큰 붓 (태필) -->
+    <g transform="translate(130, 170) rotate(-40)">
+      <!-- 붓대 그림자 -->
+      <rect x="-150" y="8" width="160" height="8" rx="4" fill="#ba4a00" opacity="0.5"/>
+      <!-- 대나무 붓대 -->
+      <rect x="-150" y="-5" width="150" height="10" rx="2" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+      <!-- 대나무 마디 -->
+      <line x1="-100" y1="-5" x2="-100" y2="5" stroke="#b9770e" stroke-width="2"/>
+      <line x1="-50" y1="-5" x2="-50" y2="5" stroke="#b9770e" stroke-width="2"/>
+      
+      <!-- 붓대 위쪽 고리 장식 -->
+      <circle cx="-150" cy="0" r="3" fill="#34495e"/>
+      <line x1="-153" y1="0" x2="-160" y2="0" stroke="#7f8c8d" stroke-width="2"/>
+      
+      <!-- 붓대와 붓털 연결부 (검은 뿔 또는 금속) -->
+      <rect x="0" y="-6" width="10" height="12" fill="#2c3e50" stroke="#17202a" stroke-width="2"/>
+      
+      <!-- 붓털 (먹물을 듬뿍 머금어 끝이 뾰족한 상태) -->
+      <path d="M10 -5 C30 -5 50 0 50 0 C50 0 30 5 10 5 Z" fill="#111" stroke="#2c3e50" stroke-width="1"/>
+      <path d="M10 -2 C25 -2 40 0 50 0" stroke="#566573" stroke-width="1" fill="none"/>
+    </g>
+    
+    <!-- 작은 붓 (세필) -->
+    <g transform="translate(100, 200) rotate(-25)">
+      <!-- 붓대 -->
+      <rect x="-120" y="-3" width="120" height="6" rx="2" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
+      <!-- 연결부 -->
+      <rect x="0" y="-4" width="8" height="8" fill="#d35400" stroke="#ba4a00" stroke-width="2"/>
+      <!-- 붓털 (먹물이 묻은 끝부분) -->
+      <path d="M8 -3 C20 -3 35 0 35 0 C35 0 20 3 8 3 Z" fill="#17202a"/>
+    </g>
+    
+  </g>
+</svg>

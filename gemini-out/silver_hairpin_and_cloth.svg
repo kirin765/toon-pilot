@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="silver_hairpin_and_cloth">
+    <!-- 조선의 과학수사(무원록): 독살을 밝히는 은비녀와 멍 자국을 찾기 위해 덮어두는 술지게미/식초 묻은 헝겊 -->
+    
+    <!-- 어둡고 차가운 검시소(시신을 눕혀두는 멍석) 배경 -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    <!-- 멍석의 거친 질감(가로세로 선) -->
+    <path d="M0 50 L400 50 M0 100 L400 100 M0 150 L400 150 M0 200 L400 200 M0 250 L400 250" stroke="#34495e" stroke-width="2" opacity="0.6"/>
+    <path d="M50 0 L50 300 M100 0 L100 300 M150 0 L150 300 M200 0 L200 300 M250 0 L250 300 M300 0 L300 300 M350 0 L350 300" stroke="#34495e" stroke-width="2" opacity="0.6"/>
+    
+    <!-- 시신의 상흔을 뚜렷하게 하기 위해 식초와 술지게미를 듬뿍 묻힌 거친 헝겊 (천 조각) -->
+    <g transform="translate(180, 160) rotate(-10)">
+      <!-- 피와 얼룩이 묻은 낡은 광목천 -->
+      <path d="M-90 -60 Q-40 -90 40 -50 Q90 10 50 60 Q-20 100 -70 50 Q-120 10 -90 -60 Z" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="4"/>
+      <!-- 천의 구겨진 주름 -->
+      <path d="M-60 -40 Q0 0 -20 50 M20 -30 Q5 20 40 40" stroke="#bdc3c7" stroke-width="2" fill="none"/>
+      
+      <!-- 식초와 술지게미에 절어 누렇게 변색된 얼룩 -->
+      <path d="M-40 -20 Q-10 -40 20 -10 Q0 20 -30 0 Z" fill="#f5cba7" opacity="0.7"/>
+      <path d="M10 20 Q30 5 40 30 Q20 40 10 20 Z" fill="#f5cba7" opacity="0.6"/>
+      
+      <!-- 헝겊 위에 묻어 있는 진짜 핏자국(적갈색) -->
+      <circle cx="-10" cy="-10" r="5" fill="#c0392b" opacity="0.8"/>
+      <circle cx="5" cy="5" r="3" fill="#c0392b" opacity="0.7"/>
+      <path d="M-5 10 Q10 20 -15 30" fill="none" stroke="#c0392b" stroke-width="3" opacity="0.6"/>
+    </g>
+    
+    <!-- 독살 여부를 판별하기 위해 시신의 목구멍에 넣었던 긴 은비녀 (끝이 검게 변함) -->
+    <g transform="translate(200, 130) rotate(35)">
+      <!-- 은비녀 막대 부분 (길고 뾰족함) -->
+      <path d="M-120 0 L100 -5 L100 5 Z" fill="#bdc3c7" stroke="#95a5a6" stroke-width="2"/>
+      
+      <!-- 비녀 머리 장식 (연꽃이나 당초 무늬 형상화) -->
+      <path d="M100 -10 C120 -10 130 -5 130 0 C130 5 120 10 100 10 Z" fill="#ecf0f1" stroke="#95a5a6" stroke-width="3"/>
+      <circle cx="115" cy="0" r="4" fill="#95a5a6"/>
+      
+      <!-- 시신의 입속에 닿아 독(비소 등)에 반응하여 새까맣게 변색된 비녀 끝부분 (과학수사의 핵심) -->
+      <path d="M-120 0 L-60 -4 L-60 4 Z" fill="#111" opacity="0.9"/>
+      <path d="M-70 -3 L-50 -3 L-50 3 L-70 3 Z" fill="#2c3e50" opacity="0.7"/>
+    </g>
+    
+    <!-- 싸늘한 느낌을 주는 검시소의 촛불 조각 (바닥에 떨어진 밀랍) -->
+    <circle cx="280" cy="80" r="6" fill="#f1c40f"/>
+    <circle cx="290" cy="85" r="3" fill="#f1c40f"/>
+    
+  </g>
+</svg>

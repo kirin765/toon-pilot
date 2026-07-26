@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="old_books">
+    <!-- 동의보감과 같은 조선 시대 고서적(한적) 묶음 -->
+    
+    <rect width="400" height="300" fill="#f5cba7"/>
+    <!-- 한지 바닥 텍스처 -->
+    <path d="M0 0 L400 300 M0 50 L400 350 M0 100 L400 400" stroke="#e59866" stroke-width="1" opacity="0.2"/>
+    
+    <!-- 책 더미 그림자 -->
+    <polygon points="80,180 320,130 350,220 120,270" fill="#dc7633" opacity="0.5"/>
+    
+    <!-- 맨 아래 책 -->
+    <g transform="translate(180, 200) rotate(-5)">
+      <!-- 책 두께 (흰색 종이 질감) -->
+      <polygon points="-80,20 100,20 110,-40 -70,-40" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+      <line x1="-75" y1="-10" x2="105" y2="-10" stroke="#bdc3c7" stroke-width="1"/>
+      <line x1="-70" y1="-25" x2="110" y2="-25" stroke="#bdc3c7" stroke-width="1"/>
+      
+      <!-- 책 표지 (낡은 푸른색 비단/종이) -->
+      <polygon points="-90,25 90,25 100,-45 -80,-45" fill="#2e4053" stroke="#1c2833" stroke-width="2"/>
+      <!-- 오침안정법 (다섯 개의 구멍을 뚫어 실로 묶은 제본 방식) -->
+      <!-- 왼쪽 제본 선 -->
+      <line x1="-80" y1="23" x2="-70" y2="-43" stroke="#f1c40f" stroke-width="3"/>
+      <!-- 다섯 개의 실땀 -->
+      <line x1="-80" y1="15" x2="-70" y2="15" stroke="#f1c40f" stroke-width="2"/>
+      <line x1="-77" y1="0" x2="-67" y2="0" stroke="#f1c40f" stroke-width="2"/>
+      <line x1="-75" y1="-15" x2="-65" y2="-15" stroke="#f1c40f" stroke-width="2"/>
+      <line x1="-72" y1="-30" x2="-62" y2="-30" stroke="#f1c40f" stroke-width="2"/>
+      <line x1="-70" y1="-40" x2="-60" y2="-40" stroke="#f1c40f" stroke-width="2"/>
+    </g>
+    
+    <!-- 중간 책 -->
+    <g transform="translate(190, 180) rotate(5)">
+      <!-- 책 두께 -->
+      <polygon points="-80,20 100,20 110,-40 -70,-40" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+      <!-- 책 표지 (낡은 노란색 한지) -->
+      <polygon points="-90,25 90,25 100,-45 -80,-45" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+      <!-- 제본 실 -->
+      <line x1="-80" y1="23" x2="-70" y2="-43" stroke="#d35400" stroke-width="3"/>
+      <line x1="-80" y1="15" x2="-70" y2="15" stroke="#d35400" stroke-width="2"/>
+      <line x1="-77" y1="0" x2="-67" y2="0" stroke="#d35400" stroke-width="2"/>
+      <line x1="-75" y1="-15" x2="-65" y2="-15" stroke="#d35400" stroke-width="2"/>
+      <line x1="-72" y1="-30" x2="-62" y2="-30" stroke="#d35400" stroke-width="2"/>
+    </g>
+    
+    <!-- 맨 위 책 (동의보감 표지 노출) -->
+    <g transform="translate(200, 160) rotate(-10)">
+      <!-- 책 두께 -->
+      <polygon points="-80,20 100,20 110,-40 -70,-40" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+      <line x1="-75" y1="-10" x2="105" y2="-10" stroke="#bdc3c7" stroke-width="1"/>
+      
+      <!-- 책 표지 (전통적인 짙은 황토색 한지) -->
+      <polygon points="-90,25 90,25 100,-45 -80,-45" fill="#d4ac0d" stroke="#9c640c" stroke-width="2"/>
+      
+      <!-- 제본 실 (빨간 명주실) -->
+      <line x1="-80" y1="23" x2="-70" y2="-43" stroke="#e74c3c" stroke-width="3"/>
+      <line x1="-80" y1="15" x2="-70" y2="15" stroke="#e74c3c" stroke-width="2"/>
+      <line x1="-77" y1="0" x2="-67" y2="0" stroke="#e74c3c" stroke-width="2"/>
+      <line x1="-75" y1="-15" x2="-65" y2="-15" stroke="#e74c3c" stroke-width="2"/>
+      <line x1="-72" y1="-30" x2="-62" y2="-30" stroke="#e74c3c" stroke-width="2"/>
+      
+      <!-- 책의 제목표 (능화판 무늬 테두리와 세로 글씨) -->
+      <!-- 흰색 종이를 붙이고 그 위에 한자로 책 이름을 적음 -->
+      <polygon points="-30,10 10,10 15,-30 -25,-30" fill="#fdfefe" stroke="#111" stroke-width="1.5"/>
+      
+      <!-- '동의보감(東醫寶鑑)' 한자 글씨 흉내 (붓글씨 터치) -->
+      <g stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <!-- 동 (東) -->
+        <path d="M-15 -25 L-5 -25 M-10 -28 L-10 -15 M-13 -20 L-7 -20 M-15 -15 L-5 -15"/>
+        <!-- 의 (醫) -->
+        <path d="M-12 -10 L-2 -10 L-5 -2 M-15 -5 L-5 -5"/>
+        <!-- 보 (寶) -->
+        <path d="M-10 2 L0 2 M-12 5 L-2 5 M-10 10 L0 10 M-7 0 L-7 12"/>
+      </g>
+      
+      <!-- 오른쪽 아래 작은 권수 표시 (예: 권지일) -->
+      <path d="M70 10 L80 10 M75 5 L75 15" stroke="#111" stroke-width="1.5" opacity="0.8"/>
+      
+    </g>
+    
+  </g>
+</svg>

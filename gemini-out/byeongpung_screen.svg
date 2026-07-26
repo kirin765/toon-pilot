@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="byeongpung_screen">
+    <!-- 조선 선비의 방이나 행사장에 놓이던 접이식 4폭 병풍 -->
+    
+    <!-- 실내 마루 바닥과 벽면 배경 -->
+    <rect width="400" height="300" fill="#e59866"/>
+    <path d="M0 200 L400 200 M0 220 L400 220 M0 240 L400 240 M0 260 L400 260 M0 280 L400 280 M0 300 L400 300" stroke="#d35400" stroke-width="2"/>
+    <rect width="400" height="150" fill="#fad7a1"/> <!-- 벽면 -->
+    
+    <!-- 4폭 병풍 그룹 -->
+    <!-- 지그재그로 접힌 형태를 원근감 있게 표현 -->
+    <g transform="translate(200, 150)">
+      
+      <!-- 제 1 폭 (맨 왼쪽, 살짝 앞으로 꺾임) -->
+      <g transform="translate(-100, 0)">
+        <polygon points="-30,60 -30,-80 30,-90 30,50" fill="#fdfefe" stroke="#8b5a2b" stroke-width="4"/>
+        <polygon points="-30,60 -30,-80 30,-90 30,50" fill="#111" opacity="0.1"/> <!-- 그림자 -->
+        <!-- 그림 장식: 묵란 (난초) -->
+        <path d="M0 30 Q-20 0 10 -40 M-5 30 Q-15 10 -5 -20 M5 30 Q15 0 0 -10" fill="none" stroke="#2c3e50" stroke-width="2"/>
+        <circle cx="10" cy="-40" r="1.5" fill="#2c3e50"/>
+      </g>
+      
+      <!-- 제 2 폭 (뒤로 꺾임) -->
+      <g transform="translate(-40, -10)">
+        <polygon points="-30,60 -30,-80 30,-70 30,70" fill="#fdfefe" stroke="#8b5a2b" stroke-width="4"/>
+        <!-- 그림 장식: 묵죽 (대나무) -->
+        <line x1="0" y1="50" x2="-5" y2="10" stroke="#2c3e50" stroke-width="3"/>
+        <line x1="-5" y1="10" x2="0" y2="-30" stroke="#2c3e50" stroke-width="2"/>
+        <line x1="0" y1="-30" x2="-5" y2="-60" stroke="#2c3e50" stroke-width="1.5"/>
+        <!-- 대잎 -->
+        <path d="M-5 10 L10 5 M-5 10 L-15 0 M0 -30 L10 -40 M0 -30 L-10 -35" stroke="#2c3e50" stroke-width="2"/>
+      </g>
+      
+      <!-- 제 3 폭 (앞으로 꺾임) -->
+      <g transform="translate(20, -10)">
+        <polygon points="-30,70 -30,-70 30,-80 30,60" fill="#fdfefe" stroke="#8b5a2b" stroke-width="4"/>
+        <polygon points="-30,70 -30,-70 30,-80 30,60" fill="#111" opacity="0.05"/>
+        <!-- 그림 장식: 묵매 (매화) -->
+        <path d="M10 40 Q0 0 -15 -30 M-5 10 Q10 0 15 -10 M-10 -15 Q-20 -25 -10 -40" fill="none" stroke="#2c3e50" stroke-width="2.5"/>
+        <!-- 매화꽃 (붉은 점) -->
+        <circle cx="-15" cy="-30" r="2.5" fill="#e74c3c"/>
+        <circle cx="15" cy="-10" r="2" fill="#e74c3c"/>
+        <circle cx="-10" cy="-40" r="2.5" fill="#e74c3c"/>
+        <circle cx="-5" cy="-20" r="2" fill="#e74c3c"/>
+        <circle cx="5" cy="5" r="2" fill="#e74c3c"/>
+      </g>
+      
+      <!-- 제 4 폭 (맨 오른쪽, 뒤로 꺾임) -->
+      <g transform="translate(80, 0)">
+        <polygon points="-30,60 -30,-80 30,-70 30,70" fill="#fdfefe" stroke="#8b5a2b" stroke-width="4"/>
+        <polygon points="-30,60 -30,-80 30,-70 30,70" fill="#111" opacity="0.15"/>
+        <!-- 그림 장식: 묵국 (국화) -->
+        <path d="M-10 50 Q0 20 -5 -10" fill="none" stroke="#2c3e50" stroke-width="2"/>
+        <path d="M-5 20 Q10 10 5 0" fill="none" stroke="#2c3e50" stroke-width="1.5"/>
+        <!-- 국화꽃 (노란 점) -->
+        <circle cx="-5" cy="-10" r="4" fill="#f1c40f"/>
+        <circle cx="5" cy="0" r="3" fill="#f1c40f"/>
+        <circle cx="-5" cy="-10" r="2" fill="#2c3e50"/>
+      </g>
+      
+      <!-- 각 폭의 하단 금속 장식 (장석) -->
+      <rect x="-130" y="52" width="6" height="8" fill="#d4ac0d"/>
+      <rect x="-70" y="52" width="6" height="8" fill="#d4ac0d"/>
+      <rect x="-10" y="62" width="6" height="8" fill="#d4ac0d"/>
+      <rect x="50" y="52" width="6" height="8" fill="#d4ac0d"/>
+      <rect x="110" y="62" width="6" height="8" fill="#d4ac0d"/>
+      
+    </g>
+  </g>
+</svg>

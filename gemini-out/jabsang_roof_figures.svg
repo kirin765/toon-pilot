@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="jabsang_roof_figures">
+    <!-- 궁궐 지붕 추녀마루 위에 올려 악귀를 물리치는 수호신 흙인형 장식, 잡상 (Japsang) -->
+    <!-- 일명 '어처구니'라고도 불리며, 서유기의 손오공 일행이 모델 -->
+    
+    <!-- 해 질 녘 고궁의 하늘 배경 -->
+    <rect width="400" height="300" fill="#e67e22"/>
+    <circle cx="100" cy="150" r="80" fill="#f39c12" opacity="0.5"/> <!-- 석양 -->
+    
+    <!-- 웅장하게 뻗은 기와지붕 추녀마루 (실루엣) -->
+    <!-- 지붕선이 왼쪽 아래에서 오른쪽 위로 우아하게 솟아오름 -->
+    <path d="M0 250 Q150 220 300 100 L400 0 L400 300 L0 300 Z" fill="#2c3e50"/>
+    <path d="M0 260 Q150 230 300 110" fill="none" stroke="#17202a" stroke-width="10"/> <!-- 기와 끝 선 -->
+    
+    <!-- 잡상 3개 (오른쪽에서 왼쪽 순으로 배치, 대정수(삼장법사) -> 손행자(손오공) -> 저팔계) -->
+    <!-- 오른쪽 위 (지붕 끝에서 약간 내려온 곳) - 삼장법사 (대정수) -->
+    <g transform="translate(280, 110)">
+      <!-- 둥근 받침대 -->
+      <ellipse cx="0" cy="10" rx="15" ry="5" fill="#17202a"/>
+      <!-- 도포 자락을 두른 인물 형상 실루엣 -->
+      <path d="M-10 10 C-10 -10 -5 -20 0 -25 C5 -20 10 -10 10 10 Z" fill="#34495e" stroke="#17202a" stroke-width="2"/>
+      <!-- 머리 위의 불교식 모자 (관) -->
+      <path d="M-8 -22 L0 -35 L8 -22 Z" fill="#17202a"/>
+    </g>
+    
+    <!-- 중간 - 손오공 (손행자, 짐승의 탈을 쓰고 웅크린 모습) -->
+    <g transform="translate(220, 135)">
+      <!-- 받침대 -->
+      <ellipse cx="0" cy="10" rx="15" ry="5" fill="#17202a"/>
+      <!-- 웅크리고 앞을 주시하는 원숭이 형상 -->
+      <path d="M-12 10 C-15 0 -10 -10 0 -15 C10 -10 15 0 12 10 Z" fill="#34495e" stroke="#17202a" stroke-width="2"/>
+      <!-- 원숭이의 튀어나온 입과 귀 -->
+      <circle cx="-8" cy="-8" r="4" fill="#17202a"/>
+      <path d="M-10 -10 L-18 -8 L-10 -6 Z" fill="#17202a"/>
+    </g>
+    
+    <!-- 왼쪽 아래 - 저팔계 (돼지 형상, 엎드린 모습) -->
+    <g transform="translate(160, 160)">
+      <ellipse cx="0" cy="10" rx="15" ry="5" fill="#17202a"/>
+      <path d="M-15 10 C-15 0 0 -10 10 0 C15 5 15 10 12 10 Z" fill="#34495e" stroke="#17202a" stroke-width="2"/>
+      <!-- 돼지의 튀어나온 코 -->
+      <rect x="-18" y="-5" width="6" height="8" rx="2" fill="#17202a"/>
+    </g>
+    
+    <!-- 맨 왼쪽 아래 선두에 있는 사자 모양 장식 (용두 또는 이물) -->
+    <g transform="translate(90, 190)">
+      <ellipse cx="0" cy="10" rx="15" ry="5" fill="#17202a"/>
+      <path d="M-20 10 C-20 -15 10 -15 20 10 Z" fill="#34495e" stroke="#17202a" stroke-width="2"/>
+      <!-- 크게 벌린 입 (하늘을 향해 포효) -->
+      <path d="M-15 -5 L-25 -15 L-10 -10" fill="#17202a"/>
+      <path d="M-10 -10 L-20 -20 L0 -15" fill="#17202a"/>
+    </g>
+    
+    <!-- 지붕 맨 끝(추녀)을 장식하는 용 머리 기와 (토수) -->
+    <g transform="translate(30, 225) rotate(-30)">
+      <path d="M-10 10 L40 10 L40 -20 Q20 -40 -10 -20 Z" fill="#17202a"/>
+      <!-- 뾰족한 용의 뿔 -->
+      <polygon points="10,-20 15,-40 20,-20" fill="#17202a"/>
+      <!-- 부리부리한 눈 (음영) -->
+      <circle cx="10" cy="-5" r="4" fill="#e67e22" opacity="0.6"/>
+    </g>
+    
+    <!-- 하늘의 구름 실루엣 (고궁의 운치) -->
+    <path d="M-50 50 Q0 30 50 50 Q100 40 150 60" fill="none" stroke="#d35400" stroke-width="15" opacity="0.4" stroke-linecap="round"/>
+    <path d="M200 40 Q250 20 300 40 Q350 30 450 50" fill="none" stroke="#d35400" stroke-width="10" opacity="0.4" stroke-linecap="round"/>
+    
+  </g>
+</svg>

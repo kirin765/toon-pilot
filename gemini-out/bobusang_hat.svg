@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="bobusang_hat">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="250" rx="110" ry="25" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 패랭이 모자 챙 (대나무 엮은 질감 표현) -->
+    <ellipse cx="200" cy="220" rx="140" ry="30" fill="#d4ac0d"/>
+    <ellipse cx="200" cy="220" rx="130" ry="25" fill="#f1c40f"/>
+    <!-- 대나무 엮은 무늬 (격자선) -->
+    <path d="M80 220 Q200 190 320 220" fill="none" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+    <path d="M70 225 Q200 200 330 225" fill="none" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+    <path d="M90 215 Q200 180 310 215" fill="none" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+    
+    <path d="M140 205 L120 245 M170 195 L160 250 M200 190 L200 250 M230 195 L240 250 M260 205 L280 245" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+    
+    <!-- 패랭이 모자 윗부분 (머리 들어가는 둥근 곳) -->
+    <path d="M120 215 C120 130 280 130 280 215 Z" fill="#f1c40f"/>
+    <!-- 입체감을 위한 그림자 -->
+    <path d="M120 215 C120 160 280 160 280 215 Z" fill="#d4ac0d" opacity="0.8"/>
+    
+    <!-- 윗부분 엮은 무늬 -->
+    <path d="M140 190 Q200 120 260 190" fill="none" stroke="#b9770e" stroke-width="2" opacity="0.6"/>
+    <path d="M160 200 Q200 140 240 200" fill="none" stroke="#b9770e" stroke-width="2" opacity="0.6"/>
+    
+    <!-- 패랭이의 상징: 하얀 목화송이 (보부상 조직의 표식) -->
+    <!-- 왼쪽에 달린 큰 목화송이 -->
+    <circle cx="150" cy="180" r="18" fill="#ffffff"/>
+    <circle cx="140" cy="170" r="15" fill="#ffffff"/>
+    <circle cx="160" cy="165" r="14" fill="#ffffff"/>
+    <circle cx="150" cy="155" r="12" fill="#ffffff"/>
+    <!-- 목화 솜 텍스처(연한 회색 그림자) -->
+    <circle cx="148" cy="175" r="10" fill="#ecf0f1"/>
+    <!-- 목화 받침 (갈색 깍지) -->
+    <path d="M150 198 L140 185 L150 185 L160 185 Z" fill="#8b4513"/>
+    
+    <!-- 오른쪽에 달린 목화송이 -->
+    <circle cx="250" cy="180" r="18" fill="#ffffff"/>
+    <circle cx="260" cy="170" r="15" fill="#ffffff"/>
+    <circle cx="240" cy="165" r="14" fill="#ffffff"/>
+    <circle cx="250" cy="155" r="12" fill="#ffffff"/>
+    <circle cx="252" cy="175" r="10" fill="#ecf0f1"/>
+    <path d="M250 198 L240 185 L250 185 L260 185 Z" fill="#8b4513"/>
+    
+    <!-- 턱끈 (까만 무명끈) -->
+    <path d="M130 220 Q150 280 200 280 Q250 280 270 220" fill="none" stroke="#2c3e50" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

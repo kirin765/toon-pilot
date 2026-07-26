@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="gat_large">
+    <!-- 조선 후기 유행했던 챙(양태)이 비정상적으로 넓은 거대한 갓(흑립) -->
+    
+    <!-- 서재 방바닥 배경 -->
+    <rect width="400" height="300" fill="#f5cba7"/>
+    <path d="M0 250 L400 250" stroke="#e59866" stroke-width="2"/>
+    
+    <!-- 갓 그림자 -->
+    <ellipse cx="200" cy="240" rx="160" ry="25" fill="#d35400" opacity="0.4"/>
+    
+    <!-- 거대한 갓 (흑립) -->
+    <g transform="translate(200, 160)">
+      
+      <!-- 챙 (양태) -->
+      <!-- 어깨너비를 훌쩍 넘길 만큼 거대한 타원형 -->
+      <ellipse cx="0" cy="70" rx="150" ry="30" fill="#17202a" stroke="#2c3e50" stroke-width="2"/>
+      
+      <!-- 양태의 대나무(말총) 엮음 결 묘사 -->
+      <!-- 빛이 비치는 반투명한 질감 표현 -->
+      <ellipse cx="0" cy="70" rx="145" ry="28" fill="none" stroke="#2c3e50" stroke-width="1"/>
+      <ellipse cx="0" cy="70" rx="130" ry="25" fill="none" stroke="#2c3e50" stroke-width="1"/>
+      <ellipse cx="0" cy="70" rx="110" ry="20" fill="none" stroke="#2c3e50" stroke-width="1"/>
+      <ellipse cx="0" cy="70" rx="90" ry="15" fill="none" stroke="#2c3e50" stroke-width="1"/>
+      
+      <path d="M-150 70 Q0 60 150 70" fill="none" stroke="#34495e" stroke-width="1.5"/>
+      
+      <!-- 갓끈 (구슬 갓끈 - 패랭이) -->
+      <!-- 긴 호박과 산호 구슬이 꿰어진 사치스러운 갓끈이 바닥에 길게 늘어짐 -->
+      <path d="M-50 75 Q-100 130 -120 120" fill="none" stroke="#17202a" stroke-width="1.5"/>
+      <path d="M50 75 Q100 130 120 120" fill="none" stroke="#17202a" stroke-width="1.5"/>
+      
+      <!-- 호박(노란색), 산호(붉은색), 옥(초록색) 구슬들 -->
+      <!-- 왼쪽 갓끈 -->
+      <circle cx="-60" cy="85" r="4" fill="#f1c40f"/>
+      <circle cx="-70" cy="95" r="4" fill="#e74c3c"/>
+      <rect x="-83" y="102" width="6" height="10" fill="#f39c12" transform="rotate(-40 -80 107)"/> <!-- 호박 원통 -->
+      <circle cx="-92" cy="115" r="4" fill="#2ecc71"/>
+      <circle cx="-105" cy="122" r="4" fill="#e74c3c"/>
+      <circle cx="-115" cy="123" r="4" fill="#f1c40f"/>
+      
+      <!-- 오른쪽 갓끈 -->
+      <circle cx="60" cy="85" r="4" fill="#f1c40f"/>
+      <circle cx="70" cy="95" r="4" fill="#e74c3c"/>
+      <rect x="77" y="102" width="6" height="10" fill="#f39c12" transform="rotate(40 80 107)"/>
+      <circle cx="92" cy="115" r="4" fill="#2ecc71"/>
+      <circle cx="105" cy="122" r="4" fill="#e74c3c"/>
+      <circle cx="115" cy="123" r="4" fill="#f1c40f"/>
+      
+      <!-- 머리가 들어가는 모자 부분 (총모자) -->
+      <!-- 밑이 약간 넓고 위가 평평한 원통형, 말총으로 섬세하게 엮음 -->
+      <path d="M-45 70 C-50 0 -45 -50 -35 -70 L35 -70 C45 -50 50 0 45 70 Z" fill="#1c2833" stroke="#2c3e50" stroke-width="1.5"/>
+      
+      <!-- 총모자의 상단 원형 테두리 (정자) -->
+      <ellipse cx="0" cy="-70" rx="35" ry="10" fill="#17202a" stroke="#34495e" stroke-width="1"/>
+      
+      <!-- 말총의 미세한 세로 가로 직조 무늬 묘사 -->
+      <!-- 반투명해서 빛이 살짝 통과하는 느낌 -->
+      <g stroke="#34495e" stroke-width="1" opacity="0.5">
+        <path d="M-35 70 C-40 0 -35 -50 -25 -70 M-25 70 C-30 0 -25 -50 -15 -70 M-15 70 C-20 0 -15 -50 -5 -70"/>
+        <path d="M-5 70 C-10 0 -5 -50 5 -70 M5 70 C0 0 5 -50 15 -70 M15 70 C10 0 15 -50 25 -70 M25 70 C20 0 25 -50 35 -70"/>
+        
+        <path d="M-44 50 Q0 55 44 50"/>
+        <path d="M-42 30 Q0 35 42 30"/>
+        <path d="M-40 10 Q0 15 40 10"/>
+        <path d="M-38 -10 Q0 -5 38 -10"/>
+        <path d="M-36 -30 Q0 -25 36 -30"/>
+        <path d="M-35 -50 Q0 -45 35 -50"/>
+      </g>
+      
+      <!-- 갓 위에 장식으로 다는 옥정자(모자 꼭대기의 옥 장식) -->
+      <path d="M-5 -75 L5 -75 L0 -85 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+      
+      <!-- 양태 테두리 (순인) 광택 -->
+      <ellipse cx="0" cy="70" rx="148" ry="28" fill="none" stroke="#fdfefe" stroke-width="1.5" opacity="0.3"/>
+      
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="meat_and_resignation">
+    <!-- 세종대왕의 육식 중독과 황희 정승의 끝없는 사직서를 상징하는 소품 -->
+    
+    <!-- 어두운 방안, 왕의 책상(어좌 앞 탁자) -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    <ellipse cx="200" cy="220" rx="150" ry="50" fill="#212f3d"/>
+    
+    <!-- 산처럼 쌓인 고기구이 (육식 선호) -->
+    <g transform="translate(140, 200)">
+      <ellipse cx="0" cy="20" rx="60" ry="15" fill="#f4d03f" stroke="#d4ac0d" stroke-width="2"/> <!-- 황금 접시 -->
+      
+      <!-- 구운 고기 덩어리들 -->
+      <!-- 고기 1 -->
+      <path d="M-40 0 Q-20 -20 0 -10 Q20 -20 40 5 Q20 20 -10 15 Q-30 20 -40 0 Z" fill="#8b4513" stroke="#5c2c16" stroke-width="2"/>
+      <path d="M-30 0 Q-10 -5 10 5" fill="none" stroke="#d35400" stroke-width="2"/>
+      <!-- 고기 2 -->
+      <path d="M-20 -15 Q0 -40 30 -20 Q40 -5 20 0 Q-10 -5 -20 -15 Z" fill="#a0522d" stroke="#5c2c16" stroke-width="2"/>
+      <path d="M-10 -15 Q5 -25 20 -15" fill="none" stroke="#e67e22" stroke-width="2"/>
+      <!-- 고기 3 -->
+      <path d="M-10 -35 Q10 -60 40 -40 Q50 -20 30 -10 Q0 -20 -10 -35 Z" fill="#8b4513" stroke="#5c2c16" stroke-width="2"/>
+      <path d="M0 -35 Q15 -45 25 -30" fill="none" stroke="#d35400" stroke-width="2"/>
+      
+      <!-- 고기 뼈다귀 -->
+      <path d="M-40 10 L-60 20" stroke="#ecf0f1" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="-62" cy="18" r="3" fill="#ecf0f1"/>
+      <circle cx="-58" cy="22" r="3" fill="#ecf0f1"/>
+    </g>
+    
+    <!-- 찢겨지고 쌓인 황희 정승의 사직서 무더기 (워커홀릭 왕의 집착) -->
+    <g transform="translate(260, 220) rotate(15)">
+      <!-- 바닥에 쌓인 종이들 -->
+      <rect x="-30" y="-10" width="50" height="70" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="1" transform="rotate(-10)"/>
+      <rect x="-25" y="-15" width="50" height="70" fill="#fae5d3" stroke="#bdc3c7" stroke-width="1" transform="rotate(5)"/>
+      
+      <!-- 맨 위의 찢어진 사직서 (세종이 화를 내며 찢은 묘사) -->
+      <polygon points="-20,-20 30,-25 25,10 5,5 -5,15 -15,5" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="1"/>
+      <!-- 찢어진 조각 -->
+      <polygon points="10,15 30,20 20,40 -5,35" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="1" transform="translate(10, 10) rotate(-20)"/>
+      
+      <!-- 사직서 내용 (한자 사직 '辭職') -->
+      <path d="M-10 -10 L0 -10 M-5 -15 L-5 0 M10 -15 L10 5" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-5 15 L5 15 M0 10 L0 25 M-10 20 L10 20" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- 붉은 X 표시 (사직 반려, 불가) -->
+      <line x1="-15" y1="-15" x2="25" y2="25" stroke="#e74c3c" stroke-width="6"/>
+      <line x1="25" y1="-15" x2="-15" y2="25" stroke="#e74c3c" stroke-width="6"/>
+    </g>
+    
+  </g>
+</svg>

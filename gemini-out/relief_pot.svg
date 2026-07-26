@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="relief_pot">
+    <!-- 대기근이나 홍수 시 진휼청에서 빈민들에게 죽을 끓여 나눠주던 거대한 가마솥 -->
+    
+    <!-- 흙바닥과 모닥불 배경 -->
+    <rect width="400" height="300" fill="#a67c52"/>
+    <ellipse cx="200" cy="250" rx="160" ry="40" fill="#5c3a21" opacity="0.5"/>
+    
+    <!-- 아궁이 역할을 하는 돌무더기 -->
+    <g fill="#7f8c8d" stroke="#34495e" stroke-width="2">
+      <path d="M90 260 Q110 240 130 260 L110 280 Z"/>
+      <path d="M120 250 Q150 230 170 250 L140 270 Z"/>
+      <path d="M230 250 Q250 230 280 250 L260 270 Z"/>
+      <path d="M270 260 Q290 240 310 260 L290 280 Z"/>
+    </g>
+    
+    <!-- 타오르는 모닥불 (장작과 불꽃) -->
+    <!-- 장작 -->
+    <path d="M150 250 L200 220 L220 230 L170 260 Z" fill="#8b5a2b" stroke="#5c3a21" stroke-width="2"/>
+    <path d="M250 250 L200 220 L180 230 L230 260 Z" fill="#8b5a2b" stroke="#5c3a21" stroke-width="2"/>
+    
+    <!-- 불꽃 (노랑, 주황, 빨강) -->
+    <g transform="translate(200, 240)">
+      <path d="M-30 0 C-40 -40 -10 -60 0 -80 C10 -60 40 -40 30 0 Z" fill="#e74c3c" opacity="0.8"/>
+      <path d="M-20 0 C-30 -30 -5 -45 0 -60 C5 -45 30 -30 20 0 Z" fill="#e67e22" opacity="0.9"/>
+      <path d="M-10 0 C-15 -15 0 -25 0 -40 C0 -25 15 -15 10 0 Z" fill="#f1c40f"/>
+    </g>
+    
+    <!-- 거대한 무쇠 가마솥 (진휼용 솥) -->
+    <g transform="translate(200, 150)">
+      
+      <!-- 가마솥 본체 -->
+      <path d="M-130 0 C-130 80 -80 100 0 100 C80 100 130 80 130 0 C130 -30 80 -40 0 -40 C-80 -40 -130 -30 -130 0 Z" fill="#2c3e50" stroke="#17202a" stroke-width="4"/>
+      
+      <!-- 무쇠 질감과 둥근 볼륨감을 살린 그라데이션 및 빛 반사 -->
+      <!-- 왼쪽 밝은 부분 -->
+      <path d="M-120 10 C-120 60 -70 80 0 80 C-50 80 -100 60 -100 10 Z" fill="#566573"/>
+      <!-- 빛 반사 하이라이트 -->
+      <path d="M-110 5 A50 70 0 0 1 -70 -20" fill="none" stroke="#7f8c8d" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+      <!-- 아래쪽 붉은 불빛 반사 (모닥불에 반사됨) -->
+      <path d="M-80 85 C-30 105 30 105 80 85 C30 95 -30 95 -80 85 Z" fill="#d35400" opacity="0.5"/>
+      
+      <!-- 솥단지 테두리 (전) -->
+      <ellipse cx="0" cy="-40" rx="140" ry="15" fill="#1a252f" stroke="#111" stroke-width="4"/>
+      <ellipse cx="0" cy="-40" rx="130" ry="10" fill="#2c3e50" stroke="#111" stroke-width="2"/>
+      
+      <!-- 솥 귀 (들기 위한 양옆의 손잡이) -->
+      <path d="M-140 -40 C-160 -40 -160 -10 -130 -10" fill="none" stroke="#1a252f" stroke-width="12" stroke-linecap="round"/>
+      <path d="M140 -40 C160 -40 160 -10 130 -10" fill="none" stroke="#1a252f" stroke-width="12" stroke-linecap="round"/>
+      
+      <!-- 끓고 있는 구휼죽 (멀건 쌀이나 수수, 도토리 등을 끓인 죽) -->
+      <!-- 솥 내부에 차 있는 연한 상아색/탁한 황토색 죽 -->
+      <ellipse cx="0" cy="-40" rx="125" ry="8" fill="#e5c4a0"/>
+      <ellipse cx="0" cy="-40" rx="120" ry="6" fill="#f5ce95"/>
+      
+      <!-- 죽 표면의 보글보글 끓는 기포들 -->
+      <circle cx="-50" cy="-42" r="3" fill="#fdfefe" opacity="0.6"/>
+      <circle cx="-30" cy="-38" r="4" fill="#fdfefe" opacity="0.6"/>
+      <circle cx="20" cy="-43" r="2" fill="#fdfefe" opacity="0.6"/>
+      <circle cx="60" cy="-39" r="5" fill="#fdfefe" opacity="0.6"/>
+      <path d="M-40 -40 Q-20 -35 0 -40" fill="none" stroke="#d35400" stroke-width="1" opacity="0.3"/> <!-- 소용돌이 -->
+      
+      <!-- 모락모락 피어오르는 뜨거운 김(수증기) -->
+      <g fill="none" stroke="#fdfefe" stroke-width="8" stroke-linecap="round" opacity="0.4">
+        <path d="M-40 -50 Q-60 -90 -30 -120 Q0 -150 -10 -180"/>
+        <path d="M30 -50 Q10 -80 40 -110 Q70 -140 50 -160"/>
+        <path d="M0 -60 Q20 -90 -10 -130 Q-40 -160 0 -190" stroke-width="6"/>
+      </g>
+      
+    </g>
+  </g>
+</svg>

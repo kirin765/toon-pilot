@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="bobusang_hat_and_bundle">
+    <!-- 조선 시대 상인 보부상의 상징: 패랭이 모자와 봇짐 (보따리) -->
+    
+    <!-- 흙길 배경 -->
+    <rect width="400" height="300" fill="#d7bde2"/>
+    <rect width="400" height="300" fill="#e5cda8"/>
+    <!-- 길거리 돌멩이와 풀 -->
+    <ellipse cx="100" cy="250" rx="15" ry="5" fill="#a6acaf"/>
+    <path d="M50 280 Q60 260 70 280" fill="none" stroke="#27ae60" stroke-width="2"/>
+    
+    <!-- 그림자 -->
+    <ellipse cx="200" cy="220" rx="120" ry="25" fill="#cda776" opacity="0.8"/>
+    
+    <!-- 커다란 무명 봇짐 (등짐/보따리) -->
+    <!-- 장터 한편에 내려놓은 모습 -->
+    <g transform="translate(150, 160)">
+      <!-- 보따리의 불룩한 몸통 -->
+      <path d="M-80 50 C-100 0 -50 -70 0 -70 C50 -70 100 0 80 50 C70 80 -70 80 -80 50 Z" fill="#fdfefe" stroke="#bdc3c7" stroke-width="4"/>
+      
+      <!-- 보따리를 질끈 묶은 천 매듭 (상단) -->
+      <path d="M-15 -70 Q-30 -90 -10 -90 Q0 -70 -15 -70 Z" fill="#fdfefe" stroke="#bdc3c7" stroke-width="3"/>
+      <path d="M15 -70 Q30 -90 10 -90 Q0 -70 15 -70 Z" fill="#fdfefe" stroke="#bdc3c7" stroke-width="3"/>
+      <circle cx="0" cy="-70" r="10" fill="#f4f6f6" stroke="#bdc3c7" stroke-width="3"/> <!-- 매듭 중심 -->
+      
+      <!-- 보따리에 그려진 거친 주름 (무거운 물건이 든 느낌) -->
+      <path d="M-40 -40 Q-20 20 -30 60" fill="none" stroke="#d0d3d4" stroke-width="3"/>
+      <path d="M0 -50 Q10 10 5 65" fill="none" stroke="#d0d3d4" stroke-width="3"/>
+      <path d="M40 -30 Q20 30 45 50" fill="none" stroke="#d0d3d4" stroke-width="3"/>
+      
+      <!-- 보따리를 짊어지기 위한 지게 작대기 (나무 지팡이) - 봇짐 옆에 세워둔 모습 -->
+      <path d="M-90 60 L-130 -80" stroke="#8b5a2b" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-90 60 L-130 -80" stroke="#5c3a21" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+    </g>
+    
+    <!-- 보부상의 상징: 목화송이가 달린 패랭이 모자 (대나무를 엮어 만든 거친 모자) -->
+    <!-- 봇짐 위에 툭 얹어 놓은 모습 -->
+    <g transform="translate(230, 90)">
+      <!-- 패랭이 모자 챙 (아래로 둥글게 퍼진 챙) -->
+      <ellipse cx="0" cy="20" rx="70" ry="20" fill="#d4ac0d" stroke="#b9770e" stroke-width="3"/>
+      
+      <!-- 대나무를 엮은 거친 격자무늬 (챙 부분) -->
+      <path d="M-60 20 Q0 0 60 20" fill="none" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+      <path d="M-50 25 Q0 5 50 25" fill="none" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+      
+      <!-- 패랭이 모자 위쪽 기둥 (둥글고 납작한 대나무 모자통) -->
+      <path d="M-40 20 L-35 -20 C-20 -30 20 -30 35 -20 L40 20 Z" fill="#f1c40f" stroke="#b9770e" stroke-width="3"/>
+      <!-- 모자통 엮은 무늬 -->
+      <line x1="-30" y1="-10" x2="30" y2="-10" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+      <line x1="-35" y1="5" x2="35" y2="5" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+      <line x1="-15" y1="-25" x2="-20" y2="20" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+      <line x1="0" y1="-25" x2="0" y2="20" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+      <line x1="15" y1="-25" x2="20" y2="20" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+      
+      <!-- 보부상 패랭이의 핵심 상징: 양쪽에 매달린 커다란 목화송이 두 개 -->
+      <!-- 보부상(보상과 부상)이 이성계(또는 국가)를 도운 공로로 하사받았다는 전설의 상징물 -->
+      <!-- 왼쪽 하얀 목화송이 -->
+      <g transform="translate(-45, 10)">
+        <circle cx="0" cy="0" r="12" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+        <circle cx="-5" cy="-5" r="6" fill="#fdfefe"/>
+        <circle cx="5" cy="5" r="6" fill="#fdfefe"/>
+        <!-- 목화를 받치는 초록색 잎받침 -->
+        <path d="M-10 10 L-15 15 M0 15 L0 20 M10 10 L15 15" stroke="#27ae60" stroke-width="2"/>
+      </g>
+      
+      <!-- 오른쪽 하얀 목화송이 -->
+      <g transform="translate(45, 10)">
+        <circle cx="0" cy="0" r="12" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+        <circle cx="5" cy="-5" r="6" fill="#fdfefe"/>
+        <circle cx="-5" cy="5" r="6" fill="#fdfefe"/>
+        <path d="M-10 10 L-15 15 M0 15 L0 20 M10 10 L15 15" stroke="#27ae60" stroke-width="2"/>
+      </g>
+      
+    </g>
+  </g>
+</svg>

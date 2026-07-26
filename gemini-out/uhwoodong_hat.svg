@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="uhwoodong_hat">
+    <!-- 화려하고 요염한 조선의 팜므파탈 어우동을 상징하는 거대한 전모(모자) -->
+    
+    <circle cx="200" cy="180" r="100" fill="#bdc3c7" opacity="0.3"/> <!-- 바닥 그림자 -->
+    
+    <!-- 전모 (기생이나 외출하는 여성이 쓴 화려한 우산 모양의 모자) -->
+    <!-- 살짝 기울어져 바닥에 놓인 구도 -->
+    <g transform="translate(200, 160) rotate(-15)">
+      
+      <!-- 모자 안쪽 뼈대 (대나무 살) -->
+      <path d="M-120 0 C-120 40 120 40 120 0" fill="#f5cba7" stroke="#e67e22" stroke-width="2"/>
+      <line x1="-100" y1="20" x2="0" y2="-60" stroke="#e67e22" stroke-width="1"/>
+      <line x1="-60" y1="35" x2="0" y2="-60" stroke="#e67e22" stroke-width="1"/>
+      <line x1="-20" y1="40" x2="0" y2="-60" stroke="#e67e22" stroke-width="1"/>
+      <line x1="20" y1="40" x2="0" y2="-60" stroke="#e67e22" stroke-width="1"/>
+      <line x1="60" y1="35" x2="0" y2="-60" stroke="#e67e22" stroke-width="1"/>
+      <line x1="100" y1="20" x2="0" y2="-60" stroke="#e67e22" stroke-width="1"/>
+      
+      <!-- 모자 겉면 (한지를 바르고 기름을 먹인 노란빛) -->
+      <path d="M-130 0 C-130 -80 0 -130 0 -130 C0 -130 130 -80 130 0 Z" fill="#f4d03f" stroke="#d4ac0d" stroke-width="3"/>
+      
+      <!-- 전모 겉면의 화려한 붉은 꽃과 나비 문양 (어우동의 유혹을 상징) -->
+      <!-- 꽃 1 -->
+      <circle cx="-60" cy="-40" r="15" fill="#e74c3c"/>
+      <circle cx="-50" cy="-50" r="10" fill="#c0392b"/>
+      <circle cx="-60" cy="-40" r="5" fill="#f1c40f"/>
+      <!-- 꽃 2 -->
+      <circle cx="50" cy="-70" r="12" fill="#e74c3c"/>
+      <circle cx="60" cy="-60" r="8" fill="#c0392b"/>
+      <circle cx="50" cy="-70" r="4" fill="#f1c40f"/>
+      <!-- 잎사귀 -->
+      <path d="M-60 -40 Q-80 -20 -90 -30 Q-70 -50 -60 -40 Z" fill="#2ecc71"/>
+      <path d="M50 -70 Q30 -50 20 -60 Q40 -80 50 -70 Z" fill="#2ecc71"/>
+      
+      <!-- 전모 꼭대기의 장식 -->
+      <polygon points="-10,-130 10,-130 0,-145" fill="#c0392b"/>
+      
+      <!-- 모자 테두리의 붉은 띠 장식 -->
+      <path d="M-130 0 Q0 -20 130 0 L125 5 Q0 -15 -125 5 Z" fill="#c0392b"/>
+      
+      <!-- 얼굴을 가리는 검은 천 (너울/면사) - 반쯤 걷혀 비밀스러움을 강조 -->
+      <path d="M-110 0 C-110 60 -50 80 0 60 C50 80 110 60 110 0" fill="#17202a" opacity="0.8"/>
+      <path d="M-110 0 C-110 60 -50 80 0 60" fill="none" stroke="#2c3e50" stroke-width="2" opacity="0.5"/>
+    </g>
+    
+    <!-- 모자 옆으로 툭 떨어진 화려하고 값비싼 삼작 노리개 (양반들과의 스캔들 전리품) -->
+    <g transform="translate(280, 200)">
+      <!-- 노리개 끈 -->
+      <path d="M-60 -80 Q-20 -50 0 -20" fill="none" stroke="#e67e22" stroke-width="3"/>
+      <!-- 매듭 -->
+      <rect x="-8" y="-20" width="16" height="16" fill="#c0392b"/>
+      <circle cx="0" cy="-12" r="6" fill="#f1c40f"/>
+      
+      <!-- 산호 옥 나비 장식 (고급 장신구) -->
+      <path d="M-15 -4 Q0 10 15 -4 Q20 5 0 20 Q-20 5 -15 -4 Z" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+      <circle cx="-5" cy="5" r="2" fill="#fff"/>
+      <circle cx="5" cy="5" r="2" fill="#fff"/>
+      
+      <!-- 세 갈래의 화려한 술 (태슬) -->
+      <!-- 붉은 술 -->
+      <line x1="-10" y1="20" x2="-20" y2="70" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+      <line x1="-8" y1="20" x2="-12" y2="65" stroke="#e74c3c" stroke-width="2"/>
+      <!-- 노란 술 -->
+      <line x1="0" y1="20" x2="0" y2="75" stroke="#f39c12" stroke-width="4" stroke-linecap="round"/>
+      <line x1="2" y1="20" x2="3" y2="70" stroke="#f1c40f" stroke-width="2"/>
+      <!-- 파란 술 -->
+      <line x1="10" y1="20" x2="20" y2="70" stroke="#2980b9" stroke-width="4" stroke-linecap="round"/>
+      <line x1="8" y1="20" x2="12" y2="65" stroke="#3498db" stroke-width="2"/>
+    </g>
+    
+  </g>
+</svg>

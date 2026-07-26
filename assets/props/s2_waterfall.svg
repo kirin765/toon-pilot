@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <g id="waterfall-bg">
+    <!-- 배경 하늘 (Sky Background) -->
+    <rect width="800" height="450" fill="#C8D6E5" />
+
+    <!-- 뒤쪽 절벽 2톤 어두운 색 (Back Cliffs - Dark Tone) -->
+    <polygon points="0,50 100,60 180,120 220,90 270,160 270,450 0,450" fill="#4B5C6B" />
+    <polygon points="800,20 650,40 580,100 540,80 520,160 520,450 800,450" fill="#4B5C6B" />
+
+    <!-- 앞쪽 절벽 2톤 밝은 색 (Front Cliffs - Light Tone) -->
+    <polygon points="0,110 120,130 150,190 230,220 280,300 310,450 0,450" fill="#5F768B" />
+    <polygon points="800,90 700,120 630,230 550,260 500,360 480,450 800,450" fill="#5F768B" />
+
+    <!-- ==============================================
+         3단 낙차 폭포 밴드 (3-Step Waterfall Band)
+         ============================================== -->
+    
+    <!-- 1단 (Top Step) -->
+    <polygon points="350,120 450,110 440,220 360,220" fill="#FFFFFF" />
+    <!-- 1단 물보라 (Splash 1) -->
+    <polygon points="340,220 360,210 380,230 400,215 420,230 440,210 460,220 440,235 400,240 360,235" fill="#E0F0FF" />
+    
+    <!-- 2단 (Middle Step) -->
+    <polygon points="360,220 440,220 435,330 365,330" fill="#FFFFFF" />
+    <!-- 2단 물보라 (Splash 2) -->
+    <polygon points="345,330 365,320 385,340 400,325 415,340 435,320 455,330 435,345 400,350 365,345" fill="#E0F0FF" />
+
+    <!-- 3단 (Bottom Step) -->
+    <polygon points="365,330 435,330 445,430 355,430" fill="#FFFFFF" />
+    <!-- 3단 물보라 (Splash 3 / Base) -->
+    <polygon points="330,430 350,420 380,435 400,420 420,435 450,420 470,430 450,445 400,450 350,445" fill="#E0F0FF" />
+
+    <!-- 하단 강물 (River at Base) -->
+    <polygon points="0,420 200,410 400,430 600,410 800,420 800,450 0,450" fill="#82CCDD" />
+
+    <!-- ==============================================
+         절벽 위 소나무 2그루 (2 Pine Trees on Cliff)
+         ============================================== -->
+         
+    <!-- 소나무 1 (왼쪽 - Pine Tree 1 Left) -->
+    <g id="pine-tree-1" transform="translate(120, 90)">
+      <!-- 기둥 (Trunk) -->
+      <polygon points="-5,30 5,30 3,0 -3,0" fill="#5C4033" />
+      <!-- 솔잎 층상 (Pine Needles Layered Cutout) -->
+      <polygon points="0,-40 -30,-10 30,-10" fill="#2E4A25" />
+      <polygon points="0,-20 -35,10 35,10" fill="#2E4A25" />
+      <polygon points="0,0 -40,30 40,30" fill="#2E4A25" />
+    </g>
+
+    <!-- 소나무 2 (오른쪽 - Pine Tree 2 Right) -->
+    <g id="pine-tree-2" transform="translate(680, 80) scale(1.2)">
+      <!-- 기둥 (Trunk) -->
+      <polygon points="-5,30 5,30 3,0 -3,0" fill="#4A3219" />
+      <!-- 솔잎 (Pine Needles) -->
+      <polygon points="0,-40 -30,-10 30,-10" fill="#1F3617" />
+      <polygon points="0,-20 -35,10 35,10" fill="#1F3617" />
+      <polygon points="0,0 -40,30 40,30" fill="#1F3617" />
+    </g>
+  </g>
+</svg>

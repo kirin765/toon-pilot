@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="white_folding_fan_and_orchid">
+    <!-- 연행사와 베이징의 K-컬처: 쫙 펼쳐진 하얀 접부채(백선)와 난초 그림 -->
+    
+    <!-- 선비의 기품이 느껴지는 은은한 청자색 배경 -->
+    <rect width="400" height="300" fill="#d0ece7"/>
+    <!-- 사선으로 떨어지는 빛내림 효과 -->
+    <polygon points="0,0 200,0 400,300 0,300" fill="#e8f8f5" opacity="0.5"/>
+    
+    <!-- 부채 옆에 놓인 선비의 먹(벼루)과 붓 -->
+    <g transform="translate(300, 240) rotate(-15)">
+      <!-- 사각형 벼루 -->
+      <rect x="-30" y="-15" width="60" height="30" rx="5" fill="#2c3e50" stroke="#1a252f" stroke-width="3"/>
+      <!-- 먹물 웅덩이 -->
+      <ellipse cx="-10" cy="0" rx="15" ry="8" fill="#111"/>
+      <!-- 붓 -->
+      <rect x="-40" y="-30" width="80" height="6" rx="3" fill="#d4ac0d" stroke="#9a7d0a" stroke-width="1" transform="rotate(30)"/>
+      <path d="M30 10 Q40 20 50 15 Q40 5 30 10 Z" fill="#111" transform="rotate(30)"/> <!-- 먹물이 묻은 붓털 -->
+    </g>
+    
+    <!-- 활짝 펼쳐진 고급 합죽선 (조선의 백선) -->
+    <g transform="translate(180, 220)">
+      <!-- 부채의 접히는 주름(종이 면) - 반원 형태 -->
+      <!-- 시작점(-150, -50) 중심(0, 0) 끝점(150, -50) -->
+      <path d="M0 0 L-140 -60 A160 160 0 0 1 140 -60 Z" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="2"/>
+      
+      <!-- 부채의 대나무 뼈대(부챗살) 방사형 선들 -->
+      <!-- 180도를 채우는 방사형 라인 -->
+      <line x1="0" y1="0" x2="-135" y2="-75" stroke="#d5c8a0" stroke-width="2"/>
+      <line x1="0" y1="0" x2="-110" y2="-110" stroke="#d5c8a0" stroke-width="2"/>
+      <line x1="0" y1="0" x2="-60" y2="-140" stroke="#d5c8a0" stroke-width="2"/>
+      <line x1="0" y1="0" x2="0" y2="-155" stroke="#d5c8a0" stroke-width="2"/>
+      <line x1="0" y1="0" x2="60" y2="-140" stroke="#d5c8a0" stroke-width="2"/>
+      <line x1="0" y1="0" x2="110" y2="-110" stroke="#d5c8a0" stroke-width="2"/>
+      <line x1="0" y1="0" x2="135" y2="-75" stroke="#d5c8a0" stroke-width="2"/>
+      
+      <!-- 굵은 바깥쪽 뼈대 (변죽) -->
+      <line x1="0" y1="0" x2="-145" y2="-50" stroke="#a04000" stroke-width="6" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="145" y2="-50" stroke="#a04000" stroke-width="6" stroke-linecap="round"/>
+      
+      <!-- 사북 (부채의 손잡이 중심 축 장식) -->
+      <circle cx="0" cy="0" r="10" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+      <!-- 부채 끝에 달린 선추(매듭 장식) -->
+      <path d="M0 10 L0 40 M-10 40 L10 40 L0 70 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+      
+      <!-- 조선 사신이 부채 면에 그려 넣은 먹그림 (사군자 중 난초) -->
+      <g stroke="#111" stroke-linecap="round" fill="none">
+        <!-- 난초 잎 1 -->
+        <path d="M-20 -40 Q-50 -100 -80 -70" stroke-width="3"/>
+        <!-- 난초 잎 2 -->
+        <path d="M-20 -40 Q0 -120 30 -100" stroke-width="4"/>
+        <!-- 난초 잎 3 -->
+        <path d="M-20 -40 Q20 -80 60 -60" stroke-width="2"/>
+        <!-- 난초 잎 4 -->
+        <path d="M-20 -40 Q-10 -70 -30 -120" stroke-width="1.5"/>
+        <!-- 꽃봉오리와 줄기 -->
+        <path d="M-10 -50 Q10 -80 0 -110" stroke-width="1.5"/>
+        <circle cx="0" cy="-110" r="3" fill="#111"/>
+        <circle cx="5" cy="-90" r="2" fill="#111"/>
+      </g>
+      
+      <!-- 붉은색 낙관 (도장) -->
+      <rect x="60" y="-120" width="12" height="12" fill="#c0392b"/>
+      <path d="M63 -117 L69 -111 M69 -117 L63 -111" stroke="#fff" stroke-width="1"/>
+    </g>
+    
+  </g>
+</svg>

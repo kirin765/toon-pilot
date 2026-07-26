@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="huge_gat_and_galmo">
+    <!-- 조선의 사치품 패션: 챙이 비정상적으로 넓은 영/정조 시대의 갓(흑립)과 비를 막는 기름종이 갈모 -->
+    
+    <!-- 은은한 한지 창호지 문양의 배경 -->
+    <rect width="400" height="300" fill="#f5eab8"/>
+    <!-- 창살 문양 그림자 -->
+    <path d="M0 50 L400 50 M0 150 L400 150 M0 250 L400 250" stroke="#e3c78d" stroke-width="2"/>
+    <path d="M100 0 L100 300 M200 0 L200 300 M300 0 L300 300" stroke="#e3c78d" stroke-width="2"/>
+    
+    <!-- 방 한가운데 걸려 있거나 놓인, 어깨너비를 훌쩍 넘는 거대한 갓 -->
+    <g transform="translate(200, 150)">
+      <!-- 갓의 거대한 챙 (양태) - 실용성 없이 과시용으로 매우 넒음 -->
+      <!-- 검은 옻칠을 한 말총과 대나무 그물망의 질감 -->
+      <ellipse cx="0" cy="40" rx="170" ry="45" fill="#1c2833" stroke="#111" stroke-width="3"/>
+      <!-- 챙의 그물망(짜임새) 패턴 효과 -->
+      <path d="M-150 40 Q0 10 150 40 M-160 45 Q0 25 160 45 M-150 50 Q0 70 150 50 M-130 55 Q0 80 130 55" fill="none" stroke="#2c3e50" stroke-width="1"/>
+      <path d="M-100 10 L-120 70 M-50 0 L-60 80 M0 -5 L0 85 M50 0 L60 80 M100 10 L120 70" fill="none" stroke="#2c3e50" stroke-width="1"/>
+      
+      <!-- 갓의 모자 부분 (총모자) - 양태에 비해 좁고 위로 솟아 있음 -->
+      <!-- 총모자의 입체감 -->
+      <path d="M-40 30 L-35 -60 C-35 -75 35 -75 35 -60 L40 30 Z" fill="#111" stroke="#2c3e50" stroke-width="2"/>
+      <!-- 총모자의 둥근 윗부분 (정수리) -->
+      <ellipse cx="0" cy="-60" rx="35" ry="12" fill="#2c3e50" stroke="#111" stroke-width="2"/>
+      
+      <!-- 갓끈 (구슬로 만든 호화로운 패션 갓끈 - 사치의 상징) -->
+      <!-- 호박, 산호, 수정 구슬을 꿰어 만든 끈이 바닥으로 길게 늘어짐 -->
+      <!-- 왼쪽 갓끈 -->
+      <path d="M-38 30 Q-60 80 -40 120" fill="none" stroke="#111" stroke-width="2"/>
+      <circle cx="-42" cy="45" r="4" fill="#f1c40f"/> <!-- 호박 -->
+      <circle cx="-45" cy="55" r="4" fill="#c0392b"/> <!-- 산호 -->
+      <circle cx="-49" cy="65" r="4" fill="#bdc3c7"/> <!-- 수정 -->
+      <circle cx="-52" cy="75" r="4" fill="#f1c40f"/>
+      <circle cx="-53" cy="85" r="4" fill="#c0392b"/>
+      <circle cx="-51" cy="95" r="4" fill="#bdc3c7"/>
+      <circle cx="-47" cy="105" r="4" fill="#f1c40f"/>
+      <circle cx="-40" cy="115" r="4" fill="#c0392b"/>
+      
+      <!-- 오른쪽 갓끈 -->
+      <path d="M38 30 Q60 80 40 120" fill="none" stroke="#111" stroke-width="2"/>
+      <circle cx="42" cy="45" r="4" fill="#f1c40f"/>
+      <circle cx="45" cy="55" r="4" fill="#c0392b"/>
+      <circle cx="49" cy="65" r="4" fill="#bdc3c7"/>
+      <circle cx="52" cy="75" r="4" fill="#f1c40f"/>
+      <circle cx="53" cy="85" r="4" fill="#c0392b"/>
+      <circle cx="51" cy="95" r="4" fill="#bdc3c7"/>
+      <circle cx="47" cy="105" r="4" fill="#f1c40f"/>
+      <circle cx="40" cy="115" r="4" fill="#c0392b"/>
+    </g>
+    
+    <!-- 비가 올 때 갓 위에 덮어쓰는 기름종이 우장 '갈모' (접혀 있는 모습) -->
+    <!-- 물에 젖으면 망가지는 사치품 갓의 치명적 단점을 보완하는 필수 아이템 -->
+    <g transform="translate(90, 200) rotate(-15)">
+      <!-- 부채처럼 주름진 기름종이 갈모 (들기름을 먹여 노란빛을 띰) -->
+      <!-- 갈모의 밑면 테두리 -->
+      <path d="M-40 0 C-50 40 50 40 40 0 Z" fill="#d4ac0d" stroke="#b9770e" stroke-width="2"/>
+      <!-- 갈모의 접힌 원뿔 형태 -->
+      <path d="M0 -70 L-40 0 L40 0 Z" fill="#f1c40f" stroke="#b9770e" stroke-width="3"/>
+      <!-- 부채꼴 주름 묘사 -->
+      <path d="M0 -70 L-25 0 M0 -70 L-10 0 M0 -70 L10 0 M0 -70 L25 0" stroke="#b9770e" stroke-width="2"/>
+      <!-- 꼭대기 장식 -->
+      <circle cx="0" cy="-70" r="4" fill="#c0392b"/>
+    </g>
+    
+  </g>
+</svg>

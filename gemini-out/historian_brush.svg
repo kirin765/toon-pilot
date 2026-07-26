@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="historian_brush">
+    <!-- 사관(기록관)이 승정원일기나 사초를 쓸 때 사용하는 붓과 벼루 -->
+    
+    <!-- 단정하게 닦인 서안(책상) 배경 -->
+    <rect width="400" height="300" fill="#e5e8e8"/>
+    <!-- 대나무 발 또는 종이 매트 -->
+    <rect x="50" y="50" width="300" height="200" fill="#fcf3cf" stroke="#d4ac0d" stroke-width="2"/>
+    <g stroke="#f5b041" stroke-width="1" opacity="0.5">
+      <line x1="50" y1="70" x2="350" y2="70"/>
+      <line x1="50" y1="90" x2="350" y2="90"/>
+      <line x1="50" y1="110" x2="350" y2="110"/>
+      <line x1="50" y1="130" x2="350" y2="130"/>
+      <line x1="50" y1="150" x2="350" y2="150"/>
+      <line x1="50" y1="170" x2="350" y2="170"/>
+      <line x1="50" y1="190" x2="350" y2="190"/>
+      <line x1="50" y1="210" x2="350" y2="210"/>
+      <line x1="50" y1="230" x2="350" y2="230"/>
+    </g>
+    
+    <!-- 돌 벼루 (먹을 가는 도구) -->
+    <g transform="translate(130, 150)">
+      <!-- 벼루 그림자 -->
+      <rect x="-45" y="-60" width="90" height="120" rx="10" fill="#b2babb" opacity="0.8"/>
+      <!-- 벼루 본체 (검은 돌) -->
+      <rect x="-50" y="-65" width="90" height="120" rx="10" fill="#2c3e50" stroke="#1a252f" stroke-width="3"/>
+      
+      <!-- 먹물이 고이는 홈 (연지) -->
+      <ellipse cx="0" cy="-40" rx="30" ry="15" fill="#17202a"/>
+      <!-- 먹을 가는 바닥 (연당) -->
+      <rect x="-35" y="-20" width="70" height="65" rx="5" fill="#34495e"/>
+      
+      <!-- 고인 짙은 먹물 (검은색) -->
+      <ellipse cx="0" cy="-38" rx="25" ry="12" fill="#000000"/>
+      <ellipse cx="5" cy="-35" rx="15" ry="5" fill="#17202a" opacity="0.8"/> <!-- 먹물 빛 반사 -->
+      
+      <!-- 벼루 상단의 구름 문양 조각 (장식) -->
+      <path d="M-20 -55 Q0 -65 20 -55 Q30 -60 35 -50 Q10 -60 -20 -55" fill="#566573"/>
+    </g>
+    
+    <!-- 먹 (묵) -->
+    <g transform="translate(140, 180) rotate(-15)">
+      <rect x="-15" y="-10" width="30" height="60" fill="#17202a" rx="2"/>
+      <!-- 먹 표면의 금박 글씨장식 -->
+      <rect x="-5" y="5" width="10" height="40" fill="none" stroke="#d4ac0d" stroke-width="1.5"/>
+      <line x1="-3" y1="15" x2="3" y2="15" stroke="#f1c40f" stroke-width="1.5"/>
+      <line x1="-3" y1="25" x2="3" y2="25" stroke="#f1c40f" stroke-width="1.5"/>
+      <line x1="-3" y1="35" x2="3" y2="35" stroke="#f1c40f" stroke-width="1.5"/>
+    </g>
+    
+    <!-- 붓 2자루 (하나는 붓걸이에, 하나는 벼루에 걸쳐짐) -->
+    
+    <!-- 붓 1 (벼루에 걸쳐진 사용 중인 붓) -->
+    <g transform="translate(250, 140) rotate(-45)">
+      <!-- 붓대 그림자 -->
+      <rect x="-6" y="25" width="12" height="100" fill="#b2babb" rx="5" opacity="0.6" transform="translate(10, 10)"/>
+      
+      <!-- 붓대 (대나무) -->
+      <rect x="-6" y="-30" width="12" height="100" fill="#f5b041" stroke="#d68910" stroke-width="2" rx="3"/>
+      <!-- 대나무 마디 -->
+      <line x1="-6" y1="20" x2="6" y2="20" stroke="#d68910" stroke-width="2"/>
+      
+      <!-- 붓털 장착부 (금속/검은 플라스틱 재질) -->
+      <rect x="-5" y="-40" width="10" height="10" fill="#17202a"/>
+      
+      <!-- 붓털 (먹물을 머금은 부드러운 털) -->
+      <path d="M-5 -40 C-10 -55 0 -80 0 -80 C0 -80 10 -55 5 -40 Z" fill="#34495e" stroke="#17202a" stroke-width="2"/>
+      <!-- 붓털 끝의 진한 먹물 -->
+      <path d="M-3 -60 C-5 -70 0 -80 0 -80 C0 -80 5 -70 3 -60 Z" fill="#000000"/>
+    </g>
+    
+    <!-- 붓 2 (가지런히 놓여있는 마른 붓) -->
+    <g transform="translate(290, 170) rotate(-15)">
+      <rect x="-5" y="-30" width="10" height="110" fill="#f8c471" stroke="#d68910" stroke-width="2" rx="3"/>
+      <line x1="-5" y1="30" x2="5" y2="30" stroke="#d68910" stroke-width="2"/>
+      <rect x="-4" y="-40" width="8" height="10" fill="#7f8c8d"/>
+      <path d="M-4 -40 C-8 -55 0 -75 0 -75 C0 -75 8 -55 4 -40 Z" fill="#bdc3c7" stroke="#95a5a6" stroke-width="2"/> <!-- 하얀 붓털 (새 붓) -->
+    </g>
+    
+    <!-- 한 장의 사초 종이 (일부만 보임) -->
+    <g transform="translate(350, 80) rotate(10)">
+      <rect x="-50" y="0" width="100" height="80" fill="#fdfefe" stroke="#bdc3c7" stroke-width="1"/>
+      <line x1="-30" y1="20" x2="-30" y2="60" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-10" y1="10" x2="-10" y2="70" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="10" y1="30" x2="10" y2="60" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+  </g>
+</svg>

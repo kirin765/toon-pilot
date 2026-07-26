@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="sotdae">
+    <!-- 긴 나무 장대 -->
+    <rect x="195" y="100" width="10" height="200" fill="#8b4513"/>
+    
+    <!-- 새가 앉은 가로막대 -->
+    <rect x="170" y="100" width="60" height="8" fill="#a0522d"/>
+    <path d="M170 100 L160 90 M230 100 L240 90" stroke="#a0522d" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- 나무 오리/새 몸통 -->
+    <path d="M180 80 Q200 60 220 80 Q230 85 240 75 Q210 100 180 80 Z" fill="#d2b48c"/>
+    
+    <!-- 새 꼬리 -->
+    <path d="M180 80 L150 70 L170 90 Z" fill="#c19a6b"/>
+    
+    <!-- 새 머리와 부리 -->
+    <circle cx="235" cy="70" r="10" fill="#d2b48c"/>
+    <polygon points="243,68 260,65 242,72" fill="#8b4513"/>
+    
+    <!-- 새 눈 -->
+    <circle cx="235" cy="68" r="2" fill="#000000"/>
+    
+    <!-- 밧줄 결속 부위 (장대와 가로막대 교차점) -->
+    <path d="M190 95 L210 115 M210 95 L190 115" stroke="#cd853f" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="seonangdang">
+    <!-- 마을 어귀에 돌을 쌓아놓고 오색 천을 묶어둔 서낭당(성황당) -->
+    
+    <!-- 뒤쪽 배경 (오래된 신목과 하늘) -->
+    <rect width="400" height="300" fill="#d5f5e3"/>
+    
+    <!-- 거대한 신목 (서낭나무) 의 아랫부분 줄기 -->
+    <path d="M150 0 L180 300 L280 300 L250 0 Z" fill="#5c3a21" stroke="#3e2723" stroke-width="2"/>
+    <path d="M170 0 Q190 150 200 300 M210 0 Q220 150 230 300 M240 0 L250 300" stroke="#3e2723" stroke-width="4" opacity="0.6"/> <!-- 나무껍질 결 -->
+    
+    <!-- 나뭇가지에 걸린 오색 헝겊 (천 조각들) -->
+    <!-- 빨강, 파랑, 노랑, 하양 등 민간 신앙의 오방색 -->
+    <g stroke-width="4" stroke-linecap="round">
+      <path d="M155 50 Q120 70 130 100" fill="none" stroke="#e74c3c"/>
+      <path d="M160 60 Q130 80 140 120" fill="none" stroke="#3498db"/>
+      <path d="M165 70 Q150 90 155 130" fill="none" stroke="#f1c40f"/>
+      
+      <path d="M245 40 Q280 50 290 80" fill="none" stroke="#2ecc71"/>
+      <path d="M248 80 Q290 90 280 130" fill="none" stroke="#fdfefe" stroke-width="5"/>
+      <path d="M240 110 Q270 130 265 170" fill="none" stroke="#e74c3c"/>
+    </g>
+    
+    <!-- 신목 앞에 쌓인 커다란 돌무더기 -->
+    <!-- 백성들이 길을 가다 하나씩 쌓으며 소원을 빌었던 장소 -->
+    <g transform="translate(200, 260)">
+      
+      <!-- 맨 아랫단 큰 돌들 -->
+      <path d="M-80 0 Q-70 -30 -40 -20 L-60 20 Z" fill="#7f8c8d" stroke="#34495e" stroke-width="2"/>
+      <path d="M-30 -10 Q0 -40 30 -20 L10 20 Z" fill="#95a5a6" stroke="#566573" stroke-width="2"/>
+      <path d="M40 -15 Q70 -35 80 0 L50 20 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      <path d="M-60 10 Q-30 -10 0 15 L-20 30 Z" fill="#34495e" stroke="#2c3e50" stroke-width="2"/>
+      
+      <!-- 중간 단 돌들 -->
+      <path d="M-50 -30 Q-30 -60 0 -40 L-20 -15 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      <path d="M-10 -35 Q20 -50 40 -30 L10 -15 Z" fill="#7f8c8d" stroke="#34495e" stroke-width="2"/>
+      <path d="M30 -40 Q50 -60 70 -35 L40 -20 Z" fill="#95a5a6" stroke="#566573" stroke-width="2"/>
+      
+      <!-- 윗단 돌들 -->
+      <path d="M-30 -55 Q-10 -80 20 -60 L0 -40 Z" fill="#95a5a6" stroke="#566573" stroke-width="2"/>
+      <path d="M10 -65 Q30 -90 50 -65 L20 -45 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+      
+      <!-- 맨 꼭대기 돌 (간절한 기원이 담긴 돌) -->
+      <path d="M0 -85 Q15 -110 30 -85 L15 -65 Z" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+      
+    </g>
+    
+    <!-- 짚으로 꼬아 만든 금줄 (나쁜 기운을 막기 위해 나무에 두름) -->
+    <path d="M165 180 Q200 200 260 170" fill="none" stroke="#d4ac0d" stroke-width="6"/>
+    <path d="M165 180 Q200 200 260 170" fill="none" stroke="#b9770e" stroke-width="3" stroke-dasharray="5,2"/> <!-- 새끼줄 텍스처 -->
+    
+    <!-- 금줄에 끼워진 하얀 한지 조각 (소지) -->
+    <polygon points="190,190 200,195 200,220 185,220" fill="#fdfefe" stroke="#bdc3c7" stroke-width="1"/>
+    <polygon points="230,180 240,185 245,210 225,205" fill="#fdfefe" stroke="#bdc3c7" stroke-width="1"/>
+    
+  </g>
+</svg>

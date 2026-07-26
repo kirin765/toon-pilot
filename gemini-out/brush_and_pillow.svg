@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="brush_and_pillow">
+    <!-- 임제와 한우의 시조 랩 배틀: 붓과 원앙 베개 -->
+    
+    <!-- 따뜻하고 화려한 기방 안방의 조명 -->
+    <rect width="400" height="300" fill="#7b241c"/>
+    <ellipse cx="200" cy="200" rx="180" ry="80" fill="#922b21"/>
+    
+    <!-- 한우(기생)가 준비한 푹신한 원앙침 (원앙새가 수놓아진 베개) -->
+    <g transform="translate(250, 180) rotate(-15)">
+      <!-- 화려한 비단 베개 -->
+      <rect x="-70" y="-40" width="140" height="80" rx="20" fill="#1abc9c" stroke="#117864" stroke-width="3"/>
+      <rect x="-60" y="-30" width="120" height="60" rx="10" fill="#16a085"/>
+      <!-- 원앙 자수 (단순화된 새 두 마리) -->
+      <path d="M-20 0 Q-10 -20 0 0 Q10 10 20 0 Q30 -20 40 0" fill="none" stroke="#f1c40f" stroke-width="3"/>
+      <circle cx="-15" cy="-5" r="3" fill="#e74c3c"/>
+      <circle cx="25" cy="-5" r="3" fill="#e74c3c"/>
+      <!-- 베개 양끝의 화려한 장식 술 -->
+      <path d="M-70 -20 L-90 -10 M-70 0 L-95 0 M-70 20 L-90 10" stroke="#f1c40f" stroke-width="4" stroke-linecap="round"/>
+      <path d="M70 -20 L90 -10 M70 0 L95 0 M70 20 L90 10" stroke="#f1c40f" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    
+    <!-- 임제가 쓴 시조가 적힌 한지와 붓 -->
+    <g transform="translate(130, 220) rotate(10)">
+      <!-- 펼쳐진 한지 종이 -->
+      <polygon points="-50,-60 60,-50 50,60 -60,50" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="2"/>
+      <!-- 힘찬 초서체 한자 (찬비 '한우'를 은유하는 글씨체) -->
+      <path d="M-30 -30 Q-10 -40 10 -20 Q20 20 0 40" fill="none" stroke="#2c3e50" stroke-width="5" stroke-linecap="round"/>
+      <path d="M-10 -10 L20 10 M10 -30 L40 0" stroke="#2c3e50" stroke-width="4" stroke-linecap="round"/>
+      
+      <!-- 종이 위에 툭 던져진 양반의 붓 -->
+      <g transform="translate(-20, 10) rotate(-45)">
+        <!-- 붓대 -->
+        <rect x="-40" y="-5" width="80" height="10" fill="#873600"/>
+        <!-- 붓모 (먹물이 듬뿍 묻음) -->
+        <path d="M40 -5 Q60 -5 65 0 Q60 5 40 5 Z" fill="#111"/>
+      </g>
+    </g>
+    
+    <!-- 차가운 겨울비(찬비)가 내리는 밖을 암시하는 창살과 빗방울 -->
+    <g transform="translate(60, 80)">
+      <rect x="-40" y="-60" width="80" height="120" fill="none" stroke="#873600" stroke-width="6"/>
+      <path d="M0 -60 L0 60 M-40 0 L40 0 M-40 -30 L40 -30 M-40 30 L40 30 M-20 -60 L-20 60 M20 -60 L20 60" stroke="#873600" stroke-width="2"/>
+      <!-- 창밖의 푸른 찬비 -->
+      <path d="M10 -50 L-10 -10 M30 -20 L10 20 M-10 10 L-30 50" stroke="#3498db" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+  </g>
+</svg>

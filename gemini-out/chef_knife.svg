@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="chef_knife">
+    <!-- 조선 궁중 요리를 전담했던 남자 요리사 '대령숙수'의 주방 도구 -->
+    
+    <!-- 수라간(수라방)의 나무 조리대 배경 -->
+    <rect width="400" height="300" fill="#8b5a2b"/>
+    <path d="M0 50 L400 50 M0 150 L400 150 M0 250 L400 250" stroke="#5c3a21" stroke-width="4" opacity="0.5"/> <!-- 나무판자 결 -->
+    
+    <!-- 거대하고 두툼한 원목 도마 (통나무를 잘라 만든 형태) -->
+    <g transform="translate(200, 160)">
+      <!-- 도마 그림자 -->
+      <ellipse cx="10" cy="40" rx="140" ry="60" fill="#3e2723" opacity="0.6"/>
+      
+      <!-- 도마 옆면 (두께감) -->
+      <path d="M-130 0 L-130 30 C-130 80 130 80 130 30 L130 0 Z" fill="#a67c52" stroke="#5c3a21" stroke-width="3"/>
+      
+      <!-- 도마 윗면 (칼자국이 무수히 난 나무 단면) -->
+      <ellipse cx="0" cy="0" rx="130" ry="50" fill="#f5cba7" stroke="#5c3a21" stroke-width="4"/>
+      
+      <!-- 나이테 묘사 -->
+      <ellipse cx="0" cy="0" rx="110" ry="40" fill="none" stroke="#e59866" stroke-width="2" opacity="0.7"/>
+      <ellipse cx="0" cy="0" rx="80" ry="30" fill="none" stroke="#e59866" stroke-width="2" opacity="0.7"/>
+      <ellipse cx="0" cy="0" rx="50" ry="15" fill="none" stroke="#e59866" stroke-width="2" opacity="0.7"/>
+      
+      <!-- 험하게 쓴 칼자국 (숙수들의 엄청난 노동 강도 상징) -->
+      <g stroke="#d35400" stroke-width="1.5" opacity="0.5">
+        <line x1="-50" y1="-20" x2="-20" y2="10"/>
+        <line x1="-40" y1="-25" x2="-10" y2="5"/>
+        <line x1="30" y1="-10" x2="60" y2="20"/>
+        <line x1="40" y1="-15" x2="70" y2="15"/>
+        <line x1="-10" y1="20" x2="10" y2="30"/>
+        <line x1="0" y1="25" x2="20" y2="35"/>
+        <line x1="-80" y1="10" x2="-60" y2="20"/>
+      </g>
+    </g>
+    
+    <!-- 큼직한 고깃덩어리 (소를 해체하여 준비한 연회용 고기) -->
+    <g transform="translate(140, 150)">
+      <!-- 고기 그림자 -->
+      <ellipse cx="10" cy="15" rx="50" ry="20" fill="#873600" opacity="0.5"/>
+      <!-- 생고기 덩어리 -->
+      <path d="M-40 -10 C-30 -30 30 -30 50 0 C60 20 20 30 -10 25 C-40 20 -50 10 -40 -10 Z" fill="#c0392b" stroke="#922b21" stroke-width="2"/>
+      <!-- 마블링 (지방) -->
+      <path d="M-20 -15 Q0 0 -10 20" fill="none" stroke="#fdfefe" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+      <path d="M10 -20 Q30 -5 20 15" fill="none" stroke="#fdfefe" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+      <path d="M-30 0 Q-20 10 -30 15" fill="none" stroke="#fdfefe" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+    </g>
+    
+    <!-- 대령숙수가 쓰는 투박하고 무거운 식칼 (뼈도 자를 수 있는 넓적한 형태) -->
+    <g transform="translate(250, 100) rotate(20)">
+      <!-- 칼 그림자 -->
+      <path d="M-10 10 L-60 110 L20 110 L30 10 Z" fill="#3e2723" opacity="0.4" transform="scale(0.9) translate(10, 10)"/>
+      
+      <!-- 넓적한 무쇠 칼날 -->
+      <path d="M-10 0 L-50 100 Q0 120 20 100 L30 0 Z" fill="#95a5a6" stroke="#566573" stroke-width="3"/>
+      <!-- 칼날 부분 (빛 반사) -->
+      <path d="M-45 95 Q-15 110 15 95 L20 100 Q-15 115 -50 100 Z" fill="#fdfefe" opacity="0.8"/>
+      <!-- 칼날 표면의 거친 질감 (단조 자국) -->
+      <path d="M-20 20 L0 30 M-30 40 L-10 50 M-20 70 L0 80" stroke="#7f8c8d" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      
+      <!-- 단단한 나무 손잡이 -->
+      <rect x="0" y="-60" width="20" height="60" fill="#5c3a21" stroke="#3e2723" stroke-width="3" rx="3"/>
+      <!-- 손잡이 고정용 구리 못 -->
+      <circle cx="10" cy="-45" r="3" fill="#f39c12"/>
+      <circle cx="10" cy="-25" r="3" fill="#f39c12"/>
+      <!-- 칼등과 손잡이 연결부 (쇳동) -->
+      <rect x="-5" y="0" width="30" height="10" fill="#34495e" rx="1"/>
+    </g>
+    
+    <!-- 칼 주위에 튄 붉은 고기 핏물 (거친 작업 환경 묘사) -->
+    <circle cx="210" cy="180" r="3" fill="#922b21"/>
+    <circle cx="230" cy="190" r="2" fill="#922b21"/>
+    <circle cx="200" cy="200" r="4" fill="#922b21"/>
+    <circle cx="180" cy="190" r="1.5" fill="#922b21"/>
+    
+    <!-- 썰어놓은 무 조각 (고기 국물용) -->
+    <path d="M280 160 L310 170 L300 190 L270 180 Z" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+    <path d="M310 140 L340 150 L330 170 L300 160 Z" fill="#fdfefe" stroke="#bdc3c7" stroke-width="2"/>
+    
+  </g>
+</svg>

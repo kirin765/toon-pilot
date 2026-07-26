@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="gobong_rice_bowl">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="260" rx="90" ry="20" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 놋그릇 (유기) 하단부 - 금빛/황동색 -->
+    <path d="M120 180 C120 250 280 250 280 180 Z" fill="#d4ac0d"/>
+    <path d="M130 180 C130 240 270 240 270 180 Z" fill="#f1c40f"/>
+    
+    <!-- 굽 -->
+    <path d="M160 235 L240 235 L230 250 L170 250 Z" fill="#b9770e"/>
+    
+    <!-- 놋그릇 입구 테두리 (전) -->
+    <ellipse cx="200" cy="180" rx="85" ry="15" fill="#f39c12"/>
+    <ellipse cx="200" cy="180" rx="75" ry="12" fill="#e67e22"/>
+    
+    <!-- 어마어마하게 쌓아올린 고봉밥 (흰 쌀밥) -->
+    <g transform="translate(0, 15)">
+      <!-- 밥 무더기 기본 형태 -->
+      <path d="M125 165 C120 100 150 40 200 40 C250 40 280 100 275 165 Z" fill="#ffffff"/>
+      <!-- 밥의 입체감과 질감을 위한 그림자 덩어리들 -->
+      <path d="M135 165 C130 110 160 60 200 60 C240 60 270 110 265 165 Z" fill="#fdfefe"/>
+      
+      <!-- 밥알 질감 (몽글몽글한 곡선들) -->
+      <path d="M140 140 Q160 120 180 140 Q200 110 220 135 Q240 120 260 150" fill="none" stroke="#ecf0f1" stroke-width="6" stroke-linecap="round"/>
+      <path d="M150 110 Q170 90 190 115 Q210 80 230 110 Q240 100 250 120" fill="none" stroke="#ecf0f1" stroke-width="5" stroke-linecap="round"/>
+      <path d="M170 80 Q190 60 210 85 Q220 75 230 90" fill="none" stroke="#ecf0f1" stroke-width="4" stroke-linecap="round"/>
+      
+      <!-- 테두리에 삐져나온 밥알들 -->
+      <circle cx="123" cy="155" r="5" fill="#ffffff"/>
+      <circle cx="277" cy="150" r="4.5" fill="#ffffff"/>
+      <circle cx="270" cy="120" r="5" fill="#ffffff"/>
+      <circle cx="135" cy="110" r="4" fill="#ffffff"/>
+      <circle cx="190" cy="42" r="4" fill="#ffffff"/>
+      <circle cx="210" cy="45" r="3" fill="#ffffff"/>
+    </g>
+    
+    <!-- 모락모락 피어나는 김 -->
+    <path d="M160 40 Q150 10 170 -10 Q190 -30 160 -50" fill="none" stroke="#bdc3c7" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+    <path d="M220 30 Q240 0 210 -20 Q180 -40 220 -60" fill="none" stroke="#bdc3c7" stroke-width="5" stroke-linecap="round" opacity="0.3"/>
+    
+    <!-- 크기 비교를 위한 아주 작은 수저 (조선인의 밥그릇이 얼마나 큰지 강조) -->
+    <g transform="translate(60, 200) rotate(45)">
+      <path d="M0 0 L0 80" stroke="#a0522d" stroke-width="6" stroke-linecap="round"/>
+      <ellipse cx="0" cy="85" rx="8" ry="12" fill="#a0522d"/>
+    </g>
+  </g>
+</svg>

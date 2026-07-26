@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="gejang_and_persimmon">
+    <!-- 영조의 경종 독살설을 상징하는 치명적인 상극 음식 조합: 엎질러진 간장게장과 생감 -->
+    
+    <!-- 소반(작은 밥상) 바닥 그림자 -->
+    <ellipse cx="200" cy="240" rx="130" ry="30" fill="#2c3e50" opacity="0.3"/>
+    <ellipse cx="200" cy="240" rx="100" ry="20" fill="#5c3a21" opacity="0.8"/> <!-- 나무상 바닥 -->
+    
+    <!-- 엎어진 그릇 (경종의 급사와 비극을 상징) -->
+    <g transform="translate(150, 200) rotate(-40)">
+      <ellipse cx="0" cy="20" rx="40" ry="15" fill="#17202a" opacity="0.5"/> <!-- 그릇 그림자 -->
+      <path d="M-50 0 C-50 40 50 40 50 0 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/> <!-- 사기그릇 -->
+      <ellipse cx="0" cy="0" rx="50" ry="15" fill="#fdf2e9" stroke="#7f8c8d" stroke-width="2"/> <!-- 그릇 바닥(뒤집힘) -->
+      <!-- 굽 부분 -->
+      <path d="M-20 -5 L20 -5 L15 -15 L-15 -15 Z" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+    </g>
+    
+    <!-- 그릇에서 쏟아져 나온 새까만 간장 (독약처럼 불길한 느낌 연출) -->
+    <path d="M150 220 Q200 210 250 230 Q280 250 220 260 Q170 270 120 250 Q100 230 150 220 Z" fill="#17202a" opacity="0.8"/>
+    <path d="M150 220 Q200 210 250 230 Q280 250 220 260 Q170 270 120 250 Q100 230 150 220 Z" fill="none" stroke="#2c3e50" stroke-width="3"/>
+    
+    <!-- 간장에 빠진 붉은 게 (간장게장) - 조각나서 흩어진 모습 -->
+    <!-- 게 등딱지 -->
+    <g transform="translate(180, 235) rotate(15)">
+      <ellipse cx="0" cy="0" rx="25" ry="15" fill="#d35400" stroke="#935116" stroke-width="2"/>
+      <path d="M-20 5 Q0 15 20 5" fill="none" stroke="#a04000" stroke-width="2"/>
+      <circle cx="-10" cy="-5" r="2" fill="#17202a"/>
+      <circle cx="10" cy="-5" r="2" fill="#17202a"/>
+    </g>
+    
+    <!-- 게의 날카로운 집게발 1 -->
+    <g transform="translate(130, 245) rotate(-30)">
+      <path d="M0 0 L15 -10 L30 5 L20 15 Z" fill="#e67e22"/>
+      <path d="M30 5 L45 0 L40 10 L30 15 Z" fill="#d35400"/>
+      <path d="M30 15 L40 20 L35 25 L20 15 Z" fill="#d35400"/>
+    </g>
+    
+    <!-- 게의 다리들 (간장물에 잠겨 흐트러짐) -->
+    <path d="M190 250 L210 265 L200 275" fill="none" stroke="#d35400" stroke-width="4" stroke-linecap="round"/>
+    <path d="M200 245 L225 255 L220 270" fill="none" stroke="#d35400" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- 상극의 음식, 붉은 생감 (독살 의혹의 핵심) -->
+    <!-- 감 1 (간장물 옆에 구르는 온전한 감) -->
+    <g transform="translate(260, 210) rotate(-20)">
+      <ellipse cx="0" cy="20" rx="25" ry="8" fill="#17202a" opacity="0.6"/> <!-- 감 그림자 -->
+      <circle cx="0" cy="0" r="25" fill="#e67e22"/> <!-- 주황색 생감 -->
+      <ellipse cx="-5" cy="-5" rx="20" ry="15" fill="#f39c12"/> <!-- 하이라이트 -->
+      <!-- 감꼭지 -->
+      <path d="M-10 -20 L10 -20 L5 -10 L0 -5 L-5 -10 Z" fill="#27ae60" stroke="#1e8449" stroke-width="1"/>
+      <path d="M-15 -15 Q-5 -25 15 -15" fill="none" stroke="#1e8449" stroke-width="2"/>
+    </g>
+    
+    <!-- 감 2 (반쯤 베어 먹히거나 잘린 감 - 누군가 독을 먹었음을 암시) -->
+    <g transform="translate(280, 245) rotate(45)">
+      <path d="M-20 -20 A 25 25 0 1 1 20 20 L0 0 Z" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
+      <path d="M-15 -15 L0 0 L15 15" fill="none" stroke="#f1c40f" stroke-width="2"/> <!-- 감 단면 과육 질감 -->
+      <!-- 감 씨앗 -->
+      <ellipse cx="5" cy="5" rx="5" ry="2" fill="#5c3a21" transform="rotate(-45 5 5)"/>
+      <ellipse cx="-5" cy="-5" rx="5" ry="2" fill="#5c3a21" transform="rotate(-45 -5 -5)"/>
+    </g>
+    
+  </g>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="old_gong_and_mallet">
+    <!-- 격쟁: 억울함을 외치며 미친 듯이 두드려 낡고 찌그러진 징(혹은 꽹과리)과 부러진 채 -->
+    
+    <!-- 흙먼지가 날리는 조선의 길거리 바닥 배경 -->
+    <rect width="400" height="300" fill="#a67c52"/>
+    <!-- 백성들의 발자국 흔적과 먼지 효과 -->
+    <ellipse cx="200" cy="150" rx="150" ry="100" fill="#d39e6a" opacity="0.4"/>
+    
+    <!-- 치열한 몸싸움 끝에 바닥에 내동댕이쳐진 커다란 징(꽹과리) -->
+    <g transform="translate(180, 160) rotate(15)">
+      <!-- 징의 뒷면/그림자 효과 -->
+      <ellipse cx="-5" cy="5" rx="90" ry="90" fill="#7d6608" opacity="0.6"/>
+      
+      <!-- 징의 황동색 원형 본체 -->
+      <circle cx="0" cy="0" r="90" fill="#f1c40f" stroke="#b9770e" stroke-width="5"/>
+      <!-- 징 표면의 질감 (망치로 두드려 만든 자국들) -->
+      <circle cx="0" cy="0" r="70" fill="none" stroke="#d4ac0d" stroke-width="3"/>
+      <circle cx="0" cy="0" r="50" fill="none" stroke="#d4ac0d" stroke-width="2"/>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="#d4ac0d" stroke-width="2"/>
+      
+      <!-- 수없이 두들겨 맞아 심하게 찌그러지고 파인 자국 (격쟁의 절박함) -->
+      <path d="M-30 -20 Q0 -40 20 -10 Q10 10 -30 -20 Z" fill="#b9770e" opacity="0.5"/>
+      <path d="M40 30 Q60 50 30 70 Q10 40 40 30 Z" fill="#9a7d0a" opacity="0.6"/>
+      <circle cx="-10" cy="40" r="15" fill="#b9770e" opacity="0.4"/>
+      
+      <!-- 징을 매달았던 낡고 끊어진 붉은색 무명끈 -->
+      <path d="M-85 -30 C-110 -60 -50 -100 -20 -70" fill="none" stroke="#c0392b" stroke-width="6"/>
+      <!-- 끈이 끊어져 너덜거리는 끝부분 -->
+      <path d="M-20 -70 L-10 -80 M-20 -70 L-15 -60" stroke="#c0392b" stroke-width="3"/>
+    </g>
+    
+    <!-- 격하게 치다가 부러져 나간 징채 (나무 막대기와 천 뭉치) -->
+    <g transform="translate(280, 220) rotate(-40)">
+      <!-- 부러진 나무 막대 (밑동) -->
+      <rect x="-8" y="0" width="16" height="70" rx="3" fill="#8d6e63" stroke="#4e342e" stroke-width="3"/>
+      <!-- 막대기가 두 동강 나 부러진 거친 단면 -->
+      <path d="M-8 0 L0 -10 L8 0 Z" fill="#e6c280" stroke="#4e342e" stroke-width="2"/>
+      <!-- 징을 치는 타격부 (둥글게 뭉친 헝겊) -->
+      <circle cx="0" cy="70" r="25" fill="#ecf0f1" stroke="#95a5a6" stroke-width="3"/>
+      <!-- 헝겊을 감은 실 묘사 -->
+      <path d="M-20 60 Q0 50 20 60 M-25 70 L25 70 M-20 80 Q0 90 20 80" fill="none" stroke="#7f8c8d" stroke-width="2"/>
+      <!-- 시위 중 다친 백성의 피가 타격부에 묻어 있는 얼룩 -->
+      <circle cx="10" cy="65" r="8" fill="#e74c3c" opacity="0.7"/>
+      <circle cx="0" cy="80" r="5" fill="#e74c3c" opacity="0.5"/>
+    </g>
+    
+    <!-- 부러져 튕겨 나간 나무 막대의 윗부분 조각 -->
+    <g transform="translate(320, 140) rotate(25)">
+      <rect x="-6" y="-30" width="12" height="40" fill="#8d6e63" stroke="#4e342e" stroke-width="2"/>
+      <!-- 뾰족하게 부러진 단면 -->
+      <path d="M-6 10 L0 20 L6 10 Z" fill="#e6c280" stroke="#4e342e" stroke-width="2"/>
+    </g>
+    
+    <!-- 처절한 격쟁의 순간을 묘사하는 허공의 흙먼지와 떨림 표시 -->
+    <path d="M60 100 Q40 120 70 140" fill="none" stroke="#7d6608" stroke-width="4" stroke-dasharray="10 5" opacity="0.5"/>
+    <path d="M100 70 Q130 50 150 80" fill="none" stroke="#7d6608" stroke-width="3" stroke-dasharray="8 6" opacity="0.4"/>
+    
+  </g>
+</svg>

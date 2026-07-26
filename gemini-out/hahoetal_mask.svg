@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="hahoetal_mask">
+    <!-- 한국의 미소: 하회탈 (가장 대표적인 양반탈) -->
+    
+    <!-- 무대나 전시 느낌의 단색 배경 -->
+    <rect width="400" height="300" fill="#34495e"/>
+    <!-- 후광 효과 -->
+    <circle cx="200" cy="150" r="100" fill="#f1c40f" opacity="0.2" filter="blur(10px)"/>
+    
+    <!-- 하회탈 (양반탈) 본체 -->
+    <g transform="translate(200, 150)">
+      <!-- 오리나무 질감의 기본 얼굴 형태 (넓은 이마와 둥근 하관) -->
+      <!-- 이마와 볼 부분 -->
+      <path d="M-70 -30 C-90 -120 90 -120 70 -30 C80 20 60 70 0 70 C-60 70 -80 20 -70 -30 Z" fill="#d4ac0d" stroke="#9c640c" stroke-width="3"/>
+      <!-- 나무결 묘사 -->
+      <path d="M-50 -70 Q0 -90 50 -70 M-60 -20 Q-70 10 -40 40 M60 -20 Q70 10 40 40" fill="none" stroke="#b9770e" stroke-width="2" opacity="0.5"/>
+      
+      <!-- 눈썹 (풍성하고 처진 눈썹) -->
+      <path d="M-60 -40 C-50 -60 -20 -60 -10 -40" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+      <path d="M60 -40 C50 -60 20 -60 10 -40" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+      
+      <!-- 하회탈 특유의 웃는 눈 (반달 모양으로 깊게 파임) -->
+      <!-- 왼쪽 눈 -->
+      <path d="M-55 -25 Q-35 -40 -15 -20" fill="none" stroke="#7e5109" stroke-width="4"/>
+      <path d="M-50 -25 Q-35 -30 -20 -20" fill="none" stroke="#111" stroke-width="2"/>
+      <!-- 오른쪽 눈 -->
+      <path d="M55 -25 Q35 -40 15 -20" fill="none" stroke="#7e5109" stroke-width="4"/>
+      <path d="M50 -25 Q35 -30 20 -20" fill="none" stroke="#111" stroke-width="2"/>
+      
+      <!-- 눈가의 주름 (호쾌한 웃음) -->
+      <path d="M-60 -20 L-65 -15 M-60 -15 L-63 -10" stroke="#7e5109" stroke-width="2"/>
+      <path d="M60 -20 L65 -15 M60 -15 L63 -10" stroke="#7e5109" stroke-width="2"/>
+      
+      <!-- 코 (크고 뭉툭한 매부리코) -->
+      <path d="M-10 -20 L10 -20 L15 10 C15 20 -15 20 -15 10 Z" fill="#c0392b" stroke="#78281f" stroke-width="2"/> <!-- 붉은 색감의 코 -->
+      <!-- 콧구멍 -->
+      <circle cx="-5" cy="10" r="3" fill="#111"/>
+      <circle cx="5" cy="10" r="3" fill="#111"/>
+      
+      <!-- 볼과 광대 (깊게 패인 주름) -->
+      <path d="M-40 0 Q-15 10 -15 30" fill="none" stroke="#7e5109" stroke-width="4" stroke-linecap="round"/>
+      <path d="M40 0 Q15 10 15 30" fill="none" stroke="#7e5109" stroke-width="4" stroke-linecap="round"/>
+      
+      <!-- 양반탈의 가장 큰 특징: 분리되어 달랑거리는 턱 (크게 웃는 입) -->
+      <!-- 입 안의 어두운 빈 공간 -->
+      <path d="M-45 35 C-20 25 20 25 45 35 C30 65 -30 65 -45 35 Z" fill="#111"/>
+      <!-- 떨어져 있는 턱 조각 -->
+      <path d="M-45 45 C-30 80 30 80 45 45 C30 70 -30 70 -45 45 Z" fill="#d4ac0d" stroke="#9c640c" stroke-width="2"/>
+      <!-- 턱선 끈 (볼과 턱을 연결하는 끈) -->
+      <line x1="-48" y1="35" x2="-45" y2="45" stroke="#7e5109" stroke-width="2"/>
+      <line x1="48" y1="35" x2="45" y2="45" stroke="#7e5109" stroke-width="2"/>
+      
+      <!-- 머리에 쓴 검은색 관(모자) -->
+      <path d="M-60 -70 C-50 -100 50 -100 60 -70 L-60 -70 Z" fill="#1c2833" stroke="#111" stroke-width="2"/>
+      <rect x="-65" y="-70" width="130" height="10" fill="#111"/>
+    </g>
+    
+  </g>
+</svg>

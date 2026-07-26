@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="jeolgu">
+    <!-- 절구통 그림자 -->
+    <ellipse cx="200" cy="270" rx="90" ry="20" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 절구통 몸통 (나무 재질) -->
+    <path d="M130 150 Q120 260 140 270 L260 270 Q280 260 270 150 Z" fill="#8b4513"/>
+    <!-- 절구통 나뭇결 윤곽 -->
+    <path d="M150 160 Q145 220 160 265 M180 155 Q175 220 185 268 M220 155 Q225 220 215 268 M250 160 Q255 220 240 265" stroke="#a0522d" stroke-width="4" stroke-linecap="round" fill="none"/>
+    
+    <!-- 절구통 윗부분 (테두리와 구멍) -->
+    <ellipse cx="200" cy="150" rx="70" ry="25" fill="#a0522d"/>
+    <ellipse cx="200" cy="150" rx="50" ry="15" fill="#3e2723"/> <!-- 안쪽 어두운 구멍 -->
+    
+    <!-- 곡식 가루 (구멍 안) -->
+    <ellipse cx="200" cy="155" rx="40" ry="10" fill="#f5deb3"/>
+    
+    <!-- 절굿공이 (절구 찧는 몽둥이) -->
+    <!-- 뒤로 들어간 부분 -->
+    <path d="M180 155 L160 30" stroke="#cd853f" stroke-width="25" stroke-linecap="round"/>
+    <!-- 손잡이 중앙 볼록한 부분 -->
+    <ellipse cx="165" cy="90" rx="15" ry="30" fill="#cd853f" transform="rotate(-15 165 90)"/>
+    <!-- 손잡이 나무 질감 -->
+    <path d="M165 50 L175 140" stroke="#8b4513" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

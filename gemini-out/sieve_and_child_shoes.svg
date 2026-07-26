@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="sieve_and_child_shoes">
+    <!-- 야광귀 방어: 벽에 걸린 구멍 많은 체와 숨겨둔 아이 신발 -->
+    
+    <!-- 섣달그믐 밤의 어두운 초가집 마루 벽면 배경 -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    <path d="M0 0 L400 0 L400 300 L0 300 Z" fill="#212f3d" opacity="0.6"/> <!-- 벽 그림자 -->
+    <!-- 진흙과 짚으로 엮은 흙벽 텍스처 -->
+    <path d="M50 0 L50 300 M150 0 L150 300 M250 0 L250 300 M350 0 L350 300" stroke="#17202a" stroke-width="2" opacity="0.3"/>
+    
+    <!-- 야광귀를 쫓기 위해 문 앞(벽)에 걸어둔 커다란 체 (곡식 거르는 도구) -->
+    <g transform="translate(200, 120)">
+      <!-- 체의 둥근 테두리 (나무 껍질 엮은 것) -->
+      <circle cx="0" cy="0" r="90" fill="#fdf2e9" stroke="#d5c8a0" stroke-width="8"/>
+      <circle cx="0" cy="0" r="86" fill="none" stroke="#b9770e" stroke-width="2"/>
+      
+      <!-- 체의 촘촘한 그물망 (구멍들) - 야광귀가 세어야 할 대상 -->
+      <!-- 가로줄 -->
+      <path d="M-80 -40 L80 -40 M-85 -20 L85 -20 M-90 0 L90 0 M-85 20 L85 20 M-80 40 L80 40 M-60 60 L60 60 M-60 -60 L60 -60" stroke="#d4ac0d" stroke-width="2" opacity="0.8"/>
+      <!-- 세로줄 -->
+      <path d="M-40 -80 L-40 80 M-20 -85 L-20 85 M0 -90 L0 90 M20 -85 L20 85 M40 -80 L40 80 M60 -60 L60 60 M-60 -60 L-60 60" stroke="#d4ac0d" stroke-width="2" opacity="0.8"/>
+      
+      <!-- 체를 걸어둔 새끼줄 끈과 못 -->
+      <path d="M0 -90 L-20 -130 L20 -130 Z" fill="none" stroke="#935116" stroke-width="4"/>
+      <circle cx="0" cy="-130" r="4" fill="#7f8c8d"/> <!-- 쇠못 -->
+    </g>
+    
+    <!-- 방 안(또는 마루 구석)에 급히 숨겨둔 작은 아이 신발 (갖신/태사혜) -->
+    <!-- 왼쪽 신발 -->
+    <g transform="translate(140, 260) rotate(-15)">
+      <path d="M-25 0 C-25 -15 0 -25 25 -20 C40 -15 45 5 40 15 C30 25 -20 20 -25 0 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="3"/>
+      <path d="M-5 -15 Q15 -20 25 -15" fill="none" stroke="#fff" stroke-width="2"/> <!-- 하얀 선 장식 -->
+      <ellipse cx="-15" cy="-5" rx="8" ry="15" fill="#111" transform="rotate(20 -15 -5)"/> <!-- 신발 입구 -->
+    </g>
+    
+    <!-- 오른쪽 신발 (약간 엎어져 있음) -->
+    <g transform="translate(260, 265) rotate(25) scale(-1, 1)">
+      <path d="M-25 0 C-25 -15 0 -25 25 -20 C40 -15 45 5 40 15 C30 25 -20 20 -25 0 Z" fill="#3498db" stroke="#2980b9" stroke-width="3"/>
+      <path d="M-5 -15 Q15 -20 25 -15" fill="none" stroke="#fff" stroke-width="2"/>
+      <ellipse cx="-15" cy="-5" rx="8" ry="15" fill="#111" transform="rotate(20 -15 -5)"/>
+    </g>
+    
+    <!-- 야광귀가 다가오는 듯한 으스스한 안개 효과 -->
+    <ellipse cx="200" cy="280" rx="180" ry="30" fill="#ecf0f1" opacity="0.1" filter="blur(8px)"/>
+    <ellipse cx="100" cy="150" rx="50" ry="80" fill="#ecf0f1" opacity="0.05" filter="blur(10px)"/>
+  </g>
+</svg>

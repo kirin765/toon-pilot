@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="uibin_tombstone">
+    <!-- 정조와 의빈 성씨의 슬픈 15년 짝사랑과 어제의빈묘지명 -->
+    
+    <rect width="400" height="300" fill="#2c3e50"/>
+    
+    <!-- 비석 뒤로 비치는 슬픈 달빛 -->
+    <circle cx="200" cy="150" r="100" fill="#ecf0f1" opacity="0.1" filter="blur(10px)"/>
+    
+    <!-- 정조가 직접 쓴 어제의빈묘지명 (가슴 아픈 비석) -->
+    <g transform="translate(150, 60)">
+      <!-- 비석 그림자 -->
+      <rect x="10" y="10" width="100" height="200" fill="#17202a" opacity="0.5"/>
+      <!-- 차갑고 거친 화강암 비석 -->
+      <rect x="0" y="0" width="100" height="200" rx="5" ry="5" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="3"/>
+      <path d="M0 20 L100 20" stroke="#95a5a6" stroke-width="2"/>
+      
+      <!-- 정조의 피눈물이 담긴 글귀 (세로쓰기 한자 형상화) -->
+      <!-- "사랑한다", "슬프다" 등의 감정이 담긴 먹물 자국 -->
+      <path d="M 80 40 L 80 180" stroke="#2c3e50" stroke-width="4" stroke-dasharray="10 15"/>
+      <path d="M 60 40 L 60 160" stroke="#2c3e50" stroke-width="4" stroke-dasharray="5 20 15 10"/>
+      <!-- 마지막 줄은 유독 진하고 번진 눈물 자국 -->
+      <path d="M 40 40 L 40 100" stroke="#2c3e50" stroke-width="5"/>
+      <circle cx="40" cy="115" r="4" fill="#2c3e50"/>
+      <circle cx="40" cy="130" r="6" fill="#2c3e50" opacity="0.7"/> <!-- 눈물에 번진 먹 -->
+      <circle cx="40" cy="150" r="3" fill="#2c3e50" opacity="0.4"/>
+    </g>
+    
+    <!-- 비석 아래 놓인 두 사람의 상징물 -->
+    <!-- 1. 정조의 절박한 마음을 상징하는 임금의 붉은 옥새(어보) 도장 -->
+    <g transform="translate(100, 240) rotate(-15)">
+      <!-- 인주(붉은 잉크) 묻은 바닥 -->
+      <rect x="-15" y="10" width="30" height="5" fill="#c0392b"/>
+      <!-- 금빛 어보 몸통 -->
+      <rect x="-15" y="-10" width="30" height="20" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+      <!-- 용 모양 손잡이 (단순화) -->
+      <path d="M-10 -10 C-10 -25 10 -25 10 -10 Z" fill="#d4ac0d" stroke="#b9770e" stroke-width="2"/>
+      <!-- 바닥에 찍힌 붉은 어보 자국 (사랑의 낙인) -->
+      <rect x="40" y="20" width="20" height="20" fill="#e74c3c" opacity="0.6" transform="rotate(25 40 20)"/>
+    </g>
+    
+    <!-- 2. 의빈 성씨(궁녀 성덕임)의 소박한 거절을 상징하는 떨어진 은비녀와 노리개 -->
+    <g transform="translate(260, 250) rotate(20)">
+      <!-- 부러진 은비녀 (이루어지기 힘들었던 사랑과 요절) -->
+      <line x1="-30" y1="0" x2="10" y2="0" stroke="#ecf0f1" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="10" cy="0" r="6" fill="#bdc3c7"/> <!-- 비녀 머리 -->
+      <!-- 부러진 끝부분 -->
+      <line x1="15" y1="5" x2="30" y2="10" stroke="#ecf0f1" stroke-width="4" stroke-linecap="round"/>
+      
+      <!-- 초라하지만 단아한 남색 매듭 노리개 -->
+      <line x1="10" y1="0" x2="15" y2="-20" stroke="#34495e" stroke-width="2"/>
+      <rect x="10" y="-30" width="10" height="10" fill="#3498db"/>
+      <path d="M10 -30 L10 -50 M15 -30 L15 -45 M20 -30 L20 -50" stroke="#2980b9" stroke-width="2"/>
+    </g>
+    
+  </g>
+</svg>

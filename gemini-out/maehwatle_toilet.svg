@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="maehwatle_toilet">
+    <!-- 조선 시대 왕의 이동식 화장실, 매화틀(梅花기)과 놋그릇(매화우) -->
+    
+    <!-- 따뜻한 궁궐 방안 배경 -->
+    <rect width="400" height="300" fill="#fcf3cf"/>
+    <path d="M0 220 L400 220" stroke="#f5b041" stroke-width="2" opacity="0.4"/>
+    
+    <!-- 매화틀 그림자 -->
+    <ellipse cx="200" cy="240" rx="100" ry="30" fill="#d4ac0d" opacity="0.4"/>
+    
+    <!-- 매화틀 (나무로 만든 'ㄷ'자형 의자 형태) -->
+    <!-- 고급스러운 붉은 옻칠이 된 튼튼한 나무 틀 -->
+    <g transform="translate(200, 180)">
+      
+      <!-- 나무 틀 기둥 (4개 중 보이는 3개) -->
+      <!-- 왼쪽 뒤 기둥 -->
+      <rect x="-80" y="-30" width="15" height="100" fill="#a04000" stroke="#5c3a21" stroke-width="2"/>
+      <!-- 오른쪽 뒤 기둥 -->
+      <rect x="65" y="-30" width="15" height="100" fill="#a04000" stroke="#5c3a21" stroke-width="2"/>
+      <!-- 왼쪽 앞 기둥 -->
+      <rect x="-95" y="10" width="15" height="70" fill="#b9770e" stroke="#5c3a21" stroke-width="2"/>
+      <!-- 오른쪽 앞 기둥 -->
+      <rect x="80" y="10" width="15" height="70" fill="#b9770e" stroke="#5c3a21" stroke-width="2"/>
+      
+      <!-- 측면 받침목 -->
+      <polygon points="-80,20 -95,20 -95,30 -80,10" fill="#8b5a2b" stroke="#5c3a21" stroke-width="2"/>
+      <polygon points="65,20 80,20 80,30 65,10" fill="#8b5a2b" stroke="#5c3a21" stroke-width="2"/>
+      
+      <!-- 앉는 부분 (나무판자, 가운데가 직사각형으로 크게 뚫려 있음) -->
+      <g transform="rotate(-15)">
+        <polygon points="-90,0 90,0 110,40 -110,40" fill="#d35400" stroke="#8b5a2b" stroke-width="3"/>
+        <polygon points="-90,0 90,0 110,40 -110,40" fill="none" stroke="#e67e22" stroke-width="1.5" opacity="0.5"/> <!-- 나뭇결 -->
+        
+        <!-- 왕이 앉을 때 부드럽게 감싸는 벨벳 느낌의 붉은 천(비단) 쿠션 패드 -->
+        <polygon points="-80,5 80,5 95,35 -95,35" fill="#c0392b" stroke="#922b21" stroke-width="2"/>
+        
+        <!-- 뚫린 구멍 (배설물이 떨어지는 곳) -->
+        <polygon points="-40,10 40,10 50,30 -50,30" fill="#17202a" stroke="#17202a" stroke-width="2"/>
+        <!-- 구멍의 나무 두께 -->
+        <polygon points="-40,10 40,10 50,30 -50,30" fill="none" stroke="#7e5109" stroke-width="4" opacity="0.8"/>
+      </g>
+      
+      <!-- 뒷받침 (허리를 기대는 곳, 호화로운 조각 장식) -->
+      <path d="M-80 -30 Q0 -60 80 -30 L80 -10 Q0 -30 -80 -10 Z" fill="#d35400" stroke="#8b5a2b" stroke-width="2"/>
+      <!-- 등받이 구름무늬 장식 -->
+      <path d="M-20 -30 Q0 -40 20 -30" fill="none" stroke="#f1c40f" stroke-width="2"/>
+      
+      <!-- 팔걸이 -->
+      <path d="M-80 -10 L-95 10 L-90 15 L-75 -5" fill="#b9770e" stroke="#5c3a21" stroke-width="2"/>
+      <path d="M80 -10 L95 10 L90 15 L75 -5" fill="#b9770e" stroke="#5c3a21" stroke-width="2"/>
+      
+    </g>
+    
+    <!-- 매화우 (배설물을 받는 청동/놋그릇, 틀 아래에 끼워 넣는 형태) -->
+    <!-- 매화틀 안쪽 바닥에 놓인 반짝이는 놋그릇 -->
+    <g transform="translate(200, 240)">
+      <ellipse cx="0" cy="0" rx="50" ry="20" fill="#d4ac0d" stroke="#7e5109" stroke-width="3"/>
+      <!-- 그릇 몸통 -->
+      <path d="M-50 0 C-50 30 50 30 50 0" fill="#f1c40f" stroke="#7e5109" stroke-width="3"/>
+      <!-- 놋그릇의 반짝이는 광택 -->
+      <path d="M-40 10 C-20 20 20 20 40 10" fill="none" stroke="#fdfefe" stroke-width="3" opacity="0.6"/>
+      
+      <!-- 그릇 내부에 담긴 내용물을 가리기 위해 뿌려두는 잘게 썬 짚(여물) -->
+      <!-- 소리를 죽이고 냄새를 막기 위한 용도 -->
+      <ellipse cx="0" cy="0" rx="40" ry="12" fill="#85929e"/>
+      <path d="M-20 0 L-10 5 M0 -5 L10 5 M-5 5 L5 -2 M20 0 L30 5" stroke="#d4ac0d" stroke-width="2" opacity="0.8"/>
+    </g>
+    
+  </g>
+</svg>

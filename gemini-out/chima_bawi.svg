@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="chima_bawi">
+    <!-- 중종과 단경왕후 신씨의 슬픈 이별, 인왕산 치마바위 전설 -->
+    
+    <!-- 차가운 조선의 가을 하늘 -->
+    <rect width="400" height="300" fill="#aeb6bf"/>
+    
+    <!-- 거대하고 외로운 인왕산의 회백색 바위 절벽 -->
+    <path d="M50 300 L150 150 L200 100 L280 120 L350 200 L400 300 Z" fill="#5d6d7e"/>
+    <path d="M100 300 L180 180 L220 160 L280 190 L320 300 Z" fill="#34495e"/>
+    
+    <!-- 깎아지른 바위 표면 디테일 (절망적인 단절을 상징) -->
+    <path d="M180 180 L180 300 M220 160 L230 300 M280 190 L260 300" stroke="#2c3e50" stroke-width="4"/>
+    
+    <!-- 바위 한가운데 아슬아슬하게 걸쳐진 여인의 붉은 치마 (단경왕후의 그리움) -->
+    <g transform="translate(200, 160)">
+      <!-- 바람에 펄럭이는 붉은 치마 폭 (슬픔과 애절함 연출) -->
+      <path d="M -20 0 Q 30 -20 50 10 Q 70 40 40 80 Q 0 100 -30 70 Q -60 40 -20 0 Z" fill="#e74c3c" opacity="0.9"/>
+      <path d="M -20 0 Q 30 -20 50 10 Q 70 40 40 80 Q 0 100 -30 70 Q -60 40 -20 0 Z" fill="none" stroke="#c0392b" stroke-width="3"/>
+      
+      <!-- 치마 주름 -->
+      <path d="M 0 10 Q 20 40 10 70 M 20 5 Q 40 30 30 60 M -10 15 Q -20 40 -15 65" fill="none" stroke="#922b21" stroke-width="2"/>
+      
+      <!-- 치마를 묶었던 하얀 허리끈 (애처롭게 풀어져 바람에 날림) -->
+      <path d="M -15 5 Q -40 -10 -60 10 Q -80 30 -70 50" fill="none" stroke="#ecf0f1" stroke-width="3" stroke-linecap="round"/>
+      <path d="M -5 0 Q 20 -30 40 -20 Q 60 -10 80 -30" fill="none" stroke="#bdc3c7" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    
+    <!-- 멀리 경회루에서 이 바위를 바라보았을 중종의 슬픈 시선(구름) -->
+    <path d="M-50 50 Q 50 20 150 60 Q 250 100 450 40 L 450 0 L -50 0 Z" fill="#d5dbdb" opacity="0.7"/>
+    
+    <!-- 치마 위로 떨어지는 빗방울 또는 왕의 눈물 -->
+    <line x1="220" y1="120" x2="215" y2="140" stroke="#85c1e9" stroke-width="2" opacity="0.6"/>
+    <line x1="250" y1="130" x2="245" y2="150" stroke="#85c1e9" stroke-width="2" opacity="0.6"/>
+    <line x1="180" y1="140" x2="175" y2="160" stroke="#85c1e9" stroke-width="2" opacity="0.6"/>
+    
+  </g>
+</svg>

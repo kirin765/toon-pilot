@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="gamasot">
+    <!-- 가마솥 다리와 아궁이 불 -->
+    <path fill="#e74c3c" d="M130 250 Q200 220 270 250 L250 280 Q200 260 150 280 Z"/>
+    <path fill="#c0392b" d="M160 260 Q200 240 240 260 L220 290 Q200 270 180 290 Z"/>
+    <!-- 가마솥 몸통 -->
+    <ellipse cx="200" cy="200" rx="120" ry="70" fill="#2c3e50"/>
+    <rect x="80" y="140" width="240" height="60" fill="#2c3e50"/>
+    <!-- 전 (테두리 챙) -->
+    <ellipse cx="200" cy="140" rx="140" ry="40" fill="#34495e"/>
+    <ellipse cx="200" cy="140" rx="120" ry="30" fill="#1a252f"/>
+    <!-- 가마솥 뚜껑 -->
+    <path d="M80 140 Q200 40 320 140 Z" fill="#34495e"/>
+    <path d="M100 140 Q200 60 300 140 Z" fill="#2c3e50"/>
+    <!-- 뚜껑 손잡이 -->
+    <rect x="180" y="60" width="40" height="20" fill="#1a252f"/>
+    <ellipse cx="200" cy="60" rx="25" ry="10" fill="#2c3e50"/>
+    <!-- 몸통 손잡이 (양옆) -->
+    <ellipse cx="70" cy="170" rx="15" ry="25" fill="#1a252f"/>
+    <ellipse cx="330" cy="170" rx="15" ry="25" fill="#1a252f"/>
+  </g>
+</svg>

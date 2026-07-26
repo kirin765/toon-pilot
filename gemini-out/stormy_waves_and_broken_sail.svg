@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="stormy_waves_and_broken_sail">
+    <!-- 조선 통신사의 험난한 해난 사고: 거친 파도와 부서진 돛 -->
+    
+    <!-- 어둡고 비바람이 몰아치는 쓰시마 앞바다 배경 -->
+    <rect width="400" height="300" fill="#1a252f"/>
+    <!-- 먹구름과 폭풍우 번개 -->
+    <path d="M0 0 L400 0 L400 100 Q300 150 200 100 Q100 50 0 100 Z" fill="#2c3e50"/>
+    <path d="M150 0 L130 50 L160 50 L120 120" fill="none" stroke="#f1c40f" stroke-width="3" opacity="0.8"/>
+    <path d="M300 0 L280 60 L310 60 L270 140" fill="none" stroke="#f1c40f" stroke-width="2" opacity="0.6"/>
+    <!-- 쏟아지는 비 (사선) -->
+    <line x1="50" y1="0" x2="0" y2="100" stroke="#bdc3c7" stroke-width="1" opacity="0.3"/>
+    <line x1="150" y1="50" x2="100" y2="150" stroke="#bdc3c7" stroke-width="1" opacity="0.4"/>
+    <line x1="250" y1="100" x2="200" y2="200" stroke="#bdc3c7" stroke-width="1" opacity="0.3"/>
+    <line x1="350" y1="20" x2="300" y2="120" stroke="#bdc3c7" stroke-width="1" opacity="0.4"/>
+    
+    <!-- 성난 파도 (겹겹이 치는 바다) -->
+    <path d="M0 250 Q50 200 100 250 T200 250 T300 250 T400 250 L400 300 L0 300 Z" fill="#117a65" opacity="0.6"/>
+    <path d="M0 270 Q80 210 160 270 T320 270 T400 270 L400 300 L0 300 Z" fill="#0e6251" opacity="0.8"/>
+    
+    <!-- 거대한 파도에 휩쓸리는 통신사 배 (목선) -->
+    <g transform="translate(200, 230) rotate(-25)">
+      <!-- 배 밑창 부분 (판옥선 형태) -->
+      <path d="M-80 -20 L80 -20 L60 30 L-60 30 Z" fill="#5d4037" stroke="#3e2723" stroke-width="4"/>
+      <!-- 나무 널빤지 결 -->
+      <line x1="-70" y1="0" x2="70" y2="0" stroke="#3e2723" stroke-width="2"/>
+      <line x1="-65" y1="15" x2="65" y2="15" stroke="#3e2723" stroke-width="2"/>
+      
+      <!-- 부러진 중앙 돛대 -->
+      <line x1="0" y1="-20" x2="-20" y2="-100" stroke="#795548" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-15 -80 L-40 -120 L-30 -130 Z" fill="#795548"/> <!-- 부러진 단면 묘사 -->
+      <line x1="10" y1="-20" x2="60" y2="-80" stroke="#795548" stroke-width="6" stroke-linecap="round"/> <!-- 꺾여 떨어진 윗부분 돛대 -->
+      
+      <!-- 찢겨져 휘날리는 돛 (광목천) -->
+      <path d="M0 -50 Q-40 -30 -80 -60 Q-40 -80 -20 -100 Q10 -60 0 -50 Z" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="2" opacity="0.9"/>
+      <path d="M20 -30 Q60 -10 100 -40 Q60 -70 50 -80 Q30 -50 20 -30 Z" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="2" opacity="0.7"/>
+      <!-- 찢어진 틈새 -->
+      <line x1="-30" y1="-70" x2="-50" y2="-50" stroke="#1a252f" stroke-width="2"/>
+      <line x1="40" y1="-40" x2="60" y2="-20" stroke="#1a252f" stroke-width="2"/>
+      
+      <!-- 조선 통신사 깃발 (물에 젖어 찢어짐) -->
+      <path d="M-60 -20 L-60 -80 L-100 -60 L-70 -40 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+    </g>
+    
+    <!-- 전면을 덮치는 하얀 파도 거품 (포말) -->
+    <path d="M100 300 Q150 200 250 280 T400 250 L400 300 Z" fill="#ecf0f1" opacity="0.7"/>
+    <circle cx="220" cy="260" r="10" fill="#fff" opacity="0.8"/>
+    <circle cx="250" cy="240" r="15" fill="#fff" opacity="0.8"/>
+    <circle cx="280" cy="270" r="8" fill="#fff" opacity="0.8"/>
+    
+  </g>
+</svg>

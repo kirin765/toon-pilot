@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="yeonjabanga">
+    <!-- 바닥 돌판 (아래쪽 갈판) -->
+    <ellipse cx="200" cy="220" rx="150" ry="50" fill="#7f8c8d"/>
+    <ellipse cx="200" cy="210" rx="140" ry="45" fill="#95a5a6"/>
+    
+    <!-- 갈판 중앙 기둥 -->
+    <rect x="190" y="170" width="20" height="50" fill="#a0522d"/>
+    <ellipse cx="200" cy="170" rx="10" ry="5" fill="#8b4513"/>
+    
+    <!-- 윗돌 (구르는 돌 - 연자석) -->
+    <g transform="translate(130, 160)">
+      <!-- 연자석 측면 두께 -->
+      <path d="M0 20 L0 50 Q30 70 60 50 L60 20 Z" fill="#bdc3c7"/>
+      <!-- 연자석 앞면 둥근 원반 -->
+      <ellipse cx="30" cy="20" rx="30" ry="20" fill="#ecf0f1"/>
+      <ellipse cx="30" cy="20" rx="15" ry="10" fill="#95a5a6"/> <!-- 구멍 -->
+    </g>
+    
+    <!-- 나무 프레임 (마구리와 틀) -->
+    <rect x="160" y="175" width="100" height="15" fill="#a0522d"/>
+    <rect x="250" y="170" width="10" height="25" fill="#8b4513"/>
+    <path d="M150 180 L25 210" stroke="#8b4513" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- 곡식 (갈판 위의 곡식 낱알 표현) -->
+    <circle cx="230" cy="230" r="3" fill="#f1c40f"/>
+    <circle cx="240" cy="235" r="3" fill="#f1c40f"/>
+    <circle cx="250" cy="225" r="3" fill="#f1c40f"/>
+    <circle cx="260" cy="230" r="3" fill="#f1c40f"/>
+    <circle cx="220" cy="240" r="3" fill="#f1c40f"/>
+  </g>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="chimtong">
+    <!-- 조선 시대 의원들이 들고 다니던 전통 침통과 대침 -->
+    
+    <rect width="400" height="300" fill="#e59866"/>
+    <!-- 한의원 탁자 나무 무늬 -->
+    <path d="M0 80 Q200 120 400 100 M0 180 Q200 220 400 200 M0 280 Q200 320 400 300" fill="none" stroke="#d35400" stroke-width="2" opacity="0.3"/>
+    
+    <!-- 침통 전체 그림자 -->
+    <ellipse cx="210" cy="190" rx="100" ry="30" fill="#ba4a00" opacity="0.5"/>
+    
+    <!-- 육각형 모양의 은장식 흑각(검은 뿔) 침통 -->
+    <g transform="translate(180, 160) rotate(15)">
+      
+      <!-- 침통 본체 (길쭉한 육각형 통) -->
+      <!-- 바닥면 -->
+      <polygon points="80,-20 90,0 80,20 -70,20 -80,0 -70,-20" fill="#17202a" stroke="#2c3e50" stroke-width="2"/>
+      <!-- 상단 면 (은장식 뚜껑 연결부) -->
+      <polygon points="-70,20 -80,0 -70,-20 -60,-20 -70,0 -60,20" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="1"/>
+      <!-- 하단 면 (은장식 바닥) -->
+      <polygon points="80,20 90,0 80,-20 70,-20 80,0 70,20" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="1"/>
+      
+      <!-- 육각형의 꺾이는 선 (모서리) -->
+      <line x1="-70" y1="-20" x2="80" y2="-20" stroke="#34495e" stroke-width="2"/>
+      <line x1="-80" y1="0" x2="90" y2="0" stroke="#566573" stroke-width="3"/>
+      <line x1="-70" y1="20" x2="80" y2="20" stroke="#34495e" stroke-width="2"/>
+      
+      <!-- 침통 표면에 은상감으로 새겨진 박쥐와 구름 무늬 (복을 상징) -->
+      <g fill="none" stroke="#fdfefe" stroke-width="1" opacity="0.7">
+        <path d="M-20 -5 Q-10 -15 0 -5 Q10 -15 20 -5 Q0 5 -20 -5"/> <!-- 박쥐 무늬 -->
+        <path d="M30 5 C40 -5 50 15 60 5"/> <!-- 구름 무늬 -->
+        <path d="M-50 5 C-40 -5 -30 15 -20 5"/> <!-- 구름 무늬 -->
+      </g>
+      
+      <!-- 뚜껑 (은제, 끈에 매달려 열려 있는 상태) -->
+      <g transform="translate(-110, -30) rotate(-30)">
+        <polygon points="0,0 -20,0 -25,10 -20,20 0,20 -5,10" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="2"/>
+        <line x1="-5" y1="10" x2="-25" y2="10" stroke="#95a5a6" stroke-width="2"/>
+        <!-- 뚜껑 고리 -->
+        <circle cx="-25" cy="10" r="3" fill="#7f8c8d"/>
+      </g>
+      
+      <!-- 뚜껑과 통을 잇는 명주실 끈과 술 장식 (유소) -->
+      <path d="M-130 -20 Q-150 20 -70 -10" fill="none" stroke="#e74c3c" stroke-width="2"/>
+      <!-- 술 장식 (빨간 매듭과 꼬리) -->
+      <rect x="-100" y="20" width="8" height="15" fill="#c0392b" rx="2"/>
+      <path d="M-98 35 L-105 60 M-96 35 L-96 65 M-94 35 L-85 60" stroke="#e74c3c" stroke-width="1.5" fill="none"/>
+      
+    </g>
+    
+    <!-- 바닥에 놓인 여러 종류의 침 (호침과 피침) -->
+    <!-- 호침 (아주 얇고 긴 일반적인 침) -->
+    <g transform="translate(100, 240) rotate(-10)" stroke-linecap="round">
+      <line x1="0" y1="0" x2="80" y2="0" stroke="#bdc3c7" stroke-width="1.5"/> <!-- 침 날 -->
+      <line x1="-15" y1="0" x2="0" y2="0" stroke="#d4ac0d" stroke-width="2.5"/> <!-- 금동 손잡이 (침병) -->
+      <line x1="-15" y1="-2" x2="-15" y2="2" stroke="#d4ac0d" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(120, 250) rotate(-5)" stroke-linecap="round">
+      <line x1="0" y1="0" x2="70" y2="0" stroke="#bdc3c7" stroke-width="1.5"/>
+      <line x1="-15" y1="0" x2="0" y2="0" stroke="#d4ac0d" stroke-width="2.5"/>
+    </g>
+    
+    <!-- 피침 (종기를 째는 넓적하고 날카로운 메스 형태의 침) -->
+    <g transform="translate(250, 230) rotate(45)">
+      <!-- 그림자 -->
+      <line x1="-20" y1="2" x2="40" y2="2" stroke="#ba4a00" stroke-width="3" opacity="0.6"/>
+      <!-- 두꺼운 금속 자루 -->
+      <rect x="-20" y="-3" width="30" height="6" fill="#7f8c8d" stroke="#34495e" stroke-width="1"/>
+      <!-- 칼날 부분 (마름모꼴로 넓어지다 뾰족해짐) -->
+      <polygon points="10,-3 30,-5 40,0 30,5 10,3" fill="#fdfefe" stroke="#95a5a6" stroke-width="1"/>
+      <!-- 날카로운 모서리 광택 -->
+      <line x1="10" y1="0" x2="40" y2="0" stroke="#bdc3c7" stroke-width="1.5"/>
+    </g>
+    
+  </g>
+</svg>

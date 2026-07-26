@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="rice_sack_and_coins">
+    <!-- 거상 김만덕: 구휼미(쌀) 가마니와 엽전 꾸러미 -->
+    
+    <!-- 따뜻하고 희망적인 느낌의 배경색 (구휼을 상징) -->
+    <rect width="400" height="300" fill="#f5b041"/>
+    <!-- 제주도의 붉은 흙바닥 묘사 -->
+    <path d="M0 200 Q200 180 400 220 L400 300 L0 300 Z" fill="#d35400" opacity="0.3"/>
+    
+    <!-- 백성들의 목숨을 살린 가득 찬 쌀 가마니 (짚으로 엮은 형태) -->
+    <g transform="translate(150, 180)">
+      <!-- 가마니 본체 -->
+      <path d="M-80 -40 C-100 20 -70 80 0 80 C70 80 100 20 80 -40 C50 -60 -50 -60 -80 -40 Z" fill="#f3c623" stroke="#b9770e" stroke-width="4"/>
+      <!-- 가마니를 엮은 새끼줄 무늬 (세로선과 가로선) -->
+      <path d="M-60 -20 Q-70 20 -40 70 M-30 -35 Q-40 25 -10 75 M0 -40 Q-10 20 20 75 M30 -35 Q20 25 50 70 M60 -20 Q50 20 70 50" fill="none" stroke="#d4ac0d" stroke-width="3"/>
+      <path d="M-75 0 Q0 -10 75 0 M-80 30 Q0 20 80 30 M-60 60 Q0 50 60 60" fill="none" stroke="#d4ac0d" stroke-width="3"/>
+      
+      <!-- 터진 가마니 틈으로 쏟아져 나온 뽀얀 쌀알들 -->
+      <path d="M-20 -50 C-10 -70 20 -70 30 -50 Z" fill="#fffdf7" stroke="#b9770e" stroke-width="2"/> <!-- 입구에 소복이 쌓인 쌀 -->
+      <ellipse cx="-40" cy="70" rx="4" ry="8" fill="#fffdf7" stroke="#d4ac0d" stroke-width="1" transform="rotate(30 -40 70)"/>
+      <ellipse cx="-20" cy="85" rx="4" ry="8" fill="#fffdf7" stroke="#d4ac0d" stroke-width="1" transform="rotate(-15 -20 85)"/>
+      <ellipse cx="10" cy="90" rx="4" ry="8" fill="#fffdf7" stroke="#d4ac0d" stroke-width="1" transform="rotate(45 10 90)"/>
+      <ellipse cx="40" cy="80" rx="4" ry="8" fill="#fffdf7" stroke="#d4ac0d" stroke-width="1" transform="rotate(-30 40 80)"/>
+      <ellipse cx="-50" cy="80" rx="4" ry="8" fill="#fffdf7" stroke="#d4ac0d" stroke-width="1" transform="rotate(60 -50 80)"/>
+    </g>
+    
+    <!-- 김만덕이 전 재산을 털었음을 상징하는 엽전 꾸러미 (상평통보) -->
+    <g transform="translate(280, 230) rotate(15)">
+      <!-- 짚끈으로 엮은 엽전 다발 -->
+      <path d="M-30 -10 Q0 -50 40 -20" fill="none" stroke="#e67e22" stroke-width="4" stroke-linecap="round"/>
+      
+      <!-- 엽전 1 -->
+      <g transform="translate(-20, 0)">
+        <circle cx="0" cy="0" r="15" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+        <rect x="-4" y="-4" width="8" height="8" fill="#b9770e"/> <!-- 네모난 구멍 -->
+      </g>
+      <!-- 엽전 2 -->
+      <g transform="translate(-5, 10)">
+        <circle cx="0" cy="0" r="15" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+        <rect x="-4" y="-4" width="8" height="8" fill="#b9770e"/>
+      </g>
+      <!-- 엽전 3 -->
+      <g transform="translate(15, 15)">
+        <circle cx="0" cy="0" r="15" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+        <rect x="-4" y="-4" width="8" height="8" fill="#b9770e"/>
+      </g>
+      <!-- 엽전 4 -->
+      <g transform="translate(35, 5)">
+        <circle cx="0" cy="0" r="15" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+        <rect x="-4" y="-4" width="8" height="8" fill="#b9770e"/>
+      </g>
+    </g>
+    
+  </g>
+</svg>

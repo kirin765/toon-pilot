@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="broken_wooden_sword">
+    <!-- 정여립 대동계: 부러진 무술 수련용 목검과 피 묻은 평등의 띠 -->
+    
+    <!-- 황량한 모래바람과 핏빛 석양이 깔린 기축옥사의 암울한 분위기 -->
+    <rect width="400" height="300" fill="#512e2b"/>
+    <ellipse cx="200" cy="220" rx="180" ry="70" fill="#3a1c1a"/>
+    <path d="M0 200 Q200 150 400 250" fill="none" stroke="#7b241c" stroke-width="30" opacity="0.3"/>
+    
+    <!-- 대동계원들이 무술 훈련에 쓰던 목검 (권력에 의해 처참히 부러짐) -->
+    <g transform="translate(180, 220)">
+      <!-- 목검 손잡이와 꺾인 칼날 하단 -->
+      <g transform="translate(-50, 10) rotate(-30)">
+        <polygon points="-80,-8 20,-5 20,5 -80,8" fill="#873600" stroke="#512e2b" stroke-width="2"/>
+        <rect x="-80" y="-10" width="30" height="20" rx="2" fill="#333"/> <!-- 손잡이 끈 -->
+        <path d="M20 -5 L25 -2 L20 0 L28 2 L20 5" fill="none" stroke="#d68910" stroke-width="2"/> <!-- 부러진 단면 -->
+      </g>
+      
+      <!-- 튕겨 나간 목검의 날 윗부분 -->
+      <g transform="translate(60, -30) rotate(15)">
+        <polygon points="-30,-4 70,-2 70,2 -30,4" fill="#873600" stroke="#512e2b" stroke-width="2"/>
+        <path d="M-30 -4 L-35 -2 L-28 0 L-36 2 L-30 4" fill="none" stroke="#d68910" stroke-width="2"/> <!-- 부러진 단면 -->
+      </g>
+    </g>
+    
+    <!-- 대동계의 결속과 신분 철폐를 상징하는 머리띠 (기축옥사의 피로 물듦) -->
+    <g transform="translate(140, 240) rotate(-10)">
+      <path d="M-60 0 Q-20 -40 40 -10 T100 20" fill="none" stroke="#ecf0f1" stroke-width="15" stroke-linecap="round"/>
+      <path d="M-60 0 Q-20 -40 40 -10 T100 20" fill="none" stroke="#bdc3c7" stroke-width="5" stroke-linecap="round"/>
+      
+      <!-- 머리띠에 물든 진한 핏자국 (1,000명의 학살을 상징) -->
+      <path d="M0 -20 Q20 -20 30 -5 T40 10" fill="none" stroke="#922b21" stroke-width="15" stroke-linecap="round" opacity="0.9"/>
+      <path d="M60 0 Q80 15 95 18" fill="none" stroke="#922b21" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+      
+      <!-- 바닥으로 뚝뚝 떨어지는 핏방울 -->
+      <circle cx="20" cy="15" r="4" fill="#922b21"/>
+      <circle cx="35" cy="25" r="3" fill="#922b21"/>
+      <circle cx="80" cy="25" r="5" fill="#922b21"/>
+    </g>
+    
+    <!-- 천하공물(天下公物) 사상을 암시하는 찢어진 종이 조각 -->
+    <g transform="translate(80, 160) rotate(-40)">
+      <polygon points="-20,-20 30,-15 20,20 -25,10" fill="#eaddbd" stroke="#a0855b" stroke-width="1"/>
+      <path d="M-10 -10 L10 -10 L10 10" stroke="#2c3e50" stroke-width="3" fill="none"/> <!-- 천(天) 자의 일부 파편 -->
+      <path d="M5 25 L35 45" stroke="#a0855b" stroke-width="1" stroke-dasharray="2 2"/>
+    </g>
+    
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="torn_manuscript_and_rope">
+    <!-- 허균 홍길동전과 역모: 찢어진 홍길동전 원고와 사형수(역적)의 오랏줄 -->
+    
+    <!-- 처형장(능지처참)의 차갑고 스산한 흙바닥 -->
+    <rect width="400" height="300" fill="#3e3730"/>
+    <ellipse cx="200" cy="220" rx="160" ry="70" fill="#2b2621"/>
+    
+    <!-- 허균을 묶었던 굵고 거친 오랏줄 (역모죄의 굴레) -->
+    <g transform="translate(200, 200)">
+      <!-- 바닥에 무겁게 똬리를 튼 동아줄 -->
+      <path d="M-80 0 C-100 -50 0 -80 50 -20 C100 40 -50 80 -80 0 Z" fill="none" stroke="#a0785a" stroke-width="12"/>
+      <path d="M-80 0 C-100 -50 0 -80 50 -20 C100 40 -50 80 -80 0 Z" fill="none" stroke="#7e5a40" stroke-width="4" stroke-dasharray="6 4"/>
+      
+      <path d="M-20 -10 C-40 40 60 60 80 -10" fill="none" stroke="#a0785a" stroke-width="12"/>
+      <path d="M-20 -10 C-40 40 60 60 80 -10" fill="none" stroke="#7e5a40" stroke-width="4" stroke-dasharray="6 4"/>
+      
+      <!-- 올이 거칠게 풀린 밧줄 끝부분 -->
+      <path d="M80 -10 Q100 -30 120 -40" fill="none" stroke="#a0785a" stroke-width="6"/>
+      <path d="M80 -10 Q90 -40 100 -50" fill="none" stroke="#a0785a" stroke-width="4"/>
+    </g>
+    
+    <!-- 권력에 의해 무참히 찢겨나간 불온문서 '홍길동전'의 한글 원고 -->
+    <g transform="translate(180, 180)">
+      <!-- 찢어진 책 표지 조각 -->
+      <g transform="translate(-40, -10) rotate(-20)">
+        <path d="M-50 -40 L20 -30 L10 20 L-45 40 Z" fill="#34495e" stroke="#2c3e50" stroke-width="2"/>
+        <rect x="-30" y="-20" width="15" height="40" fill="#fdf2e9"/> <!-- 라벨 -->
+        <path d="M-22 -15 L-22 15" stroke="#111" stroke-width="2"/> <!-- 글씨 -->
+      </g>
+      
+      <!-- 흩날리는 내지 파편들 -->
+      <g transform="translate(30, -30) rotate(15)">
+        <path d="M-30 -30 L40 -20 C35 0 30 20 20 40 C0 30 -20 20 -40 10 Z" fill="#fdf2e9" stroke="#d5c8a0" stroke-width="1"/>
+        <!-- 최초의 한글 소설을 상징하는 언문(한글) 흘림체 묘사 -->
+        <path d="M-15 -15 L20 -10 M-10 -5 L25 0 M-5 5 L15 10" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+        <!-- 찢긴 단면 효과 -->
+        <path d="M40 -20 C35 0 30 20 20 40" fill="none" stroke="#eaddbd" stroke-width="2"/>
+      </g>
+      
+      <g transform="translate(-10, 40) rotate(-45)">
+        <polygon points="-20,-15 30,-20 15,15 -15,20" fill="#fdf2e9" stroke="#d5c8a0" stroke-width="1"/>
+        <path d="M-5 -5 L15 -10 M0 5 L10 0" stroke="#111" stroke-width="2"/>
+      </g>
+    </g>
+    
+    <!-- 역모죄 형장의 상징인 붉은 핏자국 -->
+    <path d="M220 230 Q260 210 280 250" fill="none" stroke="#7b241c" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="285" cy="225" r="4" fill="#7b241c"/>
+    <circle cx="250" cy="250" r="3" fill="#7b241c"/>
+    
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="buchae">
+    <!-- 접이식 부채 (합죽선) 활짝 핀 모습 -->
+    
+    <!-- 부채 종이 부분 (선면) -->
+    <path d="M200 240 L70 120 A 180 180 0 0 1 330 120 Z" fill="#f5deb3"/>
+    
+    <!-- 종이 위의 매화 그림 (한국적인 여백의 미) -->
+    <path d="M140 190 Q120 150 150 100 Q180 70 240 80" stroke="#3e2723" stroke-width="4" fill="none"/>
+    <circle cx="150" cy="100" r="5" fill="#e74c3c"/>
+    <circle cx="145" cy="105" r="3" fill="#e74c3c"/>
+    <circle cx="155" cy="95" r="4" fill="#e74c3c"/>
+    <circle cx="210" cy="80" r="6" fill="#e74c3c"/>
+    <circle cx="205" cy="85" r="4" fill="#e74c3c"/>
+    
+    <!-- 부채살 (대나무) -->
+    <!-- 중심에서 뻗어나가는 선들 -->
+    <line x1="200" y1="240" x2="70" y2="120" stroke="#d4ac0d" stroke-width="3"/>
+    <line x1="200" y1="240" x2="90" y2="100" stroke="#d4ac0d" stroke-width="2"/>
+    <line x1="200" y1="240" x2="115" y2="80" stroke="#d4ac0d" stroke-width="2"/>
+    <line x1="200" y1="240" x2="145" y2="65" stroke="#d4ac0d" stroke-width="2"/>
+    <line x1="200" y1="240" x2="175" y2="55" stroke="#d4ac0d" stroke-width="2"/>
+    <line x1="200" y1="240" x2="200" y2="50" stroke="#d4ac0d" stroke-width="3"/>
+    <line x1="200" y1="240" x2="225" y2="55" stroke="#d4ac0d" stroke-width="2"/>
+    <line x1="200" y1="240" x2="255" y2="65" stroke="#d4ac0d" stroke-width="2"/>
+    <line x1="200" y1="240" x2="285" y2="80" stroke="#d4ac0d" stroke-width="2"/>
+    <line x1="200" y1="240" x2="310" y2="100" stroke="#d4ac0d" stroke-width="2"/>
+    <line x1="200" y1="240" x2="330" y2="120" stroke="#d4ac0d" stroke-width="3"/>
+    
+    <!-- 사복 (부채 밑동을 고정하는 장식) -->
+    <circle cx="200" cy="240" r="8" fill="#e67e22"/>
+    <circle cx="200" cy="240" r="4" fill="#a04000"/>
+    
+    <!-- 선추 (부채 끝에 다는 매듭 장식) -->
+    <line x1="200" y1="248" x2="200" y2="280" stroke="#c0392b" stroke-width="3"/>
+    <circle cx="200" cy="265" r="5" fill="#f1c40f"/>
+    <path d="M195 280 L205 280 L200 295 Z" fill="#e74c3c"/>
+  </g>
+</svg>

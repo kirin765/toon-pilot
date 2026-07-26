@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="sangpyeongtongbo">
+    <!-- 동전 그림자 -->
+    <circle cx="205" cy="165" r="100" fill="#2c3e50" opacity="0.2"/>
+    
+    <!-- 동전 외곽 (구리/황동 재질) -->
+    <circle cx="200" cy="160" r="100" fill="#a04000"/>
+    <circle cx="200" cy="160" r="92" fill="#d35400"/>
+    
+    <!-- 동전 안쪽 면 -->
+    <circle cx="200" cy="160" r="80" fill="#e67e22"/>
+    
+    <!-- 네모난 구멍 (천원지방 사상) -->
+    <rect x="175" y="135" width="50" height="50" fill="#a04000"/>
+    <rect x="180" y="140" width="40" height="40" fill="#ffffff"/> <!-- 배경 뚫린 효과 -->
+    
+    <!-- 상평통보 (常平通寶) 한자 표현 (간략화된 양각) -->
+    <!-- 상 (위) -->
+    <path d="M190 90 L210 90 M200 80 L200 110 M185 110 L215 110" stroke="#a04000" stroke-width="5" stroke-linecap="round"/>
+    <path d="M190 120 L210 120" stroke="#a04000" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- 평 (아래) -->
+    <path d="M190 200 L210 200 M195 210 L205 210 M185 220 L215 220" stroke="#a04000" stroke-width="5" stroke-linecap="round"/>
+    <path d="M200 200 L200 235" stroke="#a04000" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- 통 (오른쪽) -->
+    <path d="M245 145 L265 145 M255 145 L255 175 M245 155 L265 155 M245 165 L265 165" stroke="#a04000" stroke-width="4" stroke-linecap="round"/>
+    <path d="M240 140 Q235 160 240 180" stroke="#a04000" stroke-width="4" fill="none"/>
+    
+    <!-- 보 (왼쪽) -->
+    <path d="M140 145 L160 145 M150 140 L150 155 M145 155 L155 155 M140 165 L160 165 M150 165 L150 180" stroke="#a04000" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

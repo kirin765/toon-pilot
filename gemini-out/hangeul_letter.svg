@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="hangeul_letter">
+    <!-- 조선 시대 평민과 여성들이 주로 쓰던 한글 편지 (언간) -->
+    
+    <!-- 낡은 마루 바닥 또는 책상 배경 -->
+    <rect width="400" height="300" fill="#d5c7b0"/>
+    <path d="M0 100 Q200 120 400 100 M0 200 Q200 180 400 200" fill="none" stroke="#c0a98e" stroke-width="8" opacity="0.4"/>
+    
+    <!-- 접혀있다가 펼쳐진 한지 편지 (가운데 쯤 놓임) -->
+    <g transform="translate(200, 150) rotate(-5)">
+      
+      <!-- 편지 그림자 -->
+      <polygon points="-120,-80 120,-90 130,100 -110,110" fill="#a89a80" opacity="0.6"/>
+      
+      <!-- 한지(닥종이) 본체 -->
+      <polygon points="-120,-90 120,-100 130,90 -110,100" fill="#fdfefe" stroke="#d5dbdb" stroke-width="2"/>
+      
+      <!-- 한지의 거친 질감과 구겨진 자국 (접힌 자국) -->
+      <!-- 가로 접힌 자국 -->
+      <path d="M-115 5 L125 -5" stroke="#e5e8e8" stroke-width="2" stroke-dasharray="5,5"/>
+      <!-- 세로 접힌 자국 -->
+      <path d="M5 -95 L10 95" stroke="#e5e8e8" stroke-width="2" stroke-dasharray="5,5"/>
+      <path d="M-55 -92 L-50 97" stroke="#e5e8e8" stroke-width="1.5" stroke-dasharray="3,7"/>
+      <path d="M65 -98 L70 92" stroke="#e5e8e8" stroke-width="1.5" stroke-dasharray="3,7"/>
+      
+      <!-- 누렇게 바랜 종이 테두리 (시간의 흔적) -->
+      <polygon points="-120,-90 120,-100 130,90 -110,100" fill="none" stroke="#f5cba7" stroke-width="5" opacity="0.3"/>
+      
+      <!-- 세로쓰기 한글 붓글씨 (언간체 특유의 흘림체 묘사) -->
+      <!-- 오른쪽부터 왼쪽으로 읽음 -->
+      <g stroke="#17202a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <!-- 첫 번째 줄 (오른쪽) -->
+        <path d="M90 -70 Q80 -60 95 -50 M90 -40 Q85 -30 90 -20 M90 -10 Q100 0 85 10 M90 20 Q80 30 95 40 M90 50 Q85 60 90 70"/>
+        
+        <!-- 두 번째 줄 -->
+        <path d="M60 -75 Q50 -65 65 -55 M60 -40 Q55 -30 65 -20 M60 -10 Q50 0 65 10 M60 25 Q65 35 55 45"/>
+        
+        <!-- 세 번째 줄 (원이 엄마 편지처럼 구구절절한 사연 느낌) -->
+        <path d="M30 -80 Q40 -70 25 -60 M30 -50 Q20 -40 35 -30 M30 -20 Q40 -10 25 0 M30 10 Q20 20 35 30 M30 40 Q40 50 25 60 M30 70 Q20 80 35 85"/>
+        
+        <!-- 네 번째 줄 -->
+        <path d="M0 -75 Q-10 -65 5 -55 M0 -45 Q10 -35 -5 -25 M0 -15 Q-10 -5 5 5 M0 15 Q10 25 -5 35"/>
+        
+        <!-- 다섯 번째 줄 -->
+        <path d="M-30 -80 Q-20 -70 -35 -60 M-30 -50 Q-40 -40 -25 -30 M-30 -20 Q-20 -10 -35 0 M-30 10 Q-40 20 -25 30 M-30 40 Q-20 50 -35 60 M-30 70 Q-40 80 -25 85"/>
+        
+        <!-- 여섯 번째 줄 (짧은 줄) -->
+        <path d="M-60 -70 Q-50 -60 -65 -50 M-60 -40 Q-70 -30 -55 -20"/>
+        
+        <!-- 마지막 줄 (발신인 서명 느낌) -->
+        <path d="M-90 30 Q-80 40 -95 50 M-90 60 Q-100 70 -85 80"/>
+      </g>
+      
+      <!-- 눈물 자국 (먹물이 번진 흔적) -->
+      <circle cx="28" cy="-15" r="8" fill="#17202a" opacity="0.2" filter="blur(2px)"/>
+      <circle cx="-32" cy="45" r="12" fill="#17202a" opacity="0.15" filter="blur(3px)"/>
+      <circle cx="-60" cy="-25" r="6" fill="#17202a" opacity="0.2" filter="blur(1px)"/>
+      
+    </g>
+    
+    <!-- 편지 겉봉투 (봉투 역할의 종이 띠) -->
+    <!-- 구석에 풀려진 채로 놓임 -->
+    <g transform="translate(60, 240) rotate(15)">
+      <rect x="-40" y="-15" width="80" height="30" fill="#fcf3cf" stroke="#d5dbdb" stroke-width="2"/>
+      <path d="M10 -5 Q0 -5 -10 -5 M5 5 Q-5 5 -15 5" stroke="#17202a" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="-40,-15 -20,-30 0,-15" fill="#fdfefe" stroke="#d5dbdb" stroke-width="1"/>
+    </g>
+    
+  </g>
+</svg>

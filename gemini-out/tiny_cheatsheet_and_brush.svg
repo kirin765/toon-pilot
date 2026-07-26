@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="tiny_cheatsheet_and_brush">
+    <!-- 과거 시험 커닝 페이퍼: 쌀알 글씨가 적힌 초소형 두루마리(협서)와 속이 빈 붓대롱 -->
+    
+    <!-- 어두운 시험장 바닥(돗자리) 배경 -->
+    <rect width="400" height="300" fill="#a67c52"/>
+    <path d="M0 20 L400 20 M0 60 L400 60 M0 100 L400 100 M0 140 L400 140 M0 180 L400 180 M0 220 L400 220 M0 260 L400 260" stroke="#8d6e63" stroke-width="4" opacity="0.5"/>
+    <path d="M20 0 L20 300 M60 0 L60 300 M100 0 L100 300 M140 0 L140 300 M180 0 L180 300 M220 0 L220 300 M260 0 L260 300 M300 0 L300 300 M340 0 L340 300 M380 0 L380 300" stroke="#8d6e63" stroke-width="2" opacity="0.3"/>
+    
+    <!-- 대나무 붓대롱 (속을 파내어 커닝 페이퍼를 숨기는 용도) -->
+    <g transform="translate(180, 200) rotate(-15)">
+      <!-- 붓대 -->
+      <rect x="-10" y="-120" width="20" height="150" rx="3" fill="#e6c280" stroke="#935116" stroke-width="2"/>
+      <!-- 대나무 마디 -->
+      <line x1="-10" y1="-80" x2="10" y2="-80" stroke="#935116" stroke-width="2"/>
+      <line x1="-10" y1="-30" x2="10" y2="-30" stroke="#935116" stroke-width="2"/>
+      <!-- 붓의 먹물 묻은 털 -->
+      <path d="M-10 30 Q0 80 10 30 Z" fill="#2c3e50"/>
+      <!-- 붓대가 반으로 쪼개져 열린 상태 묘사 -->
+      <path d="M0 -120 L0 30" stroke="#935116" stroke-width="2" stroke-dasharray="10 5" opacity="0.6"/>
+    </g>
+    
+    <!-- 붓대 속에서 방금 꺼낸 듯한 초소형 두루마리 (협서) -->
+    <g transform="translate(140, 100) rotate(20) scale(1.5)">
+      <!-- 작게 말려 있는 종이의 단면 -->
+      <ellipse cx="-15" cy="-5" rx="5" ry="10" fill="#fdf2e9" stroke="#b9770e" stroke-width="1"/>
+      <path d="M-15 -15 L15 -20 L25 0 L-15 5 Z" fill="#fdf2e9" stroke="#b9770e" stroke-width="1"/>
+      <!-- 살짝 펼쳐진 부분 -->
+      <path d="M25 0 Q40 10 30 25 L10 20 Z" fill="#fdf2e9" stroke="#b9770e" stroke-width="1"/>
+      
+      <!-- 쌀알보다 작은 빽빽한 글씨들 (쥐수염 붓으로 쓴 협서) -->
+      <g fill="#111" opacity="0.8">
+        <circle cx="0" cy="-10" r="0.5"/> <circle cx="5" cy="-12" r="0.5"/> <circle cx="10" cy="-14" r="0.5"/>
+        <circle cx="-5" cy="-5" r="0.5"/> <circle cx="2" cy="-7" r="0.5"/> <circle cx="8" cy="-9" r="0.5"/>
+        <circle cx="-10" cy="0" r="0.5"/> <circle cx="-3" cy="-2" r="0.5"/> <circle cx="4" cy="-4" r="0.5"/>
+        <circle cx="15" cy="-6" r="0.5"/> <circle cx="18" cy="-8" r="0.5"/> <circle cx="22" cy="-10" r="0.5"/>
+        <!-- 흩날리는 글자(먼지 같은 디테일) -->
+        <line x1="-8" y1="-8" x2="-6" y2="-8" stroke="#111" stroke-width="0.5"/>
+        <line x1="12" y1="-10" x2="14" y2="-10" stroke="#111" stroke-width="0.5"/>
+        <line x1="20" y1="5" x2="22" y2="5" stroke="#111" stroke-width="0.5"/>
+        <line x1="25" y1="15" x2="23" y2="17" stroke="#111" stroke-width="0.5"/>
+      </g>
+    </g>
+    
+    <!-- 돌돌 말아놓은 또 다른 커닝 페이퍼 뭉치 (콧구멍이나 갓끈에 숨기는 용도) -->
+    <g transform="translate(250, 120) rotate(-40)">
+      <rect x="-8" y="-15" width="16" height="30" rx="3" fill="#fdf2e9" stroke="#b9770e" stroke-width="2"/>
+      <line x1="-8" y1="-10" x2="8" y2="-10" stroke="#b9770e" stroke-width="1"/>
+      <line x1="-8" y1="-5" x2="8" y2="-5" stroke="#b9770e" stroke-width="1"/>
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#b9770e" stroke-width="1"/>
+      <line x1="-8" y1="5" x2="8" y2="5" stroke="#b9770e" stroke-width="1"/>
+      <line x1="-8" y1="10" x2="8" y2="10" stroke="#b9770e" stroke-width="1"/>
+      <!-- 실로 묶어놓은 매듭 -->
+      <path d="M-10 0 L10 0" stroke="#e74c3c" stroke-width="2"/>
+    </g>
+    
+  </g>
+</svg>

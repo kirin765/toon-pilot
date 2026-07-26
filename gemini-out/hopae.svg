@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="hopae">
+    <!-- 조선 시대 신분증명서, 호패(號牌) -->
+    
+    <!-- 밝고 부드러운 천 배경 -->
+    <rect width="400" height="300" fill="#f0e6d2"/>
+    <path d="M0 0 Q100 300 400 0 M0 100 Q200 300 400 100" fill="none" stroke="#e0d4be" stroke-width="20" opacity="0.5"/>
+    
+    <!-- 호패를 매다는 붉은 술(끈과 매듭) -->
+    <g transform="translate(200, 40)">
+      <!-- 호패 구멍을 통과하는 끈 -->
+      <path d="M-10 40 C-30 0 30 0 10 40" fill="none" stroke="#c0392b" stroke-width="4"/>
+      <!-- 위쪽 매듭 -->
+      <circle cx="0" cy="-10" r="8" fill="#e74c3c" stroke="#922b21" stroke-width="2"/>
+      <!-- 매듭에서 뻗어나가는 위쪽 끈 -->
+      <path d="M0 -18 L0 -40" stroke="#c0392b" stroke-width="4"/>
+    </g>
+    
+    <!-- 호패 본체 (양반이 주로 쓰던 나무 질감의 상아 또는 뿔/목재) -->
+    <g transform="translate(200, 160)">
+      
+      <!-- 호패 그림자 -->
+      <rect x="-40" y="-85" width="80" height="170" fill="#d5c7b0" rx="8" transform="translate(5, 5)"/>
+      
+      <!-- 호패 나무/뼈 질감 바디 -->
+      <rect x="-40" y="-85" width="80" height="170" fill="#fad7a1" stroke="#d68910" stroke-width="3" rx="8"/>
+      
+      <!-- 상단 구멍 (끈이 묶이는 곳) -->
+      <circle cx="0" cy="-65" r="6" fill="#f0e6d2" stroke="#d68910" stroke-width="2"/>
+      <!-- 구멍 안쪽 그림자 -->
+      <circle cx="0" cy="-65" r="4" fill="#a04000" opacity="0.4"/>
+      
+      <!-- 호패 끈 매듭 디테일 -->
+      <path d="M-10 -75 L10 -75 M-8 -70 L8 -70 M-4 -65 L4 -65" stroke="#c0392b" stroke-width="3" opacity="0.8"/>
+      
+      <!-- 나무결 무늬 -->
+      <g stroke="#f5b041" stroke-width="1.5" fill="none" opacity="0.6">
+        <path d="M-30 -40 Q0 -50 30 -35"/>
+        <path d="M-35 -10 Q-10 -20 35 -5"/>
+        <path d="M-30 20 Q10 10 30 25"/>
+        <path d="M-35 50 Q0 40 35 55"/>
+      </g>
+      
+      <!-- 호패에 새겨진 정보 (글씨) - 묵서(먹글씨) 또는 낙인 -->
+      <g fill="#3e2723">
+        <!-- 이름 (홍길동 洪吉童 스타일 한자 묘사) -->
+        <rect x="-15" y="-40" width="30" height="10" rx="1"/> <!-- 洪 -->
+        <rect x="-15" y="-25" width="30" height="10" rx="1"/> <!-- 吉 -->
+        <rect x="-15" y="-10" width="30" height="10" rx="1"/> <!-- 童 -->
+        
+        <!-- 출생 연도 (기미생 己未生 등) -->
+        <path d="M15 15 L25 15 M20 10 L20 20" stroke="#3e2723" stroke-width="2"/>
+        <rect x="15" y="25" width="10" height="8" rx="1"/>
+        <rect x="15" y="38" width="10" height="8" rx="1"/>
+        
+        <!-- 신분 및 관직 (문과 등) -->
+        <path d="M-25 15 L-15 15 M-20 10 L-20 20" stroke="#3e2723" stroke-width="2"/>
+        <rect x="-25" y="25" width="10" height="8" rx="1"/>
+        
+        <!-- 발행 연도 및 관아 도장 (낙인) -->
+        <circle cx="0" cy="65" r="10" fill="none" stroke="#c0392b" stroke-width="2" opacity="0.8"/>
+        <path d="M-5 60 L5 70 M-5 70 L5 60" stroke="#c0392b" stroke-width="1.5" opacity="0.8"/>
+      </g>
+      
+      <!-- 입체감을 위한 테두리 하이라이트 -->
+      <path d="M-37 -80 L37 -80 M-37 -80 L-37 75" fill="none" stroke="#fdfefe" stroke-width="2" opacity="0.5"/>
+      
+    </g>
+    
+  </g>
+</svg>

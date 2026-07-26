@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="shinmungo">
+    <!-- 궁궐 안에 설치되었던 백성의 억울함을 호소하는 북, 신문고(申聞鼓) -->
+    
+    <!-- 궐내 전각의 붉은 단청 벽면 배경 -->
+    <rect width="400" height="300" fill="#a93226"/>
+    <!-- 기둥 및 벽면 장식 -->
+    <rect x="50" y="0" width="30" height="300" fill="#7b241c"/>
+    <rect x="320" y="0" width="30" height="300" fill="#7b241c"/>
+    
+    <!-- 북을 매다는 거대한 나무 틀(가도) -->
+    <!-- 가로보 -->
+    <rect x="80" y="50" width="240" height="25" fill="#196f3d" stroke="#145a32" stroke-width="2"/>
+    <path d="M80 55 L320 55 M80 65 L320 65" stroke="#117a65" stroke-width="2"/> <!-- 단청 띠 무늬 -->
+    <!-- 세로 기둥 (양옆) -->
+    <rect x="110" y="75" width="20" height="180" fill="#196f3d" stroke="#145a32" stroke-width="2"/>
+    <rect x="270" y="75" width="20" height="180" fill="#196f3d" stroke="#145a32" stroke-width="2"/>
+    
+    <!-- 틀을 장식하는 화려한 단청 문양 (간략화) -->
+    <circle cx="200" cy="62.5" r="8" fill="#f1c40f"/>
+    <circle cx="150" cy="62.5" r="6" fill="#e74c3c"/>
+    <circle cx="250" cy="62.5" r="6" fill="#e74c3c"/>
+    
+    <!-- 북(신문고) 몸통 -->
+    <g transform="translate(200, 165)">
+      
+      <!-- 북 측면 그림자 -->
+      <ellipse cx="0" cy="40" rx="75" ry="35" fill="#641e16" opacity="0.6"/>
+      
+      <!-- 붉은색 가죽 북통 (측면 목재) -->
+      <path d="M-70 -20 C-90 40 -60 60 0 60 C60 60 90 40 70 -20 Z" fill="#922b21" stroke="#641e16" stroke-width="3"/>
+      
+      <!-- 북 측면의 금속 징(못) 장식 -->
+      <path d="M-65 0 C-40 20 40 20 65 0" fill="none" stroke="#641e16" stroke-width="6"/>
+      <path d="M-65 0 C-40 20 40 20 65 0" fill="none" stroke="#f1c40f" stroke-width="3" stroke-dasharray="2,6" stroke-linecap="round"/>
+      
+      <!-- 북을 매다는 금속 고리와 밧줄 -->
+      <path d="M0 -70 L-40 -10 M0 -70 L40 -10" fill="none" stroke="#873600" stroke-width="4"/>
+      <circle cx="0" cy="-70" r="10" fill="none" stroke="#95a5a6" stroke-width="3"/> <!-- 연결 고리 -->
+      
+      <!-- 북 가죽 면 (치면 소리가 나는 곳) -->
+      <!-- 약간 위를 향해 비스듬히 눕혀진 형태 -->
+      <ellipse cx="0" cy="-20" rx="70" ry="30" fill="#f5b041" stroke="#d68910" stroke-width="4"/>
+      
+      <!-- 가죽 면 위의 태극 또는 북 문양 (삼태극) -->
+      <g transform="translate(0, -20) scale(0.6)">
+        <circle cx="0" cy="0" r="25" fill="#fdfefe" stroke="#d68910" stroke-width="2"/>
+        <path d="M-25 0 A12.5 12.5 0 0 1 0 0 A12.5 12.5 0 0 0 25 0 A25 25 0 0 1 -25 0 Z" fill="#e74c3c"/>
+        <path d="M-25 0 A12.5 12.5 0 0 1 0 0 A12.5 12.5 0 0 0 25 0 A25 25 0 0 0 -25 0 Z" fill="#2980b9"/>
+      </g>
+      
+      <!-- 가죽 면의 광택과 오래된 질감 -->
+      <ellipse cx="0" cy="-20" rx="60" ry="25" fill="none" stroke="#fcf3cf" stroke-width="2" opacity="0.4"/>
+      <!-- 북을 고정하는 검은색 징(못) 자국들 가장자리 둘레 -->
+      <ellipse cx="0" cy="-20" rx="72" ry="32" fill="none" stroke="#17202a" stroke-width="2" stroke-dasharray="4,8"/>
+    </g>
+    
+    <!-- 북채 (북을 치는 막대기) -->
+    <!-- 기둥 옆에 비스듬히 세워져 있음 -->
+    <g transform="translate(130, 240) rotate(20)">
+      <!-- 그림자 -->
+      <rect x="-3" y="-55" width="6" height="60" fill="#641e16" rx="3" opacity="0.5"/>
+      <!-- 북채 본체 -->
+      <rect x="-5" y="-60" width="10" height="60" fill="#d35400" stroke="#873600" stroke-width="1.5" rx="5"/>
+      <!-- 손잡이 부분 붕대 장식 -->
+      <rect x="-5" y="0" width="10" height="15" fill="#fdfefe" opacity="0.8"/>
+      <path d="M-5 2 L5 -2 M-5 8 L5 4 M-5 14 L5 10" stroke="#bdc3c7" stroke-width="1.5"/>
+    </g>
+    
+  </g>
+</svg>

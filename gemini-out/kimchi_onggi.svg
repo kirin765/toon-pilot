@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="kimchi_onggi">
+    <!-- 조선 후기 고추가 전래된 이후의 빨간 배추김치와 옹기 (장독) -->
+    
+    <!-- 장독대 배경 일부 (돌바닥) -->
+    <rect width="400" height="300" fill="#d5dbdb"/>
+    <path d="M0 220 Q200 240 400 220" fill="none" stroke="#bdc3c7" stroke-width="4"/>
+    
+    <!-- 커다란 옹기 (항아리) 본체 -->
+    <g transform="translate(200, 150)">
+      <!-- 옹기 그림자 -->
+      <ellipse cx="20" cy="110" rx="90" ry="20" fill="#a6acaf" opacity="0.8"/>
+      
+      <!-- 옹기 항아리 형태 (짙은 고동색/갈색 질감) -->
+      <path d="M-60 -40 C-110 0 -110 60 -70 100 L-40 110 L40 110 L70 100 C110 60 110 0 60 -40 Z" fill="#5c3a21" stroke="#3e2723" stroke-width="4"/>
+      
+      <!-- 항아리 목과 주둥이 -->
+      <rect x="-65" y="-55" width="130" height="15" fill="#4e342e" rx="3"/>
+      <ellipse cx="0" cy="-55" rx="65" ry="10" fill="#5c3a21" stroke="#3e2723" stroke-width="2"/>
+      
+      <!-- 옹기 겉면에 유약이 흘러내린 자국 (전통 옹기의 특징) -->
+      <path d="M-50 -20 Q-40 10 -45 40" fill="none" stroke="#8d6e63" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+      <path d="M0 -30 Q10 20 5 60" fill="none" stroke="#8d6e63" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+      <path d="M40 -15 Q50 30 35 50" fill="none" stroke="#8d6e63" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <path d="M-80 30 Q-90 60 -70 80" fill="none" stroke="#8d6e63" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+      <path d="M80 40 Q90 60 75 90" fill="none" stroke="#8d6e63" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+    </g>
+    
+    <!-- 항아리 안에 가득 찬 새빨간 배추김치 (뚜껑이 열려 있음) -->
+    <g transform="translate(200, 90)">
+      <!-- 김치 베이스 (고춧가루 양념의 붉은색) -->
+      <ellipse cx="0" cy="5" rx="55" ry="15" fill="#c0392b"/>
+      
+      <!-- 배추 한 포기가 위로 튀어나온 모습 -->
+      <path d="M-30 10 C-40 -20 0 -40 10 -20 C20 -40 50 -10 30 10 Z" fill="#e74c3c" stroke="#922b21" stroke-width="2"/>
+      <!-- 배추 줄기 (노란빛이 도는 잎맥) -->
+      <path d="M-10 10 C-15 -10 -20 -15 -20 -25 M5 10 C0 -5 -5 -15 -5 -25 M20 10 C15 -5 20 -15 25 -25" fill="none" stroke="#f1c40f" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+      
+      <!-- 고춧가루 양념 질감 (점들) -->
+      <circle cx="-15" cy="-5" r="2" fill="#7b241c"/>
+      <circle cx="5" cy="-10" r="1.5" fill="#7b241c"/>
+      <circle cx="20" cy="-5" r="2" fill="#7b241c"/>
+      <circle cx="-25" cy="-15" r="1" fill="#7b241c"/>
+      <circle cx="15" cy="-20" r="1.5" fill="#7b241c"/>
+    </g>
+    
+    <!-- 옹기 뚜껑 (바닥에 비스듬히 놓여 있음) -->
+    <g transform="translate(90, 220) rotate(-15)">
+      <!-- 뚜껑 그림자 -->
+      <ellipse cx="0" cy="5" rx="60" ry="15" fill="#a6acaf" opacity="0.8"/>
+      <!-- 뚜껑 본체 -->
+      <ellipse cx="0" cy="0" rx="60" ry="15" fill="#4e342e" stroke="#3e2723" stroke-width="3"/>
+      <!-- 뚜껑 꼭지 -->
+      <rect x="-15" y="-10" width="30" height="15" fill="#5c3a21" rx="2"/>
+      <ellipse cx="0" cy="-10" rx="15" ry="5" fill="#4e342e" stroke="#3e2723" stroke-width="2"/>
+    </g>
+    
+    <!-- 옆에 떨어진 붉은 고추 2개 (고추 전래의 상징) -->
+    <g transform="translate(300, 230) rotate(30)">
+      <!-- 고추 1 -->
+      <path d="M0 0 C20 -10 40 0 50 20 C45 25 35 25 30 15 C20 0 10 5 5 10 Z" fill="#e74c3c" stroke="#922b21" stroke-width="2"/>
+      <!-- 고추 꼭지 -->
+      <path d="M0 0 L-10 -5 M-5 -2 L-10 5" stroke="#27ae60" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(280, 250) rotate(-40)">
+      <!-- 고추 2 -->
+      <path d="M0 0 C15 -5 30 5 40 20 C35 25 25 25 20 15 C10 0 5 5 0 10 Z" fill="#e74c3c" stroke="#922b21" stroke-width="2"/>
+      <path d="M0 0 L-8 -4 M-4 -2 L-8 4" stroke="#27ae60" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    
+  </g>
+</svg>

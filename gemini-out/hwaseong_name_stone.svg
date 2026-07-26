@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="hwaseong_name_stone">
+    <!-- 성벽 베이스 그림자 -->
+    <polygon points="50,60 330,80 340,260 40,240" fill="#2c3e50" opacity="0.3"/>
+    
+    <!-- 반듯하게 잘 다듬어진 화성 성벽 돌 (화강암 블록) -->
+    <!-- 정면의 거대한 돌 -->
+    <path d="M60 70 L300 90 L310 250 L50 230 Z" fill="#d5dbdb"/>
+    <path d="M60 70 L300 90 L310 250 L50 230 Z" fill="none" stroke="#7f8c8d" stroke-width="4"/>
+    
+    <!-- 입체감을 위한 윗면/측면 -->
+    <!-- 윗면 -->
+    <polygon points="60,70 300,90 330,60 90,40" fill="#ecf0f1" stroke="#7f8c8d" stroke-width="3"/>
+    <!-- 우측 측면 -->
+    <polygon points="300,90 330,60 340,220 310,250" fill="#bdc3c7" stroke="#7f8c8d" stroke-width="3"/>
+    
+    <!-- 주변 돌들과의 이음새 (성벽의 일부임을 암시) -->
+    <line x1="50" y1="150" x2="20" y2="145" stroke="#7f8c8d" stroke-width="4"/>
+    <line x1="60" y1="70" x2="30" y2="65" stroke="#7f8c8d" stroke-width="4"/>
+    <line x1="310" y1="250" x2="360" y2="255" stroke="#7f8c8d" stroke-width="4"/>
+    
+    <!-- 거중기로 들어 올린 흔적 (돌 측면에 난 홈이나 흠집) -->
+    <path d="M280 100 Q285 110 275 115" fill="none" stroke="#95a5a6" stroke-width="3"/>
+    <path d="M80 200 Q85 210 75 215" fill="none" stroke="#95a5a6" stroke-width="3"/>
+    
+    <!-- 돌 표면의 화강암 질감 (점찍기) -->
+    <circle cx="120" cy="120" r="2" fill="#95a5a6"/>
+    <circle cx="150" cy="180" r="1.5" fill="#95a5a6"/>
+    <circle cx="220" cy="140" r="2.5" fill="#95a5a6"/>
+    <circle cx="250" cy="200" r="2" fill="#95a5a6"/>
+    <circle cx="180" cy="220" r="1.5" fill="#95a5a6"/>
+    
+    <!-- 공사실명제 각자 (石手 某某 - 석수 OOO 이름이 정으로 새겨진 음각) -->
+    <!-- 글씨가 돌에 파여 있는 느낌을 주기 위해 진한 회색과 밝은 회색 겹쳐 쓰기 -->
+    <g transform="translate(180, 150) rotate(5) scale(1.5)">
+      <!-- 하이라이트 (음각의 아랫부분 빛 받는 곳) -->
+      <path d="M-30 -20 L-20 -20 M-25 -25 L-25 -5 M-35 -5 L-15 -5 M-30 0 Q-25 10 -35 15 M-20 0 Q-25 10 -15 15" stroke="#ecf0f1" stroke-width="3" stroke-linecap="round" fill="none"/>
+      
+      <!-- '석수(石手)' 한자 추상화 - 그림자 (파인 부분) -->
+      <!-- 石 (돌 석) -->
+      <path d="M-30 -21 L-20 -21 M-25 -26 L-25 -6 M-35 -6 L-15 -6 M-30 -1 Q-25 9 -35 14" stroke="#7f8c8d" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <!-- 手 (손 수) -->
+      <path d="M-5 -21 L5 -21 M-8 -11 L8 -11 M-10 -1 L10 -1 M0 -26 L0 14" stroke="#7f8c8d" stroke-width="3" stroke-linecap="round" fill="none"/>
+      
+      <!-- 석공 이름 (예: 김복산 같은 가상의 이름 3글자 세로쓰기 우측 배치) -->
+      <path d="M15 -15 L25 -15 M20 -20 L20 0 M15 5 Q20 10 15 15 M20 5 L25 15" stroke="#7f8c8d" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+    
+    <!-- 글씨 옆에 놓인 작은 쇠정(끌)과 망치 (방금 새긴 듯한 현장감) -->
+    <!-- 정 (끌) -->
+    <polygon points="120,180 140,160 135,155 115,175" fill="#bdc3c7" stroke="#34495e" stroke-width="2"/>
+    <line x1="137" y1="157" x2="160" y2="135" stroke="#7f8c8d" stroke-width="4"/>
+    <!-- 망치 -->
+    <path d="M90 120 L130 160" stroke="#8b4513" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="135,150 120,165 110,155 125,140" fill="#2c3e50"/>
+  </g>
+</svg>

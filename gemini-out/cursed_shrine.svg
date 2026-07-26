@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="cursed_shrine">
+    <!-- 장희빈의 무고의 옥: 취선당 구석의 끔찍한 저주 굿판 -->
+    
+    <rect width="400" height="300" fill="#17202a"/>
+    
+    <!-- 어두운 촛불 조명 -->
+    <circle cx="200" cy="220" r="120" fill="#d35400" opacity="0.2" filter="blur(10px)"/>
+    
+    <!-- 기괴하게 차려진 신당의 제단 -->
+    <polygon points="50,280 350,280 300,200 100,200" fill="#2c3e50" stroke="#111" stroke-width="4"/>
+    
+    <!-- 제단 중앙에 놓인 찢겨진 인현왕후의 초상화 (짚인형 대신) -->
+    <g transform="translate(200, 150) rotate(-5)">
+      <!-- 낡은 종이 -->
+      <rect x="-40" y="-60" width="80" height="100" fill="#fdf2e9" stroke="#839192" stroke-width="2"/>
+      <!-- 대충 그려진 중전의 모습 (얼굴 부위에 X자) -->
+      <circle cx="0" cy="-30" r="15" fill="none" stroke="#2c3e50" stroke-width="2"/>
+      <path d="M-20 -15 L20 -15 L30 20 L-30 20 Z" fill="none" stroke="#2c3e50" stroke-width="2"/>
+      
+      <!-- 눈을 파내듯 꽂힌 화살들 (끔찍한 저주) -->
+      <!-- 화살 1 -->
+      <path d="M-60 -50 L5 -35" stroke="#e74c3c" stroke-width="3"/>
+      <polygon points="-60,-50 -70,-55 -65,-45" fill="#bdc3c7"/> <!-- 깃 -->
+      <!-- 화살 2 -->
+      <path d="M40 -70 L-5 -30" stroke="#e74c3c" stroke-width="3"/>
+      <polygon points="40,-70 50,-75 45,-65" fill="#bdc3c7"/>
+    </g>
+    
+    <!-- 제단 양옆의 핏빛 촛불 -->
+    <g transform="translate(120, 180)">
+      <rect x="-10" y="0" width="20" height="40" fill="#c0392b"/> <!-- 붉은 양초 -->
+      <path d="M0 0 Q10 -20 0 -30 Q-10 -20 0 0" fill="#f1c40f"/> <!-- 불꽃 -->
+      <path d="M-5 10 Q-10 20 -5 40" fill="none" stroke="#922b21" stroke-width="2"/> <!-- 녹아내리는 촌농 -->
+    </g>
+    <g transform="translate(280, 190)">
+      <rect x="-10" y="0" width="20" height="30" fill="#c0392b"/>
+      <path d="M0 0 Q10 -20 0 -30 Q-10 -20 0 0" fill="#f1c40f"/>
+      <path d="M5 5 Q10 15 5 30" fill="none" stroke="#922b21" stroke-width="2"/>
+    </g>
+    
+    <!-- 바닥(제단 앞)에 파묻히다 만 죽은 쥐 (저주의 매개체) -->
+    <g transform="translate(200, 250)">
+      <!-- 파헤쳐진 흙무더기 -->
+      <ellipse cx="0" cy="10" rx="40" ry="20" fill="#1c2833"/>
+      <!-- 죽은 쥐의 형태 (검은 실루엣) -->
+      <path d="M-20 0 C-30 -10 -40 10 -20 20 C0 20 20 0 10 -10 Z" fill="#111"/>
+      <!-- 쥐 꼬리 -->
+      <path d="M10 -5 Q30 -20 40 0" fill="none" stroke="#111" stroke-width="3"/>
+      <!-- 쥐의 몸에 꽂힌 부적 -->
+      <rect x="-25" y="-5" width="15" height="25" fill="#f1c40f" transform="rotate(-30 -25 -5)"/>
+      <path d="M-30 0 L-20 10 M-25 0 L-15 15" stroke="#c0392b" stroke-width="2"/> <!-- 붉은 주사 글씨 흔적 -->
+    </g>
+    
+  </g>
+</svg>

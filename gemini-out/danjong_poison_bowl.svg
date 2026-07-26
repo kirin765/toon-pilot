@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="danjong_poison_bowl">
+    <!-- 단종의 암살을 덮은 거짓된 실록과 사약 사발 -->
+    
+    <rect width="400" height="300" fill="#17202a"/>
+    
+    <!-- 영월 청령포의 차가운 유배지 바닥 (강가 돌밭 느낌) -->
+    <ellipse cx="200" cy="250" rx="180" ry="40" fill="#2c3e50"/>
+    <circle cx="100" cy="240" r="10" fill="#1c2833"/>
+    <circle cx="130" cy="260" r="15" fill="#1c2833"/>
+    <circle cx="300" cy="250" r="12" fill="#1c2833"/>
+    
+    <!-- 바닥에 뒹구는 빈 사약 사발 (암살의 진짜 증거) -->
+    <g transform="translate(180, 230) rotate(-15)">
+      <!-- 엎어진 놋쇠 사발 -->
+      <path d="M-40 0 C-40 -15 40 -15 40 0 C25 40 -25 40 -40 0 Z" fill="#b9770e" stroke="#935116" stroke-width="2"/>
+      <ellipse cx="0" cy="0" rx="40" ry="10" fill="#f39c12" stroke="#935116" stroke-width="2"/>
+      <!-- 검붉은 사약 찌꺼기가 흘러내림 -->
+      <path d="M-10 10 Q-20 40 -40 50 Q-10 60 10 30 Z" fill="#641e16" opacity="0.9"/>
+    </g>
+    
+    <!-- 어린 단종이 스스로 목을 맸다고 거짓으로 기록된 찢어진 실록 페이지 -->
+    <g transform="translate(250, 150) rotate(10)">
+      <!-- 진실을 덮기 위해 조작된 공식 문서 -->
+      <rect x="-60" y="-80" width="120" height="150" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="1"/>
+      
+      <!-- 위선적인 실록 기록 ("스스로 목을 매어 죽었다"는 한자 형상화) -->
+      <path d="M30 -50 L30 50 M10 -60 L10 40 M-10 -40 L-10 60" stroke="#2c3e50" stroke-width="3" stroke-dasharray="8 6"/>
+      <!-- 붉은 사관의 도장 쾅 -->
+      <rect x="-40" y="-70" width="20" height="20" fill="#e74c3c" opacity="0.8"/>
+      
+      <!-- 거칠게 찢겨진 자국 (역사의 진실이 파괴됨) -->
+      <polygon points="-60,20 -30,10 0,30 20,5 60,40 60,70 -60,70" fill="#17202a"/>
+      <!-- 찢어진 경계선 -->
+      <path d="M-60 20 L-30 10 L0 30 L20 5 L60 40" fill="none" stroke="#bdc3c7" stroke-width="1"/>
+    </g>
+    
+    <!-- 금부도사가 가져왔던 처형용 올가미 밧줄 (사약과 목졸림이 동시에 쓰인 암살의 잔혹성) -->
+    <path d="M 50 100 C 30 50 120 20 150 80 C 180 140 100 180 80 200 C 60 220 100 280 150 260" fill="none" stroke="#d4ac0d" stroke-width="8" stroke-linecap="round"/>
+    <!-- 밧줄 꼬임 무늬 -->
+    <path d="M 50 100 C 30 50 120 20 150 80 C 180 140 100 180 80 200 C 60 220 100 280 150 260" fill="none" stroke="#9c640c" stroke-width="2" stroke-dasharray="4 8"/>
+    
+    <!-- 올가미 고리 부분 -->
+    <path d="M 120 60 C 80 80 60 140 100 160 C 140 180 170 120 120 60 Z" fill="none" stroke="#d4ac0d" stroke-width="8"/>
+    <path d="M 120 60 C 80 80 60 140 100 160 C 140 180 170 120 120 60 Z" fill="none" stroke="#9c640c" stroke-width="2" stroke-dasharray="4 8"/>
+    <!-- 묶인 매듭 -->
+    <rect x="110" y="50" width="20" height="30" fill="#d4ac0d" rx="5" transform="rotate(30 120 65)"/>
+    
+  </g>
+</svg>

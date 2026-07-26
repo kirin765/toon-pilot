@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="okchugyeong_and_talisman">
+    <!-- 사도세자의 광기: 옥추경(주술서)과 핏빛 부적 -->
+    
+    <rect width="400" height="300" fill="#0b1219"/>
+    
+    <!-- 환각을 상징하는 기괴한 도교 부적 배경 -->
+    <path d="M 150 50 Q 180 80 150 120 T 170 180 T 130 250" fill="none" stroke="#e74c3c" stroke-width="4" opacity="0.2"/>
+    <path d="M 250 80 Q 220 120 260 160 T 230 220" fill="none" stroke="#e74c3c" stroke-width="4" opacity="0.2"/>
+    <circle cx="200" cy="150" r="100" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="10 10" opacity="0.1"/>
+    
+    <!-- 바닥에 떨어져 펼쳐진 도교 경전 '옥추경' -->
+    <g transform="translate(180, 200) rotate(-10)">
+      <!-- 낡은 책 표지와 낱장들 -->
+      <polygon points="-80,-40 60,-30 80,40 -60,30" fill="#d5c8a0" stroke="#7e5109" stroke-width="2"/>
+      <polygon points="-85,-35 55,-25 75,45 -65,35" fill="#eaddbd" stroke="#a0855b" stroke-width="2"/>
+      
+      <!-- 책 페이지 안의 기괴한 번개(옥추경의 뇌신) 그림과 붉은 글씨 -->
+      <path d="M-30 -20 L-10 10 L-20 15 L10 40" fill="none" stroke="#111" stroke-width="2"/> <!-- 번개 형상 -->
+      <!-- 붉은 먹물로 미친 듯이 휘갈긴 한자 (환각과 공포) -->
+      <path d="M 20 -15 Q 10 0 30 10 Q 15 20 40 30" fill="none" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 30 -5 L 45 5" fill="none" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- 표지 라벨: 玉樞經 (옥추경) -->
+      <rect x="-50" y="-30" width="20" height="60" fill="#e74c3c" transform="rotate(10)"/>
+      <path d="M-40 -20 L-40 20" stroke="#111" stroke-width="2" transform="rotate(10)"/> <!-- 글씨 대체 선 -->
+    </g>
+    
+    <!-- 옥추경 위에 떨어진 커다란 액운 퇴치용 노란 부적 -->
+    <g transform="translate(120, 100) rotate(35)">
+      <rect x="-30" y="-60" width="60" height="120" fill="#f1c40f" stroke="#d4ac0d" stroke-width="2"/>
+      <!-- 주사(붉은 돌가루)로 그린 기괴한 도교 부적 문양 -->
+      <path d="M-20 -40 C-10 -60 10 -60 20 -40 C10 -20 -10 -20 -20 0 C-10 20 10 20 20 40" fill="none" stroke="#e74c3c" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="0" cy="-45" r="5" fill="#e74c3c"/>
+      <circle cx="-15" cy="5" r="4" fill="#e74c3c"/>
+      <circle cx="15" cy="35" r="4" fill="#e74c3c"/>
+      <!-- 부적을 고정하기 위해 박아둔 나무 쐐기 (주술적 구속) -->
+      <polygon points="-5,-80 5,-80 2,-20 -2,-20" fill="#a04000"/>
+    </g>
+    
+  </g>
+</svg>

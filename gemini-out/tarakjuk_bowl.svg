@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="tarakjuk_bowl">
+    <!-- 바닥 그림자 -->
+    <ellipse cx="200" cy="250" rx="80" ry="15" fill="#2c3e50" opacity="0.2"/>
+    
+    <!-- 왕실용 고급 식기 (청화백자 사발 또는 은식기 느낌) -->
+    <!-- 여기서는 고급스러운 청화백자로 표현 (흰 바탕에 푸른 무늬) -->
+    <path d="M120 150 C120 240 280 240 280 150 Z" fill="#fdfefe"/>
+    
+    <!-- 백자 사발의 굽 -->
+    <path d="M170 230 L230 230 L220 245 L180 245 Z" fill="#fdfefe"/>
+    <path d="M170 230 L230 230" stroke="#bdc3c7" stroke-width="2"/>
+    
+    <!-- 청화(푸른색) 당초무늬 장식 (추상적 곡선) -->
+    <path d="M130 170 Q160 200 180 170 T230 180 T270 160" fill="none" stroke="#2980b9" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+    <circle cx="155" cy="185" r="3" fill="#2980b9"/>
+    <circle cx="205" cy="180" r="3" fill="#2980b9"/>
+    <circle cx="255" cy="170" r="3" fill="#2980b9"/>
+    <path d="M140 200 Q170 220 200 210 T260 200" fill="none" stroke="#2980b9" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    
+    <!-- 사발 입구 (전) -->
+    <ellipse cx="200" cy="150" rx="80" ry="18" fill="#fdfefe"/>
+    <ellipse cx="200" cy="150" rx="76" ry="15" fill="#ecf0f1"/>
+    
+    <!-- 새하얀 타락죽 (우유죽 - 뽀얗고 부드러운 느낌) -->
+    <ellipse cx="200" cy="152" rx="72" ry="12" fill="#fff9c4"/> <!-- 약간의 크림색/미색 -->
+    <ellipse cx="195" cy="153" rx="65" ry="10" fill="#ffffff"/> <!-- 우유의 순백색 하이라이트 -->
+    
+    <!-- 뽀얀 국물 표면의 질감 (부드러운 소용돌이) -->
+    <path d="M160 152 Q180 145 200 155 T240 150" fill="none" stroke="#fcf3cf" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- 죽 위에 얹은 고급 고명 (잣 띄우기) -->
+    <circle cx="190" cy="150" r="4" fill="#f5b041"/>
+    <circle cx="205" cy="155" r="3" fill="#f5b041"/>
+    <circle cx="215" cy="148" r="3.5" fill="#f5b041"/>
+    
+    <!-- 은수저 (왕실용 식기 강조) -->
+    <path d="M80 80 L145 145" stroke="#95a5a6" stroke-width="8" stroke-linecap="round"/>
+    <path d="M140 140 C170 140 160 165 135 160 Z" fill="#bdc3c7"/>
+    <!-- 은수저 반짝임 -->
+    <path d="M145 145 C160 145 155 160 140 155 Z" fill="#ecf0f1"/>
+    
+    <!-- 따뜻함을 나타내는 연기 -->
+    <path d="M180 140 Q190 100 170 60" fill="none" stroke="#fdfefe" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+    <path d="M220 135 Q210 90 230 50" fill="none" stroke="#fdfefe" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="fake_royal_seal">
+    <!-- 환관 조생의 대담한 문서 위조 사기극: 훔친 옥새와 가짜 교지 -->
+    
+    <rect width="400" height="300" fill="#1c2833"/>
+    
+    <!-- 어두운 밤, 등잔 불빛이 비치는 은밀한 책상 -->
+    <ellipse cx="200" cy="180" rx="160" ry="100" fill="#ecf0f1" opacity="0.1" filter="blur(8px)"/>
+    
+    <!-- 바닥에 펼쳐진 위조된 교지(왕명) 두루마리 -->
+    <g transform="translate(180, 160) rotate(-10)">
+      <!-- 두루마리 막대 -->
+      <rect x="-110" y="-80" width="10" height="160" fill="#d35400" rx="5"/>
+      <rect x="90" y="-80" width="10" height="160" fill="#d35400" rx="5"/>
+      <!-- 펼쳐진 한지 (누런 종이) -->
+      <polygon points="-105,-75 95,-75 95,75 -105,75" fill="#fdf2e9" stroke="#bdc3c7" stroke-width="2"/>
+      
+      <!-- 위조된 엉터리 한자 글씨들 (조생의 가짜 명령) -->
+      <path d="M70 -50 L70 50 M50 -60 L50 60 M30 -40 L30 40" stroke="#2c3e50" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 10"/>
+      <!-- 비뚤배뚤 서투른 위조 필체 연출 -->
+      <path d="M10 -50 Q5 -30 15 -10 Q20 20 10 50" fill="none" stroke="#2c3e50" stroke-width="4"/>
+      
+      <!-- 결정적인 훔친 어보(왕의 도장) 자국 -->
+      <rect x="-30" y="-20" width="45" height="45" fill="#e74c3c" opacity="0.85"/>
+      <!-- 도장 안의 국새 글씨 형상화 (가짜지만 도장 자체는 진짜) -->
+      <path d="M-25 -15 L10 -15 L10 20 L-25 20 Z" fill="none" stroke="#fdf2e9" stroke-width="2"/>
+      <path d="M-15 -5 L0 -5 M-7 -10 L-7 10" stroke="#fdf2e9" stroke-width="2"/>
+    </g>
+    
+    <!-- 몰래 훔쳐온 무거운 금빛 옥새 (어보) -->
+    <g transform="translate(260, 220) rotate(20)">
+      <!-- 도장 몸통 (황금) -->
+      <rect x="-25" y="-15" width="50" height="30" fill="#f1c40f" stroke="#b9770e" stroke-width="2"/>
+      <!-- 붉은 인주가 덕지덕지 묻은 바닥면 -->
+      <rect x="-25" y="15" width="50" height="5" fill="#c0392b"/>
+      
+      <!-- 화려한 거북이/용 모양 손잡이 (왕의 권위) -->
+      <path d="M-15 -15 C-15 -40 15 -40 15 -15 Z" fill="#d4ac0d" stroke="#b9770e" stroke-width="2"/>
+      <!-- 옥새에 묶인 화려한 붉은 끈 (황급히 풀어헤쳐짐) -->
+      <path d="M15 -25 Q40 -30 30 10 Q20 40 50 50" fill="none" stroke="#e74c3c" stroke-width="4"/>
+      <!-- 태슬(술장식) -->
+      <path d="M50 50 L45 70 M50 50 L50 75 M50 50 L55 70" stroke="#e74c3c" stroke-width="2"/>
+    </g>
+    
+    <!-- 사기꾼 내시의 흔적: 떨어뜨린 환관의 흑색 관모 깃 -->
+    <path d="M50 250 Q80 260 100 230" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+    
+  </g>
+</svg>

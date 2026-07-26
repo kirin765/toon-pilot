@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="herb_medicine_pot">
+    <!-- 화로 불 (밑에 깔리는 불꽃) -->
+    <path d="M150 240 Q170 210 190 240 Q210 200 230 240 Q250 220 270 250 L140 250 Z" fill="#e74c3c"/>
+    <path d="M170 245 Q190 225 210 245 Q230 215 240 245 Z" fill="#f1c40f"/>
+    <ellipse cx="200" cy="255" rx="70" ry="10" fill="#2c3e50"/> <!-- 숯/재 -->
+
+    <!-- 약탕기 몸통 (검은 도자기) -->
+    <path d="M130 150 Q120 220 160 240 L240 240 Q280 220 270 150 Z" fill="#17202a"/>
+    <!-- 광택/하이라이트 -->
+    <path d="M140 160 Q135 200 165 230" fill="none" stroke="#34495e" stroke-width="6" stroke-linecap="round"/>
+    
+    <!-- 약탕기 주둥이 (물 따르는 곳) -->
+    <path d="M265 170 Q290 160 290 145 Q270 150 260 155 Z" fill="#17202a"/>
+    
+    <!-- 약탕기 손잡이 -->
+    <path d="M135 170 Q100 180 100 200 Q120 210 145 205" fill="none" stroke="#17202a" stroke-width="15" stroke-linecap="round"/>
+    <!-- 손잡이 광택 -->
+    <path d="M135 170 Q105 180 105 195" fill="none" stroke="#34495e" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- 약탕기 입구 테두리 -->
+    <ellipse cx="200" cy="145" rx="75" ry="15" fill="#17202a"/>
+    <ellipse cx="200" cy="142" rx="70" ry="12" fill="#000000"/>
+    
+    <!-- 약탕기 뚜껑 (한지 덮개) -->
+    <path d="M120 145 Q200 110 280 145 L270 155 Q200 135 130 155 Z" fill="#f5deb3"/>
+    <!-- 덮개 묶은 끈 -->
+    <ellipse cx="200" cy="150" rx="75" ry="10" fill="none" stroke="#c0392b" stroke-width="3"/>
+    <!-- 끈 매듭 -->
+    <circle cx="270" cy="155" r="4" fill="#c0392b"/>
+    <path d="M270 155 L285 170 M270 155 L265 175" stroke="#c0392b" stroke-width="3"/>
+    
+    <!-- 김 (증기) -->
+    <path d="M180 110 Q170 80 190 50" fill="none" stroke="#ecf0f1" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <path d="M220 120 Q240 90 210 60" fill="none" stroke="#ecf0f1" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+    <path d="M200 100 Q190 70 210 30" fill="none" stroke="#ecf0f1" stroke-width="5" stroke-linecap="round" opacity="0.4"/>
+  </g>
+</svg>

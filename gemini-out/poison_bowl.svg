@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="poison_bowl">
+    <!-- 임금이 내리는 독약, 사약(賜藥) 사발 -->
+    
+    <!-- 어두운 목재 바닥 (형장 또는 유배지 방 안) -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    <path d="M0 150 L400 150 M0 200 L400 200 M0 250 L400 250" stroke="#1a252f" stroke-width="3" opacity="0.5"/>
+    
+    <!-- 뒤편의 소반 (사약을 올려둔 작은 나무 상/반) -->
+    <g transform="translate(200, 180)">
+      <!-- 상판 그림자 -->
+      <ellipse cx="0" cy="40" rx="140" ry="30" fill="#17202a" opacity="0.8"/>
+      <!-- 팔각 목재 소반 상판 -->
+      <path d="M-120 0 L-60 -30 L60 -30 L120 0 L60 30 L-60 30 Z" fill="#8e44ad" stroke="#6c3483" stroke-width="4"/>
+      <!-- 상판 측면 (두께) -->
+      <path d="M-120 0 L-60 30 L60 30 L120 0 L120 10 L60 40 L-60 40 L-120 10 Z" fill="#5b2c6f" stroke="#4a235a" stroke-width="2"/>
+      
+      <!-- 다리 4개 -->
+      <path d="M-90 10 L-100 60 L-80 60 L-70 10" fill="#4a235a"/>
+      <path d="M-30 35 L-35 80 L-15 80 L-10 35" fill="#5b2c6f"/>
+      <path d="M30 35 L35 80 L15 80 L10 35" fill="#5b2c6f"/>
+      <path d="M90 10 L100 60 L80 60 L70 10" fill="#4a235a"/>
+    </g>
+    
+    <!-- 사약 사발 (백자 무지 탕기 또는 어두운 흑유 사발) -->
+    <g transform="translate(200, 150)">
+      
+      <!-- 사발 하단 그림자 -->
+      <ellipse cx="0" cy="20" rx="45" ry="15" fill="#4a235a" opacity="0.9"/>
+      
+      <!-- 사발 몸통 (진한 청동빛이 도는 흑자/백자) -->
+      <!-- 여기서는 죽음을 상징하는 어두운 흑유자(검은 도자기)로 표현 -->
+      <path d="M-60 -20 C-70 30 -40 40 0 40 C40 40 70 30 60 -20 Z" fill="#1c2833" stroke="#17202a" stroke-width="3"/>
+      
+      <!-- 사발 표면의 윤기 (광택) -->
+      <path d="M-50 -10 C-40 20 -20 30 0 30" fill="none" stroke="#566573" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+      <path d="M30 20 C45 10 50 -5 50 -15" fill="none" stroke="#566573" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+      
+      <!-- 탕기 안쪽 (약물이 담겨 있음) -->
+      <ellipse cx="0" cy="-20" rx="60" ry="20" fill="#2c3e50" stroke="#17202a" stroke-width="2"/>
+      
+      <!-- 사약 액체 (진한 탕약, 부자나 비소 등을 달인 검붉은 독약) -->
+      <ellipse cx="0" cy="-18" rx="55" ry="16" fill="#4a235a"/>
+      <!-- 약물의 표면 그라데이션 및 질감 -->
+      <ellipse cx="-10" cy="-17" rx="40" ry="12" fill="#6c3483" opacity="0.6"/>
+      <!-- 약물 위로 피어오르는 독한 기운 (검은/보라색 연기) -->
+      <path d="M-20 -25 Q-30 -50 -10 -70 T-5 -100" fill="none" stroke="#8e44ad" stroke-width="3" stroke-linecap="round" opacity="0.4">
+        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M10 -20 Q20 -40 0 -60 T15 -90" fill="none" stroke="#8e44ad" stroke-width="2" stroke-linecap="round" opacity="0.3">
+        <animate attributeName="opacity" values="0.1;0.5;0.1" dur="2.5s" repeatCount="indefinite"/>
+      </path>
+      <circle cx="15" cy="-20" r="2" fill="#bb8fce" opacity="0.7"/> <!-- 기포 -->
+      <circle cx="-5" cy="-15" r="1.5" fill="#bb8fce" opacity="0.5"/>
+      
+      <!-- 그릇 가장자리의 반짝임 -->
+      <ellipse cx="0" cy="-20" rx="60" ry="20" fill="none" stroke="#85929e" stroke-width="1.5" opacity="0.6"/>
+      
+    </g>
+    
+    <!-- 국왕의 교지 (사사(賜死)를 명하는 문서) -->
+    <!-- 상 위에 말려 있는 형태로 배치 -->
+    <g transform="translate(130, 160) rotate(-25)">
+      <!-- 붉은 실로 묶인 누런 문서 -->
+      <path d="M-30 -10 L10 -15 L15 25 L-25 30 Z" fill="#fcf3cf" stroke="#d4ac0d" stroke-width="2"/>
+      <path d="M-30 -10 C-40 -5 -40 25 -25 30 Z" fill="#f5b041" stroke="#d4ac0d" stroke-width="2"/>
+      <!-- 붉은 어보(임금의 도장) 자국 -->
+      <rect x="-10" y="0" width="12" height="12" fill="#e74c3c" opacity="0.8" transform="rotate(10)"/>
+    </g>
+    
+  </g>
+</svg>

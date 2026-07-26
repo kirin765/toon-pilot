@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="bloody_needle_and_robe">
+    <!-- 효종의 사망: 어의 신가귀의 굵은 대침과 피로 물든 용포 -->
+    
+    <!-- 침울한 왕실 침전의 붉은 바닥 -->
+    <rect width="400" height="300" fill="#4a2320"/>
+    <ellipse cx="200" cy="200" rx="160" ry="80" fill="#2c1513"/>
+    
+    <!-- 효종의 붉은 용포 자락 (바닥에 끌린 형태) -->
+    <path d="M50 300 Q150 150 280 200 T400 280 L400 300 Z" fill="#c0392b" stroke="#7b241c" stroke-width="3"/>
+    <path d="M100 220 Q200 180 250 250" fill="none" stroke="#922b21" stroke-width="2"/> <!-- 옷 주름 -->
+    
+    <!-- 용포에 새겨진 황금색 금박 금장(용무늬 일부) -->
+    <g transform="translate(180, 240) rotate(-15) scale(0.7)">
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#f1c40f" stroke-width="3"/>
+      <circle cx="0" cy="0" r="35" fill="none" stroke="#f1c40f" stroke-width="1"/>
+      <path d="M-20 -10 Q0 -30 20 -10 T20 20 Q0 30 -20 20 Z" fill="none" stroke="#f1c40f" stroke-width="2"/> <!-- 간략화된 용의 굴곡 -->
+      <circle cx="-10" cy="-5" r="3" fill="#f1c40f"/>
+    </g>
+    
+    <!-- 용포를 적신 막대한 양의 출혈 (효종의 과다출혈 묘사) -->
+    <path d="M120 180 Q200 100 250 160 T320 220" fill="none" stroke="#641e16" stroke-width="20" stroke-linecap="round" opacity="0.9"/>
+    <path d="M220 150 Q280 200 300 280" fill="none" stroke="#641e16" stroke-width="15" stroke-linecap="round" opacity="0.9"/>
+    <!-- 사방으로 튄 핏방울들 -->
+    <circle cx="280" cy="140" r="8" fill="#641e16"/>
+    <circle cx="310" cy="160" r="5" fill="#641e16"/>
+    <circle cx="330" cy="190" r="3" fill="#641e16"/>
+    <circle cx="180" cy="130" r="6" fill="#641e16"/>
+    <circle cx="150" cy="150" r="4" fill="#641e16"/>
+    
+    <!-- 어의 신가귀의 굵은 침 (수전증으로 인해 떨어뜨린 상태) -->
+    <g transform="translate(250, 150) rotate(-45)">
+      <!-- 굵고 날카로운 침 날 (끝부분에 피가 묻음) -->
+      <line x1="0" y1="0" x2="80" y2="0" stroke="#bdc3c7" stroke-width="3"/>
+      <!-- 침 끝의 핏자국 -->
+      <line x1="70" y1="0" x2="80" y2="0" stroke="#922b21" stroke-width="3"/>
+      <!-- 구리 재질의 침 손잡이 (꼬불꼬불하게 감긴 형태) -->
+      <path d="M0 0 Q-5 5 -10 0 T-20 0 T-30 0 T-40 0" fill="none" stroke="#d4ac0d" stroke-width="4"/>
+      <path d="M-40 -3 L0 -3 M-40 3 L0 3" stroke="#9a7d0a" stroke-width="1"/>
+    </g>
+    
+  </g>
+</svg>

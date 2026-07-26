@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="pyeonjeon">
+    <!-- 통아 (대나무 반원통 가이드) -->
+    <path d="M50 150 L300 150 L300 165 L50 165 Z" fill="#d2b48c"/>
+    <!-- 대나무 마디 묘사 -->
+    <line x1="120" y1="150" x2="120" y2="165" stroke="#a0522d" stroke-width="2"/>
+    <line x1="190" y1="150" x2="190" y2="165" stroke="#a0522d" stroke-width="2"/>
+    <line x1="260" y1="150" x2="260" y2="165" stroke="#a0522d" stroke-width="2"/>
+    <!-- 통아 안쪽 그림자 -->
+    <path d="M50 150 L300 150 L300 155 L50 155 Z" fill="#8b4513" opacity="0.4"/>
+    
+    <!-- 애기살 (편전 - 통아 안에 놓인 짧은 화살) -->
+    <!-- 화살대 -->
+    <line x1="150" y1="158" x2="280" y2="158" stroke="#f1c40f" stroke-width="3"/>
+    
+    <!-- 화살촉 (철) -->
+    <polygon points="280,155 300,158 280,161" fill="#7f8c8d"/>
+    
+    <!-- 깃 (꿩 깃털 등) -->
+    <polygon points="150,158 170,150 170,158" fill="#e74c3c"/>
+    <polygon points="150,158 170,166 170,158" fill="#c0392b"/>
+    
+    <!-- 통아 묶음줄 (가죽끈 손잡이 부근) -->
+    <rect x="70" y="148" width="10" height="19" fill="#a0522d"/>
+    <rect x="85" y="148" width="10" height="19" fill="#8b4513"/>
+  </g>
+</svg>

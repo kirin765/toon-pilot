@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="bronze_cannon_and_smoke">
+    <!-- 최무선의 진포대첩: 불을 뿜는 청동 화포(총통)와 화약 연기 -->
+    
+    <!-- 어두운 바다와 전투의 붉은 노을 배경 -->
+    <rect width="400" height="300" fill="#2c3e50"/>
+    <!-- 해수면의 일렁임 -->
+    <path d="M0 250 C100 240 200 260 400 250 L400 300 L0 300 Z" fill="#1f618d" opacity="0.6"/>
+    
+    <!-- 발사 순간의 강렬한 화염 (총구 화염) -->
+    <g transform="translate(300, 150)">
+      <circle cx="0" cy="0" r="80" fill="#e67e22" opacity="0.3" filter="blur(8px)"/>
+      <circle cx="0" cy="0" r="50" fill="#f39c12" opacity="0.6" filter="blur(4px)"/>
+      <path d="M0 0 L100 -40 L70 0 L100 40 Z" fill="#f1c40f"/>
+      <path d="M0 0 L60 -20 L40 0 L60 20 Z" fill="#fff"/>
+      <!-- 날아가는 둥근 포탄 (철환) -->
+      <circle cx="60" cy="0" r="10" fill="#111" stroke="#e67e22" stroke-width="2"/>
+    </g>
+    
+    <!-- 나무 받침대(거치대)에 올려진 청동 화포 (고려 말 화통도감 총통 스타일) -->
+    <!-- 거치대 목재 -->
+    <rect x="50" y="160" width="120" height="30" fill="#873600" stroke="#512e2b" stroke-width="3" transform="rotate(-15 110 175)"/>
+    <path d="M70 190 L90 260 M130 175 L150 250" stroke="#512e2b" stroke-width="15" stroke-linecap="round"/>
+    
+    <!-- 청동 화포 본체 (죽절형 - 대나무 마디 모양) -->
+    <g transform="translate(150, 150) rotate(-15)">
+      <!-- 포신 -->
+      <path d="M-100 -20 L80 -15 L80 15 L-100 20 Z" fill="#7f8c8d" stroke="#34495e" stroke-width="4"/>
+      <!-- 대나무 마디 형태의 볼록한 테두리들 -->
+      <rect x="-80" y="-22" width="10" height="44" rx="2" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"/>
+      <rect x="-30" y="-20" width="10" height="40" rx="2" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"/>
+      <rect x="20" y="-18" width="10" height="36" rx="2" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"/>
+      <!-- 포구 (입구) -->
+      <rect x="70" y="-20" width="15" height="40" rx="3" fill="#95a5a6" stroke="#2c3e50" stroke-width="3"/>
+      <!-- 약실 쪽 둥근 끝부분 -->
+      <ellipse cx="-100" cy="0" rx="15" ry="20" fill="#7f8c8d" stroke="#34495e" stroke-width="4"/>
+      <!-- 심지(점화선) 타들어가는 불꽃 -->
+      <path d="M-90 -25 Q-80 -40 -70 -35" fill="none" stroke="#e67e22" stroke-width="3"/>
+      <circle cx="-70" cy="-35" r="4" fill="#f1c40f"/>
+    </g>
+    
+    <!-- 초창기 흑색 화약의 짙고 매캐한 연기 구름 -->
+    <path d="M250 80 C300 40 380 60 400 120 C420 180 350 220 300 200 C250 220 200 180 250 120 Z" fill="#ecf0f1" opacity="0.3" filter="blur(3px)"/>
+    <circle cx="280" cy="100" r="40" fill="#bdc3c7" opacity="0.4"/>
+    <circle cx="330" cy="180" r="30" fill="#bdc3c7" opacity="0.4"/>
+    <circle cx="200" cy="80" r="35" fill="#95a5a6" opacity="0.2"/>
+    
+  </g>
+</svg>

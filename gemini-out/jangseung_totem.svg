@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <g id="jangseung_totem">
+    <!-- 마을의 수호신: 길가에 세워진 나무 장승(천하대장군, 지하여장군) -->
+    
+    <!-- 고즈넉한 마을 어귀의 밤풍경 -->
+    <rect width="400" height="300" fill="#212f3c"/>
+    <circle cx="320" cy="50" r="25" fill="#fcf3cf" opacity="0.9"/> <!-- 보름달 -->
+    <!-- 구름 -->
+    <path d="M250 50 Q280 40 300 50 Q320 60 350 50" fill="none" stroke="#34495e" stroke-width="15" opacity="0.5" stroke-linecap="round"/>
+    
+    <!-- 바닥 언덕과 잡초 -->
+    <path d="M0 250 Q200 220 400 260 L400 300 L0 300 Z" fill="#2e4053"/>
+    <path d="M100 250 L95 230 M100 250 L110 235 M280 260 L275 240 M280 260 L290 245" stroke="#1e8449" stroke-width="2"/>
+    
+    <!-- 왼쪽: 천하대장군 (남자 장승 - 툭 불거진 눈과 사나운 이빨) -->
+    <g transform="translate(130, 160)">
+      <!-- 나무 기둥 본체 -->
+      <path d="M-30 100 L-25 -70 L25 -70 L30 100 Z" fill="#8b5a2b" stroke="#5c3a21" stroke-width="3"/>
+      <!-- 갈라진 나무결 -->
+      <path d="M-15 -30 L-10 80 M15 -40 L5 60 M0 0 L10 90" stroke="#5c3a21" stroke-width="2" opacity="0.6"/>
+      
+      <!-- 장승 머리 장식 (관/모자) -->
+      <path d="M-35 -70 L0 -90 L35 -70 Z" fill="#5c3a21"/>
+      
+      <!-- 부리부리하고 튀어나온 왕방울 눈 -->
+      <circle cx="-12" cy="-45" r="8" fill="#fdfefe" stroke="#111" stroke-width="2"/>
+      <circle cx="-12" cy="-45" r="3" fill="#111"/>
+      <circle cx="12" cy="-45" r="8" fill="#fdfefe" stroke="#111" stroke-width="2"/>
+      <circle cx="12" cy="-45" r="3" fill="#111"/>
+      <!-- 두꺼운 눈썹 -->
+      <path d="M-25 -55 L-5 -52 M5 -52 L25 -55" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+      
+      <!-- 주먹코 -->
+      <path d="M0 -40 L-5 -25 L5 -25 Z" fill="#b9770e"/>
+      
+      <!-- 사납게 찢어진 입과 뻐드렁니 -->
+      <path d="M-20 -10 C0 -20 20 -20 20 -10" fill="none" stroke="#111" stroke-width="3"/>
+      <rect x="-15" y="-12" width="6" height="8" fill="#fdfefe" stroke="#111" stroke-width="1"/>
+      <rect x="-5" y="-14" width="10" height="10" fill="#fdfefe" stroke="#111" stroke-width="1"/>
+      <rect x="9" y="-12" width="6" height="8" fill="#fdfefe" stroke="#111" stroke-width="1"/>
+      <!-- 콧수염/수염 -->
+      <path d="M-20 -15 L-30 0 M20 -15 L30 0 M-10 -5 L-15 15 M10 -5 L15 15 M0 -5 L0 20" stroke="#111" stroke-width="2"/>
+      
+      <!-- 가슴에 새겨진 한자 '천하대장군(天下大將軍)' -->
+      <text x="0" y="40" font-family="serif" font-size="14" fill="#111" text-anchor="middle" opacity="0.8">天下</text>
+      <text x="0" y="60" font-family="serif" font-size="14" fill="#111" text-anchor="middle" opacity="0.8">大將軍</text>
+    </g>
+    
+    <!-- 오른쪽: 지하여장군 (여자 장승 - 온화하면서도 무서운 미소) -->
+    <g transform="translate(260, 170)">
+      <!-- 나무 기둥 본체 (약간 더 얇고 색이 다름) -->
+      <path d="M-25 90 L-20 -60 L20 -60 L25 90 Z" fill="#a0522d" stroke="#5c3a21" stroke-width="3"/>
+      <!-- 나무결 -->
+      <path d="M-10 -20 L-5 70 M10 -30 L0 50" stroke="#5c3a21" stroke-width="2" opacity="0.6"/>
+      
+      <!-- 둥근 머리 형태 -->
+      <path d="M-20 -60 C-20 -80 20 -80 20 -60 Z" fill="#a0522d" stroke="#5c3a21" stroke-width="3"/>
+      
+      <!-- 살짝 감은 듯한 반달 눈 -->
+      <path d="M-15 -45 Q-10 -50 -5 -45" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+      <path d="M5 -45 Q10 -50 15 -45" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- 뭉툭한 코 -->
+      <circle cx="0" cy="-30" r="4" fill="#b9770e"/>
+      
+      <!-- 입술(붉은 연지 칠)과 웃는 모습 -->
+      <path d="M-15 -15 C0 -5 15 -15 0 -15 Z" fill="#c0392b"/>
+      <path d="M-15 -15 Q0 -5 15 -15" fill="none" stroke="#111" stroke-width="2"/>
+      
+      <!-- 볼연지 (붉은 점) -->
+      <circle cx="-15" cy="-25" r="4" fill="#c0392b" opacity="0.7"/>
+      <circle cx="15" cy="-25" r="4" fill="#c0392b" opacity="0.7"/>
+      
+      <!-- 가슴에 새겨진 한자 '지하여장군(地下女將軍)' -->
+      <text x="0" y="30" font-family="serif" font-size="12" fill="#111" text-anchor="middle" opacity="0.8">地下</text>
+      <text x="0" y="50" font-family="serif" font-size="12" fill="#111" text-anchor="middle" opacity="0.8">女將軍</text>
+    </g>
+    
+    <!-- 장승에 묶인 금줄과 소원지 (새끼줄과 흰 종이) -->
+    <path d="M100 190 Q195 220 290 190" fill="none" stroke="#d4ac0d" stroke-width="4" stroke-dasharray="8 2"/>
+    <path d="M150 200 L150 220 M200 207 L200 230 M250 200 L250 220" stroke="#fdfefe" stroke-width="6"/>
+    
+  </g>
+</svg>
