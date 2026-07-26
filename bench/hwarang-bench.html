@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>화랑 rig 벤치 — EP.21</title>
+<style>
+  body { margin:0; background:#cfd8c6; display:flex; gap:40px; padding:60px; font-family:sans-serif; }
+  .cell { width:380px; }
+  .char { width:380px; height:456px; position:relative; }
+  .char.flip { transform: scaleX(-1); }
+  .label { text-align:center; font-size:20px; color:#26221c; margin-top:12px; }
+</style>
+</head>
+<body>
+  <div class="cell"><div class="char" id="a"></div><div class="label">화랑 A (자주 머리띠)</div></div>
+  <div class="cell"><div class="char flip" id="b"></div><div class="label">화랑 B (청록, flip)</div></div>
+  <div class="cell"><div class="char" id="c"></div><div class="label">원화 (lady)</div></div>
+  <script src="../char-tuning.js"></script>
+  <script src="../characters.js"></script>
+  <script>
+    var cfgs = {
+      a: { variant:"hwarang", shirt:"#c0392b", pants:"#2b3f63", skin:"#f9e2d2", band:"#8e3b7a" },
+      b: { variant:"hwarang", shirt:"#2e6a6a", pants:"#3a3050", skin:"#f9e2d2", band:"#d94f37", flip:true },
+      c: { variant:"lady", shirt:"#e0d3b8", skirt:"#7b4a86", skin:"#f2c99b" }
+    };
+    Object.keys(cfgs).forEach(function(k){
+      var el = document.getElementById(k);
+      el.innerHTML = makeCharacter(cfgs[k]);
+      var e = EXPRESSIONS["neutral"];
+      EYE_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.eye?"visible":"hidden"); });
+      MOUTH_CLASSES.forEach(function(c){ el.querySelector("."+c).setAttribute("visibility", c===e.mouth?"visible":"hidden"); });
+    });
+  </script>
+</body>
+</html>

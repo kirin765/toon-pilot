@@ -30,6 +30,7 @@ function makeCharacter(cfg) {
 
   var hat = "";
   var beard = "";
+  var faceDetail = "";   // 얼굴 위 장식(분·연지 등) — .head 그룹 안에서 눈보다 먼저 깔린다
   var torsoDetail = "";
   var cuff = shirtSh;
   var legs = null;   // variant가 치마 등으로 교체 가능(null = 기본 바지+신)
@@ -127,10 +128,13 @@ function makeCharacter(cfg) {
       // 날개는 옆으로 수평 — 위로 솟는 쌍 돌기는 귀로 읽히는 지뢰라 금지.
       hat =
         '<g class="hat">' +
-        '<ellipse cx="34" cy="50" rx="18" ry="8" fill="#171412"/>' +
-        '<ellipse cx="166" cy="50" rx="18" ry="8" fill="#171412"/>' +
-        '<ellipse cx="33" cy="49" rx="13" ry="5.5" fill="#31353c"/>' +
-        '<ellipse cx="167" cy="49" rx="13" ry="5.5" fill="#31353c"/>' +
+        // ⚠ 각(角)은 모체에 '붙어' 있어야 한다 — 초안이 x 16~52 / 148~184라 모체(58~142)와
+        // 6단위 떠 있었고, S8 고증·블라인드 검수자가 독립적으로 "공중 부양"·"동그란 귀 장식"으로
+        // 적발(2026-07-23, EP.16). 안쪽 끝을 모체에 겹치게 늘리고 주걱형으로.
+        '<ellipse cx="38" cy="54" rx="25" ry="7.5" fill="#171412"/>' +
+        '<ellipse cx="162" cy="54" rx="25" ry="7.5" fill="#171412"/>' +
+        '<ellipse cx="34" cy="53" rx="18" ry="5" fill="#31353c"/>' +
+        '<ellipse cx="166" cy="53" rx="18" ry="5" fill="#31353c"/>' +
         '<path d="M 80 42 Q 80 20 100 20 Q 120 20 120 42 Q 100 35 80 42 Z" fill="#171412"/>' +
         '<path d="M 58 58 Q 56 34 100 34 Q 144 34 142 58 Q 100 48 58 58 Z" fill="#221c16"/>' +
         '<path d="M 58 60 Q 100 50 142 60 L 142 65 Q 100 55 58 65 Z" fill="#2b2f36"/>' +
@@ -200,6 +204,39 @@ function makeCharacter(cfg) {
           '<path d="M 106 177 Q 109 188 106 199 L 100 199 Q 102 188 101 177 Z" fill="#d94f37"/>' +
           '<path d="M 99 177 Q 97 186 92 194 L 87 191 Q 92 184 94 177 Z" fill="' + shade("#d94f37", 0.2) + '"/>';
     }
+  } else if (cfg.variant === "hwarang") {
+    // 화랑(신라 청년): 상투 + 이마 머리띠 + 꽃 장식 + 분 바른 얼굴(볼연지).
+    // ⚠ 갓·도포는 조선 문법이라 삼국 씬에 쓰지 않는다 — 복식은 삼국 저고리(엉덩이 길이)+허리띠+바지.
+    // 상투는 정수리 '중앙 단일 매스'로 — 좌우 쌍 돌기는 귀로 읽히는 지뢰(사모 각 사례).
+    var bandC = cfg.band || "#8e3b7a";
+    hat =
+      '<g class="hat">' +
+      '<path d="M 44 84 Q 40 26 100 24 Q 160 26 156 84 Q 148 56 100 52 Q 52 56 44 84 Z" fill="#241c14"/>' +
+      '<path d="M 84 40 Q 84 26 100 26 Q 116 26 116 40 Z" fill="#241c14"/>' +
+      '<ellipse cx="100" cy="18" rx="22" ry="17" fill="#241c14"/>' +
+      '<ellipse cx="100" cy="13" rx="13" ry="9" fill="#3a2c1f"/>' +
+      // 머리띠(건) — 이마를 두르는 가로 밴드 + 아래 셰이드
+      '<path d="M 44 62 Q 100 40 156 62 L 154 82 Q 100 58 46 82 Z" fill="' + bandC + '"/>' +
+      '<path d="M 45 72 Q 100 48 155 72 L 154 82 Q 100 58 46 82 Z" fill="' + shade(bandC, 0.3) + '"/>' +
+      // ⚠ 꽃 장식(花郞의 이름 반영 양식화)은 S8 블라인드 2회에서 '여성 오독'의 단일 원인으로
+      // 지목돼 제거했다. 사료(粧飾之·傅粉)가 말하는 것은 '분과 단장'이지 머리 꽃이 아니다.
+      // 곱게 꾸민 표현은 볼연지(faceDetail)+머리띠+화려한 저고리 색이 담당한다.
+      "</g>";
+    // 분(粉)을 바른 얼굴 — 볼연지 2점. 『신라국기』 傅粉粧飾之의 화면 근거
+    faceDetail =
+      '<ellipse cx="68" cy="102" rx="14" ry="9" fill="#e0806f" opacity="0.42"/>' +
+      '<ellipse cx="132" cy="102" rx="14" ry="9" fill="#e0806f" opacity="0.42"/>';
+    // 저고리 교차 깃(여밈은 flip-인지형 — 우임 유지, EP.13 S8) + 허리띠(대)
+    torsoDetail =
+      (cfg.flip
+        ? '<path d="M 124 136 L 106 160 L 110 164 L 128 138 Z" fill="' + shade("#f6efe3", 0.15) + '"/>' +
+          '<path d="M 76 136 L 98 170 L 106 163 L 86 134 Z" fill="#f6efe3"/>'
+        : '<path d="M 76 136 L 94 160 L 90 164 L 72 138 Z" fill="' + shade("#f6efe3", 0.15) + '"/>' +
+          '<path d="M 124 136 L 102 170 L 94 163 L 114 134 Z" fill="#f6efe3"/>') +
+      '<path d="M 53 178 L 147 178 L 148 193 L 52 193 Z" fill="' + bandC + '"/>' +
+      '<path d="M 53 178 L 147 178 L 147 184 L 53 184 Z" fill="' + shade(bandC, 0.32) + '"/>' +
+      '<rect x="91" y="176" width="18" height="19" rx="3" fill="#e8b74a"/>';
+    cuff = cfg.cuff || "#f2e6d0";
   } else if (cfg.variant === "lady") {
     // 여성(치마저고리): 쪽진머리+비녀+가르마, 짧은 저고리+긴 A라인 치마.
     // 위로 솟는 머리 장식은 귀로 읽히는 지뢰 — 쪽은 옆-아래에 낮게, 비녀는 수평.
@@ -326,6 +363,7 @@ function makeCharacter(cfg) {
     '<g class="head" style="transform-origin:100px 120px">' +
     '<circle cx="100" cy="82" r="58" fill="' + skin + '"/>' +
     '<path d="M 56 120 A 58 58 0 0 0 144 120 Q 122 133 100 133 Q 78 133 56 120 Z" fill="' + skinSh + '"/>' +
+    faceDetail +
     (cfg.noHat ? wrapTf(hat, TU && TU.hat, 72) : wrapTf(hat, TU && TU.hat, 48)) +
     wrapTf(beard, TU && TU.beard, 130) +
     // eyes
