@@ -75,11 +75,16 @@ function makeCharacter(cfg) {
       // 익선관: 위로 솟은 소각(뿔)은 둥근 만화 머리에서 무조건 '토끼 귀'로 읽힘(참고이미지 2회 확인)
       // → 뿔 제거. 머리 상단 덮는 둥근 검정 관 + 뒤 높은 이중단으로 익선관 실루엣만 암시.
       // 세종 식별은 곤룡포(빨강+금색 용 흉배+옥대)가 담당.
+      // 소각(小角) 2개 — 위로 곧추세우면 '토끼 귀'가 되므로 **뒤로 눕혀 짧고 넓게**, 관 뒤에서만 살짝 노출.
+      // 관테(하단 띠)에 명도 대비를 줘야 '비니/두건'으로 안 읽힌다(EP.25 블라인드 2인 독립 지적).
       hat =
         '<g class="hat">' +
-        '<path d="M 60 58 Q 58 24 100 24 Q 142 24 140 58 Q 100 50 60 58 Z" fill="#171412"/>' +
-        '<path d="M 74 30 Q 74 13 100 13 Q 126 13 126 30 Q 100 24 74 30 Z" fill="#221d18"/>' +
-        '<path d="M 58 62 Q 58 50 100 50 Q 142 50 142 62 L 142 66 Q 100 56 58 66 Z" fill="#26221c"/>' +
+        '<ellipse cx="64" cy="27" rx="20" ry="10" transform="rotate(-24 64 27)" fill="#2f2a24"/>' +
+        '<ellipse cx="136" cy="27" rx="20" ry="10" transform="rotate(24 136 27)" fill="#2f2a24"/>' +
+        '<path d="M 58 58 Q 56 24 100 24 Q 144 24 142 58 Q 100 50 58 58 Z" fill="#171412"/>' +
+        '<path d="M 74 30 Q 74 11 100 11 Q 126 11 126 30 Q 100 24 74 30 Z" fill="#221d18"/>' +
+        '<path d="M 56 62 Q 56 47 100 47 Q 144 47 144 62 L 144 68 Q 100 58 56 68 Z" fill="#3a332c"/>' +
+        '<path d="M 56 61 Q 100 53 144 61 L 144 65 Q 100 57 56 65 Z" fill="#5a5148"/>' +
         "</g>";
     }
     // 곤룡포: 옥대 + 흉배(보)
@@ -88,7 +93,9 @@ function makeCharacter(cfg) {
       '<rect x="93" y="182" width="14" height="12" rx="3" fill="#e8b74a"/>' +
       '<circle cx="100" cy="164" r="15" fill="#e8b74a"/>' +
       '<circle cx="100" cy="164" r="11.5" fill="' + shade("#e8b74a", 0.3) + '"/>' +
-      '<path d="M 92 166 Q 96 158 101 163 Q 105 167 108 161" stroke="#e8b74a" stroke-width="2.5" fill="none" stroke-linecap="round"/>';
+      '<path d="M 92 166 Q 96 158 101 163 Q 105 167 108 161" stroke="#e8b74a" stroke-width="2.5" fill="none" stroke-linecap="round"/>' +
+      '<circle cx="70" cy="152" r="8.5" fill="#e8b74a"/><circle cx="70" cy="152" r="6" fill="' + shade("#e8b74a", 0.3) + '"/>' +
+      '<circle cx="130" cy="152" r="8.5" fill="#e8b74a"/><circle cx="130" cy="152" r="6" fill="' + shade("#e8b74a", 0.3) + '"/>';
   } else if (cfg.variant === "admiral") {
     cuff = "#31353c";
     // 전립(조선 무관): 넓고 평평한 챙 + 낮은 펠트 크라운. 붉은 상모·금구슬 정자 제거

@@ -425,3 +425,442 @@
 - kimchi_onggi.svg, hyojonggaeng_pot.svg, chef_knife.svg: 추가 소품 SVG 3종
 - r9-236-arabic-subtitles.md: 아랍어 자막
 - r9-237-hook-rewrites-v59.md: 훅 리라이트 59회차 (탐사보도 고발 톤)
+
+## 백로그 통합, 고증 시뮬레이션 및 패키징 감사 (R4)
+- r10-backlog-a.md: 백로그 통합 A (r9-1 ~ r9-99)
+- r10-backlog-b.md: 백로그 통합 B (r9-100 ~ r9-239)
+- r10-backlog-master.md: 마스터 백로그 Top 20 랭킹
+- r10-sim-1.md: 고증 지적 시뮬레이션 ① (측우기, 코끼리 1411, 착호갑사, 노비 출산휴가)
+- r10-sim-2.md: 고증 지적 시뮬레이션 ② (정조어찰첩, 신주무원록, 심환지, 신문고)
+- r10-sim-3.md: 고증 지적 시뮬레이션 ③ (화랑 화장, 피휘)
+- r10-packaging-audit.md: 기존 22편 패키징 감사 및 개선 리포트
+- kits/yeongjo-geumju/factcheck.md: 제작 준비 키트 #1 (영조 금주령) - 심층 팩트체크
+- kits/yeongjo-geumju/scripts-3an.md: 제작 준비 키트 #1 (영조 금주령) - 30초 대본 3안
+- kits/yeongjo-geumju/props-svg.md: 제작 준비 키트 #1 (영조 금주령) - 소품 목록 및 SVG
+- kits/yeongjo-geumju/packaging-5an.md: 제작 준비 키트 #1 (영조 금주령) - 패키징 5안
+- kits/yeongjo-geumju/sim-defense.md: 제작 준비 키트 #1 (영조 금주령) - 고증 시뮬레이션
+- kits/joseon-beef/factcheck.md: 제작 준비 키트 #2 (소고기 미친 조선) - 심층 팩트체크
+- kits/joseon-beef/scripts-3an.md: 제작 준비 키트 #2 (소고기 미친 조선) - 30초 대본 3안
+- kits/joseon-beef/props-svg.md: 제작 준비 키트 #2 (소고기 미친 조선) - 소품 목록 및 SVG
+- kits/joseon-beef/packaging-5an.md: 제작 준비 키트 #2 (소고기 미친 조선) - 패키징 5안
+- kits/joseon-beef/sim-defense.md: 제작 준비 키트 #2 (소고기 미친 조선) - 고증 시뮬레이션
+- kits/myeolhwagun/factcheck.md: 제작 준비 키트 #3 (최초 소방관 멸화군) - 심층 팩트체크
+- kits/myeolhwagun/scripts-3an.md: 제작 준비 키트 #3 (최초 소방관 멸화군) - 30초 대본 3안
+- kits/myeolhwagun/props-svg.md: 제작 준비 키트 #3 (최초 소방관 멸화군) - 소품 목록 및 SVG
+- kits/myeolhwagun/packaging-5an.md: 제작 준비 키트 #3 (최초 소방관 멸화군) - 패키징 5안
+- kits/myeolhwagun/sim-defense.md: 제작 준비 키트 #3 (최초 소방관 멸화군) - 고증 시뮬레이션
+- kits/sunbin-bongssi/factcheck.md: 제작 준비 키트 #4 (순빈 봉씨 퀴어 스캔들) - 심층 팩트체크
+- kits/sunbin-bongssi/scripts-3an.md: 제작 준비 키트 #4 (순빈 봉씨 퀴어 스캔들) - 30초 대본 3안
+- kits/sunbin-bongssi/props-svg.md: 제작 준비 키트 #4 (순빈 봉씨 퀴어 스캔들) - 소품 목록 및 SVG
+- kits/sunbin-bongssi/packaging-5an.md: 제작 준비 키트 #4 (순빈 봉씨 퀴어 스캔들) - 패키징 5안
+- kits/sunbin-bongssi/sim-defense.md: 제작 준비 키트 #4 (순빈 봉씨 퀴어 스캔들) - 고증 시뮬레이션
+- kits/jeongjo-glasses/factcheck.md: 제작 준비 키트 #5 (정조의 콤플렉스 안경) - 심층 팩트체크
+- kits/jeongjo-glasses/scripts-3an.md: 제작 준비 키트 #5 (정조의 콤플렉스 안경) - 30초 대본 3안
+- kits/jeongjo-glasses/props-svg.md: 제작 준비 키트 #5 (정조의 콤플렉스 안경) - 소품 목록 및 SVG
+- kits/jeongjo-glasses/packaging-5an.md: 제작 준비 키트 #5 (정조의 콤플렉스 안경) - 패키징 5안
+- kits/jeongjo-glasses/sim-defense.md: 제작 준비 키트 #5 (정조의 콤플렉스 안경) - 고증 시뮬레이션
+- kits/donguibogam/factcheck.md: 제작 준비 키트 #6 (유네스코 1호 의서 동의보감) - 심층 팩트체크
+- kits/donguibogam/scripts-3an.md: 제작 준비 키트 #6 (유네스코 1호 의서 동의보감) - 30초 대본 3안
+- kits/donguibogam/props-svg.md: 제작 준비 키트 #6 (유네스코 1호 의서 동의보감) - 소품 목록 및 SVG
+- kits/donguibogam/packaging-5an.md: 제작 준비 키트 #6 (유네스코 1호 의서 동의보감) - 패키징 5안
+- kits/donguibogam/sim-defense.md: 제작 준비 키트 #6 (유네스코 1호 의서 동의보감) - 고증 시뮬레이션
+- kits/danjong-assassination/factcheck.md: 제작 준비 키트 #7 (단종 숨겨진 암살 지시서) - 심층 팩트체크
+- kits/danjong-assassination/scripts-3an.md: 제작 준비 키트 #7 (단종 숨겨진 암살 지시서) - 30초 대본 3안
+- kits/danjong-assassination/props-svg.md: 제작 준비 키트 #7 (단종 숨겨진 암살 지시서) - 소품 목록 및 SVG
+- kits/danjong-assassination/packaging-5an.md: 제작 준비 키트 #7 (단종 숨겨진 암살 지시서) - 패키징 5안
+- kits/danjong-assassination/sim-defense.md: 제작 준비 키트 #7 (단종 숨겨진 암살 지시서) - 고증 시뮬레이션
+- kits/injong-poison-tteok/factcheck.md: 제작 준비 키트 #8 (인종 독살설 저주받은 떡) - 심층 팩트체크
+- kits/injong-poison-tteok/scripts-3an.md: 제작 준비 키트 #8 (인종 독살설 저주받은 떡) - 30초 대본 3안
+- kits/injong-poison-tteok/props-svg.md: 제작 준비 키트 #8 (인종 독살설 저주받은 떡) - 소품 목록 및 SVG
+- kits/injong-poison-tteok/packaging-5an.md: 제작 준비 키트 #8 (인종 독살설 저주받은 떡) - 패키징 5안
+- kits/injong-poison-tteok/sim-defense.md: 제작 준비 키트 #8 (인종 독살설 저주받은 떡) - 고증 시뮬레이션
+- kits/joseon-paper-armor/factcheck.md: 제작 준비 키트 #9 (조선 방탄복 종이갑옷 지갑) - 심층 팩트체크
+- kits/joseon-paper-armor/scripts-3an.md: 제작 준비 키트 #9 (조선 방탄복 종이갑옷 지갑) - 30초 대본 3안
+- kits/joseon-paper-armor/props-svg.md: 제작 준비 키트 #9 (조선 방탄복 종이갑옷 지갑) - 소품 목록 및 SVG
+- kits/joseon-paper-armor/packaging-5an.md: 제작 준비 키트 #9 (조선 방탄복 종이갑옷 지갑) - 패키징 5안
+- kits/joseon-paper-armor/sim-defense.md: 제작 준비 키트 #9 (조선 방탄복 종이갑옷 지갑) - 고증 시뮬레이션
+- kits/kim-manduk/factcheck.md: 제작 준비 키트 #10 (제주도 구한 흙수저 CEO 김만덕) - 심층 팩트체크
+- kits/kim-manduk/scripts-3an.md: 제작 준비 키트 #10 (제주도 구한 흙수저 CEO 김만덕) - 30초 대본 3안
+- kits/kim-manduk/props-svg.md: 제작 준비 키트 #10 (제주도 구한 흙수저 CEO 김만덕) - 소품 목록 및 SVG
+- kits/kim-manduk/packaging-5an.md: 제작 준비 키트 #10 (제주도 구한 흙수저 CEO 김만덕) - 패키징 5안
+- kits/kim-manduk/sim-defense.md: 제작 준비 키트 #10 (제주도 구한 흙수저 CEO 김만덕) - 고증 시뮬레이션
+- kits/eoudong-scandal/factcheck.md: 제작 준비 키트 #11 (어우동의 진실 스캔들인가 정치적 희생양인가) - 심층 팩트체크
+- kits/eoudong-scandal/scripts-3an.md: 제작 준비 키트 #11 (어우동의 진실 스캔들인가 정치적 희생양인가) - 30초 대본 3안
+- kits/eoudong-scandal/props-svg.md: 제작 준비 키트 #11 (어우동의 진실 스캔들인가 정치적 희생양인가) - 소품 목록 및 SVG
+- kits/eoudong-scandal/packaging-5an.md: 제작 준비 키트 #11 (어우동의 진실 스캔들인가 정치적 희생양인가) - 패키징 5안
+- kits/eoudong-scandal/sim-defense.md: 제작 준비 키트 #11 (어우동의 진실 스캔들인가 정치적 희생양인가) - 고증 시뮬레이션
+- kits/yeongjo-gyeongjong-poison/factcheck.md: 제작 준비 키트 #12 (영조 트라우마 경종 독살설 게장과 생감) - 심층 팩트체크
+- kits/yeongjo-gyeongjong-poison/scripts-3an.md: 제작 준비 키트 #12 (영조 트라우마 경종 독살설 게장과 생감) - 30초 대본 3안
+- kits/yeongjo-gyeongjong-poison/props-svg.md: 제작 준비 키트 #12 (영조 트라우마 경종 독살설 게장과 생감) - 소품 목록 및 SVG
+- kits/yeongjo-gyeongjong-poison/packaging-5an.md: 제작 준비 키트 #12 (영조 트라우마 경종 독살설 게장과 생감) - 패키징 5안
+- kits/yeongjo-gyeongjong-poison/sim-defense.md: 제작 준비 키트 #12 (영조 트라우마 경종 독살설 게장과 생감) - 고증 시뮬레이션
+- kits/sejong-eunuch-scam/factcheck.md: 제작 준비 키트 #13 (세종대왕 전대미문 내시 조생 가짜 왕명) - 심층 팩트체크
+- kits/sejong-eunuch-scam/scripts-3an.md: 제작 준비 키트 #13 (세종대왕 전대미문 내시 조생 가짜 왕명) - 30초 대본 3안
+- kits/sejong-eunuch-scam/props-svg.md: 제작 준비 키트 #13 (세종대왕 전대미문 내시 조생 가짜 왕명) - 소품 목록 및 SVG
+- kits/sejong-eunuch-scam/packaging-5an.md: 제작 준비 키트 #13 (세종대왕 전대미문 내시 조생 가짜 왕명) - 패키징 5안
+- kits/sejong-eunuch-scam/sim-defense.md: 제작 준비 키트 #13 (세종대왕 전대미문 내시 조생 가짜 왕명) - 고증 시뮬레이션
+- kits/joseon-real-estate-speculation/factcheck.md: 제작 준비 키트 #14 (조선 한양 땅 부동산 투기 복부인) - 심층 팩트체크
+- kits/joseon-real-estate-speculation/scripts-3an.md: 제작 준비 키트 #14 (조선 한양 땅 부동산 투기 복부인) - 30초 대본 3안
+- kits/joseon-real-estate-speculation/props-svg.md: 제작 준비 키트 #14 (조선 한양 땅 부동산 투기 복부인) - 소품 목록 및 SVG
+- kits/joseon-real-estate-speculation/packaging-5an.md: 제작 준비 키트 #14 (조선 한양 땅 부동산 투기 복부인) - 패키징 5안
+- kits/joseon-real-estate-speculation/sim-defense.md: 제작 준비 키트 #14 (조선 한양 땅 부동산 투기 복부인) - 고증 시뮬레이션
+- kits/heungseon-dangbaekjeon-inflation/factcheck.md: 제작 준비 키트 #15 (흥선대원군 당백전 조선 인플레이션 대참사) - 심층 팩트체크
+- kits/heungseon-dangbaekjeon-inflation/scripts-3an.md: 제작 준비 키트 #15 (흥선대원군 당백전 조선 인플레이션 대참사) - 30초 대본 3안
+- kits/heungseon-dangbaekjeon-inflation/props-svg.md: 제작 준비 키트 #15 (흥선대원군 당백전 조선 인플레이션 대참사) - 소품 목록 및 SVG
+- kits/heungseon-dangbaekjeon-inflation/packaging-5an.md: 제작 준비 키트 #15 (흥선대원군 당백전 조선 인플레이션 대참사) - 패키징 5안
+- kits/heungseon-dangbaekjeon-inflation/sim-defense.md: 제작 준비 키트 #15 (흥선대원군 당백전 조선 인플레이션 대참사) - 고증 시뮬레이션
+- kits/hyeonjong-counterfeit-coins/factcheck.md: 제작 준비 키트 #16 (현종 시대 미스터리한 동전 위조 조직) - 심층 팩트체크
+- kits/hyeonjong-counterfeit-coins/scripts-3an.md: 제작 준비 키트 #16 (현종 시대 미스터리한 동전 위조 조직) - 30초 대본 3안
+- kits/hyeonjong-counterfeit-coins/props-svg.md: 제작 준비 키트 #16 (현종 시대 미스터리한 동전 위조 조직) - 소품 목록 및 SVG
+- kits/hyeonjong-counterfeit-coins/packaging-5an.md: 제작 준비 키트 #16 (현종 시대 미스터리한 동전 위조 조직) - 패키징 5안
+- kits/hyeonjong-counterfeit-coins/sim-defense.md: 제작 준비 키트 #16 (현종 시대 미스터리한 동전 위조 조직) - 고증 시뮬레이션
+- kits/yangnyeong-hunting-dogs/factcheck.md: 제작 준비 키트 #17 (세종대왕 형 양녕대군 광적인 개 사랑 매사냥) - 심층 팩트체크
+- kits/yangnyeong-hunting-dogs/scripts-3an.md: 제작 준비 키트 #17 (세종대왕 형 양녕대군 광적인 개 사랑 매사냥) - 30초 대본 3안
+- kits/yangnyeong-hunting-dogs/props-svg.md: 제작 준비 키트 #17 (세종대왕 형 양녕대군 광적인 개 사랑 매사냥) - 소품 목록 및 SVG
+- kits/yangnyeong-hunting-dogs/packaging-5an.md: 제작 준비 키트 #17 (세종대왕 형 양녕대군 광적인 개 사랑 매사냥) - 패키징 5안
+- kits/yangnyeong-hunting-dogs/sim-defense.md: 제작 준비 키트 #17 (세종대왕 형 양녕대군 광적인 개 사랑 매사냥) - 고증 시뮬레이션
+- kits/joseon-chetamin-spy/factcheck.md: 제작 준비 키트 #18 (조선 첩보 기관 체탐인 북방 그림자 전쟁) - 심층 팩트체크
+- kits/joseon-chetamin-spy/scripts-3an.md: 제작 준비 키트 #18 (조선 첩보 기관 체탐인 북방 그림자 전쟁) - 30초 대본 3안
+- kits/joseon-chetamin-spy/props-svg.md: 제작 준비 키트 #18 (조선 첩보 기관 체탐인 북방 그림자 전쟁) - 소품 목록 및 SVG
+- kits/joseon-chetamin-spy/packaging-5an.md: 제작 준비 키트 #18 (조선 첩보 기관 체탐인 북방 그림자 전쟁) - 패키징 5안
+- kits/joseon-chetamin-spy/sim-defense.md: 제작 준비 키트 #18 (조선 첩보 기관 체탐인 북방 그림자 전쟁) - 고증 시뮬레이션
+- kits/jeong-yeorip-rebellion/factcheck.md: 제작 준비 키트 #19 (조선 아나키스트 정여립 기축옥사) - 심층 팩트체크
+- kits/jeong-yeorip-rebellion/scripts-3an.md: 제작 준비 키트 #19 (조선 아나키스트 정여립 기축옥사) - 30초 대본 3안
+- kits/jeong-yeorip-rebellion/props-svg.md: 제작 준비 키트 #19 (조선 아나키스트 정여립 기축옥사) - 소품 목록 및 SVG
+- kits/jeong-yeorip-rebellion/packaging-5an.md: 제작 준비 키트 #19 (조선 아나키스트 정여립 기축옥사) - 패키징 5안
+- kits/jeong-yeorip-rebellion/sim-defense.md: 제작 준비 키트 #19 (조선 아나키스트 정여립 기축옥사) - 고증 시뮬레이션
+- kits/joseon-comedian-gonggil/factcheck.md: 제작 준비 키트 #20 (조선 궁중 코미디언 공길 연산군 눈물) - 심층 팩트체크
+- kits/joseon-comedian-gonggil/scripts-3an.md: 제작 준비 키트 #20 (조선 궁중 코미디언 공길 연산군 눈물) - 30초 대본 3안
+- kits/joseon-comedian-gonggil/props-svg.md: 제작 준비 키트 #20 (조선 궁중 코미디언 공길 연산군 눈물) - 소품 목록 및 SVG
+- kits/joseon-comedian-gonggil/packaging-5an.md: 제작 준비 키트 #20 (조선 궁중 코미디언 공길 연산군 눈물) - 패키징 5안
+- kits/joseon-comedian-gonggil/sim-defense.md: 제작 준비 키트 #20 (조선 궁중 코미디언 공길 연산군 눈물) - 고증 시뮬레이션
+- kits/choi-seokjeong-magic-square/factcheck.md: 제작 준비 키트 #21 (조선 수학자 최석정 9x9 마법진 구수략) - 심층 팩트체크
+- kits/choi-seokjeong-magic-square/scripts-3an.md: 제작 준비 키트 #21 (조선 수학자 최석정 9x9 마법진 구수략) - 30초 대본 3안
+- kits/choi-seokjeong-magic-square/props-svg.md: 제작 준비 키트 #21 (조선 수학자 최석정 9x9 마법진 구수략) - 소품 목록 및 SVG
+- kits/choi-seokjeong-magic-square/packaging-5an.md: 제작 준비 키트 #21 (조선 수학자 최석정 9x9 마법진 구수략) - 패키징 5안
+- kits/choi-seokjeong-magic-square/sim-defense.md: 제작 준비 키트 #21 (조선 수학자 최석정 9x9 마법진 구수략) - 고증 시뮬레이션
+- kits/joseon-profiler-investigation/factcheck.md: 제작 준비 키트 #22 (조선 프로파일러 심리 수사 흠휼전칙) - 심층 팩트체크
+- kits/joseon-profiler-investigation/scripts-3an.md: 제작 준비 키트 #22 (조선 프로파일러 심리 수사 흠휼전칙) - 30초 대본 3안
+- kits/joseon-profiler-investigation/props-svg.md: 제작 준비 키트 #22 (조선 프로파일러 심리 수사 흠휼전칙) - 소품 목록 및 SVG
+- kits/joseon-profiler-investigation/packaging-5an.md: 제작 준비 키트 #22 (조선 프로파일러 심리 수사 흠휼전칙) - 패키징 5안
+- kits/joseon-profiler-investigation/sim-defense.md: 제작 준비 키트 #22 (조선 프로파일러 심리 수사 흠휼전칙) - 고증 시뮬레이션
+- kits/joseon-surgeon-baek-gwanghyun/factcheck.md: 제작 준비 키트 #23 (조선 외과의사 백광현 종기 수술 치종남지) - 심층 팩트체크
+- kits/joseon-surgeon-baek-gwanghyun/scripts-3an.md: 제작 준비 키트 #23 (조선 외과의사 백광현 종기 수술 치종남지) - 30초 대본 3안
+- kits/joseon-surgeon-baek-gwanghyun/props-svg.md: 제작 준비 키트 #23 (조선 외과의사 백광현 종기 수술 치종남지) - 소품 목록 및 SVG
+- kits/joseon-surgeon-baek-gwanghyun/packaging-5an.md: 제작 준비 키트 #23 (조선 외과의사 백광현 종기 수술 치종남지) - 패키징 5안
+- kits/joseon-surgeon-baek-gwanghyun/sim-defense.md: 제작 준비 키트 #23 (조선 외과의사 백광현 종기 수술 치종남지) - 고증 시뮬레이션
+- kits/joseon-delivery-service/factcheck.md: 제작 준비 키트 #24 (조선 배달 민족 18세기 한양 냉면 배달과 효종갱) - 심층 팩트체크
+- kits/joseon-delivery-service/scripts-3an.md: 제작 준비 키트 #24 (조선 배달 민족 18세기 한양 냉면 배달과 효종갱) - 30초 대본 3안
+- kits/joseon-delivery-service/props-svg.md: 제작 준비 키트 #24 (조선 배달 민족 18세기 한양 냉면 배달과 효종갱) - 소품 목록 및 SVG
+- kits/joseon-delivery-service/packaging-5an.md: 제작 준비 키트 #24 (조선 배달 민족 18세기 한양 냉면 배달과 효종갱) - 패키징 5안
+- kits/joseon-delivery-service/sim-defense.md: 제작 준비 키트 #24 (조선 배달 민족 18세기 한양 냉면 배달과 효종갱) - 고증 시뮬레이션
+- kits/joseon-financial-revolution/factcheck.md: 제작 준비 키트 #25 (조선 금융 혁명 객주 어음 환전 시스템) - 심층 팩트체크
+- kits/joseon-financial-revolution/scripts-3an.md: 제작 준비 키트 #25 (조선 금융 혁명 객주 어음 환전 시스템) - 30초 대본 3안
+- kits/joseon-financial-revolution/props-svg.md: 제작 준비 키트 #25 (조선 금융 혁명 객주 어음 환전 시스템) - 소품 목록 및 SVG
+- kits/joseon-financial-revolution/packaging-5an.md: 제작 준비 키트 #25 (조선 금융 혁명 객주 어음 환전 시스템) - 패키징 5안
+- kits/joseon-financial-revolution/sim-defense.md: 제작 준비 키트 #25 (조선 금융 혁명 객주 어음 환전 시스템) - 고증 시뮬레이션
+- kits/joseon-beauty-cosmetics/factcheck.md: 제작 준비 키트 #26 (조선 숙종 시대 궁중 뷰티 스캔들 화장품 납 중독) - 심층 팩트체크
+- kits/joseon-beauty-cosmetics/scripts-3an.md: 제작 준비 키트 #26 (조선 숙종 시대 궁중 뷰티 스캔들 화장품 납 중독) - 30초 대본 3안
+- kits/joseon-beauty-cosmetics/props-svg.md: 제작 준비 키트 #26 (조선 숙종 시대 궁중 뷰티 스캔들 화장품 납 중독) - 소품 목록 및 SVG
+- kits/joseon-beauty-cosmetics/packaging-5an.md: 제작 준비 키트 #26 (조선 숙종 시대 궁중 뷰티 스캔들 화장품 납 중독) - 패키징 5안
+- kits/joseon-beauty-cosmetics/sim-defense.md: 제작 준비 키트 #26 (조선 숙종 시대 궁중 뷰티 스캔들 화장품 납 중독) - 고증 시뮬레이션
+- kits/joseon-forensic-jeungsunuwonrok/factcheck.md: 제작 준비 키트 #27 (조선 법의학 비결서 증수무원록 은비녀 초산 검시법) - 심층 팩트체크
+- kits/joseon-forensic-jeungsunuwonrok/scripts-3an.md: 제작 준비 키트 #27 (조선 법의학 비결서 증수무원록 은비녀 초산 검시법) - 30초 대본 3안
+- kits/joseon-forensic-jeungsunuwonrok/props-svg.md: 제작 준비 키트 #27 (조선 법의학 비결서 증수무원록 은비녀 초산 검시법) - 소품 목록 및 SVG
+- kits/joseon-forensic-jeungsunuwonrok/packaging-5an.md: 제작 준비 키트 #27 (조선 법의학 비결서 증수무원록 은비녀 초산 검시법) - 패키징 5안
+- kits/joseon-forensic-jeungsunuwonrok/sim-defense.md: 제작 준비 키트 #27 (조선 법의학 비결서 증수무원록 은비녀 초산 검시법) - 고증 시뮬레이션
+- kits/joseon-male-chef-daeryeong-suksu/factcheck.md: 제작 준비 키트 #28 (조선 궁중 셰프 수라간 남성 대령숙수와 잔치 요리) - 심층 팩트체크
+- kits/joseon-male-chef-daeryeong-suksu/scripts-3an.md: 제작 준비 키트 #28 (조선 궁중 셰프 수라간 남성 대령숙수와 잔치 요리) - 30초 대본 3안
+- kits/joseon-male-chef-daeryeong-suksu/props-svg.md: 제작 준비 키트 #28 (조선 궁중 셰프 수라간 남성 대령숙수와 잔치 요리) - 소품 목록 및 SVG
+- kits/joseon-male-chef-daeryeong-suksu/packaging-5an.md: 제작 준비 키트 #28 (조선 궁중 셰프 수라간 남성 대령숙수와 잔치 요리) - 패키징 5안
+- kits/joseon-male-chef-daeryeong-suksu/sim-defense.md: 제작 준비 키트 #28 (조선 궁중 셰프 수라간 남성 대령숙수와 잔치 요리) - 고증 시뮬레이션
+- kits/sukjong-cat-geumson/factcheck.md: 제작 준비 키트 #29 (조선 숙종 시대의 반려묘 극성 집사 대왕 금손) - 심층 팩트체크
+- kits/sukjong-cat-geumson/scripts-3an.md: 제작 준비 키트 #29 (조선 숙종 시대의 반려묘 극성 집사 대왕 금손) - 30초 대본 3안
+- kits/sukjong-cat-geumson/props-svg.md: 제작 준비 키트 #29 (조선 숙종 시대의 반려묘 극성 집사 대왕 금손) - 소품 목록 및 SVG
+- kits/sukjong-cat-geumson/packaging-5an.md: 제작 준비 키트 #29 (조선 숙종 시대의 반려묘 극성 집사 대왕 금손) - 패키징 5안
+- kits/sukjong-cat-geumson/sim-defense.md: 제작 준비 키트 #29 (조선 숙종 시대의 반려묘 극성 집사 대왕 금손) - 고증 시뮬레이션
+- kits/joseon-royal-sayak-truth/factcheck.md: 제작 준비 키트 #30 (조선 사약의 진실 즉사 독약이 아니라 온돌방 가열 VIP 형벌) - 심층 팩트체크
+- kits/joseon-royal-sayak-truth/scripts-3an.md: 제작 준비 키트 #30 (조선 사약의 진실 즉사 독약이 아니라 온돌방 가열 VIP 형벌) - 30초 대본 3안
+- kits/joseon-royal-sayak-truth/props-svg.md: 제작 준비 키트 #30 (조선 사약의 진실 즉사 독약이 아니라 온돌방 가열 VIP 형벌) - 소품 목록 및 SVG
+- kits/joseon-royal-sayak-truth/packaging-5an.md: 제작 준비 키트 #30 (조선 사약의 진실 즉사 독약이 아니라 온돌방 가열 VIP 형벌) - 패키징 5안
+- kits/joseon-royal-sayak-truth/sim-defense.md: 제작 준비 키트 #30 (조선 사약의 진실 즉사 독약이 아니라 온돌방 가열 VIP 형벌) - 고증 시뮬레이션
+- kits/yeongjo-alcohol-ban-execution/factcheck.md: 제작 준비 키트 #31 (조선 영조 시대의 피의 금주령 남대문 앞 사령관 즉결 참수형) - 심층 팩트체크
+- kits/yeongjo-alcohol-ban-execution/scripts-3an.md: 제작 준비 키트 #31 (조선 영조 시대의 피의 금주령 남대문 앞 사령관 즉결 참수형) - 30초 대본 3안
+- kits/yeongjo-alcohol-ban-execution/props-svg.md: 제작 준비 키트 #31 (조선 영조 시대의 피의 금주령 남대문 앞 사령관 즉결 참수형) - 소품 목록 및 SVG
+- kits/yeongjo-alcohol-ban-execution/packaging-5an.md: 제작 준비 키트 #31 (조선 영조 시대의 피의 금주령 남대문 앞 사령관 즉결 참수형) - 패키징 5안
+- kits/yeongjo-alcohol-ban-execution/sim-defense.md: 제작 준비 키트 #31 (조선 영조 시대의 피의 금주령 남대문 앞 사령관 즉결 참수형) - 고증 시뮬레이션
+- kits/joseon-time-bomb-bigyeokjincheonroe/factcheck.md: 제작 준비 키트 #32 (조선 임진왜란 세계 최초 시한폭탄 비격진천뢰 왜군 폭사) - 심층 팩트체크
+- kits/joseon-time-bomb-bigyeokjincheonroe/scripts-3an.md: 제작 준비 키트 #32 (조선 임진왜란 세계 최초 시한폭탄 비격진천뢰 왜군 폭사) - 30초 대본 3안
+- kits/joseon-time-bomb-bigyeokjincheonroe/props-svg.md: 제작 준비 키트 #32 (조선 임진왜란 세계 최초 시한폭탄 비격진천뢰 왜군 폭사) - 소품 목록 및 SVG
+- kits/joseon-time-bomb-bigyeokjincheonroe/packaging-5an.md: 제작 준비 키트 #32 (조선 임진왜란 세계 최초 시한폭탄 비격진천뢰 왜군 폭사) - 패키징 5안
+- kits/joseon-time-bomb-bigyeokjincheonroe/sim-defense.md: 제작 준비 키트 #32 (조선 임진왜란 세계 최초 시한폭탄 비격진천뢰 왜군 폭사) - 고증 시뮬레이션
+- kits/hyojong-acupuncture-death/factcheck.md: 제작 준비 키트 #33 (조선 북벌 군주 효종 즉사시킨 수전증 어의 치명적 침) - 심층 팩트체크
+- kits/hyojong-acupuncture-death/scripts-3an.md: 제작 준비 키트 #33 (조선 북벌 군주 효종 즉사시킨 수전증 어의 치명적 침) - 30초 대본 3안
+- kits/hyojong-acupuncture-death/props-svg.md: 제작 준비 키트 #33 (조선 북벌 군주 효종 즉사시킨 수전증 어의 치명적 침) - 소품 목록 및 SVG
+- kits/hyojong-acupuncture-death/packaging-5an.md: 제작 준비 키트 #33 (조선 북벌 군주 효종 즉사시킨 수전증 어의 치명적 침) - 패키징 5안
+- kits/hyojong-acupuncture-death/sim-defense.md: 제작 준비 키트 #33 (조선 북벌 군주 효종 즉사시킨 수전증 어의 치명적 침) - 고증 시뮬레이션
+- kits/joseon-ice-storage-binggo/factcheck.md: 제작 준비 키트 #34 (조선 궁중 얼음 창고 서빙고 왕실 한여름 얼음 화채) - 심층 팩트체크
+- kits/joseon-ice-storage-binggo/scripts-3an.md: 제작 준비 키트 #34 (조선 궁중 얼음 창고 서빙고 왕실 한여름 얼음 화채) - 30초 대본 3안
+- kits/joseon-ice-storage-binggo/props-svg.md: 제작 준비 키트 #34 (조선 궁중 얼음 창고 서빙고 왕실 한여름 얼음 화채) - 소품 목록 및 SVG
+- kits/joseon-ice-storage-binggo/packaging-5an.md: 제작 준비 키트 #34 (조선 궁중 얼음 창고 서빙고 왕실 한여름 얼음 화채) - 패키징 5안
+- kits/joseon-ice-storage-binggo/sim-defense.md: 제작 준비 키트 #34 (조선 궁중 얼음 창고 서빙고 왕실 한여름 얼음 화채) - 고증 시뮬레이션
+- kits/joseon-royal-glasses-taboo/factcheck.md: 제작 준비 키트 #35 (조선 궁중 안경 착용 절대 금기 임금 앞 파직) - 심층 팩트체크
+- kits/joseon-royal-glasses-taboo/scripts-3an.md: 제작 준비 키트 #35 (조선 궁중 안경 착용 절대 금기 임금 앞 파직) - 30초 대본 3안
+- kits/joseon-royal-glasses-taboo/props-svg.md: 제작 준비 키트 #35 (조선 궁중 안경 착용 절대 금기 임금 앞 파직) - 소품 목록 및 SVG
+- kits/joseon-royal-glasses-taboo/packaging-5an.md: 제작 준비 키트 #35 (조선 궁중 안경 착용 절대 금기 임금 앞 파직) - 패키징 5안
+- kits/joseon-royal-glasses-taboo/sim-defense.md: 제작 준비 키트 #35 (조선 궁중 안경 착용 절대 금기 임금 앞 파직) - 고증 시뮬레이션
+- kits/joseon-corrupt-tax-baekgol-hwanggu/factcheck.md: 제작 준비 키트 #36 (조선 죽은 백골과 갓난아기 군포 수탈 백골징수 황구첨정) - 심층 팩트체크
+- kits/joseon-corrupt-tax-baekgol-hwanggu/scripts-3an.md: 제작 준비 키트 #36 (조선 죽은 백골과 갓난아기 군포 수탈 백골징수 황구첨정) - 30초 대본 3안
+- kits/joseon-corrupt-tax-baekgol-hwanggu/props-svg.md: 제작 준비 키트 #36 (조선 죽은 백골과 갓난아기 군포 수탈 백골징수 황구첨정) - 소품 목록 및 SVG
+- kits/joseon-corrupt-tax-baekgol-hwanggu/packaging-5an.md: 제작 준비 키트 #36 (조선 죽은 백골과 갓난아기 군포 수탈 백골징수 황구첨정) - 패키징 5안
+- kits/joseon-corrupt-tax-baekgol-hwanggu/sim-defense.md: 제작 준비 키트 #36 (조선 죽은 백골과 갓난아기 군포 수탈 백골징수 황구첨정) - 고증 시뮬레이션
+- kits/imjin-war-potter-kidnapping/factcheck.md: 제작 준비 키트 #37 (임진왜란 도자기 전쟁 일본 납치 조선 도공) - 심층 팩트체크
+- kits/imjin-war-potter-kidnapping/scripts-3an.md: 제작 준비 키트 #37 (임진왜란 도자기 전쟁 일본 납치 조선 도공) - 30초 대본 3안
+- kits/imjin-war-potter-kidnapping/props-svg.md: 제작 준비 키트 #37 (임진왜란 도자기 전쟁 일본 납치 조선 도공) - 소품 목록 및 SVG
+- kits/imjin-war-potter-kidnapping/packaging-5an.md: 제작 준비 키트 #37 (임진왜란 도자기 전쟁 일본 납치 조선 도공) - 패키징 5안
+- kits/imjin-war-potter-kidnapping/sim-defense.md: 제작 준비 키트 #37 (임진왜란 도자기 전쟁 일본 납치 조선 도공) - 고증 시뮬레이션
+- kits/joseon-royal-stool-maehwatseul/factcheck.md: 제작 준비 키트 #38 (조선 왕의 이동식 변기 매화틀 똥 맛보는 어의) - 심층 팩트체크
+- kits/joseon-royal-stool-maehwatseul/scripts-3an.md: 제작 준비 키트 #38 (조선 왕의 이동식 변기 매화틀 똥 맛보는 어의) - 30초 대본 3안
+- kits/joseon-royal-stool-maehwatseul/props-svg.md: 제작 준비 키트 #38 (조선 왕의 이동식 변기 매화틀 똥 맛보는 어의) - 소품 목록 및 SVG
+- kits/joseon-royal-stool-maehwatseul/packaging-5an.md: 제작 준비 키트 #38 (조선 왕의 이동식 변기 매화틀 똥 맛보는 어의) - 패키징 5안
+- kits/joseon-royal-stool-maehwatseul/sim-defense.md: 제작 준비 키트 #38 (조선 왕의 이동식 변기 매화틀 똥 맛보는 어의) - 고증 시뮬레이션
+- kits/joseon-tobacco-king-jeongjo-praise/factcheck.md: 제작 준비 키트 #39 (조선 왕 앞 담배 예법과 정조 국민 흡연 권장) - 심층 팩트체크
+- kits/joseon-tobacco-king-jeongjo-praise/scripts-3an.md: 제작 준비 키트 #39 (조선 왕 앞 담배 예법과 정조 국민 흡연 권장) - 30초 대본 3안
+- kits/joseon-tobacco-king-jeongjo-praise/props-svg.md: 제작 준비 키트 #39 (조선 왕 앞 담배 예법과 정조 국민 흡연 권장) - 소품 목록 및 SVG
+- kits/joseon-tobacco-king-jeongjo-praise/packaging-5an.md: 제작 준비 키트 #39 (조선 왕 앞 담배 예법과 정조 국민 흡연 권장) - 패키징 5안
+- kits/joseon-tobacco-king-jeongjo-praise/sim-defense.md: 제작 준비 키트 #39 (조선 왕 앞 담배 예법과 정조 국민 흡연 권장) - 고증 시뮬레이션
+- kits/joseon-genealogy-forgery-yangban/factcheck.md: 제작 준비 키트 #40 (조선 인구 70% 양반 신분 상승 공명첩 족보 위조) - 심층 팩트체크
+- kits/joseon-genealogy-forgery-yangban/scripts-3an.md: 제작 준비 키트 #40 (조선 인구 70% 양반 신분 상승 공명첩 족보 위조) - 30초 대본 3안
+- kits/joseon-genealogy-forgery-yangban/props-svg.md: 제작 준비 키트 #40 (조선 인구 70% 양반 신분 상승 공명첩 족보 위조) - 소품 목록 및 SVG
+- kits/joseon-genealogy-forgery-yangban/packaging-5an.md: 제작 준비 키트 #40 (조선 인구 70% 양반 신분 상승 공명첩 족보 위조) - 패키징 5안
+- kits/joseon-genealogy-forgery-yangban/sim-defense.md: 제작 준비 키트 #40 (조선 인구 70% 양반 신분 상승 공명첩 족보 위조) - 고증 시뮬레이션
+- kits/joseon-gache-wig-ban/factcheck.md: 제작 준비 키트 #41 (조선 가체금지령 4kg 가발 목뼈 부러진 신부) - 심층 팩트체크
+- kits/joseon-gache-wig-ban/scripts-3an.md: 제작 준비 키트 #41 (조선 가체금지령 4kg 가발 목뼈 부러진 신부) - 30초 대본 3안
+- kits/joseon-gache-wig-ban/props-svg.md: 제작 준비 키트 #41 (조선 가체금지령 4kg 가발 목뼈 부러진 신부) - 소품 목록 및 SVG
+- kits/joseon-gache-wig-ban/packaging-5an.md: 제작 준비 키트 #41 (조선 가체금지령 4kg 가발 목뼈 부러진 신부) - 패키징 5안
+- kits/joseon-gache-wig-ban/sim-defense.md: 제작 준비 키트 #41 (조선 가체금지령 4kg 가발 목뼈 부러진 신부) - 고증 시뮬레이션
+- kits/joseon-taejong-hamhung-chasa/factcheck.md: 제작 준비 키트 #42 (조선 태조 이성계 함흥차사 화살 야사와 실록의 진실) - 심층 팩트체크
+- kits/joseon-taejong-hamhung-chasa/scripts-3an.md: 제작 준비 키트 #42 (조선 태조 이성계 함흥차사 화살 야사와 실록의 진실) - 30초 대본 3안
+- kits/joseon-taejong-hamhung-chasa/props-svg.md: 제작 준비 키트 #42 (조선 태조 이성계 함흥차사 화살 야사와 실록의 진실) - 소품 목록 및 SVG
+- kits/joseon-taejong-hamhung-chasa/packaging-5an.md: 제작 준비 키트 #42 (조선 태조 이성계 함흥차사 화살 야사와 실록의 진실) - 패키징 5안
+- kits/joseon-taejong-hamhung-chasa/sim-defense.md: 제작 준비 키트 #42 (조선 태조 이성계 함흥차사 화살 야사와 실록의 진실) - 고증 시뮬레이션
+- kits/joseon-jang-heebin-curse-shaman/factcheck.md: 제작 준비 키트 #43 (조선 장희빈 인현왕후 저주 인형과 신당 무고의 옥) - 심층 팩트체크
+- kits/joseon-jang-heebin-curse-shaman/scripts-3an.md: 제작 준비 키트 #43 (조선 장희빈 인현왕후 저주 인형과 신당 무고의 옥) - 30초 대본 3안
+- kits/joseon-jang-heebin-curse-shaman/props-svg.md: 제작 준비 키트 #43 (조선 장희빈 인현왕후 저주 인형과 신당 무고의 옥) - 소품 목록 및 SVG
+- kits/joseon-jang-heebin-curse-shaman/packaging-5an.md: 제작 준비 키트 #43 (조선 장희빈 인현왕후 저주 인형과 신당 무고의 옥) - 패키징 5안
+- kits/joseon-jang-heebin-curse-shaman/sim-defense.md: 제작 준비 키트 #43 (조선 장희빈 인현왕후 저주 인형과 신당 무고의 옥) - 고증 시뮬레이션
+- kits/joseon-jeong-dojeon-no-grave/factcheck.md: 제작 준비 키트 #44 (조선 건국 설계자 정도전 500년 무덤 없음 시신 유기 비극) - 심층 팩트체크
+- kits/joseon-jeong-dojeon-no-grave/scripts-3an.md: 제작 준비 키트 #44 (조선 건국 설계자 정도전 500년 무덤 없음 시신 유기 비극) - 30초 대본 3안
+- kits/joseon-jeong-dojeon-no-grave/props-svg.md: 제작 준비 키트 #44 (조선 건국 설계자 정도전 500년 무덤 없음 시신 유기 비극) - 소품 목록 및 SVG
+- kits/joseon-jeong-dojeon-no-grave/packaging-5an.md: 제작 준비 키트 #44 (조선 건국 설계자 정도전 500년 무덤 없음 시신 유기 비극) - 패키징 5안
+- kits/joseon-jeong-dojeon-no-grave/sim-defense.md: 제작 준비 키트 #44 (조선 건국 설계자 정도전 500년 무덤 없음 시신 유기 비극) - 고증 시뮬레이션
+- kits/joseon-sohyeon-crown-prince-poison/factcheck.md: 제작 준비 키트 #45 (조선 인조 소현세자 독살 의혹과 서구 문명 아담 샬) - 심층 팩트체크
+- kits/joseon-sohyeon-crown-prince-poison/scripts-3an.md: 제작 준비 키트 #45 (조선 인조 소현세자 독살 의혹과 서구 문명 아담 샬) - 30초 대본 3안
+- kits/joseon-sohyeon-crown-prince-poison/props-svg.md: 제작 준비 키트 #45 (조선 인조 소현세자 독살 의혹과 서구 문명 아담 샬) - 소품 목록 및 SVG
+- kits/joseon-sohyeon-crown-prince-poison/packaging-5an.md: 제작 준비 키트 #45 (조선 인조 소현세자 독살 의혹과 서구 문명 아담 샬) - 패키징 5안
+- kits/joseon-sohyeon-crown-prince-poison/sim-defense.md: 제작 준비 키트 #45 (조선 인조 소현세자 독살 의혹과 서구 문명 아담 샬) - 고증 시뮬레이션
+- kits/joseon-hwang-sayeong-silk-letter/factcheck.md: 제작 준비 키트 #46 (조선 신유박해 천주교 황사영 백서 군함 5만 명 출병 요청) - 심층 팩트체크
+- kits/joseon-hwang-sayeong-silk-letter/scripts-3an.md: 제작 준비 키트 #46 (조선 신유박해 천주교 황사영 백서 군함 5만 명 출병 요청) - 30초 대본 3안
+- kits/joseon-hwang-sayeong-silk-letter/props-svg.md: 제작 준비 키트 #46 (조선 신유박해 천주교 황사영 백서 군함 5만 명 출병 요청) - 소품 목록 및 SVG
+- kits/joseon-hwang-sayeong-silk-letter/packaging-5an.md: 제작 준비 키트 #46 (조선 신유박해 천주교 황사영 백서 군함 5만 명 출병 요청) - 패키징 5안
+- kits/joseon-hwang-sayeong-silk-letter/sim-defense.md: 제작 준비 키트 #46 (조선 신유박해 천주교 황사영 백서 군함 5만 명 출병 요청) - 고증 시뮬레이션
+- kits/joseon-sunwon-queen-maker-andong-kim/factcheck.md: 제작 준비 키트 #47 (조선 순원왕후 안동 김씨 3대 왕비 싹쓸이 세도정치) - 심층 팩트체크
+- kits/joseon-sunwon-queen-maker-andong-kim/scripts-3an.md: 제작 준비 키트 #47 (조선 순원왕후 안동 김씨 3대 왕비 싹쓸이 세도정치) - 30초 대본 3안
+- kits/joseon-sunwon-queen-maker-andong-kim/props-svg.md: 제작 준비 키트 #47 (조선 순원왕후 안동 김씨 3대 왕비 싹쓸이 세도정치) - 소품 목록 및 SVG
+- kits/joseon-sunwon-queen-maker-andong-kim/packaging-5an.md: 제작 준비 키트 #47 (조선 순원왕후 안동 김씨 3대 왕비 싹쓸이 세도정치) - 패키징 5안
+- kits/joseon-sunwon-queen-maker-andong-kim/sim-defense.md: 제작 준비 키트 #47 (조선 순원왕후 안동 김씨 3대 왕비 싹쓸이 세도정치) - 고증 시뮬레이션
+- kits/joseon-munjeong-buddhist-monk-bowoo/factcheck.md: 제작 준비 키트 #48 (조선 문정왕후 요승 보우 스님 정2품 벼슬 승과 복신 사건) - 심층 팩트체크
+- kits/joseon-munjeong-buddhist-monk-bowoo/scripts-3an.md: 제작 준비 키트 #48 (조선 문정왕후 요승 보우 스님 정2품 벼슬 승과 복신 사건) - 30초 대본 3안
+- kits/joseon-munjeong-buddhist-monk-bowoo/props-svg.md: 제작 준비 키트 #48 (조선 문정왕후 요승 보우 스님 정2품 벼슬 승과 복신 사건) - 소품 목록 및 SVG
+- kits/joseon-munjeong-buddhist-monk-bowoo/packaging-5an.md: 제작 준비 키트 #48 (조선 문정왕후 요승 보우 스님 정2품 벼슬 승과 복신 사건) - 패키징 5안
+- kits/joseon-munjeong-buddhist-monk-bowoo/sim-defense.md: 제작 준비 키트 #48 (조선 문정왕후 요승 보우 스님 정2품 벼슬 승과 복신 사건) - 고증 시뮬레이션
+- kits/joseon-gwanghae-youngchang-daegun-murder/factcheck.md: 제작 준비 키트 #49 (조선 광해군 영창대군 아궁이 증살 계축옥사 비극) - 심층 팩트체크
+- kits/joseon-gwanghae-youngchang-daegun-murder/scripts-3an.md: 제작 준비 키트 #49 (조선 광해군 영창대군 아궁이 증살 계축옥사 비극) - 30초 대본 3안
+- kits/joseon-gwanghae-youngchang-daegun-murder/props-svg.md: 제작 준비 키트 #49 (조선 광해군 영창대군 아궁이 증살 계축옥사 비극) - 소품 목록 및 SVG
+- kits/joseon-gwanghae-youngchang-daegun-murder/packaging-5an.md: 제작 준비 키트 #49 (조선 광해군 영창대군 아궁이 증살 계축옥사 비극) - 패키징 5안
+- kits/joseon-gwanghae-youngchang-daegun-murder/sim-defense.md: 제작 준비 키트 #49 (조선 광해군 영창대군 아궁이 증살 계축옥사 비극) - 고증 시뮬레이션
+- kits/joseon-gyeongjong-crab-persimmon-poison/factcheck.md: 제작 준비 키트 #50 (조선 경종 영조 게장과 생감 인삼차 독살설 미스터리) - 심층 팩트체크
+- kits/joseon-gyeongjong-crab-persimmon-poison/scripts-3an.md: 제작 준비 키트 #50 (조선 경종 영조 게장과 생감 인삼차 독살설 미스터리) - 30초 대본 3안
+- kits/joseon-gyeongjong-crab-persimmon-poison/props-svg.md: 제작 준비 키트 #50 (조선 경종 영조 게장과 생감 인삼차 독살설 미스터리) - 소품 목록 및 SVG
+- kits/joseon-gyeongjong-crab-persimmon-poison/packaging-5an.md: 제작 준비 키트 #50 (조선 경종 영조 게장과 생감 인삼차 독살설 미스터리) - 패키징 5안
+- kits/joseon-gyeongjong-crab-persimmon-poison/sim-defense.md: 제작 준비 키트 #50 (조선 경종 영조 게장과 생감 인삼차 독살설 미스터리) - 고증 시뮬레이션
+- kits/joseon-heojun-donguibogam-status/factcheck.md: 제작 준비 키트 #51 (조선 허준 서얼 유배지 집필 동의보감 세계기록유산 비화) - 심층 팩트체크
+- kits/joseon-heojun-donguibogam-status/scripts-3an.md: 제작 준비 키트 #51 (조선 허준 서얼 유배지 집필 동의보감 세계기록유산 비화) - 30초 대본 3안
+- kits/joseon-heojun-donguibogam-status/props-svg.md: 제작 준비 키트 #51 (조선 허준 서얼 유배지 집필 동의보감 세계기록유산 비화) - 소품 목록 및 SVG
+- kits/joseon-heojun-donguibogam-status/packaging-5an.md: 제작 준비 키트 #51 (조선 허준 서얼 유배지 집필 동의보감 세계기록유산 비화) - 패키징 5안
+- kits/joseon-heojun-donguibogam-status/sim-defense.md: 제작 준비 키트 #51 (조선 허준 서얼 유배지 집필 동의보감 세계기록유산 비화) - 고증 시뮬레이션
+- kits/joseon-taejong-min-brothers-purge/factcheck.md: 제작 준비 키트 #52 (조선 태종 이방원 원경왕후 처남 민무구 4형제 멸문 비극) - 심층 팩트체크
+- kits/joseon-taejong-min-brothers-purge/scripts-3an.md: 제작 준비 키트 #52 (조선 태종 이방원 원경왕후 처남 민무구 4형제 멸문 비극) - 30초 대본 3안
+- kits/joseon-taejong-min-brothers-purge/props-svg.md: 제작 준비 키트 #52 (조선 태종 이방원 원경왕후 처남 민무구 4형제 멸문 비극) - 소품 목록 및 SVG
+- kits/joseon-taejong-min-brothers-purge/packaging-5an.md: 제작 준비 키트 #52 (조선 태종 이방원 원경왕후 처남 민무구 4형제 멸문 비극) - 패키징 5안
+- kits/joseon-taejong-min-brothers-purge/sim-defense.md: 제작 준비 키트 #52 (조선 태종 이방원 원경왕후 처남 민무구 4형제 멸문 비극) - 고증 시뮬레이션
+- kits/joseon-kim-yuk-daedongbeop-reform/factcheck.md: 제작 준비 키트 #53 (조선 김육 대동법 100년 방납 지주 저항 개혁 집념) - 심층 팩트체크
+- kits/joseon-kim-yuk-daedongbeop-reform/scripts-3an.md: 제작 준비 키트 #53 (조선 김육 대동법 100년 방납 지주 저항 개혁 집념) - 30초 대본 3안
+- kits/joseon-kim-yuk-daedongbeop-reform/props-svg.md: 제작 준비 키트 #53 (조선 김육 대동법 100년 방납 지주 저항 개혁 집념) - 소품 목록 및 SVG
+- kits/joseon-kim-yuk-daedongbeop-reform/packaging-5an.md: 제작 준비 키트 #53 (조선 김육 대동법 100년 방납 지주 저항 개혁 집념) - 패키징 5안
+- kits/joseon-kim-yuk-daedongbeop-reform/sim-defense.md: 제작 준비 키트 #53 (조선 김육 대동법 100년 방납 지주 저항 개혁 집념) - 고증 시뮬레이션
+- kits/joseon-injo-tiger-chakhogapsa-hunt/factcheck.md: 제작 준비 키트 #54 (조선 인조 혜음령 호환 궁궐 난입 특수부대 착호갑사) - 심층 팩트체크
+- kits/joseon-injo-tiger-chakhogapsa-hunt/scripts-3an.md: 제작 준비 키트 #54 (조선 인조 혜음령 호환 궁궐 난입 특수부대 착호갑사) - 30초 대본 3안
+- kits/joseon-injo-tiger-chakhogapsa-hunt/props-svg.md: 제작 준비 키트 #54 (조선 인조 혜음령 호환 궁궐 난입 특수부대 착호갑사) - 소품 목록 및 SVG
+- kits/joseon-injo-tiger-chakhogapsa-hunt/packaging-5an.md: 제작 준비 키트 #54 (조선 인조 혜음령 호환 궁궐 난입 특수부대 착호갑사) - 패키징 5안
+- kits/joseon-injo-tiger-chakhogapsa-hunt/sim-defense.md: 제작 준비 키트 #54 (조선 인조 혜음령 호환 궁궐 난입 특수부대 착호갑사) - 고증 시뮬레이션
+- kits/joseon-seogyeongdeok-philosophical-heresy/factcheck.md: 제작 준비 키트 #55 (조선 중종 화담 서경덕 기일원론 영혼 소멸 이단 논쟁) - 심층 팩트체크
+- kits/joseon-seogyeongdeok-philosophical-heresy/scripts-3an.md: 제작 준비 키트 #55 (조선 중종 화담 서경덕 기일원론 영혼 소멸 이단 논쟁) - 30초 대본 3안
+- kits/joseon-seogyeongdeok-philosophical-heresy/props-svg.md: 제작 준비 키트 #55 (조선 중종 화담 서경덕 기일원론 영혼 소멸 이단 논쟁) - 소품 목록 및 SVG
+- kits/joseon-seogyeongdeok-philosophical-heresy/packaging-5an.md: 제작 준비 키트 #55 (조선 중종 화담 서경덕 기일원론 영혼 소멸 이단 논쟁) - 패키징 5안
+- kits/joseon-seogyeongdeok-philosophical-heresy/sim-defense.md: 제작 준비 키트 #55 (조선 중종 화담 서경덕 기일원론 영혼 소멸 이단 논쟁) - 고증 시뮬레이션
+- kits/joseon-cheoljong-imsul-peasant-revolt/factcheck.md: 제작 준비 키트 #56 (조선 철종 삼정의 문란 진주 임술농민봉기 안핵사 박규수) - 심층 팩트체크
+- kits/joseon-cheoljong-imsul-peasant-revolt/scripts-3an.md: 제작 준비 키트 #56 (조선 철종 삼정의 문란 진주 임술농민봉기 안핵사 박규수) - 30초 대본 3안
+- kits/joseon-cheoljong-imsul-peasant-revolt/props-svg.md: 제작 준비 키트 #56 (조선 철종 삼정의 문란 진주 임술농민봉기 안핵사 박규수) - 소품 목록 및 SVG
+- kits/joseon-cheoljong-imsul-peasant-revolt/packaging-5an.md: 제작 준비 키트 #56 (조선 철종 삼정의 문란 진주 임술농민봉기 안핵사 박규수) - 패키징 5안
+- kits/joseon-cheoljong-imsul-peasant-revolt/sim-defense.md: 제작 준비 키트 #56 (조선 철종 삼정의 문란 진주 임술농민봉기 안핵사 박규수) - 고증 시뮬레이션
+- kits/joseon-injong-munjeong-poison-mystery/factcheck.md: 제작 준비 키트 #57 (조선 인종 재위 8개월 단명 문정왕후 독떡 독살설) - 심층 팩트체크
+- kits/joseon-injong-munjeong-poison-mystery/scripts-3an.md: 제작 준비 키트 #57 (조선 인종 재위 8개월 단명 문정왕후 독떡 독살설) - 30초 대본 3안
+- kits/joseon-injong-munjeong-poison-mystery/props-svg.md: 제작 준비 키트 #57 (조선 인종 재위 8개월 단명 문정왕후 독떡 독살설) - 소품 목록 및 SVG
+- kits/joseon-injong-munjeong-poison-mystery/packaging-5an.md: 제작 준비 키트 #57 (조선 인종 재위 8개월 단명 문정왕후 독떡 독살설) - 패키징 5안
+- kits/joseon-injong-munjeong-poison-mystery/sim-defense.md: 제작 준비 키트 #57 (조선 인종 재위 8개월 단명 문정왕후 독떡 독살설) - 고증 시뮬레이션
+- kits/joseon-gojong-imo-soldier-riot/factcheck.md: 제작 준비 키트 #58 (조선 고종 임오군란 구식군대 13개월 월급 체불 모래쌀 배급) - 심층 팩트체크
+- kits/joseon-gojong-imo-soldier-riot/scripts-3an.md: 제작 준비 키트 #58 (조선 고종 임오군란 구식군대 13개월 월급 체불 모래쌀 배급) - 30초 대본 3안
+- kits/joseon-gojong-imo-soldier-riot/props-svg.md: 제작 준비 키트 #58 (조선 고종 임오군란 구식군대 13개월 월급 체불 모래쌀 배급) - 소품 목록 및 SVG
+- kits/joseon-gojong-imo-soldier-riot/packaging-5an.md: 제작 준비 키트 #58 (조선 고종 임오군란 구식군대 13개월 월급 체불 모래쌀 배급) - 패키징 5안
+- kits/joseon-gojong-imo-soldier-riot/sim-defense.md: 제작 준비 키트 #58 (조선 고종 임오군란 구식군대 13개월 월급 체불 모래쌀 배급) - 고증 시뮬레이션
+- kits/joseon-yeongjo-sado-noron-tragedy/factcheck.md: 제작 준비 키트 #59 (조선 영조 무수리 콤플렉스 노론 결탁 사도세자 뒤주 비극) - 심층 팩트체크
+- kits/joseon-yeongjo-sado-noron-tragedy/scripts-3an.md: 제작 준비 키트 #59 (조선 영조 무수리 콤플렉스 노론 결탁 사도세자 뒤주 비극) - 30초 대본 3안
+- kits/joseon-yeongjo-sado-noron-tragedy/props-svg.md: 제작 준비 키트 #59 (조선 영조 무수리 콤플렉스 노론 결탁 사도세자 뒤주 비극) - 소품 목록 및 SVG
+- kits/joseon-yeongjo-sado-noron-tragedy/packaging-5an.md: 제작 준비 키트 #59 (조선 영조 무수리 콤플렉스 노론 결탁 사도세자 뒤주 비극) - 패키징 5안
+- kits/joseon-yeongjo-sado-noron-tragedy/sim-defense.md: 제작 준비 키트 #59 (조선 영조 무수리 콤플렉스 노론 결탁 사도세자 뒤주 비극) - 고증 시뮬레이션
+- kits/joseon-jeongjo-hwaseong-new-city-reform/factcheck.md: 제작 준비 키트 #60 (조선 정조 사도세자 아들 극복 정약용 거중기 수원 화성 개혁) - 심층 팩트체크
+- kits/joseon-jeongjo-hwaseong-new-city-reform/scripts-3an.md: 제작 준비 키트 #60 (조선 정조 사도세자 아들 극복 정약용 거중기 수원 화성 개혁) - 30초 대본 3안
+- kits/joseon-jeongjo-hwaseong-new-city-reform/props-svg.md: 제작 준비 키트 #60 (조선 정조 사도세자 아들 극복 정약용 거중기 수원 화성 개혁) - 소품 목록 및 SVG
+- kits/joseon-jeongjo-hwaseong-new-city-reform/packaging-5an.md: 제작 준비 키트 #60 (조선 정조 사도세자 아들 극복 정약용 거중기 수원 화성 개혁) - 패키징 5안
+- kits/joseon-jeongjo-hwaseong-new-city-reform/sim-defense.md: 제작 준비 키트 #60 (조선 정조 사도세자 아들 극복 정약용 거중기 수원 화성 개혁) - 고증 시뮬레이션
+- kits/joseon-sunjo-sedo-andong-kim-corruption/factcheck.md: 제작 준비 키트 #61 (조선 순조 안동 김씨 세도정치 매관매직 백골징포) - 심층 팩트체크
+- kits/joseon-sunjo-sedo-andong-kim-corruption/scripts-3an.md: 제작 준비 키트 #61 (조선 순조 안동 김씨 세도정치 매관매직 백골징포) - 30초 대본 3안
+- kits/joseon-sunjo-sedo-andong-kim-corruption/props-svg.md: 제작 준비 키트 #61 (조선 순조 안동 김씨 세도정치 매관매직 백골징포) - 소품 목록 및 SVG
+- kits/joseon-sunjo-sedo-andong-kim-corruption/packaging-5an.md: 제작 준비 키트 #61 (조선 순조 안동 김씨 세도정치 매관매직 백골징포) - 패키징 5안
+- kits/joseon-sunjo-sedo-andong-kim-corruption/sim-defense.md: 제작 준비 키트 #61 (조선 순조 안동 김씨 세도정치 매관매직 백골징포) - 고증 시뮬레이션
+- kits/joseon-heonjong-kim-daegeon-martyrdom/factcheck.md: 제작 준비 키트 #62 (조선 헌종 한국 최초 김대건 신부 병오박해 세계지도 순교) - 심층 팩트체크
+- kits/joseon-heonjong-kim-daegeon-martyrdom/scripts-3an.md: 제작 준비 키트 #62 (조선 헌종 한국 최초 김대건 신부 병오박해 세계지도 순교) - 30초 대본 3안
+- kits/joseon-heonjong-kim-daegeon-martyrdom/props-svg.md: 제작 준비 키트 #62 (조선 헌종 한국 최초 김대건 신부 병오박해 세계지도 순교) - 소품 목록 및 SVG
+- kits/joseon-heonjong-kim-daegeon-martyrdom/packaging-5an.md: 제작 준비 키트 #62 (조선 헌종 한국 최초 김대건 신부 병오박해 세계지도 순교) - 패키징 5안
+- kits/joseon-heonjong-kim-daegeon-martyrdom/sim-defense.md: 제작 준비 키트 #62 (조선 헌종 한국 최초 김대건 신부 병오박해 세계지도 순교) - 고증 시뮬레이션
+- kits/joseon-sukjong-heojeok-oil-tent-purge/factcheck.md: 제작 준비 키트 #63 (조선 숙종 경신환국 허적 기름 천막 유악 무단 반출 멸문 사건) - 심층 팩트체크
+- kits/joseon-sukjong-heojeok-oil-tent-purge/scripts-3an.md: 제작 준비 키트 #63 (조선 숙종 경신환국 허적 기름 천막 유악 무단 반출 멸문 사건) - 30초 대본 3안
+- kits/joseon-sukjong-heojeok-oil-tent-purge/props-svg.md: 제작 준비 키트 #63 (조선 숙종 경신환국 허적 기름 천막 유악 무단 반출 멸문 사건) - 소품 목록 및 SVG
+- kits/joseon-sukjong-heojeok-oil-tent-purge/packaging-5an.md: 제작 준비 키트 #63 (조선 숙종 경신환국 허적 기름 천막 유악 무단 반출 멸문 사건) - 패키징 5안
+- kits/joseon-sukjong-heojeok-oil-tent-purge/sim-defense.md: 제작 준비 키트 #63 (조선 숙종 경신환국 허적 기름 천막 유악 무단 반출 멸문 사건) - 고증 시뮬레이션
+- kits/joseon-myeongjong-bou-monk-purge/factcheck.md: 제작 준비 키트 #64 (조선 명종 문정왕후 불교 중흥 보우 대사 봉은사 승과 제주 장살 사건) - 심층 팩트체크
+- kits/joseon-myeongjong-bou-monk-purge/scripts-3an.md: 제작 준비 키트 #64 (조선 명종 문정왕후 불교 중흥 보우 대사 봉은사 승과 제주 장살 사건) - 30초 대본 3안
+- kits/joseon-myeongjong-bou-monk-purge/props-svg.md: 제작 준비 키트 #64 (조선 명종 문정왕후 불교 중흥 보우 대사 봉은사 승과 제주 장살 사건) - 소품 목록 및 SVG
+- kits/joseon-myeongjong-bou-monk-purge/packaging-5an.md: 제작 준비 키트 #64 (조선 명종 문정왕후 불교 중흥 보우 대사 봉은사 승과 제주 장살 사건) - 패키징 5안
+- kits/joseon-myeongjong-bou-monk-purge/sim-defense.md: 제작 준비 키트 #64 (조선 명종 문정왕후 불교 중흥 보우 대사 봉은사 승과 제주 장살 사건) - 고증 시뮬레이션
+- kits/joseon-taejo-first-prince-revolt-jeong-dojeon/factcheck.md: 제작 준비 키트 #65 (조선 태조 1차 왕자의 난 이방원 이방석 정도전 참살 사건) - 심층 팩트체크
+- kits/joseon-taejo-first-prince-revolt-jeong-dojeon/scripts-3an.md: 제작 준비 키트 #65 (조선 태조 1차 왕자의 난 이방원 이방석 정도전 참살 사건) - 30초 대본 3안
+- kits/joseon-taejo-first-prince-revolt-jeong-dojeon/props-svg.md: 제작 준비 키트 #65 (조선 태조 1차 왕자의 난 이방원 이방석 정도전 참살 사건) - 소품 목록 및 SVG
+- kits/joseon-taejo-first-prince-revolt-jeong-dojeon/packaging-5an.md: 제작 준비 키트 #65 (조선 태조 1차 왕자의 난 이방원 이방석 정도전 참살 사건) - 패키징 5안
+- kits/joseon-taejo-first-prince-revolt-jeong-dojeon/sim-defense.md: 제작 준비 키트 #65 (조선 태조 1차 왕자의 난 이방원 이방석 정도전 참살 사건) - 고증 시뮬레이션
+- kits/joseon-taejong-second-prince-revolt-banggan/factcheck.md: 제작 준비 키트 #66 (조선 태종 2차 왕자의 난 이방원 친형 이방간 박포 골육상쟁 사건) - 심층 팩트체크
+- kits/joseon-taejong-second-prince-revolt-banggan/scripts-3an.md: 제작 준비 키트 #66 (조선 태종 2차 왕자의 난 이방원 친형 이방간 박포 골육상쟁 사건) - 30초 대본 3안
+- kits/joseon-taejong-second-prince-revolt-banggan/props-svg.md: 제작 준비 키트 #66 (조선 태종 2차 왕자의 난 이방원 친형 이방간 박포 골육상쟁 사건) - 소품 목록 및 SVG
+- kits/joseon-taejong-second-prince-revolt-banggan/packaging-5an.md: 제작 준비 키트 #66 (조선 태종 2차 왕자의 난 이방원 친형 이방간 박포 골육상쟁 사건) - 패키징 5안
+- kits/joseon-taejong-second-prince-revolt-banggan/sim-defense.md: 제작 준비 키트 #66 (조선 태종 2차 왕자의 난 이방원 친형 이방간 박포 골육상쟁 사건) - 고증 시뮬레이션
+- kits/joseon-gwanghaegun-inmok-queen-dowager-imprisonment/factcheck.md: 제작 준비 키트 #67 (조선 광해군 계모 인목대비 유폐 영창대군 증살 폐모살제 사건) - 심층 팩트체크
+- kits/joseon-gwanghaegun-inmok-queen-dowager-imprisonment/scripts-3an.md: 제작 준비 키트 #67 (조선 광해군 계모 인목대비 유폐 영창대군 증살 폐모살제 사건) - 30초 대본 3안
+- kits/joseon-gwanghaegun-inmok-queen-dowager-imprisonment/props-svg.md: 제작 준비 키트 #67 (조선 광해군 계모 인목대비 유폐 영창대군 증살 폐모살제 사건) - 소품 목록 및 SVG
+- kits/joseon-gwanghaegun-inmok-queen-dowager-imprisonment/packaging-5an.md: 제작 준비 키트 #67 (조선 광해군 계모 인목대비 유폐 영창대군 증살 폐모살제 사건) - 패키징 5안
+- kits/joseon-gwanghaegun-inmok-queen-dowager-imprisonment/sim-defense.md: 제작 준비 키트 #67 (조선 광해군 계모 인목대비 유폐 영창대군 증살 폐모살제 사건) - 고증 시뮬레이션
+- kits/joseon-sukjong-jang-hui-bin-poison-curse-shrine/factcheck.md: 제작 준비 키트 #68 (조선 숙종 희빈 장씨 취선당 신당 저주 사약 옥사 사건) - 심층 팩트체크
+- kits/joseon-sukjong-jang-hui-bin-poison-curse-shrine/scripts-3an.md: 제작 준비 키트 #68 (조선 숙종 희빈 장씨 취선당 신당 저주 사약 옥사 사건) - 30초 대본 3안
+- kits/joseon-sukjong-jang-hui-bin-poison-curse-shrine/props-svg.md: 제작 준비 키트 #68 (조선 숙종 희빈 장씨 취선당 신당 저주 사약 옥사 사건) - 소품 목록 및 SVG
+- kits/joseon-sukjong-jang-hui-bin-poison-curse-shrine/packaging-5an.md: 제작 준비 키트 #68 (조선 숙종 희빈 장씨 취선당 신당 저주 사약 옥사 사건) - 패키징 5안
+- kits/joseon-sukjong-jang-hui-bin-poison-curse-shrine/sim-defense.md: 제작 준비 키트 #68 (조선 숙종 희빈 장씨 취선당 신당 저주 사약 옥사 사건) - 고증 시뮬레이션
+- kits/joseon-jeongjo-sim-hwanji-secret-letters-discovery/factcheck.md: 제작 준비 키트 #69 (조선 정조 심환지 299통 비밀 편지 막후 밀담 발굴 사건) - 심층 팩트체크
+- kits/joseon-jeongjo-sim-hwanji-secret-letters-discovery/scripts-3an.md: 제작 준비 키트 #69 (조선 정조 심환지 299통 비밀 편지 막후 밀담 발굴 사건) - 30초 대본 3안
+- kits/joseon-jeongjo-sim-hwanji-secret-letters-discovery/props-svg.md: 제작 준비 키트 #69 (조선 정조 심환지 299통 비밀 편지 막후 밀담 발굴 사건) - 소품 목록 및 SVG
+- kits/joseon-jeongjo-sim-hwanji-secret-letters-discovery/packaging-5an.md: 제작 준비 키트 #69 (조선 정조 심환지 299통 비밀 편지 막후 밀담 발굴 사건) - 패키징 5안
+- kits/joseon-jeongjo-sim-hwanji-secret-letters-discovery/sim-defense.md: 제작 준비 키트 #69 (조선 정조 심환지 299통 비밀 편지 막후 밀담 발굴 사건) - 고증 시뮬레이션
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- kits/sejong-gongbeop-referendum/factcheck.md: 제작 준비 키트 [백로그 원본 18위 보완] (세종대왕 조선 최초의 여론조사 공법 국민투표) - 심층 팩트체크
+- kits/sejong-gongbeop-referendum/scripts-3an.md: 제작 준비 키트 [백로그 원본 18위 보완] (세종대왕 조선 최초의 여론조사 공법 국민투표) - 30초 대본 3안
+- kits/sejong-gongbeop-referendum/props-svg.md: 제작 준비 키트 [백로그 원본 18위 보완] (세종대왕 조선 최초의 여론조사 공법 국민투표) - 소품 목록 및 SVG
+- kits/sejong-gongbeop-referendum/packaging-5an.md: 제작 준비 키트 [백로그 원본 18위 보완] (세종대왕 조선 최초의 여론조사 공법 국민투표) - 패키징 5안
+- kits/sejong-gongbeop-referendum/sim-defense.md: 제작 준비 키트 [백로그 원본 18위 보완] (세종대왕 조선 최초의 여론조사 공법 국민투표) - 고증 시뮬레이션
+- kits/pyeonjeon-agisal/factcheck.md: 제작 준비 키트 [백로그 원본 19위 보완] (백발백중 조선의 비밀 병기 편전 애기살과 조총) - 심층 팩트체크
+- kits/pyeonjeon-agisal/scripts-3an.md: 제작 준비 키트 [백로그 원본 19위 보완] (백발백중 조선의 비밀 병기 편전 애기살과 조총) - 30초 대본 3안
+- kits/pyeonjeon-agisal/props-svg.md: 제작 준비 키트 [백로그 원본 19위 보완] (백발백중 조선의 비밀 병기 편전 애기살과 조총) - 소품 목록 및 SVG
+- kits/pyeonjeon-agisal/packaging-5an.md: 제작 준비 키트 [백로그 원본 19위 보완] (백발백중 조선의 비밀 병기 편전 애기살과 조총) - 패키징 5안
+- kits/pyeonjeon-agisal/sim-defense.md: 제작 준비 키트 [백로그 원본 19위 보완] (백발백중 조선의 비밀 병기 편전 애기살과 조총) - 고증 시뮬레이션

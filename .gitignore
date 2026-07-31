@@ -9,3 +9,7 @@ renders/draft*.mp4
 # 렌더 산출물(소스에서 재생성) — git에 안 올림
 renders/*.mp4
 episodes/**/*.mp4
+
+# Python 바이트코드
+__pycache__/
+*.pyc
