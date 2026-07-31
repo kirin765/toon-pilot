@@ -94,12 +94,30 @@ def align(script_words, wchars, wspans):
     return words
 
 
-def group_captions(sentences, hold=0.4):
-    """2-4 word groups, sentence-bounded, one visible at a time."""
+def group_captions(sentences, hold=0.4, splits=None):
+    """2-4 word groups, sentence-bounded, one visible at a time.
+
+    splits: optional list (one entry per sentence) of explicit word counts per
+    group. Auto-grouping breaks at particles/numerals (지뢰 #61), so any episode
+    whose auto groups don't read as phrases supplies caption-splits.txt.
+    """
     groups = []
     for si, sent in enumerate(sentences):
         ws = sent["words"]
         n = len(ws)
+        if splits and si < len(splits) and splits[si]:
+            sizes = splits[si]
+            if sum(sizes) != n:
+                sys.exit(f"caption-splits line {si+1}: sizes sum {sum(sizes)} != {n} words "
+                         f"({' '.join(w['text'] for w in ws)})")
+            chunks, off = [], 0
+            for k in sizes:
+                chunks.append(ws[off:off + k])
+                off += k
+            for ci, ch in enumerate(chunks):
+                groups.append({"text": " ".join(w["text"] for w in ch),
+                               "start": ch[0]["start"], "end": None, "words": ch})
+            continue
         n_groups = max(1, round(n / 3))
         size = -(-n // n_groups)  # ceil
         chunks = [ws[i:i + size] for i in range(0, n, size)]
@@ -156,7 +174,14 @@ def main():
         s["words"] = words[i:i + len(s["tokens"])]
         i += len(s["tokens"])
 
-    groups = group_captions(sentences)
+    sp_file = root / "caption-splits.txt"
+    splits = None
+    if sp_file.exists():
+        splits = [[int(x) for x in ln.split()]
+                  for ln in sp_file.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        if len(splits) != len(sentences):
+            sys.exit(f"caption-splits.txt has {len(splits)} lines but script has {len(sentences)} sentences")
+    groups = group_captions(sentences, splits=splits)
     for g in groups:
         g["hi"] = [w["text"] for w in words
                    if w.get("hi") and w["text"] in g["text"].split()]
