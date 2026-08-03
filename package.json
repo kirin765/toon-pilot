@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "npx --yes hyperframes@0.7.31 preview",
     "check": "npx --yes hyperframes@0.7.31 lint && npx --yes hyperframes@0.7.31 validate && npx --yes hyperframes@0.7.31 inspect",
+    "check:script": "python3 bin/check_script.py",
+    "check:comp": "node bin/check_composition.mjs",
+    "gate": "npm run check:script && npm run check:comp && npm run check",
     "render": "npx --yes hyperframes@0.7.31 render",
     "publish": "npx --yes hyperframes@0.7.31 publish"
   }

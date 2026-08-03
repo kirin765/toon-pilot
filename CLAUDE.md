@@ -1,95 +1,33 @@
-# HyperFrames Composition Project
+# CLAUDE.md — Claude Code 전용 부록
 
-## About this project — READ FIRST
+> **정본은 `AGENTS.md`다. 먼저 그것을 읽어라.**
+> 프로젝트 정체성·아키텍처·명령·하드 규칙·게이트는 전부 거기 있고, 여기엔 중복해 두지 않는다.
+> 에피소드 제작은 `docs/EPISODE-PIPELINE.md`, 아트 규칙은 `docs/ART-RULES.md`.
 
-사우스파크풍 종이 컷아웃 히스토리 채널 "삼십초 역사" 파일럿. **프로젝트 배경·아키텍처(캐릭터 rig / 장면 JSON / 자막 3-레이어)·에피소드 제작 파이프라인·이미 밟은 지뢰들은 `PROJECT-NOTES.md`에 있다 — 작업 전에 반드시 읽을 것.** 특히 SVG 팔 회전은 gsap `svgOrigin` 필수, 한국어 TTS는 edge-tts 사용(내장 Kokoro 한국어 미지원).
+이 파일에는 **Claude Code에서만 의미가 있는 것**만 둔다.
 
-## YouTube 업로드 채널 (고정 규칙)
+## 슬래시 커맨드
 
-**이 프로젝트에서 생성된 영상은 항상 happylife2080100@gmail.com 계정의 "삼십초 역사" 채널(@history30sec)에 올린다.** `yt_upload.py` 실행 시 반드시 `--token ~/.config/youtube-upload/token.history-d9t.json`을 명시할 것 — 기본 `token.json`은 다른 프로젝트들이 돌려쓰는 공용 토큰이라 계정이 수시로 바뀐다(2026-07-11 EP.2가 사장부 채널로 오업로드된 사고의 원인). 업로드 직전 `channels.list(mine=true)`로 채널명이 "삼십초 역사"인지 확인하면 완벽.
+- **`/episode <주제>`** — 에피소드 원커맨드 제작. 스킬은 `docs/EPISODE-PIPELINE.md`를 실행하는 얇은 래퍼다.
+- `/hyperframes` — HyperFrames 프레임워크 자체를 다룰 때의 라우터(도메인 스킬 `/hyperframes-core`, `/hyperframes-animation`, `/hyperframes-cli`, `/hyperframes-media` 등으로 분기).
+  이 저장소는 **이미 만들어진 컴포지션을 계속 고치는** 프로젝트이므로, `/product-launch-video`·`/faceless-explainer` 같은
+  생성 워크플로우로 새 프로젝트를 파지 말 것. 스킬이 없거나 낡았으면 `npx skills add heygen-com/hyperframes` 후 세션 재시작.
 
-## Skills — USE THESE FIRST
+## Claude 전용 실행 매핑
 
-**Always invoke the relevant skill before writing or modifying compositions.** Skills encode framework-specific patterns (e.g., `window.__timelines` registration, `data-*` attribute semantics, shader-compatible CSS rules) that are NOT in generic web docs. Skipping them produces broken compositions.
+파이프라인의 「필요한 능력」 표(`docs/EPISODE-PIPELINE.md` §0)를 Claude Code에서는 이렇게 채운다:
 
-**Doing anything with HyperFrames?** Start at `/hyperframes` — it tells you what HyperFrames can do and which skill or workflow handles your intent (make a video, TTS / BGM, prep footage, author / animate, render, install blocks), and routes every "make me a video" request to the right workflow. Read it first, especially when there's no project context to orient you. The video workflows it routes to:
+| 스테이지 | 도구 |
+| --- | --- |
+| S1 사료 리서치 | `WebSearch` / `WebFetch` |
+| S3 적대적 팩트체크 | 별도 서브에이전트(Agent) — 사료를 새로 열게 한다 |
+| S6.4 프레임 점검 | `Read`로 스냅샷 PNG를 직접 본다 |
+| S6.5 튜너 회수 | Claude in Chrome `javascript_tool` (탭: `http://localhost:3014/studio-layout.html`) |
+| S8 블라인드 검수 | 컨텍스트 없는 서브에이전트 2명. 프롬프트는 `docs/BLIND-REVIEW-PROMPT.md` 그대로 |
+| 대기·완료 알림 | `telegram-bot` 스킬 (S6.5 대기 = ⏸, 완성 = ✅) |
 
-- `/product-launch-video` — a **product** URL or brief / script → 60-90s product launch / SaaS / promo video.
-- `/website-to-video` — a **general** website / URL → a video _of_ the site (tour / showcase / social clip from captured visuals); a product **launch / promo** is `/product-launch-video`.
-- `/faceless-explainer` — arbitrary text (topic / article / notes), **no URL, no website capture** → 60-90s faceless explainer.
-- `/embedded-captions` — an existing talking-head video (MP4) → the same footage with captions / subtitles added (rail + embed, or pure-cinematic embed); the footage itself is untouched.
-- `/talking-head-recut` — an existing talking-head / interview / podcast video (MP4) → the same footage **packaged with designed graphic overlays** (kinetic titles, lower-thirds, data callouts, pull-quotes, side panels, pip) synced to the transcript; the clip plays unchanged underneath. (Plain captions/subtitles → `/embedded-captions`.)
-- `/pr-to-video` — a GitHub PR (URL / `owner/repo#N` / "this PR") → 30-90s code-change explainer (changelog / feature reveal / fix / refactor).
-- `/motion-graphics` — a short (typically under 10s) design-led **motion graphic**, motion-is-the-message, no narration: kinetic type, a stat / number count-up, a chart, a logo sting, a lower-third / overlay, or an animated tweet / headline / captured-page highlight; rendered to MP4 or a transparent overlay. Longer / narrated / custom → `/general-video`.
-- `/general-video` — fallback for any other video (title card, longer brand / sizzle reel, multi-scene montage, static loop, custom composition); the original hyperframes authoring flow, any length.
+## 실행 주의
 
-**Porting an existing composition?** `/remotion-to-hyperframes` translates a Remotion (React) composition into HyperFrames HTML — a source migration, separate from the creation workflows above.
-
-The domain skills (`/hyperframes-core`, `/hyperframes-animation`, `/hyperframes-creative`, `/hyperframes-cli`, `/hyperframes-media`, `/hyperframes-registry`) and the full capability map live inside `/hyperframes` — it is the single source of truth for which skill handles which intent.
-
-> **Tailwind v4 projects** (`hyperframes init --tailwind`): see `/hyperframes-core` → `references/tailwind.md`.
-
-> **Skills not available or need updating?** Run `npx skills add heygen-com/hyperframes`
-> and restart the agent session so the new skills load.
-
-## Commands
-
-```bash
-npm run dev          # start the preview server (long-running — keep it alive in background)
-npm run check        # lint + validate + inspect
-npm run render       # render to MP4
-npm run publish      # publish and get a shareable link
-npx hyperframes lint --verbose  # include info-level findings
-npx hyperframes lint --json     # machine-readable output for CI
-npx hyperframes docs <topic> # reference docs in terminal
-```
-
-> **`npm run dev` is a long-running server, not a one-shot command.** It blocks until stopped.
-> In Claude Code, always run it with `run_in_background: true`. Never run it as a foreground
-> command — it will time out and the server will die, breaking the browser preview.
-
-## Documentation
-
-**For quick reference**, use the local CLI docs command (no network required):
-
-```bash
-npx hyperframes docs <topic>
-```
-
-Topics: `data-attributes`, `gsap`, `compositions`, `rendering`, `examples`, `troubleshooting`
-
-**For full documentation**, discover pages via the machine-readable index — do NOT guess URLs:
-
-```
-https://hyperframes.heygen.com/llms.txt
-```
-
-## Project Structure
-
-- `index.html` — main composition (root timeline)
-- `compositions/` — sub-compositions referenced via `data-composition-src`
-- `meta.json` — project metadata (id, name)
-- `transcript.json` — whisper word-level transcript (if generated)
-
-## Linting — ALWAYS RUN AFTER CHANGES
-
-After creating or editing any `.html` composition, **always** run the full check before considering the task complete:
-
-```bash
-npm run check
-```
-
-Fix all errors before presenting the result. Inspect warnings should be reviewed before rendering.
-
-## Key Rules
-
-1. Every timed element needs `data-start`, `data-duration`, and `data-track-index`
-2. Elements with timing **MUST** have `class="clip"` — the framework uses this for visibility control
-3. Timelines must be paused and registered on `window.__timelines`:
-   ```js
-   window.__timelines = window.__timelines || {};
-   window.__timelines["composition-id"] = gsap.timeline({ paused: true });
-   ```
-4. Videos use `muted` with a separate `<audio>` element for the audio track
-5. Sub-compositions use `data-composition-src="compositions/file.html"` to reference other HTML files
-6. Only deterministic logic — no `Date.now()`, no `Math.random()`, no network fetches
+- `npm run dev`·`python3 -m http.server 3014`는 **`run_in_background: true`로만** 실행한다. 포그라운드는 타임아웃과 함께 죽는다.
+- 프리뷰 서버 설정은 `.claude/launch.json` (`toon-pilot-preview` 3013 / `toon-pilot-static` 3014).
+- 렌더는 오래 걸린다 — `ubuntu-server` 스킬로 홈서버에서 돌리는 것이 기본.
