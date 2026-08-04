@@ -13,3 +13,7 @@ episodes/**/*.mp4
 # Python 바이트코드
 __pycache__/
 *.pyc
+
+# 검색 캐시·스크래치 (커밋 안 함)
+.firecrawl/
+videos/
