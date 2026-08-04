@@ -17,7 +17,7 @@
       .scene { position: absolute; inset: 0; overflow: hidden; }
       #s1 { z-index: 10; } #s2 { z-index: 20; } #s3 { z-index: 30; } #s4 { z-index: 40; }
       #s5 { z-index: 50; } #s6 { z-index: 60; } #s7 { z-index: 70; } #s8 { z-index: 80; }
-      #s9 { z-index: 90; }
+      #s9 { z-index: 90; } #s10 { z-index: 100; } #s11 { z-index: 110; }
       .stage { position: absolute; inset: 0; }
       .char { position: absolute; }
       .char .bob { width: 100%; height: 100%; }
@@ -44,38 +44,64 @@
       }
       .numpop small { display: block; font-family: "Jua", sans-serif; font-size: 38px; color: #f6efe3; text-shadow: 4px 4px 0 #1f2d45; }
 
+      /* 도해 라벨 — 단면도 콜아웃 (우측 세이프존 940 안쪽) */
+      .lab {
+        position: absolute; z-index: 6; font-family: "Black Han Sans"; font-size: 42px; color: #f6efe3;
+        background: #1f2d45; padding: 8px 24px; border-radius: 14px; visibility: hidden;
+        box-shadow: 5px 5px 0 rgba(38, 34, 28, 0.3); white-space: nowrap;
+      }
+      .lab small { display: block; font-family: "Jua", sans-serif; font-size: 27px; color: #cfd8e6; }
+
       /* 한자 — 실제 글자만 사용, 손으로 그린 획 금지 (지뢰 #67) */
       .hanja { font-family: "Apple SD Gothic Neo", "PingFang SC", "Songti SC", serif; font-weight: 600; }
 
       /* scene backdrops */
-      #s1 .stage  { background: #2a2130; }   /* 궁중 어전 — 수라 드시는 방 */
-      #s2 .stage  { background: #2a2130; }   /* 같은 어전 — 다른 벽면 */
-      #s3 .stage  { background: #7fa8c0; }   /* 궁궐 정전 앞마당 */
-      #s4 .stage  { background: #4a3b28; }   /* 수랏간 — 낮 */
-      #s5 .stage  { background: #2a2130; }   /* 궁중 어전 — 시식 */
-      #s6 .stage  { background: #6d8391; }   /* 정전 앞마당 — 흐린 낮 */
-      #s7 .stage  { background: #c7c2a8; }   /* 황무지 들판 */
-      #s8 .stage  { background: #7fa8c0; }   /* 궁궐 정전 앞마당 — 펀치 */
-      #s9 .stage  { background: #f6efe3; }   /* 아웃트로 */
+      #s1 .stage  { background: #232c44; }   /* 경주성 안 왜군 진영 — 밤 */
+      #s2 .stage  { background: #232c44; }   /* 같은 진영 — 폭발 */
+      #s3 .stage  { background: #202940; }   /* 경주 읍성 성문 — 밤 */
+      #s4 .stage  { background: #4a3b28; }   /* 군기시 화포 공방 */
+      #s5 .stage  { background: #e8dcc0; }   /* 한지 도판 — 단면도 */
+      #s6 .stage  { background: #e8dcc0; }   /* 한지 도판 — 목곡 비교 */
+      #s7 .stage  { background: #232c44; }   /* 왜군 진영 — 재연 */
+      #s8 .stage  { background: #b58a74; }   /* 경주 읍성 성문 — 새벽 */
+      #s9 .stage  { background: #a7c4d8; }   /* 고창 발굴 구덩이 — 현대 낮 */
+      #s10 .stage { background: #0e1a2a; }   /* CT 판독 화면 */
+      #s11 .stage { background: #f6efe3; }   /* 아웃트로 */
 
       .s1-chip     { top: 170px; left: 60px; }
-      .s1-num      { top: 250px; left: 60px; width: 400px; font-size: 150px; text-align: left; }
-      .s2-chip     { top: 170px; left: 60px; }
-      .s2-num      { top: 250px; left: 60px; width: 400px; font-size: 150px; text-align: left; }
-      .s2-stamp    { top: 470px; left: 55px; width: 900px; color: #a53d2b; border-color: #a53d2b; font-size: 52px; transform: rotate(-2deg); }
+      .s2-num      { top: 230px; left: 60px; width: 460px; font-size: 190px; }
       .s3-chip     { top: 170px; left: 60px; }
-      .s3-stamp    { top: 300px; left: 55px; width: 950px; color: #1f2d45; border-color: #2e6a6a; font-size: 50px; transform: rotate(-1deg); }
-      .s3-num      { top: 460px; left: 55px; width: 500px; font-size: 104px; }
+      .s3-stamp    { top: 310px; left: 55px; width: 900px; color: #f6efe3; border-color: #e8b74a; background: rgba(31,45,69,0.94); font-size: 50px; transform: rotate(-1deg); }
+      .s3-stamp small { color: #cfd8e6; }
       .s4-chip     { top: 170px; left: 60px; }
-      .s4-num      { top: 250px; left: 55px; width: 500px; font-size: 140px; text-align: left; }
+      .s4-stamp    { top: 300px; left: 55px; width: 880px; color: #1f2d45; border-color: #2e6a6a; font-size: 50px; transform: rotate(-1deg); }
       .s5-chip     { top: 170px; left: 60px; }
-      .s5-stamp    { top: 300px; left: 55px; width: 950px; color: #f6efe3; border-color: #e8b74a; background: rgba(31,45,69,0.94); font-size: 50px; transform: rotate(-1deg); }
-      .s5-stamp small { color: #e8b74a; }
+      .s5-stamp    { top: 300px; left: 55px; width: 880px; color: #1f2d45; border-color: #8a5a33; font-size: 48px; transform: rotate(-1deg); }
+      .s5-lab1     { top: 700px;  left: 700px; }
+      .s5-lab2     { top: 850px;  left: 700px; }
+      .s5-lab3     { top: 1000px; left: 700px; }
+      .s5-lab4     { top: 1150px; left: 700px; }
       .s6-chip     { top: 170px; left: 60px; }
-      .s6-stamp    { top: 300px; left: 55px; width: 900px; color: #f6efe3; border-color: #8b8b8b; background: rgba(31,40,48,0.94); font-size: 54px; transform: rotate(-1deg); }
-      .s6-stamp small { color: #c9c2b4; }
-      .s7-chip     { top: 170px; left: 60px; }
-      .s8-stamp    { top: 300px; left: 55px; width: 970px; color: #1f2d45; border-color: #a53d2b; font-size: 54px; transform: rotate(-1deg); }
+      .s6-numL     { top: 660px; left: 80px; width: 330px; font-size: 120px; }
+      .s6-numR     { top: 660px; left: 440px; width: 330px; font-size: 120px; }
+      /* 한지(밝은) 배경 씬은 보조문구를 어두운 글자로 — 흰 글자는 안 읽힌다 */
+      #s6 .numpop small { color: #3a2c1e; text-shadow: none; font-size: 40px; }
+      .s6-stamp    { top: 480px; left: 55px; width: 860px; color: #1f2d45; border-color: #a53d2b; font-size: 44px; transform: rotate(-1deg); }
+      .s7-stamp    { top: 300px; left: 55px; width: 900px; color: #f6efe3; border-color: #e8b74a; background: rgba(31,45,69,0.94); font-size: 48px; transform: rotate(-1deg); }
+      .s7-stamp small { color: #cfd8e6; }
+      .s7-num      { top: 540px; left: 60px; width: 460px; font-size: 130px; text-align: left; }
+      .s8-chip     { top: 170px; left: 60px; }
+      .s8-stamp    { top: 300px; left: 55px; width: 900px; color: #1f2d45; border-color: #a53d2b; font-size: 48px; transform: rotate(-1deg); }
+      .s8-num      { top: 500px; left: 60px; width: 500px; font-size: 130px; text-align: left; }
+      .s9-chip     { top: 170px; left: 60px; }
+      .s9-num      { top: 300px; left: 60px; width: 400px; font-size: 150px; text-align: left; }
+      .s9-stamp    { top: 500px; left: 55px; width: 880px; color: #1f2d45; border-color: #2e6a6a; font-size: 46px; transform: rotate(-1deg); }
+      .s10-chip    { top: 170px; left: 60px; }
+      .s10-num     { top: 300px; left: 60px; width: 400px; font-size: 150px; text-align: left; }
+      .s10-stamp   { top: 500px; left: 55px; width: 880px; color: #f6efe3; border-color: #6fd3f2; background: rgba(14,26,42,0.94); font-size: 48px; transform: rotate(-1deg); }
+      .s10-stamp small { color: #9fd0e8; }
+
+      .flash { position: absolute; inset: 0; background: #fff7e0; opacity: 0; z-index: 5; }
 
       /* outro */
       .logo-big {
@@ -83,7 +109,7 @@
         font-family: "Black Han Sans"; font-size: 190px; color: #1f2d45; line-height: 1.02; letter-spacing: -0.03em;
       }
       .logo-big em { font-style: normal; color: #d94f37; }
-      .s9-sub { position: absolute; top: 760px; left: 0; right: 0; text-align: center; font-size: 52px; color: #26221c; }
+      .s11-sub { position: absolute; top: 760px; left: 0; right: 0; text-align: center; font-size: 52px; color: #26221c; }
       .subscribe {
         position: absolute; top: 900px; right: 80px; width: max-content;
         background: #d94f37; color: #f6efe3; font-family: "Black Han Sans"; font-size: 84px;
@@ -109,89 +135,114 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="79.55" data-width="1080" data-height="1920">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="81.8" data-width="1080" data-height="1920">
 
-      <!-- ============ Scene 1 · 훅 — 사극의 12첩 반상 ============ -->
-      <div id="s1" class="clip scene" data-start="0" data-duration="5.87" data-track-index="0">
-        <div class="stage" data-throne-bg="s1">
-          <div class="chip s1-chip">사극의 <em>12첩 반상</em></div>
-          <div class="numpop s1-num">12<small>반찬 열두 가지</small></div>
+      <!-- ============ Scene 1 · 훅 — 왜군 진영에 쇳덩이 낙하 ============ -->
+      <div id="s1" class="clip scene" data-start="0" data-duration="10.31" data-track-index="0">
+        <div class="stage" data-camp-bg="s1">
+          <div class="chip s1-chip">왜군 진영 <em>한복판</em></div>
         </div>
       </div>
 
-      <!-- ============ Scene 2 · 실제는 검소 / 말기 상궁 전언 ============ -->
-      <div id="s2" class="clip scene" data-start="5.42" data-duration="8.91" data-track-index="1">
-        <div class="stage" data-throne-bg="s2">
-          <div class="chip s2-chip">실제 수라상 <em>일곱 그릇</em></div>
-          <div class="numpop s2-num">7<small>정조의 상차림</small></div>
-          <div class="stamp s2-stamp">12첩은 조선 말기 상궁들이 전한 것<small>고종·순종 대 마지막 상궁 증언 — 국립고궁박물관 특별전 「궁중음식, 공경과 나눔의 밥상」</small></div>
+      <!-- ============ Scene 2 · 폭발 ============ -->
+      <div id="s2" class="clip scene" data-start="9.86" data-duration="4.51" data-track-index="1">
+        <div class="stage" data-camp-bg="s2">
+          <div class="flash"></div>
+          <div class="numpop s2-num">쾅!</div>
         </div>
       </div>
 
-      <!-- ============ Scene 3 · 의궤 — 화성행차의 밥상 ============ -->
-      <div id="s3" class="clip scene" data-start="13.88" data-duration="13.72" data-track-index="0">
-        <div class="stage" data-court-bg="s3">
-          <div class="chip s3-chip">화성행차의 기록 <em>의궤</em></div>
-          <div class="stamp s3-stamp">원행을묘정리의궤 (1795)<small>정조가 혜경궁 홍씨 회갑을 위해 화성에 다녀온 8일간의 식사 기록 — 조선 일상식의 유일한 문헌</small></div>
-          <div class="numpop s3-num">7그릇<small>경사스러운 날에도 정조의 상은</small></div>
+      <!-- ============ Scene 3 · 실록 — 1592 경주성의 밤 ============ -->
+      <div id="s3" class="clip scene" data-start="13.92" data-duration="4.99" data-track-index="0">
+        <div class="stage" data-gate-bg="s3" data-gate-tone="night">
+          <div class="chip s3-chip">1592년 9월 · <em>경주성</em></div>
+          <div class="stamp s3-stamp">“박진이 경주를 수복하다”<small>『선조수정실록』 선조 25년 9월 1일 — 밤에 성 밖에서 쏘아 성 안에 떨어뜨렸다</small></div>
         </div>
       </div>
 
-      <!-- ============ Scene 4 · 하루 다섯 끼 ============ -->
-      <div id="s4" class="clip scene" data-start="27.15" data-duration="13.96" data-track-index="1">
-        <div class="stage" data-room-bg="s4" data-room-tone="day">
-          <div class="chip s4-chip">왕은 하루 <em>다섯 끼</em></div>
-          <div class="numpop s4-num">5끼<small>수라상은 아침·저녁 두 번</small></div>
+      <!-- ============ Scene 4 · 군기시 화포장 이장손 ============ -->
+      <div id="s4" class="clip scene" data-start="18.46" data-duration="4.97" data-track-index="1">
+        <div class="stage" data-forge-bg="s4">
+          <div class="chip s4-chip">군기시 화포장 <em>이장손</em></div>
+          <div class="stamp s4-stamp">火砲匠 李長孫 창출<small>“옛날에는 없던 것을 화포장 이장손이 처음 만들어 냈다” — 선조수정실록</small></div>
         </div>
       </div>
 
-      <!-- ============ Scene 5 · 기미상궁의 시식 ============ -->
-      <div id="s5" class="clip scene" data-start="40.66" data-duration="12.47" data-track-index="0">
-        <div class="stage" data-throne-bg="s5">
-          <div class="chip s5-chip">먼저 맛보는 <em>기미상궁</em></div>
-          <div class="stamp s5-stamp">이상이 없는지 살피는 시식<small>왕이 수저를 들기 전, 음식을 모셔온 상궁이 먼저 — 은수저 사용(궁중 의례)</small></div>
+      <!-- ============ Scene 5 · 단면 도해 ============ -->
+      <div id="s5" class="clip scene" data-start="22.98" data-duration="9.49" data-track-index="0">
+        <div class="stage" data-sheet-bg="s5">
+          <div class="chip s5-chip">비격진천뢰의 <em>속</em></div>
+          <div class="stamp s5-stamp">사발 모양 화포 ‘완구’로 쏘았다<small>사거리 500~600보 — 한국민족문화대백과 · 우리역사넷</small></div>
+          <div class="lab s5-lab1">화약</div>
+          <div class="lab s5-lab2">쇳조각<small>빙철(憑鐵)</small></div>
+          <div class="lab s5-lab3">죽통<small>대나무 통</small></div>
+          <div class="lab s5-lab4">목곡<small>도화선 감은 나무 축</small></div>
         </div>
       </div>
 
-      <!-- ============ Scene 6 · 흉년이면 반찬을 줄였다 ============ -->
-      <div id="s6" class="clip scene" data-start="52.68" data-duration="8.65" data-track-index="1">
-        <div class="stage" data-court-bg="s6" data-court-gloom="1">
-          <div class="chip s6-chip">흉년이 들면, <em>스스로 반찬을 줄였다</em></div>
-          <div class="stamp s6-stamp">감선 · 소선 · 철선<small>하늘이 내린 재해를 경고로 여기고 왕이 몸으로 근신 — 물을 만 밥, 고기 끊기</small></div>
+      <!-- ============ Scene 6 · 감는 횟수 = 폭발 시간 ============ -->
+      <div id="s6" class="clip scene" data-start="32.02" data-duration="10.79" data-track-index="1">
+        <div class="stage" data-sheet-bg="s6">
+          <div class="chip s6-chip">감는 횟수 = <em>폭발 시간</em></div>
+          <div class="numpop s6-numL">10번<small>빨리 터진다</small></div>
+          <div class="numpop s6-numR">15번<small>더디게 터진다</small></div>
+          <div class="stamp s6-stamp">『화포식언해』(1635)의 제조법<small>빨리 터뜨리려면 열 고비, 더디게 하려면 열다섯 고비를 감는다</small></div>
         </div>
       </div>
 
-      <!-- ============ Scene 7 · 백성의 고통 ============ -->
-      <div id="s7" class="clip scene" data-start="60.88" data-duration="4.95" data-track-index="0">
-        <div class="stage" data-field-bg="s7">
-          <div class="chip s7-chip">백성의 <em>고통</em>에 함께</div>
+      <!-- ============ Scene 7 · 재연 — 뜸 들이는 폭탄, 모여든 왜군 ============ -->
+      <div id="s7" class="clip scene" data-start="42.36" data-duration="9.94" data-track-index="0">
+        <div class="stage" data-camp-bg="s7">
+          <div class="flash"></div>
+          <div class="stamp s7-stamp">“소리가 천지를 진동하고<br>쇳조각이 별처럼 부서졌다”<small>선조수정실록 — 온 진중이 놀라 신비하게 여겼다</small></div>
+          <div class="numpop s7-num">20여 명<small>그 자리에서 즉사</small></div>
         </div>
       </div>
 
-      <!-- ============ Scene 8 · 펀치 — 백성을 살피는 자리 ============ -->
-      <div id="s8" class="clip scene" data-start="65.38" data-duration="8.61" data-track-index="1">
-        <div class="stage" data-court-bg="s8">
-          <div class="stamp s8-stamp">향연이 아니라, <em>백성을 살피는 자리</em><small>진상되는 제철 식재료를 통해 그해 농사의 성과를 살폈다 — 진상품은 백성에게 무거운 세금이기도 했다</small></div>
+      <!-- ============ Scene 8 · 다음 날 — 성을 버리고 도주 ============ -->
+      <div id="s8" class="clip scene" data-start="51.85" data-duration="8.45" data-track-index="1">
+        <div class="stage" data-gate-bg="s8" data-gate-tone="dawn">
+          <div class="chip s8-chip">다음 날 아침 · <em>경주성 수복</em></div>
+          <div class="stamp s8-stamp">왜군은 성을 버리고 서생포로<small>“이튿날 드디어 성을 버리고 서생포로 도망하였다” — 선조수정실록</small></div>
+          <div class="numpop s8-num">1만여 석<small>성안에 남아 있던 곡식</small></div>
         </div>
       </div>
 
-      <!-- ============ Scene 9 · 아웃트로 ============ -->
-      <div id="s9" class="clip scene" data-start="73.54" data-duration="6.01" data-track-index="0">
+      <!-- ============ Scene 9 · 2018 고창 — 11발 무더기 출토 ============ -->
+      <div id="s9" class="clip scene" data-start="59.85" data-duration="6.72" data-track-index="0">
+        <div class="stage" data-dig-bg="s9">
+          <div class="chip s9-chip">2018 · <em>고창 무장현 관아</em></div>
+          <div class="numpop s9-num">11발<small>한 구덩이에서</small></div>
+          <div class="stamp s9-stamp">그 전까지 전국에 5점뿐이었다<small>현존 16점 중 11점이 이 구덩이에서 — 국립진주박물관 특별전(2019)</small></div>
+        </div>
+      </div>
+
+      <!-- ============ Scene 10 · CT — 심지 구멍 2개 ============ -->
+      <div id="s10" class="clip scene" data-start="66.12" data-duration="10.05" data-track-index="1">
+        <div class="stage" data-ct-bg="s10">
+          <div class="chip s10-chip">CT <em>단층 촬영</em></div>
+          <div class="numpop s10-num">2개<small>뚜껑의 심지 구멍</small></div>
+          <div class="stamp s10-stamp">불발 대비 <em>이중 심지</em><small>심지 하나가 꺼져도 터지도록 — 국립진주박물관 CT 분석(2019)</small></div>
+        </div>
+      </div>
+
+      <!-- ============ Scene 11 · 아웃트로 ============ -->
+      <div id="s11" class="clip scene" data-start="75.72" data-duration="6.08" data-track-index="0">
         <div class="stage">
           <div class="logo-big">삼십초<br><em>역사</em></div>
-          <div class="s9-sub">팩트체크된 한국사, 매주 한 편</div>
+          <div class="s11-sub">팩트체크된 한국사, 매주 한 편</div>
           <div class="subscribe">구독</div>
         </div>
       </div>
 
       <!-- ============ Overlay ============ -->
-      <div id="overlay" class="clip scene" data-start="0" data-duration="79.55" data-track-index="2">
+      <div id="overlay" class="clip scene" data-start="0" data-duration="81.8" data-track-index="2">
         <div class="brand-badge">삼십초 <em>역사</em></div>
         <div class="cap-wrap"></div>
       </div>
     </div>
 
-    <audio id="narration" data-start="0" data-duration="78.12" src="narration.mp3"></audio>
+    <audio id="narration" data-start="0" data-duration="80.4" src="narration.mp3"></audio>
 
     <script src="char-tuning.js"></script>
     <script src="characters.js"></script>
@@ -204,138 +255,175 @@
       var T = 0.28;
 
       // ============================================================
-      // 배경 인젝터 — 지면선 560px 고정. 풀블리드 요소는 항상 stage 최선두(지뢰 #49).
-      // 벽·바닥·하늘 '밴드'도 2톤 필수(지뢰 #62) — 단색 밴드는 0레이어 취급.
+      // 배경 인젝터 — 지면선 560px 고정. 풀블리드 밴드는 stage 최선두(지뢰 #49·#69).
+      // 벽·바닥·하늘 밴드도 2톤 필수(지뢰 #62).
       // ============================================================
 
-      // ---------- ① 어전 (s1 · s2 · s5) — EP.5→EP.10→EP.16→EP.17→EP.25 자산 재사용 ----------
-      // ⚠ 어좌를 비워 두지 않는다(지뢰 #50) — 왕 rig가 앞에 선다(지뢰 #66 정렬).
-      function throneBgSVG(prefix) {
-        var c = { wall:"#2a2130", wallHi:"#3a2e42", floor:"#3a2a20", floorHi:"#4a3526",
-                  gold:"#e8b74a", goldDim:"#c99b3d", lac:"#8e2a1d", lacDim:"#5f1c11", panel:"#e3d8c0" };
+      // ---------- ① 왜군 진영 야영지 (s1 · s2 · s7) — 신규. 밤 진영 ----------
+      // 실루엣 대비: 지면 #39415a·지평 띠 #3a4668 위에 먹색(#12161f) 실루엣 — 명도 분리(지뢰 #70).
+      function campBgSVG(prefix) {
+        var c = { sky:"#232c44", skyTop:"#1a2236", horizon:"#3a4668", ground:"#39415a", groundHi:"#46506e",
+                  sil:"#10141f", tent:"#2b3348", tentFront:"#222a3c", tentHi:"#3a4460" };
         var i, s = "";
-        s += '<div class="prop" data-adj="' + prefix + '-wall" style="left:0; top:0; width:1080px; height:1360px; background:' + c.wall + ';"></div>';
-        s += '<div class="prop" data-adj="' + prefix + '-wall-hi" style="left:0; top:0; width:1080px; height:260px; background:' + c.wallHi + ';"></div>';
-        s += '<svg class="prop" data-adj="' + prefix + '-beam" style="left:0; bottom:1360px; width:1080px; height:96px;" viewBox="0 0 1080 96">' +
-               '<g data-obj="' + prefix + '-beam-body"><rect x="0" y="30" width="1080" height="52" fill="#2e6a6a"/><rect x="0" y="30" width="1080" height="15" fill="#3f8a86"/><rect x="0" y="82" width="1080" height="14" fill="#1c4646"/></g>' +
-               '<g data-obj="' + prefix + '-beam-dancheong" fill="' + c.gold + '">' +
-                 '<rect x="80" y="42" width="26" height="28" rx="6"/><rect x="300" y="42" width="26" height="28" rx="6"/>' +
-                 '<rect x="740" y="42" width="26" height="28" rx="6"/><rect x="960" y="42" width="26" height="28" rx="6"/></g></svg>';
-        s += '<svg class="prop" data-adj="' + prefix + '-pillars" style="left:0; bottom:560px; width:1080px; height:800px;" viewBox="0 0 1080 800">' +
-               '<g data-obj="' + prefix + '-pillar-l"><rect x="14" y="0" width="72" height="800" fill="#8e2a1d"/><rect x="14" y="0" width="22" height="800" fill="#a8402f"/><rect x="6" y="760" width="88" height="40" rx="5" fill="#6b6152"/></g>' +
-               '<g data-obj="' + prefix + '-pillar-r"><rect x="994" y="0" width="72" height="800" fill="#8e2a1d"/><rect x="994" y="0" width="22" height="800" fill="#a8402f"/><rect x="986" y="760" width="88" height="40" rx="5" fill="#6b6152"/></g></svg>';
-        s += '<svg class="prop" data-adj="' + prefix + '-screen" style="left:135px; bottom:930px; width:810px; height:549px;" viewBox="0 0 900 610">' +
-               '<g data-obj="' + prefix + '-screen-frame"><rect x="24" y="0" width="852" height="590" fill="#3d2b1a"/><rect x="24" y="0" width="852" height="6" fill="' + c.goldDim + '"/><rect x="24" y="584" width="852" height="6" fill="' + c.goldDim + '"/></g>' +
-               '<g data-obj="' + prefix + '-screen-panel"><rect x="30" y="6" width="840" height="578" fill="' + c.panel + '"/></g>' +
-               '<g data-obj="' + prefix + '-screen-mountains">' +
-                 '<path d="M 40 520 L 140 360 Q 170 320 200 360 L 300 520 Z" fill="#3e7466"/><path d="M 170 330 L 300 520 L 170 520 Z" fill="#2b544a"/>' +
-                 '<path d="M 160 520 L 270 290 Q 300 240 330 290 L 440 520 Z" fill="#4c8a76"/><path d="M 300 262 L 440 520 L 300 520 Z" fill="#37665a"/>' +
-                 '<path d="M 300 520 L 415 220 Q 450 150 485 220 L 600 520 Z" fill="#3e7466"/><path d="M 450 180 L 600 520 L 450 520 Z" fill="#2b544a"/>' +
-                 '<path d="M 460 520 L 570 290 Q 600 240 630 290 L 740 520 Z" fill="#4c8a76"/><path d="M 600 262 L 740 520 L 600 520 Z" fill="#37665a"/>' +
-                 '<path d="M 600 520 L 700 360 Q 730 320 760 360 L 860 520 Z" fill="#3e7466"/><path d="M 730 330 L 860 520 L 730 520 Z" fill="#2b544a"/></g>' +
-               '<g data-obj="' + prefix + '-screen-falls"><path d="M 236 330 L 250 330 L 254 470 L 232 470 Z" fill="#eaf2f6"/><path d="M 240 340 L 246 340 L 248 462 L 238 462 Z" fill="#ffffff"/>' +
-                 '<path d="M 650 330 L 664 330 L 668 470 L 646 470 Z" fill="#eaf2f6"/><path d="M 654 340 L 660 340 L 662 462 L 652 462 Z" fill="#ffffff"/></g>' +
-               '<g data-obj="' + prefix + '-screen-pines"><path d="M 118 520 L 118 402 L 128 402 L 128 520 Z" fill="#8a4b2a"/><path d="M 96 372 Q 123 348 156 374 Q 128 386 96 372 Z" fill="#2f5f4a"/>' +
-                 '<path d="M 88 402 Q 123 376 162 406 Q 124 418 88 402 Z" fill="#3a7159"/><path d="M 100 430 Q 123 412 150 432 Q 124 442 100 430 Z" fill="#2f5f4a"/>' +
-                 '<path d="M 772 520 L 772 396 L 782 396 L 782 520 Z" fill="#8a4b2a"/><path d="M 744 366 Q 777 342 810 370 Q 778 382 744 366 Z" fill="#2f5f4a"/>' +
-                 '<path d="M 738 398 Q 777 370 818 402 Q 776 414 738 398 Z" fill="#3a7159"/><path d="M 752 428 Q 777 408 802 430 Q 778 440 752 428 Z" fill="#2f5f4a"/></g>' +
-               '<g data-obj="' + prefix + '-screen-sun"><circle cx="560" cy="205" r="42" fill="#d94f37"/></g>' +
-               '<g data-obj="' + prefix + '-screen-moon"><circle cx="255" cy="205" r="42" fill="#fdfaf2"/></g>' +
-               '<g data-obj="' + prefix + '-screen-waves"><path d="M 30 578 L 30 556 A 30 30 0 0 1 90 556 A 30 30 0 0 1 150 556 A 30 30 0 0 1 210 556 A 30 30 0 0 1 270 556 A 30 30 0 0 1 330 556 A 30 30 0 0 1 390 556 A 30 30 0 0 1 450 556 A 30 30 0 0 1 510 556 A 30 30 0 0 1 570 556 A 30 30 0 0 1 630 556 A 30 30 0 0 1 690 556 A 30 30 0 0 1 750 556 A 30 30 0 0 1 810 556 A 30 30 0 0 1 870 556 L 870 578 Z" fill="#3a7ca5"/></g>' +
-               '<g data-obj="' + prefix + '-screen-folds"><rect x="170" y="6" width="4" height="578" fill="#cfc4aa"/><rect x="310" y="6" width="4" height="578" fill="#cfc4aa"/>' +
-                 '<rect x="450" y="6" width="4" height="578" fill="#cfc4aa"/><rect x="590" y="6" width="4" height="578" fill="#cfc4aa"/><rect x="730" y="6" width="4" height="578" fill="#cfc4aa"/></g></svg>';
-        s += '<svg class="prop" data-adj="' + prefix + '-dais" style="left:0px; bottom:560px; width:960px; height:498px;" viewBox="0 -60 900 560">' +
-               '<g data-obj="' + prefix + '-throne" transform="translate(150 0) translate(340 196) scale(0.98) translate(-340 -196)">' +
-                 '<g data-obj="' + prefix + '-throne-crest"><path d="M 270 8 Q 340 -10 410 8 L 410 22 Q 340 6 270 22 Z" fill="' + c.gold + '"/><circle cx="340" cy="-1" r="9" fill="#d94f37"/></g>' +
-                 '<g data-obj="' + prefix + '-throne-back"><rect x="286" y="10" width="108" height="152" rx="10" fill="' + c.gold + '"/><rect x="296" y="20" width="88" height="128" rx="6" fill="' + c.lac + '"/></g>' +
-                 '<g data-obj="' + prefix + '-throne-emblem"><circle cx="340" cy="76" r="18" fill="' + c.gold + '"/><circle cx="340" cy="76" r="12" fill="' + c.goldDim + '"/></g>' +
-                 '<g data-obj="' + prefix + '-throne-arms"><rect x="228" y="104" width="30" height="78" rx="10" fill="#5a4632"/><rect x="422" y="104" width="30" height="78" rx="10" fill="#5a4632"/></g>' +
-                 '<g data-obj="' + prefix + '-throne-seat"><rect x="240" y="154" width="200" height="28" rx="8" fill="' + c.lac + '"/><rect x="252" y="140" width="176" height="26" rx="10" fill="#2c3548"/><rect x="252" y="140" width="176" height="9" rx="4" fill="#43506b"/></g></g>' +
-               '<g data-obj="' + prefix + '-dais-step2"><rect x="100" y="306" width="700" height="6" fill="' + c.gold + '"/><rect x="100" y="312" width="700" height="78" fill="' + c.lac + '"/><rect x="100" y="390" width="700" height="20" fill="' + c.lacDim + '"/></g>' +
-               '<g data-obj="' + prefix + '-dais-step1"><rect x="30" y="416" width="840" height="6" fill="' + c.gold + '"/><rect x="30" y="422" width="840" height="64" fill="' + c.lac + '"/><rect x="30" y="486" width="840" height="14" fill="' + c.lacDim + '"/></g></svg>';
-        s += '<div class="prop" data-adj="' + prefix + '-floor" style="left:0; bottom:0; width:1080px; height:560px; background:' + c.floor + ';"></div>';
-        s += '<div class="prop" data-adj="' + prefix + '-floor-hi" style="left:0; bottom:530px; width:1080px; height:30px; background:' + c.floorHi + ';"></div>';
-        s += '<svg class="prop" data-adj="' + prefix + '-floor-detail" style="left:0; bottom:0; width:1080px; height:530px;" viewBox="0 0 1080 530">';
-        for (i = 0; i < 4; i++) s += '<line x1="0" y1="' + (110 + i * 130) + '" x2="1080" y2="' + (110 + i * 130) + '" stroke="' + c.floorHi + '" stroke-width="8" opacity="0.75"/>';
-        for (i = 0; i < 5; i++) s += '<line x1="' + (110 + i * 220) + '" y1="0" x2="' + (110 + i * 220) + '" y2="530" stroke="' + c.wall + '" stroke-width="6" opacity="0.5"/>';
-        s += '</svg>';
+        s += '<div class="prop" data-adj="' + prefix + '-sky" style="left:0; top:0; width:1080px; height:1040px; background:' + c.sky + ';"></div>';
+        s += '<div class="prop" data-adj="' + prefix + '-sky-top" style="left:0; top:0; width:1080px; height:300px; background:' + c.skyTop + ';"></div>';
+        // 별 — 점 별(다각 별 금지)
+        s += '<svg class="prop" data-adj="' + prefix + '-stars" style="left:0; top:60px; width:1080px; height:640px;" viewBox="0 0 1080 640"><g data-obj="' + prefix + '-stars-dots" fill="#e8eef8">';
+        var stx = [70, 200, 340, 480, 610, 730, 880, 990, 140, 420, 560, 820, 950, 280];
+        var sty = [80, 40, 120, 60, 30, 110, 70, 140, 260, 230, 320, 260, 340, 380];
+        for (i = 0; i < stx.length; i++) s += '<circle cx="' + stx[i] + '" cy="' + sty[i] + '" r="' + (i % 3 === 0 ? 5 : 3) + '" opacity="' + (i % 2 ? 0.85 : 0.6) + '"/>';
+        s += '</g></svg>';
+        // 중단 하늘 — 밤구름 실루엣 밴드(넓은 로브, 원형 단독 금지)
+        s += '<svg class="prop" data-adj="' + prefix + '-nightclouds" style="left:0; top:430px; width:1080px; height:330px;" viewBox="0 0 1080 330">' +
+               '<g data-obj="' + prefix + '-nightclouds-a" fill="#2c3654" opacity="0.9">' +
+                 '<path d="M 60 120 Q 90 74 150 82 Q 176 44 240 52 Q 300 30 352 66 Q 420 58 446 104 Q 470 120 460 140 L 70 140 Q 48 132 60 120 Z"/>' +
+                 '<path d="M 640 250 Q 676 206 740 216 Q 770 180 838 190 Q 900 172 946 208 Q 1006 202 1026 244 L 1044 270 L 650 270 Q 622 262 640 250 Z"/></g>' +
+               '<g data-obj="' + prefix + '-nightclouds-hi" fill="#38436a" opacity="0.75">' +
+                 '<path d="M 150 82 Q 176 44 240 52 Q 300 30 352 66 Q 300 62 240 70 Q 190 74 150 82 Z"/>' +
+                 '<path d="M 740 216 Q 770 180 838 190 Q 900 172 946 208 Q 890 200 838 206 Q 786 210 740 216 Z"/></g></svg>';
+        // 지평 띠(하늘 하단 밝은 밴드 — 실루엣 분리용)
+        s += '<div class="prop" data-adj="' + prefix + '-horizon" style="left:0; bottom:840px; width:1080px; height:120px; background:' + c.horizon + ';"></div>';
+        // 지면 2톤
+        s += '<div class="prop" data-adj="' + prefix + '-ground" style="left:0; bottom:0; width:1080px; height:840px; background:' + c.ground + ';"></div>';
+        s += '<div class="prop" data-adj="' + prefix + '-ground-hi" style="left:0; bottom:810px; width:1080px; height:30px; background:' + c.groundHi + ';"></div>';
+        // 지면 디테일 — 자갈·풀
+        s += '<svg class="prop" data-adj="' + prefix + '-ground-detail" style="left:0; bottom:0; width:1080px; height:810px;" viewBox="0 0 1080 810">' +
+               '<g data-obj="' + prefix + '-pebbles" fill="' + c.groundHi + '" opacity="0.55">' +
+                 '<ellipse cx="140" cy="700" rx="26" ry="9"/><ellipse cx="560" cy="760" rx="34" ry="11"/><ellipse cx="900" cy="690" rx="24" ry="8"/>' +
+                 '<ellipse cx="320" cy="620" rx="20" ry="7"/><ellipse cx="760" cy="600" rx="26" ry="9"/></g>' +
+               '<g data-obj="' + prefix + '-grass" stroke="' + c.horizon + '" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.8">' +
+                 '<path d="M 80 560 Q 86 534 94 522"/><path d="M 88 560 Q 98 540 108 534"/>' +
+                 '<path d="M 1000 560 Q 1006 536 1014 524"/><path d="M 1006 560 Q 1016 542 1026 536"/>' +
+                 '<path d="M 480 588 Q 486 564 494 552"/><path d="M 488 588 Q 498 568 508 562"/></g></svg>';
+        // 원경 — 경주 읍성 성곽 실루엣(지평선 위)
+        s += '<svg class="prop" data-adj="' + prefix + '-fort" style="left:0; bottom:880px; width:1080px; height:230px;" viewBox="0 0 1080 230">' +
+               '<g data-obj="' + prefix + '-fort-wall"><rect x="0" y="150" width="1080" height="80" fill="' + c.sil + '"/>';
+        for (i = 0; i < 11; i++) s += '<rect x="' + (i * 96) + '" y="126" width="60" height="28" fill="' + c.sil + '"/>';
+        s += '<rect x="1056" y="126" width="24" height="28" fill="' + c.sil + '"/>';
+        s += '</g><g data-obj="' + prefix + '-fort-tower"><rect x="430" y="96" width="220" height="60" fill="' + c.sil + '"/>' +
+               '<path d="M 410 96 L 540 30 L 670 96 Z" fill="' + c.sil + '"/></g></svg>';
+        // 중경 — 군막 2동
+        s += '<svg class="prop" data-adj="' + prefix + '-tent1" style="left:16px; bottom:610px; width:330px; height:400px;" viewBox="0 0 330 400">' +
+               '<g data-obj="' + prefix + '-tent1-body"><path d="M 165 16 L 316 340 L 14 340 Z" fill="' + c.tent + '"/>' +
+                 '<path d="M 165 16 L 316 340 L 165 340 Z" fill="' + c.tentFront + '"/>' +
+                 '<path d="M 165 16 L 196 82 L 134 82 Z" fill="' + c.tentHi + '"/></g>' +
+               '<g data-obj="' + prefix + '-tent1-door"><path d="M 165 200 L 216 340 L 114 340 Z" fill="#0d1119"/></g>' +
+               '<g data-obj="' + prefix + '-tent1-pole"><rect x="160" y="0" width="10" height="26" fill="' + c.tentHi + '"/></g>' +
+               '<g data-obj="' + prefix + '-tent1-base"><rect x="8" y="336" width="314" height="14" rx="6" fill="' + c.sil + '"/></g></svg>';
+        s += '<svg class="prop" data-adj="' + prefix + '-tent2" style="left:770px; bottom:640px; width:280px; height:330px;" viewBox="0 0 280 330">' +
+               '<g data-obj="' + prefix + '-tent2-body"><path d="M 140 14 L 268 280 L 12 280 Z" fill="' + c.tent + '"/>' +
+                 '<path d="M 140 14 L 12 280 L 140 280 Z" fill="' + c.tentFront + '"/>' +
+                 '<path d="M 140 14 L 166 70 L 114 70 Z" fill="' + c.tentHi + '"/></g>' +
+               '<g data-obj="' + prefix + '-tent2-pole"><rect x="135" y="0" width="10" height="22" fill="' + c.tentHi + '"/></g>' +
+               '<g data-obj="' + prefix + '-tent2-base"><rect x="6" y="276" width="268" height="12" rx="6" fill="' + c.sil + '"/></g></svg>';
+        // 전경 — 모닥불 (빛은 낮은 가로 타원, 저채도 — 지뢰 #47)
+        s += '<svg class="prop" data-adj="' + prefix + '-fire" style="left:498px; bottom:806px; width:118px; height:112px;" viewBox="0 0 200 190">' +
+               '<g data-obj="' + prefix + '-fire-glow"><ellipse cx="100" cy="172" rx="96" ry="18" fill="#e8963f" opacity="0.14"/></g>' +
+               '<g data-obj="' + prefix + '-fire-logs"><rect x="30" y="156" width="120" height="16" rx="8" fill="#5a4632" transform="rotate(9 90 164)"/>' +
+                 '<rect x="52" y="158" width="120" height="16" rx="8" fill="#4a3826" transform="rotate(-11 112 166)"/></g>' +
+               '<g data-obj="' + prefix + '-fire-flame"><path d="M 100 52 Q 128 96 122 128 Q 116 156 100 156 Q 84 156 78 128 Q 72 96 100 52 Z" fill="#e8963f"/>' +
+                 '<path d="M 100 84 Q 114 112 111 132 Q 108 148 100 148 Q 92 148 89 132 Q 86 112 100 84 Z" fill="#f6c25a"/></g></svg>';
         return s;
       }
-      document.querySelectorAll("[data-throne-bg]").forEach(function (el) {
-        el.insertAdjacentHTML("afterbegin", throneBgSVG(el.getAttribute("data-throne-bg")));
+      document.querySelectorAll("[data-camp-bg]").forEach(function (el) {
+        el.insertAdjacentHTML("afterbegin", campBgSVG(el.getAttribute("data-camp-bg")));
       });
 
-      // ---------- ② 궁궐 정전 앞마당 (s3 · s6 · s8) — EP.22→EP.25 자산 재사용 ----------
-      function courtBgSVG(prefix, gloom) {
+      // ---------- ② 경주 읍성 성문 (s3 밤 · s8 새벽) — EP.25 숭례문 개정판 재사용(현판만 제거) ----------
+      // 기왓골은 지붕 윤곽에 클립(지뢰 #73), 처마 반전, 평행 세로 기왓골(지뢰 #60).
+      function gateBgSVG(prefix, tone) {
+        var P = { night: { sky:"#202940", skyHi:"#293452", wall:"#7d7568", wallHi:"#948b7c", wallSh:"#635c50",
+                           roof:"#2e3542", roofSh:"#232833", ground:"#4a5158", groundHi:"#5d656c",
+                           stone1:"#4f575e", stone2:"#474f56", pav:"#b9b09c", col:"#7a3126" },
+                  dawn:  { sky:"#b58a74", skyHi:"#d9ac8a", wall:"#b3a690", wallHi:"#c9bda6", wallSh:"#94886f",
+                           roof:"#454e5e", roofSh:"#333b48", ground:"#8d8b7e", groundHi:"#a4a293",
+                           stone1:"#949286", stone2:"#8a887c", pav:"#e8dfc9", col:"#a8402f" } };
+        var c = P[tone] || P.dawn;
         var i, s = "";
-        s += '<svg class="prop" data-adj="' + prefix + '-sky" style="left:0; top:0; width:1080px; height:1360px;" viewBox="0 0 1080 1360">' +
-               '<rect x="0" y="0" width="1080" height="1360" fill="#7fa8c0"/><rect x="0" y="0" width="1080" height="330" fill="#a4c8dc"/></svg>';
-        s += '<svg class="prop" data-adj="' + prefix + '-cloud1" style="left:60px; top:120px; width:260px; height:100px;" viewBox="0 0 260 100">' +
-               '<path d="M 28 74 Q 12 74 12 58 Q 12 40 32 40 Q 38 16 68 16 Q 98 16 108 38 Q 134 32 146 50 Q 168 52 168 74 Z" fill="#f2f7fb"/></svg>';
-        s += '<svg class="prop" data-adj="' + prefix + '-cloud2" style="right:80px; top:250px; width:210px; height:84px;" viewBox="0 0 210 84">' +
-               '<path d="M 23 61 Q 10 61 10 48 Q 10 34 27 34 Q 32 13 57 13 Q 82 13 90 32 Q 111 25 121 42 Q 141 44 141 61 Z" fill="#f2f7fb"/></svg>';
-        s += '<svg class="prop" data-adj="' + prefix + '-palace" style="left:150px; bottom:920px; width:790px; height:632px;" viewBox="0 0 820 660">' +
-               '<g data-obj="' + prefix + '-palace-podium">' +
-                 '<path d="M 18 596 L 802 596 L 782 656 L 38 656 Z" fill="#cfc7b2"/>' +
-                 '<path d="M 18 596 L 802 596 L 796 614 L 24 614 Z" fill="#b3aa95"/>' +
-                 '<path d="M 74 546 L 746 546 L 740 596 L 80 596 Z" fill="#d9d2be"/></g>' +
-               '<g data-obj="' + prefix + '-palace-body">' +
-                 '<rect x="96" y="330" width="628" height="218" fill="#e2d6bb"/>' +
-                 '<rect x="96" y="524" width="628" height="24" fill="#c6b898"/>' +
-                 '<rect x="170" y="360" width="132" height="164" fill="#f2e7cd"/>' +
-                 '<rect x="344" y="360" width="132" height="164" fill="#f2e7cd"/>' +
-                 '<rect x="518" y="360" width="132" height="164" fill="#f2e7cd"/>' +
-                 '<g stroke="#7d6141" stroke-width="6">' +
-                   '<path d="M 190 360 L 190 494"/><path d="M 238 360 L 238 494"/><path d="M 286 360 L 286 494"/>' +
-                   '<path d="M 364 360 L 364 494"/><path d="M 412 360 L 412 494"/><path d="M 460 360 L 460 494"/>' +
-                   '<path d="M 538 360 L 538 494"/><path d="M 586 360 L 586 494"/><path d="M 634 360 L 634 494"/></g>' +
-                 '<g data-obj="' + prefix + '-palace-columns">' +
-                   '<rect x="112" y="330" width="44" height="218" fill="#a8402f"/><rect x="112" y="330" width="14" height="218" fill="#c25742"/>' +
-                   '<rect x="302" y="330" width="44" height="218" fill="#a8402f"/><rect x="302" y="330" width="14" height="218" fill="#c25742"/>' +
-                   '<rect x="476" y="330" width="44" height="218" fill="#a8402f"/><rect x="476" y="330" width="14" height="218" fill="#c25742"/>' +
-                   '<rect x="664" y="330" width="44" height="218" fill="#a8402f"/><rect x="664" y="330" width="14" height="218" fill="#c25742"/></g>' +
-                 '<g data-obj="' + prefix + '-palace-beam"><rect x="84" y="292" width="652" height="44" fill="#2e6a6a"/><rect x="84" y="292" width="652" height="12" fill="#3f8a86"/></g></g>' +
-               '<g data-obj="' + prefix + '-palace-roof">' +
-                 '<path d="M 252 140 L 568 140 L 700 262 Q 740 278 776 296 L 44 296 Q 80 278 120 262 Z" fill="#4c5566"/>' +
-                 '<path d="M 252 140 L 410 140 L 410 296 L 44 296 Q 80 278 120 262 Z" fill="#59637a"/>' +
-                 '<g stroke="#3d4655" stroke-width="6">' +
-                   '<path d="M 146 240 L 146 296"/><path d="M 214 176 L 214 296"/><path d="M 282 148 L 282 296"/>' +
-                   '<path d="M 350 148 L 350 296"/><path d="M 418 148 L 418 296"/><path d="M 486 148 L 486 296"/>' +
-                   '<path d="M 554 148 L 554 296"/><path d="M 622 192 L 622 296"/><path d="M 690 254 L 690 296"/></g>' +
-                 '<path d="M 252 142 L 108 296" stroke="#39424f" stroke-width="15" fill="none" stroke-linecap="round"/>' +
-                 '<path d="M 568 142 L 712 296" stroke="#39424f" stroke-width="15" fill="none" stroke-linecap="round"/>' +
-                 '<path d="M 44 296 Q 68 266 118 258 L 124 282 Q 82 290 64 304 Z" fill="#39424f"/>' +
-                 '<path d="M 776 296 Q 752 266 702 258 L 696 282 Q 738 290 756 304 Z" fill="#39424f"/>' +
-                 '<g data-obj="' + prefix + '-palace-ridge"><rect x="238" y="112" width="344" height="34" rx="7" fill="#39424f"/><rect x="238" y="112" width="344" height="12" rx="6" fill="#707c92"/></g></g></svg>';
-        s += '<div class="prop" data-adj="' + prefix + '-ground" style="left:0; bottom:0; width:1080px; height:920px; background:#9aa8ad;"></div>';
-        s += '<div class="prop" data-adj="' + prefix + '-ground-hi" style="left:0; bottom:890px; width:1080px; height:30px; background:#b3bec2;"></div>';
-        s += '<svg class="prop" data-layout-allow-overflow data-adj="' + prefix + '-flagstones" style="left:0; bottom:0; width:1080px; height:560px;" viewBox="0 0 1080 560">';
-        for (i = 0; i < 4; i++) {
-          var fy = 96 + i * 118, fh = 96;
-          for (var fj = 0; fj < 5; fj++) {
-            var fx = -40 + fj * 236 + (i % 2 ? 118 : 0);
-            s += '<rect x="' + fx + '" y="' + fy + '" width="228" height="' + fh + '" rx="6" fill="' + (fj % 2 ? "#9da8ac" : "#99a4a8") + '"/>';
+        s += '<div class="prop" data-adj="' + prefix + '-sky" style="left:0; top:0; width:1080px; height:1360px; background:' + c.sky + ';"></div>';
+        s += '<div class="prop" data-adj="' + prefix + '-sky-hi" style="left:0; top:0; width:1080px; height:330px; background:' + c.skyHi + ';"></div>';
+        if (tone === "night") {
+          s += '<svg class="prop" data-adj="' + prefix + '-stars" style="left:0; top:50px; width:1080px; height:420px;" viewBox="0 0 1080 420"><g data-obj="' + prefix + '-stars-dots" fill="#e8eef8">' +
+                 '<circle cx="90" cy="60" r="4" opacity="0.85"/><circle cx="300" cy="120" r="3" opacity="0.6"/><circle cx="520" cy="50" r="5" opacity="0.85"/>' +
+                 '<circle cx="720" cy="140" r="3" opacity="0.6"/><circle cx="940" cy="70" r="4" opacity="0.85"/><circle cx="180" cy="240" r="3" opacity="0.55"/>' +
+                 '<circle cx="640" cy="280" r="3" opacity="0.55"/><circle cx="880" cy="230" r="4" opacity="0.7"/></g></svg>';
+        } else {
+          s += '<svg class="prop" data-adj="' + prefix + '-cloud" style="left:430px; top:96px; width:330px; height:130px;" viewBox="0 0 300 118">' +
+                 '<g data-obj="' + prefix + '-cloud-body"><path d="M 34 88 Q 14 88 14 68 Q 14 46 40 46 Q 48 16 84 16 Q 122 16 134 44 Q 164 36 180 58 Q 208 60 208 88 Z" fill="#f2e2d2" opacity="0.85"/></g></svg>';
+          s += '<svg class="prop" data-adj="' + prefix + '-birds" style="right:150px; top:210px; width:220px; height:110px;" viewBox="0 0 220 110">' +
+                 '<g data-obj="' + prefix + '-bird1"><path d="M 10 40 Q 28 22 46 40 Q 28 32 10 40 Z" fill="' + c.roofSh + '"/></g>' +
+                 '<g data-obj="' + prefix + '-bird2"><path d="M 74 76 Q 96 54 118 76 Q 96 66 74 76 Z" fill="' + c.roofSh + '"/></g></svg>';
+        }
+        s += '<svg class="prop" data-adj="' + prefix + '-gate" style="left:0; bottom:790px; width:1080px; height:940px;" viewBox="0 0 1080 940">';
+        s += '<g data-obj="' + prefix + '-gate-wall">' +
+               '<rect x="0" y="620" width="1080" height="320" fill="' + c.wall + '"/>' +
+               '<rect x="0" y="620" width="1080" height="26" fill="' + c.wallHi + '"/>' +
+               '<rect x="0" y="892" width="1080" height="48" fill="' + c.wallSh + '"/>';
+        for (i = 0; i < 8; i++) s += '<line x1="' + (60 + i * 140) + '" y1="646" x2="' + (60 + i * 140) + '" y2="892" stroke="' + c.wallSh + '" stroke-width="6" opacity="0.8"/>';
+        s += '</g>';
+        s += '<g data-obj="' + prefix + '-gate-crenel">';
+        for (i = 0; i < 9; i++) {
+          var cx0 = i * 120;
+          s += '<rect x="' + cx0 + '" y="560" width="92" height="62" fill="' + c.wall + '"/>' +
+               '<rect x="' + cx0 + '" y="560" width="92" height="12" fill="' + c.wallHi + '"/>' +
+               '<rect x="' + (cx0 + 34) + '" y="586" width="24" height="16" rx="3" fill="' + c.wallSh + '"/>';
+        }
+        s += '</g>';
+        s += '<g data-obj="' + prefix + '-gate-arch">' +
+               '<rect x="392" y="596" width="296" height="344" fill="' + c.wallSh + '"/>' +
+               '<path d="M 440 940 L 440 800 A 100 100 0 0 1 640 800 L 640 940 Z" fill="#241a12"/>' +
+               '<path d="M 440 800 A 100 100 0 0 1 640 800" fill="none" stroke="' + c.wallHi + '" stroke-width="16"/>' +
+             '</g>';
+        s += '<g data-obj="' + prefix + '-gate-pavilion">' +
+               '<rect x="330" y="368" width="420" height="192" fill="' + c.pav + '"/>' +
+               '<rect x="330" y="536" width="420" height="24" fill="' + c.wallSh + '"/>' +
+               '<rect x="352" y="368" width="30" height="192" fill="' + c.col + '"/>' +
+               '<rect x="472" y="368" width="30" height="192" fill="' + c.col + '"/>' +
+               '<rect x="592" y="368" width="30" height="192" fill="' + c.col + '"/>' +
+               '<rect x="708" y="368" width="30" height="192" fill="' + c.col + '"/>' +
+               '<rect x="330" y="336" width="420" height="38" fill="#2e6a6a"/>' +
+               '<rect x="330" y="336" width="420" height="11" fill="#3f8a86"/>' +
+             '</g>';
+        s += '<g data-obj="' + prefix + '-gate-roof">' +
+               '<path d="M 404 176 L 676 176 L 786 300 Q 826 318 856 340 L 224 340 Q 254 318 294 300 Z" fill="' + c.roof + '"/>' +
+               '<path d="M 404 176 L 540 176 L 540 340 L 224 340 Q 254 318 294 300 Z" fill="' + c.roof + '" opacity="0.82"/>';
+        for (i = 0; i < 11; i++) {
+          var gx = 300 + i * 48;
+          var gy = gx < 404 ? 300 - (gx - 294) * 1.127 : (gx > 676 ? 176 + (gx - 676) * 1.127 : 176);
+          s += '<line x1="' + gx + '" y1="' + Math.round(gy + 8) + '" x2="' + gx + '" y2="340" stroke="' + c.roofSh + '" stroke-width="7"/>';
+        }
+        s += '<path d="M 404 178 L 262 340" stroke="' + c.roofSh + '" stroke-width="17" fill="none" stroke-linecap="round"/>' +
+             '<path d="M 676 178 L 818 340" stroke="' + c.roofSh + '" stroke-width="17" fill="none" stroke-linecap="round"/>' +
+             '<path d="M 222 344 Q 254 326 302 316 L 306 334 Q 266 342 242 352 Z" fill="' + c.roofSh + '"/>' +
+             '<path d="M 858 344 Q 826 326 778 316 L 774 334 Q 814 342 838 352 Z" fill="' + c.roofSh + '"/>' +
+             '<g data-obj="' + prefix + '-gate-ridge"><rect x="388" y="146" width="304" height="34" rx="7" fill="' + c.roofSh + '"/>' +
+               '<rect x="388" y="146" width="304" height="12" rx="6" fill="' + c.wallHi + '" opacity="0.55"/>' +
+               '<path d="M 380 146 L 388 118 L 404 146 Z" fill="' + c.roofSh + '"/><path d="M 700 146 L 692 118 L 676 146 Z" fill="' + c.roofSh + '"/></g>' +
+             '</g>';
+        s += '</svg>';
+        s += '<div class="prop" data-adj="' + prefix + '-ground" style="left:0; bottom:0; width:1080px; height:560px; background:' + c.ground + ';"></div>';
+        s += '<div class="prop" data-adj="' + prefix + '-ground-hi" style="left:0; bottom:530px; width:1080px; height:30px; background:' + c.groundHi + ';"></div>';
+        s += '<svg class="prop" data-layout-allow-overflow data-adj="' + prefix + '-flagstones" style="left:0; bottom:0; width:1080px; height:790px;" viewBox="0 0 1080 790">' +
+               '<g data-obj="' + prefix + '-pave-rows">';
+        var rowY = [60, 190, 340, 520, 730], rowH = [110, 130, 160, 190, 220];
+        for (i = 0; i < rowY.length; i++) {
+          var n = 5 + i, w = 1080 / n, off = (i % 2) * (w / 2);
+          for (var j = -1; j < n + 1; j++) {
+            s += '<rect x="' + Math.round(j * w + off + 5) + '" y="' + rowY[i] + '" width="' + Math.round(w - 10) +
+                 '" height="' + (rowH[i] - 10) + '" rx="6" fill="' + ((i + j) % 2 ? c.stone1 : c.stone2) + '"/>';
           }
         }
-        s += '<g stroke="#8b979b" stroke-width="3" opacity="0.3">';
-        for (i = 0; i < 5; i++) s += '<line x1="0" y1="' + (96 + i * 118) + '" x2="1080" y2="' + (96 + i * 118) + '"/>';
         s += '</g></svg>';
-        if (gloom) {
-          s += '<div class="prop" data-adj="' + prefix + '-gloom" style="left:0; top:0; width:1080px; height:1920px; background:linear-gradient(180deg, rgba(30,38,46,0.55), rgba(30,38,46,0.18) 45%, rgba(30,38,46,0.42));"></div>';
-        }
         return s;
       }
-      document.querySelectorAll("[data-court-bg]").forEach(function (el) {
-        el.insertAdjacentHTML("afterbegin", courtBgSVG(el.getAttribute("data-court-bg"), el.getAttribute("data-court-gloom")));
+      document.querySelectorAll("[data-gate-bg]").forEach(function (el) {
+        el.insertAdjacentHTML("afterbegin", gateBgSVG(el.getAttribute("data-gate-bg"), el.getAttribute("data-gate-tone")));
       });
 
-      // ---------- ③ 수랏간 (s4) — EP.26 한옥 방 인젝터(day) 재사용 ----------
-      function roomBgSVG(prefix, tone) {
-        var P = {
-          day:   { wall:"#4a3b28", wallHi:"#5d4a32", beam:"#6d5738", floor:"#6b5335", floorHi:"#856843",
-                   grain:"#54402a", pane:"#f9f0d2", slat:"#5a4530", sill:"#40301f", mat:"#a5895e" }
-        };
-        var c = P[tone] || P.day;
+      // ---------- ③ 군기시 화포 공방 (s4) — EP.26 방 인젝터 계열 + 화로(대장간 시그니처: 낮은 개방 화덕+풀무+달군 쇠) ----------
+      function forgeBgSVG(prefix) {
+        var c = { wall:"#4a3b28", wallHi:"#5d4a32", beam:"#6d5738", floor:"#5c4526", floorHi:"#75593a",
+                  grain:"#46332a", pane:"#f9f0d2", slat:"#5a4530", sill:"#40301f" };
         var i, s = "";
         s += '<div class="prop" data-adj="' + prefix + '-wall" style="left:0; top:0; width:1080px; height:1360px; background:' + c.wall + ';"></div>';
         s += '<div class="prop" data-adj="' + prefix + '-wall-hi" style="left:0; top:0; width:1080px; height:250px; background:' + c.wallHi + ';"></div>';
@@ -343,6 +431,7 @@
                '<g data-obj="' + prefix + '-beam-body"><rect x="0" y="10" width="1080" height="46" fill="' + c.beam + '"/>' +
                  '<rect x="0" y="10" width="1080" height="13" fill="' + c.wallHi + '"/>' +
                  '<rect x="0" y="56" width="1080" height="12" fill="' + c.grain + '"/></g></svg>';
+        // 벽 요소 ①: 세살창(밝은 창호지 + 어두운 살 + 궁판 — 지뢰 #45)
         s += '<svg class="prop" data-adj="' + prefix + '-window" style="left:36px; bottom:760px; width:340px; height:396px;" viewBox="0 0 360 420">' +
                '<g data-obj="' + prefix + '-win-frame"><rect x="0" y="0" width="360" height="420" fill="' + c.slat + '"/>' +
                  '<rect x="0" y="0" width="360" height="12" fill="' + c.beam + '"/></g>' +
@@ -353,297 +442,397 @@
                '<line x1="18" y1="146" x2="342" y2="146"/><line x1="18" y1="172" x2="342" y2="172"/><line x1="18" y1="198" x2="342" y2="198"/></g>' +
              '<g data-obj="' + prefix + '-win-lower"><rect x="18" y="304" width="324" height="98" fill="' + c.sill + '"/>' +
                '<rect x="18" y="304" width="324" height="14" fill="' + c.beam + '"/></g></svg>';
-        s += '<svg class="prop" data-adj="' + prefix + '-shelf" style="left:600px; bottom:1150px; width:430px; height:210px;" viewBox="0 0 430 210">' +
-               '<g data-obj="' + prefix + '-shelf-bracket">' +
-                 '<rect x="46" y="174" width="18" height="34" rx="3" fill="' + c.beam + '"/>' +
-                 '<rect x="366" y="174" width="18" height="34" rx="3" fill="' + c.beam + '"/>' +
-                 '<rect x="46" y="174" width="338" height="8" fill="' + c.grain + '"/></g>' +
-               '<g data-obj="' + prefix + '-shelf-board"><rect x="14" y="152" width="402" height="22" fill="' + c.mat + '"/>' +
-                 '<rect x="14" y="152" width="402" height="7" fill="#c9b98f"/></g>' +
-               '<g data-obj="' + prefix + '-shelf-jars">' +
-                 '<rect x="80" y="96" width="66" height="56" rx="10" fill="#6d5738"/><rect x="80" y="96" width="18" height="56" rx="8" fill="#8a6b45"/>' +
-                 '<rect x="160" y="84" width="78" height="68" rx="12" fill="#5c4a33"/><rect x="160" y="84" width="20" height="68" rx="10" fill="#7a6440"/>' +
-                 '<rect x="252" y="98" width="60" height="54" rx="9" fill="#6d5738"/><rect x="252" y="98" width="16" height="54" rx="7" fill="#8a6b45"/></g>' +
-               '<g data-obj="' + prefix + '-shelf-cloth"><rect x="330" y="120" width="70" height="32" rx="6" fill="#d9c9a4"/></g></svg>';
+        // 벽 요소 ②: 선반 — 포탄 2발 + 죽통 다발 (ㄱ자 받침은 판 아래, 지뢰 표)
+        s += '<svg class="prop" data-adj="' + prefix + '-shelf" style="left:600px; bottom:1120px; width:430px; height:240px;" viewBox="0 0 430 240">' +
+               '<g data-obj="' + prefix + '-shelf-board"><rect x="14" y="170" width="402" height="22" fill="#a5895e"/>' +
+                 '<rect x="14" y="170" width="402" height="7" fill="#c9b98f"/></g>' +
+               '<g data-obj="' + prefix + '-shelf-bracket"><rect x="46" y="192" width="18" height="36" rx="3" fill="' + c.beam + '"/>' +
+                 '<rect x="366" y="192" width="18" height="36" rx="3" fill="' + c.beam + '"/></g>' +
+               '<g data-obj="' + prefix + '-shelf-bombs">' +
+                 '<circle cx="90" cy="132" r="40" fill="#444b57"/><ellipse cx="76" cy="118" rx="16" ry="11" fill="#5b6472"/>' +
+                 '<rect x="74" y="86" width="32" height="12" rx="4" fill="#2b3039"/>' +
+                 '<circle cx="190" cy="132" r="40" fill="#444b57"/><ellipse cx="176" cy="118" rx="16" ry="11" fill="#5b6472"/>' +
+                 '<rect x="174" y="86" width="32" height="12" rx="4" fill="#2b3039"/></g>' +
+               '<g data-obj="' + prefix + '-shelf-bamboo">' +
+                 '<rect x="270" y="92" width="26" height="78" rx="10" fill="#9c9161"/><line x1="270" y1="118" x2="296" y2="118" stroke="#7a6f45" stroke-width="5"/><line x1="270" y1="146" x2="296" y2="146" stroke="#7a6f45" stroke-width="5"/>' +
+                 '<rect x="302" y="98" width="26" height="72" rx="10" fill="#8d8355"/><line x1="302" y1="124" x2="328" y2="124" stroke="#6b6139" stroke-width="5"/>' +
+                 '<rect x="334" y="94" width="26" height="76" rx="10" fill="#9c9161"/><line x1="334" y1="122" x2="360" y2="122" stroke="#7a6f45" stroke-width="5"/><line x1="334" y1="150" x2="360" y2="150" stroke="#7a6f45" stroke-width="5"/></g></svg>';
         s += '<div class="prop" data-adj="' + prefix + '-floor" style="left:0; bottom:0; width:1080px; height:560px; background:' + c.floor + ';"></div>';
         s += '<div class="prop" data-adj="' + prefix + '-floor-hi" style="left:0; bottom:530px; width:1080px; height:30px; background:' + c.floorHi + ';"></div>';
         s += '<svg class="prop" data-adj="' + prefix + '-floor-detail" style="left:0; bottom:0; width:1080px; height:530px;" viewBox="0 0 1080 530">';
         for (i = 0; i < 4; i++) s += '<line x1="0" y1="' + (118 + i * 130) + '" x2="1080" y2="' + (118 + i * 130) + '" stroke="' + c.grain + '" stroke-width="7"/>';
-        for (i = 0; i < 5; i++) s += '<line x1="' + (110 + i * 220) + '" y1="0" x2="' + (110 + i * 220) + '" y2="530" stroke="' + c.floorHi + '" stroke-width="5" opacity="0.45"/>';
         s += '<rect x="0" y="486" width="1080" height="20" fill="' + c.grain + '" opacity="0.7"/></svg>';
+        // 화로 — 낮은 개방형 사각 화덕 + 풀무 + 벌겋게 달군 쇠 (시그니처 표)
+        s += '<svg class="prop" data-adj="' + prefix + '-hearth" style="left:30px; bottom:560px; width:350px; height:275px;" viewBox="0 0 420 330">' +
+               '<g data-obj="' + prefix + '-hearth-glow"><ellipse cx="190" cy="196" rx="150" ry="26" fill="#e8963f" opacity="0.16"/></g>' +
+               '<g data-obj="' + prefix + '-hearth-body"><rect x="40" y="196" width="300" height="110" rx="10" fill="#6b655c"/>' +
+                 '<rect x="40" y="196" width="300" height="20" rx="8" fill="#847d72"/>' +
+                 '<rect x="52" y="290" width="276" height="16" fill="#524d45"/>' +
+                 '<line x1="120" y1="216" x2="120" y2="290" stroke="#524d45" stroke-width="6"/>' +
+                 '<line x1="200" y1="216" x2="200" y2="290" stroke="#524d45" stroke-width="6"/>' +
+                 '<line x1="280" y1="216" x2="280" y2="290" stroke="#524d45" stroke-width="6"/></g>' +
+               '<g data-obj="' + prefix + '-hearth-coals"><ellipse cx="190" cy="192" rx="120" ry="20" fill="#3a2c1e"/>' +
+                 '<circle cx="140" cy="188" r="12" fill="#e8963f"/><circle cx="186" cy="192" r="14" fill="#f6c25a"/>' +
+                 '<circle cx="232" cy="188" r="11" fill="#e8963f"/><circle cx="208" cy="184" r="8" fill="#fdf3d2"/></g>' +
+               '<g data-obj="' + prefix + '-bellows"><path d="M 344 240 L 412 218 L 412 290 L 344 286 Z" fill="#8a6b45"/>' +
+                 '<rect x="330" y="244" width="22" height="40" rx="6" fill="#5d4327"/>' +
+                 '<rect x="404" y="230" width="12" height="52" rx="5" fill="#6d5738"/>' +
+                 '<rect x="316" y="256" width="22" height="12" rx="6" fill="#3a2c1e"/></g></svg>';
+        // 대장간 앵커 — 모루(뿔 있는 두꺼운 몸통) + 망치 + 그루터기. 화덕만으론 '부엌'으로 읽힌다(S8 블라인드 적발)
+        s += '<svg class="prop" data-adj="' + prefix + '-anvil" style="left:296px; bottom:560px; width:196px; height:233px;" viewBox="0 0 210 250">' +
+               '<g data-obj="' + prefix + '-anvil-stump"><rect x="46" y="150" width="118" height="92" rx="8" fill="#6d4526"/>' +
+                 '<rect x="46" y="150" width="118" height="14" rx="7" fill="#8a5a33"/>' +
+                 '<line x1="78" y1="166" x2="78" y2="238" stroke="#5a3820" stroke-width="5"/>' +
+                 '<line x1="112" y1="166" x2="112" y2="238" stroke="#5a3820" stroke-width="5"/>' +
+                 '<ellipse cx="105" cy="244" rx="76" ry="9" fill="#241a12" opacity="0.32"/></g>' +
+               '<g data-obj="' + prefix + '-anvil-body">' +
+                 '<rect x="34" y="60" width="142" height="26" rx="5" fill="#7b828c"/>' +
+                 '<rect x="34" y="60" width="142" height="9" rx="4" fill="#9aa2ad"/>' +
+                 '<path d="M 176 62 L 208 72 L 176 84 Z" fill="#7b828c"/>' +
+                 '<path d="M 62 86 L 148 86 L 132 124 L 78 124 Z" fill="#666d76"/>' +
+                 '<rect x="62" y="124" width="86" height="30" rx="5" fill="#7b828c"/>' +
+                 '<rect x="62" y="146" width="86" height="10" rx="4" fill="#565c64"/></g>' +
+               '<g data-obj="' + prefix + '-anvil-iron"><rect x="48" y="48" width="104" height="14" rx="7" fill="#c9553f"/>' +
+                 '<rect x="48" y="48" width="44" height="14" rx="7" fill="#e8963f"/></g>' +
+               '<g data-obj="' + prefix + '-anvil-hammer">' +
+                 '<rect x="70" y="20" width="14" height="48" rx="6" fill="#b98d54" transform="rotate(18 77 44)"/>' +
+                 '<rect x="52" y="6" width="58" height="26" rx="6" fill="#4f555d" transform="rotate(18 81 19)"/>' +
+                 '<rect x="52" y="6" width="58" height="9" rx="4" fill="#6b727b" transform="rotate(18 81 19)"/></g></svg>';
         return s;
       }
-      document.querySelectorAll("[data-room-bg]").forEach(function (el) {
-        el.insertAdjacentHTML("afterbegin", roomBgSVG(el.getAttribute("data-room-bg"), el.getAttribute("data-room-tone")));
+      document.querySelectorAll("[data-forge-bg]").forEach(function (el) {
+        el.insertAdjacentHTML("afterbegin", forgeBgSVG(el.getAttribute("data-forge-bg")));
       });
 
-      // ---------- ④ 황무지 들판 (s7) — 신규. 백성 실루엣(EP.21 개선판 문법) 동반 ----------
-      function fieldBgSVG(prefix) {
+      // ---------- ④ 한지 도판 (s5 · s6) — 무기 도해 프레임 ----------
+      function sheetBgSVG(prefix) {
+        var s = "";
+        s += '<div class="prop" data-adj="' + prefix + '-paper" style="left:0; top:0; width:1080px; height:1920px; background:#e8dcc0;"></div>';
+        s += '<div class="prop" data-adj="' + prefix + '-band-top" style="left:0; top:0; width:1080px; height:130px; background:#d9c9a4;"></div>';
+        s += '<div class="prop" data-adj="' + prefix + '-band-bottom" style="left:0; bottom:0; width:1080px; height:130px; background:#d9c9a4;"></div>';
+        s += '<svg class="prop" data-adj="' + prefix + '-frame" style="left:0; top:0; width:1080px; height:1920px;" viewBox="0 0 1080 1920">' +
+               '<g data-obj="' + prefix + '-frame-line"><rect x="34" y="150" width="1012" height="1620" fill="none" stroke="#8a6b45" stroke-width="7"/>' +
+                 '<rect x="50" y="166" width="980" height="1588" fill="none" stroke="#c4ad82" stroke-width="4"/>' +
+                 '<rect x="34" y="150" width="26" height="26" fill="#8a6b45"/><rect x="1020" y="150" width="26" height="26" fill="#8a6b45"/>' +
+                 '<rect x="34" y="1744" width="26" height="26" fill="#8a6b45"/><rect x="1020" y="1744" width="26" height="26" fill="#8a6b45"/></g>' +
+               '<g data-obj="' + prefix + '-fibers" stroke="#d9c9a4" stroke-width="4" opacity="0.7">' +
+                 '<path d="M 120 500 Q 220 490 320 502"/><path d="M 700 1500 Q 800 1490 900 1502"/><path d="M 200 1650 Q 300 1642 400 1652"/>' +
+                 '<path d="M 620 420 Q 700 414 780 424"/><path d="M 140 1200 Q 230 1192 320 1202"/></g>' +
+               '<g data-obj="' + prefix + '-blots" fill="#d9c9a4" opacity="0.55">' +
+                 '<ellipse cx="180" cy="820" rx="22" ry="9"/><ellipse cx="920" cy="1560" rx="18" ry="8"/><ellipse cx="860" cy="700" rx="14" ry="7"/></g>' +
+               '<g data-obj="' + prefix + '-seal"><rect x="920" y="1620" width="86" height="86" rx="10" fill="#a53d2b"/>' +
+                 '<rect x="930" y="1630" width="66" height="66" rx="6" fill="none" stroke="#f6efe3" stroke-width="5"/>' +
+                 '<text x="963" y="1682" text-anchor="middle" font-size="40" fill="#f6efe3" class="hanja">軍</text></g></svg>';
+        s += '<svg class="prop" data-adj="' + prefix + '-jecheom" style="right:96px; top:34px; width:80px; height:250px;" viewBox="0 0 96 300">' +
+               '<g data-obj="' + prefix + '-jecheom-tab"><rect x="0" y="0" width="96" height="300" rx="6" fill="#a53d2b"/>' +
+                 '<rect x="6" y="6" width="84" height="288" rx="4" fill="none" stroke="#7d2a1c" stroke-width="4"/>' +
+                 '<text x="48" y="66" text-anchor="middle" font-size="42" fill="#f6efe3" class="hanja">飛</text>' +
+                 '<text x="48" y="120" text-anchor="middle" font-size="42" fill="#f6efe3" class="hanja">擊</text>' +
+                 '<text x="48" y="174" text-anchor="middle" font-size="42" fill="#f6efe3" class="hanja">震</text>' +
+                 '<text x="48" y="228" text-anchor="middle" font-size="42" fill="#f6efe3" class="hanja">天</text>' +
+                 '<text x="48" y="282" text-anchor="middle" font-size="42" fill="#f6efe3" class="hanja">雷</text></g></svg>';
+        return s;
+      }
+      document.querySelectorAll("[data-sheet-bg]").forEach(function (el) {
+        el.insertAdjacentHTML("afterbegin", sheetBgSVG(el.getAttribute("data-sheet-bg")));
+      });
+
+      // ---------- ⑤ 고창 발굴 구덩이 (s9) — 현대 낮 ----------
+      function digBgSVG(prefix) {
         var i, s = "";
-        s += '<div class="prop" data-adj="' + prefix + '-sky" style="left:0; top:0; width:1080px; height:1360px; background:#c7c2a8;"></div>';
-        s += '<div class="prop" data-adj="' + prefix + '-sky-hi" style="left:0; top:0; width:1080px; height:300px; background:#dcd8c2;"></div>';
-        // 흐린 태양 — 가뭄의 창백한 빛(글로우 띠 아님, 원형 태양)
-        s += '<svg class="prop" data-adj="' + prefix + '-sun" style="right:120px; top:150px; width:150px; height:150px;" viewBox="0 0 150 150">' +
-               '<circle cx="75" cy="75" r="50" fill="#e6dfbd" opacity="0.85"/><circle cx="75" cy="75" r="34" fill="#d4cc9e" opacity="0.7"/></svg>';
-        s += '<svg class="prop" data-adj="' + prefix + '-ridge" style="left:0; bottom:900px; width:1080px; height:380px;" viewBox="0 0 1080 380">' +
-               '<g data-obj="' + prefix + '-ridge-body"><path d="M 0 380 L 0 210 L 200 110 L 420 240 L 620 120 L 840 226 L 1080 140 L 1080 380 Z" fill="#9d9c78"/></g>' +
-               '<g data-obj="' + prefix + '-ridge-hi"><path d="M 200 110 L 330 170 L 70 170 Z" fill="#b3b18d"/>' +
-                 '<path d="M 620 120 L 720 176 L 520 176 Z" fill="#b3b18d"/></g></svg>';
-        s += '<div class="prop" data-adj="' + prefix + '-ground" style="left:0; bottom:0; width:1080px; height:900px; background:#c3b67f;"></div>';
-        s += '<svg class="prop" data-layout-allow-overflow data-adj="' + prefix + '-ground-detail" style="left:0; bottom:0; width:1080px; height:900px;" viewBox="0 0 1080 900">' +
-               '<g data-obj="' + prefix + '-furrows" stroke="#a8945f" stroke-width="6" opacity="0.7">';
-        for (i = 0; i < 7; i++) s += '<path d="M ' + (i * 170 - 40) + ' 900 Q ' + (i * 170 + 30) + ' 640 ' + (i * 170 + 10) + ' 430"/>';
-        s += '</g><g data-obj="' + prefix + '-cracks" stroke="#8a7a52" stroke-width="4" fill="none" opacity="0.6">' +
-               '<path d="M 300 620 L 340 640 L 380 620"/><path d="M 520 700 L 560 724 L 600 700 L 620 726"/>' +
-               '<path d="M 700 560 L 736 588 L 760 566"/><path d="M 150 760 L 190 782 L 230 760"/></g>' +
-               '<g data-obj="' + prefix + '-drygrass" stroke="#9c8a55" stroke-width="7" fill="none" stroke-linecap="round">' +
-               '<path d="M 90 420 Q 96 392 104 378"/><path d="M 96 420 Q 106 400 118 392"/>' +
-               '<path d="M 880 460 Q 890 432 898 420"/><path d="M 886 460 Q 900 438 912 430"/>' +
-               '<path d="M 60 560 Q 68 528 78 514"/><path d="M 66 560 Q 78 538 92 530"/>' +
-               '<path d="M 470 500 Q 478 470 488 456"/><path d="M 476 500 Q 488 478 502 470"/>' +
-               '<path d="M 950 560 Q 958 530 968 516"/><path d="M 956 560 Q 968 538 982 530"/></g>' +
-               '<g data-obj="' + prefix + '-ground-rim"><rect x="0" y="866" width="1080" height="34" fill="#a8945f"/></g></svg>';
-        // 앙상한 가뭄 나무 — 백성의 고통(기근) 신호
-        s += '<svg class="prop" data-adj="' + prefix + '-tree" style="left:806px; bottom:560px; width:200px; height:380px;" viewBox="0 0 200 380">' +
-               '<g data-obj="' + prefix + '-tree-trunk"><path d="M 96 380 Q 92 240 102 120 Q 106 80 112 40 L 122 40 Q 118 96 116 150 Q 122 260 118 380 Z" fill="#6d5738"/>' +
-                 '<path d="M 96 380 Q 92 240 102 120 Q 106 80 112 40 L 122 40 Q 118 96 116 150 Q 122 260 118 380 Z" fill="none" stroke="#8a6b45" stroke-width="5"/></g>' +
-               '<g data-obj="' + prefix + '-tree-branches" stroke="#6d5738" stroke-width="12" fill="none" stroke-linecap="round">' +
-                 '<path d="M 112 96 Q 70 84 46 58"/><path d="M 114 74 Q 150 50 168 26"/><path d="M 112 56 Q 82 30 72 10"/></g>' +
-               '<g data-obj="' + prefix + '-tree-root"><path d="M 92 372 Q 60 356 48 366"/><path d="M 112 374 Q 140 358 152 366"/></g></svg>';
+        s += '<div class="prop" data-adj="' + prefix + '-sky" style="left:0; top:0; width:1080px; height:1060px; background:#a7c4d8;"></div>';
+        s += '<div class="prop" data-adj="' + prefix + '-sky-hi" style="left:0; top:0; width:1080px; height:280px; background:#c2d8e6;"></div>';
+        s += '<svg class="prop" data-adj="' + prefix + '-cloud" style="left:120px; top:130px; width:300px; height:110px;" viewBox="0 0 300 118">' +
+               '<g data-obj="' + prefix + '-cloud-body"><path d="M 34 88 Q 14 88 14 68 Q 14 46 40 46 Q 48 16 84 16 Q 122 16 134 44 Q 164 36 180 58 Q 208 60 208 88 Z" fill="#f2f7fb" opacity="0.9"/></g></svg>';
+        // 원경 — 나무 능선 + 관아 담(현장 맥락)
+        s += '<svg class="prop" data-adj="' + prefix + '-treeline" style="left:0; bottom:860px; width:1080px; height:200px;" viewBox="0 0 1080 200">' +
+               '<g data-obj="' + prefix + '-treeline-body"><path d="M 0 200 L 0 120 Q 90 60 180 110 Q 270 50 360 100 Q 460 46 560 100 Q 660 56 760 106 Q 870 52 960 104 Q 1020 80 1080 110 L 1080 200 Z" fill="#7d9464"/></g>' +
+               '<g data-obj="' + prefix + '-treeline-hi"><path d="M 90 84 Q 180 40 270 88 Q 200 96 90 84 Z" fill="#93a878" opacity="0.8"/></g></svg>';
+        // 지면(잔디+흙) 2톤
+        s += '<div class="prop" data-adj="' + prefix + '-grass" style="left:0; bottom:760px; width:1080px; height:100px; background:#9ab07c;"></div>';
+        s += '<div class="prop" data-adj="' + prefix + '-ground" style="left:0; bottom:0; width:1080px; height:760px; background:#a08a64;"></div>';
+        s += '<div class="prop" data-adj="' + prefix + '-ground-hi" style="left:0; bottom:730px; width:1080px; height:30px; background:#b6a078;"></div>';
+        // 발굴 구덩이 단면 — 토층 + 포탄 11발 (6+5 두 줄, 뚜껑 꼭지 동반)
+        s += '<svg class="prop" data-adj="' + prefix + '-pit" style="left:40px; bottom:580px; width:1000px; height:620px;" viewBox="0 0 1000 620">' +
+               '<g data-obj="' + prefix + '-pit-soil"><path d="M 40 90 L 960 90 L 900 560 L 100 560 Z" fill="#8a7a5c"/>' +
+                 '<path d="M 40 90 L 960 90 L 952 150 L 48 150 Z" fill="#75684c"/>' +
+                 '<path d="M 70 300 L 930 300 L 922 340 L 78 340 Z" fill="#75684c" opacity="0.6"/></g>' +
+               '<g data-obj="' + prefix + '-pit-cavity"><path d="M 130 170 L 870 170 L 830 520 L 170 520 Z" fill="#5a4630"/>' +
+                 '<path d="M 130 170 L 870 170 L 862 210 L 138 210 Z" fill="#4a3826"/></g>' +
+               '<g data-obj="' + prefix + '-pit-lip"><path d="M 20 90 Q 60 66 120 78 Q 240 60 380 76 Q 520 58 660 76 Q 800 60 920 78 Q 970 70 984 92 L 960 104 L 40 104 Z" fill="#7d9464"/></g>' +
+               '<g data-obj="' + prefix + '-pit-bombs">';
+        var bx1 = [230, 340, 450, 560, 670, 780], bx2 = [285, 395, 505, 615, 725];
+        for (i = 0; i < 6; i++) s += '<circle cx="' + bx1[i] + '" cy="290" r="46" fill="#444b57"/><ellipse cx="' + (bx1[i] - 15) + '" cy="274" rx="17" ry="12" fill="#5b6472"/><rect x="' + (bx1[i] - 17) + '" y="238" width="34" height="13" rx="4" fill="#2b3039"/>';
+        for (i = 0; i < 5; i++) s += '<circle cx="' + bx2[i] + '" cy="404" r="46" fill="#3d434e"/><ellipse cx="' + (bx2[i] - 15) + '" cy="388" rx="17" ry="12" fill="#535c69"/><rect x="' + (bx2[i] - 17) + '" y="352" width="34" height="13" rx="4" fill="#262b33"/>';
+        s += '</g></svg>';
+        // 발굴 도구 — 붓 + 모종삽(현대 발굴 신호), 구덩이 가장자리에 눕힘
+        s += '<svg class="prop" data-adj="' + prefix + '-tools" style="left:90px; bottom:614px; width:340px; height:120px;" viewBox="0 0 340 120">' +
+               '<g data-obj="' + prefix + '-tool-brush"><rect x="20" y="58" width="120" height="16" rx="8" fill="#b98d54" transform="rotate(-8 80 66)"/>' +
+                 '<rect x="24" y="61" width="112" height="5" rx="2.5" fill="#d4ab72" transform="rotate(-8 80 66)"/>' +
+                 '<path d="M 136 44 L 196 36 Q 204 52 196 64 L 140 66 Z" fill="#3a2c1e" transform="rotate(-8 166 50)"/></g>' +
+               '<g data-obj="' + prefix + '-tool-trowel"><rect x="210" y="66" width="70 " height="14" rx="7" fill="#8a5a33" transform="rotate(6 245 73)"/>' +
+                 '<path d="M 278 62 L 332 70 L 300 100 Z" fill="#9aa4ae" transform="rotate(6 305 80)"/>' +
+                 '<path d="M 282 66 L 322 72 L 300 92 Z" fill="#b8c2cc" transform="rotate(6 305 80)"/></g></svg>';
+        // 잔디 디테일 + 흙 알갱이(환경 레이어 보강)
+        s += '<svg class="prop" data-adj="' + prefix + '-ground-detail" style="left:0; bottom:0; width:1080px; height:560px;" viewBox="0 0 1080 560">' +
+               '<g data-obj="' + prefix + '-soil-specks" fill="#8a744e" opacity="0.6">' +
+                 '<ellipse cx="120" cy="480" rx="24" ry="8"/><ellipse cx="520" cy="520" rx="30" ry="10"/>' +
+                 '<ellipse cx="880" cy="470" rx="22" ry="8"/><ellipse cx="320" cy="540" rx="20" ry="7"/></g>' +
+               '<g data-obj="' + prefix + '-soil-heap"><path d="M 840 560 Q 900 500 980 522 Q 1050 540 1070 560 Z" fill="#75684c"/>' +
+                 '<path d="M 880 548 Q 930 516 990 532 Q 940 528 880 548 Z" fill="#8a7a5c"/></g></svg>';
         return s;
       }
-
-      // ---------- 빈 바가지 + 괭이 (s7) — 굶주린 백성의 신호 ----------
-      // 빈 바가지: 내부가 비어 보이는(어두운) 반쪽 박 + 나무 숟가락. 괭이: 땅에 꽂아 멈춘 농기구(it4-s4 계보).
-      function emptyBowlSVG(prefix, style) {
-        return '<svg class="prop" data-adj="' + prefix + '-bowl" style="' + style + '" viewBox="0 0 220 130">' +
-          '<g data-obj="' + prefix + '-bowl-shadow"><ellipse cx="110" cy="120" rx="88" ry="12" fill="#241a12" opacity="0.3"/></g>' +
-          '<g data-obj="' + prefix + '-bowl-shell">' +
-            '<path d="M 32 52 Q 32 118 110 118 Q 188 118 188 52 Z" fill="#c9a03e"/>' +
-            '<path d="M 32 52 Q 32 118 110 118 Q 188 118 188 52 Z" fill="none" stroke="#8a6b24" stroke-width="5"/>' +
-            '<ellipse cx="110" cy="52" rx="78" ry="20" fill="#e0b84a"/>' +
-            '<ellipse cx="110" cy="49" rx="62" ry="15" fill="#241a12"/></g>' +
-          '<g data-obj="' + prefix + '-bowl-spoon"><rect x="196" y="38" width="7" height="58" rx="3.5" fill="#b98d54"/>' +
-            '<ellipse cx="199.5" cy="100" rx="11" ry="14" fill="#d4ab72"/></g></svg>';
-      }
-      function hoeStuckSVG(prefix, style) {
-        return '<svg class="prop" data-adj="' + prefix + '-hoe" style="' + style + '" viewBox="0 0 120 300">' +
-          '<g data-obj="' + prefix + '-hoe-handle"><line x1="46" y1="300" x2="52" y2="40" stroke="#6d4526" stroke-width="16" stroke-linecap="round"/>' +
-            '<line x1="48" y1="296" x2="54" y2="40" stroke="#4a2f19" stroke-width="5" stroke-linecap="round" opacity="0.6"/></g>' +
-          '<g data-obj="' + prefix + '-hoe-blade"><path d="M 30 296 Q 20 270 46 268 Q 60 266 66 282 Q 70 298 54 302 Q 42 304 30 296 Z" fill="#6d6d66"/>' +
-            '<path d="M 30 296 Q 40 282 54 282 Q 58 292 54 302 Z" fill="#5a5a52"/></g>' +
-          '<g data-obj="' + prefix + '-hoe-dirt"><ellipse cx="48" cy="296" rx="42" ry="11" fill="#a8945f"/></g></svg>';
-      }
-      document.querySelectorAll("[data-field-bg]").forEach(function (el) {
-        el.insertAdjacentHTML("afterbegin", fieldBgSVG(el.getAttribute("data-field-bg")));
+      document.querySelectorAll("[data-dig-bg]").forEach(function (el) {
+        el.insertAdjacentHTML("afterbegin", digBgSVG(el.getAttribute("data-dig-bg")));
       });
-      document.querySelector("#s7 .stage").insertAdjacentHTML("beforeend",
-        emptyBowlSVG("s7", "left:330px; bottom:560px; width:230px; height:136px;") +
-        hoeStuckSVG("s7", "left:640px; bottom:560px; width:120px; height:300px;"));
+
+      // ---------- ⑥ CT 판독 화면 (s10) ----------
+      function ctBgSVG(prefix) {
+        var i, s = "";
+        s += '<div class="prop" data-adj="' + prefix + '-bg" style="left:0; top:0; width:1080px; height:1920px; background:#0e1a2a;"></div>';
+        s += '<svg class="prop" data-adj="' + prefix + '-grid" style="left:0; top:0; width:1080px; height:1920px;" viewBox="0 0 1080 1920"><g data-obj="' + prefix + '-grid-lines" stroke="#1c2f47" stroke-width="2">';
+        for (i = 1; i < 9; i++) s += '<line x1="' + (i * 120) + '" y1="0" x2="' + (i * 120) + '" y2="1920"/>';
+        for (i = 1; i < 16; i++) s += '<line x1="0" y1="' + (i * 120) + '" x2="1080" y2="' + (i * 120) + '"/>';
+        s += '</g></svg>';
+        s += '<svg class="prop" data-adj="' + prefix + '-hud" style="left:0; top:0; width:1080px; height:1920px;" viewBox="0 0 1080 1920">' +
+               '<g data-obj="' + prefix + '-hud-brackets" stroke="#6fd3f2" stroke-width="8" fill="none">' +
+                 '<path d="M 70 720 L 70 640 L 150 640"/><path d="M 1010 720 L 1010 640 L 930 640"/>' +
+                 '<path d="M 70 1220 L 70 1300 L 150 1300"/><path d="M 1010 1220 L 1010 1300 L 930 1300"/></g>' +
+               '<g data-obj="' + prefix + '-hud-ticks" stroke="#3d6a8a" stroke-width="4">' +
+                 '<line x1="70" y1="820" x2="100" y2="820"/><line x1="70" y1="900" x2="100" y2="900"/>' +
+                 '<line x1="70" y1="980" x2="100" y2="980"/><line x1="70" y1="1060" x2="100" y2="1060"/><line x1="70" y1="1140" x2="100" y2="1140"/>' +
+                 '<line x1="980" y1="820" x2="1010" y2="820"/><line x1="980" y1="900" x2="1010" y2="900"/>' +
+                 '<line x1="980" y1="980" x2="1010" y2="980"/><line x1="980" y1="1060" x2="1010" y2="1060"/><line x1="980" y1="1140" x2="1010" y2="1140"/></g>' +
+               '<g data-obj="' + prefix + '-hud-readout" fill="#1c2f47">' +
+                 '<rect x="70" y="1340" width="220" height="18" rx="6"/><rect x="70" y="1372" width="160" height="18" rx="6"/>' +
+                 '<rect x="70" y="1404" width="190" height="18" rx="6"/></g>' +
+               '<g data-obj="' + prefix + '-hud-readout-hi" fill="#3d6a8a">' +
+                 '<rect x="70" y="1340" width="90" height="18" rx="6"/><rect x="70" y="1372" width="60" height="18" rx="6"/></g>' +
+               '<g data-obj="' + prefix + '-hud-scanline"><rect x="70" y="660" width="940" height="6" fill="#6fd3f2" opacity="0.55"/></g></svg>';
+        return s;
+      }
+      document.querySelectorAll("[data-ct-bg]").forEach(function (el) {
+        el.insertAdjacentHTML("afterbegin", ctBgSVG(el.getAttribute("data-ct-bg")));
+      });
 
       // ============================================================
       // 소품 인젝터
       // ============================================================
 
-      // ---------- 수라상 (s1 12첩 / s2 · s5 7그릇 / s8) — 신규 히어로 소품 ----------
-      // 낮은 좌식 원탁(대원반). ⚠ 음식으로 읽혀야 한다(사용자 S6.4 지적: 흰 그릇+꼭지=양초).
-      // ① 밥그릇=놋쇠 유기(넓고 낮은 덮개 — 흰색+꼭지 금지, bench sp13 문법) ② 국=개방형 백자+보이는 국물
-      // ③ 반찬=개방형 접시+보이는 음식 덩이(색). 숟가락·젓가락 동반(음식 프레임 신호). 그릇은 반드시 상 위에
-      // (원형 기물 단독=행성, 지뢰 #86) + 상판 명도 대비(표). 첩수는 mode로: "grand"=12, "plain"=7.
-      function riceBowlSVG(prefix, id, x, y) {
-        return '<g data-obj="' + prefix + '-rice-' + id + '">' +
-          '<path d="M ' + (x - 28) + ' ' + y + ' Q ' + (x - 30) + ' ' + (y + 24) + ' ' + x + ' ' + (y + 28) + ' Q ' + (x + 30) + ' ' + (y + 24) + ' ' + (x + 28) + ' ' + y + ' Z" fill="#c9a03e"/>' +
-          '<path d="M ' + (x - 28) + ' ' + y + ' Q ' + (x + 8) + ' ' + (y + 6) + ' ' + (x + 28) + ' ' + y + ' Q ' + (x + 24) + ' ' + (y + 22) + ' ' + x + ' ' + (y + 26) + ' Q ' + (x - 24) + ' ' + (y + 22) + ' ' + (x - 28) + ' ' + y + ' Z" fill="#b8913a"/>' +
-          '<path d="M ' + (x - 26) + ' ' + y + ' Q ' + (x - 20) + ' ' + (y - 20) + ' ' + x + ' ' + (y - 22) + ' Q ' + (x + 20) + ' ' + (y - 20) + ' ' + (x + 26) + ' ' + y + ' Z" fill="#e0b84a"/>' +
-          '<path d="M ' + (x - 26) + ' ' + y + ' Q ' + (x - 6) + ' ' + (y - 18) + ' ' + (x + 8) + ' ' + (y - 19) + ' L ' + (x + 8) + ' ' + (y - 2) + ' Q ' + (x - 4) + ' ' + (y - 2) + ' ' + (x - 26) + ' ' + y + ' Z" fill="#c9a03e"/>' +
-          '<circle cx="' + x + '" cy="' + (y - 20) + '" r="4" fill="#8a6b24"/>' +
-          '</g>';
-      }
-      function foodDishSVG(prefix, id, x, y, food, foodLight, big) {
-        var r = big ? 26 : 19;
-        return '<g data-obj="' + prefix + '-dish-' + id + '">' +
-          '<ellipse cx="' + x + '" cy="' + y + '" rx="' + r + '" ry="' + (r * 0.34) + '" fill="#f6f0df"/>' +
-          '<path d="M ' + (x - r) + ' ' + y + ' Q ' + x + ' ' + (y + 10) + ' ' + (x + r) + ' ' + y + ' L ' + (x + r) + ' ' + (y + 3) + ' Q ' + x + ' ' + (y + 13) + ' ' + (x - r) + ' ' + (y + 3) + ' Z" fill="#e9e2d0"/>' +
-          '<ellipse cx="' + x + '" cy="' + (y - 1) + '" rx="' + (r * 0.62) + '" ry="' + (r * 0.2) + '" fill="' + food + '"/>' +
-          '<ellipse cx="' + (x - r * 0.18) + '" cy="' + (y - 2) + '" rx="' + (r * 0.28) + '" ry="' + (r * 0.09) + '" fill="' + foodLight + '"/></g>';
-      }
-      function soupBowlSVG(prefix, id, x, y, big) {
-        var r = big ? 27 : 22;
-        return '<g data-obj="' + prefix + '-soup-' + id + '">' +
-          '<ellipse cx="' + x + '" cy="' + y + '" rx="' + r + '" ry="' + (r * 0.36) + '" fill="#f6f0df"/>' +
-          '<path d="M ' + (x - r) + ' ' + y + ' Q ' + x + ' ' + (y + 11) + ' ' + (x + r) + ' ' + y + ' L ' + (x + r) + ' ' + (y + 4) + ' Q ' + x + ' ' + (y + 15) + ' ' + (x - r) + ' ' + (y + 4) + ' Z" fill="#e9e2d0"/>' +
-          '<ellipse cx="' + x + '" cy="' + (y - 1) + '" rx="' + (r * 0.7) + '" ry="' + (r * 0.24) + '" fill="#8a4a28"/>' +
-          '<ellipse cx="' + (x - r * 0.15) + '" cy="' + (y - 2) + '" rx="' + (r * 0.3) + '" ry="' + (r * 0.09) + '" fill="#a05a38"/></g>';
-      }
-      var C_NAMUL = ["#5a8a4a", "#74a05e"], C_KIMCHI = ["#c9553f", "#e07a62"], C_JORIM = ["#8a5a33", "#a5713f"];
-      var C_JAPCHAE = ["#c96a2a", "#dd9250"], C_DANHWANG = ["#c9a03e", "#dcc05e"], C_PALE = ["#b89e70", "#cbb187"];
-      function surasangSVG(prefix, mode, style, spoon) {
-        var i, s = '<svg class="prop" data-adj="' + prefix + '-table" style="' + style + '" viewBox="0 0 640 360">';
-        s += '<g data-obj="' + prefix + '-table-shadow"><ellipse cx="320" cy="344" rx="282" ry="16" fill="#241a12" opacity="0.3"/></g>';
-        s += '<g data-obj="' + prefix + '-table-legs">' +
-               '<rect x="58" y="196" width="36" height="148" rx="7" fill="#5d4327"/><rect x="546" y="196" width="36" height="148" rx="7" fill="#5d4327"/>' +
-               '<rect x="58" y="196" width="12" height="148" rx="5" fill="#8a5a33"/><rect x="546" y="196" width="12" height="148" rx="5" fill="#8a5a33"/>' +
-               '<rect x="44" y="330" width="64" height="18" rx="6" fill="#4a3520"/><rect x="532" y="330" width="64" height="18" rx="6" fill="#4a3520"/></g>';
-        s += '<g data-obj="' + prefix + '-table-top">' +
-               '<ellipse cx="320" cy="150" rx="300" ry="112" fill="#a9865a"/>' +
-               '<ellipse cx="320" cy="150" rx="300" ry="112" fill="none" stroke="#6d4526" stroke-width="8"/>' +
-               '<ellipse cx="320" cy="141" rx="288" ry="103" fill="#c19a68"/>' +
-               '<path d="M 32 150 Q 320 268 608 150 Q 320 214 32 150 Z" fill="#8a6b45"/></g>';
-        if (mode === "grand") {
-          // 12첩 — 밥 2 · 국 2 · 반찬 7 · 장 1
-          s += riceBowlSVG(prefix, "b1", 150, 118);
-          s += riceBowlSVG(prefix, "b2", 278, 118);
-          s += soupBowlSVG(prefix, "s1", 406, 122, true);
-          s += soupBowlSVG(prefix, "s2", 520, 116, true);
-          s += foodDishSVG(prefix, "n1", 112, 166, C_NAMUL[0], C_NAMUL[1]);
-          s += foodDishSVG(prefix, "k1", 224, 170, C_KIMCHI[0], C_KIMCHI[1]);
-          s += foodDishSVG(prefix, "j1", 336, 164, C_JORIM[0], C_JORIM[1]);
-          s += foodDishSVG(prefix, "p1", 448, 168, C_JAPCHAE[0], C_JAPCHAE[1]);
-          s += foodDishSVG(prefix, "n2", 96, 212, C_PALE[0], C_PALE[1]);
-          s += foodDishSVG(prefix, "k2", 208, 216, C_KIMCHI[0], C_KIMCHI[1]);
-          s += foodDishSVG(prefix, "d1", 320, 208, C_DANHWANG[0], C_DANHWANG[1]);
-          s += foodDishSVG(prefix, "j2", 432, 214, C_JORIM[0], C_JORIM[1]);
-          s += foodDishSVG(prefix, "jang", 536, 200, "#5a3a22", "#7a5238");
-          s += '<g data-obj="' + prefix + '-utensils">' +
-                 '<ellipse cx="548" cy="252" rx="9" ry="12" fill="#e0b84a"/><rect x="556" y="238" width="52" height="7" rx="3.5" fill="#c9a03e" transform="rotate(-24 556 240)"/>' +
-                 '<rect x="36" y="246" width="56" height="5" rx="2.5" fill="#c9a03e" transform="rotate(20 36 248)"/><rect x="40" y="238" width="56" height="5" rx="2.5" fill="#c9a03e" transform="rotate(20 40 240)"/></g>';
+      // ---------- 비격진천뢰(히어로) — 지면 임팩트 + 도화선 불꽃(시그니처. 원형 단독=행성 회피, 지뢰 #86) ----------
+      function bombSVG(prefix, style, opts) {
+        opts = opts || {};
+        var s = '<svg class="prop" data-adj="' + prefix + '-bomb" style="' + style + '" viewBox="0 -50 430 460">';
+        if (opts.crater) {
+          s += '<g data-obj="' + prefix + '-bomb-crater"><ellipse cx="210" cy="356" rx="152" ry="26" fill="#141824"/>' +
+                 '<g stroke="#141824" stroke-width="8" stroke-linecap="round">' +
+                 '<line x1="52" y1="352" x2="8" y2="368"/><line x1="368" y1="352" x2="414" y2="366"/>' +
+                 '<line x1="100" y1="372" x2="66" y2="392"/><line x1="330" y1="372" x2="366" y2="392"/></g>' +
+                 '<ellipse cx="70" cy="330" rx="26" ry="14" fill="#46506e" opacity="0.6"/>' +
+                 '<ellipse cx="358" cy="326" rx="24" ry="13" fill="#46506e" opacity="0.6"/></g>';
         } else {
-          // 7그릇 — 의궤 정조 상: 밥 2 · 국 2 · 반찬 2 · 장 1 (총 7)
-          s += riceBowlSVG(prefix, "b1", 150, 132);
-          s += riceBowlSVG(prefix, "b2", 278, 132);
-          s += soupBowlSVG(prefix, "s1", 118, 186);
-          s += soupBowlSVG(prefix, "s2", 256, 190);
-          s += foodDishSVG(prefix, "k1", 396, 140, C_KIMCHI[0], C_KIMCHI[1]);
-          s += foodDishSVG(prefix, "n1", 506, 136, C_NAMUL[0], C_NAMUL[1]);
-          s += foodDishSVG(prefix, "jang", 348, 208, "#5a3a22", "#7a5238");
-          s += '<g data-obj="' + prefix + '-utensils">' +
-                 '<ellipse cx="560" cy="252" rx="9" ry="12" fill="#e0b84a"/><rect x="568" y="238" width="46" height="7" rx="3.5" fill="#c9a03e" transform="rotate(-24 568 240)"/>' +
-                 '<rect x="36" y="246" width="56" height="5" rx="2.5" fill="#c9a03e" transform="rotate(20 36 248)"/><rect x="40" y="238" width="56" height="5" rx="2.5" fill="#c9a03e" transform="rotate(20 40 240)"/></g>';
-          if (spoon) {
-            s += '<g data-obj="' + prefix + '-silver-spoon"><ellipse cx="150" cy="238" rx="10" ry="13" fill="#e8edf2"/>' +
-                   '<rect x="158" y="222" width="46" height="7" rx="3.5" fill="#b9c4cc" transform="rotate(-26 158 224)"/></g>';
-          }
+          s += '<g data-obj="' + prefix + '-bomb-stand"><rect x="80" y="332" width="260" height="26" rx="8" fill="#6d4526"/>' +
+                 '<path d="M 110 332 L 150 296 L 168 316 L 136 332 Z" fill="#8a5a33"/>' +
+                 '<path d="M 310 332 L 270 296 L 252 316 L 284 332 Z" fill="#8a5a33"/>' +
+                 '<rect x="96" y="356" width="52" height="18" rx="5" fill="#5d4327"/><rect x="272" y="356" width="52" height="18" rx="5" fill="#5d4327"/></g>';
+        }
+        s += '<g data-obj="' + prefix + '-bomb-body"><circle cx="210" cy="222" r="128" fill="#444b57"/>' +
+               '<path d="M 210 350 A 128 128 0 0 0 328 270 Q 270 316 210 316 Q 150 316 92 270 A 128 128 0 0 0 210 350 Z" fill="#333944"/>' +
+               '<ellipse cx="158" cy="160" rx="46" ry="30" fill="#5b6472"/>' +
+               '<path d="M 96 260 Q 210 300 324 260" stroke="#333944" stroke-width="7" fill="none"/>' +
+               '<path d="M 106 180 Q 210 148 314 180" stroke="#333944" stroke-width="6" fill="none" opacity="0.8"/></g>';
+        s += '<g data-obj="' + prefix + '-bomb-lid"><rect x="158" y="74" width="104" height="34" rx="7" fill="#2b3039"/>' +
+               '<rect x="158" y="74" width="104" height="12" rx="6" fill="#3a4152"/>' +
+               '<rect x="196" y="56" width="28" height="22" rx="6" fill="#2b3039"/></g>';
+        if (opts.cord) {
+          s += '<g data-obj="' + prefix + '-bomb-cord"><path d="M 214 56 Q 208 6 246 -18 Q 284 -40 318 -26" stroke="#c9772a" stroke-width="10" fill="none" stroke-linecap="round"/>' +
+                 '<circle cx="322" cy="-25" r="9" fill="#8a5a33"/></g>';
+        }
+        if (opts.fuse) {
+          s += '<g data-obj="' + prefix + '-bomb-fuse"><path d="M 224 58 Q 258 30 292 34" stroke="#c9772a" stroke-width="9" fill="none" stroke-linecap="round"/></g>' +
+               '<g data-obj="' + prefix + '-bomb-spark">' +
+                 '<path d="M 292 34 L 306 6 L 312 30 L 338 22 L 318 42 L 344 52 L 314 52 L 320 78 L 300 56 L 282 74 L 288 48 Z" fill="#ffd867"/>' +
+                 '<circle cx="303" cy="40" r="12" fill="#fff3c4"/></g>' +
+               '<g data-obj="' + prefix + '-bomb-smoke" fill="#8a93a5" opacity="0.5">' +
+                 '<circle cx="330" cy="10" r="10"/><circle cx="352" cy="-2" r="7"/></g>';
         }
         s += '</svg>';
         return s;
       }
-      document.querySelector("#s1 .stage").insertAdjacentHTML("beforeend",
-        surasangSVG("s1", "grand", "left:70px; bottom:560px; width:540px; height:304px;", false));
-      document.querySelector("#s2 .stage").insertAdjacentHTML("beforeend",
-        surasangSVG("s2", "plain", "left:70px; bottom:560px; width:540px; height:304px;", false));
-      document.querySelector("#s5 .stage").insertAdjacentHTML("beforeend",
-        surasangSVG("s5", "plain", "left:70px; bottom:560px; width:540px; height:304px;", true));
-      document.querySelector("#s8 .stage").insertAdjacentHTML("beforeend",
-        surasangSVG("s8", "plain", "left:70px; bottom:560px; width:540px; height:304px;", false));
 
-      // ---------- 의궤(펼친 선장본) (s3) — 실제 한자 세로쓰기(지뢰 #67) ----------
-      function uigweSVG(prefix, style) {
-        return '<svg class="prop" data-adj="' + prefix + '-uigwe" style="' + style + '" viewBox="0 0 560 320">' +
-          '<g data-obj="' + prefix + '-uigwe-body"><rect x="14" y="18" width="532" height="284" rx="6" fill="#efe4c8" stroke="#8a6b45" stroke-width="7"/>' +
-            '<rect x="276" y="18" width="8" height="284" fill="#c9b98f"/></g>' +
-          '<g data-obj="' + prefix + '-uigwe-frame"><rect x="36" y="42" width="222" height="234" fill="none" stroke="#8a6b45" stroke-width="5"/>' +
-            '<rect x="302" y="42" width="222" height="234" fill="none" stroke="#8a6b45" stroke-width="5"/></g>' +
-          '<g data-obj="' + prefix + '-uigwe-title"><rect x="500" y="34" width="44" height="132" fill="#a53d2b" stroke="#7d2a1c" stroke-width="3"/>' +
-            '<text x="522" y="58" text-anchor="middle" font-size="22" fill="#f6efe3" class="hanja" writing-mode="vertical-rl">整理儀軌</text></g>' +
-          '<g data-obj="' + prefix + '-uigwe-stitch" fill="#5d4327"><circle cx="540" cy="192" r="4"/><circle cx="540" cy="206" r="4"/>' +
-            '<circle cx="540" cy="236" r="4"/><circle cx="540" cy="264" r="4"/><circle cx="540" cy="288" r="4"/></g>' +
-          '<g data-obj="' + prefix + '-uigwe-text">' +
-            '<text x="470" y="60" class="hanja" font-size="24" fill="#3a2c1e" writing-mode="vertical-rl" letter-spacing="3">園幸을묘정리</text>' +
-            '<text x="420" y="60" class="hanja" font-size="24" fill="#3a2c1e" writing-mode="vertical-rl" letter-spacing="3">進御饌案 등록</text>' +
-            '<text x="370" y="60" class="hanja" font-size="24" fill="#3a2c1e" writing-mode="vertical-rl" letter-spacing="3">조석수라상차림</text>' +
-            '<text x="320" y="60" class="hanja" font-size="24" fill="#3a2c1e" writing-mode="vertical-rl" letter-spacing="3">일곱 그릇</text></g>' +
-          '</svg>';
+      // ---------- 왜군 실루엣 — 비rig(고증 회피), 먹색 0.97 + 창 + 지면 접점 ----------
+      function silSVG(prefix, id, kind, style, flip) {
+        var g0 = '<svg class="prop" data-adj="' + prefix + '-' + id + '" style="' + style + '" viewBox="0 0 240 330">';
+        var fill = "#10141f";
+        var inner = "";
+        inner += '<ellipse cx="120" cy="318" rx="76" ry="10" fill="#141824" opacity="0.8"/>';
+        if (kind === "stand") {
+          inner += '<g data-obj="' + prefix + '-' + id + '-body" opacity="0.97">' +
+            '<circle cx="104" cy="52" r="27" fill="' + fill + '"/>' +
+            '<path d="M 66 96 Q 104 76 142 96 L 136 208 L 148 314 L 118 314 L 106 224 L 96 314 L 66 314 L 76 208 Z" fill="' + fill + '"/>' +
+            '<path d="M 138 110 L 176 150 L 166 162 L 132 130 Z" fill="' + fill + '"/>' +
+            '<line x1="186" y1="316" x2="194" y2="116" stroke="' + fill + '" stroke-width="10"/>' +
+            '<path d="M 187 118 L 195 82 L 203 118 Z" fill="' + fill + '"/></g>';
+        } else if (kind === "lean") {
+          inner += '<g data-obj="' + prefix + '-' + id + '-body" opacity="0.97" transform="rotate(-14 120 314)">' +
+            '<circle cx="146" cy="66" r="27" fill="' + fill + '"/>' +
+            '<path d="M 96 108 Q 130 84 166 104 L 156 214 L 166 314 L 136 314 L 128 228 L 116 314 L 86 314 L 100 210 Z" fill="' + fill + '"/>' +
+            '<path d="M 160 118 L 208 148 L 200 162 L 154 138 Z" fill="' + fill + '"/></g>';
+        } else { // fall — 뒤로 밀려 앉음(머리 프레임 안, 지뢰 #41)
+          inner += '<g data-obj="' + prefix + '-' + id + '-body" opacity="0.97">' +
+            '<circle cx="74" cy="150" r="26" fill="' + fill + '"/>' +
+            '<path d="M 56 186 Q 84 168 110 186 L 150 250 L 210 292 L 200 314 L 128 286 L 70 314 L 44 314 L 52 240 Z" fill="' + fill + '"/>' +
+            '<path d="M 96 176 L 140 128 L 152 140 L 112 186 Z" fill="' + fill + '"/></g>';
+        }
+        return g0 + (flip ? '<g transform="translate(240 0) scale(-1 1)">' + inner + '</g>' : inner) + '</svg>';
       }
-      document.querySelector("#s3 .stage").insertAdjacentHTML("beforeend",
-        uigweSVG("s3", "left:100px; bottom:580px; width:470px; height:269px;"));
 
-      // ---------- 5끼 진열 (s4) — 하루 끼니 5그릇 + 뚝배기 ----------
-      (function () {
-        var i, s = '<svg class="prop" data-adj="s4-meals" style="left:52px; bottom:560px; width:560px; height:330px;" viewBox="0 0 560 330">' +
-          '<g data-obj="s4-meals-board"><rect x="10" y="52" width="540" height="176" rx="12" fill="#8a6b45"/>' +
-            '<rect x="10" y="52" width="540" height="16" rx="8" fill="#a9865a"/>' +
-            '<rect x="10" y="204" width="540" height="24" fill="#6d4526"/></g>' +
-          '<g data-obj="s4-meals-legs"><rect x="70" y="228" width="30" height="82" rx="7" fill="#5d4327"/>' +
-            '<rect x="460" y="228" width="30" height="82" rx="7" fill="#5d4327"/></g>';
-        // 5 그릇 — 새벽 죽 · 아침 수라(밥) · 점심 간식 · 저녁 수라(밥) · 밤 죽
-        var x = [86, 178, 270, 362, 454];
-        s += soupBowlSVG("s4", "m0", x[0], 176, false);   // 새벽 죽
-        s += riceBowlSVG("s4", "m1", x[1], 176);          // 아침 수라 밥
-        s += foodDishSVG("s4", "m2", x[2], 176, C_PALE[0], C_PALE[1], false); // 점심 간식
-        s += riceBowlSVG("s4", "m3", x[3], 176);          // 저녁 수라 밥
-        s += soupBowlSVG("s4", "m4", x[4], 176, false);   // 밤 죽
-        s += '<g data-obj="s4-meals-tags" font-family="Jua" text-anchor="middle" font-size="26" fill="#f6efe3">' +
-               '<text x="86" y="300">새벽</text><text x="178" y="300">아침</text><text x="270" y="300">점심</text>' +
-               '<text x="362" y="300">저녁</text><text x="454" y="300">밤</text></g></svg>';
-        // 뚝배기 — 수랏간의 조리 그릇
-        s += '<svg class="prop" data-adj="s4-ttukbaegi" style="left:640px; bottom:560px; width:150px; height:170px;" viewBox="0 0 150 170">' +
-               '<g data-obj="s4-ttukbaegi-body"><path d="M 26 60 Q 20 130 44 150 Q 75 168 108 148 Q 132 126 126 62 Z" fill="#8a5a33"/>' +
-                 '<ellipse cx="76" cy="60" rx="50" ry="16" fill="#6d4526"/><ellipse cx="76" cy="60" rx="42" ry="12" fill="#241a12"/></g>' +
-               '<g data-obj="s4-ttukbaegi-lid"><ellipse cx="76" cy="56" rx="54" ry="17" fill="#9c6b40"/><circle cx="76" cy="44" r="10" fill="#7a4f2c"/></g></svg>';
-        // 옹기 — 넓은 아가리 + 잘록한 목(EP.19 옹기 규격, 테 hoop 금지)
-        s += '<svg class="prop" data-adj="s4-onggi" style="left:800px; bottom:560px; width:160px; height:200px;" viewBox="0 0 160 200">' +
-               '<g data-obj="s4-onggi-body"><path d="M 22 46 Q 6 100 34 150 Q 62 190 80 190 Q 102 190 128 148 Q 154 100 140 46 Z" fill="#6d5738"/>' +
-                 '<path d="M 22 46 Q 6 100 34 150 Q 62 190 80 190 Q 102 190 128 148 Q 154 100 140 46 Z" fill="none" stroke="#8a6b45" stroke-width="5"/></g>' +
-               '<g data-obj="s4-onggi-neck"><rect x="22" y="36" width="116" height="22" rx="8" fill="#6d5738"/><ellipse cx="80" cy="34" rx="58" ry="12" fill="#241a12"/></g>' +
-               '<g data-obj="s4-onggi-lid"><ellipse cx="80" cy="30" rx="60" ry="14" fill="#8a6b45"/><circle cx="80" cy="22" r="10" fill="#6d5738"/></g></svg>';
-        document.querySelector("#s4 .stage").insertAdjacentHTML("beforeend", s);
-      })();
+      // s1 — 폭탄(도화선 불꽃) + 실루엣 3 (구경 포즈는 [2]에서 등장)
+      document.querySelector("#s1 .stage").insertAdjacentHTML("beforeend",
+        bombSVG("s1", "left:190px; bottom:560px; width:390px; height:380px;", { crater: true, fuse: true }) +
+        silSVG("s1", "w1", "lean", "left:10px; bottom:562px; width:230px; height:316px;", false) +
+        silSVG("s1", "w2", "lean", "left:590px; bottom:562px; width:230px; height:316px;", true) +
+        silSVG("s1", "w3", "stand", "left:830px; bottom:566px; width:220px; height:302px;", true));
 
-      // ---------- 물밥 소반 (s6) — 감선된 밥상. 소반 위에 물기 많은 밥 1그릇 ----------
-      // ⚠ 개방형 그릇 + 보이는 밥(음식 인지) — 뚜껑+꼭지 흰 그릇은 양초로 읽힌다(사용자 S6.4 지적).
-      function wateryRiceSVG(prefix, style) {
-        return '<svg class="prop" data-adj="' + prefix + '-rice" style="' + style + '" viewBox="0 0 360 240">' +
-          '<g data-obj="' + prefix + '-rice-shadow"><ellipse cx="180" cy="226" rx="150" ry="14" fill="#241a12" opacity="0.32"/></g>' +
-          '<g data-obj="' + prefix + '-rice-board"><path d="M 20 120 L 340 120 L 326 178 L 34 178 Z" fill="#a9865a"/>' +
-            '<path d="M 20 120 L 340 120 L 336 132 L 24 132 Z" fill="#c19a68"/>' +
-            '<path d="M 34 178 L 326 178 L 322 198 L 38 198 Z" fill="#6d4526"/></g>' +
-          '<g data-obj="' + prefix + '-rice-bowl">' +
-            '<ellipse cx="180" cy="120" rx="52" ry="18" fill="#f6f0df"/>' +
-            '<path d="M 128 120 Q 128 150 180 152 Q 232 150 232 120 L 232 126 Q 232 156 180 158 Q 128 156 128 126 Z" fill="#e9e2d0"/>' +
-            '<ellipse cx="180" cy="118" rx="38" ry="13" fill="#e8e3d2"/>' +
-            '<ellipse cx="174" cy="116" rx="26" ry="8" fill="#f0ecd8"/></g>' +
-          '<g data-obj="' + prefix + '-rice-spoon"><path d="M 246 104 L 300 92 L 302 99 L 248 112 Z" fill="#b9c4cc"/>' +
-            '<ellipse cx="243" cy="106" rx="8" ry="12" fill="#dfe6eb" transform="rotate(20 243 106)"/></g></svg>';
+      // s2 — 폭발 버스트 + 파편 + 튕겨나는 실루엣 2
+      function burstSVG(prefix, style) {
+        return '<svg class="prop" data-adj="' + prefix + '-burst" style="' + style + '" viewBox="-70 -70 1040 1040">' +
+          '<g data-obj="' + prefix + '-burst-core">' +
+            '<path d="M 450 60 L 508 300 L 700 150 L 580 360 L 840 340 L 620 460 L 830 580 L 570 540 L 660 790 L 480 590 L 410 840 L 370 590 L 160 760 L 290 530 L 60 560 L 280 440 L 90 260 L 330 350 L 260 100 L 400 300 Z" fill="#f6c25a"/>' +
+            '<path d="M 450 180 L 490 330 L 610 250 L 530 400 L 690 400 L 540 480 L 650 610 L 500 540 L 520 700 L 430 560 L 350 690 L 360 530 L 220 590 L 320 460 L 190 380 L 340 390 L 300 220 L 400 330 Z" fill="#fff3c4"/></g>' +
+          '<g data-obj="' + prefix + '-burst-shards" fill="#2b3039">' +
+            '<path d="M 430 30 L 452 -20 L 470 34 Z"/><path d="M 760 180 L 820 150 L 790 220 Z"/>' +
+            '<path d="M 850 470 L 910 480 L 860 520 Z"/><path d="M 720 760 L 770 810 L 700 800 Z"/>' +
+            '<path d="M 180 800 L 130 850 L 120 780 Z"/><path d="M 60 420 L 0 400 L 50 370 Z"/>' +
+            '<path d="M 140 140 L 90 90 L 170 100 Z"/></g>' +
+          '<g data-obj="' + prefix + '-burst-smoke" fill="#8a93a5" opacity="0.45">' +
+            '<circle cx="240" cy="200" r="40"/><circle cx="700" cy="240" r="34"/><circle cx="760" cy="640" r="38"/><circle cx="200" cy="660" r="34"/></g></svg>';
+      }
+      document.querySelector("#s2 .stage").insertAdjacentHTML("beforeend",
+        burstSVG("s2", "left:110px; bottom:520px; width:860px; height:800px;") +
+        silSVG("s2", "w1", "fall", "left:6px; bottom:562px; width:240px; height:330px;", false) +
+        silSVG("s2", "w2", "fall", "left:830px; bottom:562px; width:240px; height:330px;", true));
+
+      // s4 — 받침대 위 비격진천뢰(공방 완성품 — 불붙지 않은 도화선)
+      document.querySelector("#s4 .stage").insertAdjacentHTML("beforeend",
+        bombSVG("s4", "left:474px; bottom:560px; width:330px; height:323px;", { crater: false, fuse: false, cord: true }));
+
+      // s5 — 단면 컷어웨이 (도해)
+      function cutawaySVG(prefix, style) {
+        var s = '<svg class="prop" data-adj="' + prefix + '-cut" style="' + style + '" viewBox="0 0 760 800">';
+        s += '<g data-obj="' + prefix + '-cut-shell"><circle cx="380" cy="420" r="310" fill="#444b57"/>' +
+               '<circle cx="380" cy="420" r="252" fill="#3d3327"/></g>';
+        // 화약 입자
+        s += '<g data-obj="' + prefix + '-cut-powder" fill="#6b5c48">';
+        var px = [220, 300, 390, 470, 250, 350, 450, 520, 280, 420, 320, 490, 230, 380, 540],
+            py = [300, 250, 230, 280, 420, 380, 350, 420, 540, 560, 470, 520, 380, 470, 350];
+        for (var i = 0; i < px.length; i++) s += '<circle cx="' + px[i] + '" cy="' + py[i] + '" r="' + (8 + (i % 3) * 3) + '"/>';
+        s += '</g>';
+        // 쇳조각(빙철)
+        s += '<g data-obj="' + prefix + '-cut-shards" fill="#7d8694">' +
+               '<path d="M 200 340 L 240 320 L 226 366 Z"/><path d="M 480 260 L 524 250 L 502 296 Z"/>' +
+               '<path d="M 210 480 L 254 470 L 232 516 Z"/><path d="M 500 480 L 544 466 L 528 514 Z"/>' +
+               '<path d="M 300 580 L 344 570 L 322 616 Z"/><path d="M 430 300 L 470 286 L 456 330 Z"/></g>';
+        // 죽통(대나무) + 목곡(나무 축) + 도화선
+        s += '<g data-obj="' + prefix + '-cut-bamboo"><rect x="322" y="238" width="116" height="372" rx="18" fill="#9c9161"/>' +
+               '<line x1="322" y1="330" x2="438" y2="330" stroke="#7a6f45" stroke-width="7"/>' +
+               '<line x1="322" y1="520" x2="438" y2="520" stroke="#7a6f45" stroke-width="7"/>' +
+               '<ellipse cx="380" cy="240" rx="58" ry="16" fill="#7a6f45"/><ellipse cx="380" cy="240" rx="40" ry="10" fill="#3f4a24"/></g>';
+        s += '<g data-obj="' + prefix + '-cut-mokgok"><rect x="356" y="258" width="48" height="330" rx="12" fill="#b98d54"/>' +
+               '<g stroke="#c9772a" stroke-width="8" fill="none">' +
+                 '<line x1="356" y1="300" x2="404" y2="284"/><line x1="356" y1="352" x2="404" y2="336"/>' +
+                 '<line x1="356" y1="404" x2="404" y2="388"/><line x1="356" y1="456" x2="404" y2="440"/>' +
+                 '<line x1="356" y1="508" x2="404" y2="492"/></g>' +
+               '<path d="M 380 258 Q 380 190 420 160 Q 460 130 470 96" stroke="#c9772a" stroke-width="9" fill="none" stroke-linecap="round"/></g>';
+        // 뚜껑(개철)
+        s += '<g data-obj="' + prefix + '-cut-lid"><rect x="316" y="86" width="128" height="38" rx="8" fill="#2b3039"/>' +
+               '<rect x="316" y="86" width="128" height="13" rx="6" fill="#3a4152"/></g>';
+        // 콜아웃 선 — 우측 라벨로
+        s += '<g data-obj="' + prefix + '-cut-lines" stroke="#26221c" stroke-width="5" fill="none">' +
+               '<path d="M 288 252 L 620 52 L 756 52"/>' +       // 화약 (lab1 center ≈ svg y 52)
+               '<path d="M 470 290 L 680 230 L 756 230"/>' +     // 쇳조각 (lab2 ≈ y 230)
+               '<path d="M 436 400 L 700 426 L 756 426"/>' +     // 죽통 (lab3 ≈ y 426)
+               '<path d="M 384 570 L 660 598 L 756 598"/></g>';  // 목곡 (lab4 ≈ y 598)
+        s += '</svg>';
+        return s;
+      }
+      document.querySelector("#s5 .stage").insertAdjacentHTML("beforeend",
+        cutawaySVG("s5", "left:30px; bottom:520px; width:660px; height:695px;"));
+
+      // s6 — 목곡 2본 비교(받침대 위, 비스듬 — 세로 단독 금지) + 도화선 감김 4 vs 8
+      function mokgokSVG(prefix, id, wraps, style, tilt) {
+        var s = '<svg class="prop" data-adj="' + prefix + '-' + id + '" style="' + style + '" viewBox="0 -120 360 680">';
+        s += '<g data-obj="' + prefix + '-' + id + '-stand"><rect x="60" y="500" width="240" height="24" rx="8" fill="#6d4526"/>' +
+               '<path d="M 100 500 L 140 464 L 158 484 L 126 500 Z" fill="#8a5a33"/>' +
+               '<path d="M 260 500 L 220 464 L 202 484 L 234 500 Z" fill="#8a5a33"/></g>';
+        s += '<g data-obj="' + prefix + '-' + id + '-rod" transform="rotate(' + tilt + ' 180 480)">' +
+               '<rect x="144" y="60" width="72" height="430" rx="20" fill="#b98d54"/>' +
+               '<rect x="158" y="60" width="14" height="430" rx="7" fill="#d4ab72"/>' +
+               '<ellipse cx="180" cy="62" rx="36" ry="13" fill="#8a6b3f"/>';
+        var gap = Math.floor(370 / wraps);
+        s += '<g stroke="#c9772a" stroke-width="10" fill="none">';
+        for (var i = 0; i < wraps; i++) {
+          var y0 = 110 + i * gap;
+          s += '<line x1="144" y1="' + (y0 + 18) + '" x2="216" y2="' + y0 + '"/>';
+        }
+        s += '</g><path d="M 180 60 Q 200 20 240 12" stroke="#c9772a" stroke-width="9" fill="none" stroke-linecap="round"/></g>';
+        s += '</svg>';
+        return s;
       }
       document.querySelector("#s6 .stage").insertAdjacentHTML("beforeend",
-        wateryRiceSVG("s6", "left:120px; bottom:560px; width:360px; height:240px;"));
+        mokgokSVG("s6", "rodL", 10, "left:70px; bottom:620px; width:330px; height:512px;", -7) +
+        mokgokSVG("s6", "rodR", 15, "left:400px; bottom:620px; width:330px; height:512px;", 7));
 
-      // ---------- 진상 상자 (s8) — 백성을 살피는 통치의 매개 ----------
-      (function () {
-        var s = '<svg class="prop" data-adj="s8-chest" style="left:600px; bottom:560px; width:250px; height:210px;" viewBox="0 0 250 210">' +
-          '<g data-obj="s8-chest-shadow"><ellipse cx="125" cy="196" rx="104" ry="14" fill="#241a12" opacity="0.3"/></g>' +
-          '<g data-obj="s8-chest-body"><rect x="20" y="70" width="210" height="110" rx="8" fill="#8a5a33"/>' +
-            '<rect x="20" y="70" width="210" height="16" rx="8" fill="#a5713f"/>' +
-            '<rect x="20" y="70" width="210" height="110" rx="8" fill="none" stroke="#5d4327" stroke-width="5"/>' +
-            '<rect x="34" y="84" width="182" height="82" rx="5" fill="#6d4526"/></g>' +
-          '<g data-obj="s8-chest-lid"><path d="M 8 74 L 242 74 L 228 26 L 22 26 Z" fill="#9c6b40"/>' +
-            '<path d="M 8 74 L 242 74 L 240 64 L 10 64 Z" fill="#c19a68"/>' +
-            '<rect x="110" y="34" width="30" height="20" rx="6" fill="#e8b74a"/></g>' +
-          '<g data-obj="s8-chest-straps"><rect x="52" y="26" width="18" height="154" rx="4" fill="#6d5738"/>' +
-            '<rect x="180" y="26" width="18" height="154" rx="4" fill="#6d5738"/></g>' +
-          '<g data-obj="s8-chest-veg"><circle cx="70" cy="84" r="16" fill="#c9553f"/><circle cx="112" cy="90" r="14" fill="#8a6b45"/></g></svg>';
-        document.querySelector("#s8 .stage").insertAdjacentHTML("beforeend", s);
-      })();
+      // s7 — 재연: 폭탄 + 모여든 실루엣 3 → 폭발 버스트(46.9)
+      document.querySelector("#s7 .stage").insertAdjacentHTML("beforeend",
+        bombSVG("s7", "left:330px; bottom:560px; width:360px; height:352px;", { crater: true, fuse: true }) +
+        silSVG("s7", "w1", "lean", "left:80px; bottom:562px; width:230px; height:316px;", false) +
+        silSVG("s7", "w2", "lean", "left:660px; bottom:562px; width:230px; height:316px;", true) +
+        silSVG("s7", "w3", "stand", "left:906px; bottom:566px; width:170px; height:236px;", true) +
+        burstSVG("s7", "left:150px; bottom:530px; width:780px; height:740px;"));
 
-      // ---------- 등잔 (s2) — 놋쇠색 ----------
-      function lampSVG(prefix, style) {
-        return '<svg class="prop" data-adj="' + prefix + '-lamp" style="' + style + '" viewBox="0 0 160 320">' +
-          '<g data-obj="' + prefix + '-lamp-base"><ellipse cx="80" cy="300" rx="62" ry="18" fill="#6d5738"/>' +
-            '<ellipse cx="80" cy="292" rx="56" ry="15" fill="#8a6b45"/>' +
-            '<path d="M 44 292 Q 52 250 62 232 L 98 232 Q 108 250 116 292 Z" fill="#7a6440"/></g>' +
-          '<g data-obj="' + prefix + '-lamp-stem"><rect x="68" y="150" width="24" height="86" rx="6" fill="#a9865a"/>' +
-            '<rect x="68" y="150" width="8" height="86" rx="4" fill="#c9a877"/>' +
-            '<ellipse cx="80" cy="206" rx="26" ry="9" fill="#8a6b45"/></g>' +
-          '<g data-obj="' + prefix + '-lamp-dish"><path d="M 26 138 L 134 138 Q 126 176 80 176 Q 34 176 26 138 Z" fill="#b8933f"/>' +
-            '<ellipse cx="80" cy="138" rx="54" ry="16" fill="#d4b055"/>' +
-            '<ellipse cx="80" cy="138" rx="38" ry="10" fill="#6b5324"/></g>' +
-          '<g data-obj="' + prefix + '-lamp-wick"><rect x="74" y="118" width="12" height="24" rx="4" fill="#3a2c1e"/></g>' +
-          '<g data-obj="' + prefix + '-lamp-flame"><path d="M 80 40 Q 104 78 100 104 Q 96 128 80 128 Q 64 128 60 104 Q 56 78 80 40 Z" fill="#e8b74a"/>' +
-            '<path d="M 80 66 Q 92 92 90 108 Q 88 122 80 122 Q 72 122 70 108 Q 68 92 80 66 Z" fill="#fdf3d2"/></g>' +
-          '</svg>';
+      // s8 — 가마니 더미(EP.20 규격: 라운드 사각 + 상단 밝은 밴드 + 짚결 + 묶음끈 2)
+      function gamaniSVG(prefix, style) {
+        function sack(x, y, w2, h2, tone1, tone2) {
+          var s2 = '<g><rect x="' + x + '" y="' + y + '" width="' + w2 + '" height="' + h2 + '" rx="' + (h2 * 0.28) + '" fill="' + tone1 + '"/>' +
+            '<rect x="' + x + '" y="' + y + '" width="' + w2 + '" height="' + (h2 * 0.26) + '" rx="' + (h2 * 0.14) + '" fill="' + tone2 + '"/>';
+          for (var k = 1; k < 5; k++) s2 += '<line x1="' + (x + (w2 / 5) * k) + '" y1="' + (y + 8) + '" x2="' + (x + (w2 / 5) * k) + '" y2="' + (y + h2 - 8) + '" stroke="#a8894f" stroke-width="4" opacity="0.7"/>';
+          s2 += '<line x1="' + (x + w2 * 0.3) + '" y1="' + y + '" x2="' + (x + w2 * 0.3) + '" y2="' + (y + h2) + '" stroke="#6d5738" stroke-width="6"/>' +
+                '<line x1="' + (x + w2 * 0.7) + '" y1="' + y + '" x2="' + (x + w2 * 0.7) + '" y2="' + (y + h2) + '" stroke="#6d5738" stroke-width="6"/></g>';
+          return s2;
+        }
+        var s = '<svg class="prop" data-adj="' + prefix + '-gamani" style="' + style + '" viewBox="0 0 460 420">';
+        s += '<g data-obj="' + prefix + '-gamani-shadow"><ellipse cx="230" cy="404" rx="200" ry="16" fill="#241a12" opacity="0.3"/></g>';
+        s += '<g data-obj="' + prefix + '-gamani-row1">' + sack(20, 270, 200, 130, "#c9a86a", "#ddc088") + sack(240, 270, 200, 130, "#bd9c60", "#d4b87e") + '</g>';
+        s += '<g data-obj="' + prefix + '-gamani-row2">' + sack(70, 150, 200, 130, "#c9a86a", "#ddc088") + sack(250, 156, 170, 124, "#bd9c60", "#d4b87e") + '</g>';
+        s += '<g data-obj="' + prefix + '-gamani-row3">' + sack(150, 40, 190, 122, "#c9a86a", "#ddc088") + '</g>';
+        s += '</svg>';
+        return s;
       }
-      document.querySelector("#s2 .stage").insertAdjacentHTML("beforeend",
-        lampSVG("s2", "left:900px; bottom:565px; width:118px; height:236px;"));
+      document.querySelector("#s8 .stage").insertAdjacentHTML("beforeend",
+        gamaniSVG("s8", "left:60px; bottom:560px; width:440px; height:402px;"));
+
+      // s10 — X선 투시 포탄 + 심지 구멍 2 + 콜아웃
+      function xraySVG(prefix, style) {
+        var s = '<svg class="prop" data-adj="' + prefix + '-xray" style="' + style + '" viewBox="0 0 760 760">';
+        s += '<g data-obj="' + prefix + '-xray-shell"><circle cx="380" cy="420" r="300" fill="#16283e" stroke="#6fd3f2" stroke-width="6"/>' +
+               '<circle cx="380" cy="420" r="242" fill="#0f2237" stroke="#3d6a8a" stroke-width="4"/></g>';
+        s += '<g data-obj="' + prefix + '-xray-inner" stroke="#3d6a8a" stroke-width="5" fill="none" opacity="0.85">' +
+               '<rect x="330" y="270" width="100" height="330" rx="16"/>' +
+               '<line x1="330" y1="350" x2="430" y2="350"/><line x1="330" y1="510" x2="430" y2="510"/></g>';
+        s += '<g data-obj="' + prefix + '-xray-lid"><rect x="304" y="102" width="152" height="44" rx="9" fill="#9fd0e8"/>' +
+               '<rect x="350" y="78" width="60" height="28" rx="8" fill="#6fa8c4"/>' +
+               '<circle cx="336" cy="124" r="15" fill="#0e1a2a" stroke="#ffd867" stroke-width="6"/>' +
+               '<circle cx="424" cy="124" r="15" fill="#0e1a2a" stroke="#ffd867" stroke-width="6"/></g>';
+        s += '<g data-obj="' + prefix + '-xray-thin" stroke="#ffd867" stroke-width="5" fill="none">' +
+               '<path d="M 92 420 L 40 420"/><path d="M 148 420 L 200 420"/>' +
+               '<path d="M 104 404 L 92 420 L 104 436"/><path d="M 136 404 L 148 420 L 136 436"/></g>';
+        s += '</svg>';
+        return s;
+      }
+      document.querySelector("#s10 .stage").insertAdjacentHTML("beforeend",
+        xraySVG("s10", "left:160px; bottom:600px; width:700px; height:700px;") +
+        '<div class="lab" data-adj="s10-lab-thin" style="top:1210px; left:60px; visibility:visible;">몸통 옆면은 3~10mm 얇게<small>파편이 옆으로 터지도록 — 주조 설계</small></div>');
 
       // ---------- mount characters ----------
       function setExprDirect(root, name) {
@@ -762,94 +951,140 @@
       function bgIn(prefix, keys, at) {
         fadeIn(keys.map(function (k) { return "#" + prefix + " [data-adj='" + prefix + "-" + k + "']"; }).join(", "), at, 0.4, 0.03);
       }
-      var THRONE_KEYS = ["wall", "wall-hi", "beam", "pillars", "screen", "dais", "floor", "floor-hi", "floor-detail"];
-      var COURT_KEYS = ["sky", "cloud1", "cloud2", "palace", "ground", "ground-hi", "flagstones"];
-      var ROOM_KEYS  = ["wall", "wall-hi", "beam", "window", "shelf", "floor", "floor-hi", "floor-detail"];
-      var FIELD_KEYS = ["sky", "sky-hi", "ridge", "ground", "ground-detail"];
+      var CAMP_KEYS  = ["sky", "sky-top", "stars", "nightclouds", "horizon", "ground", "ground-hi", "ground-detail", "fort", "tent1", "tent2", "fire"];
+      var GATEN_KEYS = ["sky", "sky-hi", "stars", "gate", "ground", "ground-hi", "flagstones"];
+      var GATED_KEYS = ["sky", "sky-hi", "cloud", "birds", "gate", "ground", "ground-hi", "flagstones"];
+      var FORGE_KEYS = ["wall", "wall-hi", "beam", "window", "shelf", "floor", "floor-hi", "floor-detail", "hearth", "anvil"];
+      var SHEET_KEYS = ["paper", "band-top", "band-bottom", "frame", "jecheom"];
+      var DIG_KEYS   = ["sky", "sky-hi", "cloud", "treeline", "grass", "ground", "ground-hi", "pit", "tools", "ground-detail"];
+      var CT_KEYS    = ["bg", "grid", "hud"];
 
-      // ---------- S1: 훅 — 12첩 수라상 ----------
-      bgIn("s1", THRONE_KEYS, 0.05);
-      tl.fromTo("#s1 [data-adj='s1-table']", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" }, 0.30);
-      tl.fromTo("#s1 .char-s1-king", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 0.90);
-      slam("#s1 .s1-chip", 0.55, -2, "back.out(2.4)");
-      slam("#s1 .s1-num", 1.60, -3, "back.out(2.4)");
+      // ---------- S1: 훅 — 낙하 + 구경 ----------
+      bgIn("s1", CAMP_KEYS, 0.05);
+      // 쇳덩이 낙하(y슬라이드 — 지뢰 #40 준수: 세로 진입)
+      tl.fromTo("#s1 [data-adj='s1-bomb']", { y: -900, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.in" }, 0.55);
+      // 스파크 점멸(유한 반복)
+      tl.to("#s1 [data-obj='s1-bomb-spark']", { scale: 1.25, transformOrigin: "50% 50%", duration: 0.2, ease: "sine.inOut", repeat: 30, yoyo: true }, 1.3);
+      // 왜군 실루엣 — [2] "서로 밀며 구경했죠"에서 다가옴
+      tl.fromTo("#s1 [data-adj='s1-w3']", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.2);
+      tl.fromTo("#s1 [data-adj='s1-w1']", { x: -160, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 4.7);
+      tl.fromTo("#s1 [data-adj='s1-w2']", { x: 160, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 4.95);
+      slam("#s1 .s1-chip", 1.15, -2, "back.out(2.4)");
 
-      // ---------- S2: 실제는 검소 / 말기 상궁 전언 (같은 어전 — 표정·소품 변환) ----------
-      tl.fromTo("#s2 .stage", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: T, ease: "power3.out" }, 5.42);
-      bgIn("s2", THRONE_KEYS, 5.60);
-      tl.fromTo("#s2 [data-adj='s2-lamp']", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 5.66);
-      tl.fromTo("#s2 .char-s2-king", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 5.70);
-      tl.fromTo("#s2 [data-adj='s2-table']", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 6.30);
-      slam("#s2 .s2-chip", 5.95, -2, "back.out(2.4)");
-      slam("#s2 .s2-num", 7.20, -3, "back.out(2.4)");
-      slam("#s2 .s2-stamp", 9.90, -2, "back.out(2.2)");
+      // ---------- S2: 폭발 ----------
+      tl.fromTo("#s2 .stage", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 9.86);
+      bgIn("s2", CAMP_KEYS, 9.90);
+      tl.fromTo("#s2 [data-adj='s2-w1'], #s2 [data-adj='s2-w2']", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 9.98);
+      // 섬광 → 버스트 슬램
+      tl.fromTo("#s2 .flash", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 10.40);
+      tl.to("#s2 .flash", { opacity: 0, duration: 0.5, ease: "power2.out" }, 10.52);
+      tl.fromTo("#s2 [data-adj='s2-burst']", { scale: 0, opacity: 0, transformOrigin: "50% 50%" },
+        { scale: 1, opacity: 1, duration: 0.24, ease: "back.out(1.8)" }, 10.44);
+      tl.to("#s2 [data-adj='s2-burst']", { scale: 1.06, transformOrigin: "50% 50%", duration: 0.3, ease: "sine.inOut", repeat: 7, yoyo: true }, 10.70);
+      slam("#s2 .s2-num", 10.62, -4, "back.out(2.6)");
 
-      // ---------- S3: 의궤 — 화성행차의 밥상 ----------
-      tl.fromTo("#s3 .stage", { x: -1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 13.88);
-      bgIn("s3", COURT_KEYS, 14.02);
-      tl.fromTo("#s3 .char-s3-king", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 14.14);
-      tl.fromTo("#s3 [data-adj='s3-uigwe']", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "back.out(1.4)" }, 18.60);
-      slam("#s3 .s3-chip", 14.35, -2, "back.out(2.4)");
-      slam("#s3 .s3-stamp", 16.10, -1, "back.out(2.2)");
-      slam("#s3 .s3-num", 22.60, -3, "back.out(2.4)");
+      // ---------- S3: 실록 — 경주성의 밤 ----------
+      tl.fromTo("#s3 .stage", { x: -1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 13.92);
+      bgIn("s3", GATEN_KEYS, 14.06);
+      tl.fromTo("#s3 .char-s3-pakjin", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 14.20);
+      slam("#s3 .s3-chip", 14.40, -2, "back.out(2.4)");
+      slam("#s3 .s3-stamp", 15.30, -1, "back.out(2.2)");
 
-      // ---------- S4: 하루 다섯 끼 (수랏간) ----------
-      tl.fromTo("#s4 .stage", { x: 1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 27.15);
-      bgIn("s4", ROOM_KEYS, 27.29);
-      tl.fromTo("#s4 .char-s4-king", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 27.41);
-      tl.fromTo("#s4 [data-adj='s4-meals']", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" }, 31.80);
-      tl.fromTo("#s4 [data-adj='s4-ttukbaegi'], #s4 [data-adj='s4-onggi']", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.1 }, 35.90);
-      slam("#s4 .s4-chip", 27.75, -2, "back.out(2.4)");
-      slam("#s4 .s4-num", 32.00, -3, "back.out(2.4)");
+      // ---------- S4: 군기시 화포장 이장손 ----------
+      tl.fromTo("#s4 .stage", { x: 1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 18.46);
+      bgIn("s4", FORGE_KEYS, 18.60);
+      tl.fromTo("#s4 .char-s4-jangson", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 18.72);
+      tl.fromTo("#s4 [data-adj='s4-bomb']", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.08 }, 18.90);
+      slam("#s4 .s4-chip", 19.10, -2, "back.out(2.4)");
+      slam("#s4 .s4-stamp", 20.30, -1, "back.out(2.2)");
 
-      // ---------- S5: 기미상궁의 시식 (어전) ----------
-      tl.fromTo("#s5 .stage", { x: -1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 40.66);
-      bgIn("s5", THRONE_KEYS, 40.80);
-      tl.fromTo("#s5 .char-s5-king, #s5 .char-s5-sanggung", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.1 }, 40.92);
-      tl.fromTo("#s5 [data-adj='s5-table']", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" }, 41.10);
-      slam("#s5 .s5-chip", 41.30, -2, "back.out(2.4)");
-      slam("#s5 .s5-stamp", 47.20, -1, "back.out(2.2)");
+      // ---------- S5: 단면 도해 ----------
+      tl.fromTo("#s5 .stage", { x: -1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 22.98);
+      bgIn("s5", SHEET_KEYS, 23.12);
+      tl.fromTo("#s5 [data-adj='s5-cut']", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 23.30);
+      slam("#s5 .s5-chip", 23.50, -2, "back.out(2.4)");
+      slam("#s5 .s5-lab1", 24.30, -1, "back.out(2.4)");
+      slam("#s5 .s5-lab2", 25.30, -1, "back.out(2.4)");
+      slam("#s5 .s5-lab3", 27.60, -1, "back.out(2.4)");
+      slam("#s5 .s5-lab4", 28.60, -1, "back.out(2.4)");
+      slam("#s5 .s5-stamp", 30.30, -1, "back.out(2.2)");
 
-      // ---------- S6: 흉년이면 반찬을 줄였다 (정전 앞마당 — 흐림) ----------
-      tl.fromTo("#s6 .stage", { x: 1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 52.68);
-      bgIn("s6", COURT_KEYS, 52.82);
-      tl.fromTo("#s6 .char-s6-king", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 52.94);
-      tl.fromTo("#s6 [data-adj='s6-rice']", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" }, 55.00);
-      slam("#s6 .s6-chip", 53.30, -2, "back.out(2.4)");
-      slam("#s6 .s6-stamp", 57.60, -1, "back.out(2.2)");
+      // ---------- S6: 감는 횟수 = 폭발 시간 ----------
+      tl.fromTo("#s6 .stage", { x: 1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 32.02);
+      bgIn("s6", SHEET_KEYS, 32.16);
+      tl.fromTo("#s6 .char-s6-jangson", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 32.30);
+      tl.fromTo("#s6 [data-adj='s6-rodL']", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 35.30);
+      tl.fromTo("#s6 [data-adj='s6-rodR']", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 38.60);
+      slam("#s6 .s6-chip", 32.60, -2, "back.out(2.4)");
+      slam("#s6 .s6-numL", 35.90, -3, "back.out(2.6)");
+      slam("#s6 .s6-numR", 39.20, -3, "back.out(2.6)");
+      slam("#s6 .s6-stamp", 41.00, -1, "back.out(2.2)");
 
-      // ---------- S7: 백성의 고통 (들판) ----------
-      tl.fromTo("#s7 .stage", { x: -1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 60.88);
-      bgIn("s7", FIELD_KEYS, 61.02);
-      tl.fromTo("#s7 .char-s7-min1, #s7 .char-s7-min2", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.1 }, 61.20);
-      tl.fromTo("#s7 [data-adj='s7-bowl'], #s7 [data-adj='s7-hoe']", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.12 }, 61.50);
-      slam("#s7 .s7-chip", 61.30, -2, "back.out(2.4)");
+      // ---------- S7: 재연 — 모여듦 → 폭발 → 20여 명 ----------
+      tl.fromTo("#s7 .stage", { x: -1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 42.36);
+      bgIn("s7", CAMP_KEYS, 42.50);
+      tl.fromTo("#s7 [data-adj='s7-bomb']", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 42.62);
+      tl.to("#s7 [data-obj='s7-bomb-spark']", { scale: 1.3, transformOrigin: "50% 50%", duration: 0.2, ease: "sine.inOut", repeat: 20, yoyo: true }, 42.9);
+      tl.fromTo("#s7 [data-adj='s7-w1']", { x: -180, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power2.out" }, 43.0);
+      tl.fromTo("#s7 [data-adj='s7-w2']", { x: 180, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power2.out" }, 43.25);
+      tl.fromTo("#s7 [data-adj='s7-w3']", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 43.5);
+      // [12] 폭발 재연
+      tl.fromTo("#s7 .flash", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 46.90);
+      tl.to("#s7 .flash", { opacity: 0, duration: 0.5, ease: "power2.out" }, 47.02);
+      tl.set("#s7 [data-adj='s7-bomb']", { opacity: 0 }, 46.98);
+      tl.fromTo("#s7 [data-adj='s7-burst']", { scale: 0, opacity: 0, transformOrigin: "50% 50%" },
+        { scale: 1, opacity: 1, duration: 0.24, ease: "back.out(1.8)" }, 46.94);
+      tl.to("#s7 [data-adj='s7-burst']", { scale: 1.05, transformOrigin: "50% 50%", duration: 0.3, ease: "sine.inOut", repeat: 6, yoyo: true }, 47.20);
+      tl.to("#s7 [data-adj='s7-w1']", { rotation: -12, x: -60, transformOrigin: "50% 100%", duration: 0.3, ease: "power2.out" }, 46.98);
+      tl.to("#s7 [data-adj='s7-w2']", { rotation: 9, x: 18, transformOrigin: "50% 100%", duration: 0.3, ease: "power2.out" }, 46.98);
+      slam("#s7 .s7-stamp", 47.60, -1, "back.out(2.2)");
+      slam("#s7 .s7-num", 49.40, -3, "back.out(2.6)");
 
-      // ---------- S8: 펀치 — 백성을 살피는 자리 (정전 마당, s3·s6 수미상관) ----------
-      tl.fromTo("#s8 .stage", { x: 1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 65.38);
-      bgIn("s8", COURT_KEYS, 65.52);
-      tl.fromTo("#s8 .char-s8-king", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 65.64);
-      tl.fromTo("#s8 [data-adj='s8-table']", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" }, 66.90);
-      tl.fromTo("#s8 [data-adj='s8-chest']", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "back.out(1.4)" }, 69.00);
-      slam("#s8 .s8-stamp", 66.30, -1, "back.out(2.2)");
+      // ---------- S8: 다음 날 — 성 포기, 곡식 만여 석 ----------
+      tl.fromTo("#s8 .stage", { x: 1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 51.85);
+      bgIn("s8", GATED_KEYS, 51.99);
+      tl.fromTo("#s8 .char-s8-pakjin", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 52.15);
+      tl.fromTo("#s8 [data-adj='s8-gamani']", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power2.out" }, 55.80);
+      slam("#s8 .s8-chip", 52.40, -2, "back.out(2.4)");
+      slam("#s8 .s8-stamp", 53.40, -1, "back.out(2.2)");
+      slam("#s8 .s8-num", 56.90, -3, "back.out(2.6)");
 
-      // ---------- S9: outro ----------
-      tl.fromTo("#s9 .stage", { x: -1080 }, { x: 0, duration: T, ease: "power3.out" }, 73.54);
-      tl.fromTo("#s9 .logo-big", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.5, ease: "back.out(2)" }, 73.93);
-      tl.fromTo("#s9 .s9-sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, 74.53);
-      tl.fromTo("#s9 .char-s9-host", { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 74.18);
-      tl.fromTo("#s9 .subscribe", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 75.38);
-      tl.to("#s9 .subscribe", { scale: 1.08, duration: 0.4, ease: "sine.inOut", repeat: 3, yoyo: true }, 75.98);
+      // ---------- S9: 2018 고창 발굴 ----------
+      tl.fromTo("#s9 .stage", { x: -1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 59.85);
+      bgIn("s9", DIG_KEYS, 59.99);
+      slam("#s9 .s9-chip", 60.40, -2, "back.out(2.4)");
+      slam("#s9 .s9-num", 63.50, -3, "back.out(2.6)");
+      slam("#s9 .s9-stamp", 64.30, -1, "back.out(2.2)");
+
+      // ---------- S10: CT — 심지 구멍 2개 ----------
+      tl.fromTo("#s10 .stage", { x: 1080 }, { x: 0, duration: 0.2, ease: "power3.out" }, 66.12);
+      bgIn("s10", CT_KEYS, 66.26);
+      tl.fromTo("#s10 [data-adj='s10-xray']", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 66.50);
+      tl.fromTo("#s10 [data-obj='s10-hud-scanline']", { y: 0 }, { y: 560, duration: 1.6, ease: "sine.inOut", repeat: 4, yoyo: true }, 66.5);
+      tl.fromTo("#s10 [data-adj='s10-lab-thin']", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 67.4);
+      slam("#s10 .s10-chip", 66.70, -2, "back.out(2.4)");
+      slam("#s10 .s10-num", 69.00, -3, "back.out(2.6)");
+      slam("#s10 .s10-stamp", 71.70, -1, "back.out(2.2)");
+
+      // ---------- S11: outro ----------
+      tl.fromTo("#s11 .stage", { x: -1080 }, { x: 0, duration: T, ease: "power3.out" }, 75.72);
+      tl.fromTo("#s11 .logo-big", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.5, ease: "back.out(2)" }, 76.11);
+      tl.fromTo("#s11 .s11-sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, 76.71);
+      tl.fromTo("#s11 .char-s11-host", { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 76.36);
+      tl.fromTo("#s11 .subscribe", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 77.56);
+      tl.to("#s11 .subscribe", { scale: 1.08, duration: 0.4, ease: "sine.inOut", repeat: 3, yoyo: true }, 78.16);
 
       // ---------- 스탬프 숨김 — 씬 전환 완료 후 ----------
-      [["#s1 .s1-chip, #s1 .s1-num", 5.42],
-       ["#s2 .s2-chip, #s2 .s2-num, #s2 .s2-stamp", 13.88],
-       ["#s3 .s3-chip, #s3 .s3-stamp, #s3 .s3-num", 27.15],
-       ["#s4 .s4-chip, #s4 .s4-num", 40.66],
-       ["#s5 .s5-chip, #s5 .s5-stamp", 52.68],
-       ["#s6 .s6-chip, #s6 .s6-stamp", 60.88],
-       ["#s7 .s7-chip", 65.38],
-       ["#s8 .s8-stamp", 73.54]].forEach(function (pair) {
+      [["#s1 .s1-chip", 9.86],
+       ["#s2 .s2-num", 13.92],
+       ["#s3 .s3-chip, #s3 .s3-stamp", 18.46],
+       ["#s4 .s4-chip, #s4 .s4-stamp", 22.98],
+       ["#s5 .s5-chip, #s5 .s5-stamp, #s5 .s5-lab1, #s5 .s5-lab2, #s5 .s5-lab3, #s5 .s5-lab4", 32.02],
+       ["#s6 .s6-chip, #s6 .s6-numL, #s6 .s6-numR, #s6 .s6-stamp", 42.36],
+       ["#s7 .s7-stamp, #s7 .s7-num", 51.85],
+       ["#s8 .s8-chip, #s8 .s8-stamp, #s8 .s8-num", 59.85],
+       ["#s9 .s9-chip, #s9 .s9-num, #s9 .s9-stamp", 66.12],
+       ["#s10 .s10-chip, #s10 .s10-num, #s10 .s10-stamp", 75.72]].forEach(function (pair) {
         tl.set(pair[0], { visibility: "hidden" }, pair[1]);
       });
 

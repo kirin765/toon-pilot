@@ -1,143 +1,138 @@
-// Director scene script — EP.27 조선 왕의 수라상 (vertical 1080×1920).
+// Director scene script — EP.28 비격진천뢰 (vertical 1080×1920).
 // Schema per scene: id, start/dur (dur includes 0.45 transition overlap into next),
 //   talker, chars [{ id, variant, skin?, shirt?, pants?, hat?, x(%), bottom(px), w(px), expr, pose, flip? }],
 //   changes [{ at, char, expr?, pose? }].
 //
 // ⚠ S6.0 씬 플랜 표 (지뢰 #62) — 장소를 고유명으로 먼저 확정하고 앵커 소품·배경 소스를 도출한다.
-//   distinct 배경 4종(어전·정전마당·수랏간·황무지 들판) + 아웃트로, 동일 배경 연속 ≤3(최대 2).
+//   distinct 배경 6종(왜군 진영 야영지·경주 읍성 성문·군기시 공방·한지 도판·발굴 구덩이·CT 판독) + 아웃트로.
+//   동일 배경 연속 ≤3 (camp: s1·s2 연속 2 + s7 재등장 — 사이에 4씬).
 //
-// | 씬  | 문장 | 요지                                | 장소(고유명)            | 시간대 | 배경 소스                        | 앵커 소품                     | 캐릭터            |
-// |-----|------|--------------------------------------|--------------------------|--------|----------------------------------|-------------------------------|-------------------|
-// | s1  | [1]  | 훅 — 사극의 12첩 반상                | 궁중 어전(수라 드시는 방) | 낮     | throneBgSVG(EP.25 어전 재사용)    | **12첩 수라상(신규)**          | 정조(king)        |
-// | s2  | [2-3] | 실제는 검소 / 말기 상궁 전언         | 같은 어전 — 다른 벽면    | 낮     | throneBgSVG (연속 2/3)            | **7그릇 수라상으로 변환**      | 정조              |
-// | s3  | [4-6] | 의궤 / 화성행차 / 일곱 그릇          | 궁궐 정전 앞마당          | 낮     | courtBgSVG(EP.22~25 재사용)       | **펼친 의궤(문서) + 7그릇**    | 정조              |
-// | s4  | [7-9] | 하루 5끼 / 수라 2번 / 죽·간식         | 수랏간(소주방)            | 낮     | roomBgSVG tone="day" (EP.26 방)   | **5끼 그릇 + 뚝배기**          | 정조              |
-// | s5  | [10-12] | 마음대로 못 먹음 / 상궁 시식        | 궁중 어전                | 낮     | throneBgSVG                       | **7그릇 수라상 + 은수저 + 상궁**| 정조 + 상궁(lady) |
-// | s6  | [13-15] | 흉년 / 하늘의 경고 / 감선            | 정전 앞마당(흐린 낮)      | 흐림   | courtBgSVG + 음영 오버레이        | **물밥 소반(감선)**            | 정조              |
-// | s7  | [16] | 백성의 고통                            | 황무지 들판              | 낮     | fieldBgSVG(신규 — 군중 실루엣)    | **백성 실루엣 3**              | (무인)            |
-// | s8  | [17] | 수라상=백성을 살피는 자리(펀치)       | 궁궐 정전 앞마당          | 낮     | courtBgSVG (수미상관 s3·s6)       | **수라상 + 진상 상자**          | 정조              |
-// | s9  | [18] | 아웃트로                              | —                        | —      | —                                  | —                               | host              |
+// | 씬  | 문장    | 요지                          | 장소(고유명)               | 시간대 | 배경 소스                          | 앵커 소품                        | 캐릭터                  |
+// |-----|---------|-------------------------------|-----------------------------|--------|------------------------------------|-----------------------------------|-------------------------|
+// | s1  | [1-2]   | 훅 — 쇳덩이 낙하·왜군 구경     | 경주성 안 왜군 진영 야영지  | 밤     | campBgSVG(신규: 군막+모닥불+성곽 원경) | **비격진천뢰(도화선 불꽃)**       | 왜군 실루엣 3(비ríg)    |
+// | s2  | [3]     | 폭발                          | 같은 진영 (연속 2/3)        | 밤     | campBgSVG + 섬광                    | **폭발 버스트+파편**              | 실루엣 2(튕겨남)        |
+// | s3  | [4]     | 실록·1592·경주성              | 경주 읍성 성문 앞           | 밤     | gateBgSVG(EP.25 숭례문 개정판 재사용, night) | 성곽+홍예문+문루                | (무인 — 전경 인서트)    |
+// | s4  | [5]     | 화포장 이장손                  | 군기시 화포 공방            | 낮     | forgeBgSVG(신규: EP.27 room 계열+화로) | **화로+포탄 받침대**              | 이장손(militia+패랭이)  |
+// | s5  | [6-7]   | 속: 화약·쇳조각·나무 축        | 한지 도판(단면도)           | —      | sheetBgSVG(신규: 한지+제첨)         | **단면 컷어웨이**                 | (무인 — 인포그래픽)     |
+// | s6  | [8-10]  | 감는 횟수=시계, 10/15          | 한지 도판 2 (연속 2/3)      | —      | sheetBgSVG + 목곡 비교              | **목곡 2본(받침대 위)**           | 이장손(포인팅)          |
+// | s7  | [11-12] | 뜸→모여듦→폭발·20여 명         | 경주성 안 왜군 진영(재연)   | 밤     | campBgSVG 재사용(s1과 4씬 간격)     | 비격진천뢰+버스트                 | 실루엣 3(모여듦)        |
+// | s8  | [13-14] | 성 포기·곡식 만여 석           | 경주 읍성 성문 앞           | 새벽   | gateBgSVG(dawn 톤 변주)             | **가마니 더미(EP.20 규격)**       | 박진(admiral)           |
+// | s9  | [15]    | 2018 고창 11발                 | 고창 무장현 관아 터 발굴 구덩이 | 낮(현대) | digBgSVG(신규: 토층 단면)         | **구덩이 속 포탄 11발**           | (무인 — 인포그래픽)     |
+// | s10 | [16-17] | CT·심지 구멍 2·불발 설계       | CT 판독 화면                | —      | ctBgSVG(신규: 스캔 프레임)          | **X선 투시 포탄+뚜껑 확대**       | (무인 — 인포그래픽, 연속 2) |
+// | s11 | [18]    | 아웃트로                       | —                           | —      | —                                  | —                                 | host                    |
 //
 // 캐스팅 (기존 rig 6종 안에서만 — 신규 variant 없음):
-//   정조 = king (곤룡포 홍색 + 익선관 — 지뢰 #64 소각 부활본).
-//   기미상궁(s5) = lady (저고리+치마, 쪽머리). ⚠ 비녀는 rig에서 제거돼 있음(지뢰 #18).
-//   host = s9(아웃트로).
-//   모든 내레이션은 3인칭 해설(캐릭터 대사 아님) → talker 없음(다큐멘터리 음성).
+//   이장손 = militia + paeraengi(공장工匠 신분) + 회갈색 작업복.
+//   박진 = admiral (전립+두정갑 — 경상좌병사).
+//   왜군 = rig 금지(외국인 variant 없음, EP.8 선례) → **비rig 실루엣**(먹색 0.97 불투명, 창 동반).
+//     복식 디테일 0(고증 회피), 정체는 chip 「왜군 진영」+내레이션이 전달. S8 블라인드로 검증.
+//   host = s11(아웃트로). 내레이션은 3인칭 해설 → talker 없음.
 //
-// 씬 경계 = S5 문장 테이블(19문장 → 8씬 + 아웃트로). 리드 0.30s, TRANSITION 0.45.
+// 씬 경계 = S5 문장 테이블(18씬 문장 → 10씬 + 아웃트로). 리드 0.3~0.4s, TRANSITION 0.45.
 //
 // ⚠ S3 팩트체크 이월 제약(factcheck.md) — 화면도 이 선을 지킨다:
-//   1. **"12첩이 거짓" 프레이밍 금지** — "조선 말기 상궁들이 전한 것"으로 중립(s2 스탬프).
-//   2. **반찬 가짓수 단정 금지** — 수라는 "일곱 그릇"(F5 궁중음식문화재단, 정조 상 한정)만 숫자로.
-//      "반찬 7가지" 일반화(F1 추정형)는 화면 스탬프에서도 단정하지 않는다.
-//   3. **"독" 금지** — 기미상궁은 "이상이 없는지 살피는" 시식(s5 스탬프). 은수저는 스탬프에서도 "독 검출" 단정 금지.
-//   4. **의궤 연도** — "원행을묘정리의궤(1795)"는 행차 연도로만(편찬 1796 표기 금지).
-//   5. **"백성이 굶는데" 동기는 유교 재이관 병기** — s6 스탬프에 감선·소선·철선 한자 + "하늘의 경고" 맥락.
-//   6. **시식 인물은 상궁** — s5 lady rig는 기미상궁(왕·왕비를 모셔온 상궁). 오독 막을 스탬프 「기미상궁」.
+//   1. "세계 최초 시한폭탄" 단정 금지 — 스탬프도 "감는 횟수=폭발 시간"까지만(중국 진천뢰 반례).
+//   2. 사망 수는 실록 수치 「20여 명」만(징비록 30여 명 병기 금지).
+//   3. 출토 지점은 「구덩이」(수혈) — "마당에 놓인" 연출 금지. 11발 매납 시점 미확정 → 화면도 시점 주장 없음.
+//   4. 심지 구멍 2개는 「뚜껑(개철)」에 — 몸통에 그리지 않는다.
+//   5. 이장손 생몰 미상 — 연도 스탬프 금지. "1591년 발명" 류 단정 금지.
 //
 // ⚠ 시그니처 표 준수 메모:
-//   · 수라상(신규) = 낮은 좌식 상(서안·소반 문법 — 허리 높이 탁자는 중국 문법) + 밝은 백자 반상기.
-//     그릇은 반드시 상 위(원형 기물 단독 = 행성, 지뢰 #86) + 소반·상판 명도 대비(표).
-//   · 한자는 SVG <text>(지뢰 #67). 의궤 지면도 실제 한자 세로쓰기.
-//   · 창호 = 밝은 창호지 면 + 어두운 살 + 하단 궁판(지뢰 #45). 밤에도 창 안 달·별 금지.
-//   · 기왓골 평행 세로(지뢰 #60 방사형 금지) + 처마 반전 — 정전·동헌 재사용 자산 그대로.
-//   · 군중 실루엣 = 불투명 0.96↑(유령 금지) + 좁은 몸·경사 어깨(EP.21 개선판 문법).
-//   · 배경 글로우 원/타원 전면 금지(지뢰 #47).
+//   · 포탄(구형 철구)은 원형 기물 단독 클로즈업 금지(=행성/달, 지뢰 #86) → 항상 지면 접점+임팩트 균열
+//     +도화선 불꽃(시그니처) 동반. s4는 나무 받침대(스케일 기준자, 지뢰 #65). 밤하늘에 달 금지(원형 중복).
+//   · 목곡 2본은 세로 긴 기물 단독 금지(=미사일) → 나무 받침대+비스듬+도화선 꼬리+도판 프레임.
+//   · 실루엣은 불투명 0.97(유령 금지)+발밑 지면 접점+창(군졸 시그니처). 쓰러짐은 기울임만(머리 프레임 밖 금지, 지뢰 #41).
+//   · 배경 글로우 원형 금지(지뢰 #47) — 모닥불 빛은 낮은 가로 타원, 저채도.
+//   · 기왓골 평행 세로 + 윤곽 클립(지뢰 #73), 처마 반전 — gateBgSVG(EP.25 개정판) 그대로.
+//   · 한자는 SVG <text>(지뢰 #67). 도판 제첨 「飛擊震天雷」.
 //   · 소품 진입은 y슬라이드만(지뢰 #40).
 var TRANSITION = 0.45;
 
-var JEONGJO = { shirt: "#b5493a", pants: "#26221c" };   // 정조 — 곤룡포 홍색
-var SANGGUNG = { shirt: "#3f7a6a", pants: "#8a4a3a" };  // 기미상궁 — 청록 저고리 + 치마
+var JANGSON = { shirt: "#7a6a52", pants: "#4a3f30" };   // 이장손 — 장인 회갈 작업복
+var PAKJIN  = { shirt: "#8e3626", pants: "#26221c" };   // 박진 — 두정갑 적갈
 var HOST    = { shirt: "#d94f37", pants: "#1f2d45" };
 
 var SCENES = [
   {
-    // S1 훅 — "사극에서 임금님은 매 끼 반찬 열두 가지를 받았습니다." (12첩 수라상)
-    id: "s1", start: 0, dur: 5.87, talker: null,
-    chars: [
-      { id: "s1-king", variant: "king", shirt: JEONGJO.shirt, pants: JEONGJO.pants,
-        x: 80, bottom: 570, w: 400, expr: "proud", pose: "point" },
-    ],
-    changes: [{ at: 3.60, char: "s1-king", pose: "down" }],
+    // S1 훅 — "왜군 진영 한복판에, 쇳덩이 하나가 떨어졌습니다. / 왜군들은 그게 뭔지 몰라, 서로 밀며 구경했죠."
+    id: "s1", start: 0, dur: 10.31, talker: null,
+    chars: [],
+    changes: [],
   },
   {
-    // S2 — "그런데 왕의 밥상 기록은 그보다 검소했습니다. / 그 열두 첩은 조선 말기 상궁들이 전한 것입니다."
-    id: "s2", start: 5.42, dur: 8.91, talker: null,
-    chars: [
-      { id: "s2-king", variant: "king", shirt: JEONGJO.shirt, pants: JEONGJO.pants,
-        x: 80, bottom: 570, w: 400, expr: "shocked", pose: "down" },
-    ],
-    changes: [{ at: 9.80, char: "s2-king", expr: "neutral" }],
+    // S2 — "잠시 뒤, 쇳덩이가 터졌습니다."
+    id: "s2", start: 9.86, dur: 4.51, talker: null,
+    chars: [],
+    changes: [],
   },
   {
-    // S3 — "왕의 밥상을 기록한 문서가 남아 있죠. / 정조가 어머니의 환갑잔치로 화성에 다녀온 기록입니다.
-    //        / 경사스러운 날인데도 정조의 상은 일곱 그릇이 전부였습니다."
-    id: "s3", start: 13.88, dur: 13.72, talker: null,
+    // S3 — "실록이 전하는, 천오백구십이년 경주성의 밤이죠." (박진 — 밤 야습 직전, 실록 문장의 행위 주체)
+    id: "s3", start: 13.92, dur: 4.99, talker: null,
     chars: [
-      { id: "s3-king", variant: "king", shirt: JEONGJO.shirt, pants: JEONGJO.pants,
-        x: 82, bottom: 570, w: 390, expr: "neutral", pose: "point" },
+      { id: "s3-pakjin", variant: "admiral", shirt: PAKJIN.shirt, pants: PAKJIN.pants,
+        x: 24, bottom: 570, w: 380, expr: "neutral", pose: "point" },
     ],
-    changes: [{ at: 22.40, char: "s3-king", expr: "shocked", pose: "shrug" }],
+    changes: [],
   },
   {
-    // S4 — "왕은 하루에 평균 다섯 끼를 먹었습니다. / 정식 밥상인 수라상은 아침과 저녁, 두 번이었죠.
-    //        / 이른 아침과 점심, 밤에는 죽이나 간식이었죠."
-    id: "s4", start: 27.15, dur: 13.96, talker: null,
+    // S4 — "정체는 화포장 이장손이 만든 비격진천뢰였습니다."
+    id: "s4", start: 18.46, dur: 4.97, talker: null,
     chars: [
-      { id: "s4-king", variant: "king", shirt: JEONGJO.shirt, pants: JEONGJO.pants,
-        x: 82, bottom: 570, w: 380, expr: "neutral", pose: "down" },
+      { id: "s4-jangson", variant: "militia", hat: "paeraengi", shirt: JANGSON.shirt, pants: JANGSON.pants,
+        x: 80, bottom: 570, w: 350, expr: "proud", pose: "point", flip: true },
     ],
-    changes: [{ at: 35.70, char: "s4-king", pose: "point" }],
+    changes: [],
   },
   {
-    // S5 — "왕은 밥상을 마음대로 못 먹었습니다. / 먹기 전에 상궁이 먼저 맛을 봤습니다.
-    //        / 이상이 없는지 살피는 일이었죠."
-    id: "s5", start: 40.66, dur: 12.47, talker: null,
+    // S5 — "그 쇳덩이 속에는 화약과 쇳조각을 채웠습니다. / 그리고 도화선을 칭칭 감은, 나무 축이 들어 있었죠."
+    id: "s5", start: 22.98, dur: 9.49, talker: null,
+    chars: [],
+    changes: [],
+  },
+  {
+    // S6 — "그 감는 횟수가 곧 시계였습니다. / 열 번 감으면 빨리 터졌습니다. / 열다섯 번이면, 더 늦게 터졌죠."
+    id: "s6", start: 32.02, dur: 10.79, talker: null,
     chars: [
-      { id: "s5-king", variant: "king", shirt: JEONGJO.shirt, pants: JEONGJO.pants,
-        x: 76, bottom: 570, w: 390, expr: "neutral", pose: "down" },
-      { id: "s5-sanggung", variant: "lady", shirt: SANGGUNG.shirt, pants: SANGGUNG.pants,
-        x: 23, bottom: 600, w: 360, expr: "neutral", pose: "point" },
+      { id: "s6-jangson", variant: "militia", hat: "paeraengi", shirt: JANGSON.shirt, pants: JANGSON.pants,
+        x: 85, bottom: 566, w: 360, expr: "neutral", pose: "point" },
     ],
     changes: [
-      { at: 43.00, char: "s5-sanggung", expr: "proud" },
-      { at: 49.30, char: "s5-king", expr: "proud" },
+      { at: 35.8, char: "s6-jangson", expr: "proud" },
+      { at: 39.1, char: "s6-jangson", pose: "raised" },
     ],
   },
   {
-    // S6 — "흉년이 들면, 하늘의 경고라 여기고 반찬을 줄였습니다. / 심할 때는 고기를 끊고, 물을 만 밥을 먹었죠."
-    id: "s6", start: 52.68, dur: 8.65, talker: null,
-    chars: [
-      { id: "s6-king", variant: "king", shirt: JEONGJO.shirt, pants: JEONGJO.pants,
-        x: 78, bottom: 570, w: 400, expr: "neutral", pose: "down" },
-    ],
+    // S7 — "폭탄이 뜸을 들이는 사이, 왜군이 모여든 거죠. / 쇳조각이 별처럼 튀었고, 이십여 명이 즉사했습니다."
+    id: "s7", start: 42.36, dur: 9.94, talker: null,
+    chars: [],
     changes: [],
   },
   {
-    // S7 — "백성의 고통에 함께하려는 뜻이었죠." (들판의 백성 — rig 2인 + 빈 바가지·괭이)
-    id: "s7", start: 60.88, dur: 4.95, talker: null,
+    // S8 — "다음 날, 왜군은 경주성을 버리고 달아났습니다. / 성안에는 곡식 만여 석이 남아 있었죠."
+    id: "s8", start: 51.85, dur: 8.45, talker: null,
     chars: [
-      { id: "s7-min1", variant: "militia", hat: "paeraengi", shirt: "#6b7a6a", pants: "#3f4a3e",
-        x: 30, bottom: 570, w: 380, expr: "shocked", pose: "shrug" },
-      { id: "s7-min2", variant: "militia", hat: "paeraengi", shirt: "#8a7a63", pants: "#5a4a38",
-        x: 71, bottom: 582, w: 360, expr: "neutral", pose: "down", flip: true },
+      { id: "s8-pakjin", variant: "admiral", shirt: PAKJIN.shirt, pants: PAKJIN.pants,
+        x: 74, bottom: 570, w: 400, expr: "neutral", pose: "point" },
     ],
+    changes: [{ at: 56.6, char: "s8-pakjin", expr: "proud", pose: "raised" }],
+  },
+  {
+    // S9 — "사백여 년 뒤, 고창 관아 터 구덩이에서 열한 발이 무더기로 나왔습니다."
+    id: "s9", start: 59.85, dur: 6.72, talker: null,
+    chars: [],
     changes: [],
   },
   {
-    // S8 펀치 — "왕의 수라상은 향연이 아니라 백성을 살피는 자리였습니다."
-    id: "s8", start: 65.38, dur: 8.61, talker: null,
-    chars: [
-      { id: "s8-king", variant: "king", shirt: JEONGJO.shirt, pants: JEONGJO.pants,
-        x: 82, bottom: 570, w: 390, expr: "proud", pose: "point" },
-    ],
+    // S10 — "단층 촬영을 해 보니, 뚜껑에 심지 구멍이 두 개였습니다. / 하나가 꺼져도 터지도록, 불발까지 계산한 겁니다."
+    id: "s10", start: 66.12, dur: 10.05, talker: null,
+    chars: [],
     changes: [],
   },
   {
-    // S9 아웃트로
-    id: "s9", start: 73.54, dur: 6.01, talker: null,
+    // S11 아웃트로
+    id: "s11", start: 75.72, dur: 6.08, talker: null,
     chars: [
-      { id: "s9-host", variant: "host", shirt: HOST.shirt, pants: HOST.pants,
+      { id: "s11-host", variant: "host", shirt: HOST.shirt, pants: HOST.pants,
         x: 22, bottom: 300, w: 420, expr: "happy", pose: "raised" },
     ],
     changes: [],

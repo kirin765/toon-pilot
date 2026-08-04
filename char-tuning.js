@@ -45,8 +45,8 @@ var CHAR_TUNING = {
   "militia": {
     "hat": {
       "x": 0,
-      "y": -16,
-      "s": 1.58,
+      "y": -13,
+      "s": 1.16,
       "r": 0
     },
     "beard": {
