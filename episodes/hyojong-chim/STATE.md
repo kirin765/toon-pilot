@@ -20,7 +20,7 @@
 - [x] **S6.5** 인간 레이아웃 조정 → `layout-overrides.js` (19키 회수, stale 0)
 - [x] **S7** 렌더 → `renders/hyojong-chim.mp4`
 - [x] **S8** 블라인드 + 고증 검수 — **🔴 2 · ⚠ 7 → 재작업 후 재렌더**
-- [ ] **S9** 아카이브 · `meta.md` · 문서 갱신
+- [x] **S9** 아카이브 · `meta.md` · 문서 갱신 · 업로드 https://youtu.be/mTDZhe93CXg
 
 ## 대본 분량 (S2 게이트 출력)
 

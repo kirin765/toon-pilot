@@ -1,6 +1,7 @@
 # EP.29 업로드 메타 — 효종의 침 한 방
 
 - 파일: `renders/hyojong-chim.mp4` (1080×1920, h264+aac)
+- 업로드: https://youtu.be/mTDZhe93CXg (2026-08-07, 채널 「삼십초 역사」 @history30sec, **현재 unlisted**)
 - 내레이션 78.7s · 108어절 / 22문장 (정보량 「중간」)
 - EP.28 고정 댓글 예고 이행 — **예고 이행 14연속**
 
