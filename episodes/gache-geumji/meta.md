@@ -1,7 +1,7 @@
 # EP.31 업로드 메타 — 가체(加髢), 사람을 죽인 가발
 
 - 파일: `renders/gache-geumji.mp4` (1080×1920, h264+aac)
-- 업로드: 대기 (채널 「삼십초 역사」 @history30sec, happylife2080100@gmail.com)
+- 업로드: https://youtu.be/RwsJirQl8TU (2026-08-09, 채널 「삼십초 역사」 @history30sec, **현재 unlisted** — 채널 확인 후 업로드: UC537C24lfuqTPe4KDxEjuvA)
 - 내레이션 79.4s · 109어절 / 22문장 · 씬 13 (정보량 「중간」)
 - EP.30 고정 댓글 예고 이행 — **예고 이행 16연속**
 - S8: 사용자 육안 검수 통과 (2026-08-09)
