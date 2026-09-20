@@ -1,5 +1,7 @@
 # toon-pilot — 삼십초 역사
 
+[English](README.en.md) · **한국어**
+
 사우스파크풍 **종이 컷아웃 한국사 숏폼** 채널 「삼십초 역사」([@history30sec](https://www.youtube.com/@history30sec))를
 코드로 찍어내는 프로젝트. 1080×1920 세로, 편당 45~100초.
 
